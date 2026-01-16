@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 5.4: Wave Speed</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #333;
+            background-color: #ffffff;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        /* ============== TITLE PAGE STYLING ============== */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+
+        /* ============== GENERAL STYLING ============== */
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.2in 0 0.1in 0;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.15in 0 0.08in 0;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000033;
+            margin: 0.1in 0 0.08in 0;
+        }
+
+        p {
+            margin: 0.05in 0;
+            text-align: justify;
+        }
+
+        /* ============== BOX STYLING ============== */
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .learning-objectives h2 {
+            background-color: transparent;
+            color: #000033;
+            padding: 0;
+            margin-bottom: 0.08in;
+            border-bottom: 2px solid #0066cc;
+        }
+
+        .learning-objectives ul {
+            margin-left: 0.2in;
+            margin-top: 0.08in;
+        }
+
+        .learning-objectives li {
+            margin: 0.05in 0;
+        }
+
+        .vocab-term {
+            font-weight: bold;
+        }
+
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+        }
+
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #ccaa00;
+        }
+
+        .real-world-box {
+            background-color: #e6f3ff;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #0066cc;
+        }
+
+        .example-box {
+            background-color: #f9f9f9;
+            padding: 0.08in;
+            margin: 0.08in 0;
+            border-left: 4px solid #cc6600;
+        }
+
+        .example-box h3 {
+            color: #cc6600;
+            margin-top: 0;
+        }
+
+        .formula-box {
+            background-color: #f0f0f0;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 2px solid #333;
+            text-align: center;
+        }
+
+        /* ============== TABLE STYLING ============== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.1in 0;
+            font-size: 14px;
+        }
+
+        table th, table td {
+            border: 1px solid #000033;
+            padding: 0.05in;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #000033;
+            color: white;
+            font-weight: bold;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* ============== LIST STYLING ============== */
+        ul, ol {
+            margin-left: 0.2in;
+            margin-top: 0.05in;
+            margin-bottom: 0.05in;
+        }
+
+        li {
+            margin: 0.04in 0;
+        }
+
+        /* ============== ANSWER SPACE STYLING ============== */
+        .answer-space-full {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+
+        .answer-space-short {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+
+        /* ============== PROBLEM STYLING ============== */
+        .problem {
+            margin: 0.1in 0;
+            page-break-inside: avoid;
+        }
+
+        .problem-number {
+            font-weight: bold;
+            margin-bottom: 0.04in;
+        }
+
+        .highlight {
+            background-color: #ffff99;
+        }
+
+        /* ============== MISC STYLING ============== */
+        .page-break {
+            page-break-after: always;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+
+        .summary-list {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .summary-list li {
+            margin: 0.06in 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 5.4</div>
+    <h1>Wave Speed</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="ropeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#e6f3ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#cce5ff;stop-opacity:1" />
+            </linearGradient>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        
+        <!-- Background -->
+        <rect width="600" height="300" fill="url(#ropeGrad)"/>
+        
+        <!-- Person at left -->
+        <circle cx="60" cy="80" r="15" fill="#d4a574"/>
+        <rect x="50" y="95" width="20" height="30" fill="#666666"/>
+        <rect x="35" y="95" width="15" height="5" fill="#d4a574"/>
+        <rect x="70" y="95" width="15" height="5" fill="#d4a574"/>
+        
+        <!-- Rope with wave at different positions -->
+        <!-- First wave (near source) -->
+        <path d="M 75 120 Q 95 110, 115 120 Q 135 130, 155 120" stroke="#8B4513" stroke-width="4" fill="none"/>
+        
+        <!-- Second wave (middle) -->
+        <path d="M 160 120 Q 180 110, 200 120 Q 220 130, 240 120" stroke="#8B4513" stroke-width="4" fill="none"/>
+        
+        <!-- Third wave (far) -->
+        <path d="M 245 120 Q 265 110, 285 120 Q 305 130, 325 120" stroke="#8B4513" stroke-width="4" fill="none"/>
+        
+        <!-- Fourth wave (farthest) -->
+        <path d="M 330 120 Q 350 110, 370 120 Q 390 130, 410 120" stroke="#8B4513" stroke-width="4" fill="none"/>
+        
+        <!-- Straight rope continuation -->
+        <line x1="415" y1="120" x2="550" y2="120" stroke="#8B4513" stroke-width="4"/>
+        
+        <!-- Distance markers -->
+        <line x1="75" y1="180" x2="155" y2="180" stroke="#0066cc" stroke-width="2"/>
+        <line x1="75" y1="175" x2="75" y2="185" stroke="#0066cc" stroke-width="2"/>
+        <line x1="155" y1="175" x2="155" y2="185" stroke="#0066cc" stroke-width="2"/>
+        <text x="115" y="205" font-size="13" text-anchor="middle" fill="#0066cc" font-weight="bold">λ (Wavelength)</text>
+        
+        <!-- Time labels -->
+        <text x="115" y="245" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">t₁</text>
+        <text x="200" y="245" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">t₂</text>
+        <text x="285" y="245" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">t₃</text>
+        <text x="370" y="245" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">t₄</text>
+        
+        <!-- Title -->
+        <text x="300" y="25" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Wave Propagation: How Waves Travel</text>
+    </svg>
+    
+    <p>When you create a disturbance in a rope or water, the wave travels along the medium at a specific speed determined by the medium's properties. Understanding wave speed—how far a wave travels in a given time—is essential for predicting wave behavior, from ripples on a pond to light traveling through space. Discover how frequency, wavelength, and the medium work together to determine how fast waves move.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2>Learning Objectives</h2>
+    <ul>
+        <li>I can calculate wave speed using the relationship between distance and time.</li>
+        <li>I can apply the wave equation to find wave speed, frequency, or wavelength when given the other two variables.</li>
+        <li>I can explain how the medium affects wave speed and predict how waves behave in different materials.</li>
+        <li>I can solve multi-step problems involving wave speed, wavelength, and frequency in real-world contexts.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Imagine dropping a pebble into a still pond. Ripples spread outward in concentric circles, but how quickly do they travel? The answer depends on wave speed—the distance the wave travels in a given amount of time. Wave speed is a fundamental property that determines when and where a wave will arrive. A surfer must understand ocean wave speed to predict when waves will reach the beach. A geologist uses wave speed to locate earthquakes. A musician depends on sound wave speed to produce the right frequencies. In every case, understanding wave speed is critical to predicting and controlling wave behavior.</p>
+
+<p>Wave speed is unique because it depends not on how the wave is created, but on the properties of the medium through which it travels. A loud sound and a soft sound travel at the same speed through air, but they travel at different speeds through water or steel. This fundamental principle underlies much of wave physics and helps explain why different materials behave so differently when waves pass through them.</p>
+
+<div class="real-world-box">
+    <p><strong>Real-World Connection:</strong> Earthquake scientists use the different wave speeds of P-waves and S-waves traveling through Earth's interior to locate earthquake epicenters. P-waves travel faster through rock and arrive first at seismograph stations, while slower S-waves arrive later. By measuring the time delay between these arrivals at multiple stations, scientists can pinpoint where the earthquake occurred—a technique that has saved countless lives.</p>
+</div>
+
+<!-- ============== WAVE SPEED BASICS ============== -->
+<h1>The Speed of a Wave</h1>
+
+<h2>Defining Wave Speed</h2>
+
+<p>The <span class="vocab-term">speed of a wave</span> is the distance a wave travels in a given amount of time. Like all speeds, wave speed can be calculated using the fundamental relationship between distance and time:</p>
+
+<div class="formula-box">
+    $$\text{Speed} = \frac{\text{Distance}}{\text{Time}}$$
+</div>
+
+<p>In physics, we typically denote wave speed with the variable <em>v</em> (for velocity), distance with <em>d</em>, and time with <em>t</em>:</p>
+
+<div class="formula-box">
+    $$v = \frac{d}{t}$$
+</div>
+
+<p>When measuring wave speed, distance is expressed in meters (m) and time in seconds (s), so wave speed is expressed in meters per second (m/s). This is the standard SI unit for speed.</p>
+
+<p>The key insight is that <span class="vocab-term">wave speed depends only on the medium</span>. No matter how the wave is created—whether you shake a rope gently or vigorously—the wave travels at the same speed through that rope. A whispered sound and a shout travel at the same speed through air (approximately 343 m/s at room temperature). The difference in loudness affects the wave's amplitude, not its speed.</p>
+
+<div class="info-box">
+    <p><strong>Important Distinction:</strong> Don't confuse wave speed with particle velocity. In a water wave, the water molecules move up and down (or back and forth) relatively slowly, but the wave pattern itself propagates much faster across the water's surface. The wave speed describes how fast the disturbance pattern travels, not how fast individual particles move.</p>
+</div>
+
+<h2>The Wave Equation: Connecting Speed, Frequency, and Wavelength</h2>
+
+<p>Wave speed is related to two other fundamental wave properties: <span class="vocab-term">wavelength</span> and <span class="vocab-term">frequency</span>. The <span class="vocab-term">wave equation</span> connects these three quantities:</p>
+
+<div class="formula-box">
+    $$v = f \lambda$$
+</div>
+
+<p>Where:</p>
+<ul>
+    <li><em>v</em> = wave speed (m/s)</li>
+    <li><em>f</em> = frequency (Hz or cycles/s)</li>
+    <li><em>λ</em> = wavelength (m)</li>
+</ul>
+
+<p>This equation reveals a crucial relationship: <span class="vocab-term">for a given medium, if frequency increases, wavelength must decrease, and vice versa</span>. The product of these two quantities—frequency multiplied by wavelength—always equals the wave speed, which depends only on the medium.</p>
+
+<p>To understand this physically, consider a loudspeaker playing different notes. A high-frequency note (like a soprano singing high C) creates waves that oscillate rapidly, producing shorter wavelengths. A low-frequency note (like a bass drum) creates waves that oscillate slowly, producing longer wavelengths. But both travel at the same speed through the air because they're in the same medium.</p>
+
+<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+        </marker>
+    </defs>
+    
+    <!-- Title -->
+    <text x="300" y="25" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Relationship Between Frequency and Wavelength</text>
+    
+    <!-- Wave 1: Low frequency, long wavelength -->
+    <path d="M 20 80 Q 70 60, 120 80 Q 170 100, 220 80" stroke="#0066cc" stroke-width="3" fill="none"/>
+    <text x="300" y="90" font-size="13" fill="#000033">Low Frequency (f), Long Wavelength (λ)</text>
+    <text x="300" y="110" font-size="12" fill="#666">Speed = f × λ (same speed)</text>
+    
+    <!-- Wavelength bracket for wave 1 -->
+    <line x1="20" y1="140" x2="120" y2="140" stroke="#000033" stroke-width="2"/>
+    <line x1="20" y1="135" x2="20" y2="145" stroke="#000033" stroke-width="2"/>
+    <line x1="120" y1="135" x2="120" y2="145" stroke="#000033" stroke-width="2"/>
+    <text x="70" y="160" font-size="11" text-anchor="middle" fill="#000033">λ₁</text>
+    
+    <!-- Wave 2: High frequency, short wavelength -->
+    <path d="M 20 210 Q 40 190, 60 210 Q 80 230, 100 210 Q 120 190, 140 210 Q 160 230, 180 210 Q 200 190, 220 210" stroke="#1E90FF" stroke-width="3" fill="none"/>
+    <text x="300" y="220" font-size="13" fill="#000033">High Frequency (f), Short Wavelength (λ)</text>
+    <text x="300" y="240" font-size="12" fill="#666">Speed = f × λ (same speed)</text>
+    
+    <!-- Wavelength bracket for wave 2 -->
+    <line x1="20" y1="270" x2="60" y2="270" stroke="#000033" stroke-width="2"/>
+    <line x1="20" y1="265" x2="20" y2="275" stroke="#000033" stroke-width="2"/>
+    <line x1="60" y1="265" x2="60" y2="275" stroke="#000033" stroke-width="2"/>
+    <text x="40" y="290" font-size="11" text-anchor="middle" fill="#000033">λ₂</text>
+</svg>
+
+<div class="vocab-box">
+    <p><strong>Rearrangements of the Wave Equation:</strong></p>
+    <p>Depending on which quantity you need to find, the wave equation can be rearranged:</p>
+    <ul>
+        <li>For speed: $$v = f\lambda$$</li>
+        <li>For frequency: $$f = \frac{v}{\lambda}$$</li>
+        <li>For wavelength: $$\lambda = \frac{v}{f}$$</li>
+    </ul>
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== CALCULATING WITH WAVE SPEED ============== -->
+<h1>Calculating Wave Speed and Related Quantities</h1>
+
+<h2>Finding Wave Speed from Wavelength and Frequency</h2>
+
+<p>The most straightforward application of the wave equation is calculating wave speed when you know wavelength and frequency. Here's the process:</p>
+
+<p><strong>Step 1:</strong> Identify the known quantities and what you need to find.</p>
+<p><strong>Step 2:</strong> Select the appropriate equation (in this case, $v = f\lambda$).</p>
+<p><strong>Step 3:</strong> Substitute the values and calculate.</p>
+<p><strong>Step 4:</strong> Include units in your answer.</p>
+
+<div class="example-box">
+    <h3>Example: Ocean Wave Speed</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Wavelength: λ = 3.0 m</li>
+        <li>Frequency: <em>f</em> = 1.0 Hz</li>
+    </ul>
+    <p><strong>Find:</strong> What is the speed of this ocean wave?</p>
+    <p><strong>Solution:</strong></p>
+    <p>$$v = f\lambda = (1.0 \text{ Hz})(3.0 \text{ m}) = 3.0 \text{ m/s}$$</p>
+    <p><strong>Answer:</strong> The wave speed is <span class="highlight">3.0 m/s</span>.</p>
+</div>
+
+<h2>Finding Frequency or Wavelength from Wave Speed</h2>
+
+<p>Often you know the wave speed (determined by the medium) and either the frequency or wavelength, and need to find the other. In these cases, rearrange the wave equation:</p>
+
+<div class="example-box">
+    <h3>Example: Finding Frequency</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Wave speed: <em>v</em> = 2.0 m/s</li>
+        <li>Wavelength: λ = 1.0 m</li>
+    </ul>
+    <p><strong>Find:</strong> What is the frequency of this wave?</p>
+    <p><strong>Solution:</strong></p>
+    <p><strong>Step 1:</strong> Rearrange the wave equation to solve for frequency.</p>
+    <p>$$f = \frac{v}{\lambda}$$</p>
+    <p><strong>Step 2:</strong> Substitute values.</p>
+    <p>$$f = \frac{2.0 \text{ m/s}}{1.0 \text{ m}} = 2.0 \text{ Hz}$$</p>
+    <p><strong>Answer:</strong> The frequency is <span class="highlight">2.0 Hz</span>.</p>
+</div>
+
+<div class="example-box">
+    <h3>Example: Finding Wavelength</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Wave speed in air: <em>v</em> = 343 m/s</li>
+        <li>Frequency of sound: <em>f</em> = 440 Hz (musical note A)</li>
+    </ul>
+    <p><strong>Find:</strong> What is the wavelength of this sound wave?</p>
+    <p><strong>Solution:</strong></p>
+    <p><strong>Step 1:</strong> Rearrange the wave equation to solve for wavelength.</p>
+    <p>$$\lambda = \frac{v}{f}$$</p>
+    <p><strong>Step 2:</strong> Substitute values.</p>
+    <p>$$\lambda = \frac{343 \text{ m/s}}{440 \text{ Hz}} = 0.780 \text{ m}$$</p>
+    <p><strong>Answer:</strong> The wavelength is <span class="highlight">0.780 m or 78.0 cm</span>.</p>
+    <div class="info-box">
+        <p><strong>Musical Note Context:</strong> The note A (440 Hz) is the standard tuning frequency for orchestral instruments. Knowing its wavelength in air (78 cm) helps engineers design concert halls and recording studios that work well with these frequencies.</p>
+    </div>
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== THE MEDIUM MATTERS ============== -->
+<h1>The Medium Matters: How Wave Speed Depends on Properties</h1>
+
+<h2>Why Wave Speed Varies by Medium</h2>
+
+<p>The most important principle in wave physics is this: <span class="vocab-term">wave speed depends on the medium through which the wave travels</span>. This is fundamentally different from mechanical motion, where speed is determined by forces applied to an object. Waves don't "care" how they were created; they propagate at a speed determined entirely by the medium's properties.</p>
+
+<p>Specifically, wave speed depends on:</p>
+<ul>
+    <li><strong>Particle density:</strong> How close together particles are in the medium</li>
+    <li><strong>Elasticity:</strong> How easily the medium deforms and returns to its original shape</li>
+    <li><strong>Temperature:</strong> How the kinetic energy of particles affects wave propagation</li>
+</ul>
+
+<p>Generally, <span class="vocab-term">waves travel fastest through solids and slowest through gases</span>. This is because solids have particles packed closely together and tightly bonded. When a disturbance occurs, it quickly transmits from one particle to the next. In gases, particles are far apart, so the disturbance takes much longer to propagate.</p>
+
+<h2>Wave Speeds in Different Media</h2>
+
+<p>Here are typical wave speeds for sound in various media:</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Medium</th>
+            <th>Type</th>
+            <th>Speed (m/s)</th>
+            <th>Relative Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Air</td>
+            <td>Gas</td>
+            <td>343</td>
+            <td>1× (reference)</td>
+        </tr>
+        <tr>
+            <td>Water</td>
+            <td>Liquid</td>
+            <td>1,480</td>
+            <td>4.3×</td>
+        </tr>
+        <tr>
+            <td>Concrete</td>
+            <td>Solid</td>
+            <td>3,800</td>
+            <td>11×</td>
+        </tr>
+        <tr>
+            <td>Steel</td>
+            <td>Solid</td>
+            <td>5,960</td>
+            <td>17×</td>
+        </tr>
+        <tr>
+            <td>Diamond</td>
+            <td>Solid</td>
+            <td>12,000</td>
+            <td>35×</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Notice that sound travels about 4 times faster in water than in air, and about 17 times faster in steel. This explains why you can hear a train coming from far away by placing your ear on the rail—the sound travels much faster through the steel rail than through the air.</p>
+
+<div class="real-world-box">
+    <p><strong>Whales and Ocean Communication:</strong> Whales use sound to communicate across enormous distances in the ocean. Because sound travels at 1,480 m/s in seawater (4.3 times faster than in air), whales can hear each other across distances of hundreds of kilometers. A whale call at 20 Hz can travel thousands of kilometers because the long wavelength (λ = v/f = 1,480/20 = 74 m) experiences minimal absorption in water. This is why marine biologists worry that ship noise disrupts whale communication—louder ship sounds mask the whales' natural signals.</p>
+</div>
+
+<h2>Temperature Effects on Wave Speed</h2>
+
+<p>For a given medium, temperature also affects wave speed. In air, sound speed increases with temperature because warmer molecules move faster and transmit vibrations more quickly:</p>
+
+<div class="formula-box">
+    $$v_{\text{sound}} = 331 + 0.6T$$
+</div>
+
+<p>Where <em>v</em> is speed in m/s and <em>T</em> is temperature in degrees Celsius.</p>
+
+<p>At 0°C (freezing): <em>v</em> = 331 + 0.6(0) = 331 m/s</p>
+<p>At 20°C (room temperature): <em>v</em> = 331 + 0.6(20) = 343 m/s</p>
+<p>At 40°C (warm day): <em>v</em> = 331 + 0.6(40) = 355 m/s</p>
+
+<div class="info-box">
+    <p><strong>Why Temperature Matters for Musicians:</strong> Musicians must account for temperature when performing outdoors. An instrument tuned at room temperature will sound slightly flat (lower frequency) in cold weather and sharp (higher frequency) in warm weather, because the sound speed changes and thus the frequency heard by the audience changes. Professional orchestras warm up instruments before outdoor concerts.</p>
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h3>Example 1: Single-Step Wave Speed Calculation</h3>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>A wave on a spring has wavelength λ = 0.10 m</li>
+        <li>Frequency: <em>f</em> = 2.0 Hz</li>
+    </ul>
+    
+    <p><strong>Find:</strong> What is the speed of the wave?</p>
+    
+    <p><strong>Solution:</strong></p>
+    
+    <p><strong>Step 1:</strong> Identify the wave equation to use.</p>
+    <p style="margin-left: 0.2in;">We have wavelength and frequency, and need speed, so: $v = f\lambda$</p>
+    
+    <p><strong>Step 2:</strong> Substitute values.</p>
+    <p style="margin-left: 0.2in;">$$v = (2.0 \text{ Hz})(0.10 \text{ m})$$</p>
+    
+    <p><strong>Step 3:</strong> Calculate.</p>
+    <p style="margin-left: 0.2in;">$$v = 0.20 \text{ m/s}$$</p>
+    
+    <p><strong>Answer:</strong> The wave speed is <span class="highlight">0.20 m/s</span>.</p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Finding Wavelength from Speed and Frequency</h3>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Speed of sound in water: <em>v</em> = 1,480 m/s</li>
+        <li>Frequency of a whale call: <em>f</em> = 20 Hz</li>
+    </ul>
+    
+    <p><strong>Find:</strong> What is the wavelength of this whale call?</p>
+    
+    <p><strong>Solution:</strong></p>
+    
+    <p><strong>Step 1:</strong> Identify the known quantities and write the appropriate equation.</p>
+    <p style="margin-left: 0.2in;">We have speed and frequency, and need wavelength, so rearrange: $\lambda = \frac{v}{f}$</p>
+    
+    <p><strong>Step 2:</strong> Substitute values.</p>
+    <p style="margin-left: 0.2in;">$$\lambda = \frac{1480 \text{ m/s}}{20 \text{ Hz}}$$</p>
+    
+    <p><strong>Step 3:</strong> Calculate.</p>
+    <p style="margin-left: 0.2in;">$$\lambda = 74 \text{ m}$$</p>
+    
+    <p><strong>Answer:</strong> The wavelength is <span class="highlight">74 m</span>—nearly the length of three school buses end-to-end! This long wavelength allows whale songs to travel across ocean basins.</p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Multi-Step Problem - Comparing Waves in Different Media</h3>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>A loudspeaker emits a sound at frequency 1,000 Hz</li>
+        <li>Speed of sound in air: <em>v</em>_air = 343 m/s</li>
+        <li>Speed of sound in water: <em>v</em>_water = 1,480 m/s</li>
+    </ul>
+    
+    <p><strong>Find:</strong></p>
+    <ul>
+        <li>a) What is the wavelength in air?</li>
+        <li>b) What is the wavelength in water?</li>
+        <li>c) How many times longer is the wavelength in water compared to air?</li>
+        <li>d) If the sound travels 100 m in air, how long does it take?</li>
+    </ul>
+    
+    <p><strong>Solution:</strong></p>
+    
+    <p><strong>Part a) Wavelength in Air</strong></p>
+    
+    <p><strong>Step 1:</strong> Write the equation for wavelength.</p>
+    <p style="margin-left: 0.2in;">$$\lambda = \frac{v}{f}$$</p>
+    
+    <p><strong>Step 2:</strong> Substitute values for air.</p>
+    <p style="margin-left: 0.2in;">$$\lambda_{\text{air}} = \frac{343 \text{ m/s}}{1000 \text{ Hz}} = 0.343 \text{ m}$$</p>
+    
+    <p><span class="highlight">Answer (a): λ_air = 0.343 m or 34.3 cm</span></p>
+    
+    <p><strong>Part b) Wavelength in Water</strong></p>
+    
+    <p><strong>Step 1:</strong> Use the same equation with water's sound speed.</p>
+    <p style="margin-left: 0.2in;">$$\lambda_{\text{water}} = \frac{1480 \text{ m/s}}{1000 \text{ Hz}} = 1.48 \text{ m}$$</p>
+    
+    <p><span class="highlight">Answer (b): λ_water = 1.48 m</span></p>
+    
+    <p><strong>Part c) Ratio of Wavelengths</strong></p>
+    
+    <p><strong>Step 1:</strong> Divide the wavelength in water by the wavelength in air.</p>
+    <p style="margin-left: 0.2in;">$$\text{Ratio} = \frac{\lambda_{\text{water}}}{\lambda_{\text{air}}} = \frac{1.48 \text{ m}}{0.343 \text{ m}} = 4.3$$</p>
+    
+    <p><span class="highlight">Answer (c): The wavelength in water is 4.3 times longer than in air</span> (which equals the speed ratio: 1,480/343 = 4.3).</p>
+    
+    <p><strong>Part d) Time for Sound to Travel 100 m in Air</strong></p>
+    
+    <p><strong>Step 1:</strong> Rearrange the distance equation to solve for time.</p>
+    <p style="margin-left: 0.2in;">$$d = vt$$</p>
+    <p style="margin-left: 0.2in;">$$t = \frac{d}{v}$$</p>
+    
+    <p><strong>Step 2:</strong> Substitute values.</p>
+    <p style="margin-left: 0.2in;">$$t = \frac{100 \text{ m}}{343 \text{ m/s}} = 0.292 \text{ s}$$</p>
+    
+    <p><span class="highlight">Answer (d): t = 0.292 s or about 0.3 seconds</span></p>
+    
+    <p><strong>Physical Insight:</strong> Notice that even though the frequency stays the same (1,000 Hz), the wavelength changes dramatically when the medium changes. This is because the wave speed is determined by the medium, not by the source. The relationship $v = f\lambda$ always holds: when speed increases, wavelength must increase proportionally if frequency stays constant.</p>
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<div class="summary-list">
+    <ul>
+        <li><span class="vocab-term">Wave speed</span> is the distance a wave travels in a given amount of time and is calculated using $v = \frac{d}{t}$, with units of meters per second (m/s).</li>
+        
+        <li>The <span class="vocab-term">wave equation</span> $v = f\lambda$ relates wave speed, frequency, and wavelength, allowing calculation of any one quantity when the other two are known.</li>
+        
+        <li>For a given medium, <span class="vocab-term">wave speed is constant</span>. Increasing frequency causes wavelength to decrease proportionally, and vice versa, keeping the product constant.</li>
+        
+        <li><span class="vocab-term">Wave speed depends only on the medium</span>, not on how the wave is created. A loud sound and a soft sound travel at the same speed through air.</li>
+        
+        <li>Waves travel fastest through <span class="vocab-term">solids</span> and slowest through <span class="vocab-term">gases</span> because particle density and elasticity affect how quickly disturbances propagate.</li>
+        
+        <li>Typical sound speeds: air (343 m/s), water (1,480 m/s), steel (5,960 m/s)—showing that sound travels about 4 times faster in water and 17 times faster in steel compared to air.</li>
+        
+        <li><span class="vocab-term">Temperature affects wave speed</span>. For sound in air: $v = 331 + 0.6T$ (°C), showing speed increases by 0.6 m/s for each degree Celsius increase.</li>
+        
+        <li>Understanding wave speed is essential for applications including sonar detection, earthquake location, musical instrument design, and animal communication systems.</li>
+        
+        <li>The wave equation can be rearranged to solve for any variable: $f = \frac{v}{\lambda}$ or $\lambda = \frac{v}{f}$.</li>
+        
+        <li><span class="vocab-term">Particle motion and wave motion are different</span>. Individual particles oscillate slowly while the wave pattern propagates at the medium's characteristic speed.</li>
+    </ul>
+</div>
+
+<!-- ============== KEY EQUATIONS TABLE ============== -->
+<h2>Key Equations</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Equation Name</th>
+            <th>Formula</th>
+            <th>Variables and Units</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Basic Wave Speed</td>
+            <td>$$v = \frac{d}{t}$$</td>
+            <td><em>v</em> = speed (m/s); <em>d</em> = distance (m); <em>t</em> = time (s)</td>
+        </tr>
+        <tr>
+            <td>Wave Equation</td>
+            <td>$$v = f\lambda$$</td>
+            <td><em>v</em> = wave speed (m/s); <em>f</em> = frequency (Hz); λ = wavelength (m)</td>
+        </tr>
+        <tr>
+            <td>Frequency from Speed and Wavelength</td>
+            <td>$$f = \frac{v}{\lambda}$$</td>
+            <td><em>f</em> = frequency (Hz); <em>v</em> = wave speed (m/s); λ = wavelength (m)</td>
+        </tr>
+        <tr>
+            <td>Wavelength from Speed and Frequency</td>
+            <td>$$\lambda = \frac{v}{f}$$</td>
+            <td>λ = wavelength (m); <em>v</em> = wave speed (m/s); <em>f</em> = frequency (Hz)</td>
+        </tr>
+        <tr>
+            <td>Sound Speed in Air (Temperature Dependent)</td>
+            <td>$$v = 331 + 0.6T$$</td>
+            <td><em>v</em> = speed (m/s); <em>T</em> = temperature (°C)</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<div class="problem">
+    <p class="problem-number">1. Conceptual Question - Wave Speed and Medium</p>
+    <p>Explain why waves travel faster through solids than through gases. Use the concepts of particle density and how energy transfers between particles in your answer.</p>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <p class="problem-number">2. Conceptual Question - Frequency and Wavelength Relationship</p>
+    <p>A sound source is moved closer and then farther away from you. Does the speed of sound change? Does the frequency change? Does the wavelength change? Explain your reasoning for each.</p>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <p class="problem-number">3. Definition Question - Wave Speed</p>
+    <p>Distinguish between the speed of a wave and the speed of particles in the medium. Provide an example using a ripple in water.</p>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <p class="problem-number">4. Application Question - Temperature Effects</p>
+    <p>Sound travels at approximately 331 m/s at 0°C and 343 m/s at 20°C. Use the equation $v = 331 + 0.6T$ to predict the speed of sound at 30°C. How would temperature changes affect the wavelength of a fixed-frequency sound source?</p>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <p class="problem-number">5. Calculation - Wave Speed from Wavelength and Frequency</p>
+    <p><strong>Given:</strong> A ripple in a pond has a wavelength of 0.50 m and a frequency of 2.0 Hz.</p>
+    <p><strong>Find:</strong> What is the speed of this ripple?</p>
+    <div class="answer-space-full"></div>
+</div>
+
+<div class="problem">
+    <p class="problem-number">6. Calculation - Wavelength from Speed and Frequency</p>
+    <p><strong>Given:</strong> A radio wave has a frequency of 100 MHz (1.00 × 10⁸ Hz) and travels at the speed of light (3.00 × 10⁸ m/s).</p>
+    <p><strong>Find:</strong> What is the wavelength of this radio wave?</p>
+    <div class="answer-space-full"></div>
+</div>
+
+<div class="problem">
+    <p class="problem-number">7. Multi-Step Problem - Comparing Media</p>
+    <p><strong>Given:</strong> A sound wave has a frequency of 500 Hz.</p>
+    <ul>
+        <li>Speed in air: 343 m/s</li>
+        <li>Speed in water: 1,480 m/s</li>
+    </ul>
+    <p><strong>Find:</strong></p>
+    <ul>
+        <li>a) What is the wavelength in air?</li>
+        <li>b) What is the wavelength in water?</li>
+        <li>c) The wavelength in water is how many times larger than in air?</li>
+    </ul>
+    <div class="answer-space-full"></div>
+</div>
+
+<div class="problem">
+    <p class="problem-number">8. Multi-Step Problem - Distance and Travel Time</p>
+    <p><strong>Given:</strong> During a thunderstorm, lightning and thunder occur simultaneously at a distance. The speed of sound in air is 343 m/s.</p>
+    <ul>
+        <li>The wavelength of the sound is 0.686 m</li>
+        <li>The distance to the lightning is 1000 m away</li>
+    </ul>
+    <p><strong>Find:</strong></p>
+    <ul>
+        <li>a) What is the frequency of the thunder?</li>
+        <li>b) How long after the lightning does the thunder reach you?</li>
+        <li>c) If sound were traveling at the speed in water (1,480 m/s), how long would it take?</li>
+    </ul>
+    <div class="answer-space-full"></div>
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>Note to Teachers:</strong> This answer key provides complete solutions for all practice problems. Partial credit should be awarded based on correct method and reasoning, even if numerical answers contain minor rounding errors. Accept equivalent forms of correct answers.</p>
+
+<h2>Conceptual Questions (1-4)</h2>
+
+<h3>Answer 1: Wave Speed and Medium</h3>
+<p><strong>Key Points for a Complete Answer:</strong></p>
+<ul>
+    <li>In solids, particles are packed closely together with strong bonds between them.</li>
+    <li>When a disturbance occurs, it quickly transfers from one particle to the next because they are close and strongly connected.</li>
+    <li>In gases, particles are far apart with weak interactions between them.</li>
+    <li>Disturbances take longer to propagate because particles must travel greater distances to collide with neighbors.</li>
+    <li>The density and elasticity (how quickly bonds restore the medium to its original shape) both contribute to faster propagation in solids.</li>
+</ul>
+
+<h3>Answer 2: Frequency and Wavelength Changes</h3>
+<p><strong>Correct Response:</strong></p>
+<p>The <span class="highlight">speed of sound does NOT change</span> when the source moves closer or farther away. Sound speed depends only on the medium (air), not on the source. However, both <span class="highlight">frequency and wavelength DO change</span> due to the Doppler effect. When the source moves toward you, the frequency increases (sound is higher pitched) and the wavelength decreases because the sound waves are compressed. When the source moves away, the frequency decreases (sound is lower pitched) and the wavelength increases because the waves are stretched out. Despite these changes in frequency and wavelength, their product ($f \times \lambda$) remains constant and equal to the unchanging wave speed.</p>
+
+<h3>Answer 3: Wave Speed vs. Particle Speed</h3>
+<p><strong>Correct Response:</strong></p>
+<p><span class="vocab-term">Wave speed</span> describes how fast the disturbance pattern travels through the medium. <span class="vocab-term">Particle speed</span> describes how fast individual medium particles move back and forth (or up and down). In a water ripple, the wave might travel across the surface at 0.5 m/s, but individual water molecules move up and down at much slower speeds. The wave pattern propagates forward while the water molecules oscillate in place. Think of a crowd doing "the wave" at a stadium—the wave pattern races around the stadium while individual people simply move up and down in place.</p>
+
+<h3>Answer 4: Temperature Effects</h3>
+<p><strong>Solution and Key Points:</strong></p>
+<p>At 30°C: $$v = 331 + 0.6(30) = 331 + 18 = 349 \text{ m/s}$$</p>
+<p><span class="highlight">Speed at 30°C = 349 m/s</span></p>
+<p><strong>Effect on Wavelength:</strong> For a fixed-frequency sound source, the wave equation ($v = f\lambda$) shows that if speed increases while frequency stays constant, wavelength must increase. As temperature increases, the sound travels faster, so longer wavelengths are produced. Conversely, as temperature decreases, sound travels slower and wavelengths decrease.</p>
+
+<h2>Calculation Problems (5-6)</h2>
+
+<h3>Answer 5: Ripple Wave Speed</h3>
+
+<p><strong>Given:</strong> λ = 0.50 m, <em>f</em> = 2.0 Hz</p>
+<p><strong>Find:</strong> <em>v</em> = ?</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$v = f\lambda = (2.0 \text{ Hz})(0.50 \text{ m}) = 1.0 \text{ m/s}$$</p>
+
+<p><strong>Answer:</strong> <span class="highlight">v = 1.0 m/s</span></p>
+
+<h3>Answer 6: Radio Wave Wavelength</h3>
+
+<p><strong>Given:</strong> <em>f</em> = 1.00 × 10⁸ Hz, <em>v</em> = 3.00 × 10⁸ m/s</p>
+<p><strong>Find:</strong> λ = ?</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$\lambda = \frac{v}{f} = \frac{3.00 \times 10^8 \text{ m/s}}{1.00 \times 10^8 \text{ Hz}} = 3.0 \text{ m}$$</p>
+
+<p><strong>Answer:</strong> <span class="highlight">λ = 3.0 m</span> (This is a typical FM radio wave wavelength.)</p>
+
+<h2>Multi-Step Problems (7-8)</h2>
+
+<h3>Answer 7: Comparing Sound Wavelengths in Different Media</h3>
+
+<p><strong>Given:</strong> <em>f</em> = 500 Hz, <em>v</em>_air = 343 m/s, <em>v</em>_water = 1,480 m/s</p>
+
+<p><strong>Part a) Wavelength in Air</strong></p>
+<p>$$\lambda_{\text{air}} = \frac{v}{f} = \frac{343 \text{ m/s}}{500 \text{ Hz}} = 0.686 \text{ m}$$</p>
+<p><span class="highlight">Answer (a): λ_air = 0.686 m or 68.6 cm</span></p>
+
+<p><strong>Part b) Wavelength in Water</strong></p>
+<p>$$\lambda_{\text{water}} = \frac{v}{f} = \frac{1480 \text{ m/s}}{500 \text{ Hz}} = 2.96 \text{ m}$$</p>
+<p><span class="highlight">Answer (b): λ_water = 2.96 m or approximately 3.0 m</span></p>
+
+<p><strong>Part c) Ratio of Wavelengths</strong></p>
+<p>$$\text{Ratio} = \frac{\lambda_{\text{water}}}{\lambda_{\text{air}}} = \frac{2.96}{0.686} = 4.3$$</p>
+<p><span class="highlight">Answer (c): The wavelength in water is 4.3 times larger</span> (This matches the speed ratio: 1,480/343 = 4.3)</p>
+
+<h3>Answer 8: Thunder and Lightning</h3>
+
+<p><strong>Given:</strong> λ = 0.686 m, <em>v</em>_air = 343 m/s, <em>d</em> = 1000 m, <em>v</em>_water = 1,480 m/s</p>
+
+<p><strong>Part a) Frequency of Thunder</strong></p>
+<p>$$f = \frac{v}{\lambda} = \frac{343 \text{ m/s}}{0.686 \text{ m}} = 500 \text{ Hz}$$</p>
+<p><span class="highlight">Answer (a): f = 500 Hz</span></p>
+
+<p><strong>Part b) Time for Thunder to Travel in Air</strong></p>
+<p>$$t = \frac{d}{v} = \frac{1000 \text{ m}}{343 \text{ m/s}} = 2.92 \text{ s}$$</p>
+<p><span class="highlight">Answer (b): t = 2.92 s or approximately 3 seconds</span></p>
+<p><strong>Physical Context:</strong> This is why we count seconds between lightning and thunder to estimate distance. Each 3-second delay represents approximately 1 km of distance.</p>
+
+<p><strong>Part c) Time for Sound to Travel in Water</strong></p>
+<p>$$t_{\text{water}} = \frac{d}{v} = \frac{1000 \text{ m}}{1480 \text{ m/s}} = 0.676 \text{ s}$$</p>
+<p><span class="highlight">Answer (c): t_water = 0.676 s or approximately 0.68 seconds</span></p>
+<p><strong>Comparison:</strong> Sound reaches you about 4.3 times faster in water than in air, because it travels 4.3 times faster. The faster speed means the sound covers the same distance in much less time.</p>
+
+<!-- ============== END OF DOCUMENT ============== -->
+
+</body>
+</html>
