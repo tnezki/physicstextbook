@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2 Transverse Waves - Physics Textbook Section</title>
+    
+    <!-- MathJax Configuration - MUST come before content -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #333;
+            background-color: #ffffff;
+            padding: 0.5in;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        /* Header Styling */
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px 8px;
+            margin: 0.15in 0 0.1in 0;
+            border-radius: 2px;
+        }
+        
+        .title-page h1 {
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px 8px;
+            margin: 0.15in 0 0.08in 0;
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.1in 0 0.06in 0;
+        }
+        
+        p {
+            margin: 0.05in 0;
+            text-align: justify;
+        }
+        
+        /* Box Styling */
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.1in 0;
+            border-radius: 2px;
+        }
+        
+        .learning-objectives ul {
+            list-style-type: none;
+            margin-left: 0.2in;
+        }
+        
+        .learning-objectives li {
+            margin: 0.04in 0;
+            padding-left: 0.2in;
+        }
+        
+        .learning-objectives li:before {
+            content: "• ";
+            font-weight: bold;
+            margin-right: 0.06in;
+        }
+        
+        .vocabulary-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+            border-left: 3px solid #666;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+            border-left: 3px solid #ff9900;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 2px solid #333;
+            border-radius: 2px;
+            text-align: center;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            padding: 0.08in;
+            margin: 0.08in 0;
+            border-left: 4px solid #cc6600;
+            border-radius: 2px;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        /* Answer Space Styling */
+        .answer-space {
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0 0.1in 0;
+            min-height: 1.2in;
+        }
+        
+        .short-answer-space {
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+            min-height: 0.8in;
+        }
+        
+        /* List Styling */
+        ul, ol {
+            margin-left: 0.2in;
+            margin: 0.05in 0 0.05in 0.2in;
+        }
+        
+        li {
+            margin: 0.03in 0;
+        }
+        
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.1in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            text-align: left;
+            border: 1px solid #333;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* Problem Numbering */
+        .problem-number {
+            font-weight: bold;
+            color: #000033;
+            display: inline-block;
+            margin-right: 0.08in;
+        }
+        
+        /* Highlight */
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        /* Diagram */
+        svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+            display: block;
+        }
+        
+        .diagram-caption {
+            text-align: center;
+            font-size: 14px;
+            margin: 0.04in 0 0.06in 0;
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* Page Break */
+        .page-break {
+            page-break-after: always;
+            margin-bottom: 0.3in;
+        }
+        
+        /* Summary List */
+        .summary-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .summary-list li {
+            margin: 0.06in 0 0.06in 0.2in;
+            padding-left: 0.15in;
+        }
+        
+        .summary-list li:before {
+            content: "✓ ";
+            font-weight: bold;
+            margin-right: 0.06in;
+            color: #0066cc;
+        }
+        
+        /* Answer Key Styling */
+        .answer-key-section {
+            background-color: #f0f0f0;
+            padding: 0.1in;
+            margin-top: 0.1in;
+            border-radius: 2px;
+        }
+        
+        .answer-key-item {
+            margin: 0.08in 0;
+            padding: 0.06in;
+            background-color: white;
+            border-left: 3px solid #0066cc;
+            padding-left: 0.08in;
+        }
+        
+        .correct-answer {
+            font-weight: bold;
+            color: #006633;
+            background-color: #ffffcc;
+            padding: 2px 4px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 5.2</div>
+    <h1>Transverse Waves</h1>
+    
+    <!-- Ocean Wave Illustration -->
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="margin: 0.2in 0;">
+        <defs>
+            <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#E0F2FF;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#1E90FF;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00008B;stop-opacity:1" />
+            </linearGradient>
+            <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+            </filter>
+        </defs>
+        
+        <!-- Sky background -->
+        <rect width="600" height="160" fill="url(#skyGrad)"/>
+        
+        <!-- Ocean background -->
+        <rect y="160" width="600" height="140" fill="url(#oceanGrad)"/>
+        
+        <!-- Sun -->
+        <circle cx="520" cy="40" r="30" fill="#FFD700" opacity="0.9"/>
+        
+        <!-- Large background waves -->
+        <path d="M 0 160 Q 75 120, 150 160 T 300 160 T 450 160 T 600 160" 
+              stroke="#4169E1" stroke-width="2" fill="none" opacity="0.5"/>
+        
+        <!-- Middle waves -->
+        <path d="M 0 180 Q 80 130, 160 180 T 320 180 T 480 180 T 640 180" 
+              stroke="#1E90FF" stroke-width="2.5" fill="none" opacity="0.7"/>
+        
+        <!-- Large prominent wave (main focus) -->
+        <path d="M -100 200 Q 50 80, 150 200 T 350 200 T 550 200 T 750 200" 
+              stroke="#000080" stroke-width="4" fill="none" filter="url(#shadow)"/>
+        
+        <!-- Wave fill -->
+        <path d="M -100 200 Q 50 80, 150 200 T 350 200 T 550 200 T 750 200 L 750 300 L -100 300 Z" 
+              fill="#003366" opacity="0.3"/>
+        
+        <!-- Foam/whitecaps on main wave -->
+        <ellipse cx="50" cy="90" rx="25" ry="15" fill="white" opacity="0.8"/>
+        <ellipse cx="80" cy="75" rx="20" ry="12" fill="white" opacity="0.7"/>
+        <ellipse cx="120" cy="95" rx="22" ry="14" fill="white" opacity="0.75"/>
+        
+        <!-- Foam on second crest -->
+        <ellipse cx="250" cy="90" rx="25" ry="15" fill="white" opacity="0.8"/>
+        <ellipse cx="280" cy="75" rx="20" ry="12" fill="white" opacity="0.7"/>
+        <ellipse cx="320" cy="95" rx="22" ry="14" fill="white" opacity="0.75"/>
+        
+        <!-- Direction indicator -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300" />
+            </marker>
+        </defs>
+        <line x1="80" y1="260" x2="480" y2="260" stroke="#CC3300" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <text x="280" y="280" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Wave Energy Direction</text>
+    </svg>
+    
+    <p>Discover how energy travels through space and matter while particles vibrate perpendicular to the direction of motion. From ocean waves crashing on beaches to light waves traveling through the universe, transverse waves are fundamental to understanding the physical world around us.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <ul>
+        <li>I can explain the difference between mechanical and electromagnetic waves and describe how energy transfer occurs in transverse waves.</li>
+        <li>I can identify and define the key characteristics of waves including amplitude, wavelength, frequency, period, and velocity.</li>
+        <li>I can calculate wave properties using the wave equation and frequency-period relationships.</li>
+        <li>I can apply wave concepts to real-world phenomena and explain how waves transmit energy without permanently displacing the medium.</li>
+    </ul>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<h2>Hook: The Power of Waves</h2>
+
+<p>Imagine standing at the ocean shoreline during a massive storm. Waves tower above you, crashing with tremendous force that can move boulders and reshape coastlines. Yet if you watch a leaf floating on the water's surface, you'll notice something remarkable: as the waves pass by, the leaf bobs up and down but doesn't travel toward the shore with the waves. The <span class="vocab-term">energy</span> in the wave moves across the ocean, but the water itself—and everything floating on it—only vibrates in place.</p>
+
+<h2>Real-World Relevance</h2>
+
+<p>Understanding transverse waves is essential for explaining countless phenomena in daily life. When you pluck a guitar string, you create transverse waves that produce sound. Light from the sun reaches Earth as transverse electromagnetic waves. The seismic waves from earthquakes are partially transverse, helping geologists study Earth's interior. Even the radio waves that carry music to your car are transverse waves. Medical ultrasound uses waves similar to those in the ocean to image babies and detect tumors. Mastering wave concepts opens doors to understanding energy transfer in the universe.</p>
+
+<h2>Historical Context</h2>
+
+<p>The study of waves has fascinated scientists for centuries. <span class="vocab-term">Christiaan Huygens</span>, a Dutch mathematician and physicist in the 1600s, proposed that light travels as waves—a revolutionary idea at the time. His wave theory explained phenomena like refraction and diffraction that could not be explained by the competing particle theory. Later, <span class="vocab-term">Augustin-Jean Fresnel</span> provided mathematical descriptions of wave behavior in the early 1800s, establishing the field of wave optics. Today, the <span class="vocab-term">wave equation</span> discovered by these pioneers remains one of the most important equations in all of physics.</p>
+
+<h2>Connection to Prior Knowledge</h2>
+
+<p>You've already learned about motion, velocity, and energy. In this section, you'll apply those concepts to understand how waves transmit energy through different materials. Just as moving objects have kinetic energy and changing their speed requires force and acceleration, waves carry energy and change their properties based on the medium they travel through. The mathematical tools you've developed for analyzing motion will help you calculate wave properties with precision.</p>
+
+<div class="page-break"></div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>Understanding Waves and Energy Transfer</h1>
+
+<h2>Types of Waves: Mechanical vs. Electromagnetic</h2>
+
+<p><span class="vocab-term">Mechanical waves</span> require a material <span class="vocab-term">medium</span> (such as water, air, rope, or Earth material) to travel. When you create a wave in a bathtub, the water acts as the medium. When sound travels from a speaker to your ear, air is the medium. Without a medium, mechanical waves cannot exist.</p>
+
+<p><span class="vocab-term">Electromagnetic waves</span>, on the other hand, do not require a material medium. Light, radio waves, X-rays, and microwaves are all electromagnetic waves that can travel through the vacuum of space. This is why we can see light from distant stars even though space contains almost no air.</p>
+
+<p>This section focuses on <span class="vocab-term">mechanical waves</span>, specifically a type called <span class="vocab-term">transverse waves</span>. In all mechanical waves, energy moves from one location to another, but here's the key insight: <span class="highlight">the medium itself only vibrates back and forth in place and does not travel with the wave</span>.</p>
+
+<h2>What are Transverse Waves?</h2>
+
+<p>In a <span class="vocab-term">transverse wave</span>, the movement of the medium is perpendicular (at right angles) to the direction that energy travels. Imagine a person holding one end of a rope while the other end is tied to a tree. When the person jerks their hand up and down, they create waves that travel horizontally down the rope toward the tree. The rope itself moves up and down (perpendicular to the direction of wave travel). This is the defining characteristic of a transverse wave: <span class="highlight">medium motion is perpendicular to energy motion</span>.</p>
+
+<div class="real-world-box">
+    <h3>Testing with Tape</h3>
+    <p>Here's a classic experiment to prove that the medium doesn't travel with the wave: stick a small piece of tape on a rope that's creating waves. Watch what happens as waves pass the tape. The tape bobs up and down but doesn't slide along the rope toward the tree. The energy travels down the rope, but the rope (and the tape) stays in the same horizontal location. This demonstrates that wave energy and medium displacement are different things.</p>
+</div>
+
+<svg width="100%" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#cc6600" />
+        </marker>
+    </defs>
+    
+    <!-- Ground line -->
+    <line x1="50" y1="100" x2="550" y2="100" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Wave -->
+    <path d="M 50 100 Q 80 60, 110 100 T 170 100 T 230 100 T 290 100 T 350 100 T 410 100 T 470 100 T 530 100" 
+          stroke="#0066cc" stroke-width="3" fill="none"/>
+    
+    <!-- Energy direction arrow -->
+    <defs>
+        <marker id="arrow-energy" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#cc6600" />
+        </marker>
+    </defs>
+    <line x1="50" y1="140" x2="520" y2="140" stroke="#cc6600" stroke-width="2" marker-end="url(#arrow-energy)"/>
+    <text x="290" y="160" font-size="14" text-anchor="middle" fill="#cc6600"><tspan font-weight="bold">Energy travels horizontally</tspan></text>
+    
+    <!-- Medium motion arrow -->
+    <defs>
+        <marker id="arrow-medium" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#006633" />
+        </marker>
+    </defs>
+    <line x1="140" y1="60" x2="140" y2="135" stroke="#006633" stroke-width="2" marker-end="url(#arrow-medium)"/>
+    <text x="140" y="50" font-size="14" text-anchor="middle" fill="#006633"><tspan font-weight="bold">Medium moves vertically</tspan></text>
+    
+    <!-- Point particle -->
+    <circle cx="140" cy="100" r="6" fill="#cc0000"/>
+</svg>
+<p class="diagram-caption"><strong>Figure 5.2.1:</strong> In a transverse wave, energy travels horizontally while the medium (rope) vibrates vertically. A particle (red dot) at a fixed position only moves up and down, not along the direction of wave travel.</p>
+
+<h2>Key Wave Characteristics</h2>
+
+<p>Scientists describe waves using five key measurements. Understanding these quantities allows you to completely characterize any transverse wave.</p>
+
+<h3>Amplitude</h3>
+
+<p>The <span class="vocab-term">amplitude</span> of a wave is the maximum displacement of the medium from its undisturbed (equilibrium) position. Think of it as how far above or below the resting position the wave goes. For a rope wave, if the rope normally lies at position zero, and the highest point of the wave reaches 5 cm above that position, then the amplitude is 5 cm. A larger amplitude means more violent wave motion and more energy in the wave.</p>
+
+<h3>Wavelength</h3>
+
+<p>The <span class="vocab-term">wavelength</span> ($\lambda$, the Greek letter lambda) is the distance between two consecutive points that are in the same state of vibration. You can measure wavelength from crest to crest (peak to peak), from trough to trough (valley to valley), or from any point on one wave to the identical point on the next wave. For ocean waves, wavelength might be 15 meters—meaning every 15 meters along the ocean, you find another crest. Shorter wavelengths mean more waves packed into the same distance.</p>
+
+<h3>Period</h3>
+
+<p>The <span class="vocab-term">period</span> ($T$) is the time required for one complete wave to pass a given point. Imagine standing on a beach and timing how long it takes for one complete wave cycle: from the moment a crest passes you until the next crest reaches you. If that time is 10 seconds, the period is 10 seconds. Period is measured in seconds (s).</p>
+
+<h3>Frequency</h3>
+
+<p>The <span class="vocab-term">frequency</span> ($f$) is the number of complete waves that pass a point in one second. If 5 waves pass your position in one second, the frequency is 5 waves per second. The unit of frequency is the <span class="vocab-term">Hertz</span> (Hz), which means "waves per second" or simply $\text{s}^{-1}$. Frequency and period are reciprocals of each other:</p>
+
+<div class="formula-box">
+$$f = \frac{1}{T} \quad \text{and} \quad T = \frac{1}{f}$$
+</div>
+
+<p>If a wave has a period of 0.5 seconds, its frequency is $f = 1/0.5 = 2$ Hz, meaning 2 complete waves pass any point each second.</p>
+
+<h3>Wave Velocity</h3>
+
+<p>The <span class="vocab-term">wave velocity</span> (sometimes called wave speed) is how fast the wave pattern travels through the medium. This is <span class="highlight">different from the velocity of the medium itself</span>. The water particles in an ocean wave move up and down but don't travel with the wave. However, the wave pattern (the crests and troughs) moves across the ocean at a definite speed.</p>
+
+<p>To find wave velocity, consider that in one complete period ($T$), one entire wavelength ($\lambda$) passes a given point. Since velocity equals distance divided by time:</p>
+
+<div class="formula-box">
+$$v = \frac{\lambda}{T}$$
+</div>
+
+<p>We can also express this using frequency, since $f = 1/T$:</p>
+
+<div class="formula-box">
+$$v = \lambda f$$
+</div>
+
+<p>This is the fundamental <span class="vocab-term">wave equation</span>. It tells us that wave velocity equals wavelength times frequency. Importantly, for waves in a given medium, the velocity is constant. If you increase the frequency, the wavelength must decrease proportionally to keep velocity constant.</p>
+
+<div class="info-box">
+    <h3>Common Misconception</h3>
+    <p><strong>Wrong:</strong> "Waves with higher frequency travel faster."</p>
+    <p><strong>Correct:</strong> In a given medium, all waves travel at the same speed regardless of frequency. Higher frequency waves simply have shorter wavelengths. The product $\lambda f$ always equals the constant wave velocity for that medium.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h2>Example 1: Finding Period from Frequency</h2>
+    
+    <p><strong>Given:</strong> A wave has a frequency of 262 Hz (the frequency of the musical note Middle C)</p>
+    <p><strong>Find:</strong> What is the period of this wave?</p>
+    
+    <h3>Solution:</h3>
+    
+    <p><strong>Step 1:</strong> Identify the relationship between frequency and period.</p>
+    <p style="margin-left: 0.2in;">The period and frequency are reciprocals, so $T = \frac{1}{f}$</p>
+    
+    <p><strong>Step 2:</strong> Substitute the given frequency value.</p>
+    <p style="margin-left: 0.2in;">$$T = \frac{1}{f} = \frac{1}{262 \text{ Hz}}$$</p>
+    
+    <p><strong>Step 3:</strong> Calculate and simplify.</p>
+    <p style="margin-left: 0.2in;">$$T = 0.00382 \text{ s} = 3.82 \times 10^{-3} \text{ s}$$</p>
+    
+    <p><strong>Answer:</strong> The period is <span class="correct-answer">0.00382 s or 3.82 milliseconds</span>. This means it takes about 3.8 thousandths of a second for one complete wave vibration.</p>
+    
+    <div class="info-box">
+        <p><strong>Why this matters:</strong> Middle C vibrates very quickly—more than 260 times per second! Our ears perceive this rapid vibration as a specific musical pitch. Higher frequencies (like high notes) have shorter periods and vibrate even faster.</p>
+    </div>
+</div>
+
+<div class="example-box">
+    <h2>Example 2: Calculating Wave Velocity</h2>
+    
+    <p><strong>Given:</strong> A water wave has a frequency of 0.5 Hz and a wavelength of 4.0 m</p>
+    <p><strong>Find:</strong> What is the velocity of the wave?</p>
+    
+    <h3>Solution:</h3>
+    
+    <p><strong>Step 1:</strong> Identify which wave equation to use.</p>
+    <p style="margin-left: 0.2in;">Since we know frequency and wavelength, use: $v = \lambda f$</p>
+    
+    <p><strong>Step 2:</strong> Substitute the given values with proper units.</p>
+    <p style="margin-left: 0.2in;">$$v = \lambda f = (4.0 \text{ m})(0.5 \text{ Hz})$$</p>
+    
+    <p><strong>Step 3:</strong> Calculate the result.</p>
+    <p style="margin-left: 0.2in;">$$v = 2.0 \text{ m/s}$$</p>
+    
+    <p><strong>Answer:</strong> The wave velocity is <span class="correct-answer">2.0 m/s</span>. The wave pattern moves across the water surface at 2 meters every second.</p>
+    
+    <div class="info-box">
+        <p><strong>Physical interpretation:</strong> This is a slow ocean wave (typical gentle waves move 1-3 m/s). The frequency is low (only half a wave per second), but each wave is long (4 meters), so the overall wave speed is moderate.</p>
+    </div>
+</div>
+
+<div class="example-box">
+    <h2>Example 3: Multi-Step Problem - Finding All Wave Properties</h2>
+    
+    <p><strong>Given:</strong> A transverse wave traveling along a string has a wavelength of 0.60 m and a period of 0.40 s</p>
+    <p><strong>Find:</strong> (a) frequency, (b) velocity, and (c) the amplitude if the maximum displacement is 0.08 m</p>
+    
+    <h3>Solution:</h3>
+    
+    <p><strong>Part (a): Find the frequency</strong></p>
+    
+    <p><strong>Step 1:</strong> Use the reciprocal relationship between period and frequency.</p>
+    <p style="margin-left: 0.2in;">$$f = \frac{1}{T} = \frac{1}{0.40 \text{ s}}$$</p>
+    
+    <p><strong>Step 2:</strong> Calculate frequency.</p>
+    <p style="margin-left: 0.2in;">$$f = 2.5 \text{ Hz}$$</p>
+    
+    <p><strong>Part (b): Find the velocity</strong></p>
+    
+    <p><strong>Step 1:</strong> Use the wave equation with the known wavelength and period.</p>
+    <p style="margin-left: 0.2in;">$$v = \frac{\lambda}{T} = \frac{0.60 \text{ m}}{0.40 \text{ s}}$$</p>
+    
+    <p><strong>Step 2:</strong> Calculate velocity.</p>
+    <p style="margin-left: 0.2in;">$$v = 1.5 \text{ m/s}$$</p>
+    
+    <p><strong>Step 3:</strong> Verify using the alternative wave equation.</p>
+    <p style="margin-left: 0.2in;">$$v = \lambda f = (0.60 \text{ m})(2.5 \text{ Hz}) = 1.5 \text{ m/s}$$ ✓</p>
+    
+    <p><strong>Part (c): Identify the amplitude</strong></p>
+    
+    <p><strong>Step 1:</strong> Recall that amplitude is the maximum displacement from equilibrium.</p>
+    <p style="margin-left: 0.2in;">The problem states the maximum displacement is 0.08 m, so the amplitude is 0.08 m.</p>
+    
+    <p><strong>Answer:</strong> 
+    <br/>(a) Frequency = <span class="correct-answer">2.5 Hz</span>
+    <br/>(b) Velocity = <span class="correct-answer">1.5 m/s</span>
+    <br/>(c) Amplitude = <span class="correct-answer">0.08 m or 8.0 cm</span>
+    </p>
+    
+    <div class="info-box">
+        <p><strong>Note on verification:</strong> A good problem-solving strategy is to verify your answer using different approaches. Both methods of calculating velocity ($v = \lambda/T$ and $v = \lambda f$) gave the same answer, which confirms our calculations are correct.</p>
+    </div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul class="summary-list">
+    <li><span class="vocab-term">Mechanical waves</span> require a material medium to propagate; <span class="vocab-term">electromagnetic waves</span> do not.</li>
+    <li>In a <span class="vocab-term">transverse wave</span>, the medium vibrates perpendicular to the direction of energy transfer.</li>
+    <li>The <span class="vocab-term">medium does not travel</span> with the wave; it only oscillates in place, as demonstrated by the tape experiment.</li>
+    <li><span class="vocab-term">Amplitude</span> is the maximum displacement of the medium from its equilibrium position and indicates wave energy.</li>
+    <li><span class="vocab-term">Wavelength</span> ($\lambda$) is the distance between consecutive identical points on adjacent waves, measured in meters.</li>
+    <li><span class="vocab-term">Period</span> ($T$) is the time for one complete wave cycle, measured in seconds.</li>
+    <li><span class="vocab-term">Frequency</span> ($f$) is the number of waves per second, measured in Hertz (Hz), and equals the reciprocal of period: $f = 1/T$.</li>
+    <li>The <span class="vocab-term">wave equation</span> $v = \lambda f$ (or $v = \lambda/T$) relates wave speed, wavelength, and frequency; in a given medium, wave speed is constant.</li>
+    <li>Wave velocity describes energy transfer speed; it is <span class="highlight">different from</span> the velocity of the medium particles.</li>
+    <li>Understanding wave properties is essential for explaining sound, light, seismic waves, and countless other physical phenomena.</li>
+</ul>
+
+<div class="page-break"></div>
+
+<!-- ============== KEY EQUATIONS ============== -->
+<h1>Key Equations</h1>
+
+<table>
+    <tr>
+        <th>Equation Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Frequency-Period Relationship</td>
+        <td>$$f = \frac{1}{T}$$</td>
+        <td>$f$ = frequency (Hz or s$^{-1}$)<br/>$T$ = period (s)</td>
+    </tr>
+    <tr>
+        <td>Wave Equation (using wavelength and frequency)</td>
+        <td>$$v = \lambda f$$</td>
+        <td>$v$ = wave velocity (m/s)<br/>$\lambda$ = wavelength (m)<br/>$f$ = frequency (Hz)</td>
+    </tr>
+    <tr>
+        <td>Wave Equation (using wavelength and period)</td>
+        <td>$$v = \frac{\lambda}{T}$$</td>
+        <td>$v$ = wave velocity (m/s)<br/>$\lambda$ = wavelength (m)<br/>$T$ = period (s)</td>
+    </tr>
+    <tr>
+        <td>Period from Frequency</td>
+        <td>$$T = \frac{1}{f}$$</td>
+        <td>$T$ = period (s)<br/>$f$ = frequency (Hz)</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<h2>Conceptual Questions (1-4)</h2>
+
+<p><span class="problem-number">1.</span> A boy creates a transverse wave by shaking one end of a rope while the other end is held fixed. Explain why a piece of tape attached to the rope does not move toward the fixed end, even though waves are traveling in that direction.</p>
+
+<div class="short-answer-space"></div>
+
+<p><span class="problem-number">2.</span> Describe the difference between the velocity of a wave traveling along a rope and the velocity of the rope particles as the wave passes through. Use an example to illustrate your explanation.</p>
+
+<div class="short-answer-space"></div>
+
+<p><span class="problem-number">3.</span> If a wave on the ocean has a period of 8 seconds, what does this tell you about how frequently the waves reach the shore? How many waves reach the shore in one minute?</p>
+
+<div class="short-answer-space"></div>
+
+<p><span class="problem-number">4.</span> Two transverse waves travel through the same medium. Wave A has a frequency of 10 Hz and Wave B has a frequency of 20 Hz. Which wave has the longer wavelength? Explain your reasoning using the wave equation.</p>
+
+<div class="short-answer-space"></div>
+
+<h2>Calculation Problems (5-6)</h2>
+
+<p><span class="problem-number">5.</span> A transverse wave on a string has a frequency of 5.0 Hz. Calculate:</p>
+<ul style="margin-left: 0.3in;">
+    <li>(a) the period of the wave</li>
+    <li>(b) how many complete wave cycles occur in 2.0 seconds</li>
+</ul>
+
+<div class="answer-space"></div>
+
+<p><span class="problem-number">6.</span> A water wave has a wavelength of 2.5 m and a period of 0.50 s. Calculate the velocity of the wave.</p>
+
+<div class="answer-space"></div>
+
+<h2>Multi-Step Problems (7-8)</h2>
+
+<p><span class="problem-number">7.</span> A sound wave has a frequency of 440 Hz (the note A on a musical scale). The wavelength of this sound wave in air is 0.78 m. Calculate:</p>
+<ul style="margin-left: 0.3in;">
+    <li>(a) the period of the wave</li>
+    <li>(b) the velocity of the wave in air</li>
+    <li>(c) if this same frequency sound travels through water where the velocity is 1480 m/s, what is the wavelength in water?</li>
+</ul>
+
+<div class="answer-space"></div>
+
+<p><span class="problem-number">8.</span> A transverse wave on a string with an amplitude of 0.12 m has a velocity of 2.0 m/s. If the wave completes 4.0 cycles in 3.0 seconds, calculate:</p>
+<ul style="margin-left: 0.3in;">
+    <li>(a) the frequency of the wave</li>
+    <li>(b) the period of the wave</li>
+    <li>(c) the wavelength</li>
+    <li>(d) Explain why the amplitude does not appear in any of the calculations for (a), (b), or (c).</li>
+</ul>
+
+<div class="answer-space"></div>
+
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key for Instructors</h1>
+
+<div class="answer-key-section">
+    
+    <h2>Conceptual Questions</h2>
+    
+    <div class="answer-key-item">
+        <p><strong>Question 1:</strong> Why doesn't the tape move toward the fixed end?</p>
+        <p><strong>Answer:</strong> <span class="correct-answer">The tape does not move toward the fixed end because in a transverse wave, the medium (rope) only vibrates perpendicular to the direction of wave travel. While the wave pattern (crests and troughs) propagates along the rope, the actual rope particles—including the tape—only move up and down. After the wave passes, the tape returns to its original position along the length of the rope. The wave energy travels down the rope, but the rope itself does not.</span></p>
+    </div>
+    
+    <div class="answer-key-item">
+        <p><strong>Question 2:</strong> Difference between wave velocity and particle velocity.</p>
+        <p><strong>Answer:</strong> <span class="correct-answer">Wave velocity is how fast the wave pattern (crests and troughs) moves through the medium. Particle velocity is how fast the medium particles actually move as they vibrate up and down. For example, on the ocean, the wave pattern may travel at 5 m/s, but a water particle bobs up and down with a different velocity. The wave velocity is constant for a given medium, while particle velocity changes continuously as particles oscillate back and forth.</span></p>
+    </div>
+    
+    <div class="answer-key-item">
+        <p><strong>Question 3:</strong> Period of 8 seconds and waves in one minute.</p>
+        <p><strong>Answer:</strong> <span class="correct-answer">A period of 8 seconds means one complete wave takes 8 seconds to pass any point. Therefore, the frequency is $f = 1/T = 1/8 = 0.125$ Hz. In one minute (60 seconds), the number of waves is: $(0.125 \text{ Hz})(60 \text{ s}) = 7.5$ waves, or approximately 8 waves reach the shore each minute.</span></p>
+    </div>
+    
+    <div class="answer-key-item">
+        <p><strong>Question 4:</strong> Which wave has longer wavelength?</p>
+        <p><strong>Answer:</strong> <span class="correct-answer">Wave A (10 Hz) has the longer wavelength. From the wave equation $v = \lambda f$, we can rearrange to get $\lambda = v/f$. Since both waves travel through the same medium, $v$ is the same for both. Because Wave B has twice the frequency of Wave A, and wavelength is inversely proportional to frequency, Wave B must have half the wavelength of Wave A. Therefore, Wave A has the longer wavelength.</span></p>
+    </div>
+    
+    <h2>Calculation Problems</h2>
+    
+    <div class="answer-key-item">
+        <p><strong>Question 5: Period and wave cycles</strong></p>
+        <p><strong>Given:</strong> $f = 5.0$ Hz</p>
+        <p><strong>(a) Find the period:</strong></p>
+        <p style="margin-left: 0.2in;">$$T = \frac{1}{f} = \frac{1}{5.0 \text{ Hz}} = \boxed{0.20 \text{ s}}$$</p>
+        <p><strong>(b) Number of cycles in 2.0 seconds:</strong></p>
+        <p style="margin-left: 0.2in;">$$\text{Number of cycles} = f \times t = (5.0 \text{ Hz})(2.0 \text{ s}) = \boxed{10 \text{ cycles}}$$</p>
+    </div>
+    
+    <div class="answer-key-item">
+        <p><strong>Question 6: Wave velocity</strong></p>
+        <p><strong>Given:</strong> $\lambda = 2.5$ m, $T = 0.50$ s</p>
+        <p><strong>Solution:</strong></p>
+        <p style="margin-left: 0.2in;">$$v = \frac{\lambda}{T} = \frac{2.5 \text{ m}}{0.50 \text{ s}} = \boxed{5.0 \text{ m/s}}$$</p>
+    </div>
+    
+    <h2>Multi-Step Problems</h2>
+    
+    <div class="answer-key-item">
+        <p><strong>Question 7: Sound wave properties in air and water</strong></p>
+        <p><strong>Given:</strong> $f = 440$ Hz, $\lambda_{\text{air}} = 0.78$ m, $v_{\text{water}} = 1480$ m/s</p>
+        <p><strong>(a) Period in air:</strong></p>
+        <p style="margin-left: 0.2in;">$$T = \frac{1}{f} = \frac{1}{440 \text{ Hz}} = \boxed{2.27 \times 10^{-3} \text{ s or 2.27 ms}}$$</p>
+        <p><strong>(b) Velocity in air:</strong></p>
+        <p style="margin-left: 0.2in;">$$v = \lambda f = (0.78 \text{ m})(440 \text{ Hz}) = \boxed{343.2 \text{ m/s} \approx 343 \text{ m/s}}$$</p>
+        <p><strong>(c) Wavelength in water:</strong></p>
+        <p style="margin-left: 0.2in;">Since frequency remains constant when sound enters a different medium:</p>
+        <p style="margin-left: 0.2in;">$$\lambda_{\text{water}} = \frac{v_{\text{water}}}{f} = \frac{1480 \text{ m/s}}{440 \text{ Hz}} = \boxed{3.36 \text{ m}}$$</p>
+        <p style="margin-left: 0.2in;"><em>The wavelength increases in water because sound travels faster there, while frequency stays constant.</em></p>
+    </div>
+    
+    <div class="answer-key-item">
+        <p><strong>Question 8: Complete wave analysis</strong></p>
+        <p><strong>Given:</strong> $A = 0.12$ m, $v = 2.0$ m/s, 4.0 cycles in 3.0 seconds</p>
+        <p><strong>(a) Frequency:</strong></p>
+        <p style="margin-left: 0.2in;">$$f = \frac{\text{number of cycles}}{\text{time}} = \frac{4.0 \text{ cycles}}{3.0 \text{ s}} = \boxed{\frac{4}{3} \text{ Hz} \approx 1.33 \text{ Hz}}$$</p>
+        <p><strong>(b) Period:</strong></p>
+        <p style="margin-left: 0.2in;">$$T = \frac{1}{f} = \frac{1}{4/3} = \boxed{\frac{3}{4} \text{ s} = 0.75 \text{ s}}$$</p>
+        <p><strong>(c) Wavelength:</strong></p>
+        <p style="margin-left: 0.2in;">$$\lambda = \frac{v}{f} = \frac{2.0 \text{ m/s}}{4/3 \text{ Hz}} = 2.0 \times \frac{3}{4} = \boxed{1.5 \text{ m}}$$</p>
+        <p><strong>(d) Why amplitude doesn't appear in calculations:</strong></p>
+        <p style="margin-left: 0.2in;"><span class="correct-answer">Amplitude does not affect frequency, period, or wavelength because these properties depend only on how the wave is created and the properties of the medium. Amplitude only describes how much the medium is displaced (the "intensity" of the wave). The wave equation $v = \lambda f$ is independent of amplitude. A louder sound has greater amplitude but the same frequency and wavelength as a quieter sound of the same pitch.</span></p>
+    </div>
+    
+</div>
+
+</body>
+</html>
