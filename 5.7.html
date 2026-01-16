@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 5.7: Speed of Sound</title>
+    
+    <!-- MathJax Configuration - MUST come before any math content -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #000000;
+            background-color: #ffffff;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* ============ TITLE PAGE ============ */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        /* ============ GENERAL STYLING ============ */
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.15in 0 0.08in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.1in 0 0.08in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000033;
+            margin: 0.1in 0 0.06in 0;
+        }
+        
+        p {
+            margin: 0.05in 0;
+            text-align: justify;
+        }
+        
+        /* ============ LEARNING OBJECTIVES ============ */
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .learning-objectives h2 {
+            background-color: transparent;
+            color: #000033;
+            padding: 0;
+            margin-bottom: 0.08in;
+        }
+        
+        .learning-objectives ul {
+            margin-left: 0.2in;
+            list-style-type: none;
+        }
+        
+        .learning-objectives li {
+            margin: 0.05in 0;
+            padding-left: 0.15in;
+        }
+        
+        .learning-objectives li:before {
+            content: "☐ ";
+            margin-right: 0.05in;
+            font-weight: bold;
+        }
+        
+        /* ============ CONTENT BOXES ============ */
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border-left: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #333333;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .box-title {
+            font-weight: bold;
+            color: #000033;
+            margin-bottom: 0.05in;
+        }
+        
+        /* ============ TABLES ============ */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.08in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 0.05in;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            border: 1px solid #cccccc;
+            padding: 0.05in;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        /* ============ LISTS ============ */
+        ul, ol {
+            margin-left: 0.2in;
+            margin: 0.06in 0;
+        }
+        
+        li {
+            margin: 0.04in 0;
+        }
+        
+        /* ============ ANSWER SPACES ============ */
+        .answer-space-full {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .answer-space-short {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        /* ============ PRACTICE PROBLEMS ============ */
+        .practice-section {
+            page-break-inside: avoid;
+            margin: 0.08in 0;
+        }
+        
+        .problem-number {
+            font-weight: bold;
+            margin-bottom: 0.04in;
+        }
+        
+        /* ============ SVG DIAGRAMS ============ */
+        svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+            display: block;
+        }
+        
+        .diagram-label {
+            font-size: 13px;
+            text-align: center;
+            font-style: italic;
+            color: #666666;
+            margin: 0.04in 0;
+        }
+        
+        /* ============ PAGE BREAKS ============ */
+        .page-break {
+            page-break-after: always;
+            margin-bottom: 0.3in;
+        }
+        
+        /* ============ HIGHLIGHTS ============ */
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        /* ============ ANSWER KEY ============ */
+        .answer-key-section {
+            background-color: #f0f0f0;
+            padding: 0.1in;
+            margin-top: 0.3in;
+            border: 1px solid #cccccc;
+        }
+        
+        .answer-key-item {
+            margin: 0.08in 0;
+            page-break-inside: avoid;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 5.7</div>
+    <h1>Speed of Sound</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Storm scene -->
+        <defs>
+            <linearGradient id="stormGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#4a5f7f;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#8a9faf;stop-opacity:1" />
+            </linearGradient>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#cc6600"/>
+            </marker>
+        </defs>
+        
+        <!-- Sky background -->
+        <rect width="600" height="300" fill="url(#stormGradient)"/>
+        
+        <!-- Lightning bolt -->
+        <path d="M 300 20 L 280 80 L 300 100 L 270 160 L 310 180 L 280 260 L 300 300" 
+              stroke="#ffff00" stroke-width="3" fill="none" opacity="0.9"/>
+        <path d="M 300 20 L 280 80 L 300 100 L 270 160 L 310 180 L 280 260 L 300 300" 
+              stroke="#ffffff" stroke-width="1" fill="none" opacity="0.6"/>
+        
+        <!-- Ground/landscape -->
+        <ellipse cx="300" cy="280" rx="200" ry="40" fill="#2d3d4d" opacity="0.7"/>
+        
+        <!-- Sound waves emanating from lightning -->
+        <circle cx="300" cy="200" r="40" fill="none" stroke="#0066cc" stroke-width="2" opacity="0.6"/>
+        <circle cx="300" cy="200" r="70" fill="none" stroke="#0066cc" stroke-width="2" opacity="0.4"/>
+        <circle cx="300" cy="200" r="100" fill="none" stroke="#0066cc" stroke-width="2" opacity="0.2"/>
+        
+        <!-- Light ray (fast) -->
+        <line x1="300" y1="50" x2="450" y2="150" stroke="#ffff99" stroke-width="3" marker-end="url(#arrowhead)" opacity="0.8"/>
+        
+        <!-- Sound wave indicator (slow) -->
+        <line x1="300" y1="250" x2="200" y2="250" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead)" opacity="0.8"/>
+        
+        <!-- Labels -->
+        <text x="480" y="145" font-size="14" fill="#ffff99" font-weight="bold">Light</text>
+        <text x="140" y="245" font-size="14" fill="#0066cc" font-weight="bold">Sound</text>
+        
+        <!-- Caption -->
+        <text x="300" y="290" font-size="13" fill="white" text-anchor="middle" font-style="italic">Lightning and Thunder</text>
+    </svg>
+    
+    <p>Have you ever noticed that you see lightning long before you hear thunder? This happens because light travels incredibly fast, while sound moves much more slowly through the air. Understanding how sound travels at different speeds through different materials reveals fascinating physics about waves, energy, and the world around us.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2>Learning Objectives</h2>
+    <ul>
+        <li>I can define the speed of sound and explain how it is measured</li>
+        <li>I can compare the speed of sound in different media and explain why these differences occur</li>
+        <li>I can describe how temperature affects the speed of sound and predict sound speed under various conditions</li>
+        <li>I can calculate distances and times related to sound travel using the speed of sound</li>
+    </ul>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h2>Why Does Sound Travel at Different Speeds?</h2>
+
+<p>Think about what happens when you're at a football stadium and the kicker boots the ball. You see the ball fly through the air long before you hear the "kick" sound. In a thunderstorm, lightning illuminates the sky instantly, but the thunder rumbles several seconds later. These everyday experiences reveal a fundamental truth about physics: <span class="highlight">sound is not instantaneous; it travels at a measurable speed that depends on its surroundings.</span></p>
+
+<p>Unlike light, which can travel through empty space, sound requires a medium—a substance through which the energy can travel. Sound cannot travel through a vacuum. This simple fact explains why sound moves at different speeds through air, water, and solids. Understanding the speed of sound is crucial for many real-world applications, from designing concert halls with proper acoustics to calculating distances to storms, to enabling underwater communication.</p>
+
+<div class="real-world-box">
+    <div class="box-title">Real-World Connection: Measuring Storm Distance</div>
+    <p>When you observe a thunderstorm, you can estimate its distance by counting the seconds between the lightning flash and the thunder rumble. Since light reaches you almost instantly, the time delay is mainly due to sound's slower travel speed. For every 5 seconds you count, the storm is approximately 1 mile away (or about 3 seconds per kilometer). This practical application of sound speed has helped people gauge storm danger for centuries.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h2>What Is the Speed of Sound?</h2>
+
+<p><span class="vocab-term">The speed of sound</span> is the distance that sound waves travel in a given amount of time. Like any speed, we measure it in distance per unit time: meters per second (m/s), kilometers per hour (km/h), or feet per second (ft/s).</p>
+
+<p>You've probably heard that the speed of sound is about 343 meters per second. But here's an important detail: <span class="highlight">this value only applies to specific conditions.</span> Specifically, 343 m/s is the speed of sound through <span class="vocab-term">dry air</span> at exactly 20°C (68°F). Under different conditions—different temperatures or different materials—the speed of sound changes significantly. This means we need to think carefully about the conditions whenever we work with sound speed calculations.</p>
+
+<div class="vocab-box">
+    <div class="box-title">Key Terms</div>
+    <p><span class="vocab-term">Speed of sound:</span> The distance sound waves travel per unit time, measured in m/s</p>
+    <p><span class="vocab-term">Medium (plural: media):</span> Any substance or material through which sound waves travel</p>
+    <p><span class="vocab-term">Mechanical wave:</span> A wave that requires a medium to travel; sound is a mechanical wave</p>
+</div>
+
+<h2>Speed of Sound in Different Media</h2>
+
+<p>Sound is a <span class="vocab-term">mechanical wave</span>, which means it requires matter to travel through. The substance through which sound travels is called the <span class="vocab-term">medium</span>. Remarkably, sound travels at vastly different speeds depending on the medium.</p>
+
+<p>Look at the data in the table below. Notice something surprising: sound travels <span class="highlight">fastest through solids, slower through liquids, and slowest through gases.</span> Why? The answer lies in how particles are arranged.</p>
+
+<table>
+    <tr>
+        <th>Medium (at 20°C)</th>
+        <th>Speed of Sound (m/s)</th>
+    </tr>
+    <tr>
+        <td>Dry Air</td>
+        <td>343</td>
+    </tr>
+    <tr>
+        <td>Water</td>
+        <td>1,437</td>
+    </tr>
+    <tr>
+        <td>Wood</td>
+        <td>3,850</td>
+    </tr>
+    <tr>
+        <td>Glass</td>
+        <td>4,540</td>
+    </tr>
+    <tr>
+        <td>Aluminum</td>
+        <td>6,320</td>
+    </tr>
+</table>
+
+<div class="info-box">
+    <div class="box-title">Why Does Sound Travel Faster in Solids?</div>
+    <p>In a solid, atoms and molecules are packed tightly together and held in place by strong forces. When sound energy passes through, it transfers quickly from one particle to the next—like a closely packed crowd passing a message from person to person. In liquids, particles can move more freely, so energy transfer is slower. In gases like air, particles are far apart and move randomly, so sound transfers even more slowly. The <span class="highlight">closer together the particles, the faster sound travels.</span></p>
+</div>
+
+<p>From the table, you can see that sound travels about 4 times faster in water than in air, and about 18 times faster in aluminum than in air. This explains why whales can communicate over enormous distances underwater—sound doesn't lose energy as quickly in water, and it travels much faster.</p>
+
+<div class="real-world-box">
+    <div class="box-title">Application: Underwater Communication</div>
+    <p>Whales and dolphins rely on sound to communicate, navigate, and find food underwater. Because sound travels so quickly and efficiently through water (1,437 m/s), these marine mammals can send and receive messages across vast ocean distances. A whale's call can travel hundreds of miles underwater. Scientists studying ocean acoustics must account for how sound speed changes with water temperature and depth when tracking whale populations.</p>
+</div>
+
+<h2>How Temperature Affects Sound Speed</h2>
+
+<p>Temperature is another crucial factor affecting sound speed. For any given medium, <span class="highlight">higher temperature increases the speed of sound, while lower temperature decreases it.</span></p>
+
+<p>Why? Remember that temperature measures how fast particles are moving. At higher temperatures, particles vibrate more vigorously. When sound waves pass through, faster-moving particles transfer the sound energy to their neighbors more quickly. Conversely, at lower temperatures, particles move sluggishly, and energy transfer becomes slower.</p>
+
+<table>
+    <tr>
+        <th>Temperature (°C)</th>
+        <th>Speed of Sound in Air (m/s)</th>
+    </tr>
+    <tr>
+        <td>0°C (Freezing)</td>
+        <td>331</td>
+    </tr>
+    <tr>
+        <td>20°C (Room Temperature)</td>
+        <td>343</td>
+    </tr>
+    <tr>
+        <td>100°C (Boiling)</td>
+        <td>386</td>
+    </tr>
+</table>
+
+<p>Look at the pattern: for each 1°C temperature increase, sound speed in dry air increases by approximately 0.6 m/s. This relationship is quite regular and predictable. So if you know the temperature, you can calculate the sound speed.</p>
+
+<div class="formula-box">
+    <p><strong>Sound Speed in Air (approximate):</strong></p>
+    <p>$$v = 331 + 0.6T$$</p>
+    <p>where $v$ = speed of sound (m/s) and $T$ = temperature (°C)</p>
+</div>
+
+<div class="info-box">
+    <div class="box-title">Important Misconception Alert!</div>
+    <p>Students often think that sound speed depends on how "loud" a sound is. Not true! A whisper and a shout travel at the same speed. What differs is the <em>amplitude</em> (loudness) of the sound waves, not their speed. A sound's speed depends only on the medium and temperature, not on whether the sound is soft or loud.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h2>Example Problems</h2>
+
+<div class="example-box">
+    <h3>Example 1: Finding Sound Speed in Different Media</h3>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Sound travels through water</li>
+        <li>Medium: water at 20°C</li>
+    </ul>
+    
+    <p><strong>Find:</strong> How many times faster does sound travel in water than in air?</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>Step 1:</strong> Identify the speed of sound in each medium from the table.</p>
+    <ul>
+        <li>Speed of sound in water = 1,437 m/s</li>
+        <li>Speed of sound in air = 343 m/s</li>
+    </ul>
+    
+    <p><strong>Step 2:</strong> Divide the water speed by the air speed to find how many times faster.</p>
+    <p>$$\text{Factor} = \frac{1,437 \text{ m/s}}{343 \text{ m/s}} = 4.19$$</p>
+    
+    <p><strong>Answer:</strong> Sound travels approximately <span class="highlight">4.2 times faster in water than in air.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Calculating Distance from Sound Travel Time</h3>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>You see lightning flash</li>
+        <li>Thunder arrives 4 seconds later</li>
+        <li>Temperature is 20°C (use 343 m/s for sound speed)</li>
+    </ul>
+    
+    <p><strong>Find:</strong> How far away is the lightning strike?</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>Step 1:</strong> Use the relationship between speed, distance, and time.</p>
+    <p>$$\text{speed} = \frac{\text{distance}}{\text{time}}$$</p>
+    <p>Rearranging: $$\text{distance} = \text{speed} \times \text{time}$$</p>
+    
+    <p><strong>Step 2:</strong> Plug in the values.</p>
+    <p>$$d = 343 \text{ m/s} \times 4 \text{ s} = 1,372 \text{ m}$$</p>
+    
+    <p><strong>Step 3:</strong> Convert to kilometers for easier interpretation.</p>
+    <p>$$d = 1,372 \text{ m} = 1.37 \text{ km}$$</p>
+    
+    <p><strong>Answer:</strong> The lightning strike is approximately <span class="highlight">1,372 meters (or 1.37 km) away.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Multi-Step Problem - Sound Speed at Different Temperatures</h3>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>A train whistle sound is measured on a cold winter morning at 0°C</li>
+        <li>The same measurement is taken on a hot summer day at 30°C</li>
+        <li>The distance from the whistle to the observer is 500 meters</li>
+    </ul>
+    
+    <p><strong>Find:</strong> 
+    <ol type="a">
+        <li>The speed of sound at 0°C</li>
+        <li>The speed of sound at 30°C</li>
+        <li>The difference in travel time between the two temperatures</li>
+    </ol>
+    </p>
+    
+    <p><strong>Solution:</strong></p>
+    
+    <p><strong>Part (a): Speed of sound at 0°C</strong></p>
+    <p>Using the formula: $v = 331 + 0.6T$</p>
+    <p>$$v = 331 + 0.6(0) = 331 \text{ m/s}$$</p>
+    
+    <p><strong>Part (b): Speed of sound at 30°C</strong></p>
+    <p>$$v = 331 + 0.6(30) = 331 + 18 = 349 \text{ m/s}$$</p>
+    
+    <p><strong>Part (c): Calculate travel time at each temperature</strong></p>
+    <p>Using: $\text{time} = \frac{\text{distance}}{\text{speed}}$</p>
+    
+    <p>At 0°C:</p>
+    <p>$$t_1 = \frac{500 \text{ m}}{331 \text{ m/s}} = 1.51 \text{ s}$$</p>
+    
+    <p>At 30°C:</p>
+    <p>$$t_2 = \frac{500 \text{ m}}{349 \text{ m/s}} = 1.43 \text{ s}$$</p>
+    
+    <p>Difference in travel time:</p>
+    <p>$$\Delta t = 1.51 - 1.43 = 0.08 \text{ s}$$</p>
+    
+    <p><strong>Answer:</strong> 
+    <ul>
+        <li>(a) Speed at 0°C = <span class="highlight">331 m/s</span></li>
+        <li>(b) Speed at 30°C = <span class="highlight">349 m/s</span></li>
+        <li>(c) The sound arrives <span class="highlight">0.08 seconds faster</span> on the hot day (about 80 milliseconds)</li>
+    </ul>
+    </p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY ============== -->
+<h2>Summary</h2>
+
+<ul>
+    <li><span class="vocab-term">The speed of sound</span> is the distance that sound waves travel per unit time, typically measured in meters per second (m/s)</li>
+    <li>The speed of sound in dry air at 20°C is <span class="highlight">343 m/s</span>, which is standard reference value in physics</li>
+    <li>Sound requires a <span class="vocab-term">medium</span> to travel; it cannot travel through a vacuum</li>
+    <li>Sound travels <span class="highlight">fastest in solids, slower in liquids, and slowest in gases</span> because particle spacing and density affect energy transfer</li>
+    <li>In water, sound travels about 4 times faster than in air; in solids like aluminum, it travels about 18 times faster</li>
+    <li><span class="vocab-term">Temperature dramatically affects sound speed:</span> for each 1°C increase, sound speed in air increases by approximately 0.6 m/s</li>
+    <li>The approximate formula for sound speed in air is: $v = 331 + 0.6T$ (where $T$ is temperature in °C)</li>
+    <li>Practical applications include calculating storm distance (thunder delay), underwater communication, and designing acoustic spaces</li>
+    <li>The loudness (amplitude) of sound does not affect its speed—whispers and shouts travel at the same speed</li>
+    <li>Understanding sound speed requires considering both the medium and the temperature conditions</li>
+</ul>
+
+<h2>Key Equations</h2>
+
+<table>
+    <tr>
+        <th>Equation Name</th>
+        <th>Equation</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Speed, Distance, and Time</td>
+        <td>$$v = \frac{d}{t}$$</td>
+        <td>$v$ = speed (m/s); $d$ = distance (m); $t$ = time (s)</td>
+    </tr>
+    <tr>
+        <td>Sound Speed in Air (Formula)</td>
+        <td>$$v = 331 + 0.6T$$</td>
+        <td>$v$ = speed (m/s); $T$ = temperature (°C)</td>
+    </tr>
+    <tr>
+        <td>Distance from Speed and Time</td>
+        <td>$$d = v \times t$$</td>
+        <td>$d$ = distance (m); $v$ = speed (m/s); $t$ = time (s)</td>
+    </tr>
+    <tr>
+        <td>Time from Speed and Distance</td>
+        <td>$$t = \frac{d}{v}$$</td>
+        <td>$t$ = time (s); $d$ = distance (m); $v$ = speed (m/s)</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h2>Practice Problems</h2>
+
+<p><strong>Conceptual Questions (1-4):</strong> Answer in complete sentences. Show your reasoning.</p>
+
+<div class="practice-section">
+    <div class="problem-number">1. Conceptual Question</div>
+    <p>Explain why sound travels faster in a steel bar than in air, even though both are at the same temperature. Your answer should reference the arrangement and movement of particles.</p>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="practice-section">
+    <div class="problem-number">2. Conceptual Question</div>
+    <p>If you could somehow change the temperature of the air from 0°C to 40°C without changing anything else, would the speed of sound increase, decrease, or stay the same? Explain your reasoning using the particle model of matter.</p>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="practice-section">
+    <div class="problem-number">3. Application Question</div>
+    <p>You are sitting at a baseball game. When the batter hits the ball, you see the ball leave the bat before you hear the "crack" sound. Why does this delay occur? What would this tell you about the relative speeds of light and sound?</p>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="practice-section">
+    <div class="problem-number">4. Vocabulary Question</div>
+    <p>Define the term "medium" in the context of sound waves, and give three specific examples of media. Explain why sound cannot travel through a vacuum.</p>
+    <div class="answer-space-short"></div>
+</div>
+
+<p><strong>Calculation Problems (5-6):</strong> Show all work with units. These are similar to Examples 1 and 2.</p>
+
+<div class="practice-section">
+    <div class="problem-number">5. Calculation Problem</div>
+    <p><strong>Given:</strong> A sound takes 2.5 seconds to travel through air at 20°C.</p>
+    <p><strong>Find:</strong> How far has the sound traveled? (Hint: Use the standard speed of sound in air at 20°C)</p>
+    <div class="answer-space-full"></div>
+</div>
+
+<div class="practice-section">
+    <div class="problem-number">6. Calculation Problem</div>
+    <p><strong>Given:</strong> A diver underwater hears a whale call from 5,000 meters away. Water temperature is 20°C.</p>
+    <p><strong>Find:</strong> How long does the whale's call take to reach the diver?</p>
+    <div class="answer-space-full"></div>
+</div>
+
+<p><strong>Multi-Step Problems (7-8):</strong> These require multiple calculations and/or combining concepts. Similar to Example 3.</p>
+
+<div class="practice-section">
+    <div class="problem-number">7. Multi-Step Problem</div>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>An observer at a concert hears a note from a guitar at a distance of 30 meters</li>
+        <li>Air temperature is 25°C</li>
+        <li>You need to calculate how long it takes sound to reach the observer</li>
+    </ul>
+    <p><strong>Find:</strong></p>
+    <ol type="a">
+        <li>Calculate the speed of sound at 25°C using the formula $v = 331 + 0.6T$</li>
+        <li>Calculate the time for sound to travel 30 meters at this temperature</li>
+        <li>Compare this time to the time it would take at 0°C (you must calculate the speed at 0°C first)</li>
+    </ol>
+    <div class="answer-space-full"></div>
+</div>
+
+<div class="practice-section">
+    <div class="problem-number">8. Multi-Step Problem</div>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Two observers measure the same sound event from different locations</li>
+        <li>Observer A is 2 km away from the source in air (20°C)</li>
+        <li>Observer B is underwater at 3 km away from the same source (20°C)</li>
+    </ul>
+    <p><strong>Find:</strong></p>
+    <ol type="a">
+        <li>Calculate the time for sound to reach Observer A traveling through air</li>
+        <li>Calculate the time for sound to reach Observer B traveling through water</li>
+        <li>Which observer hears the sound first, and by how many seconds?</li>
+    </ol>
+    <div class="answer-space-full"></div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="answer-key-section">
+    <h2>Answer Key</h2>
+    <p><em>For Teacher Reference Only</em></p>
+    
+    <div class="answer-key-item">
+        <h3>Question 1 - Conceptual Answer</h3>
+        <p><strong>Correct Answer:</strong> In a steel bar, atoms are packed much more tightly together than air molecules. When sound vibrates through the steel, each atom is very close to its neighbors, so the vibrational energy transfers almost immediately from one atom to the next. In air, molecules are far apart and moving randomly, so it takes much longer for the energy of vibrations to reach neighboring molecules. The closer particles are together, the faster energy can transfer, so sound travels much faster in steel.</p>
+    </div>
+    
+    <div class="answer-key-item">
+        <h3>Question 2 - Conceptual Answer</h3>
+        <p><strong>Correct Answer:</strong> The speed of sound would <span class="highlight">increase</span>. When temperature increases, air molecules move faster and vibrate more vigorously. This means they can transfer the energy of sound vibrations to neighboring molecules more quickly. The formula $v = 331 + 0.6T$ shows this positive relationship: higher temperature means higher speed. At 40°C, the speed would be $v = 331 + 0.6(40) = 331 + 24 = 355$ m/s, compared to 331 m/s at 0°C.</p>
+    </div>
+    
+    <div class="answer-key-item">
+        <h3>Question 3 - Application Answer</h3>
+        <p><strong>Correct Answer:</strong> The delay occurs because light travels much faster than sound. Light reaches your eyes almost instantaneously (light speed ≈ 300,000 km/s), while sound travels much slower (≈ 343 m/s in air). This means sound takes much longer to cover the same distance. This demonstrates that light is approximately 875,000 times faster than sound in air, which is why we always see events before we hear them when they occur at a distance.</p>
+    </div>
+    
+    <div class="answer-key-item">
+        <h3>Question 4 - Vocabulary Answer</h3>
+        <p><strong>Correct Answer:</strong> A medium is any substance or material through which sound waves travel. Examples include: air (gas), water (liquid), and steel (solid). Sound cannot travel through a vacuum because there are no particles present to vibrate and transfer the vibrational energy. Since sound is a mechanical wave that requires matter to transmit its energy, an empty space (vacuum) provides no medium through which vibrations can propagate.</p>
+    </div>
+    
+    <div class="answer-key-item">
+        <h3>Question 5 - Calculation Solution</h3>
+        <p><strong>Given:</strong> $t = 2.5$ s, $v = 343$ m/s (at 20°C)</p>
+        <p><strong>Find:</strong> $d = ?$</p>
+        <p><strong>Solution:</strong></p>
+        <p>$$d = v \times t = 343 \text{ m/s} \times 2.5 \text{ s} = 857.5 \text{ m}$$</p>
+        <p><strong>Answer:</strong> <span class="highlight">The sound has traveled 857.5 meters (or about 858 m).</span></p>
+    </div>
+    
+    <div class="answer-key-item">
+        <h3>Question 6 - Calculation Solution</h3>
+        <p><strong>Given:</strong> $d = 5,000$ m, $v = 1,437$ m/s (water at 20°C)</p>
+        <p><strong>Find:</strong> $t = ?$</p>
+        <p><strong>Solution:</strong></p>
+        <p>$$t = \frac{d}{v} = \frac{5,000 \text{ m}}{1,437 \text{ m/s}} = 3.48 \text{ s}$$</p>
+        <p><strong>Answer:</strong> <span class="highlight">The whale's call takes approximately 3.48 seconds to reach the diver.</span></p>
+    </div>
+    
+    <div class="answer-key-item">
+        <h3>Question 7 - Multi-Step Solution</h3>
+        <p><strong>Given:</strong> $d = 30$ m, $T = 25°C$ (and later 0°C for comparison)</p>
+        
+        <p><strong>Part (a): Speed at 25°C</strong></p>
+        <p>$$v = 331 + 0.6T = 331 + 0.6(25) = 331 + 15 = 346 \text{ m/s}$$</p>
+        
+        <p><strong>Part (b): Time at 25°C</strong></p>
+        <p>$$t = \frac{d}{v} = \frac{30 \text{ m}}{346 \text{ m/s}} = 0.0867 \text{ s}$$</p>
+        
+        <p><strong>Part (c): Speed at 0°C and comparison</strong></p>
+        <p>At 0°C: $v = 331 + 0.6(0) = 331$ m/s</p>
+        <p>$$t = \frac{30 \text{ m}}{331 \text{ m/s}} = 0.0906 \text{ s}$$</p>
+        <p>Difference: $0.0906 - 0.0867 = 0.0039$ s (about 4 milliseconds faster at 25°C)</p>
+        
+        <p><strong>Answer:</strong> 
+        <ul>
+            <li>(a) Speed at 25°C = <span class="highlight">346 m/s</span></li>
+            <li>(b) Time at 25°C = <span class="highlight">0.087 seconds (or about 87 milliseconds)</span></li>
+            <li>(c) At 0°C the speed is 331 m/s and time is 0.091 s; the sound reaches the observer about <span class="highlight">4 milliseconds slower at 0°C</span></li>
+        </ul>
+        </p>
+    </div>
+    
+    <div class="answer-key-item">
+        <h3>Question 8 - Multi-Step Solution</h3>
+        <p><strong>Given:</strong> Observer A: $d_A = 2$ km $= 2,000$ m (air, 20°C); Observer B: $d_B = 3$ km $= 3,000$ m (water, 20°C)</p>
+        
+        <p><strong>Part (a): Time for Observer A (air)</strong></p>
+        <p>Speed in air at 20°C = 343 m/s</p>
+        <p>$$t_A = \frac{d_A}{v_A} = \frac{2,000 \text{ m}}{343 \text{ m/s}} = 5.83 \text{ s}$$</p>
+        
+        <p><strong>Part (b): Time for Observer B (water)</strong></p>
+        <p>Speed in water at 20°C = 1,437 m/s</p>
+        <p>$$t_B = \frac{d_B}{v_B} = \frac{3,000 \text{ m}}{1,437 \text{ m/s}} = 2.09 \text{ s}$$</p>
+        
+        <p><strong>Part (c): Which observer hears first?</strong></p>
+        <p>$t_B < t_A$ (2.09 s < 5.83 s)</p>
+        <p>Difference: $5.83 - 2.09 = 3.74$ s</p>
+        
+        <p><strong>Answer:</strong>
+        <ul>
+            <li>(a) Time for Observer A (air) = <span class="highlight">5.83 seconds</span></li>
+            <li>(b) Time for Observer B (water) = <span class="highlight">2.09 seconds</span></li>
+            <li>(c) <span class="highlight">Observer B hears the sound first by 3.74 seconds.</span> Even though Observer B is farther away (3 km vs. 2 km), the much faster speed of sound in water (1,437 m/s vs. 343 m/s) means the sound reaches them much sooner!</li>
+        </ul>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
