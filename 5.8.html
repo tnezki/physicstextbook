@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 5.8: Frequency and Pitch of Sound</title>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #333;
+            background-color: #ffffff;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        /* Title Page */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+
+        /* Headings */
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.1in 0;
+            margin-bottom: 0.06in;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.08in 0 0.06in 0;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000033;
+            margin: 0.08in 0 0.05in 0;
+        }
+
+        p {
+            margin: 0.05in 0;
+            text-align: justify;
+        }
+
+        /* Boxes */
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .learning-objectives ul {
+            margin-left: 0.2in;
+        }
+
+        .learning-objectives li {
+            margin: 0.05in 0;
+            font-size: 16px;
+        }
+
+        .info-box {
+            background-color: #fffacd;
+            border: 1px solid #ddd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            padding: 0.08in;
+            margin: 0.08in 0;
+            text-align: center;
+        }
+
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.08in 0;
+        }
+
+        .example-title {
+            font-weight: bold;
+            color: #cc6600;
+            margin-bottom: 0.05in;
+        }
+
+        .answer-highlight {
+            background-color: #ffff99;
+            font-weight: bold;
+            padding: 2px 4px;
+        }
+
+        /* Answer spaces */
+        .full-answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 0.2in;
+        }
+
+        li {
+            margin: 0.04in 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.08in 0;
+            font-size: 14px;
+        }
+
+        table th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            text-align: left;
+            border: 1px solid #000033;
+        }
+
+        table td {
+            padding: 6px;
+            border: 1px solid #ddd;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Problem numbers */
+        .problem-number {
+            font-weight: bold;
+            margin-top: 0.08in;
+        }
+
+        /* SVG */
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0.06in auto;
+        }
+
+        /* Page break */
+        .page-break {
+            page-break-after: always;
+            margin-bottom: 0.5in;
+        }
+
+        /* Answer key */
+        .answer-key {
+            background-color: #f0f0f0;
+            padding: 0.08in;
+            margin-top: 0.1in;
+            border: 1px solid #999;
+        }
+
+        .answer-key h3 {
+            color: #cc3300;
+            margin-top: 0.08in;
+        }
+
+        /* MathJax styling */
+        .MathJax {
+            font-size: 0.95em;
+        }
+
+        .vocab-term {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<!-- TITLE PAGE -->
+<div class="title-page">
+    <div class="section-number">SECTION 5.8</div>
+    <h1 style="background-color: transparent; color: #000033; padding: 0; margin: 0.15in 0 0.2in 0;">Frequency and Pitch of Sound</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#E0F2FF;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <rect width="600" height="300" fill="url(#skyGradient)"/>
+        <rect y="220" width="600" height="80" fill="#8B7355"/>
+        
+        <!-- Tuba -->
+        <ellipse cx="100" cy="180" rx="20" ry="30" fill="#B87333"/>
+        <ellipse cx="100" cy="165" rx="15" ry="8" fill="#D4A574"/>
+        <path d="M 110 175 Q 120 175 125 165" stroke="#B87333" stroke-width="3" fill="none" stroke-linecap="round"/>
+        
+        <!-- Low frequency waves -->
+        <path d="M 50 200 Q 75 195 100 200 Q 125 205 150 200" stroke="#0066cc" stroke-width="3" fill="none" opacity="0.7"/>
+        <path d="M 40 210 Q 70 205 110 210 Q 150 215 180 210" stroke="#0066cc" stroke-width="2" fill="none" opacity="0.5"/>
+        
+        <!-- Piccolo -->
+        <rect x="470" y="190" width="8" height="40" fill="#8B7355"/>
+        <circle cx="474" cy="185" r="4" fill="#DAA520"/>
+        
+        <!-- High frequency waves -->
+        <path d="M 500 195 Q 510 190 520 195 Q 530 200 540 195 Q 550 190 560 195" stroke="#FF6600" stroke-width="2" fill="none" opacity="0.7"/>
+        <path d="M 495 205 Q 508 198 521 205 Q 534 212 547 205 Q 560 198 573 205" stroke="#FF6600" stroke-width="2" fill="none" opacity="0.5"/>
+        <path d="M 490 215 Q 505 207 520 215 Q 535 223 550 215 Q 565 207 580 215" stroke="#FF6600" stroke-width="1.5" fill="none" opacity="0.4"/>
+        
+        <text x="100" y="155" font-size="12" text-anchor="middle" fill="#000033" font-weight="bold">Low Pitch</text>
+        <text x="100" y="170" font-size="11" text-anchor="middle" fill="#000033">(Low Frequency)</text>
+        <text x="474" y="160" font-size="12" text-anchor="middle" fill="#000033" font-weight="bold">High Pitch</text>
+        <text x="474" y="175" font-size="11" text-anchor="middle" fill="#000033">(High Frequency)</text>
+    </svg>
+    
+    <p>Why does a tuba sound so different from a piccolo? Discover how the frequency of sound waves determines the pitch we hear. From the booming bass of a concert hall to the soaring notes of a flute, understanding frequency unlocks the physics of music and helps explain one of our most important senses: hearing.</p>
+</div>
+
+<!-- LEARNING OBJECTIVES -->
+<h1>Learning Objectives</h1>
+
+<div class="learning-objectives">
+    <ul>
+        <li>I can define pitch, frequency, and amplitude, and explain how they relate to sound waves.</li>
+        <li>I can calculate the frequency and period of sound waves and apply these concepts to real-world phenomena.</li>
+        <li>I can explain the ranges of human hearing and identify applications of infrasound and ultrasound in technology and nature.</li>
+        <li>I can solve multi-step problems involving sound wave properties and interpret how different frequencies affect our perception of sound.</li>
+    </ul>
+</div>
+
+<!-- INTRODUCTION -->
+<h1>Introduction</h1>
+
+<h2>Hook: The Power of Sound to Move Us</h2>
+
+<p style="font-style: italic;">Close your eyes and listen to the sounds around you. A car horn blares with a sharp, high-pitched shriek. Thunder rumbles with a deep, low growl. A child's laugh tinkles with bright, rapid bursts of sound. Each of these sounds—so different from the others—actually comes from a simple physics principle: the frequency at which something vibrates. The faster something vibrates, the higher the sound we hear. The slower it vibrates, the lower the sound. This fundamental connection between vibration rate and the sounds we perceive has shaped music, communication, technology, and even how we locate objects in the dark.</p>
+
+<h2>Real-World Relevance</h2>
+
+<div class="real-world-box">
+    <p>Understanding frequency and pitch is essential for countless applications in modern life. Musicians use frequency knowledge to tune instruments and compose music that moves us emotionally. Doctors use ultrasound (high-frequency sound waves humans cannot hear) to image pregnancies and detect tumors without surgery. Engineers design concert halls by controlling which frequencies echo and which are absorbed, creating perfect acoustics for orchestras. Hearing tests measure whether your ears can detect a range of frequencies. Sonar systems used by submarines emit high-frequency sound to detect distant objects. Even your voice changes frequency when you're excited, scared, or relaxed. Mastering the physics of sound frequency gives you insight into an invisible but crucial part of our physical world.</p>
+</div>
+
+<h2>Historical Context</h2>
+
+<div class="real-world-box">
+    <p>Scientists have studied sound for centuries. In the 1600s, physicist and mathematician Marin Mersenne discovered the mathematical relationships between string length, tension, and the pitch of sound produced—laying the foundation for our understanding of sound frequency. Later, in the 1800s, physicist Ernst Mach studied how sound waves travel, discovering the relationship between sound speed and an object's velocity that we now call the Mach number. The unit "hertz," used to measure frequency, is named after physicist Heinrich Hertz, who in 1887 became the first person to transmit and receive radio waves. Today, frequency concepts apply far beyond sound—radio, light, X-rays, and all forms of electromagnetic radiation are characterized by their frequency.</p>
+</div>
+
+<h2>Connection to Prior Knowledge</h2>
+
+<p>You've already learned that waves transfer energy through a medium, and that waves have wavelength, period, and velocity. In this section, you'll focus specifically on sound waves and discover how frequency (the number of vibrations per second) determines the pitch we perceive. You'll use the same wave equation you learned previously, but now you'll apply it to understand why musical instruments sound different and why some sounds are inaudible to human ears. The mathematical tools you've developed will help you solve real-world problems about hearing, ultrasound, and animal communication.</p>
+
+<div class="page-break"></div>
+
+<!-- MAIN CONTENT -->
+<h1>What Is Pitch?</h1>
+
+<h2>Understanding Pitch and How We Hear It</h2>
+
+<p><span class="vocab-term">Pitch</span> is the property of a sound that describes how high or low the sound seems to our ears. Pitch is a subjective experience—it's how we perceive a sound based on its physical properties. A piccolo produces high-pitched sounds, and a tuba produces low-pitched sounds. When you sing a note higher or lower, you're changing the pitch of your voice.</p>
+
+<p>But what causes some sounds to have high pitch and others to have low pitch? The answer lies in <span class="vocab-term">frequency</span>. Frequency is the number of complete waves (or vibrations) that pass a fixed point in one second, measured in units called hertz (Hz).</p>
+
+<div class="formula-box">
+$$f = \frac{\text{Number of waves}}{\text{Time in seconds}}$$
+</div>
+
+<p>The relationship is remarkably simple: <strong>higher frequency = higher pitch, and lower frequency = lower pitch.</strong> When a speaker cone vibrates 440 times per second, you hear the musical note A above middle C. When it vibrates 880 times per second (twice as fast), you hear A one octave higher. This direct connection between vibration rate and pitch perception is one of the most important relationships in acoustics.</p>
+
+<h2>Frequency, Period, and Sound Waves</h2>
+
+<div class="vocab-box">
+    <p><strong>Frequency (f):</strong> The number of complete wave cycles per second, measured in hertz (Hz)</p>
+    <p><strong>Period (T):</strong> The time required for one complete vibration, measured in seconds (s)</p>
+</div>
+
+<p>Frequency and period are reciprocals—they describe the same wave property in two different ways:</p>
+
+<div class="formula-box">
+$$f = \frac{1}{T} \quad \text{and} \quad T = \frac{1}{f}$$
+</div>
+
+<p>Consider the tuba in our opening example. If the tuba's membrane vibrates at 50 Hz, it completes 50 full cycles each second. The period is therefore T = 1/50 = 0.02 seconds. The tuba creates one complete sound wave every 0.02 seconds. Meanwhile, a piccolo vibrating at 2000 Hz has a period of only T = 1/2000 = 0.0005 seconds—it vibrates 40 times faster, creating 40 times as many waves per second. Our ears perceive this difference as a dramatic change in pitch.</p>
+
+<div class="info-box">
+    <p><strong>Think About It:</strong> Why doesn't a faster vibration produce a louder sound? Pitch (determined by frequency) is different from loudness (determined by amplitude). A piccolo playing a high note isn't louder than a tuba playing a low note just because it vibrates faster. Loudness depends on how far the sound source vibrates from its resting position (amplitude), not how quickly it vibrates.</p>
+</div>
+
+<h2>The Range of Human Hearing</h2>
+
+<p>Human ears can only detect sounds within a specific range of frequencies. Normal human hearing ranges from approximately 20 Hz to 20,000 Hz (or 20 kHz). This remarkable range means humans can hear vibrations as slow as 20 per second and as fast as 20,000 per second.</p>
+
+<svg viewBox="0 0 600 150" xmlns="http://www.w3.org/2000/svg" class="hearing-range-diagram">
+    <rect x="50" y="20" width="500" height="60" fill="#e8f4f8" stroke="#0066cc" stroke-width="2"/>
+    <line x1="50" y1="60" x2="550" y2="60" stroke="#000033" stroke-width="2"/>
+    
+    <line x1="50" y1="55" x2="50" y2="65" stroke="#000033" stroke-width="1"/>
+    <text x="50" y="80" font-size="12" text-anchor="middle" fill="#000033">20 Hz</text>
+    
+    <line x1="175" y1="55" x2="175" y2="65" stroke="#000033" stroke-width="1"/>
+    <text x="175" y="80" font-size="11" text-anchor="middle" fill="#000033">500 Hz</text>
+    
+    <line x1="300" y1="55" x2="300" y2="65" stroke="#000033" stroke-width="1"/>
+    <text x="300" y="80" font-size="11" text-anchor="middle" fill="#000033">5 kHz</text>
+    
+    <line x1="425" y1="55" x2="425" y2="65" stroke="#000033" stroke-width="1"/>
+    <text x="425" y="80" font-size="11" text-anchor="middle" fill="#000033">15 kHz</text>
+    
+    <line x1="550" y1="55" x2="550" y2="65" stroke="#000033" stroke-width="1"/>
+    <text x="550" y="80" font-size="12" text-anchor="middle" fill="#000033">20 kHz</text>
+    
+    <rect x="50" y="30" width="500" height="20" fill="#90EE90" opacity="0.6" stroke="#006600" stroke-width="2"/>
+    <text x="300" y="43" font-size="13" text-anchor="middle" fill="#000033" font-weight="bold">Human Hearing Range</text>
+    
+    <text x="25" y="105" font-size="11" fill="#000033">Infrasound</text>
+    <text x="300" y="130" font-size="12" text-anchor="middle" fill="#000033" font-weight="bold">Audible to Humans</text>
+    <text x="560" y="105" font-size="11" fill="#000033">Ultrasound</text>
+</svg>
+
+<h2>Infrasound: Below Human Hearing</h2>
+
+<div class="vocab-box">
+    <p><strong>Infrasound:</strong> Sound waves with frequencies below 20 Hz, too low-pitched for humans to hear</p>
+</div>
+
+<p>Sounds with frequencies below 20 Hz are called <span class="vocab-term">infrasound</span>. Although humans can't hear infrasound, we can sometimes feel it as vibrations. Earthquakes produce infrasound. Whales communicate using infrasound frequencies as low as 10 Hz, allowing them to call to each other across thousands of miles of ocean. Elephants also use infrasound for long-distance communication. Organ pipes in concert halls can produce infrasound frequencies that listeners feel in their chests rather than hear in their ears. Infrasound can even cause discomfort or dizziness in people exposed to it for long periods.</p>
+
+<h2>Ultrasound: Above Human Hearing</h2>
+
+<div class="vocab-box">
+    <p><strong>Ultrasound:</strong> Sound waves with frequencies above 20,000 Hz (20 kHz), too high-pitched for humans to hear</p>
+</div>
+
+<p>Sounds with frequencies above 20,000 Hz are called <span class="vocab-term">ultrasound</span>. These high-frequency sound waves are completely silent to human ears, yet they have remarkable practical applications. Many animals use ultrasound that humans cannot hear. Dogs respond to ultrasonic whistles with frequencies around 30,000–40,000 Hz that are completely inaudible to people standing nearby. Bats navigate in complete darkness using ultrasound with frequencies exceeding 100,000 Hz. They emit ultrasound waves and listen for echoes bouncing back from insects and obstacles—a system called <span class="vocab-term">echolocation</span>.</p>
+
+<div class="real-world-box">
+    <p><strong>Medical Ultrasound:</strong> Doctors use ultrasound machines to image the inside of the human body without surgery or radiation. An ultrasound transducer emits frequencies around 2–18 million Hz, far above human hearing. These waves enter the body and reflect off internal organs, creating detailed images. Ultrasound can detect pregnancy, locate tumors, assess heart function, and guide surgical procedures. The same physics principles that allow bats to hunt insects allow doctors to look inside a patient's abdomen!</p>
+</div>
+
+<h2>Sound Speed and Frequency Relationships</h2>
+
+<p>Sound travels at different speeds through different materials. In air at room temperature, sound travels at approximately 343 m/s. In water, sound travels faster at about 1,480 m/s. In solids like steel, sound can travel even faster at 5,960 m/s.</p>
+
+<p>The fundamental wave equation still applies:</p>
+
+<div class="formula-box">
+$$v = \lambda f$$
+</div>
+
+<p>where v is the wave velocity (speed), λ is the wavelength, and f is the frequency. This equation reveals an important truth: in a given medium, if frequency increases, wavelength must decrease (since their product must equal the constant speed). A high-pitched sound has a shorter wavelength than a low-pitched sound in the same medium. This is why high-frequency ultrasound can be focused into a narrow beam for precise medical imaging, while low-frequency infrasound spreads out over large areas.</p>
+
+<div class="page-break"></div>
+
+<!-- EXAMPLE PROBLEMS -->
+<h1>Example Problems</h1>
+
+<h2>Example 1: Finding Period from Frequency</h2>
+
+<div class="example-box">
+    <p class="example-title">Example 1</p>
+    
+    <p><strong>Given:</strong> A piano produces the note Middle C, which has a frequency of 262 Hz</p>
+    
+    <p><strong>Find:</strong> What is the period of this sound wave?</p>
+    
+    <h3>Solution:</h3>
+    
+    <p><strong>Step 1:</strong> Identify the relationship between frequency and period.</p>
+    <p>Period and frequency are reciprocals. We use the equation: T = 1/f</p>
+    
+    <p><strong>Step 2:</strong> Substitute the given frequency value.</p>
+    <div class="formula-box">
+$$T = \frac{1}{f} = \frac{1}{262 \text{ Hz}}$$
+    </div>
+    
+    <p><strong>Step 3:</strong> Calculate the result.</p>
+    <div class="formula-box">
+$$T = 0.00382 \text{ s} = 3.82 \times 10^{-3} \text{ s}$$
+    </div>
+    
+    <p><strong>Answer:</strong> <span class="answer-highlight">The period is 0.00382 s or 3.82 milliseconds</span>. This means the piano string vibrates and completes one full cycle every 3.82 thousandths of a second, creating 262 waves per second.</p>
+</div>
+
+<h2>Example 2: Calculating Wavelength in Different Media</h2>
+
+<div class="example-box">
+    <p class="example-title">Example 2</p>
+    
+    <p><strong>Given:</strong> A sound wave has a frequency of 1000 Hz. In air (velocity = 343 m/s), find the wavelength. Then find the wavelength of the same frequency sound in water (velocity = 1480 m/s).</p>
+    
+    <p><strong>Find:</strong> Wavelengths in both media</p>
+    
+    <h3>Solution:</h3>
+    
+    <p><strong>Step 1:</strong> Identify the wave equation relating velocity, wavelength, and frequency.</p>
+    <div class="formula-box">
+$$v = \lambda f$$
+    </div>
+    <p>Rearranging: λ = v/f</p>
+    
+    <p><strong>Step 2a:</strong> Calculate wavelength in air.</p>
+    <div class="formula-box">
+$$\lambda_{\text{air}} = \frac{v}{f} = \frac{343 \text{ m/s}}{1000 \text{ Hz}} = 0.343 \text{ m} = 34.3 \text{ cm}$$
+    </div>
+    
+    <p><strong>Step 2b:</strong> Calculate wavelength in water.</p>
+    <div class="formula-box">
+$$\lambda_{\text{water}} = \frac{v}{f} = \frac{1480 \text{ m/s}}{1000 \text{ Hz}} = 1.48 \text{ m}$$
+    </div>
+    
+    <p><strong>Answer:</strong> <span class="answer-highlight">In air: 0.343 m (34.3 cm); In water: 1.48 m</span></p>
+    
+    <p><strong>Physical Insight:</strong> Even though the frequency stays the same, the wavelength is 4.3 times longer in water than in air! This is because sound travels much faster in water. The faster the medium, the longer the wavelength must be for the same frequency sound.</p>
+</div>
+
+<h2>Example 3: Multi-Step Problem—Dog Whistle Analysis</h2>
+
+<div class="example-box">
+    <p class="example-title">Example 3</p>
+    
+    <p><strong>Given:</strong> A dog whistle produces ultrasound at a frequency of 40,000 Hz. The speed of sound in air is 343 m/s. Humans can hear sounds down to about 20 Hz.</p>
+    
+    <p><strong>Find:</strong> (a) the period of the dog whistle, (b) the wavelength in air, and (c) how many times higher is this frequency than the lowest frequency humans can hear?</p>
+    
+    <h3>Solution:</h3>
+    
+    <p><strong>Part (a): Find the period</strong></p>
+    
+    <p><strong>Step 1:</strong> Use the frequency-period relationship.</p>
+    <div class="formula-box">
+$$T = \frac{1}{f} = \frac{1}{40,000 \text{ Hz}} = 2.5 \times 10^{-5} \text{ s}$$
+    </div>
+    <p>The dog whistle vibrates 40,000 times per second, completing one cycle every 0.000025 seconds!</p>
+    
+    <p><strong>Part (b): Find the wavelength in air</strong></p>
+    
+    <p><strong>Step 1:</strong> Use the wave equation.</p>
+    <div class="formula-box">
+$$\lambda = \frac{v}{f} = \frac{343 \text{ m/s}}{40,000 \text{ Hz}} = 0.00858 \text{ m} = 8.58 \text{ mm}$$
+    </div>
+    <p>The wavelength is less than a centimeter—much shorter than a human can directly measure!</p>
+    
+    <p><strong>Part (c): Frequency ratio</strong></p>
+    
+    <p><strong>Step 1:</strong> Divide the dog whistle frequency by the lowest human hearing frequency.</p>
+    <div class="formula-box">
+$$\text{Ratio} = \frac{f_{\text{dog whistle}}}{f_{\text{human minimum}}} = \frac{40,000 \text{ Hz}}{20 \text{ Hz}} = 2000$$
+    </div>
+    <p>The dog whistle frequency is <strong>2000 times higher</strong> than the lowest sound humans can hear!</p>
+    
+    <p><strong>Answer:</strong> (a) <span class="answer-highlight">T = 2.5 × 10⁻⁵ s</span>; (b) <span class="answer-highlight">λ = 0.00858 m or 8.58 mm</span>; (c) <span class="answer-highlight">2000 times higher</span></p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- SUMMARY AND KEY EQUATIONS -->
+<h1>Summary</h1>
+
+<ul>
+    <li><span class="vocab-term">Pitch</span> is how high or low a sound seems to our ears, determined directly by the frequency of sound waves.</li>
+    <li><span class="vocab-term">Frequency</span> is the number of complete vibrations per second, measured in hertz (Hz); higher frequency produces higher pitch.</li>
+    <li><span class="vocab-term">Period</span> is the time for one complete vibration; period and frequency are reciprocals.</li>
+    <li>Human hearing ranges from approximately 20 Hz to 20,000 Hz (20 kHz).</li>
+    <li><span class="vocab-term">Infrasound</span> has frequencies below 20 Hz and is inaudible to humans, though it can be felt as vibrations.</li>
+    <li><span class="vocab-term">Ultrasound</span> has frequencies above 20,000 Hz and is inaudible to humans; it has important applications in medicine and animal navigation.</li>
+    <li>The wave equation v = λf applies to sound waves; in a given medium, higher frequency means shorter wavelength.</li>
+    <li>Sound travels at different speeds in different materials: slowest in air (343 m/s), faster in water (1480 m/s), and fastest in solids.</li>
+    <li>Frequency remains constant when sound moves between different media, but wavelength and speed change.</li>
+    <li>Many animals (whales, elephants, bats, dogs) use frequencies outside human hearing range for communication and navigation.</li>
+</ul>
+
+<h1>Key Equations</h1>
+
+<table>
+    <tr>
+        <th>Equation Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Frequency-Period Relationship</td>
+        <td>$$f = \frac{1}{T}$$</td>
+        <td>f = frequency (Hz), T = period (s)</td>
+    </tr>
+    <tr>
+        <td>Period from Frequency</td>
+        <td>$$T = \frac{1}{f}$$</td>
+        <td>T = period (s), f = frequency (Hz)</td>
+    </tr>
+    <tr>
+        <td>Wave Equation</td>
+        <td>$$v = \lambda f$$</td>
+        <td>v = velocity (m/s), λ = wavelength (m), f = frequency (Hz)</td>
+    </tr>
+    <tr>
+        <td>Wavelength from Frequency</td>
+        <td>$$\lambda = \frac{v}{f}$$</td>
+        <td>λ = wavelength (m), v = velocity (m/s), f = frequency (Hz)</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- PRACTICE PROBLEMS -->
+<h1>Practice Problems</h1>
+
+<h2>Conceptual Questions (1–4)</h2>
+
+<p class="problem-number">1. A tuning fork vibrates at a frequency of 256 Hz, while another vibrates at 512 Hz. Which tuning fork produces a higher-pitched sound, and why? Explain the relationship between frequency and pitch.</p>
+
+<div class="short-answer-space"></div>
+
+<p class="problem-number">2. Explain why your neighbor's car horn sounds different in pitch when the car is coming toward you versus when it's driving away. (Hint: Does the frequency change?)</p>
+
+<div class="short-answer-space"></div>
+
+<p class="problem-number">3. A bat uses ultrasound with a frequency of 150,000 Hz to navigate in the dark. A human can hear sounds only up to about 20,000 Hz. Why is it important that bats use ultrasound instead of audible frequencies for their echolocation system?</p>
+
+<div class="short-answer-space"></div>
+
+<p class="problem-number">4. Describe the physical meaning of the period of a sound wave. How does the period change as frequency increases?</p>
+
+<div class="short-answer-space"></div>
+
+<h2>Calculation Problems (5–6)</h2>
+
+<p class="problem-number">5. A sound wave has a period of 0.002 seconds. Calculate (a) the frequency of the sound wave, and (b) whether this sound is in the audible range for humans (20 Hz to 20,000 Hz).</p>
+
+<div class="full-answer-space"></div>
+
+<p class="problem-number">6. A dolphin communicates using a sound wave with a frequency of 100,000 Hz. Calculate (a) the period of the sound wave, and (b) the wavelength of this sound in seawater where sound travels at 1480 m/s.</p>
+
+<div class="full-answer-space"></div>
+
+<h2>Multi-Step Problems (7–8)</h2>
+
+<p class="problem-number">7. A guitar string vibrates at 440 Hz when producing the note A. The speed of sound in air is 343 m/s. Calculate (a) the period of vibration, (b) the wavelength in air, (c) the wavelength in water (speed = 1480 m/s), and (d) does the frequency change when sound moves from air to water? Explain.</p>
+
+<div class="full-answer-space"></div>
+
+<p class="problem-number">8. An earthquake produces infrasound with a frequency of 5 Hz. The speed of sound in rock is 4000 m/s. A medical ultrasound machine produces sound at 5,000,000 Hz. For each: (a) calculate the wavelength of earthquake infrasound in rock, (b) calculate the wavelength of ultrasound in body tissue (speed ≈ 1540 m/s), and (c) explain why medical ultrasound uses such high frequencies.</p>
+
+<div class="full-answer-space"></div>
+
+<div class="page-break"></div>
+
+<!-- ANSWER KEY -->
+<div class="answer-key">
+    <h1>Answer Key for Instructors</h1>
+    
+    <h2>Conceptual Questions</h2>
+    
+    <h3>Question 1: Tuning Fork Pitch</h3>
+    <p><strong>Answer:</strong> The tuning fork vibrating at 512 Hz produces a higher-pitched sound. Pitch is directly determined by frequency: higher frequency produces higher pitch. The 512 Hz fork vibrates twice as fast (twice the frequency) as the 256 Hz fork, so we perceive it as exactly one octave higher in pitch. The relationship is direct and proportional—when you double the frequency, the pitch sounds exactly one octave higher to the human ear.</p>
+    
+    <h3>Question 2: Doppler Effect Explanation</h3>
+    <p><strong>Answer:</strong> This is the Doppler effect. When the car approaches, the sound waves are compressed—the wavelength decreases and the frequency effectively increases, producing a higher pitch. When the car moves away, the waves are stretched out—the wavelength increases and the frequency decreases, producing a lower pitch. The actual frequency produced by the horn doesn't change, but the frequency reaching your ear changes due to relative motion.</p>
+    
+    <h3>Question 3: Why Bats Use Ultrasound</h3>
+    <p><strong>Answer:</strong> Bats use ultrasound for several important reasons: (1) It provides better spatial resolution—shorter wavelengths can detect smaller objects and details, (2) It's inaudible to their prey, giving them a stealth advantage, (3) They can emit it continuously without alerting insects to their presence, and (4) Insects that evolved to hear bat echolocation calls wouldn't detect ultrasound above their hearing range. Ultrasound allows bats to have a "private" communication and navigation system.</p>
+    
+    <h3>Question 4: Physical Meaning of Period</h3>
+    <p><strong>Answer:</strong> The period is the time required for one complete vibration or cycle of a sound wave. It's the time it takes for a vibrating object to return to its starting position and configuration. As frequency increases, the period must decrease because they are inversely related (T = 1/f). If something vibrates faster (higher frequency), each vibration takes less time (shorter period).</p>
+    
+    <h2>Calculation Problems</h2>
+    
+    <h3>Question 5: Finding Frequency and Audibility</h3>
+    <p><strong>Given:</strong> T = 0.002 s</p>
+    <p><strong>(a) Find frequency:</strong></p>
+    <div class="formula-box">
+$$f = \frac{1}{T} = \frac{1}{0.002 \text{ s}} = 500 \text{ Hz}$$
+    </div>
+    <p><strong>Answer (a):</strong> <span class="answer-highlight">f = 500 Hz</span></p>
+    <p><strong>(b) Is it audible?</strong> Yes, this sound is in the audible range. 500 Hz is well within human hearing (20 Hz to 20,000 Hz). It's similar to the pitch of the lowest notes on a trumpet.</p>
+    
+    <h3>Question 6: Dolphin Ultrasound</h3>
+    <p><strong>Given:</strong> f = 100,000 Hz, v = 1480 m/s</p>
+    <p><strong>(a) Find period:</strong></p>
+    <div class="formula-box">
+$$T = \frac{1}{f} = \frac{1}{100,000 \text{ Hz}} = 1.0 \times 10^{-5} \text{ s}$$
+    </div>
+    <p><strong>Answer (a):</strong> <span class="answer-highlight">T = 1.0 × 10⁻⁵ s or 10 microseconds</span></p>
+    <p><strong>(b) Find wavelength:</strong></p>
+    <div class="formula-box">
+$$\lambda = \frac{v}{f} = \frac{1480 \text{ m/s}}{100,000 \text{ Hz}} = 0.0148 \text{ m} = 1.48 \text{ cm}$$
+    </div>
+    <p><strong>Answer (b):</strong> <span class="answer-highlight">λ = 0.0148 m or 1.48 cm</span></p>
+    
+    <h2>Multi-Step Problems</h2>
+    
+    <h3>Question 7: Guitar String (A Note)</h3>
+    <p><strong>Given:</strong> f = 440 Hz, v_air = 343 m/s, v_water = 1480 m/s</p>
+    <p><strong>(a) Period:</strong></p>
+    <div class="formula-box">
+$$T = \frac{1}{f} = \frac{1}{440 \text{ Hz}} = 0.00227 \text{ s}$$
+    </div>
+    <p><strong>Answer (a):</strong> <span class="answer-highlight">T = 0.00227 s or 2.27 ms</span></p>
+    
+    <p><strong>(b) Wavelength in air:</strong></p>
+    <div class="formula-box">
+$$\lambda_{\text{air}} = \frac{v}{f} = \frac{343 \text{ m/s}}{440 \text{ Hz}} = 0.780 \text{ m}$$
+    </div>
+    <p><strong>Answer (b):</strong> <span class="answer-highlight">λ_air = 0.780 m or 78.0 cm</span></p>
+    
+    <p><strong>(c) Wavelength in water:</strong></p>
+    <div class="formula-box">
+$$\lambda_{\text{water}} = \frac{v}{f} = \frac{1480 \text{ m/s}}{440 \text{ Hz}} = 3.36 \text{ m}$$
+    </div>
+    <p><strong>Answer (c):</strong> <span class="answer-highlight">λ_water = 3.36 m</span></p>
+    
+    <p><strong>(d) Does frequency change?</strong> No, the frequency does not change when sound moves from air to water. The source (guitar string) continues vibrating at 440 Hz, so the frequency remains 440 Hz in both media. However, the wavelength increases (becomes 4.3 times longer) because sound travels faster in water, and the product λf must equal the new velocity.</p>
+    
+    <h3>Question 8: Earthquake and Ultrasound</h3>
+    <p><strong>Given:</strong> f_eq = 5 Hz, v_rock = 4000 m/s; f_ultra = 5,000,000 Hz, v_tissue = 1540 m/s</p>
+    <p><strong>(a) Wavelength of earthquake:</strong></p>
+    <div class="formula-box">
+$$\lambda_{\text{earthquake}} = \frac{v}{f} = \frac{4000 \text{ m/s}}{5 \text{ Hz}} = 800 \text{ m}$$
+    </div>
+    <p><strong>Answer (a):</strong> <span class="answer-highlight">λ = 800 m</span> (This is an extremely long wavelength—800 meters!)</p>
+    
+    <p><strong>(b) Wavelength of ultrasound:</strong></p>
+    <div class="formula-box">
+$$\lambda_{\text{ultrasound}} = \frac{v}{f} = \frac{1540 \text{ m/s}}{5,000,000 \text{ Hz}} = 3.08 \times 10^{-4} \text{ m}$$
+    </div>
+    <p><strong>Answer (b):</strong> <span class="answer-highlight">λ = 3.08 × 10⁻⁴ m or 0.308 mm</span> (This is an extremely short wavelength!)</p>
+    
+    <p><strong>(c) Why use high frequency for medical ultrasound?</strong> Medical ultrasound must use very high frequencies (short wavelengths) to achieve the spatial resolution needed for imaging small structures inside the body. You cannot image structures smaller than the wavelength you're using. Low-frequency sound (with long wavelengths) would be unable to resolve fine details. Additionally, higher frequencies can be focused into narrow beams (like a flashlight beam) rather than spreading out in all directions, making it possible to direct the ultrasound to specific regions of the body.</p>
+</div>
+
+</body>
+</html>
