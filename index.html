@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Curriculum Navigation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .semester-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        
+        .semester {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .semester h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .module {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .module h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .topic-list {
+            list-style-type: none;
+        }
+        
+        .topic-list li {
+            margin-bottom: 8px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        
+        .topic-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .topic-list a {
+            text-decoration: none;
+            color: #2980b9;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s, transform 0.2s;
+        }
+        
+        .topic-list a:hover {
+            color: #e74c3c;
+            transform: translateX(5px);
+        }
+        
+        .topic-number {
+            display: inline-block;
+            width: 50px;
+            font-weight: bold;
+            color: #7f8c8d;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .semester-container {
+                flex-direction: column;
+            }
+            
+            .semester {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Physics Curriculum</h1>
+            <div class="subtitle">First and Second Semester Topics</div>
+        </header>
+        
+        <div class="semester-container">
+            <div class="semester">
+                <h2>First Semester Topics</h2>
+                
+                <div class="module">
+                    <h3>Module 1. Introduction to Physics</h3>
+                    <ul class="topic-list">
+                        <li><a href="1.1 Scope of Physics.html"><span class="topic-number">1.1</span> Scope of Physics</a></li>
+                        <li><a href="1.2 Scientific Method.html"><span class="topic-number">1.2</span> Scientific Method</a></li>
+                        <li><a href="1.3 Scientific Measurement.html"><span class="topic-number">1.3</span> Scientific Measurement</a></li>
+                        <li><a href="1.4 Math Tools for Physics.html"><span class="topic-number">1.4</span> Math Tools for Physics</a></li>
+                        <li><a href="1.5 Resolving Vectors into Components.html"><span class="topic-number">1.5</span> Resolving Vectors into Components</a></li>
+                        <li><a href="1.6 Vector Addition.html"><span class="topic-number">1.6</span> Vector Addition</a></li>
+                        <li><a href="1.7 Graphical Methods of Vector Addition.html"><span class="topic-number">1.7</span> Graphical Methods of Vector Addition</a></li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 2. Motion in One-Dimension</h3>
+                    <ul class="topic-list">
+                        <li><a href="2.1 Position and Displacement.html"><span class="topic-number">2.1</span> Position and Displacement</a></li>
+                        <li><a href="2.2 Average Velocity.html"><span class="topic-number">2.2</span> Average Velocity</a></li>
+                        <li><a href="2.3 Instantaneous Velocity.html"><span class="topic-number">2.3</span> Instantaneous Velocity</a></li>
+                        <li><a href="2.4 Average Acceleration.html"><span class="topic-number">2.4</span> Average Acceleration</a></li>
+                        <li><a href="2.5 Uniform Acceleration.html"><span class="topic-number">2.5</span> Uniform Acceleration</a></li>
+                        <li><a href="2.6 Displacement During Uniform Acceleration.html"><span class="topic-number">2.6</span> Displacement During Uniform Acceleration</a></li>
+                        <li><a href="2.7 Acceleration Due to Gravity.html"><span class="topic-number">2.7</span> Acceleration Due to Gravity</a></li>
+                        <li><a href="2.8 Position vs. Time Graphs.html"><span class="topic-number">2.8</span> Position vs. Time Graphs</a></li>
+                        <li><a href="2.9 Velocity vs. Time Graphs.html"><span class="topic-number">2.9</span> Velocity vs. Time Graphs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 3. Forces and Newton's Laws of Motion</h3>
+                    <ul class="topic-list">
+                        <li><a href="3.1 Weight.html"><span class="topic-number">3.1</span> Weight</a></li>
+                        <li><a href="3.2 Friction.html"><span class="topic-number">3.2</span> Friction</a></li>
+                        <li><a href="3.3 Connecting Newton's First and Second Laws.html"><span class="topic-number">3.3</span> Connecting Newton's First and Second Laws</a></li>
+                        <li><a href="3.4 Newton's Third Law.html"><span class="topic-number">3.4</span> Newton's Third Law</a></li>
+                        <li><a href="3.5 Gravitational Force and Inclined Planes.html"><span class="topic-number">3.5</span> Gravitational Force and Inclined Planes</a></li>
+                        <li><a href="3.6 Projectile Motion for an Object Launched Horizontally.html"><span class="topic-number">3.6</span> Projectile Motion for an Object Launched Horizontally</a></li>
+                        <li><a href="3.7 Projectile Motion for an Object Launched at an Angle.html"><span class="topic-number">3.7</span> Projectile Motion for an Object Launched at an Angle</a></li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 4. Conservation Laws</h3>
+                    <ul class="topic-list">
+                        <li><a href="4.1 Momentum and Impulse.html"><span class="topic-number">4.1</span> Momentum and Impulse</a></li>
+                        <li><a href="4.2 Conservation of Momentum in One Dimension.html"><span class="topic-number">4.2</span> Conservation of Momentum in One Dimension</a></li>
+                        <li><a href="4.3 Elastic and Inelastic Collisions.html"><span class="topic-number">4.3</span> Elastic and Inelastic Collisions</a></li>
+                        <li><a href="4.4 Potential Energy.html"><span class="topic-number">4.4</span> Potential Energy</a></li>
+                        <li><a href="4.5 Kinetic Energy.html"><span class="topic-number">4.5</span> Kinetic Energy</a></li>
+                        <li><a href="4.6 Conservation of Energy.html"><span class="topic-number">4.6</span> Conservation of Energy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="semester">
+                <h2>Second Semester Topics</h2>
+                
+                <div class="module">
+                    <h3>Module 5. Harmonic Motion, Waves, and Sound</h3>
+                    <ul class="topic-list">
+                        <li><a href="5.1 Simple Harmonic Motion.html"><span class="topic-number">5.1</span> Simple Harmonic Motion</a></li>
+                        <li><a href="5.2 Transverse Wave.html"><span class="topic-number">5.2</span> Transverse Wave</a></li>
+                        <li><a href="5.3 Longitudinal Wave.html"><span class="topic-number">5.3</span> Longitudinal Wave</a></li>
+                        <li><a href="5.4 Wave Speed.html"><span class="topic-number">5.4</span> Wave Speed</a></li>
+                        <li><a href="5.5 Wave Interference.html"><span class="topic-number">5.5</span> Wave Interference</a></li>
+                        <li><a href="5.6 Sound Waves.html"><span class="topic-number">5.6</span> Sound Waves</a></li>
+                        <li><a href="5.7 Speed of Sound.html"><span class="topic-number">5.7</span> Speed of Sound</a></li>
+                        <li><a href="5.8 Frequency and Pitch of Sound.html"><span class="topic-number">5.8</span> Frequency and Pitch of Sound</a></li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 6. Optics</h3>
+                    <ul class="topic-list">
+                        <li><a href="6.1 Reflection.html"><span class="topic-number">6.1</span> Reflection</a></li>
+                        <li><a href="6.2 Refraction.html"><span class="topic-number">6.2</span> Refraction</a></li>
+                        <li><a href="6.3 Total Internal Reflection.html"><span class="topic-number">6.3</span> Total Internal Reflection</a></li>
+                        <li><a href="6.4 Plane Mirrors.html"><span class="topic-number">6.4</span> Plane Mirrors</a></li>
+                        <li><a href="6.5 Concave Mirrors.html"><span class="topic-number">6.5</span> Concave Mirrors</a></li>
+                        <li><a href="6.6 Convex Mirrors.html"><span class="topic-number">6.6</span> Convex Mirrors</a></li>
+                        <li><a href="6.7 Double Convex Lenses.html"><span class="topic-number">6.7</span> Double Convex Lenses</a></li>
+                        <li><a href="6.8 Double Concave Lenses.html"><span class="topic-number">6.8</span> Double Concave Lenses</a></li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 7. Intro to Electricity</h3>
+                    <ul class="topic-list">
+                        <li><a href="7.1 Electric Charge and Electric Force.html"><span class="topic-number">7.1</span> Electric Charge and Electric Force</a></li>
+                        <li><a href="7.2 Electric Fields.html"><span class="topic-number">7.2</span> Electric Fields</a></li>
+                        <li><a href="7.3 Coulomb's Law.html"><span class="topic-number">7.3</span> Coulomb's Law</a></li>
+                        <li><a href="7.4 Voltage.html"><span class="topic-number">7.4</span> Voltage</a></li>
+                        <li><a href="7.5 Current.html"><span class="topic-number">7.5</span> Current</a></li>
+                        <li><a href="7.6 Chemical and Solar Cells.html"><span class="topic-number">7.6</span> Chemical and Solar Cells</a></li>
+                        <li><a href="7.7 Ammeters and Voltmeters.html"><span class="topic-number">7.7</span> Ammeters and Voltmeters</a></li>
+                        <li><a href="7.8 Ohm's Law.html"><span class="topic-number">7.8</span> Ohm's Law</a></li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 8. Electric Circuits</h3>
+                    <ul class="topic-list">
+                        <li><a href="8.1 Energy Transfer in Electric Circuits.html"><span class="topic-number">8.1</span> Energy Transfer in Electric Circuits</a></li>
+                        <li><a href="8.2 Controlling Current in Electric Circuits.html"><span class="topic-number">8.2</span> Controlling Current in Electric Circuits</a></li>
+                        <li><a href="8.3 Series Circuits.html"><span class="topic-number">8.3</span> Series Circuits</a></li>
+                        <li><a href="8.4 Parallel Circuits.html"><span class="topic-number">8.4</span> Parallel Circuits</a></li>
+                        <li><a href="8.5 Combined Series-Parallel Circuits.html"><span class="topic-number">8.5</span> Combined Series-Parallel Circuits</a></li>
+                        <li><a href="8.6 Capacitors.html"><span class="topic-number">8.6</span> Capacitors</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Physics Curriculum Navigation Page | Each topic links to a separate HTML file</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple hover effect for topic links
+        document.querySelectorAll('.topic-list a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // In a real implementation, these files would exist
+                // For this demo, we'll show an alert if files don't exist
+                if (!this.getAttribute('href').includes('#')) {
+                    // Allow normal navigation if files exist
+                    // For demonstration purposes only
+                }
+            });
+        });
+    </script>
+</body>
+</html>
