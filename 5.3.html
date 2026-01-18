@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 5.3: Longitudinal Waves</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            margin: 0.5in;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.15in;
+            margin-bottom: 0.1in;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.12in;
+            margin-bottom: 0.08in;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin-top: 0.1in;
+            margin-bottom: 0.05in;
+        }
+        
+        p {
+            margin-top: 0.05in;
+            margin-bottom: 0.05in;
+            text-align: justify;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 1px solid #ddd;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .historical-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #000033;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 5.3</div>
+    <h1>Longitudinal Waves</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        
+        <rect width="600" height="300" fill="#f5f8fa"/>
+        
+        <!-- Spring/Slinky representation of longitudinal wave -->
+        <!-- Compression region (particles close together) -->
+        <g id="compression">
+            <circle cx="150" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="160" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="170" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="180" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="190" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="200" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="210" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+        </g>
+        
+        <!-- Normal spacing region -->
+        <g id="normal1">
+            <circle cx="80" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="95" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="110" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="125" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+        </g>
+        
+        <!-- Rarefaction region (particles spread apart) -->
+        <g id="rarefaction">
+            <circle cx="240" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="260" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="280" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="300" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="320" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+        </g>
+        
+        <!-- Normal spacing region -->
+        <g id="normal2">
+            <circle cx="350" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="365" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="380" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="395" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="410" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+        </g>
+        
+        <!-- Compression region 2 -->
+        <g id="compression2">
+            <circle cx="430" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="440" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="450" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="460" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+            <circle cx="470" cy="80" r="6" fill="#0066cc" opacity="0.8"/>
+        </g>
+        
+        <!-- Labels for compression -->
+        <rect x="140" y="100" width="80" height="25" fill="#ffcccc" opacity="0.5" stroke="#CC3300" stroke-width="2"/>
+        <text x="180" y="117" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">Compression</text>
+        
+        <!-- Labels for rarefaction -->
+        <rect x="230" y="100" width="100" height="25" fill="#ccffcc" opacity="0.5" stroke="#006633" stroke-width="2"/>
+        <text x="280" y="117" font-size="12" text-anchor="middle" fill="#006633" font-weight="bold">Rarefaction</text>
+        
+        <!-- Direction of wave propagation -->
+        <line x1="80" y1="50" x2="470" y2="50" stroke="#000033" stroke-width="3" marker-end="url(#arrowhead)"/>
+        <text x="275" y="40" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Wave Direction</text>
+        
+        <!-- Particle motion arrows -->
+        <line x1="155" y1="145" x2="205" y2="145" stroke="#CC3300" stroke-width="2"/>
+        <line x1="155" y1="145" x2="165" y2="140" stroke="#CC3300" stroke-width="2"/>
+        <line x1="155" y1="145" x2="165" y2="150" stroke="#CC3300" stroke-width="2"/>
+        <line x1="205" y1="145" x2="195" y2="140" stroke="#CC3300" stroke-width="2"/>
+        <line x1="205" y1="145" x2="195" y2="150" stroke="#CC3300" stroke-width="2"/>
+        
+        <text x="180" y="165" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">Particle Motion</text>
+        
+        <!-- Sound wave representation below -->
+        <text x="300" y="200" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Sound Wave in Air</text>
+        
+        <!-- Visualization of air particles -->
+        <ellipse cx="100" cy="240" rx="30" ry="15" fill="#0066cc" opacity="0.3" stroke="#0066cc" stroke-width="2"/>
+        <text x="100" y="245" font-size="11" text-anchor="middle" fill="#000033" font-weight="bold">High</text>
+        <text x="100" y="257" font-size="11" text-anchor="middle" fill="#000033" font-weight="bold">Pressure</text>
+        
+        <ellipse cx="220" cy="240" rx="50" ry="15" fill="#006633" opacity="0.2" stroke="#006633" stroke-width="2"/>
+        <text x="220" y="245" font-size="11" text-anchor="middle" fill="#000033" font-weight="bold">Low</text>
+        <text x="220" y="257" font-size="11" text-anchor="middle" fill="#000033" font-weight="bold">Pressure</text>
+        
+        <ellipse cx="330" cy="240" rx="30" ry="15" fill="#0066cc" opacity="0.3" stroke="#0066cc" stroke-width="2"/>
+        <text x="330" y="245" font-size="11" text-anchor="middle" fill="#000033" font-weight="bold">High</text>
+        <text x="330" y="257" font-size="11" text-anchor="middle" fill="#000033" font-weight="bold">Pressure</text>
+        
+        <ellipse cx="450" cy="240" rx="50" ry="15" fill="#006633" opacity="0.2" stroke="#006633" stroke-width="2"/>
+        <text x="450" y="245" font-size="11" text-anchor="middle" fill="#000033" font-weight="bold">Low</text>
+        <text x="450" y="257" font-size="11" text-anchor="middle" fill="#000033" font-weight="bold">Pressure</text>
+    </svg>
+    
+    <p>Longitudinal waves move through a medium by causing particles to oscillate parallel to the direction of wave travel, creating alternating regions of compression and rarefaction. Sound waves that allow us to communicate, seismic P-waves that warn of earthquakes, and ultrasound that reveals images inside the human body are all longitudinal waves. Understanding these waves is essential for fields from acoustics to medicine.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <p><strong>By the end of this section, you will be able to:</strong></p>
+    <ul>
+        <li>I can distinguish between transverse and longitudinal waves by analyzing how particles move relative to wave propagation direction.</li>
+        <li>I can identify and explain compressions and rarefactions in longitudinal waves and relate them to pressure variations.</li>
+        <li>I can create models to represent longitudinal wave motion and calculate wave properties using the wave equation.</li>
+        <li>I can provide real-world examples of longitudinal waves and explain how they differ from transverse waves in their properties and applications.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>When you speak, your vocal cords vibrate and create disturbances in the surrounding air. These disturbances travel outward as sound waves—longitudinal waves that carry your voice to a listener's ears. Unlike the transverse waves you studied in Section 5.2, where particles move perpendicular to the wave direction, longitudinal waves involve particles moving back and forth parallel to the wave's travel direction.</p>
+
+<p>Longitudinal waves are crucial for understanding sound, which is how humans and many animals communicate, how bats navigate in darkness, and how doctors use ultrasound to image internal organs. These waves also play a role in earthquakes, where P-waves (primary waves) are longitudinal seismic waves that arrive first at seismometers and provide early warning of more destructive S-waves.</p>
+
+<div class="historical-box">
+    <h3>Historical Context: Understanding Sound</h3>
+    <p>Ancient Greek philosophers debated the nature of sound, but it wasn't until the 17th century that scientists began to understand it as a wave phenomenon. In 1660, Robert Boyle conducted a famous experiment placing a ticking watch in a glass jar and pumping out the air. As the air was removed, the sound grew fainter and eventually disappeared, proving that sound requires a medium to travel through. Later, in the 1800s, scientists determined that sound travels through air as longitudinal waves—compressions and rarefactions of air molecules. This understanding revolutionized acoustics and led to technologies from stethoscopes to concert hall design.</p>
+</div>
+
+<p>This section builds directly on your knowledge from Section 5.1 (simple harmonic motion) and Section 5.2 (transverse waves). You've seen how particles can oscillate and how disturbances can propagate through a medium. Now we'll explore what happens when particles oscillate in the same direction the wave travels, creating a fundamentally different type of wave with unique properties and applications.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>What is a Longitudinal Wave?</h1>
+
+<p>A <span class="vocab-term">longitudinal wave</span> is a wave in which the particles of the medium oscillate parallel to the direction of wave propagation. The word "longitudinal" refers to motion along the length or direction of wave travel. Unlike transverse waves where particle motion is perpendicular to wave motion, longitudinal waves have particle motion in the same line as wave motion.</p>
+
+<div class="vocab-box">
+    <h3>Key Vocabulary</h3>
+    <p><span class="vocab-term">Longitudinal wave:</span> A wave where particle displacement is parallel to the direction of wave propagation; also called a compressional wave.</p>
+    <p><span class="vocab-term">Compression:</span> A region in a longitudinal wave where particles are pushed close together, creating high pressure or high density.</p>
+    <p><span class="vocab-term">Rarefaction:</span> A region in a longitudinal wave where particles are spread apart, creating low pressure or low density.</p>
+</div>
+
+<p>The easiest way to visualize a longitudinal wave is with a spring or slinky. If you stretch a slinky horizontally and push one end forward and then pull it back, you create a compression (where the coils bunch together) followed by a rarefaction (where the coils spread apart). This pattern of compression and rarefaction travels along the slinky as a wave. The individual coils move back and forth horizontally (parallel to the wave direction), but the pattern travels along the slinky's length.</p>
+
+<h2>Compressions and Rarefactions</h2>
+
+<p>The defining characteristic of longitudinal waves is the alternating pattern of compressions and rarefactions. Understanding these regions is essential for analyzing how longitudinal waves transfer energy.</p>
+
+<p>In a <span class="vocab-term">compression</span>, particles are pushed closer together than their normal equilibrium spacing. This creates a region of higher-than-normal density and pressure. Think of pushing on one end of a slinky—the coils bunch up, creating a compression that moves down the slinky. In a sound wave traveling through air, a compression is a region where air molecules are pushed together, creating higher air pressure.</p>
+
+<p>In a <span class="vocab-term">rarefaction</span>, particles are pulled farther apart than their normal equilibrium spacing. This creates a region of lower-than-normal density and pressure. When you pull back on the end of a slinky, the coils spread apart, creating a rarefaction. In a sound wave, a rarefaction is a region where air molecules are spread apart, creating lower air pressure.</p>
+
+<div class="info-box">
+    <h3>Important Concept: Pressure Variations</h3>
+    <p>Longitudinal waves in gases and liquids are often called pressure waves because they create alternating regions of high and low pressure. Our eardrums detect these pressure variations in air as sound. The greater the difference between high and low pressure (related to amplitude), the louder we perceive the sound to be.</p>
+</div>
+
+<p>The wavelength of a longitudinal wave is the distance from the center of one compression to the center of the next compression, or equivalently, from the center of one rarefaction to the center of the next rarefaction. This is analogous to measuring crest-to-crest or trough-to-trough distance in transverse waves.</p>
+
+<h2>Comparing Transverse and Longitudinal Waves</h2>
+
+<p>While transverse and longitudinal waves share many properties (both have wavelength, frequency, amplitude, and wave speed; both transfer energy), they differ in fundamental ways.</p>
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Transverse Waves</th>
+        <th>Longitudinal Waves</th>
+    </tr>
+    <tr>
+        <td>Particle Motion</td>
+        <td>Perpendicular to wave direction</td>
+        <td>Parallel to wave direction</td>
+    </tr>
+    <tr>
+        <td>Key Features</td>
+        <td>Crests and troughs</td>
+        <td>Compressions and rarefactions</td>
+    </tr>
+    <tr>
+        <td>Can Travel Through</td>
+        <td>Solids, liquids, surfaces; light through vacuum</td>
+        <td>Solids, liquids, gases (not through vacuum)</td>
+    </tr>
+    <tr>
+        <td>Examples</td>
+        <td>Light, water waves, waves on strings, S-waves</td>
+        <td>Sound, P-waves, ultrasound</td>
+    </tr>
+</table>
+
+<p>One important difference is that longitudinal mechanical waves can travel through all states of matter—solids, liquids, and gases—because they involve pushing and pulling particles along the direction of travel. Transverse mechanical waves, however, cannot travel through gases or liquids that can't sustain shear stress (sideways forces). This is why you can hear sound (longitudinal) underwater, but you can't create waves on a string (transverse) in water.</p>
+
+<h2>Sound Waves: The Most Common Longitudinal Wave</h2>
+
+<p><span class="vocab-term">Sound waves</span> are longitudinal waves that travel through a medium by creating pressure variations. When an object vibrates—like a guitar string, a tuning fork, or your vocal cords—it pushes and pulls on surrounding air molecules, creating compressions and rarefactions that propagate outward.</p>
+
+<p>The speed of sound depends on the medium through which it travels. Sound travels faster in solids than in liquids, and faster in liquids than in gases. This happens because the particles in solids are closer together and more strongly connected, allowing compressions and rarefactions to propagate more quickly.</p>
+
+<div class="vocab-box">
+    <h3>Speed of Sound in Different Media</h3>
+    <p>Air (20°C): approximately 343 m/s</p>
+    <p>Water (20°C): approximately 1,480 m/s</p>
+    <p>Steel: approximately 5,960 m/s</p>
+    <p>The speed of sound increases with temperature because warmer molecules move faster and can transmit compressions more quickly.</p>
+</div>
+
+<p>Sound cannot travel through a vacuum because there are no particles to compress and rarefy. This is why outer space is silent—even though explosions might occur, there's no medium to carry the sound waves. This contrasts with light (a transverse electromagnetic wave) which can travel through the vacuum of space.</p>
+
+<h2>Wave Properties and the Wave Equation</h2>
+
+<p>Despite the difference in how particles move, longitudinal waves obey the same mathematical relationships as transverse waves. The wave equation $v = f\lambda$ applies equally to both types of waves.</p>
+
+<div class="formula-box">
+    $$v = f\lambda$$
+</div>
+
+<p>For longitudinal waves, the wavelength $\lambda$ is measured from compression to compression (or rarefaction to rarefaction), the frequency $f$ is how many compressions pass a point per second, and the wave speed $v$ depends on the properties of the medium.</p>
+
+<p>The amplitude of a longitudinal wave represents the maximum displacement of particles from their equilibrium positions. In sound waves, larger amplitude means particles move farther from their rest positions, creating greater pressure differences between compressions and rarefactions. We perceive this as louder sound.</p>
+
+<div class="info-box">
+    <h3>Understanding Amplitude in Sound</h3>
+    <p>When we say a sound is "loud," we're describing large amplitude—the particles are oscillating with large displacements, creating big differences in pressure. A "quiet" sound has small amplitude with small particle displacements and small pressure variations. However, loudness also depends on frequency—our ears are more sensitive to some frequencies than others.</p>
+</div>
+
+<h2>Visualizing Longitudinal Waves</h2>
+
+<p>Longitudinal waves are harder to draw than transverse waves because particle motion is along the same direction as wave propagation. Scientists use several representation methods to make these waves easier to visualize and analyze.</p>
+
+<h3>Particle Displacement Representation</h3>
+<p>One way to show a longitudinal wave is to draw particles (dots or circles) with varying spacing. Regions where particles are close together represent compressions, while regions where they're spread apart represent rarefactions. Arrows can show particle motion direction.</p>
+
+<h3>Pressure or Density Graph</h3>
+<p>Another common representation plots pressure (or density) versus position. This graph looks like a transverse wave pattern, with peaks representing compressions (high pressure) and troughs representing rarefactions (low pressure). This is how we typically analyze sound waves—as pressure variations over space or time.</p>
+
+<p>It's important to understand that when you see a sine curve representing a sound wave, it's not showing the actual path of particles (they move back and forth, not up and down). Instead, it's showing how pressure or particle displacement varies with position or time.</p>
+
+<h2>Examples of Longitudinal Waves</h2>
+
+<h3>Sound in Everyday Life</h3>
+<p>Every sound you hear—voices, music, traffic noise, birds chirping—travels as longitudinal waves through the air. When someone speaks, their vocal cords vibrate, creating compressions and rarefactions that travel through air to your ear. Your eardrum vibrates in response to these pressure variations, and your brain interprets these vibrations as sound.</p>
+
+<h3>Ultrasound in Medicine</h3>
+<p>Medical ultrasound uses high-frequency sound waves (longitudinal waves above the range of human hearing, typically 2-18 MHz) to create images of internal body structures. The ultrasound machine sends sound waves into the body, and different tissues reflect these waves differently. By analyzing the reflected waves, doctors can see organs, blood vessels, and developing babies without using radiation.</p>
+
+<div class="historical-box">
+    <h3>Real-World Application: Earthquake P-Waves</h3>
+    <p>During an earthquake, several types of seismic waves travel through the Earth. P-waves (primary waves) are longitudinal waves that compress and expand rock as they travel. They're called "primary" because they travel fastest and arrive first at seismometers. P-waves can travel through solids, liquids, and gases, which means they can pass through Earth's liquid outer core. Scientists detected P-waves traveling through the Earth and noticed certain patterns in where they arrived, which led to the discovery that Earth has a liquid outer core. This demonstrates how understanding wave properties helps us learn about things we can never directly observe.</p>
+</div>
+
+<h3>Sonar Technology</h3>
+<p>Ships and submarines use sonar (Sound Navigation and Ranging) to detect objects underwater and measure water depth. The sonar system sends out longitudinal sound waves that travel through water. When these waves hit an object (like the ocean floor, a fish school, or another vessel), they reflect back. By measuring the time it takes for the echo to return and knowing the speed of sound in water, the system calculates the distance to the object.</p>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Sound Wave Wavelength</h3>
+    <p><strong>Problem:</strong> A sound wave in air has a frequency of 440 Hz (the musical note A). If the speed of sound in air is 343 m/s, what is the wavelength of this sound wave?</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Frequency: $f = 440 \text{ Hz}$</li>
+        <li>Speed of sound: $v = 343 \text{ m/s}$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> Wavelength $\lambda$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Use the wave equation $v = f\lambda$ and solve for wavelength:</p>
+    $$\lambda = \frac{v}{f}$$
+    
+    <p>Substitute the known values:</p>
+    $$\lambda = \frac{343 \text{ m/s}}{440 \text{ Hz}} = 0.78 \text{ m}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The wavelength is 0.78 m (or 78 cm). This means each complete cycle of compression and rarefaction spans 78 centimeters in air.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Finding Frequency from Speed and Wavelength</h3>
+    <p><strong>Problem:</strong> A sound wave traveling through water has a wavelength of 0.50 m. If the speed of sound in water is 1,480 m/s, what is the frequency of the wave?</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Wavelength: $\lambda = 0.50 \text{ m}$</li>
+        <li>Speed of sound in water: $v = 1,480 \text{ m/s}$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> Frequency $f$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Use the wave equation $v = f\lambda$ and solve for frequency:</p>
+    $$f = \frac{v}{\lambda}$$
+    
+    <p>Substitute the known values:</p>
+    $$f = \frac{1,480 \text{ m/s}}{0.50 \text{ m}} = 2,960 \text{ Hz}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The frequency is 2,960 Hz (or 2.96 kHz). This means 2,960 compressions pass any point each second.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Sonar Distance Calculation</h3>
+    <p><strong>Problem:</strong> A submarine uses sonar to detect the ocean floor. The sonar system emits a sound pulse, and the echo returns 3.0 seconds later. The speed of sound in seawater is 1,500 m/s.</p>
+    <p>(a) How far did the sound travel (total distance)?</p>
+    <p>(b) What is the depth of the ocean at this location?</p>
+    <p>(c) If the sound wave has a frequency of 50,000 Hz, what is its wavelength?</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Time for echo to return: $t = 3.0 \text{ s}$</li>
+        <li>Speed of sound in seawater: $v = 1,500 \text{ m/s}$</li>
+        <li>Frequency: $f = 50,000 \text{ Hz}$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> (a) Total distance traveled, (b) Ocean depth, (c) Wavelength</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>Part (a):</strong> Calculate total distance using $d = vt$:</p>
+    $$d = (1,500 \text{ m/s})(3.0 \text{ s}) = 4,500 \text{ m}$$
+    
+    <p><strong>Part (b):</strong> The sound traveled down to the ocean floor and back up, so the depth is half the total distance:</p>
+    $$\text{Depth} = \frac{4,500 \text{ m}}{2} = 2,250 \text{ m}$$
+    
+    <p><strong>Part (c):</strong> Use the wave equation to find wavelength:</p>
+    $$\lambda = \frac{v}{f} = \frac{1,500 \text{ m/s}}{50,000 \text{ Hz}} = 0.030 \text{ m} = 3.0 \text{ cm}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">(a) The sound traveled a total distance of 4,500 m. (b) The ocean depth is 2,250 m (or 2.25 km). (c) The wavelength is 3.0 cm. Note that high-frequency sonar waves have short wavelengths, which allows them to detect smaller objects.</span></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Longitudinal waves are waves in which particles oscillate parallel to the direction of wave propagation.</li>
+    <li>Longitudinal waves create alternating regions of compression (high pressure, particles close together) and rarefaction (low pressure, particles spread apart).</li>
+    <li>The wavelength in a longitudinal wave is measured from compression to compression or rarefaction to rarefaction.</li>
+    <li>Sound waves are the most common example of longitudinal waves, traveling through air, liquids, and solids as pressure variations.</li>
+    <li>Longitudinal waves cannot travel through a vacuum because they require a medium with particles to compress and rarefy.</li>
+    <li>The wave equation $v = f\lambda$ applies to longitudinal waves just as it does to transverse waves.</li>
+    <li>Sound travels at different speeds in different media: fastest in solids, slower in liquids, slowest in gases.</li>
+    <li>In air at 20°C, sound travels at approximately 343 m/s; in water at approximately 1,480 m/s; in steel at approximately 5,960 m/s.</li>
+    <li>Applications of longitudinal waves include human communication, medical ultrasound, sonar navigation, and earthquake detection (P-waves).</li>
+    <li>When representing longitudinal waves graphically, peaks represent compressions and troughs represent rarefactions, even though particles don't actually move up and down.</li>
+</ul>
+
+<!-- ============== KEY EQUATIONS ============== -->
+<h1>Key Equations</h1>
+
+<table>
+    <tr>
+        <th>Equation Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Wave Equation</td>
+        <td>$v = f\lambda$</td>
+        <td>$v$ = wave speed (m/s), $f$ = frequency (Hz), $\lambda$ = wavelength (m)</td>
+    </tr>
+    <tr>
+        <td>Frequency-Period Relationship</td>
+        <td>$f = \dfrac{1}{T}$</td>
+        <td>$f$ = frequency (Hz), $T$ = period (s)</td>
+    </tr>
+    <tr>
+        <td>Distance from Echo Time</td>
+        <td>$d = vt$</td>
+        <td>$d$ = distance (m), $v$ = wave speed (m/s), $t$ = time (s)</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<div class="page-break"></div>
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Explain how particle motion differs between transverse and longitudinal waves. Use a specific example of each type to illustrate your explanation.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> Describe what happens to air molecules in a compression and in a rarefaction of a sound wave. How do these relate to pressure variations?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> Explain why sound waves cannot travel through the vacuum of space, but light waves can. What fundamental difference between these wave types accounts for this?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> A student says, "When I look at a graph of a sound wave showing peaks and troughs, the particles must be moving up and down." Explain why this statement is incorrect and what the graph actually represents.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A sound wave in air has a frequency of 256 Hz. If the speed of sound is 340 m/s, calculate the wavelength of this sound wave.</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> An ultrasound wave used in medical imaging has a wavelength of 0.50 mm traveling through soft tissue where the speed of sound is 1,540 m/s. Calculate the frequency of this ultrasound wave.</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> A tuning fork produces a sound wave with a frequency of 512 Hz in air at 20°C, where the speed of sound is 343 m/s.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the wavelength of the sound wave in air.</p>
+<p style="margin-left: 0.2in;">(b) If this sound enters water where the speed is 1,480 m/s, does the frequency change? Explain.</p>
+<p style="margin-left: 0.2in;">(c) Calculate the wavelength of the sound wave in water.</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> A ship uses sonar to measure the depth of water beneath it. The sonar emits a sound pulse at a frequency of 40,000 Hz, and the echo returns 0.80 seconds later. The speed of sound in this seawater is 1,520 m/s.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the total distance the sound traveled.</p>
+<p style="margin-left: 0.2in;">(b) What is the depth of the water?</p>
+<p style="margin-left: 0.2in;">(c) Calculate the wavelength of the sonar wave.</p>
+<p style="margin-left: 0.2in;">(d) Explain why high-frequency sonar is better for detecting small objects.</p>
+<div class="answer-space"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="page-break"></div>
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> In transverse waves, particles move perpendicular (at right angles) to the wave direction. For example, in a wave on a rope traveling horizontally, the rope particles move up and down vertically. In longitudinal waves, particles move parallel (in the same direction) to wave propagation. For example, in a sound wave traveling horizontally through air, air molecules move back and forth horizontally, creating compressions and rarefactions. The key difference is the relationship between particle motion and wave direction: perpendicular for transverse, parallel for longitudinal.</p>
+
+<p><strong>2.</strong> In a compression, air molecules are pushed closer together than their normal spacing, creating a region of higher density and higher pressure. Think of molecules crowded together in a smaller space. In a rarefaction, air molecules are pulled farther apart than normal, creating a region of lower density and lower pressure—the molecules are more spread out. As a sound wave passes through air, these alternating high-pressure (compression) and low-pressure (rarefaction) regions travel through the air. Our eardrums detect these pressure variations, and our brains interpret them as sound.</p>
+
+<p><strong>3.</strong> Sound waves are mechanical longitudinal waves that require a physical medium (particles) to propagate. Sound travels by creating compressions and rarefactions—pushing and pulling on particles. In a vacuum, there are no particles to compress or rarefy, so sound cannot travel. Light waves, however, are electromagnetic transverse waves consisting of oscillating electric and magnetic fields. They don't require a medium and can travel through empty space. This is why we can see light from the Sun (which travels through the vacuum of space) but there is no sound in space.</p>
+
+<p><strong>4.</strong> This statement is incorrect because sound is a longitudinal wave, not a transverse wave. The particles actually move back and forth horizontally (parallel to the wave direction), not up and down. The graph with peaks and troughs represents pressure variation (or particle displacement) versus position or time. Peaks represent compressions (high pressure regions), and troughs represent rarefactions (low pressure regions). The graph is a convenient way to show how pressure varies, but it doesn't show the actual path of particle motion. The particles oscillate back and forth along the direction the wave travels, not perpendicular to it.</p>
+
+<p><strong>5.</strong> <span class="highlight">$\lambda = 1.33 \text{ m}$</span></p>
+<p>Solution: Use $\lambda = v/f$</p>
+$$\lambda = \frac{340 \text{ m/s}}{256 \text{ Hz}} = 1.33 \text{ m}$$
+
+<p><strong>6.</strong> <span class="highlight">$f = 3.08 \times 10^6 \text{ Hz} = 3.08 \text{ MHz}$</span></p>
+<p>Solution: First convert wavelength to meters: $\lambda = 0.50 \text{ mm} = 0.00050 \text{ m} = 5.0 \times 10^{-4} \text{ m}$</p>
+<p>Then use $f = v/\lambda$:</p>
+$$f = \frac{1,540 \text{ m/s}}{5.0 \times 10^{-4} \text{ m}} = 3.08 \times 10^6 \text{ Hz} = 3.08 \text{ MHz}$$
+
+<p><strong>7.</strong> <span class="highlight">(a) $\lambda = 0.67 \text{ m}$ in air, (b) No, frequency doesn't change, (c) $\lambda = 2.89 \text{ m}$ in water</span></p>
+<p><strong>Part (a):</strong> Use $\lambda = v/f$:</p>
+$$\lambda = \frac{343 \text{ m/s}}{512 \text{ Hz}} = 0.67 \text{ m}$$
+
+<p><strong>Part (b):</strong> No, the frequency does not change when a wave enters a different medium. Frequency is determined by the source (the tuning fork) and remains constant. What changes is the wave speed and wavelength.</p>
+
+<p><strong>Part (c):</strong> In water, using the new speed but same frequency:</p>
+$$\lambda = \frac{1,480 \text{ m/s}}{512 \text{ Hz}} = 2.89 \text{ m}$$
+<p>Notice that the wavelength is much longer in water because the wave speed is greater.</p>
+
+<p><strong>8.</strong> <span class="highlight">(a) $d = 1,216 \text{ m}$, (b) Depth = 608 m, (c) $\lambda = 0.038 \text{ m} = 3.8 \text{ cm}$, (d) See explanation below</span></p>
+<p><strong>Part (a):</strong> Total distance using $d = vt$:</p>
+$$d = (1,520 \text{ m/s})(0.80 \text{ s}) = 1,216 \text{ m}$$
+
+<p><strong>Part (b):</strong> The sound traveled down and back, so depth is half the total distance:</p>
+$$\text{Depth} = \frac{1,216 \text{ m}}{2} = 608 \text{ m}$$
+
+<p><strong>Part (c):</strong> Wavelength using $\lambda = v/f$:</p>
+$$\lambda = \frac{1,520 \text{ m/s}}{40,000 \text{ Hz}} = 0.038 \text{ m} = 3.8 \text{ cm}$$
+
+<p><strong>Part (d):</strong> High-frequency sonar is better for detecting small objects because it produces shorter wavelengths (as shown by $\lambda = v/f$—higher $f$ means smaller $\lambda$). Waves interact best with objects similar in size to their wavelength. Short wavelengths can detect small features and reflect off smaller objects, while long wavelengths tend to pass around small objects without reflecting. This is why ultrasound imaging (very high frequency, very short wavelength) can reveal fine details in medical scans.</p>
+
+</body>
+</html>

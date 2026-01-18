@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 5.2: Transverse Waves</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            margin: 0.5in;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.15in;
+            margin-bottom: 0.1in;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.12in;
+            margin-bottom: 0.08in;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin-top: 0.1in;
+            margin-bottom: 0.05in;
+        }
+        
+        p {
+            margin-top: 0.05in;
+            margin-bottom: 0.05in;
+            text-align: justify;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 1px solid #ddd;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .historical-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #000033;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 5.2</div>
+    <h1>Transverse Waves</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background gradient -->
+        <defs>
+            <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#E0F2FF;stop-opacity:1" />
+            </linearGradient>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        
+        <rect width="600" height="300" fill="url(#skyGradient)"/>
+        
+        <!-- Wave on rope -->
+        <line x1="50" y1="150" x2="550" y2="150" stroke="#888" stroke-width="1" stroke-dasharray="5,5"/>
+        
+        <!-- Transverse wave -->
+        <path d="M 50 150 Q 100 100, 150 150 T 250 150 T 350 150 T 450 150 T 550 150" 
+              stroke="#0066cc" stroke-width="4" fill="none"/>
+        
+        <!-- Particle displacement arrows -->
+        <line x1="150" y1="140" x2="150" y2="100" stroke="#CC3300" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="250" y1="160" x2="250" y2="200" stroke="#CC3300" stroke-width="2" marker-end="url(#arrowhead)"/>
+        
+        <!-- Direction of wave propagation -->
+        <line x1="50" y1="250" x2="550" y2="250" stroke="#006633" stroke-width="3" marker-end="url(#arrowhead)"/>
+        <text x="300" y="270" font-size="14" text-anchor="middle" fill="#006633" font-weight="bold">Wave Direction</text>
+        
+        <!-- Labels -->
+        <text x="150" y="85" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">Particle</text>
+        <text x="150" y="95" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">Motion</text>
+        
+        <!-- Crest and Trough labels -->
+        <text x="150" y="130" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Crest</text>
+        <text x="350" y="170" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Trough</text>
+        
+        <!-- Amplitude markers -->
+        <line x1="520" y1="100" x2="520" y2="150" stroke="#FF6600" stroke-width="2"/>
+        <line x1="515" y1="100" x2="525" y2="100" stroke="#FF6600" stroke-width="2"/>
+        <line x1="515" y1="150" x2="525" y2="150" stroke="#FF6600" stroke-width="2"/>
+        <text x="535" y="130" font-size="12" fill="#FF6600" font-weight="bold">A</text>
+    </svg>
+    
+    <p>Transverse waves move through a medium by causing particles to oscillate perpendicular to the direction of wave travel. From the rhythmic motion of ocean waves to the vibrations that carry light across the universe, transverse waves are fundamental to understanding how energy moves through space. These waves demonstrate the beautiful connection between oscillation and propagation.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <p><strong>By the end of this section, you will be able to:</strong></p>
+    <ul>
+        <li>I can distinguish between transverse and longitudinal waves by analyzing how particles move relative to the direction of wave travel.</li>
+        <li>I can identify and label the key features of transverse waves including crests, troughs, wavelength, amplitude, and equilibrium position.</li>
+        <li>I can create and use models (diagrams, graphs) to represent transverse wave motion and particle displacement.</li>
+        <li>I can provide real-world examples of transverse waves and explain how they transfer energy without transferring matter.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Imagine dropping a pebble into a still pond. Circular ripples spread outward across the water's surface, carrying energy away from the point of impact. Although the waves move outward, the water itself doesn't travel with them—a leaf floating on the water simply bobs up and down as each wave passes. This is a perfect example of a transverse wave, where particles move perpendicular to the direction the wave travels.</p>
+
+<p>Transverse waves are everywhere in nature and technology. Light waves that allow us to see, radio waves that carry music to our devices, and seismic waves that shake the ground during earthquakes are all transverse waves. Understanding how these waves work helps us explain phenomena from the colors of the sunset to how earthquake-resistant buildings are designed.</p>
+
+<div class="historical-box">
+    <h3>Historical Context: Understanding Light as a Wave</h3>
+    <p>For centuries, scientists debated whether light was made of particles or waves. In 1801, English scientist Thomas Young performed his famous double-slit experiment, which showed that light creates interference patterns—a behavior characteristic of waves. Later, in the 1860s, James Clerk Maxwell proved mathematically that light is an electromagnetic wave that travels through space as oscillating electric and magnetic fields perpendicular to its direction of motion. This discovery unified electricity, magnetism, and optics into one coherent theory and revealed that light is a transverse wave, even though it doesn't require a medium to travel through.</p>
+</div>
+
+<p>This section builds on your understanding of simple harmonic motion from Section 5.1. You learned how individual particles oscillate back and forth around an equilibrium position. Now we'll see how these oscillations can propagate through space, creating waves that carry energy across distances while the particles themselves stay in roughly the same location.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>What is a Transverse Wave?</h1>
+
+<p>A <span class="vocab-term">transverse wave</span> is a wave in which the particles of the medium move perpendicular (at right angles) to the direction of wave propagation. The word "transverse" means "across," indicating that particle motion is across or perpendicular to the wave's travel direction.</p>
+
+<div class="vocab-box">
+    <h3>Key Vocabulary</h3>
+    <p><span class="vocab-term">Wave:</span> A disturbance that transfers energy from one place to another without permanently transferring matter.</p>
+    <p><span class="vocab-term">Medium:</span> The material substance through which a wave travels. For mechanical waves like waves on a rope, the medium is required; electromagnetic waves like light can travel through empty space.</p>
+    <p><span class="vocab-term">Propagation:</span> The movement or spreading of a wave through space or a medium.</p>
+</div>
+
+<p>Consider a rope stretched horizontally. When you shake one end up and down, a wave travels along the rope horizontally toward the other end. The rope particles move up and down (vertically), while the wave pattern moves horizontally along the rope's length. The particle motion (vertical) is perpendicular to the wave motion (horizontal)—this defines a transverse wave.</p>
+
+<div class="info-box">
+    <h3>Key Concept: Energy Transfer Without Matter Transfer</h3>
+    <p>It is crucial to understand that waves transfer energy, not matter. When a transverse wave moves through a rope, the rope itself doesn't travel from one end to the other—only the disturbance (the wave pattern) moves. Each particle of the rope oscillates around its equilibrium position, but returns to approximately the same location after the wave passes. Energy, however, is transported from one end of the rope to the other.</p>
+</div>
+
+<h2>Anatomy of a Transverse Wave</h2>
+
+<p>Transverse waves have specific features that help us describe and measure them. Understanding these features is essential for analyzing any wave phenomenon.</p>
+
+<div class="vocab-box">
+    <h3>Wave Features</h3>
+    <p><span class="vocab-term">Crest:</span> The highest point of a wave above the equilibrium position; represents maximum positive displacement.</p>
+    <p><span class="vocab-term">Trough:</span> The lowest point of a wave below the equilibrium position; represents maximum negative displacement.</p>
+    <p><span class="vocab-term">Equilibrium position:</span> The rest position of particles when no wave is passing; the horizontal line through the middle of the wave pattern.</p>
+    <p><span class="vocab-term">Amplitude (A):</span> The maximum displacement of particles from the equilibrium position, measured in meters (m). Amplitude determines the energy carried by the wave—larger amplitude means more energy.</p>
+    <p><span class="vocab-term">Wavelength (λ):</span> The distance between two consecutive corresponding points on a wave, such as crest to crest or trough to trough, measured in meters (m). The Greek letter lambda (λ) is used to represent wavelength.</p>
+</div>
+
+<p>Imagine taking a snapshot of a wave on a rope at one instant in time. You would see a repeating pattern of crests and troughs. The wavelength is the distance it takes for the pattern to repeat once completely. If you measure from one crest to the next crest, or from one trough to the next trough, or even from any point on the wave to the next corresponding point, you're measuring one complete wavelength.</p>
+
+<p>The amplitude tells us how far particles move from their rest positions. A wave with large amplitude has particles that oscillate with large displacements, meaning the wave carries more energy. A gentle ripple on water has small amplitude, while a large ocean wave has large amplitude and carries significantly more energy.</p>
+
+<h2>Wave Motion in Time</h2>
+
+<p>So far we've described waves at a single instant in time. But waves are dynamic—they change over time as they propagate. Two additional concepts describe the time-dependent behavior of waves.</p>
+
+<div class="vocab-box">
+    <h3>Time-Related Wave Properties</h3>
+    <p><span class="vocab-term">Period (T):</span> The time required for one complete wavelength to pass a fixed point, or the time for one particle to complete one full oscillation cycle, measured in seconds (s).</p>
+    <p><span class="vocab-term">Frequency (f):</span> The number of complete wavelengths that pass a fixed point per second, or the number of oscillations per second, measured in hertz (Hz). One hertz equals one cycle per second.</p>
+</div>
+
+<p>Just as with simple harmonic motion, period and frequency are inversely related:</p>
+
+<div class="formula-box">
+    $$f = \frac{1}{T} \quad \text{and} \quad T = \frac{1}{f}$$
+</div>
+
+<p>If you stand at one spot on a beach and count how many wave crests pass you in one second, you're measuring the wave's frequency. If you time how long it takes for one complete wave to pass you (from crest to crest), you're measuring the period.</p>
+
+<h2>Wave Speed</h2>
+
+<p>The <span class="vocab-term">wave speed</span> (also called wave velocity) is how fast the wave pattern moves through the medium. It depends on the properties of the medium, not on the amplitude or frequency of the wave itself.</p>
+
+<p>Wave speed can be calculated using the relationship between wavelength and frequency. Since one complete wavelength passes a point in one period, the wave travels one wavelength distance in time T. Therefore, speed equals distance divided by time:</p>
+
+<div class="formula-box">
+    $$v = \frac{\lambda}{T}$$
+</div>
+
+<p>Because $f = 1/T$, we can substitute to get the more commonly used wave equation:</p>
+
+<div class="formula-box">
+    $$v = f\lambda$$
+</div>
+
+<p>This fundamental wave equation states that wave speed equals frequency times wavelength. It applies to all types of waves—mechanical waves, sound waves, light waves, and more. For a given medium, the wave speed is constant, so if frequency increases, wavelength must decrease proportionally, and vice versa.</p>
+
+<div class="info-box">
+    <h3>Important Relationship: Speed, Frequency, and Wavelength</h3>
+    <p>The wave equation $v = f\lambda$ reveals an important relationship. For waves traveling through the same medium at constant speed, high-frequency waves have short wavelengths, while low-frequency waves have long wavelengths. For example, when light passes through glass, all colors travel at the same speed, but red light (low frequency) has a longer wavelength than blue light (high frequency).</p>
+</div>
+
+<h2>Examples of Transverse Waves</h2>
+
+<p>Transverse waves appear in many contexts. Understanding different examples helps us recognize the universal principles that govern all wave behavior.</p>
+
+<h3>Waves on a String or Rope</h3>
+<p>When you shake a rope or pluck a guitar string, you create mechanical transverse waves. The tension in the rope provides the restoring force that allows waves to propagate. Higher tension increases wave speed, while heavier rope decreases wave speed. Musical instruments use this principle—tightening a guitar string increases its pitch (frequency) by increasing the wave speed.</p>
+
+<h3>Water Waves</h3>
+<p>Water surface waves are approximately transverse waves. Water particles move in circular or elliptical paths as waves pass, with the vertical component of motion being perpendicular to the horizontal wave propagation. When you watch waves approaching a beach, the wave crests and troughs move horizontally toward shore, but the water itself moves mostly up and down. Ocean waves can carry enormous amounts of energy across thousands of miles without transporting the water itself.</p>
+
+<h3>Electromagnetic Waves</h3>
+<p>Light, radio waves, microwaves, X-rays, and all other electromagnetic waves are transverse waves. However, they are unique because they don't require a medium—they can travel through the vacuum of space. In electromagnetic waves, electric and magnetic fields oscillate perpendicular to each other and to the direction of wave travel. This allows light from the Sun to reach Earth across 93 million miles of empty space.</p>
+
+<div class="historical-box">
+    <h3>Real-World Application: Fiber Optic Communication</h3>
+    <p>Modern internet and telecommunications rely on transverse light waves traveling through fiber optic cables. These thin glass fibers carry light signals that represent digital information. Light waves travel through the fiber by repeatedly reflecting off the inner walls (a phenomenon called total internal reflection). Because light is a transverse wave that can be polarized and carry information in multiple ways simultaneously, a single fiber optic cable can transmit enormous amounts of data—many terabits per second. This technology revolutionized global communication and makes high-speed internet possible.</p>
+</div>
+
+<h3>Seismic S-Waves</h3>
+<p>During earthquakes, several types of waves propagate through the Earth. S-waves (secondary waves or shear waves) are transverse waves that cause the ground to move perpendicular to the wave's direction of travel. These waves travel more slowly than P-waves (longitudinal waves) and cannot travel through liquids. Scientists used this property to discover that Earth's outer core is liquid—S-waves from earthquakes on one side of Earth don't reach seismometers on the opposite side because they cannot pass through the liquid outer core.</p>
+
+<h2>Creating and Representing Transverse Waves</h2>
+
+<p>We can represent transverse waves in multiple ways. Each representation helps us understand different aspects of wave behavior.</p>
+
+<h3>Wave Diagrams</h3>
+<p>A standard wave diagram shows displacement versus position at one instant in time. The horizontal axis represents position along the medium, while the vertical axis shows particle displacement from equilibrium. The wave pattern shows crests above the axis and troughs below it. This snapshot view allows us to measure wavelength and amplitude directly from the graph.</p>
+
+<h3>Displacement-Time Graphs</h3>
+<p>If we focus on a single point in the medium and watch how its displacement changes over time, we create a displacement-time graph. This graph looks similar to a wave pattern but represents something different—it shows one particle's motion over time rather than multiple particles' positions at one instant. From this graph, we can determine the period and frequency of oscillation.</p>
+
+<div class="info-box">
+    <h3>Common Misconception: Two Types of Graphs</h3>
+    <p>Students often confuse displacement-position graphs (snapshots of the wave at one time) with displacement-time graphs (one particle's motion over time). Both look like sine curves, but they represent different things. The displacement-position graph allows you to measure wavelength (distance between crests). The displacement-time graph allows you to measure period (time between crests passing). Make sure you identify which type of graph you're looking at before making measurements.</p>
+</div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Wave Speed from Frequency and Wavelength</h3>
+    <p><strong>Problem:</strong> A transverse wave on a rope has a frequency of 5.0 Hz and a wavelength of 0.80 m. What is the wave speed?</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Frequency: $f = 5.0 \text{ Hz}$</li>
+        <li>Wavelength: $\lambda = 0.80 \text{ m}$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> Wave speed $v$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Use the wave equation:</p>
+    $$v = f\lambda$$
+    
+    <p>Substitute the known values:</p>
+    $$v = (5.0 \text{ Hz})(0.80 \text{ m}) = 4.0 \text{ m/s}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The wave speed is 4.0 m/s. This means the wave pattern travels along the rope at 4.0 meters per second.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Finding Wavelength from Speed and Period</h3>
+    <p><strong>Problem:</strong> A wave travels at 12 m/s and has a period of 0.25 s. What is the wavelength?</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Wave speed: $v = 12 \text{ m/s}$</li>
+        <li>Period: $T = 0.25 \text{ s}$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> Wavelength $\lambda$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>First, find the frequency using $f = 1/T$:</p>
+    $$f = \frac{1}{0.25 \text{ s}} = 4.0 \text{ Hz}$$
+    
+    <p>Now use the wave equation $v = f\lambda$ and solve for wavelength:</p>
+    $$\lambda = \frac{v}{f} = \frac{12 \text{ m/s}}{4.0 \text{ Hz}} = 3.0 \text{ m}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The wavelength is 3.0 m. This means each complete wave cycle spans 3.0 meters of distance.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Multi-Step Wave Analysis</h3>
+    <p><strong>Problem:</strong> A student creates waves on a 15-meter long rope by shaking one end up and down. She observes that the wave travels the length of the rope in 2.5 seconds, and she counts 4 complete wave cycles along the rope at any given instant.</p>
+    <p>(a) What is the wave speed?</p>
+    <p>(b) What is the wavelength?</p>
+    <p>(c) What is the frequency of oscillation?</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Rope length: $d = 15 \text{ m}$</li>
+        <li>Time to travel length: $t = 2.5 \text{ s}$</li>
+        <li>Number of complete wavelengths on rope: 4 wavelengths</li>
+    </ul>
+    
+    <p><strong>Find:</strong> (a) Wave speed $v$, (b) Wavelength $\lambda$, (c) Frequency $f$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>Part (a):</strong> Calculate wave speed using distance and time:</p>
+    $$v = \frac{d}{t} = \frac{15 \text{ m}}{2.5 \text{ s}} = 6.0 \text{ m/s}$$
+    
+    <p><strong>Part (b):</strong> If 4 complete wavelengths fit in 15 meters:</p>
+    $$\lambda = \frac{15 \text{ m}}{4} = 3.75 \text{ m}$$
+    
+    <p><strong>Part (c):</strong> Use the wave equation $v = f\lambda$ to find frequency:</p>
+    $$f = \frac{v}{\lambda} = \frac{6.0 \text{ m/s}}{3.75 \text{ m}} = 1.6 \text{ Hz}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">(a) The wave speed is 6.0 m/s. (b) The wavelength is 3.75 m. (c) The frequency is 1.6 Hz, meaning the student shakes the rope 1.6 times per second and 1.6 complete waves pass any point on the rope each second.</span></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Transverse waves are waves in which particles move perpendicular to the direction of wave propagation.</li>
+    <li>Waves transfer energy through a medium without permanently transferring matter; particles oscillate around equilibrium but don't travel with the wave.</li>
+    <li>Key wave features include crests (maximum positive displacement), troughs (maximum negative displacement), amplitude (maximum displacement from equilibrium), and wavelength (distance for one complete wave cycle).</li>
+    <li>Period is the time for one complete oscillation; frequency is the number of oscillations per second; they are inversely related: $f = 1/T$.</li>
+    <li>Wave speed is determined by the medium properties and is calculated using $v = f\lambda$ (wave speed equals frequency times wavelength).</li>
+    <li>For a given wave speed, increasing frequency decreases wavelength proportionally, and vice versa.</li>
+    <li>Common examples of transverse waves include waves on ropes, water surface waves, electromagnetic waves (light, radio), and seismic S-waves.</li>
+    <li>Electromagnetic waves are unique transverse waves that can travel through empty space without a medium.</li>
+    <li>Wave diagrams can show displacement versus position (at one instant) or displacement versus time (for one particle); these graphs provide different information.</li>
+    <li>Understanding transverse waves is essential for applications from fiber optic communication to earthquake detection to musical instruments.</li>
+</ul>
+
+<!-- ============== KEY EQUATIONS ============== -->
+<h1>Key Equations</h1>
+
+<table>
+    <tr>
+        <th>Equation Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Frequency-Period Relationship</td>
+        <td>$f = \dfrac{1}{T}$</td>
+        <td>$f$ = frequency (Hz), $T$ = period (s)</td>
+    </tr>
+    <tr>
+        <td>Wave Equation</td>
+        <td>$v = f\lambda$</td>
+        <td>$v$ = wave speed (m/s), $f$ = frequency (Hz), $\lambda$ = wavelength (m)</td>
+    </tr>
+    <tr>
+        <td>Wave Speed (alternative)</td>
+        <td>$v = \dfrac{\lambda}{T}$</td>
+        <td>$v$ = wave speed (m/s), $\lambda$ = wavelength (m), $T$ = period (s)</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<div class="page-break"></div>
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Explain the difference between transverse and longitudinal waves in terms of particle motion. Use the example of a wave on a rope to support your explanation.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> A student says, "When a wave travels through water, the water moves from one place to another." Is this statement correct? Explain what actually happens to the water particles as a wave passes.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> Describe the difference between a displacement-position graph and a displacement-time graph for a wave. What information can you determine from each type of graph?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> Explain why electromagnetic waves are unique compared to other transverse waves. Give two examples of electromagnetic waves and describe one practical application.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A wave has a frequency of 8.0 Hz and a wavelength of 2.5 m. Calculate the wave speed.</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> Light waves travel through space at a speed of $3.0 \times 10^8$ m/s. If a particular light wave has a wavelength of $5.0 \times 10^{-7}$ m, what is its frequency?</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> A wave on a rope has an amplitude of 0.15 m, wavelength of 1.2 m, and frequency of 3.0 Hz.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the wave speed.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the period of the wave.</p>
+<p style="margin-left: 0.2in;">(c) If the amplitude is doubled while frequency remains constant, what happens to the wave speed? Explain.</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> A student generates waves on a 20-meter long stretched spring. She times how long it takes for a wave to travel from one end to the other and finds it takes 4.0 seconds. She also observes that at any instant, 5 complete wavelengths fit along the length of the spring.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the wave speed.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the wavelength.</p>
+<p style="margin-left: 0.2in;">(c) Calculate the frequency of the waves.</p>
+<p style="margin-left: 0.2in;">(d) Calculate the period of the waves.</p>
+<div class="answer-space"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="page-break"></div>
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> In transverse waves, particles move perpendicular (at right angles) to the direction of wave propagation. In longitudinal waves, particles move parallel (in the same direction) as the wave propagates. For example, when a wave travels horizontally along a rope, the rope particles move up and down (vertically), which is perpendicular to the horizontal wave motion. This perpendicular motion defines the wave as transverse.</p>
+
+<p><strong>2.</strong> No, this statement is not correct. When a wave travels through water, the water itself does not move from one place to another—only the wave pattern (the disturbance) moves. Individual water particles oscillate up and down (and slightly forward and back in circular paths) as the wave passes, but they return to approximately their original positions. What travels is energy, not matter. You can observe this by watching a floating object like a cork—it bobs up and down as waves pass but doesn't travel with the waves.</p>
+
+<p><strong>3.</strong> A displacement-position graph shows the displacement of many particles along the medium at one instant in time (like a snapshot). From this graph, you can measure wavelength—the distance between corresponding points like crest to crest. A displacement-time graph shows how one specific particle's displacement changes over time as waves pass. From this graph, you can measure period—the time it takes for the particle to complete one full oscillation. Both graphs may look like sine curves, but they represent different aspects of wave motion.</p>
+
+<p><strong>4.</strong> Electromagnetic waves are unique because they can travel through empty space without requiring a medium, while other transverse waves (like waves on ropes or water waves) require a material medium to propagate. Electromagnetic waves consist of oscillating electric and magnetic fields that propagate through space. Examples include light waves and radio waves. Practical application: Radio waves are used for wireless communication (radio broadcasts, cell phones, Wi-Fi), allowing information to be transmitted across distances without physical connections.</p>
+
+<p><strong>5.</strong> <span class="highlight">$v = 20 \text{ m/s}$</span></p>
+<p>Solution: Use the wave equation $v = f\lambda$</p>
+$$v = (8.0 \text{ Hz})(2.5 \text{ m}) = 20 \text{ m/s}$$
+
+<p><strong>6.</strong> <span class="highlight">$f = 6.0 \times 10^{14} \text{ Hz}$</span></p>
+<p>Solution: Rearrange $v = f\lambda$ to solve for frequency:</p>
+$$f = \frac{v}{\lambda} = \frac{3.0 \times 10^8 \text{ m/s}}{5.0 \times 10^{-7} \text{ m}} = 6.0 \times 10^{14} \text{ Hz}$$
+<p>This is the frequency of green light.</p>
+
+<p><strong>7.</strong> <span class="highlight">(a) $v = 3.6 \text{ m/s}$, (b) $T = 0.33 \text{ s}$, (c) Wave speed remains unchanged at 3.6 m/s</span></p>
+<p><strong>Part (a):</strong> Use $v = f\lambda$</p>
+$$v = (3.0 \text{ Hz})(1.2 \text{ m}) = 3.6 \text{ m/s}$$
+<p><strong>Part (b):</strong> Use $T = 1/f$</p>
+$$T = \frac{1}{3.0 \text{ Hz}} = 0.33 \text{ s}$$
+<p><strong>Part (c):</strong> Wave speed remains unchanged at 3.6 m/s. Wave speed depends on the properties of the medium (tension, mass per unit length), not on amplitude or frequency. Doubling the amplitude increases the energy carried by the wave but doesn't change how fast the wave pattern travels through the medium.</p>
+
+<p><strong>8.</strong> <span class="highlight">(a) $v = 5.0 \text{ m/s}$, (b) $\lambda = 4.0 \text{ m}$, (c) $f = 1.25 \text{ Hz}$, (d) $T = 0.80 \text{ s}$</span></p>
+<p><strong>Part (a):</strong> Calculate wave speed from distance and time:</p>
+$$v = \frac{d}{t} = \frac{20 \text{ m}}{4.0 \text{ s}} = 5.0 \text{ m/s}$$
+
+<p><strong>Part (b):</strong> If 5 complete wavelengths fit in 20 meters:</p>
+$$\lambda = \frac{20 \text{ m}}{5} = 4.0 \text{ m}$$
+
+<p><strong>Part (c):</strong> Use $v = f\lambda$ to find frequency:</p>
+$$f = \frac{v}{\lambda} = \frac{5.0 \text{ m/s}}{4.0 \text{ m}} = 1.25 \text{ Hz}$$
+
+<p><strong>Part (d):</strong> Use $T = 1/f$:</p>
+$$T = \frac{1}{1.25 \text{ Hz}} = 0.80 \text{ s}$$
+
+</body>
+</html>

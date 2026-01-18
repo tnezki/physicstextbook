@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 5.1: Introduction to Simple Harmonic Motion</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            margin: 0.5in;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.15in;
+            margin-bottom: 0.1in;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.12in;
+            margin-bottom: 0.08in;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin-top: 0.1in;
+            margin-bottom: 0.05in;
+        }
+        
+        p {
+            margin-top: 0.05in;
+            margin-bottom: 0.05in;
+            text-align: justify;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 1px solid #ddd;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .historical-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #000033;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 5.1</div>
+    <h1>Introduction to Simple Harmonic Motion</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#f0f8ff"/>
+        
+        <!-- Spring-mass system -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        
+        <!-- Fixed support -->
+        <rect x="50" y="50" width="20" height="150" fill="#666" stroke="#000" stroke-width="2"/>
+        <line x1="40" y1="50" x2="40" y2="200" stroke="#000" stroke-width="3"/>
+        
+        <!-- Spring (relaxed position) -->
+        <path d="M 70 125 L 90 125 L 100 115 L 110 135 L 120 115 L 130 135 L 140 115 L 150 135 L 160 115 L 170 135 L 180 125 L 200 125" 
+              stroke="#0066cc" stroke-width="3" fill="none"/>
+        
+        <!-- Mass (relaxed) -->
+        <rect x="200" y="100" width="50" height="50" fill="#cc6600" stroke="#000" stroke-width="2" rx="5"/>
+        <text x="225" y="130" font-size="18" text-anchor="middle" fill="white" font-weight="bold">m</text>
+        
+        <!-- Spring (compressed position) -->
+        <path d="M 70 225 L 85 225 L 92 215 L 99 235 L 106 215 L 113 235 L 120 215 L 127 235 L 134 215 L 141 235 L 148 225 L 160 225" 
+              stroke="#0066cc" stroke-width="3" fill="none"/>
+        
+        <!-- Mass (compressed) -->
+        <rect x="160" y="200" width="50" height="50" fill="#cc6600" stroke="#000" stroke-width="2" rx="5"/>
+        <text x="185" y="230" font-size="18" text-anchor="middle" fill="white" font-weight="bold">m</text>
+        
+        <!-- Arrow showing motion -->
+        <line x1="225" y1="260" x2="185" y2="260" stroke="#CC3300" stroke-width="2" marker-end="url(#arrowhead)"/>
+        
+        <!-- Pendulum -->
+        <circle cx="450" cy="50" r="8" fill="#333"/>
+        <line x1="450" y1="50" x2="450" y2="150" stroke="#333" stroke-width="2"/>
+        <circle cx="450" cy="150" r="20" fill="#cc6600" stroke="#000" stroke-width="2"/>
+        
+        <!-- Pendulum in motion -->
+        <line x1="450" y1="50" x2="380" y2="130" stroke="#333" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+        <circle cx="380" cy="130" r="20" fill="#cc6600" stroke="#000" stroke-width="2" opacity="0.5"/>
+        
+        <!-- Arc showing motion -->
+        <path d="M 380 130 Q 415 160, 450 150" stroke="#CC3300" stroke-width="2" fill="none" 
+              stroke-dasharray="3,3" marker-end="url(#arrowhead)"/>
+        
+        <!-- Labels -->
+        <text x="125" y="90" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Spring-Mass System</text>
+        <text x="415" y="190" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Simple Pendulum</text>
+    </svg>
+    
+    <p>Simple harmonic motion is the back-and-forth oscillation of an object around an equilibrium position. From the swing of a pendulum to the vibration of a guitar string, this repeating motion appears throughout nature and technology. Understanding harmonic motion is the foundation for studying waves, sound, and many mechanical systems that shape our world.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <p><strong>By the end of this section, you will be able to:</strong></p>
+    <ul>
+        <li>I can identify and describe examples of simple harmonic motion and explain what causes objects to oscillate.</li>
+        <li>I can create and use models (diagrams, graphs) to represent the motion of objects undergoing simple harmonic motion, including mass-spring systems and pendulums.</li>
+        <li>I can calculate the period and frequency of oscillating systems using appropriate formulas.</li>
+        <li>I can explain the relationship between restoring force, displacement, and acceleration in simple harmonic motion.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Have you ever watched a playground swing move back and forth, or noticed how a tree branch bounces up and down after a bird flies away? These are examples of <span class="vocab-term">oscillation</span>—repeating motion around a central position. This type of motion is so common in nature and technology that understanding it unlocks explanations for everything from earthquake protection systems to the timekeeping in watches.</p>
+
+<p>Simple harmonic motion is special because it follows predictable mathematical patterns. The motion repeats itself over and over in exactly the same way. A mass bouncing on a spring, a pendulum swinging back and forth, and even the vibrations of atoms in a solid all exhibit simple harmonic motion. These systems share common characteristics that make them easier to analyze and understand.</p>
+
+<div class="historical-box">
+    <h3>Historical Context: Galileo and the Pendulum</h3>
+    <p>In 1602, Italian scientist Galileo Galilei made a remarkable discovery while watching a chandelier swing in the cathedral at Pisa. He noticed that regardless of how far the chandelier swung, it took the same amount of time to complete each swing. This observation led him to study pendulums systematically, using his own pulse as a timer. Galileo's work on pendulums laid the foundation for accurate timekeeping and contributed to our understanding of motion and gravity. His discovery that the period of a pendulum depends only on its length revolutionized clock design.</p>
+</div>
+
+<p>Understanding simple harmonic motion connects to concepts you have already learned. You know that forces cause acceleration, and acceleration changes an object's velocity. In harmonic motion, we'll see how a special type of force—called a restoring force—creates the repeating pattern of oscillation. This builds directly on Newton's laws of motion that govern all moving objects.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>What is Simple Harmonic Motion?</h1>
+
+<p><span class="vocab-term">Simple harmonic motion (SHM)</span> is the repetitive back-and-forth movement of an object through an equilibrium position, where the restoring force is directly proportional to the displacement from equilibrium. This means that the farther you pull or push the object away from its resting position, the stronger the force that tries to pull it back.</p>
+
+<div class="vocab-box">
+    <h3>Key Vocabulary</h3>
+    <p><span class="vocab-term">Equilibrium position:</span> The central resting position where the net force on an object is zero and the object would remain at rest if not disturbed.</p>
+    <p><span class="vocab-term">Displacement:</span> The distance and direction of an object from its equilibrium position, measured in meters (m).</p>
+    <p><span class="vocab-term">Restoring force:</span> The force that acts to bring an oscillating object back toward its equilibrium position; it always points toward equilibrium.</p>
+</div>
+
+<p>Think about a mass attached to a spring hanging vertically. When you pull the mass down and release it, the spring pulls it back up. When the mass moves past equilibrium and goes too high, the spring pulls it back down. This push and pull creates continuous oscillation. The key feature is that the restoring force always points back toward equilibrium and gets stronger the farther away the object moves.</p>
+
+<h2>Characteristics of Simple Harmonic Motion</h2>
+
+<p>All systems exhibiting simple harmonic motion share several important characteristics. First, the motion is <span class="vocab-term">periodic</span>, meaning it repeats in a regular cycle. Second, the restoring force follows Hooke's Law (for springs) or a similar proportional relationship. Third, if there is no friction or air resistance, the oscillation continues forever with constant amplitude.</p>
+
+<div class="vocab-box">
+    <h3>More Key Terms</h3>
+    <p><span class="vocab-term">Amplitude (A):</span> The maximum displacement from equilibrium position, measured in meters (m). This represents how far the object moves from center to its farthest point.</p>
+    <p><span class="vocab-term">Period (T):</span> The time required for one complete cycle of motion, measured in seconds (s). One complete cycle means going from a starting point, through all positions, and back to the starting point moving in the same direction.</p>
+    <p><span class="vocab-term">Frequency (f):</span> The number of complete cycles per second, measured in hertz (Hz) or cycles per second (1 Hz = 1 cycle/s).</p>
+</div>
+
+<p>The relationship between period and frequency is inverse. If something oscillates quickly (high frequency), each cycle takes less time (small period). If it oscillates slowly (low frequency), each cycle takes more time (large period). Mathematically, this relationship is expressed as:</p>
+
+<div class="formula-box">
+    $$f = \frac{1}{T} \quad \text{or} \quad T = \frac{1}{f}$$
+</div>
+
+<p>For example, if a pendulum completes one full swing in 2 seconds, its period is $T = 2 \text{ s}$ and its frequency is $f = 1/2 = 0.5 \text{ Hz}$. This means it completes half an oscillation every second.</p>
+
+<h2>The Mass-Spring System</h2>
+
+<p>One of the most common examples of simple harmonic motion is a mass attached to a spring. When you stretch or compress a spring and release it, the spring exerts a restoring force described by <span class="vocab-term">Hooke's Law</span>:</p>
+
+<div class="formula-box">
+    $$F = -kx$$
+</div>
+
+<p>In this equation, $F$ is the restoring force (in newtons), $k$ is the <span class="vocab-term">spring constant</span> (in N/m), and $x$ is the displacement from equilibrium (in meters). The negative sign indicates that the force always points in the opposite direction of the displacement—toward equilibrium.</p>
+
+<div class="vocab-box">
+    <h3>Understanding Spring Constant</h3>
+    <p><span class="vocab-term">Spring constant (k):</span> A measure of a spring's stiffness, measured in newtons per meter (N/m). A larger spring constant means a stiffer spring that requires more force to stretch or compress. A small spring constant means a softer, more easily stretched spring.</p>
+</div>
+
+<p>The period of oscillation for a mass-spring system depends on both the mass and the spring constant. Remarkably, it does not depend on the amplitude—whether you pull the mass a little or a lot, it takes the same time to complete one cycle. The formula for the period is:</p>
+
+<div class="formula-box">
+    $$T = 2\pi\sqrt{\frac{m}{k}}$$
+</div>
+
+<p>where $m$ is the mass (in kg) and $k$ is the spring constant (in N/m). This formula tells us that heavier masses oscillate more slowly (longer period), while stiffer springs cause faster oscillations (shorter period). The factor $2\pi$ appears because the motion traces out a mathematical pattern related to circular motion.</p>
+
+<div class="info-box">
+    <h3>Important: Mass vs. Spring Constant</h3>
+    <p>From the period formula, we can see that increasing the mass increases the period (slower oscillation), while increasing the spring constant decreases the period (faster oscillation). A heavy mass on a soft spring oscillates very slowly, while a light mass on a stiff spring oscillates rapidly.</p>
+</div>
+
+<h2>The Simple Pendulum</h2>
+
+<p>A <span class="vocab-term">simple pendulum</span> consists of a mass (called a bob) suspended from a fixed point by a string or rod of negligible mass. When pulled to one side and released, gravity provides the restoring force that causes the pendulum to swing back and forth.</p>
+
+<p>For small angles (less than about 15 degrees from vertical), the pendulum exhibits simple harmonic motion. The period of a simple pendulum depends only on its length and the acceleration due to gravity:</p>
+
+<div class="formula-box">
+    $$T = 2\pi\sqrt{\frac{L}{g}}$$
+</div>
+
+<p>where $L$ is the length of the pendulum (in meters) and $g$ is the acceleration due to gravity ($9.8 \text{ m/s}^2$ on Earth). Notice that the period does not depend on the mass of the bob or the amplitude of the swing (for small angles). This means a heavy pendulum and a light pendulum of the same length swing with the same period.</p>
+
+<div class="info-box">
+    <h3>Why Small Angles Matter</h3>
+    <p>The simple pendulum formula $T = 2\pi\sqrt{L/g}$ is only accurate for small swings (less than 15° from vertical). For larger angles, the restoring force is no longer proportional to displacement, so the motion is not truly simple harmonic. However, for most practical applications like grandfather clocks, the small-angle approximation works very well.</p>
+</div>
+
+<p>This remarkable property—that the period depends only on length and not on mass—is what Galileo discovered centuries ago. It explains why pendulum clocks are so accurate: as long as the pendulum length stays constant, the clock keeps time reliably regardless of wear or slight changes in the bob's mass.</p>
+
+<h2>Energy in Simple Harmonic Motion</h2>
+
+<p>As an object undergoes simple harmonic motion, energy continuously transforms between kinetic energy and potential energy. At the equilibrium position, the object has maximum speed and therefore maximum kinetic energy. At the amplitude positions (maximum displacement), the object momentarily stops before changing direction, so it has zero kinetic energy but maximum potential energy.</p>
+
+<p>For a mass-spring system, the potential energy is stored in the compressed or stretched spring. For a pendulum, the potential energy is gravitational—the bob is higher when displaced to the side than when at equilibrium. If we ignore friction and air resistance, the total mechanical energy remains constant throughout the oscillation.</p>
+
+<div class="historical-box">
+    <h3>Real-World Application: Earthquake Protection</h3>
+    <p>Understanding simple harmonic motion is critical for designing buildings that can survive earthquakes. Engineers design structures with specific natural frequencies so they don't resonate with earthquake vibrations. Some modern skyscrapers use massive pendulums called tuned mass dampers at their tops. These pendulums oscillate in the opposite direction to building sway, reducing dangerous oscillations during earthquakes or strong winds. The Taipei 101 skyscraper in Taiwan contains a 730-ton steel pendulum that protects the building from typhoons and seismic activity.</p>
+</div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Frequency from Period</h3>
+    <p><strong>Problem:</strong> A mass on a spring completes one full oscillation in 0.40 seconds. What is the frequency of oscillation?</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Period: $T = 0.40 \text{ s}$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> Frequency $f$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Use the relationship between frequency and period:</p>
+    $$f = \frac{1}{T}$$
+    
+    <p>Substitute the known value:</p>
+    $$f = \frac{1}{0.40 \text{ s}} = 2.5 \text{ Hz}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The frequency is 2.5 Hz, meaning the mass completes 2.5 complete oscillations every second.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Finding the Period of a Pendulum</h3>
+    <p><strong>Problem:</strong> A simple pendulum has a length of 2.0 m. What is its period of oscillation? (Use $g = 9.8 \text{ m/s}^2$)</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Length: $L = 2.0 \text{ m}$</li>
+        <li>Acceleration due to gravity: $g = 9.8 \text{ m/s}^2$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> Period $T$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Use the period formula for a simple pendulum:</p>
+    $$T = 2\pi\sqrt{\frac{L}{g}}$$
+    
+    <p>Substitute the known values:</p>
+    $$T = 2\pi\sqrt{\frac{2.0 \text{ m}}{9.8 \text{ m/s}^2}}$$
+    
+    $$T = 2\pi\sqrt{0.204 \text{ s}^2}$$
+    
+    $$T = 2\pi(0.452 \text{ s})$$
+    
+    $$T = 2.84 \text{ s}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The period is 2.84 seconds. The pendulum takes 2.84 seconds to complete one full swing.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Mass-Spring System Period Calculation</h3>
+    <p><strong>Problem:</strong> A 0.50 kg mass is attached to a spring with spring constant $k = 20 \text{ N/m}$. The mass is pulled 0.10 m from equilibrium and released. (a) What is the period of oscillation? (b) What is the frequency?</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Mass: $m = 0.50 \text{ kg}$</li>
+        <li>Spring constant: $k = 20 \text{ N/m}$</li>
+        <li>Amplitude: $A = 0.10 \text{ m}$ (not needed for period)</li>
+    </ul>
+    
+    <p><strong>Find:</strong> (a) Period $T$, (b) Frequency $f$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>Part (a):</strong> Use the period formula for a mass-spring system:</p>
+    $$T = 2\pi\sqrt{\frac{m}{k}}$$
+    
+    <p>Substitute the known values:</p>
+    $$T = 2\pi\sqrt{\frac{0.50 \text{ kg}}{20 \text{ N/m}}}$$
+    
+    $$T = 2\pi\sqrt{0.025 \text{ s}^2}$$
+    
+    $$T = 2\pi(0.158 \text{ s})$$
+    
+    $$T = 0.99 \text{ s}$$
+    
+    <p><strong>Part (b):</strong> Calculate frequency using the period:</p>
+    $$f = \frac{1}{T} = \frac{1}{0.99 \text{ s}} = 1.01 \text{ Hz}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">(a) The period is 0.99 seconds (approximately 1.0 second). (b) The frequency is 1.01 Hz, meaning the mass completes about one complete oscillation per second. Note that the amplitude does not affect the period or frequency.</span></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Simple harmonic motion is repetitive oscillation through an equilibrium position with a restoring force proportional to displacement.</li>
+    <li>The equilibrium position is where the object would remain at rest; the restoring force always points toward equilibrium.</li>
+    <li>Amplitude is the maximum displacement from equilibrium; period is the time for one complete cycle; frequency is the number of cycles per second.</li>
+    <li>Frequency and period are inversely related: $f = 1/T$ and $T = 1/f$.</li>
+    <li>In a mass-spring system, the restoring force follows Hooke's Law: $F = -kx$, where $k$ is the spring constant.</li>
+    <li>The period of a mass-spring system is $T = 2\pi\sqrt{m/k}$; it depends on mass and spring stiffness but not amplitude.</li>
+    <li>A simple pendulum exhibits SHM for small angles, with period $T = 2\pi\sqrt{L/g}$ depending only on length and gravity.</li>
+    <li>The period of a pendulum does not depend on the mass of the bob or the amplitude (for small angles).</li>
+    <li>Energy in SHM continuously transforms between kinetic energy (at equilibrium) and potential energy (at maximum displacement).</li>
+    <li>Real-world applications include clock mechanisms, earthquake protection systems, and vibration isolation devices.</li>
+</ul>
+
+<!-- ============== KEY EQUATIONS ============== -->
+<h1>Key Equations</h1>
+
+<table>
+    <tr>
+        <th>Equation Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Frequency-Period Relationship</td>
+        <td>$f = \dfrac{1}{T}$</td>
+        <td>$f$ = frequency (Hz), $T$ = period (s)</td>
+    </tr>
+    <tr>
+        <td>Hooke's Law</td>
+        <td>$F = -kx$</td>
+        <td>$F$ = restoring force (N), $k$ = spring constant (N/m), $x$ = displacement (m)</td>
+    </tr>
+    <tr>
+        <td>Period of Mass-Spring System</td>
+        <td>$T = 2\pi\sqrt{\dfrac{m}{k}}$</td>
+        <td>$T$ = period (s), $m$ = mass (kg), $k$ = spring constant (N/m)</td>
+    </tr>
+    <tr>
+        <td>Period of Simple Pendulum</td>
+        <td>$T = 2\pi\sqrt{\dfrac{L}{g}}$</td>
+        <td>$T$ = period (s), $L$ = length (m), $g$ = 9.8 m/s²</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<div class="page-break"></div>
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Explain in your own words what causes an object in simple harmonic motion to oscillate back and forth. What happens to the restoring force as the object moves farther from equilibrium?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> A student observes two pendulums of equal length but different masses swinging side by side. Will they have the same period? Explain your reasoning using the pendulum period formula.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> Define the term "amplitude" and explain how it differs from displacement. Does changing the amplitude of oscillation affect the period of a mass-spring system?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> Compare and contrast the energy transformations that occur in a mass-spring system and a simple pendulum during one complete cycle of oscillation.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A mass-spring system oscillates with a frequency of 4.0 Hz. What is the period of oscillation?</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> A simple pendulum has a length of 0.50 m. Calculate its period of oscillation. (Use $g = 9.8 \text{ m/s}^2$)</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> A 0.80 kg mass is attached to a spring with spring constant $k = 32 \text{ N/m}$. The mass is displaced 0.15 m from equilibrium and released.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the period of oscillation.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the frequency of oscillation.</p>
+<p style="margin-left: 0.2in;">(c) How many complete oscillations will the mass make in 5.0 seconds?</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> A physics student wants to design a pendulum clock that ticks once per second (meaning it completes one full swing in 2.0 seconds).</p>
+<p style="margin-left: 0.2in;">(a) What should be the length of the pendulum? (Use $g = 9.8 \text{ m/s}^2$)</p>
+<p style="margin-left: 0.2in;">(b) If the student takes this clock to the Moon where $g = 1.6 \text{ m/s}^2$, will it run fast or slow? Calculate the new period.</p>
+<div class="answer-space"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="page-break"></div>
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> An object in simple harmonic motion oscillates because of a restoring force that always points toward the equilibrium position. When the object is displaced from equilibrium, this force pulls or pushes it back. As the object moves farther from equilibrium, the restoring force becomes stronger. When the object returns to equilibrium, it has gained speed and its momentum carries it past equilibrium to the other side, where the restoring force now acts in the opposite direction. This continuous push and pull creates the back-and-forth oscillation.</p>
+
+<p><strong>2.</strong> Yes, they will have the same period. According to the formula $T = 2\pi\sqrt{L/g}$, the period of a simple pendulum depends only on its length and the acceleration due to gravity. The mass of the bob does not appear in the formula, so pendulums of equal length but different masses will swing with identical periods. This is one of the remarkable properties that makes pendulums useful for timekeeping.</p>
+
+<p><strong>3.</strong> Amplitude is the maximum displacement from equilibrium—the farthest distance the object reaches from its resting position. Displacement, on the other hand, is the distance and direction from equilibrium at any given instant during the motion; it continuously changes as the object oscillates. No, changing the amplitude does not affect the period of a mass-spring system. The period formula $T = 2\pi\sqrt{m/k}$ does not include amplitude, so whether you pull the mass a little or a lot, it takes the same time to complete one cycle (this is called isochronism).</p>
+
+<p><strong>4.</strong> Both systems exhibit continuous energy transformation between kinetic and potential energy. In a mass-spring system, kinetic energy is maximum at equilibrium (maximum speed) and zero at maximum displacement. Potential energy is stored in the stretched or compressed spring and is maximum at the amplitude positions and zero at equilibrium. In a simple pendulum, kinetic energy is also maximum at equilibrium (lowest point) and zero at maximum displacement. However, the potential energy is gravitational—the bob is highest (maximum gravitational PE) at the amplitude positions and lowest (minimum gravitational PE) at equilibrium. In both cases, the total mechanical energy remains constant if friction is negligible.</p>
+
+<p><strong>5.</strong> <span class="highlight">$T = 0.25 \text{ s}$</span></p>
+<p>Solution: Use $T = 1/f$</p>
+$$T = \frac{1}{4.0 \text{ Hz}} = 0.25 \text{ s}$$
+
+<p><strong>6.</strong> <span class="highlight">$T = 1.42 \text{ s}$</span></p>
+<p>Solution: Use $T = 2\pi\sqrt{L/g}$</p>
+$$T = 2\pi\sqrt{\frac{0.50 \text{ m}}{9.8 \text{ m/s}^2}} = 2\pi\sqrt{0.051 \text{ s}^2} = 2\pi(0.226 \text{ s}) = 1.42 \text{ s}$$
+
+<p><strong>7.</strong> <span class="highlight">(a) $T = 0.99 \text{ s}$, (b) $f = 1.01 \text{ Hz}$, (c) 5 complete oscillations</span></p>
+<p><strong>Part (a):</strong> Use $T = 2\pi\sqrt{m/k}$</p>
+$$T = 2\pi\sqrt{\frac{0.80 \text{ kg}}{32 \text{ N/m}}} = 2\pi\sqrt{0.025 \text{ s}^2} = 2\pi(0.158 \text{ s}) = 0.99 \text{ s}$$
+<p><strong>Part (b):</strong> Use $f = 1/T$</p>
+$$f = \frac{1}{0.99 \text{ s}} = 1.01 \text{ Hz}$$
+<p><strong>Part (c):</strong> Number of oscillations = time ÷ period</p>
+$$\text{Number} = \frac{5.0 \text{ s}}{0.99 \text{ s}} = 5.05 \approx 5 \text{ complete oscillations}$$
+
+<p><strong>8.</strong> <span class="highlight">(a) $L = 0.99 \text{ m}$, (b) The clock will run slow; new period = $T = 4.95 \text{ s}$</span></p>
+<p><strong>Part (a):</strong> Rearrange $T = 2\pi\sqrt{L/g}$ to solve for $L$:</p>
+$$T = 2\pi\sqrt{\frac{L}{g}}$$
+$$\frac{T}{2\pi} = \sqrt{\frac{L}{g}}$$
+$$\left(\frac{T}{2\pi}\right)^2 = \frac{L}{g}$$
+$$L = g\left(\frac{T}{2\pi}\right)^2 = 9.8 \text{ m/s}^2 \times \left(\frac{2.0 \text{ s}}{6.28}\right)^2 = 9.8 \times (0.318)^2 = 9.8 \times 0.101 = 0.99 \text{ m}$$
+
+<p><strong>Part (b):</strong> On the Moon, with the same length but different gravity:</p>
+$$T = 2\pi\sqrt{\frac{0.99 \text{ m}}{1.6 \text{ m/s}^2}} = 2\pi\sqrt{0.619 \text{ s}^2} = 2\pi(0.787 \text{ s}) = 4.95 \text{ s}$$
+<p>The clock will run slow because the period is much longer on the Moon (4.95 s instead of 2.0 s). Each "tick" takes almost 5 seconds instead of 2 seconds, so the clock loses time compared to Earth time.</p>
+
+</body>
+</html>

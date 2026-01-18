@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 5.5: Sound Waves</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            margin: 0.5in;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.15in;
+            margin-bottom: 0.1in;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.12in;
+            margin-bottom: 0.08in;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin-top: 0.1in;
+            margin-bottom: 0.05in;
+        }
+        
+        p {
+            margin-top: 0.05in;
+            margin-bottom: 0.05in;
+            text-align: justify;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 1px solid #ddd;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .historical-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #000033;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 5.5</div>
+    <h1>Sound Waves</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <defs>
+            <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#E8F4F8;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#F8FCFF;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        
+        <rect width="600" height="300" fill="url(#skyGrad)"/>
+        
+        <!-- Sound source (speaker) -->
+        <rect x="80" y="120" width="40" height="60" fill="#333" rx="5"/>
+        <path d="M 120 130 L 140 120 L 140 180 L 120 170 Z" fill="#0066cc"/>
+        
+        <!-- Sound waves emanating -->
+        <ellipse cx="100" cy="150" rx="60" ry="40" stroke="#0066cc" stroke-width="2" fill="none" opacity="0.8"/>
+        <ellipse cx="100" cy="150" rx="100" ry="70" stroke="#0066cc" stroke-width="2" fill="none" opacity="0.6"/>
+        <ellipse cx="100" cy="150" rx="140" ry="100" stroke="#0066cc" stroke-width="2" fill="none" opacity="0.4"/>
+        
+        <!-- Ear receiving sound -->
+        <ellipse cx="480" cy="150" rx="30" ry="40" fill="#FFE4B5" stroke="#000" stroke-width="2"/>
+        <path d="M 465 140 Q 455 150, 465 160" stroke="#000" stroke-width="2" fill="none"/>
+        <circle cx="475" cy="150" r="8" fill="#FFB6C1"/>
+        
+        <!-- Frequency spectrum display -->
+        <text x="300" y="250" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Frequency Spectrum</text>
+        
+        <!-- Low frequency (bass) -->
+        <rect x="150" y="265" width="60" height="25" fill="#CC3300" opacity="0.7"/>
+        <text x="180" y="282" font-size="11" text-anchor="middle" fill="white" font-weight="bold">20 Hz</text>
+        <text x="180" y="295" font-size="10" text-anchor="middle" fill="#000033">Bass</text>
+        
+        <!-- Mid frequency -->
+        <rect x="220" y="255" width="60" height="35" fill="#FF9900" opacity="0.7"/>
+        <text x="250" y="275" font-size="11" text-anchor="middle" fill="white" font-weight="bold">1000 Hz</text>
+        <text x="250" y="295" font-size="10" text-anchor="middle" fill="#000033">Mid</text>
+        
+        <!-- High frequency (treble) -->
+        <rect x="290" y="245" width="60" height="45" fill="#0066cc" opacity="0.7"/>
+        <text x="320" y="270" font-size="11" text-anchor="middle" fill="white" font-weight="bold">10 kHz</text>
+        <text x="320" y="295" font-size="10" text-anchor="middle" fill="#000033">Treble</text>
+        
+        <!-- Ultrasound -->
+        <rect x="360" y="235" width="60" height="55" fill="#6600CC" opacity="0.7"/>
+        <text x="390" y="265" font-size="11" text-anchor="middle" fill="white" font-weight="bold">50 kHz</text>
+        <text x="390" y="295" font-size="10" text-anchor="middle" fill="#000033">Ultrasound</text>
+        
+        <!-- Frequency axis -->
+        <line x1="140" y1="290" x2="430" y2="290" stroke="#000" stroke-width="1"/>
+        <text x="140" y="305" font-size="9" text-anchor="middle">Infrasound</text>
+        <text x="430" y="305" font-size="9" text-anchor="middle">Higher</text>
+    </svg>
+    
+    <p>Sound waves are the longitudinal pressure waves that enable communication, music, and our perception of the acoustic environment. From the rumble of thunder to the whisper of wind, from the pitch of a violin to the roar of a jet engine, sound waves carry information through compressions and rarefactions in matter. Understanding sound is essential for fields ranging from music and architecture to medicine and environmental science.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <p><strong>By the end of this section, you will be able to:</strong></p>
+    <ul>
+        <li>I can explain how sound waves are produced, transmitted through different media, and how frequency relates to pitch and amplitude relates to loudness.</li>
+        <li>I can calculate sound properties using the wave equation and understand how the speed of sound varies with medium and temperature.</li>
+        <li>I can describe the Doppler effect and explain how relative motion between source and observer affects perceived frequency.</li>
+        <li>I can evaluate and communicate information about real-world applications of sound waves including ultrasound, sonar, musical instruments, and noise control.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Every moment, your ears detect pressure variations in the air around you—variations we experience as sound. When someone speaks, their vocal cords vibrate, creating compressions and rarefactions that travel through air as longitudinal waves. These pressure waves reach your eardrums, causing them to vibrate in exactly the same pattern. Your brain interprets these vibrations as speech, music, or environmental sounds.</p>
+
+<p>Sound is fundamental to human experience. It's how we communicate, how we enjoy music, how we detect danger, and how we navigate our environment. Beyond human hearing, sound waves serve critical functions in technology and nature—bats and dolphins use echolocation to hunt and navigate, doctors use ultrasound to image internal organs, and engineers use acoustic analysis to design everything from concert halls to noise barriers.</p>
+
+<div class="historical-box">
+    <h3>Historical Context: The Speed of Sound</h3>
+    <p>For centuries, people knew that sound took time to travel. You see lightning before you hear thunder, and echoes return after a delay. But precisely measuring the speed of sound was challenging. In 1738, members of the French Academy of Sciences fired cannons and timed how long it took for observers at known distances to hear the sound. They calculated the speed of sound in air as approximately 332 m/s, remarkably close to the modern value of 343 m/s at 20°C. Later experiments revealed that sound speed varies with temperature, humidity, and altitude—crucial knowledge for applications from sonar to architectural acoustics. In 1947, pilot Chuck Yeager became the first person to fly faster than sound, "breaking the sound barrier" in the Bell X-1 aircraft.</p>
+</div>
+
+<p>This section brings together everything you've learned about oscillations and waves. You understand simple harmonic motion (Section 5.1), transverse and longitudinal waves (Sections 5.2-5.3), and wave behaviors like reflection and interference (Section 5.4). Now you'll explore the most important wave in daily human experience—sound—and discover how its properties enable communication, create music, and power modern technologies.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>What is Sound?</h1>
+
+<p><span class="vocab-term">Sound</span> is a longitudinal mechanical wave consisting of pressure variations that travel through a medium. Unlike electromagnetic waves such as light, sound requires matter to propagate—it cannot travel through a vacuum. Sound waves are created when a vibrating object pushes and pulls on surrounding particles, creating alternating regions of compression (high pressure) and rarefaction (low pressure) that move outward from the source.</p>
+
+<div class="vocab-box">
+    <h3>Key Sound Wave Vocabulary</h3>
+    <p><span class="vocab-term">Sound wave:</span> A longitudinal wave of pressure variations that travels through matter.</p>
+    <p><span class="vocab-term">Pitch:</span> The perceived highness or lowness of a sound; directly related to frequency (high frequency = high pitch).</p>
+    <p><span class="vocab-term">Loudness:</span> The perceived intensity of sound; related to amplitude and the amount of energy the wave carries.</p>
+    <p><span class="vocab-term">Timbre:</span> The quality or color of a sound that distinguishes different sources; related to the combination of frequencies present.</p>
+</div>
+
+<h2>How Sound is Produced</h2>
+
+<p>All sounds originate from vibrating objects. When a guitar string is plucked, a drumhead is struck, or vocal cords vibrate during speech, these objects oscillate back and forth. As they vibrate, they alternately compress and rarefy the surrounding air molecules. These pressure disturbances propagate outward as sound waves.</p>
+
+<p>Consider a vibrating tuning fork. When one prong moves forward, it compresses air molecules in front of it, creating a high-pressure region. When the prong moves backward, it creates a low-pressure region (rarefaction) in that same space. As the prong oscillates, it continuously creates alternating compressions and rarefactions that travel outward through the air at the speed of sound.</p>
+
+<h2>Properties of Sound Waves</h2>
+
+<p>Sound waves share the same fundamental properties as other waves: wavelength, frequency, period, amplitude, and wave speed. However, how we perceive these properties gives sound its unique characteristics.</p>
+
+<h3>Frequency and Pitch</h3>
+
+<p>The <span class="vocab-term">frequency</span> of a sound wave determines its <span class="vocab-term">pitch</span>. High-frequency sounds have high pitch (like a whistle or piccolo), while low-frequency sounds have low pitch (like a bass drum or foghorn). Humans can typically hear frequencies from about 20 Hz to 20,000 Hz (20 kHz), though this range decreases with age.</p>
+
+<div class="vocab-box">
+    <h3>Sound Frequency Ranges</h3>
+    <p><span class="vocab-term">Infrasound:</span> Frequencies below 20 Hz; inaudible to humans but produced by earthquakes, ocean waves, and large animals like elephants.</p>
+    <p><span class="vocab-term">Audible range:</span> 20 Hz to 20,000 Hz for humans; dogs hear up to about 45 kHz, bats up to 110 kHz.</p>
+    <p><span class="vocab-term">Ultrasound:</span> Frequencies above 20,000 Hz; used in medical imaging, cleaning, and by animals like bats and dolphins for echolocation.</p>
+</div>
+
+<p>Musical notes correspond to specific frequencies. For example, the note middle C has a frequency of about 262 Hz, while the A above middle C (the note orchestras use to tune) is 440 Hz. When you go up one octave, the frequency doubles—high C is about 523 Hz, exactly twice the frequency of middle C.</p>
+
+<h3>Amplitude and Loudness</h3>
+
+<p>The <span class="vocab-term">amplitude</span> of a sound wave relates to how far air molecules are displaced from their equilibrium positions, which corresponds to the pressure difference between compressions and rarefactions. Larger amplitude means greater pressure variations and more energy carried by the wave. We perceive amplitude as <span class="vocab-term">loudness</span> or volume.</p>
+
+<p>Sound intensity is measured in <span class="vocab-term">decibels (dB)</span>, a logarithmic scale. A whisper might be 20 dB, normal conversation about 60 dB, a lawn mower about 90 dB, and a rock concert or jet engine around 110-120 dB. Prolonged exposure to sounds above 85 dB can cause permanent hearing damage. Every increase of 10 dB represents a sound that carries 10 times more energy.</p>
+
+<div class="info-box">
+    <h3>Hearing Protection</h3>
+    <p>Human ears are sensitive but vulnerable. Sounds above 85 dB can damage the delicate hair cells in the inner ear that convert sound vibrations into neural signals. Once damaged, these cells don't regenerate. This is why workers in loud environments wear hearing protection, and why you should limit exposure to loud music or machinery. The damage is cumulative—both intensity and duration matter.</p>
+</div>
+
+<h2>Speed of Sound</h2>
+
+<p>The speed of sound depends on the medium through which it travels and, for gases, on temperature. Sound travels fastest in solids, slower in liquids, and slowest in gases because particle spacing and the strength of particle interactions affect how quickly compressions and rarefactions can propagate.</p>
+
+<div class="vocab-box">
+    <h3>Speed of Sound in Different Media (at 20°C)</h3>
+    <p>Air: 343 m/s (767 mph)</p>
+    <p>Water: 1,480 m/s</p>
+    <p>Steel: 5,960 m/s</p>
+    <p>Aluminum: 6,320 m/s</p>
+</div>
+
+<p>In air, the speed of sound increases with temperature because warmer air molecules move faster and can transmit pressure changes more quickly. The relationship is approximately:</p>
+
+<div class="formula-box">
+    $$v = 331 + 0.6T$$
+    <p style="font-size: 14px; margin-top: 0.05in;">where $v$ is speed in m/s and $T$ is temperature in °C</p>
+</div>
+
+<p>At 0°C, sound travels at 331 m/s. At 20°C (room temperature), it travels at about 343 m/s. On a hot summer day at 35°C, sound speed reaches approximately 352 m/s.</p>
+
+<div class="info-box">
+    <h3>Why Sound Speed Varies</h3>
+    <p>Sound travels faster in solids than liquids, and faster in liquids than gases, because of particle spacing and bonding. In solids, particles are tightly packed and strongly connected, allowing vibrations to transfer very quickly. In liquids, particles are close but connections are weaker. In gases, particles are far apart with weak interactions, so compressions propagate slowly. Temperature matters in gases because warmer molecules move faster, facilitating quicker transmission of pressure waves.</p>
+</div>
+
+<h2>The Doppler Effect</h2>
+
+<p>The <span class="vocab-term">Doppler effect</span> is the change in perceived frequency of a wave when there is relative motion between the source and observer. You've experienced this when a vehicle with a siren passes you—the pitch sounds higher as it approaches and lower as it moves away, even though the siren produces a constant frequency.</p>
+
+<div class="vocab-box">
+    <h3>Doppler Effect Explained</h3>
+    <p><span class="vocab-term">Doppler effect:</span> The change in observed frequency due to relative motion between source and observer; approaching sources have higher perceived frequency, receding sources have lower perceived frequency.</p>
+</div>
+
+<p>When a sound source moves toward you, it catches up to the sound waves it previously emitted. This compresses the waves, decreasing wavelength and increasing frequency (higher pitch). When the source moves away, it stretches out the waves, increasing wavelength and decreasing frequency (lower pitch). The source frequency hasn't changed—only your perception of it changes due to the relative motion.</p>
+
+<p>For a source moving toward or away from a stationary observer, the observed frequency is:</p>
+
+<div class="formula-box">
+    $$f_{obs} = f_{source} \left(\frac{v_{sound}}{v_{sound} \mp v_{source}}\right)$$
+    <p style="font-size: 14px; margin-top: 0.05in;">Use minus (−) when source approaches; use plus (+) when source recedes</p>
+</div>
+
+<p>where $f_{obs}$ is the observed frequency, $f_{source}$ is the actual frequency emitted by the source, $v_{sound}$ is the speed of sound, and $v_{source}$ is the speed of the source.</p>
+
+<div class="historical-box">
+    <h3>Real-World Applications of the Doppler Effect</h3>
+    <p><strong>Radar Speed Guns:</strong> Police use the Doppler effect with radio waves to measure vehicle speed. The gun emits radio waves that reflect off the moving car. The frequency shift between emitted and reflected waves reveals the car's speed.</p>
+    <p><strong>Medical Ultrasound:</strong> Doppler ultrasound measures blood flow by detecting frequency shifts in sound waves reflecting off moving blood cells, helping diagnose circulatory problems.</p>
+    <p><strong>Astronomy:</strong> The Doppler effect with light waves reveals whether stars and galaxies are moving toward or away from Earth, providing evidence that the universe is expanding.</p>
+</div>
+
+<h2>Musical Instruments and Sound Quality</h2>
+
+<p>Musical instruments produce sounds with specific frequencies and combinations of frequencies. A pure single frequency produces a simple tone, but most musical instruments produce complex sounds containing a fundamental frequency (the lowest frequency, which we perceive as the pitch) plus harmonics (integer multiples of the fundamental frequency).</p>
+
+<p>The <span class="vocab-term">timbre</span> or tone quality that distinguishes a flute from a violin playing the same note comes from different combinations of harmonics. A flute produces mostly the fundamental frequency with few harmonics, creating a pure, simple sound. A violin produces many harmonics, creating a richer, more complex tone. This is why we can identify different instruments even when they play the same pitch.</p>
+
+<h3>Standing Waves in Musical Instruments</h3>
+
+<p>String instruments (guitar, violin, piano) and wind instruments (flute, trumpet, organ pipes) produce sound through standing waves. In a guitar string, waves reflect from both fixed ends, creating standing wave patterns with nodes at the ends and antinodes between. The fundamental frequency has one antinode; higher harmonics have multiple antinodes.</p>
+
+<p>The frequency of the fundamental (first harmonic) for a string fixed at both ends is:</p>
+
+<div class="formula-box">
+    $$f_1 = \frac{v}{2L}$$
+    <p style="font-size: 14px; margin-top: 0.05in;">where $v$ is wave speed on the string and $L$ is string length</p>
+</div>
+
+<p>Higher harmonics occur at integer multiples: $f_2 = 2f_1$, $f_3 = 3f_1$, and so on. Musicians change pitch by altering string length (pressing frets on a guitar), string tension (tuning), or by selecting which harmonic to emphasize.</p>
+
+<h2>Applications of Sound Technology</h2>
+
+<h3>Medical Ultrasound</h3>
+
+<p>Ultrasound imaging uses high-frequency sound waves (typically 2-18 MHz) to create images of internal body structures. A transducer emits ultrasound pulses that reflect off tissue boundaries. Different tissues reflect ultrasound differently based on their density and composition. By measuring reflection times and intensities, computers construct detailed images. Ultrasound is safe, non-invasive, and doesn't use ionizing radiation, making it ideal for prenatal imaging and examining soft tissues.</p>
+
+<h3>Sonar Navigation</h3>
+
+<p>Ships and submarines use sonar (Sound Navigation and Ranging) to detect objects and measure depths. Active sonar emits sound pulses and listens for echoes. The time delay between emission and echo, combined with sound speed in water, reveals distance to objects. Passive sonar only listens for sounds without emitting, useful for detecting other vessels while remaining undetected.</p>
+
+<h3>Noise Control</h3>
+
+<p>Understanding sound waves enables noise reduction strategies. Sound barriers along highways use reflection and absorption to redirect or reduce traffic noise. Buildings use sound-absorbing materials to prevent echoes and reverberation. Active noise cancellation in headphones uses destructive interference—microphones detect environmental noise, and the headphones generate sound waves with opposite phase to cancel it.</p>
+
+<h3>Architectural Acoustics</h3>
+
+<p>Concert halls, theaters, and recording studios are designed with careful attention to how sound reflects, absorbs, and diffracts. Proper acoustics ensure sound reaches all audience members clearly without excessive echoes or dead zones. Curved surfaces can focus sound, while diffusers scatter it evenly. Absorption materials control reverberation time—how long sound persists after the source stops.</p>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Wavelength of a Musical Note</h3>
+    <p><strong>Problem:</strong> The musical note middle C has a frequency of 262 Hz. If the speed of sound in air is 343 m/s, what is the wavelength of this sound wave?</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Frequency: $f = 262 \text{ Hz}$</li>
+        <li>Speed of sound: $v = 343 \text{ m/s}$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> Wavelength $\lambda$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Use the wave equation $v = f\lambda$ and solve for wavelength:</p>
+    $$\lambda = \frac{v}{f}$$
+    
+    <p>Substitute the known values:</p>
+    $$\lambda = \frac{343 \text{ m/s}}{262 \text{ Hz}} = 1.31 \text{ m}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The wavelength is 1.31 m. This means each complete cycle of compression and rarefaction spans 1.31 meters in air.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Speed of Sound at Different Temperatures</h3>
+    <p><strong>Problem:</strong> On a winter day, the temperature is −10°C. Calculate the speed of sound in air at this temperature.</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Temperature: $T = -10°\text{C}$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> Speed of sound $v$</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Use the formula for speed of sound in air:</p>
+    $$v = 331 + 0.6T$$
+    
+    <p>Substitute the temperature:</p>
+    $$v = 331 + 0.6(-10) = 331 - 6 = 325 \text{ m/s}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The speed of sound at −10°C is 325 m/s, which is slower than the 343 m/s at 20°C because the colder air molecules move more slowly.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Doppler Effect Calculation</h3>
+    <p><strong>Problem:</strong> An ambulance siren emits sound at a frequency of 1,200 Hz. The ambulance approaches a stationary observer at a speed of 30 m/s. The speed of sound in air is 340 m/s.</p>
+    <p>(a) What frequency does the observer hear as the ambulance approaches?</p>
+    <p>(b) If the ambulance were moving away at the same speed, what frequency would the observer hear?</p>
+    <p>(c) Explain why the frequency changes.</p>
+    
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Source frequency: $f_{source} = 1,200 \text{ Hz}$</li>
+        <li>Source speed: $v_{source} = 30 \text{ m/s}$</li>
+        <li>Speed of sound: $v_{sound} = 340 \text{ m/s}$</li>
+    </ul>
+    
+    <p><strong>Find:</strong> (a) Observed frequency (approaching), (b) Observed frequency (receding), (c) Explanation</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>Part (a):</strong> When the source approaches, use minus sign in denominator:</p>
+    $$f_{obs} = f_{source} \left(\frac{v_{sound}}{v_{sound} - v_{source}}\right)$$
+    
+    $$f_{obs} = 1,200 \text{ Hz} \left(\frac{340 \text{ m/s}}{340 \text{ m/s} - 30 \text{ m/s}}\right)$$
+    
+    $$f_{obs} = 1,200 \text{ Hz} \left(\frac{340}{310}\right) = 1,200 \times 1.097 = 1,316 \text{ Hz}$$
+    
+    <p><strong>Part (b):</strong> When the source recedes, use plus sign in denominator:</p>
+    $$f_{obs} = f_{source} \left(\frac{v_{sound}}{v_{sound} + v_{source}}\right)$$
+    
+    $$f_{obs} = 1,200 \text{ Hz} \left(\frac{340 \text{ m/s}}{340 \text{ m/s} + 30 \text{ m/s}}\right)$$
+    
+    $$f_{obs} = 1,200 \text{ Hz} \left(\frac{340}{370}\right) = 1,200 \times 0.919 = 1,103 \text{ Hz}$$
+    
+    <p><strong>Part (c):</strong> When the ambulance approaches, it moves toward the sound waves it just emitted, compressing them and decreasing their wavelength. Since $v = f\lambda$ and speed stays constant, shorter wavelength means higher frequency. When receding, the ambulance stretches out the waves, increasing wavelength and decreasing frequency. The actual siren frequency (1,200 Hz) never changes—only the observer's perception changes due to the motion.</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">(a) The observer hears 1,316 Hz as the ambulance approaches—a higher pitch than the actual 1,200 Hz. (b) The observer hears 1,103 Hz as it recedes—a lower pitch. (c) The frequency shift occurs because the source's motion compresses (approaching) or stretches (receding) the sound waves, changing their wavelength and thus the perceived frequency.</span></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Sound is a longitudinal mechanical wave consisting of pressure variations (compressions and rarefactions) that travels through matter.</li>
+    <li>Sound requires a medium to propagate and cannot travel through a vacuum, unlike electromagnetic waves.</li>
+    <li>Frequency determines pitch (high frequency = high pitch); humans hear approximately 20 Hz to 20,000 Hz.</li>
+    <li>Amplitude determines loudness; sound intensity is measured in decibels (dB) on a logarithmic scale.</li>
+    <li>Timbre is the quality that distinguishes sounds from different sources; it results from different combinations of harmonics.</li>
+    <li>The speed of sound in air at 20°C is approximately 343 m/s; it travels faster in solids than liquids, and faster in liquids than gases.</li>
+    <li>Speed of sound in air increases with temperature: $v = 331 + 0.6T$ (where $T$ is in °C).</li>
+    <li>The Doppler effect causes perceived frequency to increase when source and observer approach each other and decrease when they move apart.</li>
+    <li>Musical instruments produce sounds through standing waves with fundamental frequencies and harmonics; timbre comes from different harmonic combinations.</li>
+    <li>Applications of sound include medical ultrasound, sonar navigation, noise control, architectural acoustics, and musical instrument design.</li>
+    <li>Prolonged exposure to sounds above 85 dB can cause permanent hearing damage; hearing protection is essential in loud environments.</li>
+</ul>
+
+<!-- ============== KEY EQUATIONS ============== -->
+<h1>Key Equations</h1>
+
+<table>
+    <tr>
+        <th>Equation Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Wave Equation</td>
+        <td>$v = f\lambda$</td>
+        <td>$v$ = wave speed (m/s), $f$ = frequency (Hz), $\lambda$ = wavelength (m)</td>
+    </tr>
+    <tr>
+        <td>Speed of Sound in Air</td>
+        <td>$v = 331 + 0.6T$</td>
+        <td>$v$ = speed (m/s), $T$ = temperature (°C)</td>
+    </tr>
+    <tr>
+        <td>Doppler Effect (Moving Source)</td>
+        <td>$f_{obs} = f_{source} \left(\dfrac{v_{sound}}{v_{sound} \mp v_{source}}\right)$</td>
+        <td>$f$ = frequency (Hz), $v$ = speed (m/s); use − for approaching, + for receding</td>
+    </tr>
+    <tr>
+        <td>Fundamental Frequency (String)</td>
+        <td>$f_1 = \dfrac{v}{2L}$</td>
+        <td>$f_1$ = fundamental frequency (Hz), $v$ = wave speed on string (m/s), $L$ = string length (m)</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<div class="page-break"></div>
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Explain why sound cannot travel through the vacuum of space, but light can. What fundamental difference between these waves accounts for this?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> Describe the relationship between frequency and pitch in sound waves. Why do women's voices typically have higher pitch than men's voices?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> Explain the Doppler effect using the example of an approaching and then receding train whistle. Why does the pitch sound different even though the whistle produces a constant frequency?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> Compare how sound travels through air, water, and steel. In which medium does sound travel fastest, and why?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A sound wave in air has a frequency of 512 Hz. If the speed of sound is 340 m/s, calculate the wavelength of this sound wave.</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> Calculate the speed of sound in air when the temperature is 30°C.</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> A fire truck siren produces sound at 1,500 Hz. The truck approaches a stationary observer at 25 m/s. The speed of sound is 343 m/s.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the frequency heard by the observer as the truck approaches.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the frequency heard as the truck moves away at the same speed.</p>
+<p style="margin-left: 0.2in;">(c) Calculate the difference between these two frequencies.</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> A hiker shouts toward a cliff and hears an echo 3.0 seconds later. The temperature is 15°C.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the speed of sound at this temperature.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the total distance the sound traveled (to the cliff and back).</p>
+<p style="margin-left: 0.2in;">(c) How far away is the cliff?</p>
+<p style="margin-left: 0.2in;">(d) If the same hiker shouted on a hot summer day at 35°C, would the echo return sooner or later? Calculate the new echo time.</p>
+<div class="answer-space"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="page-break"></div>
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> Sound cannot travel through space because it is a mechanical wave that requires a medium (particles of matter) to propagate. Sound travels as compressions and rarefactions of particles—without particles, there's nothing to compress or rarefy. Light, however, is an electromagnetic wave consisting of oscillating electric and magnetic fields. These fields can exist and propagate through empty space without requiring a material medium. This fundamental difference is why we can see light from distant stars but cannot hear any sounds they might produce.</p>
+
+<p><strong>2.</strong> Frequency and pitch are directly related—higher frequency produces higher pitch, and lower frequency produces lower pitch. Pitch is our perception of frequency. Women's voices typically have higher pitch than men's voices because their vocal cords are generally shorter and thinner, causing them to vibrate at higher frequencies (typically 165-255 Hz for women versus 85-180 Hz for men). Just like a shorter guitar string produces a higher note, shorter vocal cords produce higher frequency vibrations.</p>
+
+<p><strong>3.</strong> As a train approaches, it moves toward the sound waves it just emitted. This motion compresses the waves, decreasing their wavelength. Since the wave equation $v = f\lambda$ requires that $v$ (sound speed) stays constant, shorter wavelength means higher frequency, which we perceive as higher pitch. As the train moves away, it stretches the waves, increasing wavelength and decreasing frequency, which sounds like lower pitch. The actual whistle frequency never changes—only our perception changes because of the relative motion between source and observer. This creates the characteristic "eeee-owww" sound as the train passes.</p>
+
+<p><strong>4.</strong> Sound travels fastest in steel (approximately 5,960 m/s), slower in water (approximately 1,480 m/s), and slowest in air (approximately 343 m/s). Sound speed depends on how quickly particles can transmit compressions and rarefactions. In steel, particles are very close together and strongly bonded, allowing vibrations to transfer rapidly from one particle to the next. In water, particles are close but less strongly connected. In air, particles are far apart with weak interactions, so pressure changes propagate slowly. The closer the particles and stronger their connections, the faster sound travels.</p>
+
+<p><strong>5.</strong> <span class="highlight">$\lambda = 0.66 \text{ m}$</span></p>
+<p>Solution: Use $\lambda = v/f$</p>
+$$\lambda = \frac{340 \text{ m/s}}{512 \text{ Hz}} = 0.664 \text{ m} \approx 0.66 \text{ m}$$
+
+<p><strong>6.</strong> <span class="highlight">$v = 349 \text{ m/s}$</span></p>
+<p>Solution: Use $v = 331 + 0.6T$</p>
+$$v = 331 + 0.6(30) = 331 + 18 = 349 \text{ m/s}$$
+
+<p><strong>7.</strong> <span class="highlight">(a) $f_{obs} = 1,618 \text{ Hz}$, (b) $f_{obs} = 1,398 \text{ Hz}$, (c) Difference = 220 Hz</span></p>
+<p><strong>Part (a):</strong> Approaching (use minus):</p>
+$$f_{obs} = 1,500 \text{ Hz} \left(\frac{343 \text{ m/s}}{343 - 25 \text{ m/s}}\right) = 1,500 \left(\frac{343}{318}\right) = 1,500 \times 1.079 = 1,618 \text{ Hz}$$
+
+<p><strong>Part (b):</strong> Receding (use plus):</p>
+$$f_{obs} = 1,500 \text{ Hz} \left(\frac{343 \text{ m/s}}{343 + 25 \text{ m/s}}\right) = 1,500 \left(\frac{343}{368}\right) = 1,500 \times 0.932 = 1,398 \text{ Hz}$$
+
+<p><strong>Part (c):</strong> Difference:</p>
+$$\Delta f = 1,618 - 1,398 = 220 \text{ Hz}$$
+
+<p><strong>8.</strong> <span class="highlight">(a) $v = 340 \text{ m/s}$, (b) $d_{total} = 1,020 \text{ m}$, (c) Distance to cliff = 510 m, (d) Echo returns sooner; new time = 2.91 s</span></p>
+<p><strong>Part (a):</strong> Speed at 15°C:</p>
+$$v = 331 + 0.6(15) = 331 + 9 = 340 \text{ m/s}$$
+
+<p><strong>Part (b):</strong> Total distance using $d = vt$:</p>
+$$d = (340 \text{ m/s})(3.0 \text{ s}) = 1,020 \text{ m}$$
+
+<p><strong>Part (c):</strong> Distance to cliff (sound goes there and back):</p>
+$$\text{Distance to cliff} = \frac{1,020 \text{ m}}{2} = 510 \text{ m}$$
+
+<p><strong>Part (d):</strong> At 35°C:</p>
+$$v = 331 + 0.6(35) = 331 + 21 = 352 \text{ m/s}$$
+<p>Time for echo (distance is still 510 m each way, 1,020 m total):</p>
+$$t = \frac{d}{v} = \frac{1,020 \text{ m}}{352 \text{ m/s}} = 2.90 \text{ s}$$
+<p>The echo returns sooner (2.90 s instead of 3.0 s) because sound travels faster at higher temperatures.</p>
+
+</body>
+</html>
