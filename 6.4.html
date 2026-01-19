@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 6.4: Mirrors - Plane, Concave, and Convex</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Times New Roman', Times, serif; font-size: 16px; line-height: 1.3; color: #333; background-color: #fff; padding: 0.5in; max-width: 8.5in; margin: 0 auto; }
+        .title-page { page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; min-height: 10in; background-color: white; color: #000033; padding: 0.5in; margin-bottom: 0.5in; border: 2px solid #000033; }
+        .title-page-image { width: 100%; max-width: 5in; height: auto; margin-bottom: 0.3in; }
+        .section-number { font-size: 28px; font-weight: bold; margin-bottom: 0.2in; letter-spacing: 2px; color: #000033; }
+        .title-page h1 { font-size: 28px; font-weight: bold; margin-bottom: 0.2in; line-height: 1.4; color: #000033; letter-spacing: 2px; background-color: transparent; padding: 0; }
+        .title-page p { font-size: 16px; max-width: 5.5in; line-height: 1.6; margin-top: 0.1in; color: #000033; }
+        h1 { font-size: 24px; font-weight: bold; background-color: #000033; color: white; padding: 6px; margin: 0.15in 0; }
+        h2 { font-size: 18px; font-weight: bold; background-color: #000033; color: white; padding: 6px; margin: 0.1in 0; }
+        h3 { font-size: 16px; font-weight: bold; color: #000033; margin: 0.08in 0; }
+        p { margin-bottom: 0.05in; text-align: justify; }
+        .vocab-term { font-weight: bold; }
+        .learning-objectives { background-color: #e8f4f8; border-left: 4px solid #0066cc; padding: 0.08in; margin: 0.06in 0; }
+        .learning-objectives h3 { color: #0066cc; margin-bottom: 0.05in; }
+        .learning-objectives ul { margin-left: 0.2in; }
+        .learning-objectives li { margin-bottom: 0.04in; font-size: 16px; }
+        .vocab-box { background-color: #f5f5f5; border-left: 4px solid #666; padding: 0.08in; margin: 0.06in 0; }
+        .info-box { background-color: #fffacd; border-left: 4px solid #ff9933; padding: 0.08in; margin: 0.06in 0; }
+        .real-world-box { background-color: #e6f3ff; border-left: 4px solid #0066cc; padding: 0.08in; margin: 0.06in 0; }
+        .example-box { background-color: #f9f9f9; border-left: 4px solid #cc6600; padding: 0.08in; margin: 0.08in 0; }
+        .example-box h3 { color: #cc6600; margin-bottom: 0.05in; }
+        .example-step { margin-left: 0.15in; margin-bottom: 0.04in; font-size: 14px; }
+        .formula-box { background-color: #f0f0f0; border: 2px solid #333; padding: 0.08in; margin: 0.06in 0; text-align: center; }
+        .formula-box table { width: 100%; border-collapse: collapse; margin-top: 0.05in; }
+        .formula-box th, .formula-box td { border: 1px solid #ccc; padding: 0.06in; text-align: left; font-size: 14px; }
+        .answer-space-long { min-height: 1.2in; background-color: #fafafa; border-bottom: 1px solid #ddd; padding: 0.05in; margin: 0.1in 0; }
+        .answer-space-short { min-height: 0.8in; background-color: #fafafa; border-bottom: 1px solid #ddd; padding: 0.05in; margin: 0.08in 0; }
+        ul, ol { margin-left: 0.2in; margin-bottom: 0.05in; }
+        li { margin-bottom: 0.04in; }
+        .summary-box { background-color: #f0f0f0; border: 1px solid #999; padding: 0.08in; margin: 0.06in 0; }
+        .summary-box h3 { color: #000033; margin-bottom: 0.05in; }
+        .summary-box ul { margin-left: 0.2in; }
+        .summary-box li { margin-bottom: 0.04in; font-size: 15px; }
+        svg { max-width: 100%; height: auto; display: block; margin: 0.06in auto; }
+        .page-break { page-break-after: always; }
+        .problem { margin-bottom: 0.08in; }
+        .problem-number { font-weight: bold; margin-bottom: 0.04in; }
+        table { width: 100%; border-collapse: collapse; margin: 0.06in 0; font-size: 13px; }
+        table td, table th { border: 1px solid #ccc; padding: 0.05in; text-align: left; }
+        table th { background-color: #e0e0e0; font-weight: bold; }
+        .answer-key-section { margin-top: 0.2in; padding-top: 0.1in; border-top: 2px solid #000033; }
+        .highlight { background-color: #ffff99; }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 6.4</div>
+    <h1>Mirrors: Plane, Concave, and Convex</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        
+        <!-- Three mirrors: plane, concave, convex -->
+        <!-- Plane mirror -->
+        <line x1="50" y1="50" x2="50" y2="250" stroke="#666" stroke-width="8"/>
+        <circle cx="30" cy="120" r="15" fill="#0066cc" opacity="0.7"/>
+        <line x1="45" y1="120" x2="70" y2="120" stroke="#CC0000" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="55" y1="120" x2="110" y2="120" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="3,3"/>
+        <text x="35" y="285" font-size="13" text-anchor="middle" fill="#000033" font-weight="bold">Plane</text>
+        
+        <!-- Concave mirror (curved inward) -->
+        <path d="M 200 50 Q 180 100 180 150 Q 180 200 200 250" stroke="#666" stroke-width="8" fill="none"/>
+        <circle cx="230" cy="150" r="15" fill="#0066cc" opacity="0.7"/>
+        <line x1="215" y1="150" x2="190" y2="150" stroke="#CC0000" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="190" y1="150" x2="120" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="3,3"/>
+        <text x="200" y="285" font-size="13" text-anchor="middle" fill="#000033" font-weight="bold">Concave</text>
+        
+        <!-- Convex mirror (curved outward) -->
+        <path d="M 400 50 Q 420 100 420 150 Q 420 200 400 250" stroke="#666" stroke-width="8" fill="none"/>
+        <circle cx="350" cy="150" r="15" fill="#0066cc" opacity="0.7"/>
+        <line x1="365" y1="150" x2="410" y2="150" stroke="#CC0000" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="410" y1="150" x2="480" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="3,3"/>
+        <text x="400" y="285" font-size="13" text-anchor="middle" fill="#000033" font-weight="bold">Convex</text>
+        
+        <!-- Labels -->
+        <text x="550" y="30" font-size="11" fill="#CC0000" font-weight="bold">object</text>
+        <text x="540" y="145" font-size="11" fill="#0066cc" font-weight="bold">image</text>
+    </svg>
+    
+    <p>Mirrors are everywhere in our lives. From the mirror you use to brush your teeth to the curved mirrors in telescopes and car headlights, mirrors play a crucial role in optics. Different mirror shapes produce different types of images, each useful for different applications. Understanding how plane, concave, and convex mirrors work is essential to understanding optical instruments.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h3>Learning Objectives</h3>
+    <ul>
+        <li>I can determine image properties formed by plane mirrors using geometric principles</li>
+        <li>I can use the mirror equation to find image location and size for curved mirrors</li>
+        <li>I can draw ray diagrams for concave and convex mirrors</li>
+        <li>I can explain real-world applications of different mirror types</li>
+    </ul>
+</div>
+
+<h2>Introduction</h2>
+
+<p>We learned in Section 6.1 that light reflects off surfaces following the law of reflection: the angle of incidence equals the angle of reflection. Different mirror shapes apply this law in different ways, creating different types of images. In this section, we'll explore three fundamental mirror types and learn to predict the images they create.</p>
+
+<div class="page-break"></div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h2>Plane Mirrors</h2>
+
+<p>A <span class="vocab-term">plane mirror</span> is a flat, reflective surface like the bathroom mirror in your home. When you look in a plane mirror, you see an image of yourself that appears to be behind the mirror.</p>
+
+<div class="vocab-box">
+    <h3>Image Properties of Plane Mirrors</h3>
+    <ul>
+        <li><span class="vocab-term">Virtual image:</span> Image formed behind the mirror where light does not actually travel</li>
+        <li><span class="vocab-term">Upright:</span> Image is right-side up (not inverted)</li>
+        <li><span class="vocab-term">Same size:</span> Image is the same size as the object</li>
+        <li><span class="vocab-term">Distance:</span> Image distance equals object distance (mirror equation: $d_o = d_i$)</li>
+    </ul>
+</div>
+
+<p>Because plane mirrors always produce virtual, upright images of the same size, they are used in everyday applications where we want to see an undistorted reflection of ourselves.</p>
+
+<h2>Curved Mirrors: Concave and Convex</h2>
+
+<p><span class="vocab-term">Curved mirrors</span> are mirrors whose surfaces are part of a sphere. There are two types:</p>
+
+<div class="vocab-box">
+    <h3>Concave Mirrors (Converging)</h3>
+    <p><span class="vocab-term">Concave mirrors</span> curve inward—like the inside of a spoon. They are also called converging mirrors because they bring light rays together. Important points on a concave mirror:</p>
+    <ul>
+        <li><span class="vocab-term">Focal point (F):</span> The point where parallel light rays converge after reflection</li>
+        <li><span class="vocab-term">Center of curvature (C):</span> The center of the sphere of which the mirror is part</li>
+        <li><span class="vocab-term">Focal length (f):</span> Distance from mirror to focal point</li>
+        <li><span class="vocab-term">Relationship:</span> $f = \frac{R}{2}$ where $R$ is the radius of curvature</li>
+    </ul>
+</div>
+
+<div class="vocab-box">
+    <h3>Convex Mirrors (Diverging)</h3>
+    <p><span class="vocab-term">Convex mirrors</span> curve outward—like the back of a spoon. They are also called diverging mirrors because they spread light rays apart. Convex mirrors always produce virtual, upright, reduced images. These are used as security mirrors and side-view mirrors on cars.</p>
+</div>
+
+<h2>The Mirror Equation</h2>
+
+<p>For <span class="highlight">curved mirrors only</span>, we can use the mirror equation to find where an image forms and how large it is:</p>
+
+<div class="formula-box">
+    <h3>Mirror Equation</h3>
+    <p>$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</p>
+    <p>$$M = -\frac{d_i}{d_o} = \frac{h_i}{h_o}$$</p>
+    <p>where: $f$ = focal length, $d_o$ = object distance, $d_i$ = image distance, $M$ = magnification, $h_o$ = object height, $h_i$ = image height</p>
+</div>
+
+<div class="info-box">
+    <h3>Sign Conventions for Mirrors</h3>
+    <ul>
+        <li>$f > 0$ (positive) for concave mirrors; $f < 0$ (negative) for convex mirrors</li>
+        <li>$d_o$ is always positive (object in front of mirror)</li>
+        <li>$d_i > 0$ (positive) for real images; $d_i < 0$ (negative) for virtual images</li>
+        <li>$M > 0$ for upright images; $M < 0$ for inverted images</li>
+    </ul>
+</div>
+
+<div class="real-world-box">
+    <h3>Applications of Curved Mirrors</h3>
+    <ul>
+        <li><strong>Telescopes:</strong> Concave mirrors collect light from distant stars and focus it</li>
+        <li><strong>Searchlights:</strong> Concave mirrors direct light from a bulb into a bright beam</li>
+        <li><strong>Car headlights:</strong> Concave mirrors focus light in a useful pattern</li>
+        <li><strong>Satellite dishes:</strong> Concave surfaces collect radio waves</li>
+        <li><strong>Security mirrors:</strong> Convex mirrors provide a wide field of view</li>
+        <li><strong>Car side mirrors:</strong> Convex mirrors show a wider area</li>
+    </ul>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h2>Example Problems</h2>
+
+<div class="example-box">
+    <h3>Example 1: Plane Mirror Image</h3>
+    <p><strong>Given:</strong> An object is placed 30 cm in front of a plane mirror.</p>
+    <p><strong>Find:</strong> Where is the image located? Is it real or virtual?</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> For plane mirrors, the image distance equals the object distance.</p>
+        <p>$d_i = d_o = 30$ cm</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Determine if the image is real or virtual.</p>
+        <p>For a plane mirror, the image is always virtual (appears behind the mirror) and upright.</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: The image is located 30 cm behind the plane mirror. It is virtual.</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Concave Mirror Image Location</h3>
+    <p><strong>Given:</strong> An object 5 cm tall is placed 40 cm from a concave mirror with focal length f = 10 cm.</p>
+    <p><strong>Find:</strong> Where is the image located? Is it real or virtual? What is the magnification?</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Use the mirror equation to find $d_i$.</p>
+        <p>$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</p>
+        <p>$$\frac{1}{10} = \frac{1}{40} + \frac{1}{d_i}$$</p>
+        <p>$$\frac{1}{d_i} = \frac{1}{10} - \frac{1}{40} = \frac{4-1}{40} = \frac{3}{40}$$</p>
+        <p>$$d_i = \frac{40}{3} = 13.3 \text{ cm}$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Determine if image is real or virtual.</p>
+        <p>Since $d_i > 0$ (positive), the image is real (in front of mirror).</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 3:</strong> Calculate magnification.</p>
+        <p>$$M = -\frac{d_i}{d_o} = -\frac{13.3}{40} = -0.33$$</p>
+        <p>The negative sign means the image is inverted. The magnitude (0.33) means the image is 0.33 times the size of the object, so it's reduced.</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: Image located 13.3 cm in front of mirror. Real, inverted, reduced image with magnification M = -0.33.</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Convex Mirror</h3>
+    <p><strong>Given:</strong> An object is 50 cm in front of a convex mirror with focal length f = -20 cm (negative because it's convex).</p>
+    <p><strong>Find:</strong> Image location and type.</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Apply the mirror equation.</p>
+        <p>$$\frac{1}{-20} = \frac{1}{50} + \frac{1}{d_i}$$</p>
+        <p>$$\frac{1}{d_i} = -\frac{1}{20} - \frac{1}{50} = -\frac{5+2}{100} = -\frac{7}{100}$$</p>
+        <p>$$d_i = -14.3 \text{ cm}$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Interpret the result.</p>
+        <p>$d_i$ is negative, so the image is virtual (behind the mirror). Convex mirrors always produce virtual, upright, reduced images.</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: Image is 14.3 cm behind the convex mirror. Virtual, upright, reduced image.</strong></p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY ============== -->
+<h2>Summary</h2>
+
+<div class="summary-box">
+    <h3>Key Concepts</h3>
+    <ul>
+        <li>Plane mirrors produce virtual, upright, same-size images at a distance equal to the object distance</li>
+        <li>Curved mirrors follow the law of reflection at every point on their surface</li>
+        <li>Concave (converging) mirrors can produce real or virtual images depending on object position</li>
+        <li>Convex (diverging) mirrors always produce virtual, upright, reduced images</li>
+        <li>The mirror equation relates focal length, object distance, and image distance: $\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$</li>
+        <li>Magnification indicates image size relative to object and orientation: $M = -\frac{d_i}{d_o}$</li>
+        <li>Real images can be projected on a screen; virtual images cannot</li>
+        <li>Focal length $f = \frac{R}{2}$ where $R$ is radius of curvature</li>
+        <li>Concave mirrors are used in telescopes, searchlights, and headlights</li>
+        <li>Convex mirrors are used in security and car side-view mirrors</li>
+    </ul>
+</div>
+
+<h2>Key Equations</h2>
+
+<div class="formula-box">
+    <h3>Mirror Equations</h3>
+    <table>
+        <tr>
+            <th>Concept</th>
+            <th>Equation</th>
+        </tr>
+        <tr>
+            <td>Mirror Equation</td>
+            <td>$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</td>
+        </tr>
+        <tr>
+            <td>Magnification</td>
+            <td>$$M = -\frac{d_i}{d_o} = \frac{h_i}{h_o}$$</td>
+        </tr>
+        <tr>
+            <td>Focal Length & Radius</td>
+            <td>$$f = \frac{R}{2}$$</td>
+        </tr>
+        <tr>
+            <td>Plane Mirror</td>
+            <td>$$d_i = d_o$$</td>
+        </tr>
+    </table>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h2>Practice Problems</h2>
+
+<p><strong>Conceptual Questions (1-4):</strong></p>
+
+<div class="problem">
+    <div class="problem-number">1. Why is the image in a plane mirror always virtual?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">2. Explain why a concave mirror can produce a real image but a convex mirror cannot.</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">3. Why would a concave mirror be useful in a telescope but not as a security mirror?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">4. What is the difference between a real image and a virtual image?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<p style="margin-top: 0.15in;"><strong>Calculation Problems (5-6):</strong></p>
+
+<div class="problem">
+    <div class="problem-number">5. An object 4 cm tall is placed 60 cm from a concave mirror with focal length 15 cm. Use the mirror equation to find: (a) image distance, (b) magnification, (c) image height.</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">6. An object is placed 30 cm from a convex mirror with focal length –12 cm. Find the image distance and magnification.</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<p style="margin-top: 0.15in;"><strong>Multi-Step Problems (7-8):</strong></p>
+
+<div class="problem">
+    <div class="problem-number">7. A concave mirror has a radius of curvature of 40 cm. (a) What is the focal length? (b) If an object is placed at the focal point, where does the image form? (c) What does this tell us about the magnification?</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">8. Compare plane, concave, and convex mirrors. Create a table or chart showing the type of image (real/virtual, upright/inverted), magnification, and an application for each.</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="answer-key-section">
+    <h2>Answer Key</h2>
+
+    <h3>Conceptual Questions</h3>
+
+    <p><strong>1. Why is the image in a plane mirror always virtual?</strong></p>
+    <p><em>Answer:</em> Light rays reflected from a plane mirror appear to diverge from a point behind the mirror, but no actual light travels from that location. Our brain traces the reflected rays backward in straight lines, making us perceive an image behind the mirror. Because no actual light converges at the image location, it is virtual.</p>
+
+    <p><strong>2. Explain why a concave mirror can produce a real image but a convex mirror cannot.</strong></p>
+    <p><em>Answer:</em> A concave mirror converges light rays, so at certain object distances, reflected rays can actually intersect in front of the mirror to form a real image. A convex mirror always diverges light rays, so reflected rays never actually converge to form a real image. The reflected rays only appear to diverge from behind the mirror, creating a virtual image.</p>
+
+    <p><strong>3. Why would a concave mirror be useful in a telescope but not as a security mirror?</strong></p>
+    <p><em>Answer:</em> A concave mirror forms real, magnified images when the object is at certain distances, making it ideal for telescopes to magnify distant stars. However, it only shows a limited field of view directly in front of it. A convex mirror shows a wide field of view behind it, which is essential for security monitoring.</p>
+
+    <p><strong>4. What is the difference between a real image and a virtual image?</strong></p>
+    <p><em>Answer:</em> A real image is formed where light rays actually converge; it can be projected on a screen. A virtual image is formed where light rays appear to diverge from; it cannot be projected on a screen because no light actually travels there.</p>
+
+    <h3>Calculation Problems</h3>
+
+    <p><strong>5. Object 4 cm tall, 60 cm from concave mirror, f = 15 cm.</strong></p>
+    <p><em>Solution:</em></p>
+    <p>(a) $\frac{1}{15} = \frac{1}{60} + \frac{1}{d_i}$ → $\frac{1}{d_i} = \frac{1}{15} - \frac{1}{60} = \frac{3}{60} = \frac{1}{20}$ → $d_i = 20$ cm</p>
+    <p>(b) $M = -\frac{20}{60} = -0.33$</p>
+    <p>(c) $h_i = M \times h_o = -0.33 \times 4 = -1.33$ cm (negative indicates inverted)</p>
+    <p><em>Answer:</em> (a) 20 cm, (b) –0.33, (c) 1.33 cm inverted</p>
+
+    <p><strong>6. Object 30 cm from convex mirror, f = –12 cm.</strong></p>
+    <p><em>Solution:</em></p>
+    <p>$\frac{1}{-12} = \frac{1}{30} + \frac{1}{d_i}$ → $\frac{1}{d_i} = -\frac{1}{12} - \frac{1}{30} = -\frac{5+2}{60} = -\frac{7}{60}$ → $d_i = -8.6$ cm</p>
+    <p>$M = -\frac{-8.6}{30} = 0.29$</p>
+    <p><em>Answer:</em> Image distance = –8.6 cm (virtual), Magnification = 0.29</p>
+
+    <h3>Multi-Step Problems</h3>
+
+    <p><strong>7. Concave mirror, R = 40 cm.</strong></p>
+    <p><em>Answer:</em></p>
+    <p>(a) $f = \frac{R}{2} = \frac{40}{2} = 20$ cm</p>
+    <p>(b) When object is at focal point: $\frac{1}{20} = \frac{1}{20} + \frac{1}{d_i}$ → $\frac{1}{d_i} = 0$ → image forms at infinity</p>
+    <p>(c) Magnification is infinite, meaning the image is extremely magnified and appears at infinity</p>
+
+    <p><strong>8. Comparison Table:</strong></p>
+    <table>
+        <tr>
+            <th>Mirror Type</th>
+            <th>Image Type</th>
+            <th>Magnification</th>
+            <th>Application</th>
+        </tr>
+        <tr>
+            <td>Plane</td>
+            <td>Virtual, upright</td>
+            <td>M = 1 (same size)</td>
+            <td>Bathroom mirrors, reflections</td>
+        </tr>
+        <tr>
+            <td>Concave</td>
+            <td>Real/virtual depending on position</td>
+            <td>Variable (can be magnified)</td>
+            <td>Telescopes, headlights, magnifying</td>
+        </tr>
+        <tr>
+            <td>Convex</td>
+            <td>Virtual, upright</td>
+            <td>M < 1 (reduced)</td>
+            <td>Security mirrors, car side mirrors</td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>

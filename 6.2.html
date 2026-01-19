@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 6.2: Refraction and Snell's Law</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #333;
+            background-color: #ffffff;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+
+        /* Heading Styles */
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.15in 0;
+            margin-top: 0.2in;
+        }
+
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.1in 0;
+            margin-top: 0.15in;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000033;
+            margin: 0.08in 0;
+        }
+
+        /* Paragraph and Text */
+        p {
+            margin-bottom: 0.05in;
+            text-align: justify;
+        }
+
+        .vocab-term {
+            font-weight: bold;
+        }
+
+        /* Box Styles */
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+        }
+
+        .learning-objectives h3 {
+            color: #0066cc;
+            margin-bottom: 0.05in;
+        }
+
+        .learning-objectives ul {
+            margin-left: 0.2in;
+            margin-top: 0.05in;
+        }
+
+        .learning-objectives li {
+            margin-bottom: 0.04in;
+            font-size: 16px;
+        }
+
+        .vocab-box {
+            background-color: #f5f5f5;
+            border-left: 4px solid #666;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+        }
+
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #ff9933;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+        }
+
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+        }
+
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.08in 0;
+            border-radius: 2px;
+        }
+
+        .example-box h3 {
+            color: #cc6600;
+            margin-bottom: 0.05in;
+        }
+
+        .example-step {
+            margin-left: 0.15in;
+            margin-bottom: 0.04in;
+            font-size: 14px;
+        }
+
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+            text-align: center;
+        }
+
+        .formula-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.05in;
+        }
+
+        .formula-box th, .formula-box td {
+            border: 1px solid #ccc;
+            padding: 0.06in;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .formula-box th {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+
+        /* Answer Spaces */
+        .answer-space-long {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+
+        .answer-space-short {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 0.2in;
+            margin-bottom: 0.05in;
+        }
+
+        li {
+            margin-bottom: 0.04in;
+        }
+
+        /* Summary Box */
+        .summary-box {
+            background-color: #f0f0f0;
+            border: 1px solid #999;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-radius: 2px;
+        }
+
+        .summary-box h3 {
+            color: #000033;
+            margin-bottom: 0.05in;
+        }
+
+        .summary-box ul {
+            margin-left: 0.2in;
+        }
+
+        .summary-box li {
+            margin-bottom: 0.04in;
+            font-size: 15px;
+        }
+
+        /* SVG Styling */
+        svg {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0.06in auto;
+        }
+
+        /* Page Break */
+        .page-break {
+            page-break-after: always;
+        }
+
+        /* Practice Problems */
+        .problem {
+            margin-bottom: 0.08in;
+            page-break-inside: avoid;
+        }
+
+        .problem-number {
+            font-weight: bold;
+            margin-bottom: 0.04in;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+
+        table td, table th {
+            border: 1px solid #ccc;
+            padding: 0.06in;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #e0e0e0;
+            font-weight: bold;
+        }
+
+        .answer-key-section {
+            margin-top: 0.2in;
+            padding-top: 0.1in;
+            border-top: 2px solid #000033;
+        }
+
+        /* Highlight */
+        .highlight {
+            background-color: #ffff99;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 6.2</div>
+    <h1>Refraction and Snell's Law</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#E0F2FF;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#87CEEB;stop-opacity:1" />
+            </linearGradient>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+            <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
+            </marker>
+        </defs>
+        
+        <!-- Air region -->
+        <rect x="0" y="0" width="600" height="120" fill="#E8F4FF"/>
+        <!-- Water region -->
+        <rect x="0" y="120" width="600" height="180" fill="url(#waterGradient)"/>
+        <!-- Interface line -->
+        <line x1="0" y1="120" x2="600" y2="120" stroke="#000033" stroke-width="2"/>
+        
+        <!-- Normal line -->
+        <line x1="300" y1="0" x2="300" y2="300" stroke="#999" stroke-width="2" stroke-dasharray="5,5"/>
+        
+        <!-- Incident ray (in air) -->
+        <line x1="150" y1="30" x2="300" y2="120" stroke="#CC3300" stroke-width="3" marker-end="url(#arrowhead)"/>
+        
+        <!-- Refracted ray (in water) -->
+        <line x1="300" y1="120" x2="380" y2="250" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead2)"/>
+        
+        <!-- Angle indicators -->
+        <path d="M 300 120 L 270 95 Q 285 110 295 120" stroke="#000033" stroke-width="1" fill="none"/>
+        <path d="M 300 120 L 320 150 Q 310 135 300 120" stroke="#000033" stroke-width="1" fill="none"/>
+        
+        <!-- Labels -->
+        <text x="250" y="90" font-size="13" fill="#CC3300" font-weight="bold">θ₁</text>
+        <text x="330" y="160" font-size="13" fill="#0066cc" font-weight="bold">θ₂</text>
+        <text x="50" y="50" font-size="14" fill="#000033" font-weight="bold">Air</text>
+        <text x="50" y="200" font-size="14" fill="#FFFFFF" font-weight="bold">Water</text>
+        <text x="320" y="105" font-size="12" fill="#000033">Interface</text>
+    </svg>
+    
+    <p>Have you ever noticed that a stick partially submerged in water appears bent at the water's surface? Or that objects underwater look closer to the surface than they actually are? These phenomena occur because light bends when it travels from one material to another. This bending of light is called refraction, and it follows a precise mathematical relationship known as Snell's Law.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h3>Learning Objectives</h3>
+    <ul>
+        <li>I can explain why light bends when it passes between materials with different optical densities</li>
+        <li>I can use Snell's Law ($n_1 \sin \theta_1 = n_2 \sin \theta_2$) to calculate angles of refraction</li>
+        <li>I can predict the direction light will bend based on which material it is entering</li>
+        <li>I can describe real-world examples of refraction such as objects appearing in water or mirages</li>
+    </ul>
+</div>
+
+<h2>Introduction</h2>
+
+<p>In the previous section, we learned that light reflects off surfaces following the law of reflection. But what happens when light travels through transparent materials like glass, water, or plastic instead of bouncing off a surface? The answer is that light <span class="vocab-term">refracts</span>—it bends.</p>
+
+<p><span class="vocab-term">Refraction</span> is the bending of light when it passes from one material to another. Unlike reflection, which happens at the surface, refraction happens as light travels <span class="vocab-term">through</span> the material. The reason light bends is that light travels at different speeds in different materials.</p>
+
+<div class="real-world-box">
+    <h3>Historical Note: Snell and Descartes</h3>
+    <p>The law of refraction was discovered independently by Willebrord Snell (a Dutch astronomer) and René Descartes (a French mathematician) in the early 1600s. Though Snell discovered it first, the law is sometimes called Snell's Law. This law is absolutely fundamental to understanding lenses, glasses, telescopes, and fiber optic cables that transmit information around the world.</p>
+</div>
+
+<p>In this section, you will learn why light refracts, how to predict the direction it will bend, and how to use mathematics to calculate angles of refraction. Understanding refraction is essential for understanding how lenses work and for explaining many optical phenomena we observe in nature.</p>
+
+<div class="page-break"></div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h2>Why Does Light Bend? Optical Density and the Speed of Light</h2>
+
+<p>To understand why light refracts, we need to think about how fast light travels in different materials. In empty space (a vacuum), light travels at its maximum speed: $c = 3 \times 10^8$ m/s. However, when light enters a material like glass or water, it slows down.</p>
+
+<p>The <span class="vocab-term">refractive index (n)</span> of a material tells us how much slower light travels in that material compared to empty space. It is defined mathematically as:</p>
+
+<div class="formula-box">
+    <h3>Refractive Index</h3>
+    <p>$$n = \frac{c}{v}$$</p>
+    <p>where $c = 3 \times 10^8$ m/s (speed of light in vacuum) and $v$ = speed of light in the material</p>
+</div>
+
+<p>The <span class="vocab-term">optical density</span> of a material is related to its refractive index. A material with a high refractive index (like diamond) is optically dense, meaning light travels slowly through it. A material with a low refractive index (like air) is optically thin, meaning light travels quickly through it.</p>
+
+<div class="vocab-box">
+    <h3>Refractive Index of Common Materials</h3>
+    <table>
+        <tr>
+            <th>Material</th>
+            <th>Refractive Index (n)</th>
+        </tr>
+        <tr>
+            <td>Vacuum</td>
+            <td>1.00 (by definition)</td>
+        </tr>
+        <tr>
+            <td>Air</td>
+            <td>1.00 (approximately)</td>
+        </tr>
+        <tr>
+            <td>Water</td>
+            <td>1.33</td>
+        </tr>
+        <tr>
+            <td>Glass (typical)</td>
+            <td>1.50</td>
+        </tr>
+        <tr>
+            <td>Diamond</td>
+            <td>2.42</td>
+        </tr>
+    </table>
+</div>
+
+<p>When light travels from air (n = 1.00) into water (n = 1.33), the light slows down. This change in speed causes the light to change direction—it bends. The direction and amount of bending depend on the refractive indices of the two materials and the angle at which the light strikes the interface.</p>
+
+<div class="info-box">
+    <h3>Key Insight: Higher Refractive Index = More Bending</h3>
+    <p>Light bends more when it travels between materials with very different refractive indices (like air and diamond) than when it travels between materials with similar refractive indices (like air and water). This is because the change in speed is greater.</p>
+</div>
+
+<h2>Snell's Law</h2>
+
+<p>The precise mathematical relationship between the angle of incidence, angle of refraction, and refractive indices is called <span class="vocab-term">Snell's Law</span>. It states:</p>
+
+<div class="formula-box">
+    <h3>Snell's Law</h3>
+    <p>$$n_1 \sin \theta_1 = n_2 \sin \theta_2$$</p>
+    <p>where:</p>
+    <p>$n_1$ = refractive index of the first material</p>
+    <p>$\theta_1$ = angle of incidence (measured from the normal)</p>
+    <p>$n_2$ = refractive index of the second material</p>
+    <p>$\theta_2$ = angle of refraction (measured from the normal)</p>
+</div>
+
+<p>Notice that Snell's Law is similar to the law of reflection, but with an important difference: the angles are <span class="highlight">not</span> equal. Instead, the product of the refractive index and the sine of the angle in each material are equal.</p>
+
+<h2>Rules for Predicting the Direction of Refraction</h2>
+
+<p>Snell's Law tells us the exact amount of bending, but we can also predict the general direction by remembering these simple rules:</p>
+
+<div class="info-box">
+    <h3>When Light Enters a More Optically Dense Material (Higher n):</h3>
+    <p>Light <span class="highlight">bends toward the normal</span>. The angle of refraction is smaller than the angle of incidence.</p>
+    <p><strong>Example:</strong> Light entering from air (n = 1.00) into water (n = 1.33) bends toward the normal.</p>
+</div>
+
+<div class="info-box">
+    <h3>When Light Enters a Less Optically Dense Material (Lower n):</h3>
+    <p>Light <span class="highlight">bends away from the normal</span>. The angle of refraction is larger than the angle of incidence.</p>
+    <p><strong>Example:</strong> Light entering from water (n = 1.33) into air (n = 1.00) bends away from the normal.</p>
+</div>
+
+<div class="info-box">
+    <h3>When Light Hits Perpendicularly:</h3>
+    <p>If light strikes the surface straight on (perpendicular to the interface), the angle of incidence is 0°. In this case, light does not bend at all—it continues straight through.</p>
+</div>
+
+<div class="real-world-box">
+    <h3>Why Objects Underwater Appear Closer</h3>
+    <p>When you look at an object underwater, light from the object refracts as it leaves the water and enters the air. This refraction makes the object appear to be closer to the surface and closer to the normal than it actually is. This is why a fish underwater appears shallower than it really is, and why you have to aim lower when trying to spear a fish with a stick!</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h2>Example Problems</h2>
+
+<div class="example-box">
+    <h3>Example 1: Calculating the Angle of Refraction</h3>
+    <p><strong>Given:</strong> Light travels from air ($n_1 = 1.00$) into water ($n_2 = 1.33$). The angle of incidence is 45°.</p>
+    <p><strong>Find:</strong> The angle of refraction.</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Write Snell's Law.</p>
+        <p>$$n_1 \sin \theta_1 = n_2 \sin \theta_2$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Substitute the known values.</p>
+        <p>$$(1.00) \sin(45°) = (1.33) \sin(\theta_2)$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 3:</strong> Calculate $\sin(45°)$ and solve for $\sin(\theta_2)$.</p>
+        <p>$$(1.00)(0.707) = (1.33) \sin(\theta_2)$$</p>
+        <p>$$0.707 = (1.33) \sin(\theta_2)$$</p>
+        <p>$$\sin(\theta_2) = \frac{0.707}{1.33} = 0.531$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 4:</strong> Find $\theta_2$ by taking the inverse sine.</p>
+        <p>$$\theta_2 = \sin^{-1}(0.531) = 32.1°$$</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: The angle of refraction is 32.1°. Notice that θ₂ (32.1°) is smaller than θ₁ (45°), as expected when light enters a more optically dense material.</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Predicting Direction of Refraction</h3>
+    <p><strong>Given:</strong> Light travels from glass ($n_1 = 1.50$) into air ($n_2 = 1.00$). The angle of incidence is 30°.</p>
+    <p><strong>Find:</strong> Predict whether the light bends toward or away from the normal. Then calculate the angle of refraction.</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Determine the direction of bending.</p>
+        <p>Light is going from a denser material (glass, n = 1.50) to a less dense material (air, n = 1.00). Light bends <span class="highlight">away from the normal</span>. We expect θ₂ > θ₁.</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Apply Snell's Law.</p>
+        <p>$$n_1 \sin \theta_1 = n_2 \sin \theta_2$$</p>
+        <p>$$(1.50) \sin(30°) = (1.00) \sin(\theta_2)$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 3:</strong> Calculate $\sin(30°)$ and solve for $\sin(\theta_2)$.</p>
+        <p>$$(1.50)(0.500) = (1.00) \sin(\theta_2)$$</p>
+        <p>$$\sin(\theta_2) = 0.750$$</p>
+        <p>$$\theta_2 = \sin^{-1}(0.750) = 48.6°$$</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: The light bends away from the normal. The angle of refraction is 48.6°, which is larger than the 30° angle of incidence, confirming our prediction.</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Finding the Incident Angle</h3>
+    <p><strong>Given:</strong> Light travels from water ($n_1 = 1.33$) into glass ($n_2 = 1.50$). The angle of refraction in the glass is 25°.</p>
+    <p><strong>Find:</strong> What was the angle of incidence in the water?</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Write Snell's Law and rearrange to solve for $\theta_1$.</p>
+        <p>$$n_1 \sin \theta_1 = n_2 \sin \theta_2$$</p>
+        <p>$$\sin \theta_1 = \frac{n_2 \sin \theta_2}{n_1}$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Substitute the values.</p>
+        <p>$$\sin \theta_1 = \frac{(1.50) \sin(25°)}{1.33}$$</p>
+        <p>$$\sin \theta_1 = \frac{(1.50)(0.423)}{1.33} = \frac{0.634}{1.33} = 0.477$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 3:</strong> Find $\theta_1$.</p>
+        <p>$$\theta_1 = \sin^{-1}(0.477) = 28.5°$$</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: The angle of incidence was 28.5°. Notice that θ₁ (28.5°) is larger than θ₂ (25°), which is expected because light goes from a less dense material (water) to a more dense material (glass).</strong></p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY AND KEY EQUATIONS ============== -->
+<h2>Summary</h2>
+
+<div class="summary-box">
+    <h3>Key Concepts</h3>
+    <ul>
+        <li>Refraction is the bending of light when it passes from one material to another</li>
+        <li>Light travels at different speeds in different materials</li>
+        <li>The refractive index of a material tells us how much slower light travels in that material compared to empty space</li>
+        <li>Optical density is related to refractive index; higher n means more optically dense</li>
+        <li>Snell's Law mathematically relates the angles and refractive indices: $n_1 \sin \theta_1 = n_2 \sin \theta_2$</li>
+        <li>When light enters a more optically dense material, it bends toward the normal</li>
+        <li>When light enters a less optically dense material, it bends away from the normal</li>
+        <li>When light hits a surface perpendicularly, it does not bend</li>
+        <li>Refraction explains why objects underwater appear closer to the surface than they really are</li>
+        <li>All angles in Snell's Law are measured from the normal, not from the surface</li>
+    </ul>
+</div>
+
+<h2>Key Equations and Definitions</h2>
+
+<div class="formula-box">
+    <h3>Refraction Equations</h3>
+    <table>
+        <tr>
+            <th>Concept</th>
+            <th>Equation</th>
+            <th>Variables</th>
+        </tr>
+        <tr>
+            <td>Refractive Index</td>
+            <td>$$n = \frac{c}{v}$$</td>
+            <td>n = refractive index (unitless), c = speed of light in vacuum (m/s), v = speed of light in material (m/s)</td>
+        </tr>
+        <tr>
+            <td>Snell's Law</td>
+            <td>$$n_1 \sin \theta_1 = n_2 \sin \theta_2$$</td>
+            <td>n₁ = refractive index of first material, θ₁ = angle of incidence (degrees), n₂ = refractive index of second material, θ₂ = angle of refraction (degrees)</td>
+        </tr>
+    </table>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h2>Practice Problems</h2>
+
+<p><strong>Conceptual Questions (1-4):</strong> Answer each question in complete sentences.</p>
+
+<div class="problem">
+    <div class="problem-number">1. Explain why light bends when it passes from one material to another. What physical property causes this bending?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">2. When light enters a material with a higher refractive index, does it bend toward or away from the normal? Explain your answer.</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">3. Would light refract more when going from air (n = 1.00) into water (n = 1.33), or when going from air into diamond (n = 2.42)? Explain.</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">4. Why do objects underwater appear to be closer to the surface than they actually are?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<p style="margin-top: 0.15in;"><strong>Calculation Problems (5-6):</strong> Show all work and include units in your answer. You may use a calculator.</p>
+
+<div class="problem">
+    <div class="problem-number">5. Light travels from air (n = 1.00) into glass (n = 1.50). If the angle of incidence is 40°, what is the angle of refraction? (Hint: use sin(40°) ≈ 0.643)</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">6. Light travels from glass (n = 1.50) into water (n = 1.33). The angle of incidence is 35°. Calculate the angle of refraction. (Hint: use sin(35°) ≈ 0.574)</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<p style="margin-top: 0.15in;"><strong>Multi-Step Problems (7-8):</strong> These problems require multiple steps and/or combining concepts.</p>
+
+<div class="problem">
+    <div class="problem-number">7. A light ray hits the water surface (air to water interface) at an angle of incidence of 60°.
+    <br><strong>a)</strong> Use Snell's Law to find the angle of refraction in the water. (Use n_air = 1.00, n_water = 1.33, sin(60°) ≈ 0.866)
+    <br><strong>b)</strong> After refracting into the water, the light ray hits a glass block (water to glass interface) at an angle of 40° from the normal. Use Snell's Law to find the angle of refraction in the glass. (Use n_glass = 1.50, sin(40°) ≈ 0.643)
+    <br><strong>c)</strong> In which material does the light undergo the greatest change in direction? Explain why.</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">8. A fish is swimming at a depth of 2 meters below the water surface. A fisherman standing above the water looks at the fish and tries to estimate its depth. Due to refraction, the fish appears to be at a shallower depth than it actually is.
+    <br><strong>a)</strong> Explain how refraction causes the fish to appear shallower than it really is.
+    <br><strong>b)</strong> If light from the fish exits the water at an angle of 25° from the normal, at what angle (from the normal) does this light ray travel through the air? (Use n_water = 1.33, n_air = 1.00, sin(25°) ≈ 0.423)
+    <br><strong>c)</strong> Does the light bend toward or away from the normal when leaving the water? Why?</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="answer-key-section">
+    <h2>Answer Key</h2>
+
+    <h3>Conceptual Questions</h3>
+
+    <p><strong>1. Explain why light bends when it passes from one material to another. What physical property causes this bending?</strong></p>
+    <p><em>Answer:</em> Light bends (refracts) because it travels at different speeds in different materials. The optical density of the material, described by its refractive index, causes light to slow down or speed up. When light speed changes, the direction of the light ray changes as well. The greater the difference in speed between the two materials, the more the light bends.</p>
+
+    <p><strong>2. When light enters a material with a higher refractive index, does it bend toward or away from the normal? Explain your answer.</strong></p>
+    <p><em>Answer:</em> Light bends toward the normal when entering a material with a higher refractive index (more optically dense). This happens because the light slows down, and the change in speed causes the ray to bend toward the normal. The higher the refractive index of the material it's entering, the greater the bending toward the normal.</p>
+
+    <p><strong>3. Would light refract more when going from air (n = 1.00) into water (n = 1.33), or when going from air into diamond (n = 2.42)? Explain.</strong></p>
+    <p><em>Answer:</em> Light would refract more when going from air into diamond because diamond has a much higher refractive index (2.42 vs. 1.33). The greater the difference in refractive indices between two materials, the more light bends when passing between them. The light experiences a much greater change in speed when entering diamond compared to entering water.</p>
+
+    <p><strong>4. Why do objects underwater appear to be closer to the surface than they actually are?</strong></p>
+    <p><em>Answer:</em> When light from an underwater object travels upward through the water-air interface, it refracts (bends away from the normal). This refraction makes the light ray appear to come from a shallower angle than it actually did. Our brain traces the light ray backward in a straight line, making the object appear to be closer to the surface than it really is. This is why fish appear shallower than their actual depth.</p>
+
+    <h3>Calculation Problems</h3>
+
+    <p><strong>5. Light travels from air (n = 1.00) into glass (n = 1.50). If the angle of incidence is 40°, what is the angle of refraction?</strong></p>
+    <p><em>Solution:</em></p>
+    <p>Using Snell's Law: $n_1 \sin \theta_1 = n_2 \sin \theta_2$</p>
+    <p>$(1.00) \sin(40°) = (1.50) \sin(\theta_2)$</p>
+    <p>$(1.00)(0.643) = (1.50) \sin(\theta_2)$</p>
+    <p>$\sin(\theta_2) = \frac{0.643}{1.50} = 0.429$</p>
+    <p>$\theta_2 = \sin^{-1}(0.429) = 25.4°$</p>
+    <p><em>Answer:</em> The angle of refraction is approximately 25.4°. (Note: θ₂ < θ₁, as expected when entering a more optically dense material.)</p>
+
+    <p><strong>6. Light travels from glass (n = 1.50) into water (n = 1.33). The angle of incidence is 35°. Calculate the angle of refraction.</strong></p>
+    <p><em>Solution:</em></p>
+    <p>Using Snell's Law: $n_1 \sin \theta_1 = n_2 \sin \theta_2$</p>
+    <p>$(1.50) \sin(35°) = (1.33) \sin(\theta_2)$</p>
+    <p>$(1.50)(0.574) = (1.33) \sin(\theta_2)$</p>
+    <p>$0.861 = (1.33) \sin(\theta_2)$</p>
+    <p>$\sin(\theta_2) = \frac{0.861}{1.33} = 0.647$</p>
+    <p>$\theta_2 = \sin^{-1}(0.647) = 40.3°$</p>
+    <p><em>Answer:</em> The angle of refraction is approximately 40.3°. (Note: θ₂ > θ₁, as expected when entering a less optically dense material.)</p>
+
+    <h3>Multi-Step Problems</h3>
+
+    <p><strong>7. A light ray hits the water surface at an angle of incidence of 60°.</strong></p>
+    <p><em>Solution:</em></p>
+    <p><strong>a)</strong> Air to water (air is less dense):</p>
+    <p>$n_{air} \sin \theta_{air} = n_{water} \sin \theta_{water}$</p>
+    <p>$(1.00) \sin(60°) = (1.33) \sin(\theta_{water})$</p>
+    <p>$(1.00)(0.866) = (1.33) \sin(\theta_{water})$</p>
+    <p>$\sin(\theta_{water}) = \frac{0.866}{1.33} = 0.651$</p>
+    <p>$\theta_{water} = \sin^{-1}(0.651) = 40.6°$</p>
+    <p><strong>b)</strong> Water to glass (water is less dense):</p>
+    <p>$(1.33) \sin(40°) = (1.50) \sin(\theta_{glass})$</p>
+    <p>$(1.33)(0.643) = (1.50) \sin(\theta_{glass})$</p>
+    <p>$0.855 = (1.50) \sin(\theta_{glass})$</p>
+    <p>$\sin(\theta_{glass}) = \frac{0.855}{1.50} = 0.570$</p>
+    <p>$\theta_{glass} = \sin^{-1}(0.570) = 34.8°$</p>
+    <p><strong>c)</strong> The greatest change in direction occurs at the air-water interface (from 60° to 40.6°, a change of 19.4°) compared to the water-glass interface (from 40° to 34.8°, a change of 5.2°). This is because the difference in refractive indices is much larger between air and water (Δn = 0.33) than between water and glass (Δn = 0.17).</p>
+
+    <p><strong>8. A fish swimming at a depth appears shallower due to refraction.</strong></p>
+    <p><em>Answer:</em></p>
+    <p><strong>a)</strong> When light from the fish exits the water and enters the air, it refracts away from the normal (because water has a higher refractive index than air). This makes the light ray bend away from the normal at the water-air interface. Our brain traces the light ray backward in a straight line, so we perceive the fish to be at a shallower angle, making it appear closer to the surface than it actually is.</p>
+    <p><strong>b)</strong> Using Snell's Law (water to air, light bends away from normal):</p>
+    <p>$n_{water} \sin \theta_{water} = n_{air} \sin \theta_{air}$</p>
+    <p>$(1.33) \sin(25°) = (1.00) \sin(\theta_{air})$</p>
+    <p>$(1.33)(0.423) = (1.00) \sin(\theta_{air})$</p>
+    <p>$\sin(\theta_{air}) = 0.563$</p>
+    <p>$\theta_{air} = \sin^{-1}(0.563) = 34.3°$</p>
+    <p><strong>c)</strong> The light bends away from the normal when leaving the water. This is because water (n = 1.33) is more optically dense than air (n = 1.00). When light exits to a less dense medium, it always bends away from the normal.</p>
+
+</div>
+
+</body>
+</html>

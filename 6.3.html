@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 6.3: Total Internal Reflection</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Times New Roman', Times, serif; font-size: 16px; line-height: 1.3; color: #333; background-color: #fff; padding: 0.5in; max-width: 8.5in; margin: 0 auto; }
+        .title-page { page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; min-height: 10in; background-color: white; color: #000033; padding: 0.5in; margin-bottom: 0.5in; border: 2px solid #000033; }
+        .title-page-image { width: 100%; max-width: 5in; height: auto; margin-bottom: 0.3in; margin-top: 0.2in; }
+        .section-number { font-size: 28px; font-weight: bold; margin-bottom: 0.2in; letter-spacing: 2px; color: #000033; }
+        .title-page h1 { font-size: 28px; font-weight: bold; margin-bottom: 0.2in; line-height: 1.4; color: #000033; letter-spacing: 2px; background-color: transparent; padding: 0; margin: 0.15in 0 0.2in 0; }
+        .title-page p { font-size: 16px; max-width: 5.5in; line-height: 1.6; margin-top: 0.1in; color: #000033; }
+        h1 { font-size: 24px; font-weight: bold; background-color: #000033; color: white; padding: 6px; margin: 0.15in 0; margin-top: 0.2in; }
+        h2 { font-size: 18px; font-weight: bold; background-color: #000033; color: white; padding: 6px; margin: 0.1in 0; margin-top: 0.15in; }
+        h3 { font-size: 16px; font-weight: bold; color: #000033; margin: 0.08in 0; }
+        p { margin-bottom: 0.05in; text-align: justify; }
+        .vocab-term { font-weight: bold; }
+        .learning-objectives { background-color: #e8f4f8; border-left: 4px solid #0066cc; padding: 0.08in; margin: 0.06in 0; }
+        .learning-objectives h3 { color: #0066cc; margin-bottom: 0.05in; }
+        .learning-objectives ul { margin-left: 0.2in; margin-top: 0.05in; }
+        .learning-objectives li { margin-bottom: 0.04in; font-size: 16px; }
+        .vocab-box { background-color: #f5f5f5; border-left: 4px solid #666; padding: 0.08in; margin: 0.06in 0; }
+        .info-box { background-color: #fffacd; border-left: 4px solid #ff9933; padding: 0.08in; margin: 0.06in 0; }
+        .real-world-box { background-color: #e6f3ff; border-left: 4px solid #0066cc; padding: 0.08in; margin: 0.06in 0; }
+        .example-box { background-color: #f9f9f9; border-left: 4px solid #cc6600; padding: 0.08in; margin: 0.08in 0; }
+        .example-box h3 { color: #cc6600; margin-bottom: 0.05in; }
+        .example-step { margin-left: 0.15in; margin-bottom: 0.04in; font-size: 14px; }
+        .formula-box { background-color: #f0f0f0; border: 2px solid #333; padding: 0.08in; margin: 0.06in 0; text-align: center; }
+        .formula-box table { width: 100%; border-collapse: collapse; margin-top: 0.05in; }
+        .formula-box th, .formula-box td { border: 1px solid #ccc; padding: 0.06in; text-align: left; font-size: 14px; }
+        .formula-box th { background-color: #ddd; font-weight: bold; }
+        .answer-space-long { min-height: 1.2in; background-color: #fafafa; border-bottom: 1px solid #ddd; padding: 0.05in; margin: 0.1in 0; }
+        .answer-space-short { min-height: 0.8in; background-color: #fafafa; border-bottom: 1px solid #ddd; padding: 0.05in; margin: 0.08in 0; }
+        ul, ol { margin-left: 0.2in; margin-bottom: 0.05in; }
+        li { margin-bottom: 0.04in; }
+        .summary-box { background-color: #f0f0f0; border: 1px solid #999; padding: 0.08in; margin: 0.06in 0; }
+        .summary-box h3 { color: #000033; margin-bottom: 0.05in; }
+        .summary-box ul { margin-left: 0.2in; }
+        .summary-box li { margin-bottom: 0.04in; font-size: 15px; }
+        svg { max-width: 100%; height: auto; display: block; margin: 0.06in auto; }
+        .page-break { page-break-after: always; }
+        .problem { margin-bottom: 0.08in; page-break-inside: avoid; }
+        .problem-number { font-weight: bold; margin-bottom: 0.04in; }
+        table { width: 100%; border-collapse: collapse; margin: 0.06in 0; font-size: 14px; }
+        table td, table th { border: 1px solid #ccc; padding: 0.06in; text-align: left; }
+        table th { background-color: #e0e0e0; font-weight: bold; }
+        .answer-key-section { margin-top: 0.2in; padding-top: 0.1in; border-top: 2px solid #000033; }
+        .highlight { background-color: #ffff99; }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 6.3</div>
+    <h1>Total Internal Reflection</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
+            </marker>
+        </defs>
+        
+        <!-- Water region -->
+        <rect x="0" y="0" width="600" height="180" fill="#87CEEB" opacity="0.6"/>
+        <!-- Interface line -->
+        <line x1="0" y1="180" x2="600" y2="180" stroke="#000033" stroke-width="3"/>
+        <!-- Air region -->
+        <rect x="0" y="180" width="600" height="120" fill="#E8F4FF"/>
+        
+        <!-- Normal line -->
+        <line x1="300" y1="0" x2="300" y2="300" stroke="#999" stroke-width="2" stroke-dasharray="5,5"/>
+        
+        <!-- Three incident rays at different angles -->
+        <!-- Ray 1: Low angle (below critical) - refracted -->
+        <line x1="100" y1="50" x2="200" y2="180" stroke="#0066cc" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+        <line x1="200" y1="180" x2="280" y2="260" stroke="#00AA00" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+        <text x="240" y="220" font-size="11" fill="#333" font-weight="bold">Refracted</text>
+        
+        <!-- Ray 2: Critical angle - grazes surface -->
+        <line x1="150" y1="50" x2="300" y2="180" stroke="#0066cc" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+        <line x1="300" y1="180" x2="420" y2="180" stroke="#FF9900" stroke-width="2.5" marker-end="url(#arrowhead)" stroke-dasharray="3,3"/>
+        <text x="330" y="175" font-size="11" fill="#333" font-weight="bold">Critical angle</text>
+        
+        <!-- Ray 3: Greater than critical - reflected -->
+        <line x1="200" y1="30" x2="300" y2="180" stroke="#0066cc" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+        <line x1="300" y1="180" x2="400" y2="50" stroke="#CC0000" stroke-width="2.5" marker-end="url(#arrowhead)"/>
+        <text x="320" y="100" font-size="11" fill="#333" font-weight="bold">Reflected</text>
+        
+        <!-- Labels -->
+        <text x="80" y="100" font-size="13" fill="#FFFFFF" font-weight="bold">Water</text>
+        <text x="80" y="230" font-size="13" fill="#000033" font-weight="bold">Air</text>
+    </svg>
+    
+    <p>Have you ever looked up at the water's surface from underwater and noticed it becomes like a mirror at certain angles? This phenomenon, called total internal reflection, is one of the most important optical effects in nature and technology. It allows fiber optic cables to transmit light across the globe, and it creates the brilliant sparkle of diamonds. Understanding total internal reflection requires us to extend our knowledge of refraction to its extreme limits.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h3>Learning Objectives</h3>
+    <ul>
+        <li>I can explain what total internal reflection is and when it occurs</li>
+        <li>I can calculate the critical angle at which total internal reflection begins</li>
+        <li>I can describe how optical fibers use total internal reflection to transmit light</li>
+        <li>I can compare and contrast refraction and total internal reflection</li>
+    </ul>
+</div>
+
+<h2>Introduction</h2>
+
+<p>In the previous section, we learned that light bends (refracts) when it travels from one material to another. We discovered that when light enters a less optically dense material, it bends <span class="vocab-term">away</span> from the normal. But what happens if the light hits the interface at such a steep angle that it would bend so far away from the normal that it can't escape into the second material at all?</p>
+
+<p>The answer is remarkable: at a certain critical angle, the light bounces completely back into the original material. This phenomenon is called <span class="vocab-term">total internal reflection</span>, and it only occurs when light travels from a more optically dense material to a less optically dense material.</p>
+
+<div class="real-world-box">
+    <h3>Real-World Application: Fiber Optic Cables</h3>
+    <p>The internet communication system that connects the world depends on total internal reflection. Fiber optic cables transmit information as pulses of light through thin glass fibers. The light bounces along the inside of the fiber through total internal reflection, keeping the signal strong even over thousands of miles. Without understanding total internal reflection, we wouldn't have the high-speed internet we depend on today.</p>
+</div>
+
+<p>In this section, you will discover when total internal reflection occurs, learn to calculate the critical angle, and explore real-world applications of this remarkable optical phenomenon.</p>
+
+<div class="page-break"></div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h2>Understanding Total Internal Reflection</h2>
+
+<p>Let's think about what happens at different angles when light travels from water (more optically dense, n = 1.33) toward air (less optically dense, n = 1.00):</p>
+
+<ul>
+    <li><strong>At a small angle of incidence:</strong> Light refracts into the air, bending away from the normal.</li>
+    <li><strong>At a larger angle of incidence:</strong> Light still refracts into the air, but bends even further away from the normal.</li>
+    <li><strong>At the critical angle:</strong> Light refracts right along the interface, at 90° from the normal in the air.</li>
+    <li><strong>Beyond the critical angle:</strong> Light cannot refract into the air at all. Instead, it reflects completely back into the water.</li>
+</ul>
+
+<div class="vocab-box">
+    <h3>Key Definitions</h3>
+    <p><span class="vocab-term">Critical angle (θc):</span> The angle of incidence at which the angle of refraction becomes 90°. Beyond this angle, total internal reflection occurs.</p>
+    <p><span class="vocab-term">Total internal reflection:</span> The complete reflection of light back into a more optically dense material when light traveling in that material hits the interface with a less optically dense material at an angle greater than the critical angle.</p>
+</div>
+
+<h2>Calculating the Critical Angle</h2>
+
+<p>To find the critical angle, we use Snell's Law with a special condition: at the critical angle, the angle of refraction is exactly 90°. Let's set up the equation:</p>
+
+<div class="formula-box">
+    <h3>Finding the Critical Angle</h3>
+    <p>Starting with Snell's Law: $n_1 \sin \theta_1 = n_2 \sin \theta_2$</p>
+    <p>At the critical angle, $\theta_2 = 90°$, so $\sin \theta_2 = 1$</p>
+    <p>Therefore: $n_1 \sin \theta_c = n_2 (1)$</p>
+    <p>$$\sin \theta_c = \frac{n_2}{n_1}$$</p>
+    <p>$$\theta_c = \sin^{-1}\left(\frac{n_2}{n_1}\right)$$</p>
+    <p>where $n_1$ = refractive index of the first material (the denser one) and $n_2$ = refractive index of the second material (the less dense one)</p>
+</div>
+
+<div class="info-box">
+    <h3>Important: Condition for Total Internal Reflection</h3>
+    <p>Total internal reflection only occurs when light travels from a more optically dense material to a less optically dense material (i.e., from a material with higher $n$ to a material with lower $n$). Light traveling from a less dense to a more dense material will not undergo total internal reflection—it will always refract into the second material.</p>
+</div>
+
+<h2>Comparing Refraction and Total Internal Reflection</h2>
+
+<p>These two phenomena are related, but they occur under different conditions:</p>
+
+<div class="vocab-box">
+    <h3>Refraction vs. Total Internal Reflection</h3>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Refraction</th>
+            <th>Total Internal Reflection</th>
+        </tr>
+        <tr>
+            <td>When it occurs</td>
+            <td>At any angle, always</td>
+            <td>Only at angles ≥ critical angle</td>
+        </tr>
+        <tr>
+            <td>Direction of light</td>
+            <td>Light passes through to the other material</td>
+            <td>Light bounces completely back</td>
+        </tr>
+        <tr>
+            <td>Required condition</td>
+            <td>Can occur in any direction</td>
+            <td>Must go from denser to less dense material</td>
+        </tr>
+        <tr>
+            <td>Energy</td>
+            <td>Some light is reflected, some refracted</td>
+            <td>Essentially all light is reflected (very little absorbed)</td>
+        </tr>
+    </table>
+</div>
+
+<div class="real-world-box">
+    <h3>Why Diamonds Sparkle</h3>
+    <p>Diamonds sparkle brilliantly because they have a very high refractive index (n = 2.42). This means the critical angle for a diamond-to-air interface is very small—only about 24.4°. When light enters a diamond from any angle, it often undergoes total internal reflection at the internal faces of the crystal. This bouncing of light inside the diamond, combined with dispersion (which splits white light into rainbow colors), creates the characteristic sparkle that makes diamonds so prized for jewelry.</p>
+</div>
+
+<h2>Optical Fibers and Communication</h2>
+
+<p>One of the most important modern applications of total internal reflection is in optical fiber cables. An optical fiber is a thin strand of glass (or plastic) with a high refractive index. Light enters one end of the fiber and travels along its length by repeatedly undergoing total internal reflection at the cylindrical walls.</p>
+
+<p>Here's how it works:</p>
+<ol>
+    <li>Light enters the core of the fiber</li>
+    <li>Light travels at an angle greater than the critical angle</li>
+    <li>When light hits the cylindrical wall, it undergoes total internal reflection</li>
+    <li>The light bounces back and forth down the length of the fiber</li>
+    <li>Very little light escapes—the signal remains strong over long distances</li>
+</ol>
+
+<div class="real-world-box">
+    <h3>Modern Communication Network</h3>
+    <p>Undersea fiber optic cables now circle the entire globe, connecting continents and enabling global communication. These cables transmit information as pulses of laser light through optical fibers thinner than a human hair. A single fiber can carry more data than thousands of copper telephone wires. The technology depends entirely on total internal reflection to keep the light contained within the fiber as it travels thousands of miles.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h2>Example Problems</h2>
+
+<div class="example-box">
+    <h3>Example 1: Finding the Critical Angle</h3>
+    <p><strong>Given:</strong> Light is traveling in water (n₁ = 1.33) toward the water-air interface (n₂ = 1.00).</p>
+    <p><strong>Find:</strong> The critical angle for total internal reflection.</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Identify which material is denser.</p>
+        <p>Water (n = 1.33) is denser than air (n = 1.00), so total internal reflection is possible.</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Apply the critical angle formula.</p>
+        <p>$$\sin \theta_c = \frac{n_2}{n_1} = \frac{1.00}{1.33} = 0.752$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 3:</strong> Calculate the angle.</p>
+        <p>$$\theta_c = \sin^{-1}(0.752) = 48.8°$$</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: The critical angle is 48.8°. Any light hitting the water-air interface at an angle greater than 48.8° will undergo total internal reflection.</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Checking for Total Internal Reflection</h3>
+    <p><strong>Given:</strong> Light in glass (n₁ = 1.50) hits the glass-air interface (n₂ = 1.00) at an angle of incidence of 50°. The critical angle for this interface is 41.8°.</p>
+    <p><strong>Find:</strong> Will total internal reflection occur? Why or why not?</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Compare the angle of incidence to the critical angle.</p>
+        <p>Angle of incidence = 50°</p>
+        <p>Critical angle = 41.8°</p>
+        <p>Since 50° > 41.8°, the angle of incidence is greater than the critical angle.</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Determine what happens.</p>
+        <p>When the angle of incidence is greater than the critical angle, total internal reflection occurs.</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: Yes, total internal reflection will occur. The light will bounce completely back into the glass instead of refracting into the air.</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Critical Angle for Diamond</h3>
+    <p><strong>Given:</strong> Diamond has a refractive index of n₁ = 2.42, and it is surrounded by air (n₂ = 1.00).</p>
+    <p><strong>Find:</strong> The critical angle for total internal reflection in a diamond.</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Use the critical angle formula.</p>
+        <p>$$\sin \theta_c = \frac{n_2}{n_1} = \frac{1.00}{2.42} = 0.413$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Calculate the critical angle.</p>
+        <p>$$\theta_c = \sin^{-1}(0.413) = 24.4°$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 3:</strong> Interpret the result.</p>
+        <p>The critical angle is very small (only 24.4°). This means that light traveling inside the diamond will undergo total internal reflection at a very shallow angle. This is why light bounces around inside a diamond so much, creating the brilliant sparkle.</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: The critical angle is 24.4°. This small angle is why diamonds sparkle so brilliantly—light bounces inside the diamond many times before exiting.</strong></p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY AND KEY EQUATIONS ============== -->
+<h2>Summary</h2>
+
+<div class="summary-box">
+    <h3>Key Concepts</h3>
+    <ul>
+        <li>Total internal reflection occurs when light traveling in a more optically dense material hits the interface with a less optically dense material at a steep angle</li>
+        <li>The critical angle is the angle of incidence at which the angle of refraction equals 90°</li>
+        <li>The critical angle is calculated using: $\sin \theta_c = \frac{n_2}{n_1}$ where $n_1 > n_2$</li>
+        <li>Total internal reflection only occurs when the angle of incidence is greater than or equal to the critical angle</li>
+        <li>At the critical angle, light refracts along the interface at 90°</li>
+        <li>Beyond the critical angle, light reflects back into the original material instead of refracting</li>
+        <li>Total internal reflection is used in optical fiber cables for communication and data transmission</li>
+        <li>The small critical angle in diamonds explains why they sparkle so brilliantly</li>
+        <li>Very little light is absorbed during total internal reflection—the reflection is nearly perfect</li>
+        <li>Total internal reflection cannot occur when light travels from a less dense to a more dense material</li>
+    </ul>
+</div>
+
+<h2>Key Equations and Definitions</h2>
+
+<div class="formula-box">
+    <h3>Total Internal Reflection Equations</h3>
+    <table>
+        <tr>
+            <th>Concept</th>
+            <th>Equation</th>
+            <th>Variables</th>
+        </tr>
+        <tr>
+            <td>Critical Angle</td>
+            <td>$$\sin \theta_c = \frac{n_2}{n_1}$$</td>
+            <td>θc = critical angle (degrees), n₁ = refractive index of denser material, n₂ = refractive index of less dense material</td>
+        </tr>
+        <tr>
+            <td>Condition for TIR</td>
+            <td>$$\theta_1 \geq \theta_c$$</td>
+            <td>Total internal reflection occurs when angle of incidence ≥ critical angle</td>
+        </tr>
+    </table>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h2>Practice Problems</h2>
+
+<p><strong>Conceptual Questions (1-4):</strong> Answer each question in complete sentences.</p>
+
+<div class="problem">
+    <div class="problem-number">1. Explain why total internal reflection can only occur when light travels from a more optically dense material to a less optically dense material, not the other way around.</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">2. What is the critical angle, and what happens to light when it hits the interface at exactly the critical angle?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">3. Why do diamonds sparkle more brilliantly than glass, even though both are transparent?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">4. How do optical fiber cables use total internal reflection to transmit information over long distances?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<p style="margin-top: 0.15in;"><strong>Calculation Problems (5-6):</strong> Show all work and include units in your answer.</p>
+
+<div class="problem">
+    <div class="problem-number">5. Calculate the critical angle for the glass-to-air interface, where the refractive index of glass is 1.50 and the refractive index of air is 1.00. (Hint: use $\sin \theta_c = \frac{n_2}{n_1}$)</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">6. Light is traveling in a liquid with a refractive index of 1.50 and encounters an interface with air (n = 1.00). If light hits the interface at an angle of incidence of 45°, and the critical angle is 41.8°, will total internal reflection occur? Explain your reasoning.</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<p style="margin-top: 0.15in;"><strong>Multi-Step Problems (7-8):</strong> These problems require multiple steps and/or combining concepts.</p>
+
+<div class="problem">
+    <div class="problem-number">7. An optical fiber is made of glass with a refractive index of 1.50 and is surrounded by air (n = 1.00).
+    <br><strong>a)</strong> Calculate the critical angle for light traveling inside the glass fiber.
+    <br><strong>b)</strong> Explain why the critical angle matters for transmitting light through the fiber.
+    <br><strong>c)</strong> If light enters the fiber at a shallow angle, could it still travel through the entire length of the fiber? Why or why not?</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">8. Compare refraction and total internal reflection.
+    <br><strong>a)</strong> What is the key difference in what happens to light in these two phenomena?
+    <br><strong>b)</strong> Under what conditions does total internal reflection occur (what conditions must be met)?
+    <br><strong>c)</strong> Explain why a pool of water has a "silvery mirror" appearance when you look at it from below the surface at a steep angle.</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="answer-key-section">
+    <h2>Answer Key</h2>
+
+    <h3>Conceptual Questions</h3>
+
+    <p><strong>1. Explain why total internal reflection can only occur when light travels from a more optically dense material to a less optically dense material.</strong></p>
+    <p><em>Answer:</em> According to Snell's Law, when light travels from a denser to less dense material, it bends away from the normal. At some steep angle (the critical angle), the refracted ray would travel along the interface at 90° from the normal. Beyond this angle, there is no angle that satisfies Snell's Law—the light cannot escape into the less dense material and instead reflects back. In the reverse direction (from less dense to denser), light bends toward the normal, so it can always refract into the denser material and cannot undergo total internal reflection.</p>
+
+    <p><strong>2. What is the critical angle, and what happens to light when it hits the interface at exactly the critical angle?</strong></p>
+    <p><em>Answer:</em> The critical angle is the angle of incidence at which the refracted ray emerges parallel to the interface, at exactly 90° from the normal. When light hits the interface at exactly the critical angle, the refracted ray grazes along the interface surface. For angles greater than the critical angle, the light cannot refract and undergoes total internal reflection instead.</p>
+
+    <p><strong>3. Why do diamonds sparkle more brilliantly than glass?</strong></p>
+    <p><em>Answer:</em> Diamonds have a much higher refractive index (n ≈ 2.42) than glass (n ≈ 1.50). This means the critical angle for a diamond-to-air interface is very small (about 24.4°). Light bounces around inside a diamond through total internal reflection many more times than it does in glass. Additionally, diamonds exhibit dispersion, which splits white light into rainbow colors. The combination of multiple internal reflections and dispersion creates the brilliant sparkle characteristic of diamonds.</p>
+
+    <p><strong>4. How do optical fiber cables use total internal reflection to transmit information?</strong></p>
+    <p><em>Answer:</em> Optical fiber cables are thin strands of glass with high refractive index. Light signals (usually laser pulses) are directed into the fiber at an angle greater than the critical angle. As the light travels down the fiber, it bounces off the cylindrical walls through total internal reflection. The high efficiency of total internal reflection means very little light is lost as it travels thousands of miles through the cable. The light eventually exits the fiber at the other end, where it is detected and converted back to electrical signals. This allows vast amounts of information to be transmitted over long distances.</p>
+
+    <h3>Calculation Problems</h3>
+
+    <p><strong>5. Calculate the critical angle for the glass-to-air interface (glass n = 1.50, air n = 1.00).</strong></p>
+    <p><em>Solution:</em></p>
+    <p>$\sin \theta_c = \frac{n_2}{n_1} = \frac{1.00}{1.50} = 0.667$</p>
+    <p>$\theta_c = \sin^{-1}(0.667) = 41.8°$</p>
+    <p><em>Answer:</em> The critical angle is 41.8°.</p>
+
+    <p><strong>6. Light in liquid (n = 1.50) hits air (n = 1.00) at 45°. Critical angle is 41.8°. Will TIR occur?</strong></p>
+    <p><em>Solution:</em></p>
+    <p>Compare: Angle of incidence (45°) > Critical angle (41.8°)</p>
+    <p>Since the angle of incidence is greater than the critical angle, total internal reflection WILL occur.</p>
+    <p><em>Answer:</em> Yes, total internal reflection will occur. The light will bounce back into the liquid instead of refracting into the air.</p>
+
+    <h3>Multi-Step Problems</h3>
+
+    <p><strong>7. Optical fiber analysis (glass n = 1.50, surrounded by air n = 1.00).</strong></p>
+    <p><em>Answer:</em></p>
+    <p><strong>a)</strong> $\sin \theta_c = \frac{1.00}{1.50} = 0.667$, so $\theta_c = 41.8°$</p>
+    <p><strong>b)</strong> The critical angle is important because light can only travel through the fiber if it hits the fiber walls at an angle greater than the critical angle. If light hits at a smaller angle, it will refract out of the fiber and the signal will be lost.</p>
+    <p><strong>c)</strong> No, light entering at a very shallow angle would not travel the full length of the fiber. Shallow angles mean smaller angles of incidence at the walls, which could be less than the critical angle. At such angles, light would refract out of the fiber instead of undergoing total internal reflection. The light must be directed at a steep enough angle to ensure total internal reflection at all points.</p>
+
+    <p><strong>8. Compare refraction and total internal reflection.</strong></p>
+    <p><em>Answer:</em></p>
+    <p><strong>a)</strong> In refraction, light passes through the interface and enters the second material, bending at the interface. In total internal reflection, light bounces completely back into the original material without entering the second material.</p>
+    <p><strong>b)</strong> Total internal reflection requires: (1) light traveling from a more optically dense material to a less optically dense material, and (2) the angle of incidence must be greater than or equal to the critical angle.</p>
+    <p><strong>c)</strong> When you look at a pool from below at a steep angle, light from above hits the water surface from inside the water at an angle greater than the critical angle. This light undergoes total internal reflection instead of refraction, so it reflects back into the water like a mirror. This creates the silvery mirror effect.</p>
+
+</div>
+
+</body>
+</html>

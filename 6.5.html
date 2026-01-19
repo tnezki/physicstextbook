@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 6.5: Lenses - Double Convex and Double Concave</title>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Times New Roman', Times, serif; font-size: 16px; line-height: 1.3; color: #333; background-color: #fff; padding: 0.5in; max-width: 8.5in; margin: 0 auto; }
+        .title-page { page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; min-height: 10in; background-color: white; color: #000033; padding: 0.5in; margin-bottom: 0.5in; border: 2px solid #000033; }
+        .title-page-image { width: 100%; max-width: 5in; height: auto; margin-bottom: 0.3in; }
+        .section-number { font-size: 28px; font-weight: bold; margin-bottom: 0.2in; letter-spacing: 2px; color: #000033; }
+        .title-page h1 { font-size: 28px; font-weight: bold; margin-bottom: 0.2in; color: #000033; letter-spacing: 2px; background-color: transparent; padding: 0; }
+        .title-page p { font-size: 16px; max-width: 5.5in; line-height: 1.6; margin-top: 0.1in; color: #000033; }
+        h1 { font-size: 24px; font-weight: bold; background-color: #000033; color: white; padding: 6px; margin: 0.15in 0; }
+        h2 { font-size: 18px; font-weight: bold; background-color: #000033; color: white; padding: 6px; margin: 0.1in 0; }
+        h3 { font-size: 16px; font-weight: bold; color: #000033; margin: 0.08in 0; }
+        p { margin-bottom: 0.05in; text-align: justify; }
+        .vocab-term { font-weight: bold; }
+        .learning-objectives { background-color: #e8f4f8; border-left: 4px solid #0066cc; padding: 0.08in; margin: 0.06in 0; }
+        .learning-objectives h3 { color: #0066cc; margin-bottom: 0.05in; }
+        .learning-objectives ul { margin-left: 0.2in; }
+        .learning-objectives li { margin-bottom: 0.04in; font-size: 16px; }
+        .vocab-box { background-color: #f5f5f5; border-left: 4px solid #666; padding: 0.08in; margin: 0.06in 0; }
+        .info-box { background-color: #fffacd; border-left: 4px solid #ff9933; padding: 0.08in; margin: 0.06in 0; }
+        .real-world-box { background-color: #e6f3ff; border-left: 4px solid #0066cc; padding: 0.08in; margin: 0.06in 0; }
+        .example-box { background-color: #f9f9f9; border-left: 4px solid #cc6600; padding: 0.08in; margin: 0.08in 0; }
+        .example-box h3 { color: #cc6600; margin-bottom: 0.05in; }
+        .example-step { margin-left: 0.15in; margin-bottom: 0.04in; font-size: 14px; }
+        .formula-box { background-color: #f0f0f0; border: 2px solid #333; padding: 0.08in; margin: 0.06in 0; text-align: center; }
+        .formula-box table { width: 100%; border-collapse: collapse; margin-top: 0.05in; }
+        .formula-box th, .formula-box td { border: 1px solid #ccc; padding: 0.06in; text-align: left; font-size: 14px; }
+        .answer-space-long { min-height: 1.2in; background-color: #fafafa; border-bottom: 1px solid #ddd; padding: 0.05in; margin: 0.1in 0; }
+        .answer-space-short { min-height: 0.8in; background-color: #fafafa; border-bottom: 1px solid #ddd; padding: 0.05in; margin: 0.08in 0; }
+        ul, ol { margin-left: 0.2in; margin-bottom: 0.05in; }
+        li { margin-bottom: 0.04in; }
+        .summary-box { background-color: #f0f0f0; border: 1px solid #999; padding: 0.08in; margin: 0.06in 0; }
+        .summary-box h3 { color: #000033; margin-bottom: 0.05in; }
+        .summary-box ul { margin-left: 0.2in; }
+        .summary-box li { margin-bottom: 0.04in; font-size: 15px; }
+        svg { max-width: 100%; height: auto; display: block; margin: 0.06in auto; }
+        .page-break { page-break-after: always; }
+        .problem { margin-bottom: 0.08in; }
+        .problem-number { font-weight: bold; margin-bottom: 0.04in; }
+        table { width: 100%; border-collapse: collapse; margin: 0.06in 0; font-size: 13px; }
+        table td, table th { border: 1px solid #ccc; padding: 0.05in; text-align: left; }
+        table th { background-color: #e0e0e0; font-weight: bold; }
+        .answer-key-section { margin-top: 0.2in; padding-top: 0.1in; border-top: 2px solid #000033; }
+        .highlight { background-color: #ffff99; }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 6.5</div>
+    <h1>Lenses: Double Convex and Double Concave</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
+            </marker>
+        </defs>
+        
+        <!-- Convex (converging) lens -->
+        <ellipse cx="150" cy="150" rx="25" ry="80" fill="#E8F4FF" opacity="0.7" stroke="#0066cc" stroke-width="2"/>
+        <line x1="50" y1="150" x2="120" y2="150" stroke="#CC0000" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="180" y1="150" x2="260" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)"/>
+        <circle cx="200" cy="150" r="3" fill="#006600"/>
+        <text x="150" y="260" font-size="12" text-anchor="middle" fill="#000033" font-weight="bold">Converging</text>
+        <text x="150" y="275" font-size="12" text-anchor="middle" fill="#000033" font-weight="bold">(Convex)</text>
+        
+        <!-- Concave (diverging) lens -->
+        <path d="M 450 70 Q 460 150 450 230" stroke="#0066cc" stroke-width="2" fill="none"/>
+        <path d="M 450 70 L 470 100 L 470 200 L 450 230" fill="#E8F4FF" opacity="0.5" stroke="#0066cc" stroke-width="1"/>
+        <line x1="350" y1="150" x2="420" y2="150" stroke="#CC0000" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="480" y1="150" x2="550" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="3,3"/>
+        <text x="450" y="260" font-size="12" text-anchor="middle" fill="#000033" font-weight="bold">Diverging</text>
+        <text x="450" y="275" font-size="12" text-anchor="middle" fill="#000033" font-weight="bold">(Concave)</text>
+    </svg>
+    
+    <p>Lenses are transparent optical elements that refract light to form images. Unlike mirrors, which reflect light, lenses transmit light through them. From eyeglasses to cameras to microscopes, lenses are among the most useful optical devices in the world. In this section, you will learn how different lens shapes produce different images and how to apply the lens equation to predict where images form.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h3>Learning Objectives</h3>
+    <ul>
+        <li>I can distinguish between converging (convex) and diverging (concave) lenses based on their shape</li>
+        <li>I can use the lens equation to predict where images form and their properties</li>
+        <li>I can draw and analyze ray diagrams for thin lenses</li>
+        <li>I can explain how different lenses are used in cameras, eyeglasses, and other optical devices</li>
+    </ul>
+</div>
+
+<h2>Introduction</h2>
+
+<p>Lenses work by <span class="vocab-term">refraction</span>—bending light as it enters and exits the lens. Unlike mirrors, which are reflective, lenses are transparent. Light passes through a lens, is bent by the different optical densities at the curved surfaces, and emerges to form an image. The shape of a lens determines how much it bends light and what type of image it produces.</p>
+
+<div class="page-break"></div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h2>Types of Lenses</h2>
+
+<div class="vocab-box">
+    <h3>Double Convex (Converging) Lenses</h3>
+    <p><span class="vocab-term">Double convex lenses</span> are thicker in the middle and thinner at the edges. They bend light rays toward each other, causing them to converge at a focal point. These are called <span class="vocab-term">converging lenses</span>.</p>
+    <ul>
+        <li>Light rays passing through parallel to the axis converge at the focal point</li>
+        <li>Positive focal length ($f > 0$)</li>
+        <li>Can produce real or virtual images depending on object position</li>
+        <li>Used in cameras, projectors, telescopes, and magnifying glasses</li>
+    </ul>
+</div>
+
+<div class="vocab-box">
+    <h3>Double Concave (Diverging) Lenses</h3>
+    <p><span class="vocab-term">Double concave lenses</span> are thinner in the middle and thicker at the edges. They bend light rays away from each other, causing them to diverge. These are called <span class="vocab-term">diverging lenses</span>.</p>
+    <ul>
+        <li>Light rays passing through appear to diverge from the focal point</li>
+        <li>Negative focal length ($f < 0$)</li>
+        <li>Always produce virtual, upright, reduced images</li>
+        <li>Used in eyeglasses for nearsightedness and in wide-angle viewfinders</li>
+    </ul>
+</div>
+
+<h2>The Lens Equation</h2>
+
+<p>Like curved mirrors, thin lenses follow a mathematical relationship between focal length, object distance, and image distance:</p>
+
+<div class="formula-box">
+    <h3>Lens Equation (Same as Mirror Equation)</h3>
+    <p>$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</p>
+    <p>$$M = \frac{d_i}{d_o} = \frac{h_i}{h_o}$$</p>
+    <p>where: $f$ = focal length, $d_o$ = object distance, $d_i$ = image distance, $M$ = magnification</p>
+</div>
+
+<div class="info-box">
+    <h3>Important Differences from Mirrors (for Lenses):</h3>
+    <ul>
+        <li>For lenses: $f > 0$ (positive) for converging (convex) lenses</li>
+        <li>For lenses: $f < 0$ (negative) for diverging (concave) lenses</li>
+        <li>For lenses: Magnification formula is $M = \frac{d_i}{d_o}$ (positive sign, unlike mirrors)</li>
+        <li>$M > 0$ for upright images (virtual); $M < 0$ for inverted images (real)</li>
+    </ul>
+</div>
+
+<h2>Key Points About Lenses</h2>
+
+<div class="vocab-box">
+    <h3>Image Formation with Converging Lenses</h3>
+    <p>The type of image depends on where the object is placed:</p>
+    <ul>
+        <li><strong>Beyond 2f:</strong> Real, inverted, reduced image</li>
+        <li><strong>At 2f:</strong> Real, inverted, same size image</li>
+        <li><strong>Between f and 2f:</strong> Real, inverted, magnified image</li>
+        <li><strong>At f:</strong> No image forms (rays emerge parallel)</li>
+        <li><strong>Between lens and f:</strong> Virtual, upright, magnified image (magnifying glass)</li>
+    </ul>
+</div>
+
+<div class="real-world-box">
+    <h3>Applications of Lenses</h3>
+    <ul>
+        <li><strong>Cameras:</strong> Converging lenses focus light onto film or sensors to create real, inverted images</li>
+        <li><strong>Eyeglasses:</strong> Converging lenses correct farsightedness; diverging lenses correct nearsightedness</li>
+        <li><strong>Magnifying glasses:</strong> Converging lens with object inside focal length produces virtual, magnified image</li>
+        <li><strong>Microscopes:</strong> Multiple lenses work together to produce highly magnified images</li>
+        <li><strong>Telescopes:</strong> Combination of lenses (or mirrors and lenses) to magnify distant objects</li>
+        <li><strong>Projectors:</strong> Converging lens creates real, magnified image on a screen</li>
+    </ul>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h2>Example Problems</h2>
+
+<div class="example-box">
+    <h3>Example 1: Converging Lens - Real Image</h3>
+    <p><strong>Given:</strong> An object 6 cm tall is placed 30 cm from a converging lens with focal length f = 10 cm.</p>
+    <p><strong>Find:</strong> Image location, type, and magnification.</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Use lens equation to find image distance.</p>
+        <p>$$\frac{1}{10} = \frac{1}{30} + \frac{1}{d_i}$$</p>
+        <p>$$\frac{1}{d_i} = \frac{1}{10} - \frac{1}{30} = \frac{3-1}{30} = \frac{2}{30} = \frac{1}{15}$$</p>
+        <p>$$d_i = 15 \text{ cm}$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Determine image type. Since $d_i > 0$, image is real (on opposite side of lens).</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 3:</strong> Calculate magnification.</p>
+        <p>$$M = \frac{d_i}{d_o} = \frac{15}{30} = 0.5$$</p>
+        <p>Positive magnification means upright for a lens, but this is a <strong>REAL</strong> image, which must be inverted. The actual image is inverted and 0.5 times the original size, so image height = 0.5 × 6 = 3 cm.</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: Image is 15 cm from lens, real, inverted, reduced (3 cm tall, M = 0.5).</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Converging Lens - Virtual Image (Magnifying Glass)</h3>
+    <p><strong>Given:</strong> An object is placed 5 cm from a converging lens with focal length f = 8 cm.</p>
+    <p><strong>Find:</strong> Image location and type.</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Apply lens equation.</p>
+        <p>$$\frac{1}{8} = \frac{1}{5} + \frac{1}{d_i}$$</p>
+        <p>$$\frac{1}{d_i} = \frac{1}{8} - \frac{1}{5} = \frac{5-8}{40} = -\frac{3}{40}$$</p>
+        <p>$$d_i = -13.3 \text{ cm}$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Interpret the negative distance. Negative $d_i$ means the image is virtual (on same side as object).</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 3:</strong> Calculate magnification.</p>
+        <p>$$M = \frac{-13.3}{5} = -2.66$$</p>
+        <p>The negative sign indicates the image is inverted relative to how light rays would form it, but for a virtual image, it appears upright. The magnitude (2.66) means the image is magnified 2.66 times.</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: Image is 13.3 cm from lens (on same side as object), virtual, upright, magnified (M = 2.66).</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Diverging Lens</h3>
+    <p><strong>Given:</strong> An object is placed 20 cm from a diverging lens with focal length f = –10 cm.</p>
+    <p><strong>Find:</strong> Image location and magnification.</p>
+    <p><strong>Solution:</strong></p>
+    <div class="example-step">
+        <p><strong>Step 1:</strong> Apply lens equation with negative focal length.</p>
+        <p>$$\frac{1}{-10} = \frac{1}{20} + \frac{1}{d_i}$$</p>
+        <p>$$\frac{1}{d_i} = -\frac{1}{10} - \frac{1}{20} = -\frac{2+1}{20} = -\frac{3}{20}$$</p>
+        <p>$$d_i = -6.67 \text{ cm}$$</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 2:</strong> Negative distance indicates virtual image (on same side as object).</p>
+    </div>
+    <div class="example-step">
+        <p><strong>Step 3:</strong> Calculate magnification.</p>
+        <p>$$M = \frac{-6.67}{20} = -0.33$$</p>
+        <p>Diverging lenses always produce virtual, upright, reduced images.</p>
+    </div>
+    <p><strong style="background-color: #ffff99; padding: 2px 4px;">Answer: Image is 6.67 cm from lens, virtual, upright, reduced (M = 0.33).</strong></p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY ============== -->
+<h2>Summary</h2>
+
+<div class="summary-box">
+    <h3>Key Concepts</h3>
+    <ul>
+        <li>Converging (convex) lenses are thicker in middle; diverging (concave) lenses are thicker at edges</li>
+        <li>Converging lenses have positive focal length; diverging lenses have negative focal length</li>
+        <li>The lens equation $\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$ applies to both types of lenses</li>
+        <li>Converging lenses can produce real or virtual images depending on object position</li>
+        <li>Diverging lenses always produce virtual, upright, reduced images</li>
+        <li>Magnification formula for lenses: $M = \frac{d_i}{d_o}$ (different sign convention than mirrors)</li>
+        <li>Real images form where light rays converge and can be projected on a screen</li>
+        <li>Virtual images form where light rays appear to diverge and cannot be projected</li>
+        <li>Converging lenses are used in cameras, projectors, and magnifying glasses</li>
+        <li>Diverging lenses are used in eyeglasses for nearsightedness correction</li>
+    </ul>
+</div>
+
+<h2>Key Equations</h2>
+
+<div class="formula-box">
+    <h3>Lens Equations</h3>
+    <table>
+        <tr>
+            <th>Concept</th>
+            <th>Equation</th>
+        </tr>
+        <tr>
+            <td>Lens Equation</td>
+            <td>$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</td>
+        </tr>
+        <tr>
+            <td>Magnification</td>
+            <td>$$M = \frac{d_i}{d_o} = \frac{h_i}{h_o}$$</td>
+        </tr>
+        <tr>
+            <td>Converging Lens</td>
+            <td>$$f > 0$$</td>
+        </tr>
+        <tr>
+            <td>Diverging Lens</td>
+            <td>$$f < 0$$</td>
+        </tr>
+    </table>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h2>Practice Problems</h2>
+
+<p><strong>Conceptual Questions (1-4):</strong></p>
+
+<div class="problem">
+    <div class="problem-number">1. What is the fundamental difference between how a converging lens and a diverging lens bend light?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">2. A magnifying glass is a converging lens. Explain why it must have the object placed between the lens and its focal point.</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">3. Why can a converging lens produce a real image but a diverging lens cannot?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">4. How are lenses used in cameras to form images on film or sensors?</div>
+    <div class="answer-space-short"></div>
+</div>
+
+<p style="margin-top: 0.15in;"><strong>Calculation Problems (5-6):</strong></p>
+
+<div class="problem">
+    <div class="problem-number">5. A 4 cm tall object is placed 40 cm from a converging lens with f = 8 cm. Find: (a) image distance, (b) image type (real/virtual), (c) magnification, (d) image height.</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">6. An object is 15 cm from a diverging lens with f = –6 cm. Find the image distance and magnification.</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<p style="margin-top: 0.15in;"><strong>Multi-Step Problems (7-8):</strong></p>
+
+<div class="problem">
+    <div class="problem-number">7. Two converging lenses are placed 20 cm apart. The first lens has f₁ = 5 cm and creates an image 10 cm from itself. (a) Use the lens equation to verify the image distance. (b) If this image serves as the object for the second lens (f₂ = 8 cm), what is the final image distance from the second lens?</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="problem">
+    <div class="problem-number">8. Create a comparison table of converging and diverging lenses showing: lens shape, focal length sign, types of images produced, magnification range, and practical applications.</div>
+    <div class="answer-space-long"></div>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="answer-key-section">
+    <h2>Answer Key</h2>
+
+    <h3>Conceptual Questions</h3>
+
+    <p><strong>1. Fundamental difference between converging and diverging lenses.</strong></p>
+    <p><em>Answer:</em> A converging (convex) lens is thicker in the middle and bends light rays toward the center, causing them to converge at a focal point. A diverging (concave) lens is thinner in the middle and bends light rays away from the center, causing them to spread apart as if coming from a virtual focal point.</p>
+
+    <p><strong>2. Why magnifying glass requires object between lens and focal point.</strong></p>
+    <p><em>Answer:</em> When an object is placed between a converging lens and its focal point, the lens equation predicts a negative image distance (virtual image). The virtual image appears upright and magnified on the same side of the lens as the object. If the object were beyond the focal point, a real, inverted image would form, which wouldn't work as a magnifying glass.</p>
+
+    <p><strong>3. Why converging lenses produce real images but diverging lenses cannot.</strong></p>
+    <p><em>Answer:</em> Converging lenses bend light rays toward each other; at certain object distances, these rays actually converge to form a real image where light actually travels. Diverging lenses always bend light rays away from each other, so they never converge to form a real image. Real images only form where light rays actually meet.</p>
+
+    <p><strong>4. How lenses work in cameras.</strong></p>
+    <p><em>Answer:</em> Cameras use converging lenses positioned so that objects are placed beyond 2f, creating real, inverted, reduced images on the film or sensor. The lens focuses light from the scene onto the light-sensitive surface, where the real image is captured as a photograph.</p>
+
+    <h3>Calculation Problems</h3>
+
+    <p><strong>5. Object 4 cm tall, 40 cm from converging lens, f = 8 cm.</strong></p>
+    <p><em>Solution:</em></p>
+    <p>(a) $\frac{1}{8} = \frac{1}{40} + \frac{1}{d_i}$ → $\frac{1}{d_i} = \frac{1}{8} - \frac{1}{40} = \frac{5-1}{40} = \frac{1}{10}$ → $d_i = 10$ cm</p>
+    <p>(b) Real image (positive $d_i$)</p>
+    <p>(c) $M = \frac{10}{40} = 0.25$ (but actual magnification is inverted, so image is inverted and 0.25× size)</p>
+    <p>(d) Image height = 0.25 × 4 = 1 cm</p>
+    <p><em>Answer:</em> (a) 10 cm, (b) real, (c) 0.25, (d) 1 cm inverted</p>
+
+    <p><strong>6. Object 15 cm from diverging lens, f = –6 cm.</strong></p>
+    <p><em>Solution:</em></p>
+    <p>$\frac{1}{-6} = \frac{1}{15} + \frac{1}{d_i}$ → $\frac{1}{d_i} = -\frac{1}{6} - \frac{1}{15} = -\frac{5+2}{30} = -\frac{7}{30}$ → $d_i = -4.3$ cm</p>
+    <p>$M = \frac{-4.3}{15} = -0.29$</p>
+    <p><em>Answer:</em> Image distance = –4.3 cm (virtual), Magnification = 0.29 (upright, reduced)</p>
+
+    <h3>Multi-Step Problems</h3>
+
+    <p><strong>7. Two-lens system.</strong></p>
+    <p><em>Answer:</em></p>
+    <p>(a) $\frac{1}{5} = \frac{1}{d_o} + \frac{1}{10}$ → $\frac{1}{d_o} = \frac{1}{5} - \frac{1}{10} = \frac{1}{10}$ → $d_o = 10$ cm ✓</p>
+    <p>(b) The image from the first lens is 10 cm from that lens. Since the lenses are 20 cm apart, this image is 10 cm to the right of the first lens, or 10 cm before the second lens. So for the second lens: $d_o = 10$ cm. Using $\frac{1}{8} = \frac{1}{10} + \frac{1}{d_i}$ → $d_i = 40$ cm</p>
+
+    <p><strong>8. Comparison Table:</strong></p>
+    <table>
+        <tr>
+            <th>Property</th>
+            <th>Converging (Convex)</th>
+            <th>Diverging (Concave)</th>
+        </tr>
+        <tr>
+            <td>Lens Shape</td>
+            <td>Thicker in middle, thin at edges</td>
+            <td>Thin in middle, thick at edges</td>
+        </tr>
+        <tr>
+            <td>Focal Length Sign</td>
+            <td>f > 0 (positive)</td>
+            <td>f < 0 (negative)</td>
+        </tr>
+        <tr>
+            <td>Image Types</td>
+            <td>Real (beyond F) or Virtual (within F)</td>
+            <td>Always Virtual</td>
+        </tr>
+        <tr>
+            <td>Magnification Range</td>
+            <td>Varies (can be >1 or <1)</td>
+            <td>Always < 1 (reduced)</td>
+        </tr>
+        <tr>
+            <td>Applications</td>
+            <td>Cameras, projectors, magnifying glasses, telescopes</td>
+            <td>Eyeglasses (nearsight), wide-angle viewfinders</td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
