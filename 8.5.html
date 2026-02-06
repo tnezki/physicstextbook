@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 8.5: Capacitors and Practical Applications</title>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #000033;
+            background-color: #ffffff;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+
+        /* General Headers */
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.15in;
+            margin-bottom: 0.1in;
+        }
+
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.1in;
+            margin-bottom: 0.08in;
+        }
+
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin-top: 0.08in;
+            margin-bottom: 0.05in;
+        }
+
+        p {
+            margin: 0.05in 0;
+            text-align: justify;
+        }
+
+        /* Learning Objectives Box */
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .learning-objectives h2 {
+            background-color: #0066cc;
+            color: white;
+            font-size: 18px;
+            padding: 6px;
+            margin: -0.08in -0.08in 0.06in -0.08in;
+        }
+
+        .learning-objectives ul {
+            margin-left: 0.2in;
+            list-style-type: none;
+        }
+
+        .learning-objectives li {
+            margin: 0.05in 0;
+        }
+
+        .learning-objectives li:before {
+            content: "✓ ";
+            color: #0066cc;
+            font-weight: bold;
+            margin-right: 0.05in;
+        }
+
+        /* Introduction Section */
+        .introduction {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        /* Vocabulary/Definition Boxes */
+        .vocab-box {
+            background-color: #f5f5f5;
+            border-left: 3px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .vocab-term {
+            font-weight: bold;
+            color: #000033;
+        }
+
+        /* Example Boxes */
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .example-box h3 {
+            color: #cc6600;
+            margin-top: 0;
+        }
+
+        .example-box .step {
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+
+        .answer-highlight {
+            background-color: #ffff99;
+            font-weight: bold;
+            padding: 2px 4px;
+        }
+
+        /* Real-World/Historical Boxes */
+        .real-world {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        /* Formula Boxes */
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+
+        .formula-box p {
+            margin: 0.04in 0;
+            font-size: 15px;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background-color: #fffacd;
+            border-left: 3px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        /* Answer Spaces */
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+
+        .short-answer {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+
+        table th {
+            background-color: #000033;
+            color: white;
+            padding: 0.05in;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table td {
+            border: 1px solid #ddd;
+            padding: 0.05in;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin-left: 0.2in;
+            margin: 0.05in 0;
+        }
+
+        li {
+            margin: 0.04in 0;
+        }
+
+        /* SVG Images */
+        svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+
+        .page-break {
+            page-break-after: always;
+            margin: 0.5in 0;
+        }
+
+        /* Summary Section */
+        .summary {
+            background-color: #e8f4f8;
+            border: 2px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .summary h2 {
+            background-color: #0066cc;
+            color: white;
+            margin: -0.08in -0.08in 0.06in -0.08in;
+        }
+
+        .summary ul {
+            margin-left: 0.2in;
+        }
+
+        /* Answer Key */
+        .answer-key {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+
+        .answer-key h3 {
+            color: #000033;
+            margin-top: 0.06in;
+        }
+
+        .problem-number {
+            font-weight: bold;
+            color: #000033;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 8.5</div>
+    <h1>Capacitors and Practical Applications</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <defs>
+            <linearGradient id="bgradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#E6F3FF;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#F0F8FF;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <rect width="600" height="300" fill="url(#bgradient)"/>
+        
+        <!-- CAPACITOR ILLUSTRATION (LEFT SIDE) -->
+        <!-- Two parallel plates -->
+        <rect x="50" y="80" width="80" height="2" fill="#000033" stroke="#000033" stroke-width="1"/>
+        <text x="90" y="70" font-size="11" text-anchor="middle" fill="#0066cc" font-weight="bold">+ Plate</text>
+        
+        <rect x="50" y="160" width="80" height="2" fill="#000033" stroke="#000033" stroke-width="1"/>
+        <text x="90" y="175" font-size="11" text-anchor="middle" fill="#CC3300" font-weight="bold">− Plate</text>
+        
+        <!-- Electric field lines between plates -->
+        <line x1="70" y1="85" x2="70" y2="155" stroke="#1E90FF" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+        <line x1="90" y1="85" x2="90" y2="155" stroke="#1E90FF" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+        <line x1="110" y1="85" x2="110" y2="155" stroke="#1E90FF" stroke-width="1" stroke-dasharray="2,2" opacity="0.6"/>
+        
+        <!-- Arrows for field -->
+        <text x="125" y="120" font-size="18" text-anchor="middle" fill="#1E90FF" font-weight="bold">→</text>
+        <text x="140" y="120" font-size="11" text-anchor="middle" fill="#1E90FF" font-weight="bold">E Field</text>
+        
+        <!-- Electrons accumulate -->
+        <circle cx="60" cy="100" r="2" fill="#CC3300"/>
+        <circle cx="62" cy="105" r="2" fill="#CC3300"/>
+        <circle cx="58" cy="110" r="2" fill="#CC3300"/>
+        <circle cx="65" cy="108" r="2" fill="#CC3300"/>
+        
+        <!-- Positive charges at other plate -->
+        <circle cx="120" cy="145" r="2" fill="#0066cc"/>
+        <circle cx="122" cy="150" r="2" fill="#0066cc"/>
+        <circle cx="118" cy="155" r="2" fill="#0066cc"/>
+        <circle cx="125" cy="153" r="2" fill="#0066cc"/>
+        
+        <!-- Label -->
+        <text x="90" y="200" font-size="12" text-anchor="middle" fill="#000033" font-weight="bold">Capacitor</text>
+        <text x="90" y="215" font-size="10" text-anchor="middle" fill="#000033">Energy Storage Device</text>
+        
+        <!-- APPLICATIONS (RIGHT SIDE) -->
+        <!-- Smartphone -->
+        <rect x="250" y="60" width="30" height="50" fill="#f0f0f0" stroke="#000033" stroke-width="2" rx="3"/>
+        <rect x="252" y="65" width="26" height="40" fill="#87CEEB"/>
+        <text x="265" y="95" font-size="8" text-anchor="middle" fill="#000033">Phone</text>
+        
+        <!-- Camera flash -->
+        <circle cx="350" cy="85" r="12" fill="#FFD700" stroke="#000033" stroke-width="2"/>
+        <text x="350" y="88" font-size="10" text-anchor="middle" fill="#000033" font-weight="bold">⚡</text>
+        <text x="350" y="105" font-size="9" text-anchor="middle" fill="#000033">Flash</text>
+        
+        <!-- Power supply -->
+        <rect x="450" y="70" width="40" height="35" fill="#f0f0f0" stroke="#000033" stroke-width="2" rx="3"/>
+        <circle cx="460" cy="78" r="3" fill="#000033"/>
+        <circle cx="475" cy="78" r="3" fill="#000033"/>
+        <circle cx="460" cy="93" r="3" fill="#000033"/>
+        <circle cx="475" cy="93" r="3" fill="#000033"/>
+        <text x="470" y="115" font-size="9" text-anchor="middle" fill="#000033">Power</text>
+        <text x="470" y="125" font-size="9" text-anchor="middle" fill="#000033">Supply</text>
+        
+        <!-- RENEWABLE ENERGY (BOTTOM) -->
+        <!-- Solar panel -->
+        <rect x="100" y="220" width="50" height="40" fill="#FFD700" stroke="#000033" stroke-width="1"/>
+        <line x1="110" y1="220" x2="110" y2="260" stroke="#000033" stroke-width="1"/>
+        <line x1="120" y1="220" x2="120" y2="260" stroke="#000033" stroke-width="1"/>
+        <line x1="130" y1="220" x2="130" y2="260" stroke="#000033" stroke-width="1"/>
+        <line x1="140" y1="220" x2="140" y2="260" stroke="#000033" stroke-width="1"/>
+        <text x="125" y="275" font-size="10" text-anchor="middle" fill="#000033">Solar</text>
+        
+        <!-- Wind turbine -->
+        <line x1="300" y1="260" x2="300" y2="290" stroke="#000033" stroke-width="2"/>
+        <polygon points="300,250 295,260 305,260" fill="#006633" stroke="#000033" stroke-width="1"/>
+        <line x1="300" y1="250" x2="285" y2="235" stroke="#000033" stroke-width="2"/>
+        <line x1="300" y1="250" x2="315" y2="235" stroke="#000033" stroke-width="2"/>
+        <text x="300" y="275" font-size="10" text-anchor="middle" fill="#000033">Wind</text>
+        
+        <!-- Battery storage -->
+        <rect x="480" y="230" width="30" height="50" fill="#f0f0f0" stroke="#000033" stroke-width="2" rx="3"/>
+        <rect x="490" y="220" width="10" height="5" fill="#000033"/>
+        <text x="495" y="278" font-size="10" text-anchor="middle" fill="#000033">Storage</text>
+        
+        <!-- Connection arrows -->
+        <line x1="150" y1="240" x2="180" y2="240" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)"/>
+        <line x1="330" y1="245" x2="400" y2="245" stroke="#0066cc" stroke-width="2"/>
+        
+        <!-- Title -->
+        <text x="300" y="25" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Capacitors in Technology and Renewable Energy</text>
+    </svg>
+    
+    <p>Capacitors are electrical devices that store energy in an electric field. They're everywhere in modern technology—from tiny capacitors inside computer chips to large capacitors that help manage power in electrical grids. Understanding capacitors and their applications helps you appreciate how technology works and prepares you for advanced circuit design. Capacitors are also crucial in renewable energy systems, smoothing out power fluctuations and storing energy for later use.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2>Learning Objectives</h2>
+    <ul>
+        <li>I can explain how capacitors store and release electrical energy and describe their function in circuits.</li>
+        <li>I can evaluate energy efficiency in electrical systems and compare advantages and limitations of different electricity sources.</li>
+        <li>I can construct evidence-based arguments about the practical applications of circuits in real-world technology and renewable energy systems.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<div class="introduction">
+    <h2>Why Does This Matter?</h2>
+    <p><strong>Hook:</strong> When a camera flash fires, it releases energy almost instantaneously to create a bright light. This energy is stored in capacitors, which release it all at once through the flash tube. Without capacitors, many modern devices couldn't work.</p>
+    
+    <p><strong>Real-World Connection:</strong> Capacitors are in your phone (touch screen and power management), your computer (preventing data loss during power fluctuations), your car (for the ignition system), and even in renewable energy systems (storing solar or wind power). They're one of the most important components in modern electronics.</p>
+    
+    <p><strong>Historical Context:</strong> The first capacitor, called a Leyden jar, was invented in 1745. Benjamin Franklin studied these devices and helped develop our understanding of electrical charge. Modern capacitors come in thousands of varieties, from tiny chip capacitors to large industrial capacitors weighing hundreds of pounds.</p>
+    
+    <p><strong>Connect to Prior Knowledge:</strong> You've learned about voltage, current, resistance, and circuits. Capacitors operate according to the same principles, but instead of resistive devices that dissipate energy, capacitors store energy and return it to the circuit.</p>
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== CAPACITOR BASICS ============== -->
+<h1>How Capacitors Work</h1>
+
+<h2>What is a Capacitor?</h2>
+
+<p>A <span class="vocab-term">capacitor</span> is a device that stores electrical energy in an electric field. The simplest capacitor consists of two metal plates separated by a dielectric material (an insulator). When voltage is applied, one plate becomes positively charged and the other becomes negatively charged, creating an electric field between them.</p>
+
+<h2>Charging and Discharging</h2>
+
+<p><strong>Charging:</strong> When a battery is connected to a capacitor, electrons flow from the battery's negative terminal to one plate, and electrons flow away from the other plate toward the positive terminal. This process continues until the voltage across the capacitor equals the battery voltage. The capacitor is now charged.</p>
+
+<p><strong>Discharging:</strong> When the battery is disconnected and a load (like a light bulb or resistor) is connected across the capacitor plates, the stored charge flows through the load, powering it. The capacitor is now discharging.</p>
+
+<p>Key point: <strong>No current flows through the dielectric inside the capacitor.</strong> Instead, charge accumulates on the plates, and energy is stored in the electric field.</p>
+
+<h2>Capacitance</h2>
+
+<p><span class="vocab-term">Capacitance</span> is a measure of how much charge a capacitor can store per unit voltage. It's measured in <span class="vocab-term">farads (F)</span>. A capacitor with high capacitance stores more charge at the same voltage.</p>
+
+<div class="formula-box">
+    <p>$$C = \frac{Q}{V}$$</p>
+    <p>where $C$ = capacitance (farads, F), $Q$ = charge (coulombs, C), $V$ = voltage (volts, V)</p>
+</div>
+
+<p>One farad is very large, so capacitance is usually measured in microfarads (μF) or nanofarads (nF):</p>
+<ul>
+    <li>1 μF = $10^{-6}$ F</li>
+    <li>1 nF = $10^{-9}$ F</li>
+    <li>1 pF = $10^{-12}$ F (picofarad)</li>
+</ul>
+
+<p>Capacitance depends on three factors:</p>
+<ul>
+    <li><strong>Plate area:</strong> Larger plates = higher capacitance</li>
+    <li><strong>Plate separation:</strong> Closer plates = higher capacitance</li>
+    <li><strong>Dielectric material:</strong> Different insulators have different properties affecting capacitance</li>
+</ul>
+
+<div class="real-world">
+    <h3>Real-World Example: Touchscreen Technology</h3>
+    <p>Your phone's touchscreen uses capacitors. When your finger touches the screen, you change the capacitance of the circuits beneath the surface. The phone's processor detects these changes and determines where you touched. This is why touchscreens don't work well with certain gloves—they block the electrical contact needed to change the capacitance.</p>
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== ENERGY STORAGE ============== -->
+<h1>Energy Storage in Capacitors</h1>
+
+<h2>Energy Stored in a Capacitor</h2>
+
+<p>A charged capacitor stores electrical energy in its electric field. The energy stored is:</p>
+
+<div class="formula-box">
+    <p>$$E = \frac{1}{2}CV^2$$</p>
+    <p>where $E$ = energy (joules, J), $C$ = capacitance (farads, F), $V$ = voltage (volts, V)</p>
+</div>
+
+<p>We can also write this as:</p>
+
+<div class="formula-box">
+    <p>$$E = \frac{1}{2}QV$$</p>
+    <p>where $Q$ = charge (coulombs, C)</p>
+</div>
+
+<p>Notice that energy increases with the square of voltage. Doubling the voltage quadruples the stored energy! This is why high-voltage capacitors are particularly useful for storing large amounts of energy.</p>
+
+<p><strong>Example:</strong> A 1000 μF capacitor charged to 10V stores:
+$$E = \frac{1}{2} \times (1000 \times 10^{-6}) \times 10^2 = \frac{1}{2} \times 10^{-3} \times 100 = 0.05 \text{ J}$$</p>
+
+<p>This is a small amount of energy (0.05 joules), which is why small capacitors like those in electronics don't store much energy. However, large industrial capacitors can store significant energy.</p>
+
+<h2>Power and Energy Release</h2>
+
+<p>When a capacitor discharges through a resistor or load, the rate of discharge depends on the capacitance and resistance. The <span class="vocab-term">time constant</span> determines how long discharge takes:</p>
+
+<div class="formula-box">
+    <p>$$\tau = RC$$</p>
+    <p>where $\tau$ = time constant (seconds, s), $R$ = resistance (ohms, Ω), $C$ = capacitance (farads, F)</p>
+</div>
+
+<p>After time equal to $\tau$, the capacitor voltage drops to about 37% of its initial value. After $3\tau$, it drops to 5%. This is why camera flashes take a fraction of a second to charge (slowly filling the capacitor) but release energy in milliseconds (rapidly discharging through the flash tube).</p>
+
+<div class="info-box">
+    <strong>Safety Note:</strong> Large capacitors can store enough energy to be dangerous. Even when a device is unplugged, capacitors retain their charge. Always discharge capacitors safely before touching their terminals. Never work with high-voltage capacitors without proper training.
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== PRACTICAL APPLICATIONS ============== -->
+<h1>Practical Applications of Circuits</h1>
+
+<h2>Power Supply and Energy Management</h2>
+
+<p><strong>Smoothing ripples:</strong> AC power sources produce fluctuating voltages (ripples). Large capacitors smooth these ripples, providing steady DC voltage to sensitive electronics. This is a critical function in power supplies.</p>
+
+<p><strong>Backup power:</strong> Capacitors provide temporary power during brief interruptions. Your computer's RAM stays powered by capacitors for a fraction of a second when the power flickers, preventing data loss.</p>
+
+<p><strong>Peak power handling:</strong> Capacitors release stored energy instantly when the circuit needs sudden power surges, protecting sensitive components from damage.</p>
+
+<h2>Signal Processing</h2>
+
+<p><strong>Filtering:</strong> Capacitors separate AC (alternating) signals from DC (direct) signals. This is essential in audio amplifiers, radio receivers, and communication systems.</p>
+
+<p><strong>Timing circuits:</strong> The time constant of a capacitor-resistor combination controls timing in electronic circuits. Older devices used RC circuits for timing; now we use dedicated timing chips, but the principle remains.</p>
+
+<h2>Energy Storage Applications</h2>
+
+<p><strong>Renewable Energy Integration:</strong> Solar panels and wind turbines produce power that varies with weather conditions. Large capacitor banks help store this variable power and deliver steady energy to the grid.</p>
+
+<p><strong>Electric Vehicles:</strong> Capacitors help manage the peak currents during acceleration and store regenerative braking energy temporarily.</p>
+
+<p><strong>Grid Stabilization:</strong> Power systems use massive capacitor banks to maintain steady voltage and help the grid respond to sudden load changes.</p>
+
+<h2>Advanced Technologies</h2>
+
+<p><strong>Supercapacitors:</strong> These devices use special electrode materials to achieve enormous capacitance—thousands of farads. They bridge the gap between regular capacitors and batteries, storing enough energy for practical applications like backup power.</p>
+
+<p><strong>Energy harvesting:</strong> Emerging technology uses capacitors to store energy from vibrations, solar radiation, and thermal variations, powering wireless sensors without batteries.</p>
+
+<div class="real-world">
+    <h3>Real-World Example: Renewable Energy Storage</h3>
+    <p>A home with solar panels generates maximum power on sunny days. Without storage, this excess energy is wasted or fed back to the grid (if allowed). With a capacitor or battery system, the home stores this energy for evening use. Large-scale systems use thousands of capacitors working together, combined with batteries, to store renewable energy smoothly and efficiently.</p>
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Capacitance</h3>
+    <p><strong>Given:</strong> A capacitor stores 0.5 C of charge when 10V is applied.</p>
+    <p><strong>Find:</strong> The capacitance in farads.</p>
+    
+    <div class="step"><strong>Step 1:</strong> Use the capacitance formula: $C = \frac{Q}{V}$</div>
+    <div class="step"><strong>Step 2:</strong> Substitute values: $C = \frac{0.5 \text{ C}}{10 \text{ V}}$</div>
+    <div class="step"><strong>Step 3:</strong> Calculate: $C = 0.05$ F = 50 μF</div>
+    
+    <p><strong>Answer:</strong> The capacitance is <span class="answer-highlight">0.05 F or 50 μF</span>.</p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Energy Stored in a Capacitor</h3>
+    <p><strong>Given:</strong> A capacitor with capacitance 100 μF is charged to 50V.</p>
+    <p><strong>Find:</strong> The energy stored in joules.</p>
+    
+    <div class="step"><strong>Step 1:</strong> Convert capacitance: 100 μF = $100 \times 10^{-6}$ F = $10^{-4}$ F</div>
+    <div class="step"><strong>Step 2:</strong> Use energy formula: $E = \frac{1}{2}CV^2$</div>
+    <div class="step"><strong>Step 3:</strong> Substitute: $E = \frac{1}{2} \times (10^{-4}) \times (50)^2$</div>
+    <div class="step"><strong>Step 4:</strong> Calculate: $E = \frac{1}{2} \times 10^{-4} \times 2500 = 0.125$ J</div>
+    
+    <p><strong>Answer:</strong> The energy stored is <span class="answer-highlight">0.125 J</span>.</p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Time Constant and Discharge</h3>
+    <p><strong>Given:</strong> A 50 μF capacitor discharges through a 20 kΩ resistor. How long until voltage drops to 37% of initial value?</p>
+    <p><strong>Find:</strong> The time constant.</p>
+    
+    <div class="step"><strong>Step 1:</strong> Convert units: $C = 50 \times 10^{-6}$ F, $R = 20,000$ Ω</div>
+    <div class="step"><strong>Step 2:</strong> Use time constant formula: $\tau = RC$</div>
+    <div class="step"><strong>Step 3:</strong> Calculate: $\tau = 20,000 \times 50 \times 10^{-6} = 1.0$ second</div>
+    <div class="step"><strong>Step 4:</strong> Voltage drops to 37% after exactly one time constant</div>
+    
+    <p><strong>Answer:</strong> The voltage drops to 37% after <span class="answer-highlight">1.0 second</span>.</p>
+</div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY AND EQUATIONS ============== -->
+<div class="summary">
+    <h2>Summary of Key Concepts</h2>
+    <ul>
+        <li>A <span class="vocab-term">capacitor</span> stores electrical energy in an electric field between charged plates.</li>
+        <li><span class="vocab-term">Capacitance</span> is the ability to store charge per unit voltage, measured in farads (F).</li>
+        <li>Capacitors charge when connected to a voltage source and discharge when the voltage source is removed.</li>
+        <li>Energy stored in a capacitor: $E = \frac{1}{2}CV^2$, which increases with the square of voltage.</li>
+        <li>The <span class="vocab-term">time constant</span> $\tau = RC$ determines how fast a capacitor charges or discharges.</li>
+        <li>Capacitors have no resistance (ideally), so they pass AC signals but block DC signals.</li>
+        <li>In power supplies, capacitors smooth ripples and stabilize voltage.</li>
+        <li>In signal processing, capacitors filter signals and control timing.</li>
+        <li>In renewable energy, capacitors help store variable power and stabilize grid voltage.</li>
+        <li>Supercapacitors store large amounts of energy, bridging batteries and regular capacitors.</li>
+        <li>Circuit design must account for component limitations, safety, and efficiency.</li>
+        <li>Renewable energy systems benefit from capacitor storage for smoothing and peak power handling.</li>
+    </ul>
+</div>
+
+<h2>Key Equations Table</h2>
+
+<table>
+    <tr>
+        <th>Quantity</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Capacitance</td>
+        <td>$$C = \frac{Q}{V}$$</td>
+        <td>$C$ = capacitance (F), $Q$ = charge (C), $V$ = voltage (V)</td>
+    </tr>
+    <tr>
+        <td>Energy Stored</td>
+        <td>$$E = \frac{1}{2}CV^2$$</td>
+        <td>$E$ = energy (J), $C$ = capacitance (F), $V$ = voltage (V)</td>
+    </tr>
+    <tr>
+        <td>Energy (Alternative)</td>
+        <td>$$E = \frac{1}{2}QV$$</td>
+        <td>$E$ = energy (J), $Q$ = charge (C), $V$ = voltage (V)</td>
+    </tr>
+    <tr>
+        <td>Time Constant</td>
+        <td>$$\tau = RC$$</td>
+        <td>$\tau$ = time constant (s), $R$ = resistance (Ω), $C$ = capacitance (F)</td>
+    </tr>
+</table>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<h3>Conceptual Questions (Answer in complete sentences)</h3>
+
+<p><strong>1. Capacitor Function:</strong> Explain how a capacitor stores energy even though no current flows through the dielectric between the plates.</p>
+<div class="short-answer"></div>
+
+<p><strong>2. Energy Relationship:</strong> Why does doubling the voltage across a capacitor quadruple the stored energy, not double it? Use the energy formula in your explanation.</p>
+<div class="short-answer"></div>
+
+<p><strong>3. Real-World Application:</strong> Explain how capacitors help renewable energy systems (solar or wind) deliver stable power to homes even when generation varies with weather.</p>
+<div class="short-answer"></div>
+
+<p><strong>4. Time Constant Significance:</strong> What does the time constant tell us about how a capacitor charges or discharges? Why is this important for circuit design?</p>
+<div class="short-answer"></div>
+
+<h3>Calculation Problems (Show all work)</h3>
+
+<p><strong>5. Charge Calculation:</strong> A capacitor with capacitance 20 μF is charged to 6V. How much charge is stored?</p>
+<div class="answer-space"></div>
+
+<p><strong>6. Energy Calculation:</strong> A capacitor with 500 μF capacitance is charged to 100V. Calculate the stored energy in joules.</p>
+<div class="answer-space"></div>
+
+<h3>Multi-Step Problems (Show all work and calculations)</h3>
+
+<p><strong>7. Complete Capacitor Analysis:</strong> A 2000 μF capacitor is charged to 20V then discharged through a 100 Ω resistor.
+    <br>(a) Calculate the energy initially stored
+    <br>(b) Calculate the time constant for discharge
+    <br>(c) What is the voltage after one time constant?
+    <br>(d) How long until voltage drops to approximately 5% of initial?</p>
+<div class="answer-space"></div>
+
+<p><strong>8. Renewable Energy Application:</strong> A solar panel system generates peak power of 5 kW. Engineers want to use capacitor storage to handle peak load demands. They choose a 100 F supercapacitor charged to 48V.
+    <br>(a) Calculate the energy stored in the supercapacitor
+    <br>(b) If the system uses 2000 W average power, how long can the capacitor supply power if the solar panel stops?
+    <br>(c) Explain why you might also need a battery in addition to the capacitor for longer-term storage</p>
+<div class="answer-space"></div>
+
+<!-- ============== PAGE BREAK ============== -->
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<div class="answer-key">
+    <h2>Answer Key</h2>
+    
+    <h3><span class="problem-number">Question 1: Capacitor Function</span></h3>
+    <p><strong>Answer:</strong> Energy is stored in the electric field created between the charged plates, not in the movement of charge. When a capacitor charges, electrons accumulate on one plate and are depleted from the other, creating opposite charges and an electric field. This field stores energy (like a compressed spring stores energy without moving). No current flows through the dielectric because it's an insulator, but the electric field still exists and stores energy. When you discharge it, the field collapses and the energy is released to power a device.</p>
+    
+    <h3><span class="problem-number">Question 2: Energy Relationship</span></h3>
+    <p><strong>Answer:</strong> The energy formula is $E = \frac{1}{2}CV^2$. Since energy depends on voltage squared (not just voltage), doubling the voltage increases voltage by a factor of 2, but voltage squared increases by a factor of $2^2 = 4$. So energy increases fourfold. This quadratic relationship is why high-voltage capacitors are so effective for storing large amounts of energy compared to low-voltage capacitors of the same capacitance.</p>
+    
+    <h3><span class="problem-number">Question 3: Real-World Application</span></h3>
+    <p><strong>Answer:</strong> Solar and wind power generation varies with weather—solar drops at night and on cloudy days; wind varies with weather. This creates an unstable power supply. Capacitors (and batteries) store energy when generation exceeds demand, building up charge. When generation drops or demand spikes, the capacitors discharge to supply power. This smooths the variable generation into steady supply. Large capacitor banks can handle brief power fluctuations, while batteries handle longer-term storage. Together, they let renewable systems deliver reliable power despite variable generation.</p>
+    
+    <h3><span class="problem-number">Question 4: Time Constant Significance</span></h3>
+    <p><strong>Answer:</strong> The time constant $\tau = RC$ tells us how long it takes for a capacitor to charge or discharge by about 63% (or drop to 37% of initial). After three time constants, it's about 95% charged/discharged. This is critical for circuit design because it determines response time. A short time constant means fast charging/discharging (useful for camera flashes); a long one means slow response (useful for smoothing power supplies). Engineers choose R and C values to achieve the desired charging time for their application.</p>
+    
+    <h3><span class="problem-number">Question 5: Charge Calculation</span></h3>
+    <p><strong>Given:</strong> $C = 20$ μF = $20 \times 10^{-6}$ F, $V = 6$ V</p>
+    <p><strong>Find:</strong> $Q = ?$</p>
+    <p><strong>Solution:</strong></p>
+    <p>$$Q = CV = 20 \times 10^{-6} \text{ F} \times 6 \text{ V} = 120 \times 10^{-6} \text{ C} = 1.2 \times 10^{-4} \text{ C}$$</p>
+    <p><strong>Answer:</strong> <span class="answer-highlight">$Q = 120$ μC or $1.2 \times 10^{-4}$ C</span></p>
+    
+    <h3><span class="problem-number">Question 6: Energy Calculation</span></h3>
+    <p><strong>Given:</strong> $C = 500$ μF = $500 \times 10^{-6}$ F, $V = 100$ V</p>
+    <p><strong>Find:</strong> $E = ?$</p>
+    <p><strong>Solution:</strong></p>
+    <p>$$E = \frac{1}{2}CV^2 = \frac{1}{2} \times 500 \times 10^{-6} \times 100^2$$</p>
+    <p>$$E = \frac{1}{2} \times 500 \times 10^{-6} \times 10,000 = \frac{1}{2} \times 5 = 2.5 \text{ J}$$</p>
+    <p><strong>Answer:</strong> <span class="answer-highlight">$E = 2.5$ J</span></p>
+    
+    <h3><span class="problem-number">Question 7: Complete Capacitor Analysis</span></h3>
+    <p><strong>Given:</strong> $C = 2000$ μF = $2 \times 10^{-3}$ F, $V_0 = 20$ V, $R = 100$ Ω</p>
+    <p><strong>Find:</strong> (a)-(d) as listed</p>
+    <p><strong>Solution:</strong></p>
+    <p>(a) Initial energy: $E = \frac{1}{2}CV^2 = \frac{1}{2} \times 2 \times 10^{-3} \times 20^2 = \frac{1}{2} \times 2 \times 10^{-3} \times 400 = 0.4$ J</p>
+    <p>(b) Time constant: $\tau = RC = 100 \times 2 \times 10^{-3} = 0.2$ s</p>
+    <p>(c) After one time constant, voltage = $V_0 \times 0.37 = 20 \times 0.37 = 7.4$ V</p>
+    <p>(d) After $3\tau = 3 \times 0.2 = 0.6$ s, voltage ≈ 5% of initial</p>
+    <p><strong>Answer:</strong> (a) <span class="answer-highlight">0.4 J</span>; (b) <span class="answer-highlight">0.2 s</span>; (c) <span class="answer-highlight">7.4 V</span>; (d) <span class="answer-highlight">0.6 s</span></p>
+    
+    <h3><span class="problem-number">Question 8: Renewable Energy Application</span></h3>
+    <p><strong>Given:</strong> Peak power = 5 kW, supercapacitor $C = 100$ F at $V = 48$ V, average load = 2000 W</p>
+    <p><strong>Find:</strong> (a)-(c) as listed</p>
+    <p><strong>Solution:</strong></p>
+    <p>(a) Energy stored: $E = \frac{1}{2}CV^2 = \frac{1}{2} \times 100 \times 48^2 = 50 \times 2304 = 115,200$ J</p>
+    <p>(b) Time available: $t = \frac{E}{P} = \frac{115,200 \text{ J}}{2000 \text{ W}} = 57.6$ seconds (about 1 minute)</p>
+    <p>(c) Capacitors discharge relatively quickly (about 1 minute) and are good for peak power handling and smoothing. Batteries discharge much slower, providing power for hours. Together: capacitors handle brief fluctuations and peaks; batteries provide long-term storage during extended cloudy/windless periods.</p>
+    <p><strong>Answer:</strong> (a) <span class="answer-highlight">115,200 J (≈ 115 kJ)</span>; (b) <span class="answer-highlight">57.6 s</span>; (c) See explanation above.</p>
+
+</div>
+
+</body>
+</html>
