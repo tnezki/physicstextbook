@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 7.5: Energy, Efficiency, and Circuit Design</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.06in 0;
+        }
+        
+        p {
+            margin: 0.05in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        table, th, td {
+            border: 1px solid #000033;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+        }
+        
+        td {
+            padding: 6px;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+            font-weight: bold;
+        }
+        
+        img, svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 7.5</div>
+    <h1>Energy, Efficiency, and Circuit Design</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#ffffff"/>
+        
+        <!-- Light bulb -->
+        <circle cx="300" cy="120" r="50" fill="#FFFFCC" stroke="#000033" stroke-width="3"/>
+        <rect x="285" y="170" width="30" height="40" fill="#CCCCCC" stroke="#000033" stroke-width="2"/>
+        <line x="290" y="180" x2="310" y2="180" stroke="#000033" stroke-width="1"/>
+        <line x="290" y="190" x2="310" y2="190" stroke="#000033" stroke-width="1"/>
+        <line x="290" y="200" x2="310" y2="200" stroke="#000033" stroke-width="1"/>
+        
+        <!-- Filament -->
+        <path d="M 285 120 Q 290 100, 300 110 T 315 120" stroke="#CC6600" stroke-width="2" fill="none"/>
+        <path d="M 285 125 Q 290 105, 300 115 T 315 125" stroke="#CC6600" stroke-width="2" fill="none"/>
+        
+        <!-- Energy rays -->
+        <line x1="250" y1="90" x2="230" y2="70" stroke="#FF9900" stroke-width="3"/>
+        <line x1="260" y1="75" x2="245" y2="50" stroke="#FF9900" stroke-width="3"/>
+        <line x1="340" y1="75" x2="355" y2="50" stroke="#FF9900" stroke-width="3"/>
+        <line x1="350" y1="90" x2="370" y2="70" stroke="#FF9900" stroke-width="3"/>
+        
+        <!-- Power meter display -->
+        <rect x="100" y="230" width="120" height="50" fill="#e6f3ff" stroke="#000033" stroke-width="2"/>
+        <text x="160" y="250" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Input</text>
+        <text x="160" y="270" font-size="18" text-anchor="middle" fill="#CC3300" font-weight="bold">100 W</text>
+        
+        <rect x="380" y="230" width="120" height="50" fill="#e6f3ff" stroke="#000033" stroke-width="2"/>
+        <text x="440" y="250" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Light Output</text>
+        <text x="440" y="270" font-size="18" text-anchor="middle" fill="#006633" font-weight="bold">5 W</text>
+        
+        <!-- Arrow showing conversion -->
+        <defs>
+            <marker id="efficiency-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#000033"/>
+            </marker>
+        </defs>
+        <line x1="230" y1="255" x2="370" y2="255" stroke="#000033" stroke-width="2" marker-end="url(#efficiency-arrow)"/>
+        <text x="300" y="245" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">95 W lost as heat</text>
+    </svg>
+    
+    <p>Every electrical device transforms electrical energy into other forms—light, heat, motion, or sound. But not all devices are equally efficient at this transformation. Understanding electrical power, energy consumption, and efficiency helps us design better circuits, save energy, and make informed decisions about the technology we use every day.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2>Learning Objectives</h2>
+    <p><strong>By the end of this section, I can:</strong></p>
+    <ul>
+        <li>Calculate electrical power dissipated in resistive devices and determine energy consumption and efficiency in electrical systems.</li>
+        <li>Compare the advantages and limitations of different electricity sources (chemical, solar, and others) in terms of efficiency and environmental impact.</li>
+        <li>Design, build, and test simple circuits to solve practical problems, and justify design decisions based on circuit principles and efficiency goals.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Every month, your household receives an electric bill. But what exactly are you paying for? You're paying for <span class="vocab-term">electrical energy</span>—the energy that flows through wires to power lights, appliances, and electronics. Understanding how electrical devices consume and convert energy is crucial for both engineering and everyday life.</p>
+
+<p>When you turn on a light bulb, electrical energy flows from the power source through the bulb's filament. The filament resists the current, converting electrical energy into heat and light. A 100-watt incandescent bulb converts most of that energy into heat (which is wasted) and only about 5% into visible light. In contrast, an LED bulb producing the same amount of light might use only 15 watts—much more efficient!</p>
+
+<p>In this final section of our electricity module, we'll explore electrical power and energy, learn how to calculate energy consumption and costs, compare different power sources, and develop skills for designing efficient circuits. These concepts are essential for understanding everything from your electric bill to global energy challenges.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>Electrical Power</h1>
+
+<h2>What Is Electrical Power?</h2>
+
+<p><span class="vocab-term">Electrical power</span> is the rate at which electrical energy is converted to other forms of energy. Power tells us how quickly energy is being used or transformed. A device with high power consumption uses energy rapidly, while a device with low power consumption uses energy slowly.</p>
+
+<div class="vocab-box">
+    <h3>Key Definition: Electrical Power</h3>
+    <p><strong>Electrical Power:</strong> The rate of energy transfer in an electrical circuit. The unit of power is the watt (W), where 1 watt = 1 joule per second.</p>
+    $$1 \text{ W} = 1 \text{ J/s}$$
+</div>
+
+<p>The watt is named after James Watt, the Scottish inventor who improved the steam engine. Common power ratings you encounter include:</p>
+
+<ul>
+    <li>LED light bulb: 10-15 W</li>
+    <li>Laptop computer: 50-100 W</li>
+    <li>Microwave oven: 800-1200 W</li>
+    <li>Hair dryer: 1500-2000 W</li>
+    <li>Electric car charger: 7000-11,000 W</li>
+</ul>
+
+<h2>Calculating Electrical Power</h2>
+
+<p>Electrical power can be calculated using voltage and current:</p>
+
+<div class="formula-box">
+    <h3>Power Formula</h3>
+    $$P = IV$$
+    <p>where:</p>
+    <ul style="text-align: left; margin-left: 1in;">
+        <li>$P$ = power (watts, W)</li>
+        <li>$I$ = current (amperes, A)</li>
+        <li>$V$ = voltage (volts, V)</li>
+    </ul>
+</div>
+
+<p>This equation makes intuitive sense: power increases if you increase either the voltage (the "push") or the current (the flow rate). More voltage or more current means energy is being transferred faster.</p>
+
+<p>By combining the power formula with Ohm's Law ($V = IR$), we can derive alternative forms:</p>
+
+<div class="formula-box">
+    <h3>Alternative Power Formulas</h3>
+    <p>Starting with $P = IV$ and substituting $V = IR$:</p>
+    $$P = I(IR) = I^2R$$
+    <p>Or substituting $I = V/R$:</p>
+    $$P = \left(\frac{V}{R}\right)V = \frac{V^2}{R}$$
+    <p>Three equivalent forms:</p>
+    $$P = IV \quad \text{or} \quad P = I^2R \quad \text{or} \quad P = \frac{V^2}{R}$$
+</div>
+
+<p>Use whichever form is most convenient based on which quantities you know:</p>
+
+<ul>
+    <li>If you know current and voltage → use $P = IV$</li>
+    <li>If you know current and resistance → use $P = I^2R$</li>
+    <li>If you know voltage and resistance → use $P = V^2/R$</li>
+</ul>
+
+<div class="real-world-box">
+    <h3>Real-World Application: Why Power Lines Use High Voltage</h3>
+    <p>When transmitting electricity over long distances, power companies use very high voltages (hundreds of thousands of volts). Why? Power loss in transmission lines depends on $P_{\text{loss}} = I^2R$. For a given amount of power transmitted ($P = IV$), using higher voltage allows lower current ($I = P/V$). Since power loss depends on current squared, reducing current dramatically reduces energy wasted as heat in the wires. This is why you see massive transformers near power plants—they step up the voltage for efficient long-distance transmission.</p>
+</div>
+
+<h1>Electrical Energy and Cost</h1>
+
+<h2>Energy Consumption</h2>
+
+<p><span class="vocab-term">Electrical energy</span> is the total amount of electrical work done over time. While power tells us the rate of energy use, energy tells us the total amount used. Energy is calculated by multiplying power by time:</p>
+
+<div class="formula-box">
+    $$E = Pt$$
+    <p>where:</p>
+    <ul style="text-align: left; margin-left: 1in;">
+        <li>$E$ = energy (joules, J)</li>
+        <li>$P$ = power (watts, W)</li>
+        <li>$t$ = time (seconds, s)</li>
+    </ul>
+</div>
+
+<p>For example, a 100 W light bulb running for 10 seconds uses:</p>
+$$E = Pt = (100 \text{ W})(10 \text{ s}) = 1{,}000 \text{ J} = 1 \text{ kJ}$$
+
+<h2>Kilowatt-Hours</h2>
+
+<p>For practical electricity billing, we use a larger unit called the <span class="vocab-term">kilowatt-hour</span> (kWh). One kilowatt-hour is the energy consumed by a 1-kilowatt (1000 W) device running for one hour:</p>
+
+$$1 \text{ kWh} = (1000 \text{ W})(3600 \text{ s}) = 3{,}600{,}000 \text{ J} = 3.6 \text{ MJ}$$
+
+<p>To calculate energy in kilowatt-hours:</p>
+
+<div class="formula-box">
+    $$\text{Energy (kWh)} = \text{Power (kW)} \times \text{Time (hours)}$$
+</div>
+
+<p><strong>Example:</strong> A 1500 W hair dryer (1.5 kW) used for 15 minutes (0.25 hours) consumes:</p>
+$$\text{Energy} = (1.5 \text{ kW})(0.25 \text{ h}) = 0.375 \text{ kWh}$$
+
+<h2>Cost of Electricity</h2>
+
+<p>Your electric bill charges you per kilowatt-hour. In the United States, the average cost is about $0.12 to $0.15 per kWh, though this varies by location. To calculate the cost:</p>
+
+<div class="formula-box">
+    $$\text{Cost} = \text{Energy (kWh)} \times \text{Price per kWh}$$
+</div>
+
+<p><strong>Example:</strong> How much does it cost to run a 100 W light bulb for 30 days (24 hours per day) if electricity costs $0.12 per kWh?</p>
+
+<p>Step 1: Calculate energy consumed.</p>
+$$\text{Energy} = (0.1 \text{ kW})(30 \times 24 \text{ h}) = (0.1)(720) = 72 \text{ kWh}$$
+
+<p>Step 2: Calculate cost.</p>
+$$\text{Cost} = (72 \text{ kWh})(\$0.12/\text{kWh}) = \$8.64$$
+
+<div class="info-box">
+    <h3>Energy Efficiency and Saving Money</h3>
+    <p>Replacing a 60 W incandescent bulb with a 10 W LED bulb that produces the same light saves 50 W. If used 5 hours per day at $0.12/kWh, the annual savings is:</p>
+    $$\text{Saved energy} = (0.05 \text{ kW})(5 \times 365 \text{ h}) = 91.25 \text{ kWh}$$
+    $$\text{Savings} = (91.25 \text{ kWh})(\$0.12/\text{kWh}) = \$10.95 \text{ per year}$$
+    <p>Multiply by all the bulbs in your house, and the savings add up quickly!</p>
+</div>
+
+<h1>Efficiency</h1>
+
+<h2>What Is Efficiency?</h2>
+
+<p><span class="vocab-term">Efficiency</span> is the ratio of useful energy output to total energy input. It tells us what fraction of the input energy is successfully converted to the desired form, with the rest being wasted (usually as heat).</p>
+
+<div class="formula-box">
+    $$\text{Efficiency} = \frac{\text{Useful energy output}}{\text{Total energy input}} \times 100\%$$
+    <p>or equivalently:</p>
+    $$\text{Efficiency} = \frac{\text{Useful power output}}{\text{Total power input}} \times 100\%$$
+</div>
+
+<p>An efficiency of 100% means all input energy becomes useful output (perfect conversion). An efficiency of 50% means half the input energy is useful, and half is wasted. No real device has 100% efficiency due to friction, heat loss, and other factors.</p>
+
+<h2>Comparing Device Efficiencies</h2>
+
+<table>
+    <tr>
+        <th>Device</th>
+        <th>Typical Efficiency</th>
+        <th>Energy Wasted</th>
+    </tr>
+    <tr>
+        <td>Incandescent light bulb</td>
+        <td>5%</td>
+        <td>95% (as heat)</td>
+    </tr>
+    <tr>
+        <td>LED light bulb</td>
+        <td>80-90%</td>
+        <td>10-20% (as heat)</td>
+    </tr>
+    <tr>
+        <td>Electric motor</td>
+        <td>85-95%</td>
+        <td>5-15% (as heat, sound)</td>
+    </tr>
+    <tr>
+        <td>Gasoline car engine</td>
+        <td>20-25%</td>
+        <td>75-80% (as heat)</td>
+    </tr>
+    <tr>
+        <td>Electric car motor</td>
+        <td>85-90%</td>
+        <td>10-15% (as heat)</td>
+    </tr>
+    <tr>
+        <td>Solar panel</td>
+        <td>15-22%</td>
+        <td>78-85% (light not converted)</td>
+    </tr>
+    <tr>
+        <td>Coal power plant</td>
+        <td>33-40%</td>
+        <td>60-67% (as heat)</td>
+    </tr>
+    <tr>
+        <td>Hydroelectric dam</td>
+        <td>85-90%</td>
+        <td>10-15% (friction, turbulence)</td>
+    </tr>
+</table>
+
+<p>Notice how much variation there is! Some technologies (like electric motors and hydroelectric dams) are very efficient, while others (like incandescent bulbs and combustion engines) waste most of their input energy.</p>
+
+<div class="real-world-box">
+    <h3>Environmental Impact: Why Efficiency Matters</h3>
+    <p>Improving efficiency has enormous environmental benefits. If everyone replaced incandescent bulbs (5% efficient) with LEDs (85% efficient), we could reduce electricity demand for lighting by about 80%. In the United States, this would save approximately 200 billion kWh per year—enough to power 18 million homes. This reduces greenhouse gas emissions, saves money, and decreases the need for new power plants. Small efficiency improvements, multiplied across billions of devices, make a huge difference.</p>
+</div>
+
+<h1>Comparing Electricity Sources</h1>
+
+<p>Different power sources have different characteristics. Let's compare the major types:</p>
+
+<h2>Chemical Cells (Batteries)</h2>
+
+<p><strong>Advantages:</strong></p>
+<ul>
+    <li>Portable and self-contained</li>
+    <li>Work in any environment (day, night, indoors, outdoors)</li>
+    <li>Provide stable voltage</li>
+    <li>Available in many sizes and types</li>
+</ul>
+
+<p><strong>Disadvantages:</strong></p>
+<ul>
+    <li>Limited lifetime (eventually run out or degrade)</li>
+    <li>Environmental cost of mining materials (lithium, cobalt, lead)</li>
+    <li>Disposal and recycling challenges</li>
+    <li>Relatively expensive per kWh of energy</li>
+    <li>Lower energy density than fossil fuels</li>
+</ul>
+
+<p><strong>Efficiency:</strong> Rechargeable batteries typically 80-90% efficient at storing and releasing energy.</p>
+
+<h2>Solar Cells</h2>
+
+<p><strong>Advantages:</strong></p>
+<ul>
+    <li>Renewable—sunlight is free and abundant</li>
+    <li>No fuel consumed, no pollution during operation</li>
+    <li>Low maintenance after installation</li>
+    <li>Quiet operation (no moving parts)</li>
+    <li>Scalable from small to very large installations</li>
+</ul>
+
+<p><strong>Disadvantages:</strong></p>
+<ul>
+    <li>Only works during daylight (requires storage for night use)</li>
+    <li>Weather-dependent (clouds reduce output)</li>
+    <li>High initial cost</li>
+    <li>Large area required for significant power</li>
+    <li>Manufacturing uses energy and materials</li>
+</ul>
+
+<p><strong>Efficiency:</strong> Modern silicon solar panels convert 15-22% of sunlight into electricity.</p>
+
+<h2>Fossil Fuel Power Plants</h2>
+
+<p><strong>Advantages:</strong></p>
+<ul>
+    <li>Work 24/7 regardless of weather</li>
+    <li>High power output from relatively small facility</li>
+    <li>Existing infrastructure already in place</li>
+    <li>Can respond quickly to changing demand</li>
+</ul>
+
+<p><strong>Disadvantages:</strong></p>
+<ul>
+    <li>Produce greenhouse gases contributing to climate change</li>
+    <li>Air pollution (particulates, sulfur dioxide, nitrogen oxides)</li>
+    <li>Non-renewable (fuel will eventually run out)</li>
+    <li>Environmental damage from fuel extraction</li>
+    <li>Fuel costs subject to market fluctuations</li>
+</ul>
+
+<p><strong>Efficiency:</strong> Modern coal plants about 33-40%, natural gas plants about 40-60%.</p>
+
+<h2>Nuclear Power</h2>
+
+<p><strong>Advantages:</strong></p>
+<ul>
+    <li>Very high energy density (small fuel produces large power)</li>
+    <li>No greenhouse gas emissions during operation</li>
+    <li>Reliable baseload power 24/7</li>
+    <li>Low ongoing fuel costs</li>
+</ul>
+
+<p><strong>Disadvantages:</strong></p>
+<ul>
+    <li>Radioactive waste requires careful long-term storage</li>
+    <li>Risk of accidents (though modern designs are very safe)</li>
+    <li>Very high construction costs</li>
+    <li>Long construction time (often 10+ years)</li>
+    <li>Public fear and political challenges</li>
+</ul>
+
+<p><strong>Efficiency:</strong> About 33-35% (similar to fossil fuel plants).</p>
+
+<h2>Hydroelectric Power</h2>
+
+<p><strong>Advantages:</strong></p>
+<ul>
+    <li>Renewable (rain refills reservoirs)</li>
+    <li>Very efficient (85-90%)</li>
+    <li>No pollution during operation</li>
+    <li>Can store energy (pumped storage)</li>
+    <li>Long operational lifetime (50+ years)</li>
+</ul>
+
+<p><strong>Disadvantages:</strong></p>
+<ul>
+    <li>Limited to areas with suitable rivers/topography</li>
+    <li>Dams disrupt river ecosystems</li>
+    <li>Displacement of communities during construction</li>
+    <li>Depends on rainfall patterns</li>
+    <li>High initial construction cost</li>
+</ul>
+
+<p><strong>Efficiency:</strong> 85-90% conversion of water's potential energy to electricity.</p>
+
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Power from Voltage and Current</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>A device operates at 12 V and draws a current of 2.5 A</li>
+    </ul>
+    <p><strong>Find:</strong> The power consumed by the device.</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Step 1: Use the power formula.</p>
+    $$P = IV$$
+    
+    <p>Step 2: Substitute the known values.</p>
+    $$P = (2.5 \text{ A})(12 \text{ V}) = 30 \text{ W}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The device consumes 30 W of power.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Calculating Energy Consumption and Cost</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>A 1200 W microwave is used for 15 minutes per day for 30 days</li>
+        <li>Electricity costs $0.13 per kWh</li>
+    </ul>
+    <p><strong>Find:</strong> (a) The total energy consumed in kWh, and (b) The cost of operating the microwave.</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>(a) Energy consumed</strong></p>
+    
+    <p>Step 1: Convert power to kilowatts: $P = 1200 \text{ W} = 1.2 \text{ kW}$</p>
+    
+    <p>Step 2: Convert daily time to hours: $t = 15 \text{ min} = 0.25 \text{ h}$</p>
+    
+    <p>Step 3: Calculate total time for 30 days.</p>
+    $$\text{Total time} = (0.25 \text{ h/day})(30 \text{ days}) = 7.5 \text{ h}$$
+    
+    <p>Step 4: Calculate energy.</p>
+    $$E = Pt = (1.2 \text{ kW})(7.5 \text{ h}) = 9.0 \text{ kWh}$$
+    
+    <p><strong>(b) Cost</strong></p>
+    
+    <p>Step 5: Multiply energy by price.</p>
+    $$\text{Cost} = (9.0 \text{ kWh})(\$0.13/\text{kWh}) = \$1.17$$
+    
+    <p><strong>Answers:</strong></p>
+    <p>(a) <span class="highlight">The microwave consumes 9.0 kWh of energy.</span></p>
+    <p>(b) <span class="highlight">The cost is $1.17 for the month.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Multi-Step Efficiency Problem</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>An electric motor receives 750 W of electrical power</li>
+        <li>The motor outputs 600 W of useful mechanical power</li>
+        <li>The motor runs for 8.0 hours</li>
+    </ul>
+    <p><strong>Find:</strong></p>
+    <p>(a) The efficiency of the motor.</p>
+    <p>(b) The power wasted as heat.</p>
+    <p>(c) The total electrical energy consumed in 8.0 hours.</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>(a) Efficiency</strong></p>
+    
+    <p>Step 1: Use the efficiency formula.</p>
+    $$\text{Efficiency} = \frac{\text{Useful power output}}{\text{Total power input}} \times 100\%$$
+    
+    <p>Step 2: Substitute values.</p>
+    $$\text{Efficiency} = \frac{600 \text{ W}}{750 \text{ W}} \times 100\% = 0.80 \times 100\% = 80\%$$
+    
+    <p><strong>(b) Power wasted</strong></p>
+    
+    <p>Step 3: Wasted power is the difference between input and output.</p>
+    $$P_{\text{wasted}} = P_{\text{input}} - P_{\text{output}} = 750 \text{ W} - 600 \text{ W} = 150 \text{ W}$$
+    
+    <p><strong>(c) Total energy consumed</strong></p>
+    
+    <p>Step 4: Use $E = Pt$ with the input power.</p>
+    $$E = (750 \text{ W})(8.0 \text{ h}) = 6{,}000 \text{ Wh} = 6.0 \text{ kWh}$$
+    
+    <p><strong>Answers:</strong></p>
+    <p>(a) <span class="highlight">The motor is 80% efficient.</span></p>
+    <p>(b) <span class="highlight">150 W is wasted as heat.</span> (20% of input power)</p>
+    <p>(c) <span class="highlight">The motor consumes 6.0 kWh of electrical energy.</span></p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Electrical power is the rate of energy conversion, measured in watts (W), where 1 W = 1 J/s. Power can be calculated using $P = IV$, $P = I^2R$, or $P = V^2/R$.</li>
+    <li>Electrical energy is the total electrical work done over time, calculated as $E = Pt$. Energy is measured in joules (J) or kilowatt-hours (kWh).</li>
+    <li>One kilowatt-hour (kWh) equals 3.6 million joules and represents the energy consumed by a 1000 W device running for one hour.</li>
+    <li>The cost of electricity is calculated by multiplying energy consumption (kWh) by the price per kWh, which varies by location but averages about $0.12-$0.15 per kWh in the US.</li>
+    <li>Efficiency is the ratio of useful energy output to total energy input, expressed as a percentage. No real device is 100% efficient; wasted energy usually becomes heat.</li>
+    <li>Different devices have vastly different efficiencies: LED bulbs (80-90%), incandescent bulbs (5%), electric motors (85-95%), gasoline engines (20-25%), solar panels (15-22%).</li>
+    <li>Chemical cells (batteries) are portable and reliable but have limited lifetime and environmental concerns. Typical efficiency is 80-90% for rechargeables.</li>
+    <li>Solar cells are renewable and produce no operating pollution but only work during daylight and have high initial cost. Efficiency is 15-22%.</li>
+    <li>Fossil fuel power plants work 24/7 and provide high power but produce pollution and greenhouse gases. Efficiency is 33-60% depending on fuel and technology.</li>
+    <li>Improving efficiency saves money, reduces environmental impact, and decreases demand for new power generation. Even small improvements, when multiplied across billions of devices, make an enormous difference.</li>
+</ul>
+
+<!-- ============== KEY EQUATIONS ============== -->
+<h1>Key Equations</h1>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Equation</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Electrical Power</td>
+        <td>$P = IV$</td>
+        <td>$P$ = power (W)<br>
+            $I$ = current (A)<br>
+            $V$ = voltage (V)</td>
+    </tr>
+    <tr>
+        <td>Power (using resistance)</td>
+        <td>$P = I^2R$</td>
+        <td>$P$ = power (W)<br>
+            $I$ = current (A)<br>
+            $R$ = resistance (Ω)</td>
+    </tr>
+    <tr>
+        <td>Power (using voltage)</td>
+        <td>$P = \frac{V^2}{R}$</td>
+        <td>$P$ = power (W)<br>
+            $V$ = voltage (V)<br>
+            $R$ = resistance (Ω)</td>
+    </tr>
+    <tr>
+        <td>Electrical Energy</td>
+        <td>$E = Pt$</td>
+        <td>$E$ = energy (J or kWh)<br>
+            $P$ = power (W or kW)<br>
+            $t$ = time (s or h)</td>
+    </tr>
+    <tr>
+        <td>Cost</td>
+        <td>Cost = Energy (kWh) × Price per kWh</td>
+        <td>Energy in kilowatt-hours<br>
+            Price in $/kWh</td>
+    </tr>
+    <tr>
+        <td>Efficiency</td>
+        <td>$\text{Efficiency} = \frac{\text{Useful output}}{\text{Total input}} \times 100\%$</td>
+        <td>Can use energy or power<br>
+            Result as percentage</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Define electrical power and explain the difference between power and energy. Why do we measure electricity consumption in kilowatt-hours rather than joules?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> Explain what efficiency means and why no real device can be 100% efficient. Give an example of a high-efficiency device and a low-efficiency device.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> Compare the advantages and disadvantages of solar cells versus chemical cells (batteries) as electrical power sources. In what situations would each be most appropriate?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> Explain why improving the efficiency of electrical devices has both economic and environmental benefits. Use a specific example in your explanation.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A laptop computer operates at 19 V and draws a current of 3.5 A. Calculate the power consumed by the laptop.</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> A 60 W light bulb is left on for 12 hours. If electricity costs $0.14 per kWh, calculate the cost of running the bulb for this time.</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> An electric heater has a resistance of 15 Ω and is connected to a 120 V outlet.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the current flowing through the heater.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the power consumed by the heater.</p>
+<p style="margin-left: 0.2in;">(c) If the heater runs for 4.0 hours, calculate the energy consumed in kWh and the cost if electricity is $0.12 per kWh.</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> A solar panel receives 1000 W of sunlight energy and converts it to 180 W of electrical power. A battery charges from this panel with 90% efficiency (10% lost as heat during charging).</p>
+<p style="margin-left: 0.2in;">(a) Calculate the efficiency of the solar panel.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the actual power stored in the battery.</p>
+<p style="margin-left: 0.2in;">(c) Calculate the overall efficiency from sunlight to stored energy in the battery.</p>
+<p style="margin-left: 0.2in;">(d) If this system operates for 6.0 hours, how much energy (in kWh) is stored in the battery?</p>
+<div class="answer-space"></div>
+
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> Electrical power is the rate at which electrical energy is converted to other forms, measured in watts (W), where 1 W = 1 J/s. Power tells us how quickly energy is being used. Energy is the total amount of work done or transferred, measured in joules (J). The difference is: power is a rate (energy per time), while energy is a total quantity. We measure electricity consumption in kilowatt-hours (kWh) rather than joules because 1 kWh = 3.6 million joules, which is a more convenient unit for household consumption. It's easier to say "500 kWh per month" than "1.8 billion joules per month."</p>
+
+<p><strong>2.</strong> Efficiency is the ratio of useful energy output to total energy input, expressed as a percentage. It measures how effectively a device converts input energy to the desired form. No real device can be 100% efficient because some energy is always lost to unwanted forms (usually heat) due to friction, electrical resistance, air resistance, and other factors. Examples: High-efficiency device—LED light bulb (80-90% efficient, most energy becomes light). Low-efficiency device—incandescent light bulb (5% efficient, most energy becomes waste heat). Electric motors are also highly efficient (85-95%), while gasoline car engines are quite inefficient (20-25%).</p>
+
+<p><strong>3.</strong> Solar cells convert sunlight to electricity with no fuel consumption and no pollution, making them renewable and environmentally friendly. However, they only work during daylight, are weather-dependent, have high initial cost, and require large areas. They're best for stationary applications with consistent sunlight (rooftop systems, solar farms). Chemical cells (batteries) are portable, work in any environment (day or night, indoors or outdoors), and provide stable voltage. However, they have limited lifetime, create waste, and are relatively expensive per kWh. They're best for portable devices, backup power, and situations where solar isn't practical. Often they're used together—solar panels charge batteries for nighttime use.</p>
+
+<p><strong>4.</strong> Improving efficiency saves money because less energy is consumed to accomplish the same task, reducing electricity bills. Environmentally, it reduces demand for power generation, which decreases greenhouse gas emissions, air pollution, and resource extraction. Example: Replacing a 60 W incandescent bulb with a 10 W LED that produces the same light saves 50 W. Over a year (5 hours/day), this saves about 91 kWh of electricity, which costs about $11 at $0.12/kWh. Environmentally, it prevents the emission of about 60 kg of CO₂ (depending on the power source). Multiplied across billions of bulbs worldwide, this represents enormous savings and environmental benefits.</p>
+
+<p><strong>5.</strong></p>
+<p>Given: $V = 19$ V, $I = 3.5$ A</p>
+<p>Use: $P = IV$</p>
+$$P = (3.5 \text{ A})(19 \text{ V}) = 66.5 \text{ W} \approx 67 \text{ W}$$
+<p><span class="highlight">Answer: The laptop consumes 67 W of power.</span></p>
+
+<p><strong>6.</strong></p>
+<p>Given: $P = 60$ W $= 0.060$ kW, $t = 12$ h, price $= \$0.14/\text{kWh}$</p>
+<p>Energy: $E = Pt = (0.060 \text{ kW})(12 \text{ h}) = 0.72 \text{ kWh}$</p>
+<p>Cost: $(0.72 \text{ kWh})(\$0.14/\text{kWh}) = \$0.101 \approx \$0.10$</p>
+<p><span class="highlight">Answer: The cost is about $0.10 or 10 cents.</span></p>
+
+<p><strong>7.</strong></p>
+<p>Given: $R = 15$ Ω, $V = 120$ V, $t = 4.0$ h, price $= \$0.12/\text{kWh}$</p>
+
+<p>(a) Current: $I = V/R = 120 \text{ V} / 15 \text{ Ω} = 8.0$ A</p>
+
+<p>(b) Power: $P = IV = (8.0 \text{ A})(120 \text{ V}) = 960 \text{ W}$ or $P = V^2/R = (120)^2/15 = 960$ W</p>
+
+<p>(c) Energy: $E = Pt = (0.960 \text{ kW})(4.0 \text{ h}) = 3.84 \text{ kWh}$</p>
+<p>Cost: $(3.84 \text{ kWh})(\$0.12/\text{kWh}) = \$0.46$</p>
+
+<p><span class="highlight">Answers: (a) 8.0 A; (b) 960 W; (c) 3.84 kWh, costing $0.46.</span></p>
+
+<p><strong>8.</strong></p>
+<p>Given: Sunlight in $= 1000$ W, electrical out $= 180$ W, battery charging efficiency $= 90\%$, time $= 6.0$ h</p>
+
+<p>(a) Solar panel efficiency:</p>
+$$\text{Efficiency} = \frac{180 \text{ W}}{1000 \text{ W}} \times 100\% = 18\%$$
+
+<p>(b) Power stored in battery (90% of 180 W goes into battery):</p>
+$$P_{\text{stored}} = (0.90)(180 \text{ W}) = 162 \text{ W}$$
+
+<p>(c) Overall efficiency (sunlight to stored battery energy):</p>
+$$\text{Overall efficiency} = \frac{162 \text{ W}}{1000 \text{ W}} \times 100\% = 16.2\%$$
+<p>Or: $(0.18)(0.90) = 0.162 = 16.2\%$ (product of individual efficiencies)</p>
+
+<p>(d) Energy stored in 6.0 hours:</p>
+$$E = Pt = (0.162 \text{ kW})(6.0 \text{ h}) = 0.972 \text{ kWh} \approx 0.97 \text{ kWh}$$
+
+<p><span class="highlight">Answers: (a) 18%; (b) 162 W; (c) 16.2% overall efficiency; (d) 0.97 kWh stored.</span></p>
+
+</body>
+</html>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 7.4: Ohm's Law and Circuit Analysis</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.06in 0;
+        }
+        
+        p {
+            margin: 0.05in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        table, th, td {
+            border: 1px solid #000033;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+        }
+        
+        td {
+            padding: 6px;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+            font-weight: bold;
+        }
+        
+        img, svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 7.4</div>
+    <h1>Ohm's Law and Circuit Analysis</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#ffffff"/>
+        
+        <!-- Circuit diagram -->
+        <!-- Battery -->
+        <rect x="100" y="125" width="60" height="50" fill="#FFE6CC" stroke="#000033" stroke-width="3"/>
+        <line x="115" y="125" x2="115" y2="110" stroke="#000033" stroke-width="3"/>
+        <line x="110" y="110" x2="120" y2="110" stroke="#000033" stroke-width="3"/>
+        <line x="145" y="125" x2="145" y2="115" stroke="#000033" stroke-width="3"/>
+        <line x="140" y="115" x2="150" y2="115" stroke="#000033" stroke-width="3"/>
+        <line x="140" y="118" x2="150" y2="118" stroke="#000033" stroke-width="3"/>
+        <text x="130" y="155" font-size="14" text-anchor="middle" fill="#000033">V</text>
+        
+        <!-- Resistor -->
+        <rect x="350" y="135" width="100" height="30" fill="#CC9966" stroke="#000033" stroke-width="3"/>
+        <line x="360" y="145" x2="370" y2="155" stroke="#000033" stroke-width="2"/>
+        <line x="370" y="155" x2="380" y2="145" stroke="#000033" stroke-width="2"/>
+        <line x="380" y="145" x2="390" y2="155" stroke="#000033" stroke-width="2"/>
+        <line x="390" y="155" x2="400" y2="145" stroke="#000033" stroke-width="2"/>
+        <line x="400" y="145" x2="410" y2="155" stroke="#000033" stroke-width="2"/>
+        <line x="410" y="155" x2="420" y2="145" stroke="#000033" stroke-width="2"/>
+        <line x="420" y="145" x2="430" y2="155" stroke="#000033" stroke-width="2"/>
+        <line x="430" y="155" x2="440" y2="145" stroke="#000033" stroke-width="2"/>
+        <text x="400" y="175" font-size="14" text-anchor="middle" fill="#000033">R</text>
+        
+        <!-- Circuit wires -->
+        <line x1="160" y1="140" x2="350" y2="140" stroke="#000033" stroke-width="3"/>
+        <line x1="450" y1="150" x2="530" y2="150" stroke="#000033" stroke-width="3"/>
+        <line x1="530" y1="150" x2="530" y2="160" stroke="#000033" stroke-width="3"/>
+        <line x1="530" y1="160" x2="160" y2="160" stroke="#000033" stroke-width="3"/>
+        
+        <!-- Current arrow -->
+        <defs>
+            <marker id="current" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        <line x1="200" y1="120" x2="300" y2="120" stroke="#CC3300" stroke-width="3" marker-end="url(#current)"/>
+        <text x="250" y="110" font-size="16" text-anchor="middle" fill="#CC3300" font-weight="bold">I</text>
+        
+        <!-- Ohm's Law equation -->
+        <text x="300" y="250" font-size="24" text-anchor="middle" fill="#000033" font-weight="bold">V = IR</text>
+    </svg>
+    
+    <p>Ohm's Law is one of the most fundamental relationships in electricity. It connects voltage, current, and resistance in a simple equation that allows us to predict and control electrical behavior. Understanding Ohm's Law and how to analyze circuits is essential for working with any electrical device, from simple flashlights to complex computer systems.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2>Learning Objectives</h2>
+    <p><strong>By the end of this section, I can:</strong></p>
+    <ul>
+        <li>State Ohm's Law and explain the relationship between voltage, current, and resistance in a circuit.</li>
+        <li>Apply Ohm's Law to calculate unknown values of voltage, current, or resistance in simple circuits.</li>
+        <li>Analyze circuit diagrams, distinguish between series and parallel circuit configurations, and predict how changes to one component affect current and voltage throughout the circuit.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>In 1827, German physicist Georg Simon Ohm discovered a remarkably simple relationship that governs how electricity flows through conductors. His discovery, now known as Ohm's Law, is so fundamental to understanding electricity that it's used by everyone from hobbyists building simple circuits to engineers designing spacecraft electronics.</p>
+
+<p>Think about water flowing through a pipe. The flow rate depends on the water pressure pushing it and the resistance of the pipe to that flow (narrow pipes resist more than wide pipes). Electric circuits work similarly: current flow depends on the voltage pushing charges and the resistance opposing that flow. Ohm's Law quantifies this relationship precisely.</p>
+
+<p>In this section, we'll explore Ohm's Law, learn how to apply it to solve practical circuit problems, and develop skills for analyzing more complex circuits. You'll learn about resistance, series and parallel circuits, and how to predict what happens when you change components in a circuit. These skills are essential for understanding and working with electrical devices in the real world.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>Resistance and Ohm's Law</h1>
+
+<h2>What Is Electrical Resistance?</h2>
+
+<p><span class="vocab-term">Electrical resistance</span> is the opposition to the flow of electric current. All materials resist the flow of charge to some degree. Some materials, like copper wire, have very low resistance and allow current to flow easily—we call these <span class="vocab-term">conductors</span>. Other materials, like rubber or plastic, have very high resistance and block current flow—we call these <span class="vocab-term">insulators</span>.</p>
+
+<div class="vocab-box">
+    <h3>Key Definition: Resistance</h3>
+    <p><strong>Resistance:</strong> A measure of how much a material opposes the flow of electric current. The unit of resistance is the ohm (Ω), named after Georg Ohm.</p>
+</div>
+
+<p>The resistance of a wire or component depends on several factors:</p>
+
+<ul>
+    <li><strong>Material:</strong> Different materials have different abilities to conduct electricity. Copper and aluminum are good conductors (low resistance). Carbon and nichrome have higher resistance.</li>
+    <li><strong>Length:</strong> Longer wires have more resistance. Doubling the length doubles the resistance.</li>
+    <li><strong>Cross-sectional area:</strong> Thicker wires have less resistance. Doubling the thickness (area) cuts the resistance in half.</li>
+    <li><strong>Temperature:</strong> For most metals, higher temperature increases resistance.</li>
+</ul>
+
+<p>In circuits, we often use components called <span class="vocab-term">resistors</span>—devices specifically designed to have a certain amount of resistance. Resistors are used to control current, divide voltage, and protect sensitive components.</p>
+
+<div class="real-world-box">
+    <h3>Real-World Application: Light Bulb Filaments</h3>
+    <p>An incandescent light bulb contains a thin tungsten wire (filament) with significant resistance. When current flows through the filament, the resistance converts electrical energy into heat and light. The filament gets so hot (about 2,500°C) that it glows white-hot, producing visible light. The higher the resistance, the more energy is converted to heat and light. This is why dimmer bulbs have lower resistance than brighter ones.</p>
+</div>
+
+<h2>Ohm's Law: The Fundamental Relationship</h2>
+
+<p><span class="vocab-term">Ohm's Law</span> states that the current through a conductor is directly proportional to the voltage across it and inversely proportional to its resistance. This relationship can be expressed mathematically as:</p>
+
+<div class="formula-box">
+    <h3>Ohm's Law</h3>
+    $$V = IR$$
+    <p>or equivalently:</p>
+    $$I = \frac{V}{R} \quad \text{or} \quad R = \frac{V}{I}$$
+    <p>where:</p>
+    <ul style="text-align: left; margin-left: 1in;">
+        <li>$V$ = voltage (volts, V)</li>
+        <li>$I$ = current (amperes, A)</li>
+        <li>$R$ = resistance (ohms, Ω)</li>
+    </ul>
+</div>
+
+<p>This equation tells us several important things:</p>
+
+<ul>
+    <li><strong>Higher voltage → higher current:</strong> If you increase the voltage across a resistor, more current flows (assuming resistance stays constant)</li>
+    <li><strong>Higher resistance → lower current:</strong> If you increase the resistance, less current flows (assuming voltage stays constant)</li>
+    <li><strong>Proportional relationships:</strong> Doubling the voltage doubles the current. Doubling the resistance cuts the current in half.</li>
+</ul>
+
+<p>One ohm (1 Ω) is defined as the resistance that allows 1 ampere of current to flow when 1 volt is applied:</p>
+
+$$1 \text{ Ω} = \frac{1 \text{ V}}{1 \text{ A}}$$
+
+<div class="info-box">
+    <h3>The Ohm's Law Triangle</h3>
+    <p>A useful memory tool is the Ohm's Law triangle. Cover the quantity you want to find, and the triangle shows you the equation:</p>
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 2in;">
+        <polygon points="100,20 20,180 180,180" fill="#e8f4f8" stroke="#000033" stroke-width="2"/>
+        <line x1="20" y1="100" x2="180" y2="100" stroke="#000033" stroke-width="2"/>
+        <text x="100" y="70" font-size="32" text-anchor="middle" fill="#000033" font-weight="bold">V</text>
+        <text x="60" y="155" font-size="32" text-anchor="middle" fill="#000033" font-weight="bold">I</text>
+        <text x="140" y="155" font-size="32" text-anchor="middle" fill="#000033" font-weight="bold">R</text>
+    </svg>
+    <p>To find V: V = I × R (I and R are side by side)</p>
+    <p>To find I: I = V / R (V is above R)</p>
+    <p>To find R: R = V / I (V is above I)</p>
+</div>
+
+<h2>Applying Ohm's Law</h2>
+
+<p>Ohm's Law is incredibly useful for solving practical circuit problems. Let's look at how to apply it:</p>
+
+<p><strong>Example scenario:</strong> You have a 12 V battery connected to a resistor, and you measure a current of 2 A flowing. What is the resistance?</p>
+
+<p>Using Ohm's Law: $R = V / I = 12 \text{ V} / 2 \text{ A} = 6$ Ω</p>
+
+<p><strong>Another scenario:</strong> You want 0.5 A to flow through a 100 Ω resistor. What voltage do you need?</p>
+
+<p>Using Ohm's Law: $V = IR = (0.5 \text{ A})(100 \text{ Ω}) = 50$ V</p>
+
+<div class="real-world-box">
+    <h3>Historical Note: Georg Ohm's Struggle</h3>
+    <p>Georg Ohm published his law in 1827, but the scientific community initially rejected his work. Other scientists criticized his mathematical approach, and he lost his teaching position as a result. It took nearly 20 years for the scientific community to recognize the importance of his discovery. In 1849, the Royal Society of London finally awarded him the Copley Medal for his contributions. Today, Ohm's Law is considered one of the most important principles in electrical science, and the unit of resistance bears his name.</p>
+</div>
+
+<h1>Series and Parallel Circuits</h1>
+
+<p>Real circuits rarely consist of just a single resistor and a battery. Most circuits have multiple components connected in various ways. The two fundamental ways to connect components are <span class="vocab-term">series</span> and <span class="vocab-term">parallel</span>.</p>
+
+<h2>Series Circuits</h2>
+
+<p>In a <span class="vocab-term">series circuit</span>, components are connected end-to-end in a single path. The current has only one route to follow, so the same current flows through every component.</p>
+
+<svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="max-width: 6in;">
+    <!-- Battery -->
+    <rect x="50" y="75" width="50" height="50" fill="#FFE6CC" stroke="#000033" stroke-width="2"/>
+    <line x="62" y="75" x2="62" y2="65" stroke="#000033" stroke-width="2"/>
+    <line x="58" y="65" x2="66" y2="65" stroke="#000033" stroke-width="2"/>
+    <line x="88" y="75" x2="88" y2="68" stroke="#000033" stroke-width="2"/>
+    <line x="84" y="68" x2="92" y2="68" stroke="#000033" stroke-width="2"/>
+    <line x="84" y="70" x2="92" y2="70" stroke="#000033" stroke-width="2"/>
+    
+    <!-- Resistor 1 -->
+    <rect x="200" y="85" width="80" height="30" fill="#CC9966" stroke="#000033" stroke-width="2"/>
+    <text x="240" y="105" font-size="14" text-anchor="middle" fill="#000033">R₁</text>
+    
+    <!-- Resistor 2 -->
+    <rect x="400" y="85" width="80" height="30" fill="#CC9966" stroke="#000033" stroke-width="2"/>
+    <text x="440" y="105" font-size="14" text-anchor="middle" fill="#000033">R₂</text>
+    
+    <!-- Wires -->
+    <line x1="100" y1="90" x2="200" y2="90" stroke="#000033" stroke-width="2"/>
+    <line x1="280" y1="100" x2="400" y2="100" stroke="#000033" stroke-width="2"/>
+    <line x1="480" y1="100" x2="550" y2="100" stroke="#000033" stroke-width="2"/>
+    <line x1="550" y1="100" x2="550" y2="110" stroke="#000033" stroke-width="2"/>
+    <line x1="550" y1="110" x2="100" y2="110" stroke="#000033" stroke-width="2"/>
+    
+    <!-- Current label -->
+    <text x="300" y="75" font-size="16" text-anchor="middle" fill="#CC3300" font-weight="bold">I (same everywhere)</text>
+    
+    <text x="300" y="160" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Series Circuit</text>
+</svg>
+
+<p><strong>Characteristics of series circuits:</strong></p>
+
+<ul>
+    <li><strong>Current is the same everywhere:</strong> $I_{\text{total}} = I_1 = I_2 = I_3$</li>
+    <li><strong>Voltages add up:</strong> $V_{\text{total}} = V_1 + V_2 + V_3$</li>
+    <li><strong>Resistances add up:</strong> $R_{\text{total}} = R_1 + R_2 + R_3$</li>
+    <li><strong>If one component fails, the entire circuit stops working</strong> (like old Christmas lights)</li>
+</ul>
+
+<div class="formula-box">
+    <h3>Series Circuit Equations</h3>
+    <p><strong>Total Resistance:</strong></p>
+    $$R_{\text{total}} = R_1 + R_2 + R_3 + \cdots$$
+    <p><strong>Current (same everywhere):</strong></p>
+    $$I = I_1 = I_2 = I_3$$
+    <p><strong>Voltage (adds up):</strong></p>
+    $$V_{\text{total}} = V_1 + V_2 + V_3 + \cdots$$
+</div>
+
+<p>The total resistance in a series circuit is always greater than any individual resistance. Adding more resistors in series increases the total resistance, which decreases the current.</p>
+
+<h2>Parallel Circuits</h2>
+
+<p>In a <span class="vocab-term">parallel circuit</span>, components are connected across common points, creating multiple paths for current to flow. The current divides among the different branches.</p>
+
+<svg viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 6in;">
+    <!-- Battery -->
+    <rect x="50" y="100" width="50" height="50" fill="#FFE6CC" stroke="#000033" stroke-width="2"/>
+    <line x="62" y="100" x2="62" y2="90" stroke="#000033" stroke-width="2"/>
+    <line x="58" y="90" x2="66" y2="90" stroke="#000033" stroke-width="2"/>
+    <line x="88" y="100" x2="88" y2="93" stroke="#000033" stroke-width="2"/>
+    <line x="84" y="93" x2="92" y2="93" stroke="#000033" stroke-width="2"/>
+    <line x="84" y="95" x2="92" y2="95" stroke="#000033" stroke-width="2"/>
+    
+    <!-- Junction points -->
+    <circle cx="200" cy="115" r="4" fill="#000033"/>
+    <circle cx="450" cy="115" r="4" fill="#000033"/>
+    
+    <!-- Resistor 1 (top branch) -->
+    <rect x="270" y="65" width="80" height="30" fill="#CC9966" stroke="#000033" stroke-width="2"/>
+    <text x="310" y="85" font-size="14" text-anchor="middle" fill="#000033">R₁</text>
+    
+    <!-- Resistor 2 (bottom branch) -->
+    <rect x="270" y="135" width="80" height="30" fill="#CC9966" stroke="#000033" stroke-width="2"/>
+    <text x="310" y="155" font-size="14" text-anchor="middle" fill="#000033">R₂</text>
+    
+    <!-- Wires -->
+    <line x1="100" y1="115" x2="200" y2="115" stroke="#000033" stroke-width="2"/>
+    <line x1="200" y1="115" x2="200" y2="80" stroke="#000033" stroke-width="2"/>
+    <line x1="200" y1="80" x2="270" y2="80" stroke="#000033" stroke-width="2"/>
+    <line x1="350" y1="80" x2="450" y2="80" stroke="#000033" stroke-width="2"/>
+    <line x1="450" y1="80" x2="450" y2="115" stroke="#000033" stroke-width="2"/>
+    
+    <line x1="200" y1="115" x2="200" y2="150" stroke="#000033" stroke-width="2"/>
+    <line x1="200" y1="150" x2="270" y2="150" stroke="#000033" stroke-width="2"/>
+    <line x1="350" y1="150" x2="450" y2="150" stroke="#000033" stroke-width="2"/>
+    <line x1="450" y1="115" x2="450" y2="150" stroke="#000033" stroke-width="2"/>
+    
+    <line x1="450" y1="115" x2="530" y2="115" stroke="#000033" stroke-width="2"/>
+    <line x1="530" y1="115" x2="530" y2="135" stroke="#000033" stroke-width="2"/>
+    <line x1="530" y1="135" x2="100" y2="135" stroke="#000033" stroke-width="2"/>
+    
+    <!-- Current labels -->
+    <text x="140" y="105" font-size="12" text-anchor="middle" fill="#CC3300" font-weight="bold">I</text>
+    <text x="235" y="70" font-size="12" text-anchor="middle" fill="#CC3300">I₁</text>
+    <text x="235" y="165" font-size="12" text-anchor="middle" fill="#CC3300">I₂</text>
+    
+    <text x="300" y="220" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Parallel Circuit</text>
+</svg>
+
+<p><strong>Characteristics of parallel circuits:</strong></p>
+
+<ul>
+    <li><strong>Voltage is the same across all branches:</strong> $V_{\text{total}} = V_1 = V_2 = V_3$</li>
+    <li><strong>Currents add up:</strong> $I_{\text{total}} = I_1 + I_2 + I_3$</li>
+    <li><strong>Reciprocals of resistances add up:</strong> $\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$</li>
+    <li><strong>If one component fails, the others continue working</strong> (like modern Christmas lights and household circuits)</li>
+</ul>
+
+<div class="formula-box">
+    <h3>Parallel Circuit Equations</h3>
+    <p><strong>Total Resistance:</strong></p>
+    $$\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots$$
+    <p><strong>Voltage (same everywhere):</strong></p>
+    $$V = V_1 = V_2 = V_3$$
+    <p><strong>Current (adds up):</strong></p>
+    $$I_{\text{total}} = I_1 + I_2 + I_3 + \cdots$$
+</div>
+
+<p>The total resistance in a parallel circuit is always less than the smallest individual resistance. Adding more resistors in parallel decreases the total resistance and increases the total current.</p>
+
+<div class="info-box">
+    <h3>Special Case: Two Resistors in Parallel</h3>
+    <p>For just two resistors in parallel, there's a simpler formula:</p>
+    $$R_{\text{total}} = \frac{R_1 \times R_2}{R_1 + R_2}$$
+    <p>This is called the "product over sum" formula and is much easier to use than the reciprocal formula when you only have two resistors.</p>
+</div>
+
+<div class="real-world-box">
+    <h3>Real-World Application: Household Circuits</h3>
+    <p>The electrical outlets in your home are connected in parallel. This has several advantages: (1) Every device receives the full 120 V regardless of what else is plugged in, (2) You can plug in or unplug devices without affecting others, and (3) If one device breaks, it doesn't shut down your entire electrical system. The circuit breaker for each circuit is in series with all the parallel outlets, so if total current gets too high, the breaker trips and cuts power to protect the wiring from overheating.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h3>Example 1: Basic Ohm's Law Calculation</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>A 12 V battery is connected to a 30 Ω resistor</li>
+    </ul>
+    <p><strong>Find:</strong> The current flowing through the resistor.</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Step 1: Write Ohm's Law.</p>
+    $$I = \frac{V}{R}$$
+    
+    <p>Step 2: Substitute the known values.</p>
+    $$I = \frac{12 \text{ V}}{30 \text{ Ω}} = 0.4 \text{ A}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The current is 0.4 A or 400 mA.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Series Circuit Analysis</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Three resistors in series: $R_1 = 10$ Ω, $R_2 = 20$ Ω, $R_3 = 30$ Ω</li>
+        <li>Connected to a 12 V battery</li>
+    </ul>
+    <p><strong>Find:</strong> (a) The total resistance, and (b) The current flowing through the circuit.</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>(a) Total resistance in series</strong></p>
+    
+    <p>Step 1: For series circuits, resistances add.</p>
+    $$R_{\text{total}} = R_1 + R_2 + R_3$$
+    
+    <p>Step 2: Substitute values.</p>
+    $$R_{\text{total}} = 10 + 20 + 30 = 60 \text{ Ω}$$
+    
+    <p><strong>(b) Current through circuit</strong></p>
+    
+    <p>Step 3: Use Ohm's Law with total values.</p>
+    $$I = \frac{V}{R_{\text{total}}} = \frac{12 \text{ V}}{60 \text{ Ω}} = 0.2 \text{ A}$$
+    
+    <p><strong>Answers:</strong></p>
+    <p>(a) <span class="highlight">The total resistance is 60 Ω.</span></p>
+    <p>(b) <span class="highlight">The current is 0.2 A or 200 mA.</span> This same current flows through all three resistors.</p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Multi-Step Parallel Circuit Problem</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Two resistors in parallel: $R_1 = 12$ Ω and $R_2 = 24$ Ω</li>
+        <li>Connected to a 9.0 V battery</li>
+    </ul>
+    <p><strong>Find:</strong></p>
+    <p>(a) The total (equivalent) resistance of the parallel combination.</p>
+    <p>(b) The total current supplied by the battery.</p>
+    <p>(c) The current through each resistor.</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>(a) Total resistance in parallel</strong></p>
+    
+    <p>Step 1: Use the product-over-sum formula for two resistors.</p>
+    $$R_{\text{total}} = \frac{R_1 \times R_2}{R_1 + R_2}$$
+    
+    <p>Step 2: Substitute values.</p>
+    $$R_{\text{total}} = \frac{12 \times 24}{12 + 24} = \frac{288}{36} = 8.0 \text{ Ω}$$
+    
+    <p><strong>(b) Total current from battery</strong></p>
+    
+    <p>Step 3: Use Ohm's Law with the total resistance.</p>
+    $$I_{\text{total}} = \frac{V}{R_{\text{total}}} = \frac{9.0 \text{ V}}{8.0 \text{ Ω}} = 1.125 \text{ A}$$
+    
+    <p><strong>(c) Current through each resistor</strong></p>
+    
+    <p>Step 4: In parallel, voltage across each resistor equals battery voltage (9.0 V).</p>
+    
+    <p>Current through $R_1$:</p>
+    $$I_1 = \frac{V}{R_1} = \frac{9.0 \text{ V}}{12 \text{ Ω}} = 0.75 \text{ A}$$
+    
+    <p>Current through $R_2$:</p>
+    $$I_2 = \frac{V}{R_2} = \frac{9.0 \text{ V}}{24 \text{ Ω}} = 0.375 \text{ A}$$
+    
+    <p>Step 5: Verify that currents add up: $I_1 + I_2 = 0.75 + 0.375 = 1.125$ A ✓</p>
+    
+    <p><strong>Answers:</strong></p>
+    <p>(a) <span class="highlight">The total resistance is 8.0 Ω</span> (less than either individual resistor).</p>
+    <p>(b) <span class="highlight">The total current from the battery is 1.125 A or 1.1 A.</span></p>
+    <p>(c) <span class="highlight">Current through R₁ is 0.75 A; current through R₂ is 0.375 A.</span> More current flows through the smaller resistance.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Electrical resistance is the opposition to current flow, measured in ohms (Ω). Conductors have low resistance; insulators have high resistance.</li>
+    <li>Ohm's Law states the relationship between voltage, current, and resistance: $V = IR$. This can be rearranged to find any variable: $I = V/R$ or $R = V/I$.</li>
+    <li>One ohm is defined as the resistance that allows 1 ampere to flow when 1 volt is applied.</li>
+    <li>In a series circuit, components are connected end-to-end. Current is the same everywhere, voltages add up, and resistances add up: $R_{\text{total}} = R_1 + R_2 + R_3 + \cdots$</li>
+    <li>In a parallel circuit, components are connected across common points. Voltage is the same everywhere, currents add up, and reciprocals of resistances add up: $\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots$</li>
+    <li>The total resistance in a series circuit is always greater than any individual resistance. Adding more resistors increases total resistance.</li>
+    <li>The total resistance in a parallel circuit is always less than the smallest individual resistance. Adding more resistors decreases total resistance.</li>
+    <li>For two resistors in parallel, the product-over-sum formula simplifies calculations: $R_{\text{total}} = \frac{R_1 \times R_2}{R_1 + R_2}$</li>
+    <li>Series circuits have one path for current; if one component fails, the whole circuit stops. Parallel circuits have multiple paths; if one component fails, others continue working.</li>
+    <li>Household electrical outlets are wired in parallel so each device receives full voltage and operates independently.</li>
+</ul>
+
+<!-- ============== KEY EQUATIONS ============== -->
+<h1>Key Equations</h1>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Equation</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Ohm's Law</td>
+        <td>$V = IR$</td>
+        <td>$V$ = voltage (V)<br>
+            $I$ = current (A)<br>
+            $R$ = resistance (Ω)</td>
+    </tr>
+    <tr>
+        <td>Ohm's Law (solving for I)</td>
+        <td>$I = \frac{V}{R}$</td>
+        <td>$I$ = current (A)<br>
+            $V$ = voltage (V)<br>
+            $R$ = resistance (Ω)</td>
+    </tr>
+    <tr>
+        <td>Ohm's Law (solving for R)</td>
+        <td>$R = \frac{V}{I}$</td>
+        <td>$R$ = resistance (Ω)<br>
+            $V$ = voltage (V)<br>
+            $I$ = current (A)</td>
+    </tr>
+    <tr>
+        <td>Series Resistance</td>
+        <td>$R_{\text{total}} = R_1 + R_2 + R_3 + \cdots$</td>
+        <td>All resistances in ohms (Ω)</td>
+    </tr>
+    <tr>
+        <td>Parallel Resistance</td>
+        <td>$\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots$</td>
+        <td>All resistances in ohms (Ω)</td>
+    </tr>
+    <tr>
+        <td>Two Resistors in Parallel</td>
+        <td>$R_{\text{total}} = \frac{R_1 \times R_2}{R_1 + R_2}$</td>
+        <td>All resistances in ohms (Ω)</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Define electrical resistance and explain what factors affect the resistance of a wire.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> State Ohm's Law in words and as an equation. Explain what each variable represents and what happens to current if you double the voltage while keeping resistance constant.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> Compare series and parallel circuits. Describe how current and voltage behave differently in each type of circuit, and explain why household outlets are wired in parallel rather than series.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> A student connects a voltmeter across a resistor and measures 15 V. She then connects an ammeter in series with the same resistor and measures 0.30 A. Explain how she should connect each meter and calculate the resistance of the resistor.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A 6.0 V battery is connected to a 15 Ω resistor. Calculate the current flowing through the resistor.</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> A current of 0.80 A flows through a resistor when a voltage of 24 V is applied. Calculate the resistance of the resistor.</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> Three resistors are connected in series to a 120 V power source: $R_1 = 20$ Ω, $R_2 = 30$ Ω, and $R_3 = 50$ Ω.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the total resistance of the series combination.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the current flowing through the circuit.</p>
+<p style="margin-left: 0.2in;">(c) Calculate the voltage drop across each resistor. (Hint: $V = IR$ for each resistor, using the same current.)</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> Two resistors are connected in parallel to a 12 V battery: $R_1 = 8.0$ Ω and $R_2 = 12$ Ω.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the equivalent (total) resistance of the parallel combination.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the total current supplied by the battery.</p>
+<p style="margin-left: 0.2in;">(c) Calculate the current through each resistor individually.</p>
+<p style="margin-left: 0.2in;">(d) Verify that the sum of the individual currents equals the total current.</p>
+<div class="answer-space"></div>
+
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> Electrical resistance is the opposition to the flow of electric current through a material, measured in ohms (Ω). The resistance of a wire depends on four factors: (1) Material—different materials conduct electricity differently (copper has low resistance, nichrome has high resistance); (2) Length—longer wires have more resistance (doubling length doubles resistance); (3) Cross-sectional area—thicker wires have less resistance (doubling area halves resistance); (4) Temperature—for most metals, higher temperature increases resistance.</p>
+
+<p><strong>2.</strong> Ohm's Law states that the voltage across a conductor is directly proportional to the current through it, with resistance as the constant of proportionality. The equation is $V = IR$, where $V$ is voltage in volts, $I$ is current in amperes, and $R$ is resistance in ohms. If you double the voltage while keeping resistance constant, the current also doubles. This is because voltage and current are directly proportional when resistance is constant.</p>
+
+<p><strong>3.</strong> In a series circuit, components are connected end-to-end with one path for current. Current is the same through all components, but voltage divides among them. In a parallel circuit, components are connected across common points with multiple current paths. Voltage is the same across all branches, but current divides among them. Household outlets are wired in parallel because: (1) every device receives the full voltage (120 V), (2) devices can be plugged in or unplugged without affecting others, and (3) if one device fails, others continue to work. In series, one device failing would shut down the entire circuit.</p>
+
+<p><strong>4.</strong> The voltmeter should be connected in parallel across the resistor (touching both ends without breaking the circuit) to measure the 15 V voltage drop. The ammeter should be connected in series with the resistor (breaking the circuit and inserting the ammeter so current flows through it) to measure the 0.30 A current. Using Ohm's Law: $R = V/I = 15 \text{ V} / 0.30 \text{ A} = 50$ Ω.</p>
+
+<p><strong>5.</strong></p>
+<p>Given: $V = 6.0$ V, $R = 15$ Ω</p>
+<p>Use Ohm's Law: $I = V/R$</p>
+$$I = \frac{6.0 \text{ V}}{15 \text{ Ω}} = 0.40 \text{ A}$$
+<p><span class="highlight">Answer: The current is 0.40 A or 400 mA.</span></p>
+
+<p><strong>6.</strong></p>
+<p>Given: $I = 0.80$ A, $V = 24$ V</p>
+<p>Use Ohm's Law: $R = V/I$</p>
+$$R = \frac{24 \text{ V}}{0.80 \text{ A}} = 30 \text{ Ω}$$
+<p><span class="highlight">Answer: The resistance is 30 Ω.</span></p>
+
+<p><strong>7.</strong></p>
+<p>Given: $V = 120$ V, $R_1 = 20$ Ω, $R_2 = 30$ Ω, $R_3 = 50$ Ω (series)</p>
+
+<p>(a) Total resistance: $R_{\text{total}} = R_1 + R_2 + R_3 = 20 + 30 + 50 = 100$ Ω</p>
+
+<p>(b) Current: $I = V/R_{\text{total}} = 120 \text{ V} / 100 \text{ Ω} = 1.2$ A</p>
+
+<p>(c) Voltage across each resistor (using $V = IR$ with $I = 1.2$ A):</p>
+<p>$V_1 = IR_1 = (1.2)(20) = 24$ V</p>
+<p>$V_2 = IR_2 = (1.2)(30) = 36$ V</p>
+<p>$V_3 = IR_3 = (1.2)(50) = 60$ V</p>
+<p>Check: $V_1 + V_2 + V_3 = 24 + 36 + 60 = 120$ V ✓</p>
+
+<p><span class="highlight">Answers: (a) 100 Ω; (b) 1.2 A; (c) 24 V across R₁, 36 V across R₂, 60 V across R₃.</span></p>
+
+<p><strong>8.</strong></p>
+<p>Given: $V = 12$ V, $R_1 = 8.0$ Ω, $R_2 = 12$ Ω (parallel)</p>
+
+<p>(a) Use product-over-sum formula:</p>
+$$R_{\text{total}} = \frac{R_1 \times R_2}{R_1 + R_2} = \frac{8.0 \times 12}{8.0 + 12} = \frac{96}{20} = 4.8 \text{ Ω}$$
+
+<p>(b) Total current:</p>
+$$I_{\text{total}} = \frac{V}{R_{\text{total}}} = \frac{12 \text{ V}}{4.8 \text{ Ω}} = 2.5 \text{ A}$$
+
+<p>(c) Current through each resistor (voltage is 12 V across each):</p>
+$$I_1 = \frac{V}{R_1} = \frac{12 \text{ V}}{8.0 \text{ Ω}} = 1.5 \text{ A}$$
+$$I_2 = \frac{V}{R_2} = \frac{12 \text{ V}}{12 \text{ Ω}} = 1.0 \text{ A}$$
+
+<p>(d) Verification: $I_1 + I_2 = 1.5 + 1.0 = 2.5$ A = $I_{\text{total}}$ ✓</p>
+
+<p><span class="highlight">Answers: (a) 4.8 Ω; (b) 2.5 A; (c) 1.5 A through R₁, 1.0 A through R₂; (d) 1.5 + 1.0 = 2.5 A, which equals the total current.</span></p>
+
+</body>
+</html>
