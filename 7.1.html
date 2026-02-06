@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 7.1: Electric Charge and Electric Force</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$$']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.06in 0;
+        }
+        
+        p {
+            margin: 0.05in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        table, th, td {
+            border: 1px solid #000033;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+        }
+        
+        td {
+            padding: 6px;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+            font-weight: bold;
+        }
+        
+        img, svg {
+            max-width: 100%;
+            height: auto;
+            margin: 0.06in 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 7.1</div>
+    <h1>Electric Charge and Electric Force</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#ffffff"/>
+        
+        <!-- Two charged spheres -->
+        <circle cx="150" cy="150" r="50" fill="#FF6666" stroke="#CC0000" stroke-width="3"/>
+        <text x="150" y="160" font-size="36" text-anchor="middle" fill="white" font-weight="bold">+</text>
+        
+        <circle cx="450" cy="150" r="50" fill="#6666FF" stroke="#0000CC" stroke-width="3"/>
+        <text x="450" y="160" font-size="36" text-anchor="middle" fill="white" font-weight="bold">−</text>
+        
+        <!-- Force arrows pointing toward each other -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        
+        <line x1="210" y1="150" x2="280" y2="150" stroke="#CC3300" stroke-width="4" marker-end="url(#arrowhead)"/>
+        <line x1="390" y1="150" x2="320" y2="150" stroke="#CC3300" stroke-width="4" marker-end="url(#arrowhead)"/>
+        
+        <!-- Force labels -->
+        <text x="245" y="130" font-size="16" text-anchor="middle" fill="#CC3300" font-weight="bold">Force</text>
+        <text x="355" y="130" font-size="16" text-anchor="middle" fill="#CC3300" font-weight="bold">Force</text>
+        
+        <!-- Title at bottom -->
+        <text x="300" y="280" font-size="18" text-anchor="middle" fill="#000033" font-weight="bold">Opposite Charges Attract</text>
+    </svg>
+    
+    <p>Have you ever rubbed a balloon on your hair and stuck it to a wall? That's electric charge in action! Electric charge is a fundamental property of matter that causes objects to experience forces even without touching. Understanding electric charge helps explain everything from lightning to how your phone charges.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2>Learning Objectives</h2>
+    <p><strong>By the end of this section, I can:</strong></p>
+    <ul>
+        <li>Define electric charge and distinguish between positive and negative charges, explaining how they differ at the atomic level.</li>
+        <li>Explain how electric force acts between charged objects and describe the relationship between the magnitude of charge and the strength of the force.</li>
+        <li>Apply Coulomb's Law to calculate the electric force between two point charges and predict how changes in charge or distance affect the force.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Imagine shuffling your feet across a carpet on a dry winter day, then reaching for a metal doorknob. Suddenly—zap! You feel a small shock and might even see a tiny spark. This everyday experience is a demonstration of <span class="vocab-term">static electricity</span>, one of the most common examples of electric charge in our daily lives.</p>
+
+<p>Electric charge is everywhere around us, even though we cannot see it. Every atom in your body contains charged particles—protons with positive charge and electrons with negative charge. Usually, these charges balance out, and objects appear electrically neutral. But when charges become separated or accumulate in one place, we can observe dramatic effects: lightning bolts splitting the sky, your hair standing on end near a Van de Graaff generator, or a balloon clinging to a wall after you rub it on your sweater.</p>
+
+<p>The study of electric charge began over 2,600 years ago when the ancient Greek philosopher Thales of Miletus discovered that amber (fossilized tree resin) attracted lightweight objects after being rubbed with fur. In fact, the word "electricity" comes from the Greek word "elektron," meaning amber. For centuries, electricity remained a curiosity and a parlor trick. It wasn't until the 1700s that scientists like Benjamin Franklin began systematic investigations of electrical phenomena.</p>
+
+<p>In this section, we'll explore what electric charge really is, how charged objects interact with each other, and how to calculate the forces between them using Coulomb's Law—one of the fundamental equations in physics.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>What Is Electric Charge?</h1>
+
+<p><span class="vocab-term">Electric charge</span> is a fundamental property of matter that causes it to experience a force when placed in an electromagnetic field. Just as mass determines how objects respond to gravitational forces, electric charge determines how objects respond to electric forces.</p>
+
+<div class="vocab-box">
+    <h3>Key Definition: Electric Charge</h3>
+    <p><strong>Electric Charge:</strong> A property of matter that causes objects to attract or repel each other. Charge comes in two types: positive (+) and negative (−).</p>
+</div>
+
+<p>There are two types of electric charge: <span class="vocab-term">positive charge</span> and <span class="vocab-term">negative charge</span>. These names are simply labels—there's nothing inherently "positive" or "negative" about them in the everyday sense of those words. Benjamin Franklin established this convention in the 1700s when he proposed that electricity was a single fluid that could be present in excess (positive) or deficiency (negative).</p>
+
+<h2>Charge at the Atomic Level</h2>
+
+<p>To understand electric charge, we need to look inside atoms. Every atom consists of three types of particles:</p>
+
+<ul>
+    <li><strong>Protons:</strong> Found in the nucleus (center) of the atom. Each proton carries one unit of <em>positive</em> charge.</li>
+    <li><strong>Neutrons:</strong> Also found in the nucleus. Neutrons have no electric charge—they are electrically neutral.</li>
+    <li><strong>Electrons:</strong> Found in a cloud surrounding the nucleus. Each electron carries one unit of <em>negative</em> charge.</li>
+</ul>
+
+<p>The charge on a single proton and the charge on a single electron are equal in magnitude but opposite in sign. We call this fundamental unit of charge the <span class="vocab-term">elementary charge</span>, represented by the symbol $e$. Its value is:</p>
+
+<div class="formula-box">
+    $$e = 1.60 \times 10^{-19} \text{ C}$$
+</div>
+
+<p>The unit for electric charge is the <span class="vocab-term">coulomb</span> (C), named after French physicist Charles-Augustin de Coulomb. One coulomb is an enormous amount of charge—it would take about $6.25 \times 10^{18}$ electrons to make up just one coulomb of negative charge!</p>
+
+<div class="real-world-box">
+    <h3>Real-World Connection: Why Don't We Notice Charge All the Time?</h3>
+    <p>In most materials, atoms have equal numbers of protons and electrons, so they are electrically neutral. The positive charges cancel out the negative charges. This is why most objects around you don't attract or repel each other—they're balanced. It's only when electrons are transferred from one object to another that we create regions of net positive or negative charge, and then we observe electrical effects.</p>
+</div>
+
+<h2>How Objects Become Charged</h2>
+
+<p>Objects can gain or lose charge through several mechanisms:</p>
+
+<p><strong>1. Charging by Friction (Triboelectric Effect):</strong> When you rub two materials together, electrons can transfer from one material to the other. The material that gains electrons becomes negatively charged, while the material that loses electrons becomes positively charged. For example, when you rub a balloon on your hair, electrons transfer from your hair to the balloon. The balloon becomes negatively charged, and your hair becomes positively charged.</p>
+
+<p><strong>2. Charging by Conduction:</strong> When a charged object touches a neutral object, charge can transfer directly between them. If you touch a charged metal sphere with your finger, some of the charge flows through you to the ground (or from the ground to the sphere).</p>
+
+<p><strong>3. Charging by Induction:</strong> A charged object can cause charge separation in a neutral object without even touching it. The charged object attracts opposite charges and repels like charges within the neutral object, causing a redistribution of charge.</p>
+
+<div class="info-box">
+    <h3>Important Principle: Conservation of Charge</h3>
+    <p>Electric charge is <em>conserved</em>. This means that charge cannot be created or destroyed—it can only be transferred from one object to another. When an object becomes negatively charged by gaining electrons, those electrons must come from somewhere else, leaving that other object positively charged by the same amount.</p>
+</div>
+
+<h1>Electric Force and Charge Interactions</h1>
+
+<p>Charged objects exert forces on each other without even touching. This is one of the most remarkable properties of electric charge—the force acts across empty space. The fundamental rule of electric interactions is simple but powerful:</p>
+
+<div class="formula-box">
+    <p style="font-size: 18px;"><strong>Law of Electric Charges:</strong></p>
+    <p><strong>Like charges repel; opposite charges attract.</strong></p>
+</div>
+
+<p>This means:</p>
+<ul>
+    <li>Two positive charges repel each other</li>
+    <li>Two negative charges repel each other</li>
+    <li>A positive charge and a negative charge attract each other</li>
+</ul>
+
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="max-width: 6in;">
+    <!-- Repulsion between like charges -->
+    <text x="175" y="30" font-size="18" text-anchor="middle" fill="#000033" font-weight="bold">Like Charges Repel</text>
+    
+    <!-- Two positive charges -->
+    <circle cx="100" cy="100" r="35" fill="#FF6666" stroke="#CC0000" stroke-width="2"/>
+    <text x="100" y="110" font-size="28" text-anchor="middle" fill="white" font-weight="bold">+</text>
+    
+    <circle cx="250" cy="100" r="35" fill="#FF6666" stroke="#CC0000" stroke-width="2"/>
+    <text x="250" y="110" font-size="28" text-anchor="middle" fill="white" font-weight="bold">+</text>
+    
+    <!-- Repulsion arrows -->
+    <defs>
+        <marker id="arrow-left" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+            <polygon points="10 0, 0 3, 10 6" fill="#CC3300"/>
+        </marker>
+        <marker id="arrow-right" markerWidth="10" markerHeight="10" refX="10" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+        </marker>
+    </defs>
+    
+    <line x1="135" y1="100" x2="75" y2="100" stroke="#CC3300" stroke-width="3" marker-end="url(#arrow-left)"/>
+    <line x1="215" y1="100" x2="275" y2="100" stroke="#CC3300" stroke-width="3" marker-end="url(#arrow-right)"/>
+    
+    <!-- Two negative charges -->
+    <circle cx="100" cy="200" r="35" fill="#6666FF" stroke="#0000CC" stroke-width="2"/>
+    <text x="100" y="210" font-size="28" text-anchor="middle" fill="white" font-weight="bold">−</text>
+    
+    <circle cx="250" cy="200" r="35" fill="#6666FF" stroke="#0000CC" stroke-width="2"/>
+    <text x="250" y="210" font-size="28" text-anchor="middle" fill="white" font-weight="bold">−</text>
+    
+    <!-- Repulsion arrows -->
+    <line x1="135" y1="200" x2="75" y2="200" stroke="#CC3300" stroke-width="3" marker-end="url(#arrow-left)"/>
+    <line x1="215" y1="200" x2="275" y2="200" stroke="#CC3300" stroke-width="3" marker-end="url(#arrow-right)"/>
+    
+    <!-- Attraction between opposite charges -->
+    <text x="525" y="30" font-size="18" text-anchor="middle" fill="#000033" font-weight="bold">Opposite Charges Attract</text>
+    
+    <circle cx="450" cy="150" r="35" fill="#FF6666" stroke="#CC0000" stroke-width="2"/>
+    <text x="450" y="160" font-size="28" text-anchor="middle" fill="white" font-weight="bold">+</text>
+    
+    <circle cx="600" cy="150" r="35" fill="#6666FF" stroke="#0000CC" stroke-width="2"/>
+    <text x="600" y="160" font-size="28" text-anchor="middle" fill="white" font-weight="bold">−</text>
+    
+    <!-- Attraction arrows -->
+    <line x1="485" y1="150" x2="540" y2="150" stroke="#0066cc" stroke-width="3" marker-end="url(#arrow-right)"/>
+    <line x1="565" y1="150" x2="510" y2="150" stroke="#0066cc" stroke-width="3" marker-end="url(#arrow-left)"/>
+</svg>
+
+<p>The strength of the electric force between two charged objects depends on two factors:</p>
+
+<p><strong>1. The amount of charge on each object:</strong> The more charge on the objects, the stronger the force between them. If you double the charge on one object, you double the force. If you double the charge on both objects, you quadruple the force.</p>
+
+<p><strong>2. The distance between the objects:</strong> The farther apart the charged objects are, the weaker the force between them. Specifically, the force decreases with the square of the distance. If you double the distance between two charges, the force becomes one-fourth as strong. If you triple the distance, the force becomes one-ninth as strong.</p>
+
+<div class="real-world-box">
+    <h3>Historical Note: Charles-Augustin de Coulomb</h3>
+    <p>In the 1780s, French physicist Charles-Augustin de Coulomb used a device called a torsion balance to carefully measure the forces between charged objects. His experiments revealed the precise mathematical relationship between charge, distance, and force—a relationship now known as Coulomb's Law. Coulomb's work was so important that the unit of electric charge is named in his honor.</p>
+</div>
+
+<h1>Coulomb's Law</h1>
+
+<p><span class="vocab-term">Coulomb's Law</span> is the equation that allows us to calculate the exact magnitude of the electric force between two point charges. A point charge is an idealized charged object that is so small that we can treat it as a single point in space.</p>
+
+<div class="formula-box">
+    <h3>Coulomb's Law</h3>
+    $$F_e = k \frac{|q_1 q_2|}{r^2}$$
+    <p>where:</p>
+    <ul style="text-align: left; margin-left: 1in;">
+        <li>$F_e$ = electric force (newtons, N)</li>
+        <li>$k$ = Coulomb's constant = $8.99 \times 10^9 \text{ N·m}^2\text{/C}^2$</li>
+        <li>$q_1$ and $q_2$ = charges on the two objects (coulombs, C)</li>
+        <li>$r$ = distance between the centers of the two charges (meters, m)</li>
+    </ul>
+</div>
+
+<p>Let's break down what this equation tells us:</p>
+
+<ul>
+    <li>The force is <em>proportional</em> to the product of the two charges ($q_1 \times q_2$). Bigger charges create bigger forces.</li>
+    <li>The force is <em>inversely proportional</em> to the square of the distance ($r^2$). This is called an "inverse-square law." Greater distance dramatically reduces the force.</li>
+    <li>The constant $k$ (Coulomb's constant) determines the strength of the electric force. Its large value shows that electric forces are quite strong compared to many other forces in nature.</li>
+    <li>The absolute value signs $| \, |$ around $q_1 q_2$ ensure that we calculate the <em>magnitude</em> of the force (always positive). The direction (attractive or repulsive) is determined separately based on the signs of the charges.</li>
+</ul>
+
+<div class="info-box">
+    <h3>Important Note: Direction of Force</h3>
+    <p>Coulomb's Law gives us the <em>magnitude</em> of the force (how strong it is), but not its direction. To determine direction:</p>
+    <ul>
+        <li>If both charges have the same sign (both positive or both negative), the force is <strong>repulsive</strong>—each charge pushes the other away.</li>
+        <li>If the charges have opposite signs (one positive and one negative), the force is <strong>attractive</strong>—each charge pulls the other toward itself.</li>
+    </ul>
+</div>
+
+<h2>Comparing Electric Force to Gravitational Force</h2>
+
+<p>Coulomb's Law for electric force has a very similar form to Newton's Law of Universal Gravitation. Both are inverse-square laws. However, there are some important differences:</p>
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Electric Force</th>
+        <th>Gravitational Force</th>
+    </tr>
+    <tr>
+        <td>Formula</td>
+        <td>$F_e = k \frac{|q_1 q_2|}{r^2}$</td>
+        <td>$F_g = G \frac{m_1 m_2}{r^2}$</td>
+    </tr>
+    <tr>
+        <td>Property of matter</td>
+        <td>Electric charge ($q$)</td>
+        <td>Mass ($m$)</td>
+    </tr>
+    <tr>
+        <td>Constant</td>
+        <td>$k = 8.99 \times 10^9$</td>
+        <td>$G = 6.67 \times 10^{-11}$</td>
+    </tr>
+    <tr>
+        <td>Can be attractive or repulsive?</td>
+        <td>Yes (opposite charges attract, like charges repel)</td>
+        <td>No (always attractive)</td>
+    </tr>
+    <tr>
+        <td>Relative strength</td>
+        <td>Very strong</td>
+        <td>Very weak</td>
+    </tr>
+</table>
+
+<p>The electric force is enormously stronger than the gravitational force. For two protons, the electric repulsion between them is about $10^{36}$ times stronger than their gravitational attraction! This is why electric forces dominate at the atomic and molecular scale, while gravity dominates at astronomical scales.</p>
+
+<div class="page-break"></div>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Force Between Two Charges</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Charge 1: $q_1 = +2.0 \times 10^{-6}$ C</li>
+        <li>Charge 2: $q_2 = +3.0 \times 10^{-6}$ C</li>
+        <li>Distance between charges: $r = 0.50$ m</li>
+        <li>Coulomb's constant: $k = 8.99 \times 10^9 \text{ N·m}^2\text{/C}^2$</li>
+    </ul>
+    <p><strong>Find:</strong> The electric force between the two charges.</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Step 1: Write Coulomb's Law.</p>
+    $$F_e = k \frac{|q_1 q_2|}{r^2}$$
+    
+    <p>Step 2: Substitute the known values into the equation.</p>
+    $$F_e = (8.99 \times 10^9) \frac{|(2.0 \times 10^{-6})(3.0 \times 10^{-6})|}{(0.50)^2}$$
+    
+    <p>Step 3: Calculate the numerator.</p>
+    $$|q_1 q_2| = (2.0 \times 10^{-6})(3.0 \times 10^{-6}) = 6.0 \times 10^{-12} \text{ C}^2$$
+    
+    <p>Step 4: Calculate the denominator.</p>
+    $$r^2 = (0.50)^2 = 0.25 \text{ m}^2$$
+    
+    <p>Step 5: Complete the calculation.</p>
+    $$F_e = (8.99 \times 10^9) \frac{6.0 \times 10^{-12}}{0.25} = (8.99 \times 10^9)(2.4 \times 10^{-11})$$
+    $$F_e = 2.16 \times 10^{-1} = 0.216 \text{ N}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The electric force between the two charges is 0.22 N.</span> Since both charges are positive, this is a repulsive force—each charge pushes the other away.</p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Finding Distance from Force and Charge</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Charge 1: $q_1 = -4.0 \times 10^{-8}$ C</li>
+        <li>Charge 2: $q_2 = +5.0 \times 10^{-8}$ C</li>
+        <li>Electric force: $F_e = 9.0 \times 10^{-4}$ N</li>
+        <li>Coulomb's constant: $k = 8.99 \times 10^9 \text{ N·m}^2\text{/C}^2$</li>
+    </ul>
+    <p><strong>Find:</strong> The distance between the two charges.</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p>Step 1: Write Coulomb's Law and rearrange to solve for $r$.</p>
+    $$F_e = k \frac{|q_1 q_2|}{r^2}$$
+    $$r^2 = k \frac{|q_1 q_2|}{F_e}$$
+    $$r = \sqrt{k \frac{|q_1 q_2|}{F_e}}$$
+    
+    <p>Step 2: Calculate $|q_1 q_2|$.</p>
+    $$|q_1 q_2| = |(-4.0 \times 10^{-8})(5.0 \times 10^{-8})| = 2.0 \times 10^{-15} \text{ C}^2$$
+    
+    <p>Step 3: Substitute values into the rearranged equation.</p>
+    $$r = \sqrt{(8.99 \times 10^9) \frac{2.0 \times 10^{-15}}{9.0 \times 10^{-4}}}$$
+    
+    <p>Step 4: Simplify the fraction inside the square root.</p>
+    $$\frac{2.0 \times 10^{-15}}{9.0 \times 10^{-4}} = 2.22 \times 10^{-12}$$
+    $$r = \sqrt{(8.99 \times 10^9)(2.22 \times 10^{-12})} = \sqrt{2.0 \times 10^{-2}}$$
+    
+    <p>Step 5: Calculate the square root.</p>
+    $$r = \sqrt{0.020} = 0.141 \text{ m}$$
+    
+    <p><strong>Answer:</strong> <span class="highlight">The distance between the two charges is 0.14 m or 14 cm.</span> Since the charges have opposite signs, this is an attractive force.</p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Multi-Step Problem—Comparing Forces at Different Distances</h3>
+    <p><strong>Given:</strong></p>
+    <ul>
+        <li>Two charges, $q_1 = +6.0 \times 10^{-9}$ C and $q_2 = -8.0 \times 10^{-9}$ C, are initially separated by a distance of $r_1 = 2.0$ m.</li>
+        <li>The charges are then moved closer together to a distance of $r_2 = 0.50$ m.</li>
+    </ul>
+    <p><strong>Find:</strong></p>
+    <p>(a) The electric force at the initial distance of 2.0 m.</p>
+    <p>(b) The electric force at the new distance of 0.50 m.</p>
+    <p>(c) By what factor did the force change?</p>
+    
+    <p><strong>Solution:</strong></p>
+    <p><strong>(a) Force at $r_1 = 2.0$ m</strong></p>
+    
+    <p>Step 1: Use Coulomb's Law.</p>
+    $$F_1 = k \frac{|q_1 q_2|}{r_1^2}$$
+    
+    <p>Step 2: Calculate $|q_1 q_2|$.</p>
+    $$|q_1 q_2| = |(6.0 \times 10^{-9})(-8.0 \times 10^{-9})| = 4.8 \times 10^{-17} \text{ C}^2$$
+    
+    <p>Step 3: Substitute values.</p>
+    $$F_1 = (8.99 \times 10^9) \frac{4.8 \times 10^{-17}}{(2.0)^2} = (8.99 \times 10^9) \frac{4.8 \times 10^{-17}}{4.0}$$
+    $$F_1 = (8.99 \times 10^9)(1.2 \times 10^{-17}) = 1.08 \times 10^{-7} \text{ N}$$
+    
+    <p><strong>(b) Force at $r_2 = 0.50$ m</strong></p>
+    
+    <p>Step 4: Use Coulomb's Law with the new distance.</p>
+    $$F_2 = k \frac{|q_1 q_2|}{r_2^2}$$
+    
+    <p>Step 5: Substitute values (using the same $|q_1 q_2|$ from part a).</p>
+    $$F_2 = (8.99 \times 10^9) \frac{4.8 \times 10^{-17}}{(0.50)^2} = (8.99 \times 10^9) \frac{4.8 \times 10^{-17}}{0.25}$$
+    $$F_2 = (8.99 \times 10^9)(1.92 \times 10^{-16}) = 1.73 \times 10^{-6} \text{ N}$$
+    
+    <p><strong>(c) Factor by which force changed</strong></p>
+    
+    <p>Step 6: Divide the new force by the original force.</p>
+    $$\text{Factor} = \frac{F_2}{F_1} = \frac{1.73 \times 10^{-6}}{1.08 \times 10^{-7}} = 16$$
+    
+    <p><strong>Answers:</strong></p>
+    <p>(a) <span class="highlight">The initial force is $1.1 \times 10^{-7}$ N (attractive).</span></p>
+    <p>(b) <span class="highlight">The force at 0.50 m is $1.7 \times 10^{-6}$ N (attractive).</span></p>
+    <p>(c) <span class="highlight">The force increased by a factor of 16.</span></p>
+    
+    <p><strong>Note:</strong> This makes sense! When we decreased the distance by a factor of 4 (from 2.0 m to 0.50 m), the force increased by a factor of $4^2 = 16$. This demonstrates the inverse-square relationship in Coulomb's Law.</p>
+</div>
+
+<div class="page-break"></div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Electric charge is a fundamental property of matter that comes in two types: positive and negative. Like charges repel; opposite charges attract.</li>
+    <li>At the atomic level, protons carry positive charge, electrons carry negative charge, and neutrons are neutral. The elementary charge is $e = 1.60 \times 10^{-19}$ C.</li>
+    <li>Objects become charged through friction (rubbing materials together), conduction (direct contact), or induction (charge separation without contact).</li>
+    <li>Electric charge is conserved—it cannot be created or destroyed, only transferred from one object to another.</li>
+    <li>The electric force between two charged objects depends on the amount of charge on each object and the distance between them.</li>
+    <li>Coulomb's Law quantifies the electric force: $F_e = k \frac{|q_1 q_2|}{r^2}$, where $k = 8.99 \times 10^9 \text{ N·m}^2\text{/C}^2$.</li>
+    <li>The electric force follows an inverse-square law: doubling the distance reduces the force to one-fourth its original value.</li>
+    <li>Electric forces are much stronger than gravitational forces between charged particles.</li>
+    <li>The direction of the electric force depends on the signs of the charges: same signs repel, opposite signs attract.</li>
+    <li>Historical scientists like Thales, Benjamin Franklin, and Charles-Augustin de Coulomb made key discoveries about electricity that form the foundation of modern electrical science.</li>
+</ul>
+
+<!-- ============== KEY EQUATIONS ============== -->
+<h1>Key Equations</h1>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Equation</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Coulomb's Law</td>
+        <td>$F_e = k \frac{|q_1 q_2|}{r^2}$</td>
+        <td>$F_e$ = electric force (N)<br>
+            $k$ = Coulomb's constant ($8.99 \times 10^9 \text{ N·m}^2\text{/C}^2$)<br>
+            $q_1, q_2$ = charges (C)<br>
+            $r$ = distance between charges (m)</td>
+    </tr>
+    <tr>
+        <td>Elementary Charge</td>
+        <td>$e = 1.60 \times 10^{-19}$ C</td>
+        <td>$e$ = magnitude of charge on one proton or one electron (C)</td>
+    </tr>
+</table>
+
+<div class="page-break"></div>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Define electric charge and explain the difference between positive and negative charges at the atomic level.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> Explain why most objects around you are electrically neutral even though they contain charged particles (protons and electrons).</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> Two charged spheres are brought near each other. Sphere A has a charge of +5 μC and sphere B has a charge of −3 μC. Will the spheres attract or repel each other? Explain your reasoning based on the fundamental law of electric charges.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> A student rubs a balloon on her hair and the balloon becomes negatively charged. Her hair now stands up and is attracted to the balloon. Explain what happened to the charges during this process, using the principle of conservation of charge.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> Two point charges are separated by a distance of 3.0 m. Charge 1 has a value of $+8.0 \times 10^{-6}$ C, and charge 2 has a value of $-2.0 \times 10^{-6}$ C. Calculate the magnitude of the electric force between them.</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> A charge of $+1.5 \times 10^{-8}$ C experiences an electric force of $2.7 \times 10^{-3}$ N when placed 0.20 m away from another charge. Calculate the magnitude of the second charge.</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> Two identical positive charges, each with magnitude $q = +4.0 \times 10^{-7}$ C, are held at a distance of 1.2 m apart.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the electric force between them.</p>
+<p style="margin-left: 0.2in;">(b) If the distance between them is doubled to 2.4 m, what is the new electric force?</p>
+<p style="margin-left: 0.2in;">(c) By what factor did the force change when the distance was doubled?</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> Three charges are arranged in a line. Charge A ($+6.0 \times 10^{-9}$ C) is at position $x = 0$ m. Charge B ($-4.0 \times 10^{-9}$ C) is at position $x = 2.0$ m. Charge C ($+3.0 \times 10^{-9}$ C) is at position $x = 5.0$ m.</p>
+<p style="margin-left: 0.2in;">(a) Calculate the force that charge A exerts on charge B.</p>
+<p style="margin-left: 0.2in;">(b) Calculate the force that charge C exerts on charge B.</p>
+<p style="margin-left: 0.2in;">(c) Determine the net force on charge B. (Hint: Consider the direction of each force.)</p>
+<div class="answer-space"></div>
+
+<div class="page-break"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> Electric charge is a fundamental property of matter that causes objects to experience electric forces. There are two types: positive charge (carried by protons in the nucleus of atoms) and negative charge (carried by electrons surrounding the nucleus). Protons and electrons have equal magnitudes of charge but opposite signs. Each proton carries one unit of positive elementary charge ($+e$), and each electron carries one unit of negative elementary charge ($-e$).</p>
+
+<p><strong>2.</strong> Most objects are electrically neutral because they contain equal numbers of protons and electrons. Since protons carry positive charge and electrons carry negative charge with equal magnitudes, the positive and negative charges cancel out. The net charge is zero, so we don't observe electrical effects unless electrons are transferred between objects, creating an imbalance of charge.</p>
+
+<p><strong>3.</strong> The spheres will <strong>attract</strong> each other. Sphere A is positively charged and sphere B is negatively charged. According to the fundamental law of electric charges, opposite charges attract. The positive charge on sphere A and the negative charge on sphere B will cause each sphere to experience a force pulling it toward the other sphere.</p>
+
+<p><strong>4.</strong> When the student rubs the balloon on her hair, electrons are transferred from her hair to the balloon through friction. The balloon gains electrons and becomes negatively charged. Her hair loses electrons and becomes positively charged. The principle of conservation of charge is demonstrated because the amount of negative charge gained by the balloon equals the amount of positive charge left on her hair. No charge was created or destroyed—it was only transferred. Her hair now stands up because the positively charged strands repel each other (like charges repel) and are attracted to the negatively charged balloon (opposite charges attract).</p>
+
+<p><strong>5.</strong></p>
+<p>Given: $q_1 = +8.0 \times 10^{-6}$ C, $q_2 = -2.0 \times 10^{-6}$ C, $r = 3.0$ m</p>
+<p>Use Coulomb's Law:</p>
+$$F_e = k \frac{|q_1 q_2|}{r^2} = (8.99 \times 10^9) \frac{|(8.0 \times 10^{-6})(-2.0 \times 10^{-6})|}{(3.0)^2}$$
+$$F_e = (8.99 \times 10^9) \frac{1.6 \times 10^{-11}}{9.0} = (8.99 \times 10^9)(1.78 \times 10^{-12})$$
+$$F_e = 1.6 \times 10^{-2} \text{ N} = 0.016 \text{ N}$$
+<p><span class="highlight">Answer: The electric force is 0.016 N or 1.6 × 10⁻² N (attractive).</span></p>
+
+<p><strong>6.</strong></p>
+<p>Given: $q_1 = +1.5 \times 10^{-8}$ C, $F_e = 2.7 \times 10^{-3}$ N, $r = 0.20$ m</p>
+<p>Rearrange Coulomb's Law to solve for $q_2$:</p>
+$$F_e = k \frac{|q_1 q_2|}{r^2}$$
+$$|q_2| = \frac{F_e r^2}{k q_1}$$
+$$|q_2| = \frac{(2.7 \times 10^{-3})(0.20)^2}{(8.99 \times 10^9)(1.5 \times 10^{-8})}$$
+$$|q_2| = \frac{(2.7 \times 10^{-3})(0.04)}{1.35 \times 10^2} = \frac{1.08 \times 10^{-4}}{1.35 \times 10^2}$$
+$$|q_2| = 8.0 \times 10^{-7} \text{ C}$$
+<p><span class="highlight">Answer: The magnitude of the second charge is 8.0 × 10⁻⁷ C or 0.80 μC.</span></p>
+
+<p><strong>7.</strong></p>
+<p>(a) Given: $q_1 = q_2 = +4.0 \times 10^{-7}$ C, $r_1 = 1.2$ m</p>
+$$F_1 = k \frac{|q_1 q_2|}{r_1^2} = (8.99 \times 10^9) \frac{(4.0 \times 10^{-7})^2}{(1.2)^2}$$
+$$F_1 = (8.99 \times 10^9) \frac{1.6 \times 10^{-13}}{1.44} = (8.99 \times 10^9)(1.11 \times 10^{-13})$$
+$$F_1 = 1.0 \times 10^{-3} \text{ N} = 0.0010 \text{ N}$$
+
+<p>(b) New distance: $r_2 = 2.4$ m</p>
+$$F_2 = k \frac{|q_1 q_2|}{r_2^2} = (8.99 \times 10^9) \frac{1.6 \times 10^{-13}}{(2.4)^2}$$
+$$F_2 = (8.99 \times 10^9) \frac{1.6 \times 10^{-13}}{5.76} = (8.99 \times 10^9)(2.78 \times 10^{-14})$$
+$$F_2 = 2.5 \times 10^{-4} \text{ N} = 0.00025 \text{ N}$$
+
+<p>(c) Factor = $\frac{F_1}{F_2} = \frac{1.0 \times 10^{-3}}{2.5 \times 10^{-4}} = 4$</p>
+
+<p><span class="highlight">Answers: (a) 0.0010 N or 1.0 × 10⁻³ N (repulsive); (b) 0.00025 N or 2.5 × 10⁻⁴ N (repulsive); (c) The force decreased by a factor of 4, which makes sense because doubling the distance reduces the force by a factor of 2² = 4.</span></p>
+
+<p><strong>8.</strong></p>
+<p>Given: $q_A = +6.0 \times 10^{-9}$ C at $x = 0$ m; $q_B = -4.0 \times 10^{-9}$ C at $x = 2.0$ m; $q_C = +3.0 \times 10^{-9}$ C at $x = 5.0$ m</p>
+
+<p>(a) Force of A on B: Distance $r_{AB} = 2.0$ m</p>
+$$F_{AB} = k \frac{|q_A q_B|}{r_{AB}^2} = (8.99 \times 10^9) \frac{|(6.0 \times 10^{-9})(-4.0 \times 10^{-9})|}{(2.0)^2}$$
+$$F_{AB} = (8.99 \times 10^9) \frac{2.4 \times 10^{-17}}{4.0} = (8.99 \times 10^9)(6.0 \times 10^{-18})$$
+$$F_{AB} = 5.4 \times 10^{-8} \text{ N}$$
+<p>Direction: A is positive, B is negative, so they attract. Force on B points toward A (to the left, in the negative direction).</p>
+
+<p>(b) Force of C on B: Distance $r_{CB} = 5.0 - 2.0 = 3.0$ m</p>
+$$F_{CB} = k \frac{|q_C q_B|}{r_{CB}^2} = (8.99 \times 10^9) \frac{|(3.0 \times 10^{-9})(-4.0 \times 10^{-9})|}{(3.0)^2}$$
+$$F_{CB} = (8.99 \times 10^9) \frac{1.2 \times 10^{-17}}{9.0} = (8.99 \times 10^9)(1.33 \times 10^{-18})$$
+$$F_{CB} = 1.2 \times 10^{-8} \text{ N}$$
+<p>Direction: C is positive, B is negative, so they attract. Force on B points toward C (to the right, in the positive direction).</p>
+
+<p>(c) Net force on B:</p>
+<p>Taking rightward as positive: $F_{AB}$ is leftward (−), $F_{CB}$ is rightward (+)</p>
+$$F_{net} = -F_{AB} + F_{CB} = -5.4 \times 10^{-8} + 1.2 \times 10^{-8} = -4.2 \times 10^{-8} \text{ N}$$
+<p>The negative sign indicates the net force points to the left (toward charge A).</p>
+
+<p><span class="highlight">Answers: (a) 5.4 × 10⁻⁸ N toward A; (b) 1.2 × 10⁻⁸ N toward C; (c) 4.2 × 10⁻⁸ N to the left (toward charge A). The net force is to the left because the attractive force from charge A is stronger than the attractive force from charge C.</span></p>
+
+</body>
+</html>
