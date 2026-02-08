@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 2.2 - Velocity and Speed</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #000000;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.06in 0;
+        }
+        
+        p {
+            text-align: justify;
+            margin: 0.05in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space-full {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .answer-space-short {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+            text-align: left;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 2.2</div>
+    <h1>Velocity and Speed</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#f0f8ff"/>
+        
+        <!-- Speedometer dial -->
+        <circle cx="300" cy="180" r="110" fill="#ffffff" stroke="#000033" stroke-width="3"/>
+        <circle cx="300" cy="180" r="90" fill="none" stroke="#0066cc" stroke-width="2"/>
+        
+        <!-- Speedometer markings -->
+        <line x1="300" y1="80" x2="300" y2="95" stroke="#000033" stroke-width="2"/>
+        <text x="300" y="70" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">60</text>
+        
+        <line x1="390" y1="125" x2="378" y2="135" stroke="#000033" stroke-width="2"/>
+        <text x="405" y="130" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">40</text>
+        
+        <line x1="410" y1="180" x2="395" y2="180" stroke="#000033" stroke-width="2"/>
+        <text x="430" y="185" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">20</text>
+        
+        <line x1="390" y1="235" x2="378" y2="225" stroke="#000033" stroke-width="2"/>
+        <text x="405" y="250" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">0</text>
+        
+        <line x1="210" y1="235" x2="222" y2="225" stroke="#000033" stroke-width="2"/>
+        <text x="195" y="250" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">0</text>
+        
+        <line x1="190" y1="180" x2="205" y2="180" stroke="#000033" stroke-width="2"/>
+        <text x="170" y="185" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">-20</text>
+        
+        <line x1="210" y1="125" x2="222" y2="135" stroke="#000033" stroke-width="2"/>
+        <text x="195" y="130" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">-40</text>
+        
+        <!-- Needle -->
+        <line x1="300" y1="180" x2="365" y2="145" stroke="#CC3300" stroke-width="4"/>
+        <circle cx="300" cy="180" r="8" fill="#CC3300"/>
+        
+        <!-- Label -->
+        <text x="300" y="260" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">m/s</text>
+        
+        <!-- Cars with arrows -->
+        <g transform="translate(100, 30)">
+            <rect x="0" y="0" width="35" height="20" fill="#0066cc" stroke="#000033" stroke-width="1" rx="2"/>
+            <circle cx="8" cy="22" r="4" fill="#000033"/>
+            <circle cx="27" cy="22" r="4" fill="#000033"/>
+            <line x1="40" y1="10" x2="70" y2="10" stroke="#0066cc" stroke-width="3" marker-end="url(#arrow1)"/>
+            <text x="55" y="0" font-size="11" text-anchor="middle" fill="#0066cc" font-weight="bold">+v</text>
+        </g>
+        
+        <g transform="translate(465, 30)">
+            <rect x="0" y="0" width="35" height="20" fill="#cc6600" stroke="#000033" stroke-width="1" rx="2"/>
+            <circle cx="8" cy="22" r="4" fill="#000033"/>
+            <circle cx="27" cy="22" r="4" fill="#000033"/>
+            <line x1="-5" y1="10" x2="-35" y2="10" stroke="#cc6600" stroke-width="3" marker-end="url(#arrow2)"/>
+            <text x="-20" y="0" font-size="11" text-anchor="middle" fill="#cc6600" font-weight="bold">-v</text>
+        </g>
+        
+        <defs>
+            <marker id="arrow1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
+            </marker>
+            <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#cc6600"/>
+            </marker>
+        </defs>
+        
+        <!-- Title text -->
+        <text x="300" y="25" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Velocity: Speed with Direction</text>
+    </svg>
+    
+    <p>How fast are you going? This simple question is actually asking about velocity—one of the most important concepts in physics. Velocity tells us not just how quickly something moves, but also which direction it's heading. From cars on highways to electrons in circuits, understanding velocity helps us describe and predict motion throughout the universe.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <ul>
+        <li>I can define average velocity and average speed and explain how they differ.</li>
+        <li>I can calculate average velocity and average speed using displacement, distance, and time data.</li>
+        <li>I can define instantaneous velocity and explain how it relates to average velocity.</li>
+        <li>I can interpret velocity values including direction and sign conventions.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+<p>When you check your car's speedometer, you're seeing a measurement of velocity. When a weather report says "winds from the north at 15 miles per hour," that's describing velocity. When a baseball announcer says "the pitcher threw a 95 mph fastball," they're talking about velocity (though without mentioning direction). Velocity is everywhere in our daily lives.</p>
+
+<p>But what exactly is velocity? At its most basic level, velocity tells us the rate at which position changes. In other words, velocity measures how quickly something is moving and in what direction. A high velocity means rapid motion; a low velocity means slow motion; zero velocity means no motion at all.</p>
+
+<p>In this section, we'll explore two related concepts: speed and velocity. While these words are often used interchangeably in everyday conversation, physicists make a crucial distinction between them. Understanding this difference will help you describe motion with precision and accuracy.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>Average Velocity</h1>
+
+<p>In Section 2.1, we learned that displacement tells us how far and in what direction an object has moved. But displacement alone doesn't tell us how quickly that motion occurred. To describe the rate of motion, we need to know not just the displacement, but also the time interval during which the displacement occurred.</p>
+
+<div class="vocab-box">
+    <h3>Average Velocity</h3>
+    <p><span class="vocab-term">Average velocity</span> is the displacement divided by the time interval during which the displacement occurred. It is a vector quantity with both magnitude and direction. Average velocity is represented by the symbol $v_{avg}$ or $\bar{v}$ and is measured in meters per second (m/s).</p>
+    <p>$$v_{avg} = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{t_f - t_i}$$</p>
+    <p>where $\Delta x$ is displacement, $\Delta t$ is the time interval, $x_f$ and $x_i$ are final and initial positions, and $t_f$ and $t_i$ are final and initial times.</p>
+</div>
+
+<p>The formula for average velocity shows that velocity is the ratio of displacement to time. If an object has a large displacement in a short time, it has a high velocity. If an object has a small displacement over a long time, it has a low velocity.</p>
+
+<p>Since displacement is a vector (it has direction), average velocity is also a vector. The direction of the velocity is the same as the direction of the displacement. A positive velocity indicates motion in the positive direction; a negative velocity indicates motion in the negative direction.</p>
+
+<div class="info-box">
+    <h3>Units of Velocity</h3>
+    <p>The SI unit of velocity is meters per second (m/s). However, you'll encounter many other units in everyday life:</p>
+    <ul>
+        <li>kilometers per hour (km/h) - common for cars</li>
+        <li>miles per hour (mph) - common in the United States</li>
+        <li>feet per second (ft/s) - sometimes used in engineering</li>
+    </ul>
+    <p>Always pay attention to units and convert if necessary to keep all quantities in the same unit system.</p>
+</div>
+
+<h3>Understanding Average Velocity</h3>
+<p>The word "average" is important here. Average velocity tells us the overall rate of displacement, but it doesn't tell us anything about what happened during the motion. An object might speed up, slow down, stop, or reverse direction—average velocity only captures the net result over the entire time interval.</p>
+
+<p>For example, if you drive from home to school in 10 minutes, your average velocity is your displacement (from home to school) divided by 10 minutes. It doesn't matter if you stopped at red lights, waited in traffic, or drove at varying speeds—the average velocity only depends on where you started, where you ended, and how long it took.</p>
+
+<div class="real-world-box">
+    <h3>Real-World Example: Marathon Running</h3>
+    <p>A marathon is 42.195 kilometers long. If a runner completes the marathon in 3 hours, their average velocity is approximately 14.1 km/h (about 8.7 mph) along the course. Notice that we say "along the course"—the direction matters. If the marathon course loops back to the starting point (which many do), the displacement is zero and therefore the average velocity is zero, even though the runner clearly moved!</p>
+</div>
+
+<h2>Average Speed</h2>
+
+<p>While average velocity is based on displacement (a vector), we can also calculate an average rate based on distance (a scalar). This gives us average speed.</p>
+
+<div class="vocab-box">
+    <h3>Average Speed</h3>
+    <p><span class="vocab-term">Average speed</span> is the total distance traveled divided by the time interval. It is a scalar quantity with magnitude only (no direction). Average speed is represented by the symbol $s_{avg}$ and is measured in meters per second (m/s).</p>
+    <p>$$s_{avg} = \frac{d}{\Delta t}$$</p>
+    <p>where $d$ is the total distance traveled and $\Delta t$ is the time interval.</p>
+</div>
+
+<p>The key difference between average velocity and average speed is that velocity uses displacement while speed uses distance. Remember from Section 2.1 that displacement and distance are not always the same—distance is always greater than or equal to the magnitude of displacement.</p>
+
+<p>Average speed is always positive or zero (never negative) because distance is always positive or zero. In contrast, average velocity can be positive, negative, or zero depending on the direction of displacement.</p>
+
+<h3>Comparing Average Velocity and Average Speed</h3>
+<p>Let's compare these two quantities with a concrete example. Suppose you drive 60 km north in 1 hour, then turn around and drive 20 km south in 0.5 hours.</p>
+
+<ul>
+    <li><strong>Total distance:</strong> 60 km + 20 km = 80 km</li>
+    <li><strong>Displacement:</strong> 60 km north - 20 km south = 40 km north (or +40 km if north is positive)</li>
+    <li><strong>Total time:</strong> 1 hour + 0.5 hours = 1.5 hours</li>
+    <li><strong>Average speed:</strong> $s_{avg} = \frac{80\text{ km}}{1.5\text{ h}} = 53.3$ km/h</li>
+    <li><strong>Average velocity:</strong> $v_{avg} = \frac{40\text{ km north}}{1.5\text{ h}} = 26.7$ km/h north</li>
+</ul>
+
+<p>Notice that the average speed (53.3 km/h) is greater than the magnitude of the average velocity (26.7 km/h). This will always be true when an object changes direction during its motion.</p>
+
+<h2>Instantaneous Velocity</h2>
+
+<p>Average velocity tells us about motion over a time interval, but what if we want to know how fast something is moving at a particular instant? This is where instantaneous velocity comes in.</p>
+
+<div class="vocab-box">
+    <h3>Instantaneous Velocity</h3>
+    <p><span class="vocab-term">Instantaneous velocity</span> is the velocity of an object at a specific instant in time. It is the limit of average velocity as the time interval approaches zero. Instantaneous velocity is represented by the symbol $v$ (without the "avg" subscript) and is measured in meters per second (m/s).</p>
+</div>
+
+<p>Think of instantaneous velocity as the velocity shown on a car's speedometer at a particular moment. When you glance at your speedometer and it shows 60 mph, that's your instantaneous speed at that moment. (Speedometers show speed, not velocity, because they don't indicate direction.)</p>
+
+<p>Mathematically, instantaneous velocity is what you get if you make the time interval $\Delta t$ extremely small—approaching zero. If we calculate average velocity over smaller and smaller time intervals, we get closer and closer to the instantaneous velocity at a particular moment.</p>
+
+<p>For most situations in this course, when we refer to "velocity" without specifying average or instantaneous, we usually mean instantaneous velocity. The speedometer reading, the velocity of a ball at the moment it leaves your hand, and the velocity of a runner as they cross the finish line are all examples of instantaneous velocity.</p>
+
+<div class="real-world-box">
+    <h3>Historical Note: Galileo and Motion</h3>
+    <p>The Italian scientist Galileo Galilei (1564-1642) was one of the first to carefully study motion and distinguish between distance, speed, and acceleration. Before Galileo, many philosophers (following Aristotle) believed that heavier objects fell faster than lighter ones. Galileo challenged this through careful experiments and mathematical analysis. His work laid the foundation for Newton's laws of motion and our modern understanding of mechanics. Galileo showed that understanding motion requires precise definitions and mathematical descriptions—exactly what we're learning in this section!</p>
+</div>
+
+<h2>Sign Conventions for Velocity</h2>
+
+<p>Because velocity is a vector, its sign indicates direction. The sign convention depends on how we've defined our coordinate system, but typically:</p>
+
+<ul>
+    <li><strong>Positive velocity</strong> (+v): Motion in the positive direction (often right, forward, or upward)</li>
+    <li><strong>Negative velocity</strong> (-v): Motion in the negative direction (often left, backward, or downward)</li>
+    <li><strong>Zero velocity</strong> (v = 0): No motion (object is at rest)</li>
+</ul>
+
+<div class="info-box">
+    <h3>Important Distinction</h3>
+    <p>A negative velocity does NOT mean the object is slowing down! It simply means the object is moving in the negative direction. An object with velocity -30 m/s is moving just as fast as an object with velocity +30 m/s—they're just moving in opposite directions.</p>
+</div>
+
+<h1>Key Formulas for Practice Problems</h1>
+
+<p>Here are the essential formulas you'll need for solving problems in this section:</p>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Average Velocity</td>
+        <td style="text-align: center;">$v_{avg} = \frac{\Delta x}{\Delta t}$</td>
+        <td>$v_{avg}$ = average velocity (m/s)<br>
+            $\Delta x$ = displacement (m)<br>
+            $\Delta t$ = time interval (s)</td>
+    </tr>
+    <tr>
+        <td>Average Velocity<br>(alternate form)</td>
+        <td style="text-align: center;">$v_{avg} = \frac{x_f - x_i}{t_f - t_i}$</td>
+        <td>$v_{avg}$ = average velocity (m/s)<br>
+            $x_f$ = final position (m)<br>
+            $x_i$ = initial position (m)<br>
+            $t_f$ = final time (s)<br>
+            $t_i$ = initial time (s)</td>
+    </tr>
+    <tr>
+        <td>Average Speed</td>
+        <td style="text-align: center;">$s_{avg} = \frac{d}{\Delta t}$</td>
+        <td>$s_{avg}$ = average speed (m/s)<br>
+            $d$ = total distance (m)<br>
+            $\Delta t$ = time interval (s)</td>
+    </tr>
+    <tr>
+        <td>Displacement<br>(from velocity)</td>
+        <td style="text-align: center;">$\Delta x = v_{avg} \cdot \Delta t$</td>
+        <td>$\Delta x$ = displacement (m)<br>
+            $v_{avg}$ = average velocity (m/s)<br>
+            $\Delta t$ = time interval (s)</td>
+    </tr>
+</table>
+
+<h1>Example Problems</h1>
+
+<div class="info-box">
+    <h3>Problem-Solving Strategy</h3>
+    <p>When solving physics problems, follow these five steps:</p>
+    <ol>
+        <li><strong>List the Givens:</strong> Write down all known quantities with their values and units.</li>
+        <li><strong>Find the Formula:</strong> Identify which equation relates the known quantities to the unknown.</li>
+        <li><strong>Substitute:</strong> Plug the known values into the formula.</li>
+        <li><strong>Solve:</strong> Do the math to find the answer.</li>
+        <li><strong>Check:</strong> Does the answer make sense? Are the units correct?</li>
+    </ol>
+</div>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Average Velocity</h3>
+    <p><strong>Problem:</strong> A cyclist rides from position $x_i = 15$ m to position $x_f = 95$ m along a straight path. The ride takes 8.0 seconds. Calculate the cyclist's average velocity.</p>
+    
+    <p><strong>1. List the Givens:</strong></p>
+    <ul>
+        <li>Initial position: $x_i = 15$ m</li>
+        <li>Final position: $x_f = 95$ m</li>
+        <li>Time interval: $\Delta t = 8.0$ s</li>
+        <li>Unknown: average velocity $v_{avg}$</li>
+    </ul>
+    
+    <p><strong>2. Find the Formula:</strong></p>
+    <p>$$v_{avg} = \frac{x_f - x_i}{\Delta t}$$</p>
+    
+    <p><strong>3. Substitute:</strong></p>
+    <p>$$v_{avg} = \frac{95\text{ m} - 15\text{ m}}{8.0\text{ s}}$$</p>
+    
+    <p><strong>4. Solve:</strong></p>
+    <p>$$v_{avg} = \frac{80\text{ m}}{8.0\text{ s}} = 10\text{ m/s}$$</p>
+    
+    <p><strong>5. Check:</strong></p>
+    <p>The velocity is positive, which makes sense because the final position (95 m) is greater than the initial position (15 m), indicating motion in the positive direction. The units m/s are correct for velocity. The magnitude (10 m/s) seems reasonable for a cyclist.</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">The cyclist's average velocity is 10 m/s in the positive direction.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Average Speed vs. Average Velocity</h3>
+    <p><strong>Problem:</strong> A jogger runs 400 m north in 80 seconds, then runs 150 m south in 30 seconds. Calculate both the jogger's average speed and average velocity for the entire run.</p>
+    
+    <p><strong>1. List the Givens:</strong></p>
+    <ul>
+        <li>First segment: 400 m north, 80 s</li>
+        <li>Second segment: 150 m south, 30 s</li>
+        <li>Unknown: average speed $s_{avg}$ and average velocity $v_{avg}$</li>
+    </ul>
+    
+    <p><strong>2. Find the Formula:</strong></p>
+    <p>For average speed: $s_{avg} = \frac{d}{\Delta t}$</p>
+    <p>For average velocity: $v_{avg} = \frac{\Delta x}{\Delta t}$</p>
+    
+    <p><strong>3 & 4. Calculate Total Distance and Time:</strong></p>
+    <p>Total distance: $d = 400\text{ m} + 150\text{ m} = 550\text{ m}$</p>
+    <p>Total time: $\Delta t = 80\text{ s} + 30\text{ s} = 110\text{ s}$</p>
+    <p>Displacement (taking north as positive): $\Delta x = 400\text{ m} - 150\text{ m} = 250\text{ m}$</p>
+    
+    <p><strong>Average Speed:</strong></p>
+    <p>$$s_{avg} = \frac{550\text{ m}}{110\text{ s}} = 5.0\text{ m/s}$$</p>
+    
+    <p><strong>Average Velocity:</strong></p>
+    <p>$$v_{avg} = \frac{250\text{ m}}{110\text{ s}} = 2.3\text{ m/s}$$</p>
+    
+    <p><strong>5. Check:</strong></p>
+    <p>Average speed (5.0 m/s) is greater than the magnitude of average velocity (2.3 m/s), which makes sense because the jogger changed direction. Average velocity is positive, indicating net motion in the north (positive) direction. Both answers have appropriate units.</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">Average speed = 5.0 m/s. Average velocity = 2.3 m/s north.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Finding Displacement from Velocity</h3>
+    <p><strong>Problem:</strong> A car travels with an average velocity of -18 m/s for 12 seconds. The car's initial position is $x_i = 200$ m. Find: (a) the car's displacement, and (b) the car's final position.</p>
+    
+    <p><strong>1. List the Givens:</strong></p>
+    <ul>
+        <li>Average velocity: $v_{avg} = -18$ m/s</li>
+        <li>Time interval: $\Delta t = 12$ s</li>
+        <li>Initial position: $x_i = 200$ m</li>
+        <li>Unknown: (a) displacement $\Delta x$, (b) final position $x_f$</li>
+    </ul>
+    
+    <p><strong>Part (a): Find Displacement</strong></p>
+    
+    <p><strong>2. Find the Formula:</strong></p>
+    <p>Rearranging $v_{avg} = \frac{\Delta x}{\Delta t}$ gives us $\Delta x = v_{avg} \cdot \Delta t$</p>
+    
+    <p><strong>3. Substitute:</strong></p>
+    <p>$$\Delta x = (-18\text{ m/s})(12\text{ s})$$</p>
+    
+    <p><strong>4. Solve:</strong></p>
+    <p>$$\Delta x = -216\text{ m}$$</p>
+    
+    <p><strong>Part (b): Find Final Position</strong></p>
+    
+    <p><strong>2. Find the Formula:</strong></p>
+    <p>From $\Delta x = x_f - x_i$, we can rearrange to get $x_f = x_i + \Delta x$</p>
+    
+    <p><strong>3. Substitute:</strong></p>
+    <p>$$x_f = 200\text{ m} + (-216\text{ m})$$</p>
+    
+    <p><strong>4. Solve:</strong></p>
+    <p>$$x_f = -16\text{ m}$$</p>
+    
+    <p><strong>5. Check:</strong></p>
+    <p>The negative displacement (-216 m) makes sense because the velocity was negative, meaning motion in the negative direction. The final position (-16 m) is less than the initial position (200 m), which is consistent with negative displacement. The car crossed the origin and ended up on the negative side.</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">(a) Displacement = -216 m (or 216 m in the negative direction). (b) Final position = -16 m.</span></p>
+</div>
+
+<h1>Summary</h1>
+<ul>
+    <li><strong>Average velocity</strong> is displacement divided by time: $v_{avg} = \frac{\Delta x}{\Delta t}$. It is a vector quantity with direction.</li>
+    <li><strong>Average speed</strong> is distance divided by time: $s_{avg} = \frac{d}{\Delta t}$. It is a scalar quantity without direction.</li>
+    <li>Average velocity can be positive, negative, or zero depending on the direction of displacement.</li>
+    <li>Average speed is always positive or zero, never negative.</li>
+    <li>Average speed is always greater than or equal to the magnitude of average velocity.</li>
+    <li>Average speed equals the magnitude of average velocity only when motion is in a straight line without reversing direction.</li>
+    <li><strong>Instantaneous velocity</strong> is the velocity at a specific moment in time, like a speedometer reading.</li>
+    <li>Velocity is measured in meters per second (m/s) in SI units, but other units like km/h and mph are also common.</li>
+    <li>A negative velocity indicates motion in the negative direction, not necessarily slowing down.</li>
+    <li>Zero velocity means an object is at rest (not moving).</li>
+</ul>
+
+<h1>Key Terms</h1>
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Average Velocity</strong></td>
+        <td>Displacement divided by time interval; a vector quantity indicating rate and direction of motion</td>
+    </tr>
+    <tr>
+        <td><strong>Average Speed</strong></td>
+        <td>Total distance divided by time interval; a scalar quantity indicating only rate of motion</td>
+    </tr>
+    <tr>
+        <td><strong>Instantaneous Velocity</strong></td>
+        <td>Velocity at a specific instant in time; what a speedometer measures</td>
+    </tr>
+    <tr>
+        <td><strong>Time Interval</strong></td>
+        <td>The duration between two events, calculated as $\Delta t = t_f - t_i$</td>
+    </tr>
+    <tr>
+        <td><strong>Meters per Second (m/s)</strong></td>
+        <td>The SI unit for velocity and speed</td>
+    </tr>
+    <tr>
+        <td><strong>Sign Convention</strong></td>
+        <td>Agreement about which direction is positive and which is negative in a coordinate system</td>
+    </tr>
+    <tr>
+        <td><strong>Rate</strong></td>
+        <td>How quickly one quantity changes with respect to another (velocity is rate of position change)</td>
+    </tr>
+</table>
+
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Explain the difference between average velocity and average speed. Under what conditions are they equal in magnitude?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>2.</strong> A student says "My velocity was -15 m/s, so I was moving slowly." Is this statement correct? Explain.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>3.</strong> Can an object have zero velocity but non-zero speed? Can an object have zero speed but non-zero velocity? Explain your answers.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>4.</strong> What is the average velocity of an object that starts at position $x = 5$ m and moves to position $x = -3$ m in 4 seconds? What does the sign of your answer tell you?</p>
+<div class="answer-space-full"></div>
+
+<p><strong>5.</strong> A runner completes a 400-meter lap around a circular track in 80 seconds. Calculate the runner's average speed and average velocity for the lap.</p>
+<div class="answer-space-full"></div>
+
+<p><strong>6.</strong> A car travels with an average velocity of 25 m/s for 6.0 seconds. If the car's initial position is $x_i = 50$ m, what is its final position?</p>
+<div class="answer-space-full"></div>
+
+<p><strong>7.</strong> A delivery van drives 8.0 km east in 10 minutes, then drives 5.0 km west in 8 minutes. Calculate:</p>
+<ul>
+    <li>a) The van's average speed for the entire trip</li>
+    <li>b) The van's average velocity for the entire trip</li>
+</ul>
+<p>(Hint: First convert time to seconds)</p>
+<div class="answer-space-full"></div>
+
+<p><strong>8.</strong> A swimmer swims from one end of a 50-meter pool to the other end in 35 seconds, then immediately swims back to the starting point in 38 seconds. Calculate:</p>
+<ul>
+    <li>a) The average speed for the entire swim</li>
+    <li>b) The average velocity for the entire swim</li>
+    <li>c) The average speed for just the return trip</li>
+</ul>
+<div class="answer-space-full"></div>
+
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> <strong>Average velocity</strong> is displacement divided by time and includes direction (vector), while <strong>average speed</strong> is distance divided by time and has no direction (scalar). They are equal in magnitude only when an object moves in a straight line in one direction without reversing course. In this case, displacement equals distance, so $|v_{avg}| = s_{avg}$.</p>
+
+<p><strong>2.</strong> The statement is <strong>incorrect</strong>. A velocity of -15 m/s means the object is moving at 15 m/s in the negative direction. The negative sign indicates direction, not slowness. An object with velocity -15 m/s is moving just as fast as an object with velocity +15 m/s—they're just moving in opposite directions.</p>
+
+<p><strong>3.</strong> <strong>No</strong> to both. If velocity is zero, the object is at rest, so its speed must also be zero. If speed is zero, the object is at rest, so its velocity must also be zero. Speed is the magnitude of velocity, so they're both zero or both non-zero together. (Note: Instantaneous velocity and speed are always either both zero or both non-zero. Average velocity can be zero when average speed is not, such as when you return to your starting point.)</p>
+
+<p><strong>4.</strong></p>
+<p><strong>Givens:</strong> $x_i = 5$ m, $x_f = -3$ m, $\Delta t = 4$ s</p>
+<p><strong>Formula:</strong> $v_{avg} = \frac{x_f - x_i}{\Delta t}$</p>
+<p><strong>Substitute:</strong> $v_{avg} = \frac{-3\text{ m} - 5\text{ m}}{4\text{ s}} = \frac{-8\text{ m}}{4\text{ s}}$</p>
+<p><strong>Solve:</strong> $v_{avg} = -2\text{ m/s}$</p>
+<p><strong>Answer:</strong> <span class="highlight">The average velocity is -2 m/s. The negative sign indicates motion in the negative direction (from positive position toward and past the origin).</span></p>
+
+<p><strong>5.</strong></p>
+<p><strong>For a complete lap on a circular track, the displacement is zero</strong> (the runner returns to the starting point).</p>
+<p><strong>Average speed:</strong> $s_{avg} = \frac{d}{\Delta t} = \frac{400\text{ m}}{80\text{ s}} = 5.0\text{ m/s}$</p>
+<p><strong>Average velocity:</strong> $v_{avg} = \frac{\Delta x}{\Delta t} = \frac{0\text{ m}}{80\text{ s}} = 0\text{ m/s}$</p>
+<p><strong>Answer:</strong> <span class="highlight">Average speed = 5.0 m/s. Average velocity = 0 m/s (because displacement is zero).</span></p>
+
+<p><strong>6.</strong></p>
+<p><strong>Givens:</strong> $v_{avg} = 25$ m/s, $\Delta t = 6.0$ s, $x_i = 50$ m</p>
+<p><strong>Find displacement first:</strong> $\Delta x = v_{avg} \cdot \Delta t = (25\text{ m/s})(6.0\text{ s}) = 150\text{ m}$</p>
+<p><strong>Find final position:</strong> $x_f = x_i + \Delta x = 50\text{ m} + 150\text{ m} = 200\text{ m}$</p>
+<p><strong>Answer:</strong> <span class="highlight">The car's final position is 200 m.</span></p>
+
+<p><strong>7.</strong></p>
+<p><strong>Convert time:</strong> 10 min = 600 s, 8 min = 480 s, total time = 1080 s</p>
+<p><strong>Total distance:</strong> $d = 8.0\text{ km} + 5.0\text{ km} = 13.0\text{ km} = 13,000\text{ m}$</p>
+<p><strong>Displacement (east is positive):</strong> $\Delta x = 8.0\text{ km} - 5.0\text{ km} = 3.0\text{ km} = 3000\text{ m}$ east</p>
+<p><strong>a) Average speed:</strong> $s_{avg} = \frac{13,000\text{ m}}{1080\text{ s}} = 12\text{ m/s}$</p>
+<p><strong>b) Average velocity:</strong> $v_{avg} = \frac{3000\text{ m east}}{1080\text{ s}} = 2.8\text{ m/s east}$</p>
+<p><strong>Answer:</strong> <span class="highlight">a) Average speed = 12 m/s. b) Average velocity = 2.8 m/s east.</span></p>
+
+<p><strong>8.</strong></p>
+<p><strong>Total distance:</strong> $d = 50\text{ m} + 50\text{ m} = 100\text{ m}$</p>
+<p><strong>Total time:</strong> $\Delta t = 35\text{ s} + 38\text{ s} = 73\text{ s}$</p>
+<p><strong>Displacement:</strong> $\Delta x = 0$ m (returns to start)</p>
+<p><strong>a) Average speed (entire swim):</strong> $s_{avg} = \frac{100\text{ m}}{73\text{ s}} = 1.4\text{ m/s}$</p>
+<p><strong>b) Average velocity (entire swim):</strong> $v_{avg} = \frac{0\text{ m}}{73\text{ s}} = 0\text{ m/s}$</p>
+<p><strong>c) Average speed (return trip only):</strong> $s_{avg} = \frac{50\text{ m}}{38\text{ s}} = 1.3\text{ m/s}$</p>
+<p><strong>Answer:</strong> <span class="highlight">a) 1.4 m/s, b) 0 m/s, c) 1.3 m/s</span></p>
+
+</body>
+</html>

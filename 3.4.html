@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 3.4 - Newton's Third Law</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #000000;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.06in 0;
+        }
+        
+        p {
+            text-align: justify;
+            margin: 0.05in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space-full {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .answer-space-short {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+            text-align: left;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 3.4</div>
+    <h1>Newton's Third Law</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#f0f8ff"/>
+        
+        <!-- Two objects colliding/interacting -->
+        <!-- Object A (left - blue) -->
+        <rect x="180" y="120" width="70" height="60" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <text x="215" y="155" font-size="16" text-anchor="middle" fill="white" font-weight="bold">A</text>
+        
+        <!-- Object B (right - orange) -->
+        <rect x="350" y="120" width="70" height="60" fill="#FF6600" stroke="#000033" stroke-width="2"/>
+        <text x="385" y="155" font-size="16" text-anchor="middle" fill="white" font-weight="bold">B</text>
+        
+        <!-- Action-Reaction force arrows -->
+        <defs>
+            <marker id="arrowActionRight" markerWidth="12" markerHeight="12" refX="11" refY="3" orient="auto">
+                <polygon points="0 0, 12 3, 0 6" fill="#CC3300"/>
+            </marker>
+            <marker id="arrowReactionLeft" markerWidth="12" markerHeight="12" refX="1" refY="3" orient="auto">
+                <polygon points="12 0, 0 3, 12 6" fill="#006633"/>
+            </marker>
+        </defs>
+        
+        <!-- Force of A on B (action) -->
+        <line x1="255" y1="150" x2="345" y2="150" stroke="#CC3300" stroke-width="5" marker-end="url(#arrowActionRight)"/>
+        <text x="300" y="140" font-size="14" text-anchor="middle" fill="#CC3300" font-weight="bold">F_AB</text>
+        
+        <!-- Force of B on A (reaction) -->
+        <line x1="345" y1="170" x2="255" y2="170" stroke="#006633" stroke-width="5" marker-end="url(#arrowReactionLeft)"/>
+        <text x="300" y="195" font-size="14" text-anchor="middle" fill="#006633" font-weight="bold">F_BA</text>
+        
+        <!-- Equation at bottom -->
+        <text x="300" y="240" font-size="18" text-anchor="middle" fill="#000033" font-weight="bold">F_AB = -F_BA</text>
+        <text x="300" y="265" font-size="14" text-anchor="middle" fill="#000033">Equal Magnitude, Opposite Direction</text>
+    </svg>
+    
+    <p>For every action, there is an equal and opposite reaction. When you push on a wall, the wall pushes back on you with equal force. When a rocket expels gas downward, the gas pushes the rocket upward. Newton's Third Law reveals that forces always come in pairs and helps explain everything from walking to rocket propulsion.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <p><strong>I can...</strong></p>
+    <ul>
+        <li>State Newton's Third Law and identify action-reaction force pairs in various situations.</li>
+        <li>Explain why action-reaction pairs do not cancel each other out despite being equal in magnitude and opposite in direction.</li>
+        <li>Apply Newton's Third Law to analyze interactions between objects, including collisions and propulsion.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Have you ever noticed that when you jump, you push down on the ground and the ground pushes you upward? Or that when you swim, you push water backward and the water pushes you forward? These everyday experiences demonstrate Newton's Third Law of Motion, which states that forces always occur in pairs.</p>
+
+<p>Newton's Third Law is often stated as "For every action, there is an equal and opposite reaction." While this statement is memorable, it's important to understand exactly what it means. The "action" and "reaction" are simply two names for the forces in an interaction—they're two sides of the same coin, occurring simultaneously.</p>
+
+<div class="real-world-box">
+    <h3>The Mystery of Walking</h3>
+    <p>Walking seems simple, but it's actually a continuous application of Newton's Third Law. When you walk, your foot pushes backward on the ground. By Newton's Third Law, the ground pushes forward on your foot with equal force, propelling you forward. Without friction between your foot and the ground, you couldn't walk—your foot would just slip backward, as happens on ice.</p>
+</div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>Newton's Third Law</h1>
+
+<p><span class="vocab-term">Newton's Third Law</span> states: When one object exerts a force on a second object, the second object simultaneously exerts a force equal in magnitude and opposite in direction on the first object.</p>
+
+<div class="vocab-box">
+    <p><strong>Newton's Third Law:</strong> Forces always occur in pairs. If object A exerts a force on object B, then object B exerts an equal and opposite force on object A. Mathematically: $\vec{F}_{AB} = -\vec{F}_{BA}$</p>
+</div>
+
+<p>These paired forces are called <span class="vocab-term">action-reaction pairs</span> or <span class="vocab-term">interaction pairs</span>. It's important to note that "action" and "reaction" are just labels—neither force comes first. They occur simultaneously and are two aspects of a single interaction.</p>
+
+<div class="vocab-box">
+    <p><strong>Action-reaction pair:</strong> Two forces that are equal in magnitude, opposite in direction, and act on different objects. They represent a single interaction between two objects.</p>
+</div>
+
+<h2>Key Characteristics of Action-Reaction Pairs</h2>
+
+<p><strong>1. Equal Magnitude:</strong> The two forces have exactly the same strength, measured in newtons.</p>
+
+<p><strong>2. Opposite Direction:</strong> The forces point in exactly opposite directions.</p>
+
+<p><strong>3. Same Type of Force:</strong> Both forces are the same type (both contact forces, both gravitational, etc.).</p>
+
+<p><strong>4. Act on Different Objects:</strong> This is crucial—each force acts on a different object. One force acts on object A, the other on object B.</p>
+
+<p><strong>5. Occur Simultaneously:</strong> Neither force exists without the other; they're created and removed together.</p>
+
+<div class="info-box">
+    <p><strong>Critical Understanding:</strong> Action-reaction pairs do NOT cancel each other out because they act on different objects. To cancel, forces must act on the same object. When analyzing the motion of a single object, only the forces acting ON that object matter.</p>
+</div>
+
+<h1>Why Action-Reaction Pairs Don't Cancel</h1>
+
+<p>Students often wonder: "If action and reaction forces are equal and opposite, why don't they cancel out?" The answer is that these forces act on <em>different</em> objects.</p>
+
+<p>Consider a book sitting on a table:</p>
+<ul>
+    <li>The book pushes down on the table with force $F_{book \, on \, table}$</li>
+    <li>The table pushes up on the book with force $F_{table \, on \, book}$</li>
+    <li>These are action-reaction pairs: equal magnitude, opposite direction</li>
+</ul>
+
+<p>However, if we analyze the book's motion, we only consider forces acting ON the book:</p>
+<ul>
+    <li>Weight (Earth pulling down on book)</li>
+    <li>Normal force (table pushing up on book)</li>
+</ul>
+
+<p>These two forces happen to be equal (book is in equilibrium), but they are NOT an action-reaction pair. They're both acting on the book, they're different types of forces, and they don't have to be equal.</p>
+
+<h1>Identifying Action-Reaction Pairs</h1>
+
+<p>To identify action-reaction pairs, follow this format:</p>
+
+<p><strong>Force 1:</strong> Object A exerts force on Object B</p>
+<p><strong>Force 2:</strong> Object B exerts force on Object A</p>
+
+<p>Notice that the objects are simply swapped. If Force 1 is "hand pushes on wall," then Force 2 is "wall pushes on hand."</p>
+
+<div class="info-box">
+    <p><strong>Common Error:</strong> Students often incorrectly identify balanced forces as action-reaction pairs. Remember: balanced forces act on the SAME object (like weight and normal force on a stationary book). Action-reaction pairs act on DIFFERENT objects.</p>
+</div>
+
+<h2>Examples of Action-Reaction Pairs</h2>
+
+<p><strong>Example 1: Jumping</strong></p>
+<ul>
+    <li><strong>Action:</strong> Your feet push down on the ground</li>
+    <li><strong>Reaction:</strong> The ground pushes up on your feet</li>
+    <li>Result: The upward force from the ground accelerates you upward</li>
+</ul>
+
+<p><strong>Example 2: Swimming</strong></p>
+<ul>
+    <li><strong>Action:</strong> Your hands push water backward</li>
+    <li><strong>Reaction:</strong> Water pushes your hands forward</li>
+    <li>Result: The forward force from the water propels you forward</li>
+</ul>
+
+<p><strong>Example 3: Rocket Launch</strong></p>
+<ul>
+    <li><strong>Action:</strong> Rocket pushes hot gas downward</li>
+    <li><strong>Reaction:</strong> Hot gas pushes rocket upward</li>
+    <li>Result: The upward force accelerates the rocket into space</li>
+</ul>
+
+<div class="real-world-box">
+    <h3>Newton's Third Law in Space</h3>
+    <p><strong>Rocket Propulsion:</strong> Rockets work in space (where there's no air to push against) because they rely on Newton's Third Law. The rocket expels gas molecules at high speed in one direction, and by Newton's Third Law, the gas pushes the rocket in the opposite direction. This is why rockets carry their own fuel—they create thrust by expelling mass, not by pushing against anything external.</p>
+    <p><strong>Spacewalk Movement:</strong> Astronauts on spacewalks must be careful when they push off from the spacecraft. When they push on the spacecraft, it pushes back on them (Newton's Third Law), and they'll drift away unless tethered.</p>
+</div>
+
+<h1>Applications of Newton's Third Law</h1>
+
+<h2>Propulsion Systems</h2>
+
+<p>All propulsion works via Newton's Third Law—you move by pushing something in the opposite direction:</p>
+
+<ul>
+    <li><strong>Walking/Running:</strong> Push ground backward → ground pushes you forward</li>
+    <li><strong>Swimming:</strong> Push water backward → water pushes you forward</li>
+    <li><strong>Rowing:</strong> Oar pushes water backward → water pushes boat forward</li>
+    <li><strong>Flying (bird):</strong> Wings push air downward/backward → air pushes bird upward/forward</li>
+    <li><strong>Jet engine:</strong> Engine pushes air backward → air pushes plane forward</li>
+    <li><strong>Rocket:</strong> Rocket expels gas backward → gas pushes rocket forward</li>
+</ul>
+
+<h2>Recoil</h2>
+
+<p><span class="vocab-term">Recoil</span> is the backward motion experienced when firing a gun or launching a projectile. When the gun pushes the bullet forward, the bullet pushes the gun backward with equal force.</p>
+
+<div class="vocab-box">
+    <p><strong>Recoil:</strong> The backward motion of a device that expels a projectile, caused by Newton's Third Law—the expelled object pushes back on the device.</p>
+</div>
+
+<h2>Collisions</h2>
+
+<p>In collisions, both objects exert equal and opposite forces on each other, regardless of their masses or velocities. A small car hitting a large truck experiences the same magnitude of force as the truck experiences—though the effects are very different due to the different masses (Newton's Second Law: $a = F/m$).</p>
+
+<h1>Key Formulas for Practice Problems</h1>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Newton's Third Law</td>
+        <td style="text-align: center;">$F_{AB} = -F_{BA}$</td>
+        <td>$F_{AB}$ = force of A on B (N)<br>
+            $F_{BA}$ = force of B on A (N)<br>
+            Negative sign indicates opposite directions</td>
+    </tr>
+    <tr>
+        <td>Newton's Second Law</td>
+        <td style="text-align: center;">$F = ma$</td>
+        <td>$F$ = net force (N)<br>
+            $m$ = mass (kg)<br>
+            $a$ = acceleration (m/s²)</td>
+    </tr>
+    <tr>
+        <td>Momentum</td>
+        <td style="text-align: center;">$p = mv$</td>
+        <td>$p$ = momentum (kg·m/s)<br>
+            $m$ = mass (kg)<br>
+            $v$ = velocity (m/s)</td>
+    </tr>
+</table>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="info-box">
+    <p><strong>Problem-Solving Strategy (5 Steps):</strong></p>
+    <ol>
+        <li><strong>List the Givens:</strong> Write down all known values with units</li>
+        <li><strong>Find the Formula:</strong> Identify the appropriate equation</li>
+        <li><strong>Substitute:</strong> Plug values into the formula</li>
+        <li><strong>Solve:</strong> Calculate the answer</li>
+        <li><strong>Check:</strong> Verify units and reasonableness</li>
+    </ol>
+</div>
+
+<div class="example-box">
+    <h3>Example 1: Identifying Action-Reaction Pairs</h3>
+    <p><strong>Problem:</strong> A person pushes on a wall with a force of 100 N to the right. Identify the action-reaction pair and state the magnitude and direction of each force.</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>Force of person on wall = 100 N to the right</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>Newton's Third Law: $F_{person \, on \, wall} = -F_{wall \, on \, person}$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>If person pushes wall with 100 N right, wall pushes person with 100 N left</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p><strong>Action:</strong> Person exerts 100 N to the right on wall</p>
+    <p><strong>Reaction:</strong> Wall exerts 100 N to the left on person</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Equal magnitude ✓ Opposite direction ✓ Different objects ✓</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">Action-reaction pair: Person pushes wall with 100 N right; wall pushes person with 100 N left.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Forces in Collision</h3>
+    <p><strong>Problem:</strong> A 1000 kg car collides with a 2000 kg truck. During the collision, the car experiences a force of 15,000 N. What force does the truck experience? Which object experiences greater acceleration?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$m_{car} = 1000 \text{ kg}$</p>
+    <p>$m_{truck} = 2000 \text{ kg}$</p>
+    <p>$F_{on \, car} = 15,000 \text{ N}$</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>Newton's Third Law: Forces are equal in magnitude</p>
+    <p>Newton's Second Law: $a = F/m$ to compare accelerations</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>Force on truck = 15,000 N (by Newton's Third Law)</p>
+    <p>$a_{car} = \frac{15,000}{1000} = 15 \text{ m/s}^2$</p>
+    <p>$a_{truck} = \frac{15,000}{2000} = 7.5 \text{ m/s}^2$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>Truck experiences 15,000 N force</p>
+    <p>Car has greater acceleration (15 m/s² vs 7.5 m/s²)</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Forces equal ✓ Smaller mass has larger acceleration ✓</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">The truck experiences 15,000 N. The car experiences greater acceleration (15 m/s² compared to the truck's 7.5 m/s²) because it has less mass.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Rocket Propulsion (Multi-step)</h3>
+    <p><strong>Problem:</strong> A rocket with mass 5000 kg expels 50 kg of gas per second at a velocity of 2000 m/s relative to the rocket. (a) What is the momentum change of the expelled gas each second? (b) By Newton's Third Law, what force does the gas exert on the rocket? (c) What is the rocket's acceleration?</p>
+    
+    <p><strong>Part (a): Momentum Change of Gas</strong></p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$m_{gas} = 50 \text{ kg}$ (per second)</p>
+    <p>$v_{gas} = 2000 \text{ m/s}$</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$\Delta p = m v$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$\Delta p = (50)(2000)$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$\Delta p = 100,000 \text{ kg·m/s per second}$</p>
+    
+    <p><strong>Part (b): Force on Rocket</strong></p>
+    
+    <p>Change in momentum per time equals force: $F = \Delta p / \Delta t$</p>
+    <p>$F = 100,000 \text{ kg·m/s} / 1 \text{ s} = 100,000 \text{ N}$</p>
+    
+    <p>By Newton's Third Law, if rocket pushes gas with 100,000 N, gas pushes rocket with 100,000 N</p>
+    
+    <p><strong>Part (c): Rocket Acceleration</strong></p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$F = 100,000 \text{ N}$, $m_{rocket} = 5000 \text{ kg}$</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$a = F/m$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$a = \frac{100,000}{5000}$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$a = 20 \text{ m/s}^2$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Acceleration is about twice gravity, reasonable for rocket ✓</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">(a) Gas momentum change is 100,000 kg·m/s per second (b) Gas exerts 100,000 N force on rocket (c) Rocket acceleration is 20 m/s²</span></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Newton's Third Law: When object A exerts a force on object B, object B simultaneously exerts an equal and opposite force on object A.</li>
+    <li>Action-reaction pairs are equal in magnitude, opposite in direction, same type of force, and act on different objects.</li>
+    <li>Action-reaction pairs occur simultaneously—neither comes first.</li>
+    <li>Action-reaction pairs don't cancel because they act on different objects; forces must act on the same object to cancel.</li>
+    <li>All propulsion systems work via Newton's Third Law—you move by pushing something in the opposite direction.</li>
+    <li>In collisions, both objects experience equal magnitude forces, but different accelerations due to different masses.</li>
+    <li>Rockets work in space by expelling gas—the gas pushes the rocket forward via Newton's Third Law.</li>
+    <li>Recoil is the backward motion experienced when firing a gun, caused by the bullet pushing back on the gun.</li>
+    <li>When identifying action-reaction pairs, swap the objects: "A pushes B" pairs with "B pushes A."</li>
+    <li>Newton's Third Law explains walking, swimming, rocket propulsion, recoil, and collisions.</li>
+</ul>
+
+<!-- ============== KEY TERMS ============== -->
+<h1>Key Terms</h1>
+
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Newton's Third Law</strong></td>
+        <td>For every action force, there is an equal and opposite reaction force; forces occur in pairs</td>
+    </tr>
+    <tr>
+        <td><strong>Action-reaction pair</strong></td>
+        <td>Two forces equal in magnitude, opposite in direction, acting on different objects</td>
+    </tr>
+    <tr>
+        <td><strong>Action force</strong></td>
+        <td>One force in an interaction pair (the label is arbitrary—either can be called "action")</td>
+    </tr>
+    <tr>
+        <td><strong>Reaction force</strong></td>
+        <td>The other force in an interaction pair (paired with the "action")</td>
+    </tr>
+    <tr>
+        <td><strong>Recoil</strong></td>
+        <td>Backward motion of a device that expels a projectile, caused by Newton's Third Law</td>
+    </tr>
+    <tr>
+        <td><strong>Propulsion</strong></td>
+        <td>Motion achieved by pushing something in the opposite direction (Newton's Third Law)</td>
+    </tr>
+    <tr>
+        <td><strong>Momentum</strong></td>
+        <td>The product of mass and velocity; quantity of motion (p = mv)</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> State Newton's Third Law in your own words. Why are the paired forces called "action-reaction" pairs?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>2.</strong> Explain why action-reaction force pairs don't cancel each other out, even though they're equal in magnitude and opposite in direction.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>3.</strong> A student jumps upward from the ground. Identify the action-reaction pair involved in the jump.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>4.</strong> A book sits at rest on a table. Identify: (a) the action-reaction pair involving the book and table, and (b) the action-reaction pair involving the book and Earth. Are any of these forces balanced? Explain.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>5.</strong> A person pushes a wall with a force of 150 N. What force does the wall exert on the person? In what direction?</p>
+<div class="answer-space-full"></div>
+
+<p><strong>6.</strong> During a collision between a compact car (mass 900 kg) and an SUV (mass 2400 kg), the car experiences a force of 18,000 N. What force does the SUV experience? What is the acceleration of each vehicle during the collision?</p>
+<div class="answer-space-full"></div>
+
+<p><strong>7.</strong> A rifle fires a 0.02 kg bullet with a velocity of 400 m/s. (a) If the bullet takes 0.001 seconds to leave the barrel, what is the average force on the bullet? (b) What force does the bullet exert on the rifle? (c) If the rifle has a mass of 4 kg, what is its recoil acceleration?</p>
+<div class="answer-space-full"></div>
+
+<p><strong>8.</strong> An astronaut (mass 80 kg including spacesuit) is floating in space 10 meters from her spacecraft. She throws a 2 kg tool toward the spacecraft at a velocity of 10 m/s. (a) What is the momentum of the tool? (b) What is the astronaut's recoil velocity? (c) How long will it take her to reach the spacecraft?</p>
+<div class="answer-space-full"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> Newton's Third Law states that forces always occur in pairs. When one object exerts a force on another object, the second object exerts an equal force in the opposite direction back on the first object. They're called "action-reaction" pairs because they represent two aspects of a single interaction—one object's action on another and that object's reaction back. The terms "action" and "reaction" are just labels; neither force comes first.</p>
+
+<p><strong>2.</strong> Action-reaction force pairs don't cancel because they act on different objects. For forces to cancel (produce zero net force), they must act on the same object. For example, when you push a wall, the wall pushes you—but one force acts on the wall (making it slightly compress) and the other acts on you (pushing you backward). Since they act on different objects, they can't cancel each other. Each object responds to the force acting on it according to Newton's Second Law.</p>
+
+<p><strong>3.</strong> <strong>Action:</strong> The person's feet push down on the ground. <strong>Reaction:</strong> The ground pushes up on the person's feet. The upward force from the ground (reaction) is what accelerates the person upward during the jump.</p>
+
+<p><strong>4.</strong> (a) Action-reaction pair between book and table: The book pushes down on the table, and the table pushes up on the book. (b) Action-reaction pair between book and Earth: Earth pulls down on the book (weight), and the book pulls up on Earth. Regarding balanced forces: The upward push from the table and the downward weight are balanced forces (both act on the book, producing zero net force), but they are NOT an action-reaction pair because they're different types of forces (contact vs. gravitational) and both act on the book.</p>
+
+<p><strong>5.</strong> By Newton's Third Law, if the person pushes the wall with 150 N, the wall pushes the person with 150 N in the opposite direction. If the person pushes to the right, the wall pushes to the left. <strong>Answer:</strong> <span class="highlight">The wall exerts 150 N on the person in the direction opposite to the person's push.</span></p>
+
+<p><strong>6.</strong> By Newton's Third Law, the SUV experiences the same magnitude force as the car: 18,000 N.<br>
+Car acceleration: $a = F/m = 18,000/900 = 20 \text{ m/s}^2$<br>
+SUV acceleration: $a = F/m = 18,000/2400 = 7.5 \text{ m/s}^2$<br>
+<strong>Answer:</strong> <span class="highlight">SUV experiences 18,000 N. Car acceleration: 20 m/s². SUV acceleration: 7.5 m/s². The lighter car experiences much greater acceleration despite equal forces.</span></p>
+
+<p><strong>7.</strong> (a) First find bullet's acceleration: $v = at$, so $a = v/t = 400/0.001 = 400,000 \text{ m/s}^2$<br>
+Force on bullet: $F = ma = (0.02)(400,000) = 8,000 \text{ N}$<br>
+<br>
+(b) By Newton's Third Law, bullet exerts 8,000 N on rifle<br>
+<br>
+(c) Rifle acceleration: $a = F/m = 8,000/4 = 2,000 \text{ m/s}^2$<br>
+<br>
+<strong>Answer:</strong> <span class="highlight">(a) 8,000 N on bullet (b) 8,000 N on rifle (c) 2,000 m/s² recoil acceleration</span></p>
+
+<p><strong>8.</strong> (a) Tool momentum: $p = mv = (2)(10) = 20 \text{ kg·m/s}$<br>
+<br>
+(b) By conservation of momentum (Newton's Third Law), astronaut gains equal momentum in opposite direction:<br>
+$p_{astronaut} = 20 \text{ kg·m/s}$ (toward spacecraft)<br>
+$v = p/m = 20/80 = 0.25 \text{ m/s}$<br>
+<br>
+(c) Time to reach spacecraft: $t = d/v = 10/0.25 = 40 \text{ s}$<br>
+<br>
+<strong>Answer:</strong> <span class="highlight">(a) Tool momentum: 20 kg·m/s (b) Astronaut velocity: 0.25 m/s toward spacecraft (c) Time: 40 seconds</span></p>
+
+</body>
+</html>

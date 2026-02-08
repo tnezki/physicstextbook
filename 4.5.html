@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 4.5 - Kinetic Energy and Conservation of Energy</title>
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <style>
+        body {font-family: 'Times New Roman', serif; font-size: 16px; line-height: 1.3; background-color: #ffffff; color: #000000; max-width: 8.5in; margin: 0 auto; padding: 0.5in;}
+        .title-page {page-break-after: always; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; min-height: 10in; background-color: white; color: #000033; padding: 0.5in; margin-bottom: 0.5in; border: 2px solid #000033;}
+        .title-page-image {width: 100%; max-width: 5in; height: auto; margin-bottom: 0.3in; margin-top: 0.2in;}
+        .section-number {font-size: 28px; font-weight: bold; margin-bottom: 0.2in; letter-spacing: 2px; color: #000033;}
+        .title-page h1 {font-size: 28px; font-weight: bold; margin-bottom: 0.2in; line-height: 1.4; color: #000033; letter-spacing: 2px; background-color: transparent; padding: 0; margin: 0.15in 0 0.2in 0;}
+        .title-page p {font-size: 16px; max-width: 5.5in; line-height: 1.6; margin-top: 0.1in; color: #000033;}
+        h1 {font-size: 24px; background-color: #000033; color: white; padding: 6px; margin-top: 0.1in; margin-bottom: 0.06in;}
+        h2 {font-size: 18px; background-color: #000033; color: white; padding: 6px; margin-top: 0.1in; margin-bottom: 0.06in;}
+        h3 {font-size: 16px; color: #000033; font-weight: bold; margin-top: 0.08in; margin-bottom: 0.04in;}
+        p {text-align: justify; margin-bottom: 0.05in;}
+        .vocab-term {font-weight: bold;}
+        .learning-objectives {background-color: #e8f4f8; border-left: 4px solid #0066cc; padding: 0.08in; margin: 0.06in 0;}
+        .info-box {background-color: #fffacd; border-left: 4px solid #cc6600; padding: 0.08in; margin: 0.06in 0;}
+        .vocab-box {background-color: #f5f5f5; border: 1px solid #cccccc; padding: 0.08in; margin: 0.06in 0;}
+        .example-box {background-color: #f9f9f9; border-left: 4px solid #cc6600; padding: 0.08in; margin: 0.06in 0; font-size: 14px;}
+        .real-world-box {background-color: #e6f3ff; border-left: 4px solid #0066cc; padding: 0.08in; margin: 0.06in 0;}
+        .formula-box {background-color: #f0f0f0; border: 2px solid #000033; padding: 0.08in; margin: 0.06in 0; text-align: center;}
+        .answer-space {min-height: 1.2in; background-color: #fafafa; border-bottom: 1px solid #ddd; padding: 0.05in; margin: 0.1in 0;}
+        .short-answer-space {min-height: 0.8in; background-color: #fafafa; border-bottom: 1px solid #ddd; padding: 0.05in; margin: 0.08in 0;}
+        .highlight {background-color: #ffff99;}
+        table {width: 100%; border-collapse: collapse; margin: 0.06in 0; font-size: 14px;}
+        th {background-color: #000033; color: white; padding: 6px; border: 1px solid #cccccc;}
+        td {padding: 6px; border: 1px solid #cccccc;}
+        ul, ol {margin-left: 0.2in;}
+    </style>
+</head>
+<body>
+
+<div class="title-page">
+    <div class="section-number">SECTION 4.5</div>
+    <h1>Kinetic Energy and Conservation of Energy</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <rect width="600" height="300" fill="url(#skyGrad)"/>
+        
+        <!-- Roller coaster track -->
+        <path d="M 50 200 Q 150 50, 250 150 T 550 200" stroke="#000033" stroke-width="4" fill="none"/>
+        
+        <!-- Cart at top (all PE) -->
+        <rect x="240" y="130" width="30" height="20" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <circle cx="245" cy="150" r="5" fill="#000033"/>
+        <circle cx="265" cy="150" r="5" fill="#000033"/>
+        <text x="255" y="120" font-size="14" text-anchor="middle" fill="#cc6600" font-weight="bold">High PE</text>
+        <text x="255" y="108" font-size="14" text-anchor="middle" fill="#0066cc" font-weight="bold">Low KE</text>
+        
+        <!-- Cart at bottom (all KE) -->
+        <rect x="535" y="180" width="30" height="20" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <circle cx="540" cy="200" r="5" fill="#000033"/>
+        <circle cx="560" cy="200" r="5" fill="#000033"/>
+        <line x1="550" y1="170" x2="580" y2="170" stroke="#CC3300" stroke-width="2"/>
+        <text x="550" y="230" font-size="14" text-anchor="middle" fill="#cc6600" font-weight="bold">Low PE</text>
+        <text x="550" y="218" font-size="14" text-anchor="middle" fill="#0066cc" font-weight="bold">High KE</text>
+        
+        <!-- Energy bars -->
+        <rect x="50" y="240" width="200" height="50" fill="#e8f4f8" stroke="#0066cc" stroke-width="2"/>
+        <text x="150" y="265" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">ENERGY IS CONSERVED</text>
+        <text x="150" y="282" font-size="12" text-anchor="middle" fill="#000033">PE + KE = constant</text>
+        
+        <!-- Arrow showing transformation -->
+        <defs>
+            <marker id="arrowT" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        <path d="M 280 140 Q 400 100, 520 190" stroke="#CC3300" stroke-width="2" fill="none" marker-end="url(#arrowT)" stroke-dasharray="5,5"/>
+        <text x="400" y="95" font-size="13" text-anchor="middle" fill="#CC3300" font-weight="bold">PE → KE</text>
+    </svg>
+    
+    <p>As a roller coaster car climbs to the top of a hill, it gains potential energy. As it races down, that potential energy transforms into kinetic energy—energy of motion. The total mechanical energy remains constant as energy shifts between these two forms. This fundamental principle—conservation of energy—is one of the most powerful laws in all of physics.</p>
+</div>
+
+<div class="learning-objectives">
+    <h2 style="background-color: transparent; color: #000033; padding: 0; margin: 0 0 0.05in 0;">Learning Objectives</h2>
+    <ul>
+        <li>I can define kinetic energy and calculate it using the formula KE = ½mv²</li>
+        <li>I can state the law of conservation of energy and identify when it applies</li>
+        <li>I can apply conservation of energy to solve problems involving transformations between kinetic and potential energy</li>
+        <li>I can analyze energy transformations in roller coasters, pendulums, and falling objects</li>
+    </ul>
+</div>
+
+<h1>Introduction</h1>
+
+<p>A basketball player jumps high into the air to make a dunk. At the top of the jump, the player momentarily stops—all kinetic energy has been converted to potential energy. As the player falls back down, that potential energy converts back to kinetic energy. Throughout the jump, energy continuously transforms between these two forms, but the total mechanical energy remains constant (ignoring air resistance).</p>
+
+<p>This transformation between kinetic and potential energy happens everywhere in nature. A pendulum swinging back and forth, water flowing over a waterfall, planets orbiting the sun—all demonstrate the law of conservation of energy. Understanding this law allows us to predict motion without knowing all the forces involved, making it one of the most powerful tools in physics.</p>
+
+<div class="real-world-box">
+    <h3>Real-World Connection: Regenerative Braking</h3>
+    <p>Electric and hybrid vehicles use regenerative braking to recover energy. When you brake, the motor runs backward as a generator, converting the car's kinetic energy into electrical energy stored in the battery. This is a practical application of energy transformation—the kinetic energy that would otherwise be lost as heat in traditional brakes is instead captured and reused, improving vehicle efficiency.</p>
+</div>
+
+<h1>What is Kinetic Energy?</h1>
+
+<p><span class="vocab-term">Kinetic energy</span> (KE) is the energy an object possesses due to its motion. Any moving object—a rolling ball, a flying airplane, or a flowing river—has kinetic energy.</p>
+
+<div class="vocab-box">
+    <h3>Kinetic Energy</h3>
+    <p>Energy of motion, calculated as:</p>
+    <p style="text-align: center; margin-top: 0.05in;"><strong>$$KE = \frac{1}{2}mv^2$$</strong></p>
+    <p>where:</p>
+    <ul>
+        <li>$KE$ = kinetic energy (joules, J)</li>
+        <li>$m$ = mass (kilograms, kg)</li>
+        <li>$v$ = speed (meters per second, m/s)</li>
+    </ul>
+</div>
+
+<h2>Understanding the Kinetic Energy Formula</h2>
+
+<p><strong>Mass:</strong> Kinetic energy is proportional to mass. Doubling the mass doubles the kinetic energy (if speed stays the same).</p>
+
+<p><strong>Speed squared:</strong> Kinetic energy depends on the square of the speed. This means doubling the speed quadruples the kinetic energy! This is why high-speed collisions are so much more destructive than low-speed ones.</p>
+
+<div class="info-box">
+    <h3>Why Speed Squared Matters</h3>
+    <p>The $v^2$ relationship means small increases in speed cause large increases in kinetic energy. For example:</p>
+    <ul>
+        <li>At 20 m/s: A car has KE = ½m(20)² = 200m</li>
+        <li>At 40 m/s: The same car has KE = ½m(40)² = 800m</li>
+    </ul>
+    <p>Doubling the speed quadrupled the kinetic energy! This is why highway crashes are so dangerous.</p>
+</div>
+
+<h1>The Law of Conservation of Energy</h1>
+
+<p>The <span class="vocab-term">law of conservation of energy</span> states that energy cannot be created or destroyed—it can only be transformed from one form to another. The total energy of an isolated system remains constant.</p>
+
+<div class="vocab-box">
+    <h3>Conservation of Mechanical Energy</h3>
+    <p>In the absence of friction and air resistance, the total mechanical energy (PE + KE) remains constant:</p>
+    <p style="text-align: center;"><strong>$$E_{\text{total}} = PE + KE = \text{constant}$$</strong></p>
+    <p>Or equivalently:</p>
+    <p style="text-align: center;"><strong>$$PE_i + KE_i = PE_f + KE_f$$</strong></p>
+    <p>where subscript $i$ means initial and subscript $f$ means final</p>
+</div>
+
+<p><span class="vocab-term">Mechanical energy</span> is the sum of kinetic and potential energy. In ideal systems (no friction or air resistance), mechanical energy is conserved as energy transforms between PE and KE.</p>
+
+<h2>Energy Transformations</h2>
+
+<p>Common energy transformations include:</p>
+
+<ul>
+    <li><strong>Falling object:</strong> PE → KE (potential energy converts to kinetic)</li>
+    <li><strong>Object thrown upward:</strong> KE → PE (kinetic energy converts to potential)</li>
+    <li><strong>Pendulum at lowest point:</strong> All KE, zero PE</li>
+    <li><strong>Pendulum at highest point:</strong> All PE, zero KE</li>
+    <li><strong>Roller coaster:</strong> Continuous transformation between PE and KE</li>
+</ul>
+
+<div class="real-world-box">
+    <h3>Historical Note: Energy Conservation</h3>
+    <p>The law of conservation of energy was established in the 1840s by Julius Robert von Mayer and James Prescott Joule. Before this, scientists didn't realize that heat was a form of energy. Joule's experiments showed that mechanical work could be converted to heat with a precise conversion rate. This led to the recognition that energy comes in many forms but the total amount is always conserved.</p>
+</div>
+
+<h1>Key Formulas for Practice Problems</h1>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Kinetic Energy</td>
+        <td style="text-align: center;">$KE = \frac{1}{2}mv^2$</td>
+        <td>$KE$ = kinetic energy (J)<br>$m$ = mass (kg)<br>$v$ = speed (m/s)</td>
+    </tr>
+    <tr>
+        <td>Potential Energy</td>
+        <td style="text-align: center;">$PE = mgh$</td>
+        <td>$PE$ = potential energy (J)<br>$m$ = mass (kg)<br>$g$ = 9.8 m/s²<br>$h$ = height (m)</td>
+    </tr>
+    <tr>
+        <td>Conservation of Mechanical Energy</td>
+        <td style="text-align: center;">$PE_i + KE_i = PE_f + KE_f$</td>
+        <td>Subscript $i$ = initial<br>Subscript $f$ = final<br>All energies in joules (J)</td>
+    </tr>
+    <tr>
+        <td>Total Mechanical Energy</td>
+        <td style="text-align: center;">$E = PE + KE$</td>
+        <td>$E$ = total mechanical energy (J)</td>
+    </tr>
+</table>
+
+<h1>Example Problems</h1>
+
+<div class="info-box">
+    <h3>Problem-Solving Strategy</h3>
+    <ol>
+        <li><strong>List the Givens:</strong> Write down all known values with units</li>
+        <li><strong>Find the Formula:</strong> Choose the appropriate equation</li>
+        <li><strong>Substitute:</strong> Plug in the known values</li>
+        <li><strong>Solve:</strong> Perform the calculation</li>
+        <li><strong>Check:</strong> Verify units and reasonableness of answer</li>
+    </ol>
+</div>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Kinetic Energy</h3>
+    <p><strong>Problem:</strong> A 1500 kg car travels at 20 m/s. What is its kinetic energy?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong> $m = 1500$ kg, $v = 20$ m/s, Find: $KE$ = ?</p>
+    <p><strong>Step 2 - Find the Formula:</strong> $KE = \frac{1}{2}mv^2$</p>
+    <p><strong>Step 3 - Substitute:</strong> $KE = \frac{1}{2}(1500)(20)^2 = \frac{1}{2}(1500)(400)$</p>
+    <p><strong>Step 4 - Solve:</strong> $KE = 300{,}000$ J = 300 kJ</p>
+    <p><strong>Step 5 - Check:</strong> Units correct (J). Reasonable for a moving car.</p>
+    <p><strong><span class="highlight">Answer: 300,000 J or 300 kJ</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Object Dropped from Rest</h3>
+    <p><strong>Problem:</strong> A 2.0 kg rock is dropped from a height of 10 m. What is its speed just before hitting the ground? (Ignore air resistance)</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong> $m = 2.0$ kg, $h_i = 10$ m, $v_i = 0$ (starts from rest), $h_f = 0$ (ground level), Find: $v_f$ = ?</p>
+    <p><strong>Step 2 - Find the Formula:</strong> $PE_i + KE_i = PE_f + KE_f$</p>
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>Initial: $PE_i = mgh_i = (2.0)(9.8)(10) = 196$ J, $KE_i = 0$</p>
+    <p>Final: $PE_f = 0$, $KE_f = \frac{1}{2}mv_f^2$</p>
+    <p>$196 + 0 = 0 + \frac{1}{2}(2.0)v_f^2$</p>
+    <p><strong>Step 4 - Solve:</strong> $196 = (1.0)v_f^2$, so $v_f = \sqrt{196} = 14$ m/s</p>
+    <p><strong><span class="highlight">Answer: 14 m/s</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Roller Coaster Multi-Step Problem</h3>
+    <p><strong>Problem:</strong> A 500 kg roller coaster car starts from rest at the top of a 30 m hill. (a) What is its total mechanical energy at the top? (b) What is its speed at the bottom of the hill? (c) If the car rises to a second hill 20 m high, what is its speed at the top of that hill?</p>
+    
+    <p><strong>Part (a): Total energy at top</strong></p>
+    <p>At top: $h = 30$ m, $v = 0$ (at rest)</p>
+    <p>$E_{\text{total}} = PE + KE = mgh + \frac{1}{2}mv^2 = (500)(9.8)(30) + 0 = 147{,}000$ J</p>
+    <p><strong><span class="highlight">Answer (a): 147,000 J or 147 kJ</span></strong></p>
+    
+    <p><strong>Part (b): Speed at bottom</strong></p>
+    <p>At bottom: $h = 0$, so all energy is kinetic</p>
+    <p>$E_{\text{total}} = KE_f$, so $147{,}000 = \frac{1}{2}(500)v^2$</p>
+    <p>$147{,}000 = 250v^2$, so $v^2 = 588$, thus $v = 24.2$ m/s</p>
+    <p><strong><span class="highlight">Answer (b): 24 m/s</span></strong></p>
+    
+    <p><strong>Part (c): Speed at second hill (h = 20 m)</strong></p>
+    <p>$PE + KE = 147{,}000$</p>
+    <p>$(500)(9.8)(20) + \frac{1}{2}(500)v^2 = 147{,}000$</p>
+    <p>$98{,}000 + 250v^2 = 147{,}000$</p>
+    <p>$250v^2 = 49{,}000$, so $v = 14$ m/s</p>
+    <p><strong><span class="highlight">Answer (c): 14 m/s at the top of the 20 m hill</span></strong></p>
+</div>
+
+<h1>Summary</h1>
+
+<ul>
+    <li>Kinetic energy is energy of motion: $KE = \frac{1}{2}mv^2$</li>
+    <li>KE depends on mass (linearly) and speed squared—doubling speed quadruples KE</li>
+    <li>The law of conservation of energy states that energy cannot be created or destroyed, only transformed</li>
+    <li>Mechanical energy is the sum of potential and kinetic energy: $E = PE + KE$</li>
+    <li>In the absence of friction, mechanical energy is conserved: $PE_i + KE_i = PE_f + KE_f$</li>
+    <li>As objects fall, PE decreases and KE increases by the same amount</li>
+    <li>As objects rise, KE decreases and PE increases by the same amount</li>
+    <li>At maximum height, an object has maximum PE and minimum (zero) KE</li>
+    <li>At minimum height, an object has minimum (zero) PE and maximum KE</li>
+    <li>Energy transformations occur in pendulums, roller coasters, and all free-falling objects</li>
+</ul>
+
+<h1>Key Terms</h1>
+
+<table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td><strong>Kinetic Energy</strong></td><td>Energy of motion; $KE = \frac{1}{2}mv^2$</td></tr>
+    <tr><td><strong>Conservation of Energy</strong></td><td>Energy cannot be created or destroyed, only transformed between forms</td></tr>
+    <tr><td><strong>Mechanical Energy</strong></td><td>Sum of kinetic and potential energy in a system</td></tr>
+    <tr><td><strong>Energy Transformation</strong></td><td>The conversion of energy from one form to another</td></tr>
+    <tr><td><strong>Isolated System</strong></td><td>A system with no external forces doing work; mechanical energy is conserved</td></tr>
+</table>
+
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Explain why kinetic energy depends on the square of velocity. Why does this make high-speed collisions more dangerous?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> State the law of conservation of mechanical energy and explain when it applies.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> A pendulum swings back and forth. At which point does it have maximum KE? Maximum PE? Explain.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> Two cars have the same kinetic energy. If car A has twice the mass of car B, how do their speeds compare?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A 0.50 kg ball is thrown upward at 15 m/s. Calculate its kinetic energy.</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> A 3.0 kg object falls from rest from a height of 8.0 m. What is its speed just before hitting the ground?</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> A 1200 kg car travels at 25 m/s at the bottom of a hill. How high could it coast up a frictionless hill before stopping?</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> A 0.20 kg apple falls from a tree branch 4.0 m above the ground. (a) What is its PE at the top? (b) What is its KE just before hitting the ground? (c) What is its speed just before impact? (d) Verify that mechanical energy is conserved.</p>
+<div class="answer-space"></div>
+
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> KE = ½mv² means kinetic energy is proportional to velocity squared. If you double your speed, KE increases by a factor of 4. This is why high-speed collisions are far more destructive—a car going 60 mph has 4 times the kinetic energy of the same car at 30 mph, meaning 4 times as much energy must be absorbed in a crash.</p>
+
+<p><strong>2.</strong> The law of conservation of mechanical energy states that the total mechanical energy (PE + KE) remains constant in an isolated system. It applies when there is no friction, air resistance, or other non-conservative forces doing work on the system. In these ideal conditions, energy transforms between PE and KE, but the total stays the same.</p>
+
+<p><strong>3.</strong> Maximum KE: at the lowest point of the swing (bottom), where the pendulum is moving fastest. Maximum PE: at the highest points on either side, where the pendulum momentarily stops before reversing direction. At the bottom, all energy is kinetic; at the top, all energy is potential.</p>
+
+<p><strong>4.</strong> Car B must be moving faster. Since KE = ½mv², if car A has mass 2m and car B has mass m, and they have equal KE: ½(2m)v_A² = ½(m)v_B². This gives v_B² = 2v_A², so v_B = √2 × v_A ≈ 1.41 × v_A. Car B travels about 1.4 times faster.</p>
+
+<p><strong>5.</strong> KE = ½mv² = ½(0.50)(15)² = ½(0.50)(225) = 56.25 J ≈ <strong><span class="highlight">56 J</span></strong></p>
+
+<p><strong>6.</strong> PE_i = KE_f → mgh = ½mv² → gh = ½v² → v = √(2gh) = √(2×9.8×8.0) = √156.8 = <strong><span class="highlight">12.5 m/s</span></strong></p>
+
+<p><strong>7.</strong> KE_bottom = PE_top → ½mv² = mgh → h = v²/(2g) = (25)²/(2×9.8) = 625/19.6 = <strong><span class="highlight">31.9 m ≈ 32 m</span></strong></p>
+
+<p><strong>8.</strong><br>
+(a) PE = mgh = (0.20)(9.8)(4.0) = <strong><span class="highlight">7.84 J ≈ 7.8 J</span></strong><br>
+(b) All PE converts to KE: KE = <strong><span class="highlight">7.8 J</span></strong><br>
+(c) ½mv² = 7.84 → v² = 2(7.84)/0.20 = 78.4 → v = <strong><span class="highlight">8.85 m/s ≈ 8.9 m/s</span></strong><br>
+(d) Top: E = 7.8 + 0 = 7.8 J. Bottom: E = 0 + 7.8 = 7.8 J. Energy conserved! ✓</p>
+
+</body>
+</html>

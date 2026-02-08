@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1.3 - Scientific Measurement and Math Tools</title>
+    
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            padding: 0.5in;
+            margin: 0 auto;
+            background-color: white;
+            box-sizing: border-box;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #000033;
+            padding: 6px;
+            margin: 0.15in 0 0.08in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #000033;
+            padding: 6px;
+            margin: 0.12in 0 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000033;
+            margin: 0.10in 0 0.06in 0;
+        }
+        
+        p {
+            margin: 0.05in 0;
+            text-align: justify;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 1px solid #cccccc;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            padding: 0.08in;
+            margin: 0.10in 0;
+            border-left: 4px solid #cc6600;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.08in 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-page">
+        <div class="section-number">SECTION 1.3</div>
+        <h1>Scientific Measurement and Math Tools</h1>
+        
+        <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="ruler-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#1E90FF;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#0066cc;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <rect width="600" height="300" fill="#f0f8ff"/>
+            
+            <!-- Ruler -->
+            <rect x="50" y="80" width="500" height="40" fill="url(#ruler-gradient)" stroke="#000033" stroke-width="2"/>
+            <line x1="50" y1="80" x2="50" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="100" y1="80" x2="100" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="150" y1="80" x2="150" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="200" y1="80" x2="200" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="250" y1="80" x2="250" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="300" y1="80" x2="300" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="350" y1="80" x2="350" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="400" y1="80" x2="400" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="450" y1="80" x2="450" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="500" y1="80" x2="500" y2="120" stroke="white" stroke-width="2"/>
+            <line x1="550" y1="80" x2="550" y2="120" stroke="white" stroke-width="2"/>
+            
+            <text x="75" y="110" font-size="12" fill="white" text-anchor="middle">1</text>
+            <text x="175" y="110" font-size="12" fill="white" text-anchor="middle">3</text>
+            <text x="275" y="110" font-size="12" fill="white" text-anchor="middle">5</text>
+            <text x="375" y="110" font-size="12" fill="white" text-anchor="middle">7</text>
+            <text x="475" y="110" font-size="12" fill="white" text-anchor="middle">9</text>
+            
+            <!-- Balance scale -->
+            <line x1="150" y1="180" x2="450" y2="180" stroke="#000033" stroke-width="3"/>
+            <circle cx="300" cy="180" r="8" fill="#cc6600"/>
+            <line x1="300" y1="180" x2="300" y2="240" stroke="#000033" stroke-width="3"/>
+            <rect x="290" y="240" width="20" height="30" fill="#000033"/>
+            
+            <!-- Scale pans -->
+            <rect x="120" y="170" width="60" height="30" fill="#cccccc" stroke="#000033" stroke-width="2"/>
+            <rect x="420" y="170" width="60" height="30" fill="#cccccc" stroke="#000033" stroke-width="2"/>
+            
+            <!-- Math symbols -->
+            <text x="50" y="250" font-size="32" fill="#000033" font-weight="bold">π</text>
+            <text x="100" y="250" font-size="28" fill="#0066cc">÷</text>
+            <text x="530" y="250" font-size="28" fill="#0066cc">×</text>
+            <text x="70" y="285" font-size="24" fill="#cc6600">√</text>
+            <text x="520" y="285" font-size="28" fill="#000033">±</text>
+        </svg>
+        
+        <p>Accurate measurement is the foundation of all scientific work. In this section, you'll learn to use SI units, apply metric prefixes, convert between units, use scientific notation, and apply significant figures—essential skills for every physics problem you'll solve this year.</p>
+    </div>
+    
+    <div class="page">
+        <h1>Learning Objectives</h1>
+        
+        <div class="learning-objectives">
+            <ul>
+                <li><strong>I can</strong> perform accurate scientific measurements using appropriate SI units and tools.</li>
+                <li><strong>I can</strong> convert between different units using conversion factors and dimensional analysis.</li>
+                <li><strong>I can</strong> express measurements using scientific notation and apply proper significant figures.</li>
+                <li><strong>I can</strong> use algebra to solve physics equations and interpret results.</li>
+            </ul>
+        </div>
+        
+        <h1>Introduction</h1>
+        
+        <p>Imagine two scientists trying to collaborate on an experiment. One measures temperature in Fahrenheit, the other in Celsius. One measures distance in miles, the other in kilometers. One records time in minutes, the other in seconds. Without a common system of measurement, scientific collaboration would be nearly impossible!</p>
+        
+        <p>That's why scientists worldwide use the <span class="vocab-term">International System of Units (SI)</span>, also called the metric system. This standardized system ensures that scientists everywhere can communicate measurements clearly and accurately. In this section, you'll learn to work confidently with SI units, perform conversions, and apply the mathematical tools that make physics calculations precise and reliable.</p>
+        
+        <h1>The SI System of Units</h1>
+        
+        <p>The <span class="vocab-term">SI system</span> (Système International) is based on seven base units. In this course, we'll primarily use three:</p>
+        
+        <table>
+            <tr>
+                <th>Quantity</th>
+                <th>SI Base Unit</th>
+                <th>Symbol</th>
+            </tr>
+            <tr>
+                <td>Length/Distance</td>
+                <td>meter</td>
+                <td>m</td>
+            </tr>
+            <tr>
+                <td>Mass</td>
+                <td>kilogram</td>
+                <td>kg</td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>second</td>
+                <td>s</td>
+            </tr>
+            <tr>
+                <td>Temperature</td>
+                <td>kelvin</td>
+                <td>K</td>
+            </tr>
+            <tr>
+                <td>Electric Current</td>
+                <td>ampere</td>
+                <td>A</td>
+            </tr>
+        </table>
+        
+        <p>Many other units are <span class="vocab-term">derived units</span>—combinations of base units. For example, speed is measured in meters per second (m/s), combining length and time.</p>
+        
+        <h3>Metric Prefixes</h3>
+        
+        <p>The metric system uses <span class="vocab-term">prefixes</span> to indicate powers of 10. This makes it easy to express very large or very small measurements:</p>
+        
+        <table>
+            <tr>
+                <th>Prefix</th>
+                <th>Symbol</th>
+                <th>Meaning</th>
+                <th>Power of 10</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>giga-</td>
+                <td>G</td>
+                <td>billion</td>
+                <td>$10^9$</td>
+                <td>1 Gm = 1,000,000,000 m</td>
+            </tr>
+            <tr>
+                <td>mega-</td>
+                <td>M</td>
+                <td>million</td>
+                <td>$10^6$</td>
+                <td>1 Mm = 1,000,000 m</td>
+            </tr>
+            <tr>
+                <td>kilo-</td>
+                <td>k</td>
+                <td>thousand</td>
+                <td>$10^3$</td>
+                <td>1 km = 1,000 m</td>
+            </tr>
+            <tr>
+                <td>(base unit)</td>
+                <td>—</td>
+                <td>one</td>
+                <td>$10^0$</td>
+                <td>1 m</td>
+            </tr>
+            <tr>
+                <td>centi-</td>
+                <td>c</td>
+                <td>hundredth</td>
+                <td>$10^{-2}$</td>
+                <td>1 cm = 0.01 m</td>
+            </tr>
+            <tr>
+                <td>milli-</td>
+                <td>m</td>
+                <td>thousandth</td>
+                <td>$10^{-3}$</td>
+                <td>1 mm = 0.001 m</td>
+            </tr>
+            <tr>
+                <td>micro-</td>
+                <td>μ</td>
+                <td>millionth</td>
+                <td>$10^{-6}$</td>
+                <td>1 μm = 0.000001 m</td>
+            </tr>
+            <tr>
+                <td>nano-</td>
+                <td>n</td>
+                <td>billionth</td>
+                <td>$10^{-9}$</td>
+                <td>1 nm = 0.000000001 m</td>
+            </tr>
+        </table>
+        
+        <h1>Unit Conversions</h1>
+        
+        <p>Converting between units is a critical skill in physics. The key is using <span class="vocab-term">conversion factors</span>—ratios equal to 1 that allow you to change units without changing the actual quantity.</p>
+        
+        <h3>Dimensional Analysis Method</h3>
+        
+        <p><span class="vocab-term">Dimensional analysis</span> (also called the factor-label method) uses conversion factors to systematically convert units. The key principle: multiply by fractions equal to 1, arranged so unwanted units cancel.</p>
+        
+        <div class="vocab-box">
+            <p><strong>Conversion Factor:</strong> A ratio of equivalent measurements. Examples:</p>
+            <p>$\frac{1000 \text{ m}}{1 \text{ km}} = 1$ and $\frac{1 \text{ km}}{1000 \text{ m}} = 1$</p>
+            <p>$\frac{100 \text{ cm}}{1 \text{ m}} = 1$ and $\frac{1 \text{ m}}{100 \text{ cm}} = 1$</p>
+        </div>
+        
+        <h1>Scientific Notation</h1>
+        
+        <p><span class="vocab-term">Scientific notation</span> expresses numbers as a product of a coefficient (between 1 and 10) and a power of 10:</p>
+        
+        <p style="text-align: center;">$$\text{Number} = \text{coefficient} \times 10^{\text{exponent}}$$</p>
+        
+        <p>Examples:</p>
+        <ul>
+            <li>$3,000,000 = 3.0 \times 10^6$</li>
+            <li>$0.000045 = 4.5 \times 10^{-5}$</li>
+            <li>$602,000,000,000,000,000,000,000 = 6.02 \times 10^{23}$ (Avogadro's number)</li>
+        </ul>
+        
+        <h1>Significant Figures</h1>
+        
+        <p><span class="vocab-term">Significant figures</span> (sig figs) indicate the precision of a measurement. They tell us which digits in a number are reliable.</p>
+        
+        <h3>Rules for Counting Significant Figures:</h3>
+        <ol>
+            <li><strong>Non-zero digits are always significant.</strong> Example: 234 has 3 sig figs</li>
+            <li><strong>Zeros between non-zero digits are significant.</strong> Example: 1005 has 4 sig figs</li>
+            <li><strong>Leading zeros are NOT significant.</strong> Example: 0.0052 has 2 sig figs</li>
+            <li><strong>Trailing zeros after a decimal ARE significant.</strong> Example: 12.00 has 4 sig figs</li>
+            <li><strong>Trailing zeros without a decimal may or may not be significant.</strong> Use scientific notation to clarify: $2400 = 2.4 \times 10^3$ (2 sig figs) or $2.400 \times 10^3$ (4 sig figs)</li>
+        </ol>
+        
+        <h3>Calculations with Significant Figures:</h3>
+        <p><strong>Addition/Subtraction:</strong> Round to the least precise decimal place.</p>
+        <p><strong>Multiplication/Division:</strong> Round to the fewest significant figures.</p>
+        
+        <h1>Key Formulas for Practice Problems</h1>
+        
+        <table>
+            <tr>
+                <th>Formula Name</th>
+                <th>Formula</th>
+                <th>Variables and Units</th>
+            </tr>
+            <tr>
+                <td><strong>Percent Error</strong></td>
+                <td style="text-align: center;">$$\text{% error} = \frac{|\text{exp} - \text{acc}|}{\text{acc}} \times 100\%$$</td>
+                <td>
+                    exp = experimental value<br>
+                    acc = accepted (true) value<br>
+                    | | = absolute value
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Average (Mean)</strong></td>
+                <td style="text-align: center;">$$\bar{x} = \frac{x_1 + x_2 + \cdots + x_n}{n}$$</td>
+                <td>
+                    $\bar{x}$ = average<br>
+                    $x_1, x_2, \ldots, x_n$ = individual values<br>
+                    $n$ = number of values
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Unit Conversion</strong></td>
+                <td style="text-align: center;">$$\text{value}_\text{new} = \text{value}_\text{old} \times \frac{\text{new unit}}{\text{old unit}}$$</td>
+                <td>
+                    Multiply by conversion factors<br>
+                    until desired units remain
+                </td>
+            </tr>
+        </table>
+        
+        <h1>Example Problems</h1>
+        
+        <div class="info-box">
+            <h3>Problem-Solving Strategy</h3>
+            <ol>
+                <li><strong>List the Givens:</strong> Write down all known values with their units.</li>
+                <li><strong>Find the Formula:</strong> Identify which formula to use.</li>
+                <li><strong>Substitute:</strong> Plug the known values into the formula.</li>
+                <li><strong>Solve:</strong> Calculate the unknown value.</li>
+                <li><strong>Check:</strong> Verify units and reasonableness.</li>
+            </ol>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 1: Percent Error Calculation</h3>
+            <p><strong>Problem:</strong> A student measures the length of a table as 152 cm. The actual length is 150 cm. What is the percent error?</p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Experimental value: exp = 152 cm</li>
+                <li>Accepted value: acc = 150 cm</li>
+                <li>Find: Percent error</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p style="text-align: center;">$$\text{% error} = \frac{|\text{exp} - \text{acc}|}{\text{acc}} \times 100\%$$</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$\text{% error} = \frac{|152 - 150|}{150} \times 100\%$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$\text{% error} = \frac{2}{150} \times 100\% = 0.0133 \times 100\% = 1.33\%$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The percent error is 1.33%.</span></p>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 2: Calculating Average</h3>
+            <p><strong>Problem:</strong> A student measures the time for a pendulum to complete 10 swings five times: 8.2 s, 8.5 s, 8.3 s, 8.4 s, and 8.1 s. What is the average time?</p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Measurements: 8.2 s, 8.5 s, 8.3 s, 8.4 s, 8.1 s</li>
+                <li>Number of measurements: $n = 5$</li>
+                <li>Find: Average time ($\bar{x}$)</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p style="text-align: center;">$$\bar{x} = \frac{x_1 + x_2 + x_3 + x_4 + x_5}{5}$$</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$\bar{x} = \frac{8.2 + 8.5 + 8.3 + 8.4 + 8.1}{5} \text{ s}$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$\bar{x} = \frac{41.5}{5} = 8.3 \text{ s}$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The average time is 8.3 s.</span></p>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 3: Multi-Step Unit Conversion</h3>
+            <p><strong>Problem:</strong> Convert 72 km/h to m/s.</p>
+            
+            <p><strong>This requires converting BOTH kilometers to meters AND hours to seconds.</strong></p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Speed: 72 km/h</li>
+                <li>Find: Speed in m/s</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Conversion Factors:</strong></p>
+            <ul>
+                <li>1 km = 1000 m</li>
+                <li>1 h = 3600 s</li>
+            </ul>
+            
+            <p><strong>Step 3 - Set up conversion using dimensional analysis:</strong></p>
+            <p style="text-align: center;">$$72 \frac{\text{km}}{\text{h}} \times \frac{1000 \text{ m}}{1 \text{ km}} \times \frac{1 \text{ h}}{3600 \text{ s}}$$</p>
+            
+            <p><strong>Step 4 - Cancel units and solve:</strong></p>
+            <p>The km cancels, the h cancels, leaving m/s:</p>
+            <p style="text-align: center;">$$\frac{72 \times 1000}{3600} \frac{\text{m}}{\text{s}} = \frac{72000}{3600} \frac{\text{m}}{\text{s}} = 20 \frac{\text{m}}{\text{s}}$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">72 km/h = 20 m/s</span></p>
+        </div>
+        
+        <h1>Summary</h1>
+        
+        <ul>
+            <li>The SI system provides standardized units that scientists worldwide use for measurements.</li>
+            <li>The three main SI base units in physics are meter (m) for length, kilogram (kg) for mass, and second (s) for time.</li>
+            <li>Metric prefixes (kilo-, centi-, milli-, etc.) indicate powers of 10 and make expressing large or small quantities easier.</li>
+            <li>Dimensional analysis uses conversion factors to systematically convert between units.</li>
+            <li>Scientific notation expresses numbers as a coefficient times a power of 10: $a \times 10^n$.</li>
+            <li>Significant figures indicate the precision of a measurement and must be handled correctly in calculations.</li>
+            <li>In multiplication and division, round to the fewest significant figures in any measurement.</li>
+            <li>In addition and subtraction, round to the least precise decimal place.</li>
+            <li>Percent error compares experimental measurements to accepted values: $\frac{|\text{exp} - \text{acc}|}{\text{acc}} \times 100\%$.</li>
+            <li>The average (mean) of measurements is found by adding all values and dividing by the number of measurements.</li>
+        </ul>
+        
+        <h1>Key Terms</h1>
+        
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+            </tr>
+            <tr>
+                <td><strong>SI System</strong></td>
+                <td>International System of Units; the standard metric system used in science</td>
+            </tr>
+            <tr>
+                <td><strong>Base Unit</strong></td>
+                <td>A fundamental unit in the SI system (meter, kilogram, second, etc.)</td>
+            </tr>
+            <tr>
+                <td><strong>Derived Unit</strong></td>
+                <td>A unit formed by combining base units (e.g., m/s, kg·m/s²)</td>
+            </tr>
+            <tr>
+                <td><strong>Metric Prefix</strong></td>
+                <td>A prefix indicating a power of 10 (kilo-, centi-, milli-, etc.)</td>
+            </tr>
+            <tr>
+                <td><strong>Conversion Factor</strong></td>
+                <td>A ratio of equivalent measurements used to convert units</td>
+            </tr>
+            <tr>
+                <td><strong>Dimensional Analysis</strong></td>
+                <td>A method of converting units using conversion factors</td>
+            </tr>
+            <tr>
+                <td><strong>Scientific Notation</strong></td>
+                <td>A way of expressing numbers as a coefficient times a power of 10</td>
+            </tr>
+            <tr>
+                <td><strong>Significant Figures</strong></td>
+                <td>The digits in a number that indicate its precision</td>
+            </tr>
+            <tr>
+                <td><strong>Percent Error</strong></td>
+                <td>A measure of how far an experimental value differs from an accepted value</td>
+            </tr>
+        </table>
+        
+        <h1>Practice Problems</h1>
+        
+        <p><strong>1.</strong> Explain why scientists around the world use the SI system of units. What would happen if every country used different units?</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>2.</strong> How many centimeters are in one kilometer? Show your work using the relationships: 1 km = 1000 m and 1 m = 100 cm.</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>3.</strong> Write the following numbers in scientific notation:
+        <br>(a) 4,560,000
+        <br>(b) 0.000078
+        <br>(c) 299,800,000</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>4.</strong> How many significant figures are in each of the following measurements?
+        <br>(a) 0.00340 m
+        <br>(b) 1200 kg
+        <br>(c) 45.00 s
+        <br>(d) 305.0 cm</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>5.</strong> A student measures the mass of an object as 48.7 g. The actual mass is 50.0 g. Calculate the percent error.</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>6.</strong> A student conducts an experiment and records the following times: 2.3 s, 2.5 s, 2.4 s, 2.2 s, and 2.6 s. Calculate the average time.</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>7.</strong> Convert 5.4 km to meters using dimensional analysis. Show all work including units.</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>8.</strong> <strong>Multi-step problem:</strong> A car travels at 90 km/h.
+        <br>(a) Convert this speed to m/s.
+        <br>(b) If the average walking speed is 1.5 m/s, how many times faster is the car than walking?</p>
+        <div class="answer-space"></div>
+        
+        <h1>Answer Key</h1>
+        
+        <p><strong>1.</strong> Scientists use the SI system so they can communicate measurements clearly and work together effectively. If every country used different units, it would be extremely difficult to share research, replicate experiments, or collaborate on international projects. The SI system provides a common language for science. For example, NASA lost a $125 million Mars orbiter in 1999 because one team used English units and another used metric units—the spacecraft crashed because of the unit confusion!</p>
+        
+        <p><strong>2.</strong> Using conversions: $1 \text{ km} = 1000 \text{ m}$ and $1 \text{ m} = 100 \text{ cm}$
+        <br>$1 \text{ km} \times \frac{1000 \text{ m}}{1 \text{ km}} \times \frac{100 \text{ cm}}{1 \text{ m}} = 100{,}000 \text{ cm}$
+        <br>Therefore, <strong>1 km = 100,000 cm</strong>.</p>
+        
+        <p><strong>3.</strong> (a) $4,560,000 = 4.56 \times 10^6$
+        <br>(b) $0.000078 = 7.8 \times 10^{-5}$
+        <br>(c) $299,800,000 = 2.998 \times 10^8$ (speed of light)</p>
+        
+        <p><strong>4.</strong> (a) 0.00340 m has <strong>3 significant figures</strong> (3, 4, and the trailing 0 after decimal)
+        <br>(b) 1200 kg has <strong>2 significant figures</strong> (ambiguous trailing zeros; should use scientific notation to clarify)
+        <br>(c) 45.00 s has <strong>4 significant figures</strong> (trailing zeros after decimal are significant)
+        <br>(d) 305.0 cm has <strong>4 significant figures</strong> (zeros between non-zeros and after decimal are significant)</p>
+        
+        <p><strong>5.</strong></p>
+        <p><strong>Given:</strong> exp = 48.7 g, acc = 50.0 g</p>
+        <p><strong>Find:</strong> Percent error</p>
+        <p><strong>Formula:</strong> $\text{% error} = \frac{|\text{exp} - \text{acc}|}{\text{acc}} \times 100\%$</p>
+        <p><strong>Substitute:</strong> $\text{% error} = \frac{|48.7 - 50.0|}{50.0} \times 100\%$</p>
+        <p><strong>Solve:</strong> $\text{% error} = \frac{1.3}{50.0} \times 100\% = 2.6\%$</p>
+        <p><strong>Answer:</strong> The percent error is <strong>2.6%</strong>.</p>
+        
+        <p><strong>6.</strong></p>
+        <p><strong>Given:</strong> Times: 2.3, 2.5, 2.4, 2.2, 2.6 s; $n = 5$</p>
+        <p><strong>Find:</strong> Average time ($\bar{x}$)</p>
+        <p><strong>Formula:</strong> $\bar{x} = \frac{x_1 + x_2 + x_3 + x_4 + x_5}{5}$</p>
+        <p><strong>Substitute:</strong> $\bar{x} = \frac{2.3 + 2.5 + 2.4 + 2.2 + 2.6}{5} = \frac{12.0}{5}$</p>
+        <p><strong>Solve:</strong> $\bar{x} = 2.4$ s</p>
+        <p><strong>Answer:</strong> The average time is <strong>2.4 s</strong>.</p>
+        
+        <p><strong>7.</strong></p>
+        <p><strong>Given:</strong> 5.4 km</p>
+        <p><strong>Find:</strong> Distance in meters</p>
+        <p><strong>Conversion factor:</strong> 1 km = 1000 m</p>
+        <p><strong>Dimensional analysis:</strong> $5.4 \text{ km} \times \frac{1000 \text{ m}}{1 \text{ km}} = 5400 \text{ m}$</p>
+        <p><strong>Answer:</strong> 5.4 km = <strong>5400 m</strong> (or $5.4 \times 10^3$ m)</p>
+        
+        <p><strong>8.</strong></p>
+        <p><strong>Part (a): Convert 90 km/h to m/s</strong></p>
+        <p>$90 \frac{\text{km}}{\text{h}} \times \frac{1000 \text{ m}}{1 \text{ km}} \times \frac{1 \text{ h}}{3600 \text{ s}} = \frac{90 \times 1000}{3600} \frac{\text{m}}{\text{s}} = 25 \text{ m/s}$</p>
+        <p><strong>Answer:</strong> 90 km/h = <strong>25 m/s</strong></p>
+        
+        <p><strong>Part (b): Compare to walking speed</strong></p>
+        <p>$\frac{\text{car speed}}{\text{walking speed}} = \frac{25 \text{ m/s}}{1.5 \text{ m/s}} = 16.7$</p>
+        <p><strong>Answer:</strong> The car is <strong>16.7 times faster</strong> than walking (or about 17 times faster).</p>
+    </div>
+</body>
+</html>

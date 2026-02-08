@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 4.4 - Potential Energy</title>
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            background-color: #ffffff;
+            color: #000000;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.1in;
+            margin-bottom: 0.06in;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.1in;
+            margin-bottom: 0.06in;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin-top: 0.08in;
+            margin-bottom: 0.04in;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 0.05in;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 4.4</div>
+    <h1>Potential Energy</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background gradient -->
+        <defs>
+            <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#E0F2FF;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <rect width="600" height="300" fill="url(#skyGradient)"/>
+        
+        <!-- Ground -->
+        <rect x="0" y="250" width="600" height="50" fill="#8B7355"/>
+        
+        <!-- Reference line (ground level) -->
+        <line x1="0" y1="250" x2="600" y2="250" stroke="#000033" stroke-width="3"/>
+        <text x="550" y="245" font-size="12" fill="#000033">h = 0</text>
+        
+        <!-- Three identical masses at different heights -->
+        <!-- Mass 1 at h = 50m -->
+        <rect x="80" y="80" width="40" height="40" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <text x="100" y="105" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">m</text>
+        <line x1="120" y1="100" x2="150" y2="100" stroke="#000033" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="150" y1="100" x2="150" y2="250" stroke="#CC3300" stroke-width="2"/>
+        <text x="160" y="175" font-size="14" fill="#CC3300" font-weight="bold">h = 50m</text>
+        <text x="100" y="140" font-size="12" text-anchor="middle" fill="#000033" font-weight="bold">PE = mgh</text>
+        
+        <!-- Mass 2 at h = 30m -->
+        <rect x="250" y="140" width="40" height="40" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <text x="270" y="165" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">m</text>
+        <line x1="290" y1="160" x2="320" y2="160" stroke="#000033" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="320" y1="160" x2="320" y2="250" stroke="#CC3300" stroke-width="2"/>
+        <text x="330" y="205" font-size="14" fill="#CC3300" font-weight="bold">h = 30m</text>
+        
+        <!-- Mass 3 at h = 10m -->
+        <rect x="420" y="200" width="40" height="40" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <text x="440" y="225" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">m</text>
+        <line x1="460" y1="220" x2="490" y2="220" stroke="#000033" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="490" y1="220" x2="490" y2="250" stroke="#CC3300" stroke-width="2"/>
+        <text x="500" y="235" font-size="14" fill="#CC3300" font-weight="bold">h = 10m</text>
+        
+        <!-- Labels -->
+        <text x="300" y="285" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Higher Position = More Potential Energy</text>
+    </svg>
+    
+    <p>A book resting on a high shelf has the potential to fall and gain speed. A stretched bow string has the potential to launch an arrow. This stored energy—energy of position—is called potential energy. Gravitational potential energy depends on an object's height above a reference point and represents the work that gravity could do if the object falls.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2 style="background-color: transparent; color: #000033; padding: 0; margin: 0 0 0.05in 0;">Learning Objectives</h2>
+    <ul>
+        <li>I can define gravitational potential energy and explain its relationship to height</li>
+        <li>I can calculate gravitational potential energy using the formula PE = mgh</li>
+        <li>I can explain how potential energy depends on an object's position in a gravitational field</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Imagine carrying a heavy box up a flight of stairs. You do work against gravity to lift the box. Where does that energy go? It doesn't disappear—it's stored in the box-Earth system as <span class="vocab-term">potential energy</span>. This stored energy can later be released if the box falls back down.</p>
+
+<p>Potential energy is energy of position. The higher an object is above the ground, the more potential energy it has. A wrecking ball lifted high above the ground has tremendous potential energy that becomes kinetic energy as it falls and crashes into a building. Water stored behind a dam has potential energy that can turn turbines as it flows downward. Understanding potential energy is essential for analyzing everything from roller coasters to hydroelectric power plants.</p>
+
+<p>In this section, we'll focus specifically on <span class="vocab-term">gravitational potential energy</span>—the energy stored in objects due to their position in Earth's gravitational field. This is the most common form of potential energy we encounter in everyday life.</p>
+
+<div class="real-world-box">
+    <h3>Real-World Connection: Pumped-Storage Hydroelectricity</h3>
+    <p>Electric power plants use gravitational potential energy to store electrical energy. During times of low electricity demand, excess electricity pumps water uphill to a high reservoir. During peak demand, the water flows back down through turbines, converting potential energy back to electrical energy. This technology allows power grids to "store" energy efficiently by converting it to gravitational potential energy.</p>
+</div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>What is Gravitational Potential Energy?</h1>
+
+<p><span class="vocab-term">Gravitational potential energy</span> (PE or sometimes $U_g$) is the energy stored in an object due to its position relative to Earth (or another massive body). The higher the object, the greater its potential energy.</p>
+
+<div class="vocab-box">
+    <h3>Gravitational Potential Energy</h3>
+    <p>Energy stored in an object due to its height above a reference point:</p>
+    <p style="text-align: center; margin-top: 0.05in;"><strong>$$PE = mgh$$</strong></p>
+    <p>where:</p>
+    <ul>
+        <li>$PE$ = gravitational potential energy (joules, J)</li>
+        <li>$m$ = mass (kilograms, kg)</li>
+        <li>$g$ = acceleration due to gravity (9.8 m/s² on Earth)</li>
+        <li>$h$ = height above reference point (meters, m)</li>
+    </ul>
+</div>
+
+<h2>Understanding the Formula</h2>
+
+<p>Let's examine each variable in the potential energy formula:</p>
+
+<p><strong>Mass (m):</strong> More massive objects have more potential energy at the same height. A bowling ball on a shelf has more potential energy than a tennis ball at the same height because it has greater mass.</p>
+
+<p><strong>Gravity (g):</strong> On Earth, we use $g = 9.8$ m/s². On the Moon, where gravity is weaker ($g = 1.6$ m/s²), the same object at the same height would have less potential energy.</p>
+
+<p><strong>Height (h):</strong> Height is measured relative to a chosen <span class="vocab-term">reference point</span> or reference level. Doubling the height doubles the potential energy. The reference point is arbitrary—we can choose ground level, floor level, or any convenient position as $h = 0$.</p>
+
+<h2>Choosing a Reference Point</h2>
+
+<p>The <span class="vocab-term">reference point</span> is the location we define as having zero potential energy ($h = 0$). Common choices include:</p>
+
+<ul>
+    <li><strong>Ground level:</strong> For objects near Earth's surface</li>
+    <li><strong>Floor level:</strong> For objects inside buildings</li>
+    <li><strong>Table top:</strong> For small-scale experiments</li>
+    <li><strong>Lowest point:</strong> In any system (like the bottom of a hill)</li>
+</ul>
+
+<p>The choice of reference point affects the <em>value</em> of potential energy but not <em>changes</em> in potential energy. What matters in physics problems is usually the change in potential energy, not its absolute value.</p>
+
+<div class="info-box">
+    <h3>Important Note: Potential Energy is Relative</h3>
+    <p>Potential energy is always measured relative to a reference point. A book on a table has zero PE if we choose the table as our reference, but it has positive PE if we choose the floor as our reference. However, the <strong>change</strong> in PE when the book falls is the same regardless of which reference we choose. This is why we often focus on changes in energy rather than absolute values.</p>
+</div>
+
+<h1>Work and Potential Energy</h1>
+
+<p>Gravitational potential energy is directly related to <span class="vocab-term">work</span>. When you lift an object, you do work against gravity. This work is stored as potential energy.</p>
+
+<p>The work done to lift an object equals the potential energy gained:</p>
+
+<p style="text-align: center;">$W = F \cdot d = (mg)(h) = mgh = PE$</p>
+
+<p>This tells us that the potential energy of an object represents the work that was done to lift it to that height. Conversely, if the object falls, gravity does work equal to the loss in potential energy.</p>
+
+<h2>Potential Energy and Energy Transformations</h2>
+
+<p>Potential energy can transform into other forms of energy. When an object falls:</p>
+
+<ul>
+    <li>Potential energy <strong>decreases</strong> (the object gets closer to the reference point)</li>
+    <li>Kinetic energy <strong>increases</strong> (the object speeds up)</li>
+    <li>The lost PE converts to gained KE</li>
+</ul>
+
+<p>This energy transformation is the basis for the law of conservation of energy, which we'll explore in detail in the next section.</p>
+
+<div class="real-world-box">
+    <h3>Historical Note: Understanding Energy Storage</h3>
+    <p>The concept of potential energy was developed in the 19th century by scientists including William Rankine and Lord Kelvin. They recognized that energy could be stored in systems through position or configuration. This insight was crucial for understanding machines, from simple levers to complex steam engines, and laid the foundation for the principle of conservation of energy.</p>
+</div>
+
+<!-- ============== KEY FORMULAS ============== -->
+<h1>Key Formulas for Practice Problems</h1>
+
+<p>Here are the essential formulas for solving gravitational potential energy problems:</p>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Gravitational Potential Energy</td>
+        <td style="text-align: center;">$PE = mgh$</td>
+        <td>$PE$ = potential energy (J)<br>$m$ = mass (kg)<br>$g$ = 9.8 m/s² (on Earth)<br>$h$ = height (m)</td>
+    </tr>
+    <tr>
+        <td>Change in Potential Energy</td>
+        <td style="text-align: center;">$\Delta PE = mg\Delta h$</td>
+        <td>$\Delta PE$ = change in PE (J)<br>$\Delta h$ = change in height (m)<br>$\Delta h = h_f - h_i$</td>
+    </tr>
+    <tr>
+        <td>Weight</td>
+        <td style="text-align: center;">$F_g = mg$</td>
+        <td>$F_g$ = weight/gravitational force (N)<br>$m$ = mass (kg)<br>$g$ = 9.8 m/s²</td>
+    </tr>
+</table>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="info-box">
+    <h3>Problem-Solving Strategy</h3>
+    <p>Follow these five steps for every problem:</p>
+    <ol>
+        <li><strong>List the Givens:</strong> Write down all known values with units</li>
+        <li><strong>Find the Formula:</strong> Choose the appropriate equation</li>
+        <li><strong>Substitute:</strong> Plug in the known values</li>
+        <li><strong>Solve:</strong> Perform the calculation</li>
+        <li><strong>Check:</strong> Verify units and reasonableness of answer</li>
+    </ol>
+</div>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Potential Energy</h3>
+    <p><strong>Problem:</strong> A 2.5 kg book rests on a shelf 1.8 m above the floor. What is the book's gravitational potential energy relative to the floor?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m = 2.5$ kg (mass of book)</li>
+        <li>$h = 1.8$ m (height above floor)</li>
+        <li>$g = 9.8$ m/s²</li>
+        <li>Find: $PE$ = ?</li>
+    </ul>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$PE = mgh$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$PE = (2.5 \text{ kg})(9.8 \text{ m/s}^2)(1.8 \text{ m})$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$PE = 44.1$ J</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units are correct (J). The value is reasonable for a book on a shelf.</p>
+    
+    <p><strong><span class="highlight">Answer: The book has 44.1 J (or 44 J with 2 sig figs) of gravitational potential energy.</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Change in Potential Energy</h3>
+    <p><strong>Problem:</strong> A 60 kg person climbs from the first floor to the third floor of a building, a vertical distance of 8.0 m. How much did the person's gravitational potential energy increase?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m = 60$ kg</li>
+        <li>$\Delta h = 8.0$ m (change in height)</li>
+        <li>$g = 9.8$ m/s²</li>
+        <li>Find: $\Delta PE$ = ?</li>
+    </ul>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$\Delta PE = mg\Delta h$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$\Delta PE = (60 \text{ kg})(9.8 \text{ m/s}^2)(8.0 \text{ m})$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$\Delta PE = 4704$ J $\approx 4700$ J</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units are correct. This is a reasonable amount of energy for climbing stairs.</p>
+    
+    <p><strong><span class="highlight">Answer: The person's potential energy increased by 4700 J (or 4.7 kJ).</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Multi-Step Problem with Different Reference Points</h3>
+    <p><strong>Problem:</strong> A 0.50 kg apple hangs from a tree branch 3.5 m above the ground and 2.0 m above a table. (a) What is the apple's PE relative to the ground? (b) What is the apple's PE relative to the table? (c) If the apple falls and lands on the table, how much PE did it lose?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m = 0.50$ kg</li>
+        <li>Height above ground: $h_{\text{ground}} = 3.5$ m</li>
+        <li>Height above table: $h_{\text{table}} = 2.0$ m</li>
+        <li>$g = 9.8$ m/s²</li>
+    </ul>
+    
+    <p><strong>Part (a): PE relative to ground</strong></p>
+    <p>$PE_{\text{ground}} = mgh_{\text{ground}} = (0.50)(9.8)(3.5) = 17.15$ J</p>
+    <p><strong><span class="highlight">Answer (a): 17 J (relative to ground)</span></strong></p>
+    
+    <p><strong>Part (b): PE relative to table</strong></p>
+    <p>$PE_{\text{table}} = mgh_{\text{table}} = (0.50)(9.8)(2.0) = 9.8$ J</p>
+    <p><strong><span class="highlight">Answer (b): 9.8 J (relative to table)</span></strong></p>
+    
+    <p><strong>Part (c): PE lost when falling to table</strong></p>
+    <p>The apple falls from 3.5 m to 1.5 m above ground (landing on the table).</p>
+    <p>$\Delta h = 2.0$ m (the distance it fell)</p>
+    <p>$\Delta PE = mg\Delta h = (0.50)(9.8)(2.0) = 9.8$ J</p>
+    <p><strong>Note:</strong> This equals the answer from part (b)! The PE lost is the same as the PE relative to the table.</p>
+    <p><strong><span class="highlight">Answer (c): The apple lost 9.8 J of potential energy.</span></strong></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Gravitational potential energy is energy stored in an object due to its position in a gravitational field</li>
+    <li>The formula for gravitational PE is: $PE = mgh$, where $m$ is mass, $g$ is gravitational acceleration, and $h$ is height</li>
+    <li>Potential energy depends on mass, gravitational field strength, and height above a reference point</li>
+    <li>The reference point (where $h = 0$) can be chosen arbitrarily; common choices are ground level, floor level, or the lowest point</li>
+    <li>Changes in potential energy are independent of the choice of reference point</li>
+    <li>When you lift an object, you do work against gravity; this work is stored as potential energy</li>
+    <li>Potential energy can be converted to kinetic energy when an object falls</li>
+    <li>On Earth, we use $g = 9.8$ m/s²; on other planets or moons, $g$ would be different</li>
+    <li>Higher position means more potential energy for the same mass</li>
+    <li>The SI unit of potential energy is the joule (J)</li>
+</ul>
+
+<!-- ============== KEY TERMS ============== -->
+<h1>Key Terms</h1>
+
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Potential Energy</strong></td>
+        <td>Energy stored in a system due to the position or configuration of objects</td>
+    </tr>
+    <tr>
+        <td><strong>Gravitational Potential Energy</strong></td>
+        <td>Energy stored due to an object's position in a gravitational field; calculated as $PE = mgh$</td>
+    </tr>
+    <tr>
+        <td><strong>Reference Point</strong></td>
+        <td>The chosen location where potential energy is defined as zero ($h = 0$)</td>
+    </tr>
+    <tr>
+        <td><strong>Height (h)</strong></td>
+        <td>Vertical distance above the reference point</td>
+    </tr>
+    <tr>
+        <td><strong>Gravitational Field</strong></td>
+        <td>The region around a massive object where gravitational force is exerted</td>
+    </tr>
+    <tr>
+        <td><strong>Work</strong></td>
+        <td>Energy transferred when a force moves an object; equal to $F \cdot d$ when force and displacement are in the same direction</td>
+    </tr>
+    <tr>
+        <td><strong>Joule (J)</strong></td>
+        <td>The SI unit of energy; 1 J = 1 kg·m²/s²</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Define gravitational potential energy in your own words and explain why it depends on height.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> Explain why the choice of reference point affects the value of potential energy but not the change in potential energy.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> A rock has more mass than a pebble. If both are at the same height above the ground, which has more gravitational potential energy? Explain.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> Would a 5.0 kg object on the Moon have more or less gravitational potential energy than the same object at the same height on Earth? Explain. (Moon's gravity: $g = 1.6$ m/s²)</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A 3.0 kg physics textbook is on a shelf 2.5 m above the floor. Calculate its gravitational potential energy relative to the floor.</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> A 75 kg firefighter climbs a ladder 12 m high. How much gravitational potential energy does the firefighter gain?</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> A 1200 kg elevator rises from the first floor to the 10th floor, a vertical distance of 30 m. (a) How much did the elevator's gravitational potential energy increase? (b) If the elevator then descends back to the 5th floor (15 m below the 10th floor), how much PE did it lose?</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> A 0.25 kg ball is held 4.0 m above the ground and 1.5 m above a table. (a) What is the ball's PE relative to the ground? (b) What is the ball's PE relative to the table? (c) If the ball is dropped and lands on the table, how much PE did it lose? (d) Verify that your answer to (c) matches your answer to (b).</p>
+<div class="answer-space"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> Gravitational potential energy is the energy an object has because of its position above a reference point in Earth's gravitational field. It depends on height because the higher an object is, the more work gravity can do on it as it falls back down. The potential energy represents the work that was done to lift the object to that height against gravity.</p>
+
+<p><strong>2.</strong> The choice of reference point determines where we set $h = 0$, which affects the absolute value of PE. However, when an object moves from one height to another, the <em>change</em> in height ($\Delta h$) is the same regardless of where we place the reference point. Since $\Delta PE = mg\Delta h$, the change in potential energy is independent of our choice of reference.</p>
+
+<p><strong>3.</strong> The rock has more gravitational potential energy because PE = mgh, and the rock has greater mass. Even at the same height with the same gravitational acceleration, the larger mass results in greater potential energy. For example, if the rock is 10 kg and the pebble is 0.1 kg, the rock has 100 times more PE at the same height.</p>
+
+<p><strong>4.</strong> The object would have LESS gravitational potential energy on the Moon. Since $PE = mgh$ and the Moon's gravity ($g = 1.6$ m/s²) is much weaker than Earth's ($g = 9.8$ m/s²), the same object at the same height has about 1.6/9.8 ≈ 0.16 or 16% of the PE it would have on Earth.</p>
+
+<p><strong>5.</strong></p>
+<p>$PE = mgh = (3.0 \text{ kg})(9.8 \text{ m/s}^2)(2.5 \text{ m})$</p>
+<p>$PE = 73.5$ J</p>
+<p><strong><span class="highlight">Answer: 74 J (or 73.5 J)</span></strong></p>
+
+<p><strong>6.</strong></p>
+<p>$\Delta PE = mg\Delta h = (75 \text{ kg})(9.8 \text{ m/s}^2)(12 \text{ m})$</p>
+<p>$\Delta PE = 8820$ J $= 8800$ J</p>
+<p><strong><span class="highlight">Answer: 8800 J or 8.8 kJ</span></strong></p>
+
+<p><strong>7.</strong></p>
+<p><strong>(a)</strong> $\Delta PE = mg\Delta h = (1200)(9.8)(30) = 352{,}800$ J $= 353{,}000$ J</p>
+<p><strong><span class="highlight">Answer (a): 353,000 J or 353 kJ</span></strong></p>
+<p><strong>(b)</strong> Going down 15 m means losing PE:</p>
+<p>$\Delta PE = mg\Delta h = (1200)(9.8)(15) = 176{,}400$ J $= 176{,}000$ J</p>
+<p><strong><span class="highlight">Answer (b): Lost 176,000 J or 176 kJ</span></strong></p>
+
+<p><strong>8.</strong></p>
+<p><strong>(a)</strong> $PE_{\text{ground}} = (0.25)(9.8)(4.0) = 9.8$ J</p>
+<p><strong><span class="highlight">Answer (a): 9.8 J</span></strong></p>
+<p><strong>(b)</strong> $PE_{\text{table}} = (0.25)(9.8)(1.5) = 3.675$ J $\approx 3.7$ J</p>
+<p><strong><span class="highlight">Answer (b): 3.7 J</span></strong></p>
+<p><strong>(c)</strong> The ball falls 1.5 m (from 4.0 m to 2.5 m above ground):</p>
+<p>$\Delta PE = mg\Delta h = (0.25)(9.8)(1.5) = 3.675$ J $\approx 3.7$ J</p>
+<p><strong><span class="highlight">Answer (c): Lost 3.7 J</span></strong></p>
+<p><strong>(d)</strong> Yes! The PE lost (3.7 J) equals the PE relative to the table (3.7 J). This confirms that the change in PE is independent of our choice of reference point.</p>
+
+</body>
+</html>

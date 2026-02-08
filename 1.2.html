@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1.2 - The Scientific Method</title>
+    
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            padding: 0.5in;
+            margin: 0 auto;
+            background-color: white;
+            box-sizing: border-box;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #000033;
+            padding: 6px;
+            margin: 0.15in 0 0.08in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #000033;
+            padding: 6px;
+            margin: 0.12in 0 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000033;
+            margin: 0.10in 0 0.06in 0;
+        }
+        
+        p {
+            margin: 0.05in 0;
+            text-align: justify;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 1px solid #cccccc;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            padding: 0.08in;
+            margin: 0.10in 0;
+            border-left: 4px solid #cc6600;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.08in 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <!-- ============== TITLE PAGE ============== -->
+    <div class="title-page">
+        <div class="section-number">SECTION 1.2</div>
+        <h1>The Scientific Method</h1>
+        
+        <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background -->
+            <defs>
+                <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#ffffff;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <rect width="600" height="300" fill="url(#bgGradient)"/>
+            
+            <!-- Circular flow diagram showing scientific method -->
+            <circle cx="300" cy="150" r="100" fill="none" stroke="#0066cc" stroke-width="3" stroke-dasharray="5,5"/>
+            
+            <!-- Steps positioned around circle -->
+            <!-- Observation (top) -->
+            <circle cx="300" cy="40" r="25" fill="#1E90FF" opacity="0.8"/>
+            <text x="300" y="48" font-size="12" text-anchor="middle" fill="white" font-weight="bold">Observe</text>
+            
+            <!-- Hypothesis (top right) -->
+            <circle cx="410" cy="90" r="25" fill="#1E90FF" opacity="0.8"/>
+            <text x="410" y="95" font-size="11" text-anchor="middle" fill="white" font-weight="bold">Hypothesis</text>
+            
+            <!-- Experiment (right) -->
+            <circle cx="450" cy="170" r="25" fill="#1E90FF" opacity="0.8"/>
+            <text x="450" y="175" font-size="11" text-anchor="middle" fill="white" font-weight="bold">Experiment</text>
+            
+            <!-- Analyze (bottom right) -->
+            <circle cx="380" cy="240" r="25" fill="#1E90FF" opacity="0.8"/>
+            <text x="380" y="245" font-size="12" text-anchor="middle" fill="white" font-weight="bold">Analyze</text>
+            
+            <!-- Conclude (bottom) -->
+            <circle cx="300" cy="270" r="25" fill="#1E90FF" opacity="0.8"/>
+            <text x="300" y="275" font-size="11" text-anchor="middle" fill="white" font-weight="bold">Conclude</text>
+            
+            <!-- Communicate (bottom left) -->
+            <circle cx="220" cy="240" r="25" fill="#1E90FF" opacity="0.8"/>
+            <text x="220" y="240" font-size="10" text-anchor="middle" fill="white" font-weight="bold">Communi-</text>
+            <text x="220" y="252" font-size="10" text-anchor="middle" fill="white" font-weight="bold">cate</text>
+            
+            <!-- Repeat (left) -->
+            <circle cx="150" cy="170" r="25" fill="#cc6600" opacity="0.8"/>
+            <text x="150" y="175" font-size="12" text-anchor="middle" fill="white" font-weight="bold">Repeat</text>
+            
+            <!-- Question (top left) -->
+            <circle cx="190" cy="90" r="25" fill="#1E90FF" opacity="0.8"/>
+            <text x="190" y="95" font-size="11" text-anchor="middle" fill="white" font-weight="bold">Question</text>
+            
+            <!-- Arrows showing flow -->
+            <defs>
+                <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#000033"/>
+                </marker>
+            </defs>
+            
+            <!-- Center text -->
+            <text x="300" y="145" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Scientific</text>
+            <text x="300" y="165" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Method</text>
+        </svg>
+        
+        <p>Science is more than just facts and formulas—it's a way of thinking and investigating the world. The scientific method is a systematic process that scientists use to ask questions, test ideas, and discover new knowledge. In this section, you'll learn how to think like a scientist and apply this powerful method to solve problems.</p>
+    </div>
+    
+    <div class="page">
+        <!-- ============== LEARNING OBJECTIVES ============== -->
+        <h1>Learning Objectives</h1>
+        
+        <div class="learning-objectives">
+            <ul>
+                <li><strong>I can</strong> describe the steps of the scientific method and explain the purpose of each step.</li>
+                <li><strong>I can</strong> develop testable hypotheses based on observations and distinguish between hypotheses, theories, and scientific laws.</li>
+                <li><strong>I can</strong> design simple experiments to test hypotheses, identifying independent variables, dependent variables, and controlled variables.</li>
+                <li><strong>I can</strong> analyze experimental results and draw evidence-based conclusions.</li>
+            </ul>
+        </div>
+        
+        <!-- ============== INTRODUCTION ============== -->
+        <h1>Introduction</h1>
+        
+        <p>Imagine you walk into your kitchen one morning and flip the light switch, but the light doesn't turn on. What do you do? You probably start asking questions: Is the bulb burned out? Is there a power outage? Did a circuit breaker trip? You might check the bulb, look out the window to see if neighbors have power, or check the breaker box. Without realizing it, you're using the scientific method to solve a problem!</p>
+        
+        <p>The <span class="vocab-term">scientific method</span> is a systematic approach to investigating questions and solving problems. It's the foundation of all scientific inquiry, from simple classroom experiments to groundbreaking discoveries that change our understanding of the universe. While scientists in different fields may apply the method in slightly different ways, the core process remains the same.</p>
+        
+        <div class="real-world-box">
+            <h3>Real-World Connection: The Scientific Method in Everyday Life</h3>
+            <p>You use the scientific method more often than you might think. When your car won't start, you investigate possible causes. When you're trying to improve your free throw percentage in basketball, you experiment with different techniques. When you follow a recipe but the cookies don't turn out right, you analyze what went wrong and adjust for next time. The scientific method is a practical tool for solving all kinds of problems.</p>
+        </div>
+        
+        <!-- ============== MAIN CONTENT ============== -->
+        <h1>The Steps of the Scientific Method</h1>
+        
+        <p>The scientific method consists of several key steps that work together as a cycle. Scientists often repeat these steps multiple times, refining their understanding with each iteration.</p>
+        
+        <h3>Step 1: Make Observations</h3>
+        <p>Science begins with careful <span class="vocab-term">observation</span>—using your senses to gather information about the world. Observations can be <span class="vocab-term">qualitative</span> (descriptive, such as "the liquid is blue" or "the sound is loud") or <span class="vocab-term">quantitative</span> (numerical, such as "the temperature is 25°C" or "the mass is 15.3 grams").</p>
+        
+        <p>Good observations are objective (based on facts, not opinions), accurate (careful and precise), and complete (including all relevant details). Scientists often use instruments to make observations that go beyond what our senses can detect—telescopes to see distant galaxies, microscopes to see tiny cells, or thermometers to measure temperature precisely.</p>
+        
+        <h3>Step 2: Ask Questions</h3>
+        <p>Observations naturally lead to questions. A <span class="vocab-term">scientific question</span> is one that can be answered through investigation and experimentation. Good scientific questions are:</p>
+        <ul>
+            <li><strong>Testable:</strong> Can be investigated through experiments or observations</li>
+            <li><strong>Specific:</strong> Focused on a particular phenomenon</li>
+            <li><strong>Measurable:</strong> Involves quantities that can be measured or observed</li>
+        </ul>
+        
+        <p>For example, "Why is the sky blue?" is a good scientific question. "Which color is the prettiest?" is not a scientific question because "prettiest" is a matter of opinion, not something that can be objectively measured.</p>
+        
+        <h3>Step 3: Form a Hypothesis</h3>
+        <p>A <span class="vocab-term">hypothesis</span> is a testable prediction or proposed explanation for an observation. It's an educated guess based on prior knowledge and observations. A good hypothesis:</p>
+        <ul>
+            <li>Answers the scientific question</li>
+            <li>Can be tested through experiments</li>
+            <li>Can be supported or refuted by evidence</li>
+            <li>Often written in "If...then..." format</li>
+        </ul>
+        
+        <p>Example hypothesis: "If I increase the voltage in a circuit, then the bulb will get brighter because more electrical energy will be converted to light energy."</p>
+        
+        <div class="vocab-box">
+            <p><span class="vocab-term">Hypothesis:</span> A testable prediction or proposed explanation for an observation. It can be proven wrong (falsifiable).</p>
+            <p><span class="vocab-term">Theory:</span> A well-tested explanation for a wide range of observations, supported by extensive evidence from many experiments. Examples: Theory of Evolution, Atomic Theory, Theory of Relativity.</p>
+            <p><span class="vocab-term">Scientific Law:</span> A statement that describes a consistent pattern in nature, often expressed mathematically. Laws describe <em>what</em> happens; theories explain <em>why</em>. Examples: Newton's Laws of Motion, Law of Conservation of Energy.</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Important: Hypothesis vs. Theory</h3>
+            <p>In everyday language, people often say "it's just a theory" to mean a guess or hunch. But in science, a theory is much more than a guess—it's a comprehensive explanation supported by vast amounts of evidence. A hypothesis is a starting point; a theory is a destination reached after years or decades of testing and validation.</p>
+        </div>
+        
+        <h3>Step 4: Design and Conduct an Experiment</h3>
+        <p>An <span class="vocab-term">experiment</span> is a controlled procedure designed to test a hypothesis. In a well-designed experiment, you:</p>
+        
+        <p><strong>Identify Variables:</strong></p>
+        <ul>
+            <li><span class="vocab-term">Independent variable:</span> The variable you deliberately change or manipulate (also called the manipulated variable)</li>
+            <li><span class="vocab-term">Dependent variable:</span> The variable you observe or measure that responds to changes in the independent variable (also called the responding variable)</li>
+            <li><span class="vocab-term">Controlled variables:</span> All other variables that you keep constant so they don't affect the results (also called constants)</li>
+        </ul>
+        
+        <p><strong>Include Controls:</strong> A <span class="vocab-term">control group</span> is a standard for comparison—it doesn't receive the experimental treatment. This helps you determine whether your independent variable is really causing the observed effect.</p>
+        
+        <p><strong>Collect Data:</strong> Carefully record all observations and measurements. Data should be organized in tables, charts, or graphs.</p>
+        
+        <p><strong>Repeat Trials:</strong> Conduct multiple trials of your experiment to check for consistency and increase reliability.</p>
+        
+        <div class="example-box">
+            <h3>Experiment Design Example</h3>
+            <p><strong>Question:</strong> Does fertilizer help plants grow taller?</p>
+            <p><strong>Hypothesis:</strong> If I add fertilizer to soil, then plants will grow taller because they will have more nutrients.</p>
+            <p><strong>Independent Variable:</strong> Presence/absence of fertilizer (what you change)</p>
+            <p><strong>Dependent Variable:</strong> Plant height (what you measure)</p>
+            <p><strong>Controlled Variables:</strong> Type of plant, amount of water, amount of sunlight, type of soil, pot size, temperature (everything you keep the same)</p>
+            <p><strong>Control Group:</strong> Plants grown without fertilizer</p>
+            <p><strong>Experimental Group:</strong> Plants grown with fertilizer</p>
+        </div>
+        
+        <h3>Step 5: Analyze Data</h3>
+        <p>After collecting data, scientists <span class="vocab-term">analyze</span> it to look for patterns, trends, and relationships. This often involves:</p>
+        <ul>
+            <li>Creating graphs to visualize data</li>
+            <li>Calculating averages, percentages, or other statistics</li>
+            <li>Looking for correlations between variables</li>
+            <li>Identifying sources of error or uncertainty</li>
+        </ul>
+        
+        <h3>Step 6: Draw Conclusions</h3>
+        <p>Based on your data analysis, you draw a <span class="vocab-term">conclusion</span> about whether your hypothesis was supported or refuted. A good conclusion:</p>
+        <ul>
+            <li>States whether the hypothesis was supported by the data</li>
+            <li>Explains the evidence that supports your conclusion</li>
+            <li>Acknowledges limitations or sources of error</li>
+            <li>Suggests questions for further investigation</li>
+        </ul>
+        
+        <p>Remember: A hypothesis that is not supported is NOT a failure! Scientists learn just as much (sometimes more) from experiments that refute a hypothesis as from those that support it.</p>
+        
+        <h3>Step 7: Communicate Results</h3>
+        <p>Scientists share their findings with others through scientific papers, presentations, and conferences. <span class="vocab-term">Peer review</span>—having other scientists evaluate your work—is a crucial part of the scientific process. It helps catch errors, biases, or flawed reasoning.</p>
+        
+        <h3>Step 8: Repeat and Refine</h3>
+        <p>Science is an ongoing process. Other scientists repeat experiments to verify results. New questions emerge from conclusions. Hypotheses are refined and tested again. This cycle of investigation leads to deeper understanding over time.</p>
+        
+        <div class="real-world-box">
+            <h3>Historical Note: Galileo and the Scientific Method</h3>
+            <p>Galileo Galilei (1564-1642) is often called the "father of modern science" because he emphasized experimentation and mathematical analysis. Before Galileo, many people accepted Aristotle's claim that heavier objects fall faster than lighter ones. Galileo questioned this, hypothesized that all objects fall at the same rate (in the absence of air resistance), and tested it through careful experiments. His insistence on testing ideas through experiments helped establish the scientific method as we know it today.</p>
+        </div>
+        
+        <!-- ============== CHARACTERISTICS OF GOOD SCIENCE ============== -->
+        <h1>Characteristics of Good Science</h1>
+        
+        <p>What makes science different from other ways of understanding the world? Good science has several important characteristics:</p>
+        
+        <h3>1. Empirical</h3>
+        <p>Science is based on <span class="vocab-term">empirical evidence</span>—information gained through observation and experimentation, not just logical reasoning or personal beliefs.</p>
+        
+        <h3>2. Testable and Falsifiable</h3>
+        <p>Scientific hypotheses must be <span class="vocab-term">testable</span> (can be investigated through experiments) and <span class="vocab-term">falsifiable</span> (it must be possible to prove them wrong). If a claim cannot be tested or disproven, it's not scientific.</p>
+        
+        <h3>3. Repeatable and Reproducible</h3>
+        <p>Other scientists should be able to repeat your experiment and get similar results. <span class="vocab-term">Reproducibility</span> is essential for validating scientific findings.</p>
+        
+        <h3>4. Objective</h3>
+        <p>Scientists strive for <span class="vocab-term">objectivity</span>—basing conclusions on evidence rather than personal biases or preferences. While complete objectivity is impossible (we all have biases), scientists work to minimize bias through careful experimental design and peer review.</p>
+        
+        <h3>5. Self-Correcting</h3>
+        <p>When new evidence contradicts old ideas, science changes. This self-correcting nature means our scientific understanding improves over time as we gather more evidence.</p>
+        
+        <div class="info-box">
+            <h3>Limitations of Science</h3>
+            <p>While science is a powerful tool, it has limitations. Science can only answer questions about the natural, physical world. It cannot answer questions about values, ethics, morality, or aesthetics (beauty). Questions like "Should we build this technology?" or "What is the meaning of life?" are important, but they're not scientific questions. Science can inform these discussions by providing facts, but cannot answer them alone.</p>
+        </div>
+        
+        <!-- ============== KEY FORMULAS ============== -->
+        <h1>Key Formulas for Practice Problems</h1>
+        
+        <p>In scientific investigations, we often need to calculate areas, perimeters, and volumes of objects and spaces. Here are some basic geometric formulas you'll practice with:</p>
+        
+        <table>
+            <tr>
+                <th>Formula Name</th>
+                <th>Formula</th>
+                <th>Variables and Units</th>
+            </tr>
+            <tr>
+                <td><strong>Area of Rectangle</strong></td>
+                <td style="text-align: center;">$$A = lw$$</td>
+                <td>
+                    $A$ = area (cm², m², etc.)<br>
+                    $l$ = length (cm, m, etc.)<br>
+                    $w$ = width (cm, m, etc.)
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Area of Circle</strong></td>
+                <td style="text-align: center;">$$A = \pi r^2$$</td>
+                <td>
+                    $A$ = area (cm², m², etc.)<br>
+                    $r$ = radius (cm, m, etc.)<br>
+                    $\pi \approx 3.14159$
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Perimeter of Rectangle</strong></td>
+                <td style="text-align: center;">$$P = 2l + 2w$$</td>
+                <td>
+                    $P$ = perimeter (cm, m, etc.)<br>
+                    $l$ = length (cm, m, etc.)<br>
+                    $w$ = width (cm, m, etc.)
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Volume of Rectangular Solid</strong></td>
+                <td style="text-align: center;">$$V = lwh$$</td>
+                <td>
+                    $V$ = volume (cm³, m³, etc.)<br>
+                    $l$ = length (cm, m, etc.)<br>
+                    $w$ = width (cm, m, etc.)<br>
+                    $h$ = height (cm, m, etc.)
+                </td>
+            </tr>
+        </table>
+        
+        <!-- ============== EXAMPLE PROBLEMS ============== -->
+        <h1>Example Problems</h1>
+        
+        <p>When designing experiments, you often need to calculate measurements of lab equipment, work areas, or experimental setups. Practice using the problem-solving method with these geometry problems.</p>
+        
+        <div class="info-box">
+            <h3>Problem-Solving Strategy</h3>
+            <p>For every problem, follow these steps:</p>
+            <ol>
+                <li><strong>List the Givens:</strong> Write down all known values with their units.</li>
+                <li><strong>Find the Formula:</strong> Identify which formula relates the given quantities to the unknown.</li>
+                <li><strong>Substitute:</strong> Plug the known values into the formula.</li>
+                <li><strong>Solve:</strong> Use algebra to find the unknown value.</li>
+                <li><strong>Check:</strong> Make sure your answer has the correct units and makes sense.</li>
+            </ol>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 1: Area of Rectangle</h3>
+            <p><strong>Problem:</strong> A student is setting up a rectangular workspace for a physics experiment. The workspace is 85 cm long and 60 cm wide. What is the area of the workspace?</p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Length: $l = 85$ cm</li>
+                <li>Width: $w = 60$ cm</li>
+                <li>Find: Area ($A$)</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p>The formula for the area of a rectangle is:</p>
+            <p style="text-align: center;">$$A = lw$$</p>
+            <p>where $A$ is area (cm²), $l$ is length (cm), and $w$ is width (cm).</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$A = (85 \text{ cm})(60 \text{ cm})$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$A = 5100 \text{ cm}^2$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The area of the workspace is 5100 cm².</span></p>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 2: Area of Circle</h3>
+            <p><strong>Problem:</strong> A student is conducting an experiment with a circular petri dish. The radius of the dish is 4.5 cm. What is the area of the bottom of the dish?</p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Radius: $r = 4.5$ cm</li>
+                <li>Find: Area ($A$)</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p>The formula for the area of a circle is:</p>
+            <p style="text-align: center;">$$A = \pi r^2$$</p>
+            <p>where $A$ is area (cm²), $r$ is radius (cm), and $\pi \approx 3.14$.</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$A = \pi (4.5 \text{ cm})^2 = 3.14 \times (4.5)^2 \text{ cm}^2$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$A = 3.14 \times 20.25 \text{ cm}^2 = 63.6 \text{ cm}^2$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The area of the petri dish is 63.6 cm².</span></p>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 3: Multi-Step Problem - Surface Area of Box</h3>
+            <p><strong>Problem:</strong> A physics teacher needs to paint all six faces of a rectangular storage box. The box is 50 cm long, 30 cm wide, and 40 cm tall. What is the total surface area that needs to be painted?</p>
+            
+            <p><strong>This problem requires multiple steps:</strong> Calculate the area of each type of face (there are 3 pairs of identical faces), then add them together.</p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Length: $l = 50$ cm</li>
+                <li>Width: $w = 30$ cm</li>
+                <li>Height: $h = 40$ cm</li>
+                <li>Find: Total surface area ($SA$)</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p>A rectangular box has 6 faces: top and bottom, front and back, left and right sides.</p>
+            <p style="text-align: center;">$$SA = 2lw + 2lh + 2wh$$</p>
+            <p>Or we can calculate each pair separately:</p>
+            <ul>
+                <li>Top and bottom: $A_1 = lw$ (need 2 of these)</li>
+                <li>Front and back: $A_2 = lh$ (need 2 of these)</li>
+                <li>Left and right sides: $A_3 = wh$ (need 2 of these)</li>
+            </ul>
+            
+            <p><strong>Step 3 & 4 - Calculate each area:</strong></p>
+            
+            <p><strong>Top and bottom faces:</strong></p>
+            <p>$A_1 = lw = (50 \text{ cm})(30 \text{ cm}) = 1500 \text{ cm}^2$</p>
+            <p>Two faces: $2 \times 1500 = 3000 \text{ cm}^2$</p>
+            
+            <p><strong>Front and back faces:</strong></p>
+            <p>$A_2 = lh = (50 \text{ cm})(40 \text{ cm}) = 2000 \text{ cm}^2$</p>
+            <p>Two faces: $2 \times 2000 = 4000 \text{ cm}^2$</p>
+            
+            <p><strong>Left and right side faces:</strong></p>
+            <p>$A_3 = wh = (30 \text{ cm})(40 \text{ cm}) = 1200 \text{ cm}^2$</p>
+            <p>Two faces: $2 \times 1200 = 2400 \text{ cm}^2$</p>
+            
+            <p><strong>Step 5 - Find total surface area:</strong></p>
+            <p style="text-align: center;">$$SA = 3000 + 4000 + 2400 = 9400 \text{ cm}^2$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The total surface area to be painted is 9400 cm².</span></p>
+        </div>
+        
+        <!-- ============== SUMMARY ============== -->
+        <h1>Summary</h1>
+        
+        <ul>
+            <li>The scientific method is a systematic process for investigating questions and testing ideas through experimentation.</li>
+            <li>The steps of the scientific method are: observe, ask questions, form a hypothesis, conduct experiments, analyze data, draw conclusions, and communicate results.</li>
+            <li>Observations can be qualitative (descriptive) or quantitative (numerical).</li>
+            <li>A hypothesis is a testable prediction; a theory is a well-tested explanation supported by extensive evidence; a law describes a consistent pattern in nature.</li>
+            <li>In an experiment, the independent variable is what you change, the dependent variable is what you measure, and controlled variables are kept constant.</li>
+            <li>A control group provides a standard for comparison in an experiment.</li>
+            <li>Good science is empirical, testable, repeatable, objective, and self-correcting.</li>
+            <li>Scientific conclusions should be based on evidence and should acknowledge limitations and sources of error.</li>
+            <li>Peer review and replication by other scientists are essential parts of the scientific process.</li>
+            <li>Science can answer questions about the natural world but cannot answer questions about values, ethics, or aesthetics.</li>
+        </ul>
+        
+        <!-- ============== KEY TERMS TABLE ============== -->
+        <h1>Key Terms</h1>
+        
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+            </tr>
+            <tr>
+                <td><strong>Scientific Method</strong></td>
+                <td>A systematic process for investigating questions through observation, hypothesis formation, experimentation, and analysis</td>
+            </tr>
+            <tr>
+                <td><strong>Observation</strong></td>
+                <td>Using the senses (or instruments) to gather information</td>
+            </tr>
+            <tr>
+                <td><strong>Qualitative</strong></td>
+                <td>Descriptive observations (color, texture, sound, etc.)</td>
+            </tr>
+            <tr>
+                <td><strong>Quantitative</strong></td>
+                <td>Numerical observations involving measurements</td>
+            </tr>
+            <tr>
+                <td><strong>Hypothesis</strong></td>
+                <td>A testable prediction or proposed explanation</td>
+            </tr>
+            <tr>
+                <td><strong>Theory</strong></td>
+                <td>A well-tested explanation supported by extensive evidence</td>
+            </tr>
+            <tr>
+                <td><strong>Scientific Law</strong></td>
+                <td>A statement describing a consistent pattern in nature</td>
+            </tr>
+            <tr>
+                <td><strong>Experiment</strong></td>
+                <td>A controlled procedure designed to test a hypothesis</td>
+            </tr>
+            <tr>
+                <td><strong>Independent Variable</strong></td>
+                <td>The variable that is deliberately changed in an experiment</td>
+            </tr>
+            <tr>
+                <td><strong>Dependent Variable</strong></td>
+                <td>The variable that is measured or observed in response to changes</td>
+            </tr>
+            <tr>
+                <td><strong>Controlled Variables</strong></td>
+                <td>Variables kept constant throughout an experiment</td>
+            </tr>
+            <tr>
+                <td><strong>Control Group</strong></td>
+                <td>A standard for comparison that doesn't receive the experimental treatment</td>
+            </tr>
+            <tr>
+                <td><strong>Empirical Evidence</strong></td>
+                <td>Information gained through observation and experimentation</td>
+            </tr>
+            <tr>
+                <td><strong>Falsifiable</strong></td>
+                <td>Able to be proven wrong; a necessary characteristic of scientific hypotheses</td>
+            </tr>
+        </table>
+        
+        <!-- ============== PRACTICE PROBLEMS ============== -->
+        <h1>Practice Problems</h1>
+        
+        <p><strong>1.</strong> List the steps of the scientific method in order and briefly describe the purpose of each step.</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>2.</strong> Explain the difference between a hypothesis, a theory, and a scientific law. Give an example of each.</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>3.</strong> A student wants to test whether the type of soil affects how fast bean plants grow. Identify the independent variable, dependent variable, and at least three controlled variables for this experiment.</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>4.</strong> Why is it important for experiments to be repeatable? How does repeatability contribute to the reliability of scientific knowledge?</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>5.</strong> A physics lab table is rectangular with a length of 120 cm and a width of 75 cm. Calculate the area of the table top.</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>6.</strong> A circular mirror used in an optics experiment has a radius of 6.0 cm. What is the area of the mirror? (Use $\pi = 3.14$)</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>7.</strong> A student needs to outline a rectangular poster board with tape for a science fair project. The poster is 90 cm long and 60 cm wide. What is the perimeter of the poster?</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>8.</strong> <strong>Multi-step problem:</strong> A teacher is building a rectangular wooden box to store lab equipment. The box will be 80 cm long, 50 cm wide, and 60 cm tall.
+        <br>(a) What is the volume of the box?
+        <br>(b) What is the area of the bottom of the box?
+        <br>(c) What is the total surface area of all six faces of the box?</p>
+        <div class="answer-space"></div>
+        
+        <!-- ============== ANSWER KEY ============== -->
+        <h1>Answer Key</h1>
+        
+        <p><strong>1.</strong> The steps of the scientific method are: (1) <strong>Observe</strong> - Use your senses to gather information about the world. (2) <strong>Ask Questions</strong> - Identify what you want to understand or investigate. (3) <strong>Form a Hypothesis</strong> - Make a testable prediction. (4) <strong>Conduct an Experiment</strong> - Design and carry out a test of your hypothesis. (5) <strong>Analyze Data</strong> - Look for patterns and relationships in your results. (6) <strong>Draw Conclusions</strong> - Determine whether your hypothesis was supported. (7) <strong>Communicate Results</strong> - Share your findings with others. (8) <strong>Repeat</strong> - Test again or investigate new questions that arise.</p>
+        
+        <p><strong>2.</strong> A <strong>hypothesis</strong> is a testable prediction about a specific situation (example: "If I add salt to water, then it will freeze at a lower temperature"). A <strong>theory</strong> is a comprehensive, well-tested explanation for a wide range of observations, supported by lots of evidence (example: Atomic Theory, which explains that all matter is made of atoms). A <strong>scientific law</strong> is a statement that describes a pattern in nature, often mathematical (example: Newton's Second Law, $F = ma$). Hypotheses can be proven wrong quickly; theories are supported by years of evidence; laws describe what happens but don't always explain why.</p>
+        
+        <p><strong>3.</strong> <strong>Independent variable:</strong> Type of soil (this is what the student changes). <strong>Dependent variable:</strong> Growth rate or height of bean plants (this is what the student measures). <strong>Controlled variables:</strong> Type of bean seeds, amount of water, amount of sunlight, temperature, pot size, and time allowed for growth (these must all be kept the same for all plants).</p>
+        
+        <p><strong>4.</strong> Repeatability is important because it allows other scientists to verify results and check for errors or biases. If an experiment can be repeated by different people in different locations and produces consistent results, we can have more confidence that the findings are reliable and not due to chance, mistakes, or fraud. Repeatability is one of the foundations of the scientific process—it ensures that scientific knowledge is based on consistent, verifiable evidence rather than one person's isolated claim.</p>
+        
+        <p><strong>5.</strong></p>
+        <p><strong>Given:</strong> $l = 120$ cm, $w = 75$ cm</p>
+        <p><strong>Find:</strong> Area ($A$)</p>
+        <p><strong>Formula:</strong> $A = lw$</p>
+        <p><strong>Substitute:</strong> $A = (120 \text{ cm})(75 \text{ cm})$</p>
+        <p><strong>Solve:</strong> $A = 9000$ cm²</p>
+        <p><strong>Answer:</strong> The area is <strong>9000 cm²</strong> (or 0.90 m²).</p>
+        
+        <p><strong>6.</strong></p>
+        <p><strong>Given:</strong> $r = 6.0$ cm</p>
+        <p><strong>Find:</strong> Area ($A$)</p>
+        <p><strong>Formula:</strong> $A = \pi r^2$</p>
+        <p><strong>Substitute:</strong> $A = 3.14 \times (6.0 \text{ cm})^2 = 3.14 \times 36 \text{ cm}^2$</p>
+        <p><strong>Solve:</strong> $A = 113$ cm²</p>
+        <p><strong>Answer:</strong> The area is <strong>113 cm²</strong> (rounded to 3 significant figures).</p>
+        
+        <p><strong>7.</strong></p>
+        <p><strong>Given:</strong> $l = 90$ cm, $w = 60$ cm</p>
+        <p><strong>Find:</strong> Perimeter ($P$)</p>
+        <p><strong>Formula:</strong> $P = 2l + 2w$</p>
+        <p><strong>Substitute:</strong> $P = 2(90 \text{ cm}) + 2(60 \text{ cm})$</p>
+        <p><strong>Solve:</strong> $P = 180 \text{ cm} + 120 \text{ cm} = 300$ cm</p>
+        <p><strong>Answer:</strong> The perimeter is <strong>300 cm</strong> (or 3.0 m).</p>
+        
+        <p><strong>8.</strong></p>
+        <p><strong>Part (a): Volume</strong></p>
+        <p><strong>Given:</strong> $l = 80$ cm, $w = 50$ cm, $h = 60$ cm</p>
+        <p><strong>Find:</strong> Volume ($V$)</p>
+        <p><strong>Formula:</strong> $V = lwh$</p>
+        <p><strong>Substitute:</strong> $V = (80 \text{ cm})(50 \text{ cm})(60 \text{ cm})$</p>
+        <p><strong>Solve:</strong> $V = 240{,}000$ cm³</p>
+        <p><strong>Answer:</strong> The volume is <strong>240,000 cm³</strong> (or 0.24 m³).</p>
+        
+        <p><strong>Part (b): Area of bottom</strong></p>
+        <p><strong>Given:</strong> $l = 80$ cm, $w = 50$ cm</p>
+        <p><strong>Find:</strong> Area ($A$)</p>
+        <p><strong>Formula:</strong> $A = lw$</p>
+        <p><strong>Substitute:</strong> $A = (80 \text{ cm})(50 \text{ cm})$</p>
+        <p><strong>Solve:</strong> $A = 4000$ cm²</p>
+        <p><strong>Answer:</strong> The area of the bottom is <strong>4000 cm²</strong>.</p>
+        
+        <p><strong>Part (c): Total surface area</strong></p>
+        <p>Calculate area of each pair of faces:</p>
+        <p>Top/bottom: $2 \times lw = 2 \times 4000 = 8000$ cm²</p>
+        <p>Front/back: $2 \times lh = 2 \times (80)(60) = 2 \times 4800 = 9600$ cm²</p>
+        <p>Left/right sides: $2 \times wh = 2 \times (50)(60) = 2 \times 3000 = 6000$ cm²</p>
+        <p><strong>Total:</strong> $SA = 8000 + 9600 + 6000 = 23{,}600$ cm²</p>
+        <p><strong>Answer:</strong> The total surface area is <strong>23,600 cm²</strong> (or 2.36 m²).</p>
+    </div>
+</body>
+</html>

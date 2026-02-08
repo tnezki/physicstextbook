@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 4.3 - Elastic and Inelastic Collisions</title>
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            background-color: #ffffff;
+            color: #000000;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.1in;
+            margin-bottom: 0.06in;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.1in;
+            margin-bottom: 0.06in;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin-top: 0.08in;
+            margin-bottom: 0.04in;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 0.05in;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 4.3</div>
+    <h1>Elastic and Inelastic Collisions</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#ffffff"/>
+        
+        <!-- Title boxes -->
+        <rect x="30" y="20" width="240" height="40" fill="#0066cc" opacity="0.2" stroke="#0066cc" stroke-width="2"/>
+        <text x="150" y="48" font-size="18" text-anchor="middle" fill="#000033" font-weight="bold">ELASTIC COLLISION</text>
+        
+        <rect x="330" y="20" width="240" height="40" fill="#cc6600" opacity="0.2" stroke="#cc6600" stroke-width="2"/>
+        <text x="450" y="48" font-size="18" text-anchor="middle" fill="#000033" font-weight="bold">INELASTIC COLLISION</text>
+        
+        <!-- Elastic collision illustration -->
+        <!-- Before -->
+        <circle cx="80" cy="100" r="20" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <circle cx="180" cy="100" r="20" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <line x1="105" y1="100" x2="155" y2="100" stroke="#CC3300" stroke-width="2">
+            <animate attributeName="x1" values="105;125;105" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="x2" values="155;175;155" dur="2s" repeatCount="indefinite"/>
+        </line>
+        
+        <!-- After -->
+        <circle cx="80" cy="150" r="20" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <circle cx="180" cy="150" r="20" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <line x1="55" y1="150" x2="25" y2="150" stroke="#CC3300" stroke-width="2"/>
+        <line x1="205" y1="150" x2="235" y2="150" stroke="#CC3300" stroke-width="2"/>
+        
+        <text x="150" y="185" font-size="12" text-anchor="middle" fill="#000033">KE conserved</text>
+        <text x="150" y="200" font-size="12" text-anchor="middle" fill="#000033">Objects bounce apart</text>
+        
+        <!-- Inelastic collision illustration -->
+        <!-- Before -->
+        <circle cx="380" cy="100" r="20" fill="#cc6600" stroke="#000033" stroke-width="2"/>
+        <circle cx="480" cy="100" r="20" fill="#cc6600" stroke="#000033" stroke-width="2"/>
+        <line x1="405" y1="100" x2="455" y2="100" stroke="#CC3300" stroke-width="2">
+            <animate attributeName="x1" values="405;425;405" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="x2" values="455;475;455" dur="2s" repeatCount="indefinite"/>
+        </line>
+        
+        <!-- After - stuck together -->
+        <rect x="410" y="135" width="60" height="30" fill="#cc6600" stroke="#000033" stroke-width="2"/>
+        <line x1="475" y1="150" x2="515" y2="150" stroke="#CC3300" stroke-width="2"/>
+        
+        <text x="450" y="185" font-size="12" text-anchor="middle" fill="#000033">KE NOT conserved</text>
+        <text x="450" y="200" font-size="12" text-anchor="middle" fill="#000033">Objects stick together</text>
+        
+        <!-- Bottom comparison -->
+        <rect x="50" y="230" width="500" height="50" fill="#e8f4f8" stroke="#0066cc" stroke-width="2"/>
+        <text x="300" y="255" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Both Types: Momentum is ALWAYS Conserved</text>
+    </svg>
+    
+    <p>Not all collisions are the same. In elastic collisions, objects bounce apart and kinetic energy is conserved. In inelastic collisions, some kinetic energy is transformed into other forms like heat and sound. When objects stick together after impact, we call it a perfectly inelastic collision. Understanding these different types helps us analyze everything from bouncing balls to car crashes.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2 style="background-color: transparent; color: #000033; padding: 0; margin: 0 0 0.05in 0;">Learning Objectives</h2>
+    <ul>
+        <li>I can distinguish between elastic and inelastic collisions based on kinetic energy conservation</li>
+        <li>I can identify perfectly inelastic collisions where objects stick together after impact</li>
+        <li>I can calculate the final velocity in perfectly inelastic collisions</li>
+        <li>I can analyze kinetic energy before and after collisions to determine the type of collision</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Drop a tennis ball and a ball of clay from the same height. Both have the same kinetic energy just before they hit the ground. But watch what happens next: the tennis ball bounces back up, while the clay splats and stays on the ground. What's the difference? The tennis ball undergoes an elastic collision with the ground, while the clay experiences an inelastic collision.</p>
+
+<p>In the previous section, we learned that momentum is always conserved in isolated systems. But what about kinetic energy? It turns out that kinetic energy is conserved in some collisions (elastic) but not in others (inelastic). This difference allows us to classify collisions into different types and better understand the physical processes involved.</p>
+
+<p>Understanding collision types has important practical applications. Engineers designing car bumpers want them to be somewhat inelastic to absorb energy and protect passengers. Sports equipment designers want tennis rackets and golf clubs to produce elastic collisions for maximum energy transfer. Even at the atomic level, physicists study elastic and inelastic scattering to understand particle interactions.</p>
+
+<div class="real-world-box">
+    <h3>Real-World Connection: Vehicle Crash Safety</h3>
+    <p>Modern vehicles are designed to crumple during collisions—a deliberately inelastic process. The crumpling absorbs kinetic energy by deforming metal, which prevents that energy from being transferred to passengers. In contrast, older cars with rigid frames experienced more elastic collisions, bouncing off obstacles and transferring more energy to occupants. Understanding inelastic collisions has saved countless lives through improved automotive safety design.</p>
+</div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>Types of Collisions</h1>
+
+<p>Collisions are classified based on whether kinetic energy is conserved. Remember: <span class="vocab-term">momentum is ALWAYS conserved</span> in isolated systems regardless of collision type. The difference lies in what happens to kinetic energy.</p>
+
+<h2>Elastic Collisions</h2>
+
+<p>An <span class="vocab-term">elastic collision</span> is one in which both momentum and kinetic energy are conserved. In elastic collisions, the total kinetic energy before the collision equals the total kinetic energy after the collision.</p>
+
+<div class="vocab-box">
+    <h3>Elastic Collision</h3>
+    <p>A collision in which both momentum and kinetic energy are conserved:</p>
+    <p style="text-align: center;"><strong>Momentum:</strong> $m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$</p>
+    <p style="text-align: center;"><strong>Kinetic Energy:</strong> $\frac{1}{2}m_1v_{1i}^2 + \frac{1}{2}m_2v_{2i}^2 = \frac{1}{2}m_1v_{1f}^2 + \frac{1}{2}m_2v_{2f}^2$</p>
+</div>
+
+<p>Perfect elastic collisions are rare in everyday life because some energy is usually lost to sound, heat, or deformation. However, several situations come close:</p>
+
+<ul>
+    <li><strong>Billiard balls:</strong> Very nearly elastic—they bounce with minimal energy loss</li>
+    <li><strong>Steel ball bearings:</strong> Hard materials produce nearly elastic collisions</li>
+    <li><strong>Atomic and molecular collisions:</strong> At the microscopic level, many collisions are perfectly elastic</li>
+    <li><strong>Newton's cradle:</strong> The swinging spheres demonstrate nearly elastic collisions</li>
+</ul>
+
+<h2>Inelastic Collisions</h2>
+
+<p>An <span class="vocab-term">inelastic collision</span> is one in which momentum is conserved but kinetic energy is not. Some of the kinetic energy is transformed into other forms of energy such as heat, sound, or deformation energy.</p>
+
+<div class="vocab-box">
+    <h3>Inelastic Collision</h3>
+    <p>A collision in which momentum is conserved but kinetic energy is not:</p>
+    <p style="text-align: center;"><strong>Momentum:</strong> $m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$ ✓ Conserved</p>
+    <p style="text-align: center;"><strong>Kinetic Energy:</strong> $KE_{\text{before}} > KE_{\text{after}}$ ✗ NOT Conserved</p>
+    <p>The "lost" kinetic energy is converted to heat, sound, deformation, etc.</p>
+</div>
+
+<p>Most real-world collisions are inelastic to some degree. Examples include:</p>
+
+<ul>
+    <li><strong>Car crashes:</strong> Metal deforms, absorbing energy</li>
+    <li><strong>Catching a ball:</strong> Your glove and hand absorb energy</li>
+    <li><strong>Furniture moving across floor:</strong> Friction converts kinetic energy to heat</li>
+    <li><strong>Hammer hitting a nail:</strong> Energy goes into deforming the nail and wood</li>
+</ul>
+
+<h2>Perfectly Inelastic Collisions</h2>
+
+<p>A <span class="vocab-term">perfectly inelastic collision</span> is a special case where objects stick together after the collision, moving as a single combined mass. This represents the maximum possible loss of kinetic energy while still conserving momentum.</p>
+
+<div class="vocab-box">
+    <h3>Perfectly Inelastic Collision</h3>
+    <p>Objects stick together after collision and move with the same final velocity:</p>
+    <p style="text-align: center;"><strong>$$m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f$$</strong></p>
+    <p>where $v_f$ is the common final velocity of both objects</p>
+</div>
+
+<p>Examples of perfectly inelastic collisions:</p>
+
+<ul>
+    <li><strong>Football tackle:</strong> Player and ball carrier move together</li>
+    <li><strong>Railroad cars coupling:</strong> Cars link and move as one</li>
+    <li><strong>Meteorite impact:</strong> Meteorite embeds in Earth</li>
+    <li><strong>Velcro collision:</strong> Objects with Velcro stick together</li>
+</ul>
+
+<div class="info-box">
+    <h3>Why is Kinetic Energy Lost in Inelastic Collisions?</h3>
+    <p>Kinetic energy isn't really "lost"—it's <strong>transformed</strong> into other forms. During collisions, kinetic energy can become:</p>
+    <ul>
+        <li><strong>Heat energy:</strong> Friction and deformation warm the objects</li>
+        <li><strong>Sound energy:</strong> The collision makes noise</li>
+        <li><strong>Deformation energy:</strong> Permanent changes to object shapes</li>
+        <li><strong>Internal energy:</strong> Molecular vibrations increase</li>
+    </ul>
+    <p>The total energy (including all forms) is still conserved—it's just no longer all kinetic energy.</p>
+</div>
+
+<h1>Analyzing Collision Types</h1>
+
+<h2>How to Determine Collision Type</h2>
+
+<p>To determine whether a collision is elastic or inelastic, calculate the total kinetic energy before and after the collision:</p>
+
+<ol>
+    <li>Calculate $KE_{\text{before}} = \frac{1}{2}m_1v_{1i}^2 + \frac{1}{2}m_2v_{2i}^2$</li>
+    <li>Calculate $KE_{\text{after}} = \frac{1}{2}m_1v_{1f}^2 + \frac{1}{2}m_2v_{2f}^2$</li>
+    <li>Compare:
+        <ul>
+            <li>If $KE_{\text{before}} = KE_{\text{after}}$ → <strong>Elastic collision</strong></li>
+            <li>If $KE_{\text{before}} > KE_{\text{after}}$ → <strong>Inelastic collision</strong></li>
+            <li>If objects stick together → <strong>Perfectly inelastic collision</strong></li>
+        </ul>
+    </li>
+</ol>
+
+<div class="real-world-box">
+    <h3>Historical Note: Coefficient of Restitution</h3>
+    <p>In the 17th century, Isaac Newton developed the concept of the <strong>coefficient of restitution</strong> (e) to quantify how "bouncy" a collision is. It ranges from e = 1 (perfectly elastic) to e = 0 (perfectly inelastic). Sports equipment manufacturers use this concept to design balls with specific bounce characteristics—tennis balls have e ≈ 0.75, while basketballs have e ≈ 0.85.</p>
+</div>
+
+<!-- ============== KEY FORMULAS ============== -->
+<h1>Key Formulas for Practice Problems</h1>
+
+<p>These formulas will help you solve problems involving different types of collisions:</p>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Kinetic Energy</td>
+        <td style="text-align: center;">$KE = \frac{1}{2}mv^2$</td>
+        <td>$KE$ = kinetic energy (J)<br>$m$ = mass (kg)<br>$v$ = velocity (m/s)</td>
+    </tr>
+    <tr>
+        <td>Conservation of Momentum (All Collisions)</td>
+        <td style="text-align: center;">$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$</td>
+        <td>$m$ = mass (kg)<br>$v_i$ = initial velocity (m/s)<br>$v_f$ = final velocity (m/s)</td>
+    </tr>
+    <tr>
+        <td>Perfectly Inelastic Collision</td>
+        <td style="text-align: center;">$m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f$</td>
+        <td>$m_1, m_2$ = masses (kg)<br>$v_{1i}, v_{2i}$ = initial velocities (m/s)<br>$v_f$ = common final velocity (m/s)</td>
+    </tr>
+    <tr>
+        <td>Total Kinetic Energy</td>
+        <td style="text-align: center;">$KE_{\text{total}} = \frac{1}{2}m_1v_1^2 + \frac{1}{2}m_2v_2^2$</td>
+        <td>$KE_{\text{total}}$ = total kinetic energy (J)<br>$m_1, m_2$ = masses (kg)<br>$v_1, v_2$ = velocities (m/s)</td>
+    </tr>
+</table>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="info-box">
+    <h3>Problem-Solving Strategy</h3>
+    <p>Follow these five steps for every problem:</p>
+    <ol>
+        <li><strong>List the Givens:</strong> Write down all known values with units</li>
+        <li><strong>Find the Formula:</strong> Choose the appropriate equation</li>
+        <li><strong>Substitute:</strong> Plug in the known values</li>
+        <li><strong>Solve:</strong> Perform the calculation</li>
+        <li><strong>Check:</strong> Verify units and reasonableness of answer</li>
+    </ol>
+</div>
+
+<div class="example-box">
+    <h3>Example 1: Determining Collision Type</h3>
+    <p><strong>Problem:</strong> A 2.0 kg cart moving at 4.0 m/s collides with a 3.0 kg cart at rest. After the collision, the 2.0 kg cart moves at 1.0 m/s and the 3.0 kg cart moves at 2.0 m/s (both in the original direction). Is this collision elastic or inelastic?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m_1 = 2.0$ kg, $v_{1i} = 4.0$ m/s, $v_{1f} = 1.0$ m/s</li>
+        <li>$m_2 = 3.0$ kg, $v_{2i} = 0$ m/s, $v_{2f} = 2.0$ m/s</li>
+        <li>Find: Is collision elastic or inelastic?</li>
+    </ul>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>Calculate $KE_{\text{before}}$ and $KE_{\text{after}}$, then compare</p>
+    <p>$KE = \frac{1}{2}mv^2$</p>
+    
+    <p><strong>Step 3 - Substitute and Solve:</strong></p>
+    <p><strong>Before collision:</strong></p>
+    <p>$KE_{\text{before}} = \frac{1}{2}(2.0)(4.0)^2 + \frac{1}{2}(3.0)(0)^2$</p>
+    <p>$KE_{\text{before}} = \frac{1}{2}(2.0)(16) + 0 = 16$ J</p>
+    
+    <p><strong>After collision:</strong></p>
+    <p>$KE_{\text{after}} = \frac{1}{2}(2.0)(1.0)^2 + \frac{1}{2}(3.0)(2.0)^2$</p>
+    <p>$KE_{\text{after}} = \frac{1}{2}(2.0)(1.0) + \frac{1}{2}(3.0)(4.0)$</p>
+    <p>$KE_{\text{after}} = 1.0 + 6.0 = 7.0$ J</p>
+    
+    <p><strong>Step 4 - Check:</strong></p>
+    <p>Since $KE_{\text{before}} (16 \text{ J}) > KE_{\text{after}} (7.0 \text{ J})$, kinetic energy is NOT conserved.</p>
+    
+    <p><strong><span class="highlight">Answer: This is an inelastic collision. About 9 J of kinetic energy was converted to other forms (heat, sound, deformation).</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Perfectly Inelastic Collision</h3>
+    <p><strong>Problem:</strong> A 1200 kg car traveling at 25 m/s rear-ends a 1500 kg car traveling at 15 m/s in the same direction. The two cars lock bumpers and move together. What is their combined velocity after the collision?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m_1 = 1200$ kg, $v_{1i} = 25$ m/s</li>
+        <li>$m_2 = 1500$ kg, $v_{2i} = 15$ m/s</li>
+        <li>Cars stick together: $v_{1f} = v_{2f} = v_f$</li>
+        <li>Find: $v_f$ = ?</li>
+    </ul>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$(1200)(25) + (1500)(15) = (1200 + 1500)v_f$</p>
+    <p>$30{,}000 + 22{,}500 = 2700v_f$</p>
+    <p>$52{,}500 = 2700v_f$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$v_f = \frac{52{,}500}{2700} = 19.4$ m/s</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>The final velocity (19.4 m/s) is between the two initial velocities (15 and 25 m/s), which makes sense.</p>
+    
+    <p><strong><span class="highlight">Answer: The combined cars move at 19.4 m/s in the original direction.</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Multi-Step Analysis of Perfectly Inelastic Collision</h3>
+    <p><strong>Problem:</strong> A 0.50 kg ball moving at 10 m/s collides with a 0.30 kg ball at rest. They stick together after the collision. (a) Find their common velocity after the collision. (b) Calculate the kinetic energy before the collision. (c) Calculate the kinetic energy after the collision. (d) How much kinetic energy was lost?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m_1 = 0.50$ kg, $v_{1i} = 10$ m/s</li>
+        <li>$m_2 = 0.30$ kg, $v_{2i} = 0$ m/s</li>
+        <li>Balls stick: $v_{1f} = v_{2f} = v_f$</li>
+    </ul>
+    
+    <p><strong>Part (a): Common Velocity</strong></p>
+    <p><strong>Formula:</strong> $m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f$</p>
+    <p>$(0.50)(10) + (0.30)(0) = (0.50 + 0.30)v_f$</p>
+    <p>$5.0 = 0.80v_f$</p>
+    <p>$v_f = 6.25$ m/s</p>
+    <p><strong><span class="highlight">Answer (a): 6.25 m/s (or 6.3 m/s with 2 sig figs)</span></strong></p>
+    
+    <p><strong>Part (b): Kinetic Energy Before</strong></p>
+    <p>$KE_{\text{before}} = \frac{1}{2}m_1v_{1i}^2 + \frac{1}{2}m_2v_{2i}^2$</p>
+    <p>$KE_{\text{before}} = \frac{1}{2}(0.50)(10)^2 + \frac{1}{2}(0.30)(0)^2$</p>
+    <p>$KE_{\text{before}} = \frac{1}{2}(0.50)(100) + 0 = 25$ J</p>
+    <p><strong><span class="highlight">Answer (b): 25 J</span></strong></p>
+    
+    <p><strong>Part (c): Kinetic Energy After</strong></p>
+    <p>$KE_{\text{after}} = \frac{1}{2}(m_1 + m_2)v_f^2$</p>
+    <p>$KE_{\text{after}} = \frac{1}{2}(0.80)(6.25)^2$</p>
+    <p>$KE_{\text{after}} = \frac{1}{2}(0.80)(39.06) = 15.6$ J</p>
+    <p><strong><span class="highlight">Answer (c): 15.6 J (or 16 J with 2 sig figs)</span></strong></p>
+    
+    <p><strong>Part (d): Energy Lost</strong></p>
+    <p>$\Delta KE = KE_{\text{before}} - KE_{\text{after}} = 25 - 15.6 = 9.4$ J</p>
+    <p><strong><span class="highlight">Answer (d): 9.4 J of kinetic energy was converted to other forms (heat, sound, deformation)</span></strong></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Momentum is conserved in ALL collisions in isolated systems, regardless of type</li>
+    <li>Elastic collisions conserve both momentum and kinetic energy; objects bounce apart</li>
+    <li>Inelastic collisions conserve momentum but NOT kinetic energy; some KE is converted to heat, sound, and deformation</li>
+    <li>Perfectly inelastic collisions are a special case where objects stick together after impact</li>
+    <li>For perfectly inelastic collisions: $m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f$</li>
+    <li>To determine collision type, calculate kinetic energy before and after and compare</li>
+    <li>Most real-world collisions are inelastic to some degree</li>
+    <li>The "lost" kinetic energy in inelastic collisions is transformed into other energy forms, not destroyed</li>
+    <li>Vehicle safety systems use inelastic collisions to absorb energy and protect passengers</li>
+    <li>Perfectly elastic collisions are rare in everyday life but common at the atomic and molecular level</li>
+</ul>
+
+<!-- ============== KEY TERMS ============== -->
+<h1>Key Terms</h1>
+
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Elastic Collision</strong></td>
+        <td>A collision in which both momentum and kinetic energy are conserved; objects bounce apart</td>
+    </tr>
+    <tr>
+        <td><strong>Inelastic Collision</strong></td>
+        <td>A collision in which momentum is conserved but kinetic energy is not; some KE is converted to other forms</td>
+    </tr>
+    <tr>
+        <td><strong>Perfectly Inelastic Collision</strong></td>
+        <td>A collision in which objects stick together after impact, moving with a common final velocity; maximum KE loss</td>
+    </tr>
+    <tr>
+        <td><strong>Kinetic Energy</strong></td>
+        <td>Energy of motion, calculated as $KE = \frac{1}{2}mv^2$</td>
+    </tr>
+    <tr>
+        <td><strong>Energy Transformation</strong></td>
+        <td>The conversion of energy from one form to another (e.g., kinetic to thermal)</td>
+    </tr>
+    <tr>
+        <td><strong>Deformation Energy</strong></td>
+        <td>Energy used to permanently change the shape of an object during a collision</td>
+    </tr>
+    <tr>
+        <td><strong>Coefficient of Restitution</strong></td>
+        <td>A measure of how "bouncy" a collision is; ranges from 0 (perfectly inelastic) to 1 (perfectly elastic)</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Explain the difference between elastic and inelastic collisions. Which quantity is conserved in both types?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> Why are perfectly inelastic collisions considered to have the maximum possible loss of kinetic energy?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> A tennis ball bounces to about 75% of its original height after hitting the ground. Is this collision elastic or inelastic? Explain.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> In a car crash, would you rather be in a car that experiences an elastic collision or an inelastic collision? Explain your reasoning from a safety perspective.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A 3.0 kg cart moving at 5.0 m/s collides with a 2.0 kg cart at rest. After the collision, they stick together. What is their common velocity?</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> Two identical 1.5 kg balls collide head-on. Ball A is moving at 8.0 m/s to the right, and ball B is moving at 6.0 m/s to the left. They stick together after the collision. What is their final velocity?</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> A 4.0 kg object moving at 6.0 m/s collides with a 2.0 kg object moving at 3.0 m/s in the same direction. After the collision, the 4.0 kg object moves at 4.0 m/s. (a) Find the final velocity of the 2.0 kg object. (b) Calculate the kinetic energy before and after the collision. (c) Is this collision elastic or inelastic?</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> A 0.60 kg ball moving at 12 m/s collides with a 0.40 kg ball at rest. They stick together. (a) Find their common velocity after collision. (b) Calculate the kinetic energy before the collision. (c) Calculate the kinetic energy after the collision. (d) How much kinetic energy was lost, and where did it go?</p>
+<div class="answer-space"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> In elastic collisions, both momentum and kinetic energy are conserved—objects bounce apart with no energy loss. In inelastic collisions, momentum is conserved but kinetic energy is not—some kinetic energy is converted to heat, sound, and deformation. Momentum is the quantity conserved in both types of collisions (as long as the system is isolated).</p>
+
+<p><strong>2.</strong> In perfectly inelastic collisions, the objects stick together and move with a common velocity. This represents the minimum final kinetic energy possible while still conserving momentum. Any other final velocities (with objects moving separately) would result in higher total kinetic energy. The maximum energy is "lost" (converted to other forms) when the objects stay together.</p>
+
+<p><strong>3.</strong> This collision is inelastic. If it were elastic, the ball would bounce back to 100% of its original height (all kinetic energy conserved). Since it only reaches 75% of the original height, it has lost some kinetic energy—this energy was converted to heat and sound during the impact, and some was used to deform the ball temporarily.</p>
+
+<p><strong>4.</strong> You would rather be in a car that experiences an inelastic collision. In an inelastic collision, kinetic energy is absorbed through deformation of the car's structure (crumple zones), which reduces the forces on passengers. In an elastic collision, the car would bounce off the obstacle, transferring more energy to the occupants and causing greater injury. Modern cars are designed specifically to have inelastic collisions.</p>
+
+<p><strong>5.</strong></p>
+<p>$m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f$</p>
+<p>$(3.0)(5.0) + (2.0)(0) = (3.0 + 2.0)v_f$</p>
+<p>$15.0 = 5.0v_f$</p>
+<p>$v_f = 3.0$ m/s</p>
+<p><strong><span class="highlight">Answer: 3.0 m/s in the original direction</span></strong></p>
+
+<p><strong>6.</strong></p>
+<p>Let right be positive: $v_A = +8.0$ m/s, $v_B = -6.0$ m/s</p>
+<p>$(1.5)(8.0) + (1.5)(-6.0) = (1.5 + 1.5)v_f$</p>
+<p>$12.0 - 9.0 = 3.0v_f$</p>
+<p>$3.0 = 3.0v_f$</p>
+<p>$v_f = 1.0$ m/s</p>
+<p><strong><span class="highlight">Answer: 1.0 m/s to the right</span></strong></p>
+
+<p><strong>7.</strong></p>
+<p><strong>(a)</strong> $m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$</p>
+<p>$(4.0)(6.0) + (2.0)(3.0) = (4.0)(4.0) + (2.0)v_{2f}$</p>
+<p>$24.0 + 6.0 = 16.0 + 2.0v_{2f}$</p>
+<p>$30.0 = 16.0 + 2.0v_{2f}$</p>
+<p>$14.0 = 2.0v_{2f}$, so $v_{2f} = 7.0$ m/s</p>
+<p><strong><span class="highlight">Answer (a): 7.0 m/s</span></strong></p>
+<p><strong>(b)</strong> $KE_{\text{before}} = \frac{1}{2}(4.0)(6.0)^2 + \frac{1}{2}(2.0)(3.0)^2 = 72 + 9 = 81$ J</p>
+<p>$KE_{\text{after}} = \frac{1}{2}(4.0)(4.0)^2 + \frac{1}{2}(2.0)(7.0)^2 = 32 + 49 = 81$ J</p>
+<p><strong><span class="highlight">Answer (b): Before = 81 J, After = 81 J</span></strong></p>
+<p><strong>(c)</strong> Since $KE_{\text{before}} = KE_{\text{after}}$, this is an <strong>elastic collision</strong></p>
+
+<p><strong>8.</strong></p>
+<p><strong>(a)</strong> $(0.60)(12) + (0.40)(0) = (0.60 + 0.40)v_f$</p>
+<p>$7.2 = 1.0v_f$, so $v_f = 7.2$ m/s</p>
+<p><strong><span class="highlight">Answer (a): 7.2 m/s</span></strong></p>
+<p><strong>(b)</strong> $KE_{\text{before}} = \frac{1}{2}(0.60)(12)^2 + 0 = 43.2$ J</p>
+<p><strong><span class="highlight">Answer (b): 43.2 J</span></strong></p>
+<p><strong>(c)</strong> $KE_{\text{after}} = \frac{1}{2}(1.0)(7.2)^2 = 25.9$ J</p>
+<p><strong><span class="highlight">Answer (c): 25.9 J (or 26 J)</span></strong></p>
+<p><strong>(d)</strong> $\Delta KE = 43.2 - 25.9 = 17.3$ J lost</p>
+<p>This energy was converted to heat (warming the balls), sound (noise from impact), and possibly some deformation of the balls.</p>
+<p><strong><span class="highlight">Answer (d): 17.3 J converted to heat, sound, and deformation</span></strong></p>
+
+</body>
+</html>

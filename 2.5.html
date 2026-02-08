@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 2.5 - Graphical Analysis of Motion</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #000000;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.06in 0;
+        }
+        
+        h4 {
+            font-size: 14px;
+            color: #cc6600;
+            font-weight: bold;
+            margin: 0.04in 0;
+        }
+        
+        p {
+            text-align: justify;
+            margin: 0.05in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space-full {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .answer-space-short {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+            text-align: left;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 2.5</div>
+    <h1>Graphical Analysis of Motion</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#f0f8ff"/>
+        
+        <!-- Position-Time Graph (left side) -->
+        <text x="150" y="25" font-size="14" font-weight="bold" text-anchor="middle" fill="#000033">Position vs. Time</text>
+        
+        <!-- Axes for position-time -->
+        <line x1="40" y1="180" x2="260" y2="180" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="40" y1="180" x2="40" y2="50" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <text x="270" y="185" font-size="12" fill="#000">t</text>
+        <text x="30" y="45" font-size="12" fill="#000">x</text>
+        
+        <!-- Curved position-time line -->
+        <path d="M 40 170 Q 100 140, 160 100 T 260 55" stroke="#0066cc" stroke-width="3" fill="none"/>
+        
+        <!-- Tangent line showing slope -->
+        <line x1="140" y1="140" x2="180" y2="95" stroke="#cc6600" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="190" y="115" font-size="11" fill="#cc6600">slope = v</text>
+        
+        <!-- Velocity-Time Graph (right side) -->
+        <text x="450" y="25" font-size="14" font-weight="bold" text-anchor="middle" fill="#000033">Velocity vs. Time</text>
+        
+        <!-- Axes for velocity-time -->
+        <line x1="340" y1="180" x2="560" y2="180" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <line x1="340" y1="180" x2="340" y2="50" stroke="#000" stroke-width="2" marker-end="url(#arrowhead)"/>
+        <text x="570" y="185" font-size="12" fill="#000">t</text>
+        <text x="330" y="45" font-size="12" fill="#000">v</text>
+        
+        <!-- Linear velocity-time line -->
+        <line x1="340" y1="170" x2="560" y2="65" stroke="#0066cc" stroke-width="3"/>
+        
+        <!-- Area under curve (shaded) -->
+        <polygon points="340,180 340,170 460,115 460,180" fill="#cc6600" opacity="0.3"/>
+        <text x="400" y="165" font-size="11" fill="#cc6600">area = Δx</text>
+        
+        <!-- Slope indicator -->
+        <line x1="420" y1="135" x2="460" y2="115" stroke="#cc6600" stroke-width="2" stroke-dasharray="5,5"/>
+        <line x1="420" y1="135" x2="460" y2="135" stroke="#cc6600" stroke-width="2" stroke-dasharray="5,5"/>
+        <line x1="460" y1="115" x2="460" y2="135" stroke="#cc6600" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="470" y="125" font-size="11" fill="#cc6600">slope = a</text>
+        
+        <!-- Bottom annotations -->
+        <text x="150" y="220" font-size="13" text-anchor="middle" fill="#0066cc">Slope = Velocity</text>
+        <text x="450" y="220" font-size="13" text-anchor="middle" fill="#0066cc">Slope = Acceleration</text>
+        <text x="450" y="240" font-size="13" text-anchor="middle" fill="#cc6600">Area = Displacement</text>
+        
+        <!-- Main label -->
+        <text x="300" y="280" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Reading Motion from Graphs</text>
+        
+        <!-- Arrow markers -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#000"/>
+            </marker>
+        </defs>
+    </svg>
+    
+    <p>A picture is worth a thousand words—and in physics, a good graph can reveal patterns and relationships that equations alone might hide. Motion graphs transform abstract mathematical concepts into visual stories, showing us at a glance whether an object is speeding up, slowing down, or changing direction.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <ul>
+        <li>I can interpret position vs. time and velocity vs. time graphs to describe motion.</li>
+        <li>I can calculate velocity from the slope of a position-time graph.</li>
+        <li>I can calculate acceleration from the slope of a velocity-time graph.</li>
+        <li>I can determine displacement from the area under a velocity-time graph.</li>
+    </ul>
+</div>
+
+<!-- INTRODUCTION -->
+<h2>Introduction</h2>
+<p>
+Throughout this module, we've described motion using equations and numbers. But there's another powerful way to represent and analyze motion: <span class="highlight">graphs</span>. A well-constructed graph can reveal patterns and relationships that might be hidden in a table of numbers or a complex equation. In physics, we use graphs not just to display data, but as analytical tools to extract quantitative information about motion.
+</p>
+
+<p>
+In this section, we'll explore two fundamental types of motion graphs: <span class="highlight">position vs. time graphs</span> and <span class="highlight">velocity vs. time graphs</span>. You'll learn that the slope of a position-time graph gives velocity, the slope of a velocity-time graph gives acceleration, and the area under a velocity-time graph gives displacement. These relationships connect the graphical and mathematical descriptions of motion, providing you with multiple approaches to solve physics problems.
+</p>
+
+<p>
+Graphical analysis is more than just an academic exercise. Engineers use motion graphs to analyze crash test data, design roller coasters, and optimize athletic performance. Medical professionals use them to study gait patterns and diagnose movement disorders. By mastering these graphical techniques, you'll gain a visual intuition for motion that complements your mathematical understanding.
+</p>
+
+<!-- MAIN CONTENT -->
+<h2>Position vs. Time Graphs</h2>
+<p>
+A <span class="highlight">position vs. time graph</span> (also called a displacement-time graph or x-t graph) shows how an object's position changes over time. Time is always plotted on the horizontal axis, and position on the vertical axis.
+</p>
+
+<div class="vocab-box">
+    <strong>Position vs. Time Graph:</strong> A graph that displays an object's position (vertical axis) as a function of time (horizontal axis). The slope of this graph at any point equals the velocity at that moment.
+</div>
+
+<h3>Interpreting Position-Time Graphs</h3>
+<p>
+Different line shapes on a position-time graph correspond to different types of motion:
+</p>
+
+<table>
+    <tr>
+        <th>Graph Shape</th>
+        <th>Type of Motion</th>
+        <th>Velocity</th>
+        <th>Acceleration</th>
+    </tr>
+    <tr>
+        <td>Horizontal line</td>
+        <td>At rest (not moving)</td>
+        <td>Zero</td>
+        <td>Zero</td>
+    </tr>
+    <tr>
+        <td>Straight line (positive slope)</td>
+        <td>Constant velocity (forward)</td>
+        <td>Constant positive</td>
+        <td>Zero</td>
+    </tr>
+    <tr>
+        <td>Straight line (negative slope)</td>
+        <td>Constant velocity (backward)</td>
+        <td>Constant negative</td>
+        <td>Zero</td>
+    </tr>
+    <tr>
+        <td>Curved line (slope increasing)</td>
+        <td>Accelerating (speeding up)</td>
+        <td>Increasing</td>
+        <td>Positive</td>
+    </tr>
+    <tr>
+        <td>Curved line (slope decreasing)</td>
+        <td>Decelerating (slowing down)</td>
+        <td>Decreasing</td>
+        <td>Negative</td>
+    </tr>
+</table>
+
+<h3>The Slope Equals Velocity</h3>
+<p>
+The most important relationship for position-time graphs is:
+</p>
+
+<div class="vocab-box">
+    <strong>Key Concept:</strong> The slope of a position vs. time graph equals the velocity. Mathematically: slope = $\frac{\Delta x}{\Delta t} = v$
+</div>
+
+<p>
+For a straight line (constant velocity), the slope is constant everywhere. For a curved line (changing velocity), the slope changes, and we must calculate the slope at a specific point by drawing a tangent line.
+</p>
+
+<p>
+To find velocity from a position-time graph:
+</p>
+<ol>
+    <li>Choose two points on the line (or tangent line for curves)</li>
+    <li>Calculate the rise (change in position: $\Delta x = x_2 - x_1$)</li>
+    <li>Calculate the run (change in time: $\Delta t = t_2 - t_1$)</li>
+    <li>Divide rise by run: $v = \frac{\Delta x}{\Delta t}$</li>
+</ol>
+
+<div class="vocab-box">
+    <strong>Important:</strong> Steeper slopes mean faster speeds. A positive slope means forward motion; a negative slope means backward motion. A horizontal line (slope = 0) means the object is at rest.
+</div>
+
+<h2>Velocity vs. Time Graphs</h2>
+<p>
+A <span class="highlight">velocity vs. time graph</span> (v-t graph) shows how an object's velocity changes over time. Again, time is on the horizontal axis, and velocity on the vertical axis. These graphs provide even more information than position-time graphs because both slope and area have physical meaning.
+</p>
+
+<div class="vocab-box">
+    <strong>Velocity vs. Time Graph:</strong> A graph that displays an object's velocity (vertical axis) as a function of time (horizontal axis). The slope equals acceleration, and the area under the curve equals displacement.
+</div>
+
+<h3>The Slope Equals Acceleration</h3>
+<p>
+For velocity-time graphs:
+</p>
+
+<div class="vocab-box">
+    <strong>Key Concept:</strong> The slope of a velocity vs. time graph equals the acceleration. Mathematically: slope = $\frac{\Delta v}{\Delta t} = a$
+</div>
+
+<table>
+    <tr>
+        <th>Graph Shape</th>
+        <th>Type of Motion</th>
+        <th>Acceleration</th>
+    </tr>
+    <tr>
+        <td>Horizontal line</td>
+        <td>Constant velocity</td>
+        <td>Zero</td>
+    </tr>
+    <tr>
+        <td>Straight line (positive slope)</td>
+        <td>Constant positive acceleration</td>
+        <td>Constant positive</td>
+    </tr>
+    <tr>
+        <td>Straight line (negative slope)</td>
+        <td>Constant negative acceleration</td>
+        <td>Constant negative</td>
+    </tr>
+    <tr>
+        <td>Curved line (slope increasing)</td>
+        <td>Increasing acceleration</td>
+        <td>Positive and increasing</td>
+    </tr>
+    <tr>
+        <td>Curved line (slope decreasing)</td>
+        <td>Decreasing acceleration</td>
+        <td>Decreasing</td>
+    </tr>
+</table>
+
+<h3>The Area Equals Displacement</h3>
+<p>
+The second crucial relationship for velocity-time graphs is:
+</p>
+
+<div class="vocab-box">
+    <strong>Key Concept:</strong> The area under a velocity vs. time graph equals the displacement. This follows from the definition $\Delta x = v \cdot \Delta t$.
+</div>
+
+<p>
+To find displacement from the area under a v-t graph:
+</p>
+<ul>
+    <li><strong>For rectangles (constant velocity):</strong> Area = base × height = $t \times v$</li>
+    <li><strong>For triangles (uniform acceleration from zero):</strong> Area = $\frac{1}{2}$ × base × height = $\frac{1}{2} \times t \times v$</li>
+    <li><strong>For trapezoids:</strong> Area = $\frac{1}{2}(b_1 + b_2) \times h$ where $b_1$ and $b_2$ are the parallel sides</li>
+    <li><strong>For complex shapes:</strong> Break into simpler geometric shapes and sum their areas</li>
+</ul>
+
+<div class="vocab-box">
+    <strong>Important:</strong> Areas above the time axis are positive displacement (forward motion). Areas below the time axis are negative displacement (backward motion). The total displacement is the algebraic sum (considering signs).
+</div>
+
+<h3>Connecting the Two Types of Graphs</h3>
+<p>
+Position-time and velocity-time graphs are intimately connected:
+</p>
+
+<ul>
+    <li>The <strong>slope</strong> of an x-t graph at any moment gives the <strong>value</strong> on the v-t graph at that moment</li>
+    <li>The <strong>area</strong> under a v-t graph between two times gives the <strong>change in height</strong> on the x-t graph between those times</li>
+    <li>If x-t graph is curved, v-t graph changes (has non-zero slope)</li>
+    <li>If v-t graph is horizontal (flat), x-t graph has constant slope (straight line)</li>
+</ul>
+
+<!-- REAL-WORLD APPLICATIONS -->
+<div class="real-world-box">
+    <h3>Real-World Application: Car Crash Analysis</h3>
+    <p>
+    Accident investigators use motion graphs to reconstruct collisions. Modern cars have "black box" data recorders that store velocity vs. time data during a crash. By analyzing the v-t graph, investigators can determine: (1) the car's speed just before impact (from graph value), (2) the deceleration during the crash (from slope), and (3) the distance the car traveled during the collision (from area under curve). This information helps determine fault, improve safety features, and test whether safety equipment like airbags deployed properly. A typical frontal collision might show deceleration of 20-60 g (200-600 m/s²) over 0.1-0.2 seconds.
+    </p>
+</div>
+
+<div class="real-world-box">
+    <h3>Real-World Application: Athletic Performance</h3>
+    <p>
+    Sports scientists use velocity-time graphs to analyze athlete performance. For a 100-meter sprinter, the v-t graph shows three distinct phases: (1) acceleration phase (positive slope) as the runner explodes from the blocks, (2) peak velocity phase (nearly horizontal) where the runner maintains maximum speed, and (3) deceleration phase (negative slope) as fatigue sets in near the end. The area under the entire curve equals exactly 100 meters. By analyzing these graphs, coaches identify where athletes can improve—some need better acceleration, others need to maintain peak velocity longer.
+    </p>
+</div>
+
+<div class="real-world-box">
+    <h3>Real-World Application: Elevator Design</h3>
+    <p>
+    Elevator engineers carefully design velocity-time profiles to ensure passenger comfort. An ideal elevator ride has three phases: gradual acceleration (comfort requires keeping acceleration below 1.0-1.5 m/s²), constant velocity phase, and gradual deceleration. The graph looks like a trapezoid. If acceleration is too high, passengers feel excessive force; if deceleration is too abrupt, they lurch forward. The area under the v-t curve must equal the distance between floors. High-rise buildings require optimization—too much acceleration time wastes the velocity phase, making trips slow. Modern elevators use computer-controlled profiles that adjust in real-time based on load and destination.
+    </p>
+</div>
+
+<!-- KEY FORMULAS TABLE -->
+<h2>Key Formulas</h2>
+<table class="formula-table">
+    <tr>
+        <th>Relationship</th>
+        <th>Formula</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Slope formula</td>
+        <td>$m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$</td>
+        <td>General formula for calculating slope from two points</td>
+    </tr>
+    <tr>
+        <td>Velocity from x-t graph</td>
+        <td>$v = \frac{\Delta x}{\Delta t}$</td>
+        <td>Slope of position vs. time graph equals velocity</td>
+    </tr>
+    <tr>
+        <td>Acceleration from v-t graph</td>
+        <td>$a = \frac{\Delta v}{\Delta t}$</td>
+        <td>Slope of velocity vs. time graph equals acceleration</td>
+    </tr>
+    <tr>
+        <td>Displacement from v-t graph</td>
+        <td>$\Delta x = \text{area under curve}$</td>
+        <td>Area under velocity vs. time graph equals displacement</td>
+    </tr>
+    <tr>
+        <td>Area of rectangle</td>
+        <td>$A = b \times h$</td>
+        <td>For constant velocity: base = time, height = velocity</td>
+    </tr>
+    <tr>
+        <td>Area of triangle</td>
+        <td>$A = \frac{1}{2}bh$</td>
+        <td>For uniform acceleration from rest</td>
+    </tr>
+    <tr>
+        <td>Area of trapezoid</td>
+        <td>$A = \frac{1}{2}(b_1 + b_2)h$</td>
+        <td>For uniform acceleration (not from rest)</td>
+    </tr>
+</table>
+
+<!-- EXAMPLE PROBLEMS -->
+<h2>Example Problems</h2>
+
+<div class="example-box">
+    <h3>Example 2.5.1: Finding Velocity from Position-Time Graph</h3>
+    <p>
+    A position vs. time graph shows a straight line passing through the points (2.0 s, 5.0 m) and (7.0 s, 20.0 m). What is the object's velocity?
+    </p>
+    <p><strong>Solution:</strong></p>
+    <p><em>Step 1: Identify what you know</em></p>
+    <ul>
+        <li>Point 1: $(t_1, x_1) = (2.0 \text{ s}, 5.0 \text{ m})$</li>
+        <li>Point 2: $(t_2, x_2) = (7.0 \text{ s}, 20.0 \text{ m})$</li>
+        <li>The line is straight, so velocity is constant</li>
+        <li>Find: velocity $v$</li>
+    </ul>
+    
+    <p><em>Step 2: Recall the relationship</em></p>
+    <p>The slope of a position-time graph equals velocity:</p>
+    $$v = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1}$$
+    
+    <p><em>Step 3: Calculate the changes</em></p>
+    $$\Delta x = 20.0 \text{ m} - 5.0 \text{ m} = 15.0 \text{ m}$$
+    $$\Delta t = 7.0 \text{ s} - 2.0 \text{ s} = 5.0 \text{ s}$$
+    
+    <p><em>Step 4: Calculate velocity</em></p>
+    $$v = \frac{15.0 \text{ m}}{5.0 \text{ s}} = 3.0 \text{ m/s}$$
+    
+    <p><em>Step 5: Check your answer</em></p>
+    <p>The velocity is positive, which makes sense since position increases with time (object moving in positive direction). The units are correct (m/s). A velocity of 3.0 m/s is reasonable.</p>
+    
+    <p><strong>Answer: The object's velocity is 3.0 m/s</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2.5.2: Finding Acceleration from Velocity-Time Graph</h3>
+    <p>
+    A velocity vs. time graph shows a straight line from the point (1.0 s, 8.0 m/s) to the point (5.0 s, 24.0 m/s). What is the object's acceleration?
+    </p>
+    <p><strong>Solution:</strong></p>
+    <p><em>Step 1: Identify what you know</em></p>
+    <ul>
+        <li>Point 1: $(t_1, v_1) = (1.0 \text{ s}, 8.0 \text{ m/s})$</li>
+        <li>Point 2: $(t_2, v_2) = (5.0 \text{ s}, 24.0 \text{ m/s})$</li>
+        <li>The line is straight, so acceleration is constant</li>
+        <li>Find: acceleration $a$</li>
+    </ul>
+    
+    <p><em>Step 2: Recall the relationship</em></p>
+    <p>The slope of a velocity-time graph equals acceleration:</p>
+    $$a = \frac{\Delta v}{\Delta t} = \frac{v_2 - v_1}{t_2 - t_1}$$
+    
+    <p><em>Step 3: Calculate the changes</em></p>
+    $$\Delta v = 24.0 \text{ m/s} - 8.0 \text{ m/s} = 16.0 \text{ m/s}$$
+    $$\Delta t = 5.0 \text{ s} - 1.0 \text{ s} = 4.0 \text{ s}$$
+    
+    <p><em>Step 4: Calculate acceleration</em></p>
+    $$a = \frac{16.0 \text{ m/s}}{4.0 \text{ s}} = 4.0 \text{ m/s}^2$$
+    
+    <p><em>Step 5: Check your answer</em></p>
+    <p>The acceleration is positive, which makes sense since velocity increases with time. The units are correct (m/s²). An acceleration of 4.0 m/s² is reasonable for a car or other vehicle.</p>
+    
+    <p><strong>Answer: The object's acceleration is 4.0 m/s²</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2.5.3: Finding Displacement from Velocity-Time Graph (Multi-Step)</h3>
+    <p>
+    A velocity vs. time graph shows the following motion: From t = 0 to t = 4.0 s, velocity increases linearly from 0 to 12 m/s. From t = 4.0 s to t = 9.0 s, velocity remains constant at 12 m/s. From t = 9.0 s to t = 12.0 s, velocity decreases linearly from 12 m/s to 0. What is the total displacement?
+    </p>
+    <p><strong>Solution:</strong></p>
+    <p><em>Step 1: Identify the motion phases</em></p>
+    <ul>
+        <li><strong>Phase 1 (0-4.0 s):</strong> Triangle with base = 4.0 s, height = 12 m/s</li>
+        <li><strong>Phase 2 (4.0-9.0 s):</strong> Rectangle with base = 5.0 s, height = 12 m/s</li>
+        <li><strong>Phase 3 (9.0-12.0 s):</strong> Triangle with base = 3.0 s, height = 12 m/s</li>
+    </ul>
+    
+    <p><em>Step 2: Recall that area under v-t graph = displacement</em></p>
+    <p>Total displacement = Area₁ + Area₂ + Area₃</p>
+    
+    <p><em>Step 3: Calculate Area 1 (acceleration phase)</em></p>
+    <p>This is a triangle:</p>
+    $$\text{Area}_1 = \frac{1}{2} \times \text{base} \times \text{height}$$
+    $$\text{Area}_1 = \frac{1}{2} \times 4.0 \text{ s} \times 12 \text{ m/s}$$
+    $$\text{Area}_1 = 24 \text{ m}$$
+    
+    <p><em>Step 4: Calculate Area 2 (constant velocity phase)</em></p>
+    <p>This is a rectangle:</p>
+    $$\text{Area}_2 = \text{base} \times \text{height}$$
+    $$\text{Area}_2 = 5.0 \text{ s} \times 12 \text{ m/s}$$
+    $$\text{Area}_2 = 60 \text{ m}$$
+    
+    <p><em>Step 5: Calculate Area 3 (deceleration phase)</em></p>
+    <p>This is a triangle:</p>
+    $$\text{Area}_3 = \frac{1}{2} \times 3.0 \text{ s} \times 12 \text{ m/s}$$
+    $$\text{Area}_3 = 18 \text{ m}$$
+    
+    <p><em>Step 6: Find total displacement</em></p>
+    $$\Delta x_{\text{total}} = 24 \text{ m} + 60 \text{ m} + 18 \text{ m} = 102 \text{ m}$$
+    
+    <p><em>Step 7: Check your answer</em></p>
+    <p>All areas are positive (above the time axis), so displacement is positive. The object moves forward throughout. Total displacement of 102 m makes sense for this motion profile.</p>
+    
+    <p><strong>Answer: The total displacement is 102 m (or 1.0 × 10² m)</strong></p>
+</div>
+
+<!-- SUMMARY -->
+<h2>Summary</h2>
+<ul>
+    <li>Position vs. time graphs show how position changes over time; the slope equals velocity</li>
+    <li>A horizontal line on an x-t graph means the object is at rest; a straight line means constant velocity; a curved line means changing velocity (acceleration)</li>
+    <li>Steeper slopes on an x-t graph indicate faster speeds; positive slopes indicate forward motion, negative slopes indicate backward motion</li>
+    <li>Velocity vs. time graphs show how velocity changes over time; the slope equals acceleration and the area equals displacement</li>
+    <li>A horizontal line on a v-t graph means constant velocity; a straight line with slope means constant acceleration</li>
+    <li>To find velocity from an x-t graph, calculate slope: $v = \frac{\Delta x}{\Delta t}$</li>
+    <li>To find acceleration from a v-t graph, calculate slope: $a = \frac{\Delta v}{\Delta t}$</li>
+    <li>To find displacement from a v-t graph, calculate area under the curve using geometric formulas</li>
+    <li>Areas above the time axis represent positive displacement (forward); areas below represent negative displacement (backward)</li>
+    <li>Graphical analysis provides visual insight into motion and connects mathematical relationships to physical phenomena</li>
+</ul>
+
+<!-- KEY TERMS TABLE -->
+<h2>Key Terms</h2>
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Position vs. Time Graph (x-t graph)</strong></td>
+        <td>A graph showing an object's position on the vertical axis and time on the horizontal axis; slope equals velocity</td>
+    </tr>
+    <tr>
+        <td><strong>Velocity vs. Time Graph (v-t graph)</strong></td>
+        <td>A graph showing an object's velocity on the vertical axis and time on the horizontal axis; slope equals acceleration, area equals displacement</td>
+    </tr>
+    <tr>
+        <td><strong>Slope</strong></td>
+        <td>The rate of change of the vertical variable with respect to the horizontal variable; calculated as rise over run</td>
+    </tr>
+    <tr>
+        <td><strong>Tangent Line</strong></td>
+        <td>A straight line that touches a curve at exactly one point; used to find instantaneous slope of curved graphs</td>
+    </tr>
+    <tr>
+        <td><strong>Area Under Curve</strong></td>
+        <td>The region between a graph line and the horizontal axis; for v-t graphs, this area equals displacement</td>
+    </tr>
+    <tr>
+        <td><strong>Rise</strong></td>
+        <td>The vertical change between two points on a graph ($\Delta y$)</td>
+    </tr>
+    <tr>
+        <td><strong>Run</strong></td>
+        <td>The horizontal change between two points on a graph ($\Delta x$)</td>
+    </tr>
+    <tr>
+        <td><strong>Graphical Analysis</strong></td>
+        <td>The process of extracting quantitative information from graphs using slopes, areas, and other geometric properties</td>
+    </tr>
+</table>
+
+<!-- PRACTICE PROBLEMS -->
+<h2>Practice Problems</h2>
+
+<p><strong>Conceptual Questions</strong></p>
+
+<p><strong>1.</strong> Two position-time graphs both show straight lines, but Graph A is steeper than Graph B. Which object is moving faster? Explain your reasoning.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>2.</strong> A velocity-time graph shows a horizontal line at v = 5 m/s. Describe the motion of this object. What is its acceleration? Is it moving?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>3.</strong> On a velocity-time graph, what does it mean if the line crosses the time axis (goes from positive to negative velocity)? Describe the motion.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>4.</strong> Can two different velocity-time graphs give the same displacement? Explain and give an example.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>Calculation Problems</strong></p>
+
+<p><strong>5.</strong> A position-time graph shows a straight line from point (0 s, 2.0 m) to point (8.0 s, 26.0 m). Calculate the object's velocity.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>6.</strong> A velocity-time graph shows a straight line from (0 s, 10 m/s) to (6.0 s, 40 m/s). What is the object's acceleration?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>7.</strong> A velocity-time graph shows a rectangle: the velocity is constant at 15 m/s from t = 0 to t = 8.0 s. What is the displacement during this time?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>8.</strong> A velocity-time graph shows a triangle: velocity increases linearly from 0 at t = 0 s to 20 m/s at t = 10.0 s. Calculate (a) the acceleration and (b) the displacement during this time.</p>
+<div class="answer-space-short"></div>
+
+<!-- ANSWER KEY -->
+<h2>Answer Key</h2>
+
+<p><strong>1.</strong> Which object (Graph A with steeper line or Graph B) is moving faster?</p>
+<p><strong>Answer:</strong> The object in Graph A (steeper line) is moving faster. On a position-time graph, the slope equals velocity. A steeper slope means a larger change in position for a given change in time, which is exactly what higher velocity means. Graph A has the larger slope, so it represents the faster-moving object. For example, if Graph A has slope 10 m/s and Graph B has slope 4 m/s, then object A is traveling at 10 m/s while object B is traveling at only 4 m/s.</p>
+
+<p><strong>2.</strong> Horizontal line at v = 5 m/s on a v-t graph. Describe motion and acceleration.</p>
+<p><strong>Answer:</strong> The object is moving at a constant velocity of 5 m/s (in the positive direction). Since the line is horizontal, its slope is zero, which means the acceleration is zero. The object is definitely moving—it's covering ground at 5 m/s—but it's neither speeding up nor slowing down. This is uniform motion with no acceleration. Every second, the object moves 5 meters in the positive direction.</p>
+
+<p><strong>3.</strong> What does it mean when a v-t graph crosses the time axis?</p>
+<p><strong>Answer:</strong> When the velocity-time graph crosses the time axis (horizontal axis), the object changes direction. Before the crossing, velocity is positive (moving in the positive direction). At the crossing point, velocity is zero (momentarily at rest). After the crossing, velocity is negative (moving in the negative/opposite direction). A common example is a ball thrown straight upward: it starts with positive velocity going up, reaches zero velocity at the peak (crossing point), then has negative velocity coming back down. The object has reversed its direction of motion.</p>
+
+<p><strong>4.</strong> Can two different v-t graphs give the same displacement?</p>
+<p><strong>Answer:</strong> Yes! Two very different velocity-time graphs can produce the same total displacement because displacement equals the total area under the curve. Example 1: A car travels at constant 10 m/s for 10 s (rectangle with area = 100 m). Example 2: A car accelerates uniformly from 0 to 20 m/s over 10 s (triangle with area = ½ × 10 × 20 = 100 m). Both give displacement of 100 m, but the motion is very different—one maintains constant velocity, the other continuously accelerates. What matters for displacement is the total area, not the shape of the curve. However, the velocity profiles (how fast at each moment) would be completely different.</p>
+
+<p><strong>5.</strong> Find velocity from x-t graph: (0 s, 2.0 m) to (8.0 s, 26.0 m).</p>
+<p><strong>Answer:</strong></p>
+<p>Given: $(t_1, x_1) = (0, 2.0 \text{ m})$, $(t_2, x_2) = (8.0 \text{ s}, 26.0 \text{ m})$</p>
+<p>Slope of x-t graph = velocity:</p>
+$$v = \frac{\Delta x}{\Delta t} = \frac{x_2 - x_1}{t_2 - t_1} = \frac{26.0 - 2.0}{8.0 - 0} = \frac{24.0 \text{ m}}{8.0 \text{ s}} = 3.0 \text{ m/s}$$
+<p><strong>Answer: v = 3.0 m/s</strong></p>
+
+<p><strong>6.</strong> Find acceleration from v-t graph: (0 s, 10 m/s) to (6.0 s, 40 m/s).</p>
+<p><strong>Answer:</strong></p>
+<p>Given: $(t_1, v_1) = (0, 10 \text{ m/s})$, $(t_2, v_2) = (6.0 \text{ s}, 40 \text{ m/s})$</p>
+<p>Slope of v-t graph = acceleration:</p>
+$$a = \frac{\Delta v}{\Delta t} = \frac{v_2 - v_1}{t_2 - t_1} = \frac{40 - 10}{6.0 - 0} = \frac{30 \text{ m/s}}{6.0 \text{ s}} = 5.0 \text{ m/s}^2$$
+<p><strong>Answer: a = 5.0 m/s²</strong></p>
+
+<p><strong>7.</strong> Find displacement from v-t rectangle: v = 15 m/s for 8.0 s.</p>
+<p><strong>Answer:</strong></p>
+<p>The graph shows a rectangle with:</p>
+<ul>
+    <li>Height (velocity) = 15 m/s</li>
+    <li>Base (time) = 8.0 s</li>
+</ul>
+<p>Area of rectangle = displacement:</p>
+$$\Delta x = \text{base} \times \text{height} = 8.0 \text{ s} \times 15 \text{ m/s} = 120 \text{ m}$$
+<p><strong>Answer: Displacement = 120 m (or 1.2 × 10² m)</strong></p>
+
+<p><strong>8.</strong> Find (a) acceleration and (b) displacement from v-t triangle: 0 to 20 m/s in 10.0 s.</p>
+<p><strong>Answer:</strong></p>
+
+<p><strong>Part (a): Acceleration</strong></p>
+<p>Given: $v_i = 0$, $v_f = 20$ m/s, $\Delta t = 10.0$ s</p>
+<p>The line is straight (constant acceleration):</p>
+$$a = \frac{\Delta v}{\Delta t} = \frac{20 - 0}{10.0} = \frac{20 \text{ m/s}}{10.0 \text{ s}} = 2.0 \text{ m/s}^2$$
+<p><strong>Answer (a): Acceleration = 2.0 m/s²</strong></p>
+
+<p><strong>Part (b): Displacement</strong></p>
+<p>The graph forms a triangle with:</p>
+<ul>
+    <li>Base = 10.0 s</li>
+    <li>Height = 20 m/s</li>
+</ul>
+$$\Delta x = \frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} \times 10.0 \text{ s} \times 20 \text{ m/s} = 100 \text{ m}$$
+<p><strong>Answer (b): Displacement = 100 m (or 1.0 × 10² m)</strong></p>
+
+</body>
+</html>

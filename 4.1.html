@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 4.1 - Momentum and Impulse</title>
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            background-color: #ffffff;
+            color: #000000;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.1in;
+            margin-bottom: 0.06in;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.1in;
+            margin-bottom: 0.06in;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin-top: 0.08in;
+            margin-bottom: 0.04in;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 0.05in;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 4.1</div>
+    <h1>Momentum and Impulse</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#ffffff"/>
+        
+        <!-- Football players collision illustration -->
+        <!-- Player 1 (moving right) -->
+        <circle cx="150" cy="150" r="30" fill="#0066cc" opacity="0.8"/>
+        <text x="150" y="155" font-size="20" text-anchor="middle" fill="#ffffff" font-weight="bold">A</text>
+        
+        <!-- Velocity arrow for player 1 -->
+        <defs>
+            <marker id="arrowhead1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        <line x1="180" y1="130" x2="260" y2="130" stroke="#CC3300" stroke-width="3" marker-end="url(#arrowhead1)"/>
+        <text x="220" y="120" font-size="14" text-anchor="middle" fill="#CC3300" font-weight="bold">v₁</text>
+        
+        <!-- Player 2 (moving left) -->
+        <circle cx="450" cy="150" r="30" fill="#cc6600" opacity="0.8"/>
+        <text x="450" y="155" font-size="20" text-anchor="middle" fill="#ffffff" font-weight="bold">B</text>
+        
+        <!-- Velocity arrow for player 2 -->
+        <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+        </marker>
+        <line x1="420" y1="130" x2="340" y2="130" stroke="#CC3300" stroke-width="3" marker-end="url(#arrowhead2)"/>
+        <text x="380" y="120" font-size="14" text-anchor="middle" fill="#CC3300" font-weight="bold">v₂</text>
+        
+        <!-- Momentum labels -->
+        <text x="150" y="210" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">p₁ = m₁v₁</text>
+        <text x="450" y="210" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">p₂ = m₂v₂</text>
+        
+        <!-- Title at bottom -->
+        <text x="300" y="280" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Collision: Momentum in Action</text>
+    </svg>
+    
+    <p>Every moving object carries momentum—a combination of its mass and velocity that determines how hard it is to stop. From a football tackle to a car crash, understanding momentum helps us predict what happens when objects collide. In this section, you'll discover how forces change momentum over time through a concept called impulse.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2 style="background-color: transparent; color: #000033; padding: 0; margin: 0 0 0.05in 0;">Learning Objectives</h2>
+    <ul>
+        <li>I can define momentum and explain why it depends on both mass and velocity</li>
+        <li>I can calculate the momentum of moving objects using the formula p = mv</li>
+        <li>I can explain impulse as the change in momentum and relate it to force and time</li>
+        <li>I can apply the impulse-momentum theorem to solve problems involving forces acting over time</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Imagine watching a bowling ball roll down a lane toward the pins. Even before it hits, you know something dramatic is about to happen. The ball carries something with it—something that will send pins flying in all directions. That "something" is <span class="vocab-term">momentum</span>.</p>
+
+<p>Momentum is one of the most important concepts in physics because it helps us understand collisions and impacts. Whether it's a baseball bat hitting a ball, two cars colliding at an intersection, or a rocket launching into space, momentum plays a central role. Unlike velocity, which only tells us how fast something is moving, momentum combines both speed and mass to give us a complete picture of an object's motion.</p>
+
+<p>In this section, we'll explore how momentum is defined, calculated, and changed by forces. You'll learn why a slow-moving freight train is harder to stop than a fast-moving bicycle, and why airbags save lives by extending the time of a collision. These concepts connect directly to real-world safety features in cars, protective equipment in sports, and even the design of spacecraft.</p>
+
+<div class="real-world-box">
+    <h3>Real-World Connection: Vehicle Safety</h3>
+    <p>Modern cars are designed with "crumple zones" that collapse during a crash. While this might seem counterintuitive—why would we want parts of the car to crumple?—it's actually a brilliant application of the impulse-momentum theorem. By extending the time of the collision, crumple zones reduce the force experienced by passengers, making crashes more survivable. This same principle explains why airbags, padded dashboards, and seat belts are so effective at protecting people.</p>
+</div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>What is Momentum?</h1>
+
+<p><span class="vocab-term">Momentum</span> is a measure of an object's motion that depends on both its mass and velocity. An object with large momentum is difficult to stop, while an object with small momentum is easy to stop. Mathematically, momentum is defined as the product of mass and velocity.</p>
+
+<div class="vocab-box">
+    <h3>Definition: Momentum</h3>
+    <p><strong>Momentum (p)</strong> is the product of an object's mass and velocity. It is a vector quantity, meaning it has both magnitude and direction. The SI unit of momentum is kilogram-meters per second (kg·m/s).</p>
+    <p style="text-align: center; margin-top: 0.05in;"><strong>Formula:</strong> $p = mv$</p>
+    <p>where $p$ = momentum (kg·m/s), $m$ = mass (kg), and $v$ = velocity (m/s)</p>
+</div>
+
+<p>Because velocity is a vector (it has direction), momentum is also a vector. This means that the direction matters: an object moving north has different momentum than the same object moving south at the same speed. The negative sign in momentum calculations indicates direction opposite to the positive reference direction.</p>
+
+<h2>Factors Affecting Momentum</h2>
+
+<p>Two factors determine an object's momentum: mass and velocity. Let's consider how each affects momentum:</p>
+
+<p><strong>Mass:</strong> A more massive object has greater momentum than a less massive object moving at the same speed. This is why a slow-moving truck is harder to stop than a fast-moving bicycle. Even though the bicycle might be moving faster, the truck's enormous mass gives it much greater momentum.</p>
+
+<p><strong>Velocity:</strong> A faster-moving object has greater momentum than a slower-moving object with the same mass. Doubling the velocity doubles the momentum. This is why a baseball thrown by a professional pitcher is so much more dangerous than one tossed gently—same ball, but vastly different momentum.</p>
+
+<div class="info-box">
+    <h3>Important Note: Momentum is a Vector</h3>
+    <p>Because momentum depends on velocity (which is a vector), momentum itself is a vector. This means you must keep track of direction. In one-dimensional problems, we use positive and negative signs to indicate direction. For example, if we define east as positive, then an object moving west would have negative velocity and therefore negative momentum.</p>
+</div>
+
+<h1>What is Impulse?</h1>
+
+<p>When a force acts on an object, it changes the object's momentum. The change in momentum is called <span class="vocab-term">impulse</span>. Impulse depends on two things: how large the force is, and how long it acts.</p>
+
+<div class="vocab-box">
+    <h3>Definition: Impulse</h3>
+    <p><strong>Impulse (J)</strong> is the change in an object's momentum, equal to the product of the average force and the time interval during which the force acts. Impulse is also a vector quantity with units of newton-seconds (N·s), which is equivalent to kg·m/s.</p>
+    <p style="text-align: center; margin-top: 0.05in;"><strong>Impulse Formula:</strong> $J = F\Delta t$</p>
+    <p>where $J$ = impulse (N·s or kg·m/s), $F$ = average force (N), and $\Delta t$ = time interval (s)</p>
+</div>
+
+<p>Impulse can also be defined as the change in momentum:</p>
+
+<p style="text-align: center;">$J = \Delta p = p_f - p_i = mv_f - mv_i$</p>
+
+<p>where $p_i$ is initial momentum and $p_f$ is final momentum.</p>
+
+<h2>The Impulse-Momentum Theorem</h2>
+
+<p>The <span class="vocab-term">impulse-momentum theorem</span> states that the impulse on an object equals its change in momentum. This gives us a powerful relationship:</p>
+
+<div class="formula-box">
+    <p style="font-size: 18px;"><strong>Impulse-Momentum Theorem</strong></p>
+    <p>$$F\Delta t = \Delta p = mv_f - mv_i$$</p>
+    <p>The impulse (force × time) equals the change in momentum</p>
+</div>
+
+<p>This theorem tells us something very important: the same change in momentum can be produced by either a large force acting for a short time, or a small force acting for a long time. This principle is used in many safety applications.</p>
+
+<div class="real-world-box">
+    <h3>Historical Note: Isaac Newton and Momentum</h3>
+    <p>Sir Isaac Newton (1643-1727) originally formulated his second law of motion in terms of momentum rather than acceleration. In his masterwork <em>Principia Mathematica</em>, Newton described how forces produce changes in momentum. While we often write Newton's second law as F = ma, his original formulation was closer to F = Δp/Δt, emphasizing that force causes changes in momentum over time.</p>
+</div>
+
+<h1>Applications of Impulse</h1>
+
+<h2>Extending Time to Reduce Force</h2>
+
+<p>According to the impulse-momentum theorem, if you increase the time interval $\Delta t$, you can decrease the force $F$ needed to produce the same change in momentum. This principle is used in many safety devices:</p>
+
+<ul>
+    <li><strong>Airbags:</strong> Increase the time of collision, reducing the force on passengers</li>
+    <li><strong>Crumple zones:</strong> Allow the car to deform over a longer time during a crash</li>
+    <li><strong>Padded gym mats:</strong> Extend the time of impact when landing, reducing injury</li>
+    <li><strong>Bending knees when landing:</strong> Athletes extend the stopping time to reduce impact forces on joints</li>
+</ul>
+
+<h2>Increasing Force by Decreasing Time</h2>
+
+<p>Conversely, decreasing the time interval increases the force. This principle is used when we want to deliver maximum force:</p>
+
+<ul>
+    <li><strong>Karate chop:</strong> Quickly stopping the hand creates a large force on the target</li>
+    <li><strong>Baseball bat swing:</strong> The brief contact time with the ball creates a large force</li>
+    <li><strong>Hammer blow:</strong> Short impact time produces large force on the nail</li>
+</ul>
+
+<div class="info-box">
+    <h3>Common Misconception</h3>
+    <p>Students sometimes think that momentum and kinetic energy are the same thing. They are not! Momentum is $p = mv$ (a vector), while kinetic energy is $KE = \frac{1}{2}mv^2$ (a scalar). Momentum depends linearly on velocity, but kinetic energy depends on velocity squared. An object can have momentum without having much kinetic energy (like a slow-moving truck), or have kinetic energy without much momentum (like a fast-moving ping-pong ball).</p>
+</div>
+
+<!-- ============== KEY FORMULAS ============== -->
+<h1>Key Formulas for Practice Problems</h1>
+
+<p>Before working through examples, let's review the key formulas you'll need to solve momentum and impulse problems:</p>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Momentum</td>
+        <td style="text-align: center;">$p = mv$</td>
+        <td>$p$ = momentum (kg·m/s)<br>$m$ = mass (kg)<br>$v$ = velocity (m/s)</td>
+    </tr>
+    <tr>
+        <td>Impulse</td>
+        <td style="text-align: center;">$J = F\Delta t$</td>
+        <td>$J$ = impulse (N·s or kg·m/s)<br>$F$ = average force (N)<br>$\Delta t$ = time interval (s)</td>
+    </tr>
+    <tr>
+        <td>Change in Momentum</td>
+        <td style="text-align: center;">$\Delta p = mv_f - mv_i$</td>
+        <td>$\Delta p$ = change in momentum (kg·m/s)<br>$m$ = mass (kg)<br>$v_f$ = final velocity (m/s)<br>$v_i$ = initial velocity (m/s)</td>
+    </tr>
+    <tr>
+        <td>Impulse-Momentum Theorem</td>
+        <td style="text-align: center;">$F\Delta t = \Delta p$</td>
+        <td>$F$ = average force (N)<br>$\Delta t$ = time interval (s)<br>$\Delta p$ = change in momentum (kg·m/s)</td>
+    </tr>
+</table>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="info-box">
+    <h3>Problem-Solving Strategy</h3>
+    <p>Follow these five steps for every problem:</p>
+    <ol>
+        <li><strong>List the Givens:</strong> Write down all known values with units</li>
+        <li><strong>Find the Formula:</strong> Choose the appropriate equation</li>
+        <li><strong>Substitute:</strong> Plug in the known values</li>
+        <li><strong>Solve:</strong> Perform the calculation</li>
+        <li><strong>Check:</strong> Verify units and reasonableness of answer</li>
+    </ol>
+</div>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Momentum</h3>
+    <p><strong>Problem:</strong> A 1200 kg car travels east at 25 m/s. What is the car's momentum?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m = 1200$ kg (mass of car)</li>
+        <li>$v = 25$ m/s (velocity, eastward)</li>
+        <li>Find: $p$ = ?</li>
+    </ul>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$p = mv$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$p = (1200 \text{ kg})(25 \text{ m/s})$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$p = 30{,}000$ kg·m/s</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units are correct (kg·m/s). The answer is reasonable—a car has significant momentum.</p>
+    
+    <p><strong><span class="highlight">Answer: The car's momentum is 30,000 kg·m/s eastward.</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Calculating Impulse</h3>
+    <p><strong>Problem:</strong> A tennis racket exerts an average force of 400 N on a tennis ball for 0.008 seconds. What impulse does the racket deliver to the ball?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$F = 400$ N (average force)</li>
+        <li>$\Delta t = 0.008$ s (time interval)</li>
+        <li>Find: $J$ = ?</li>
+    </ul>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$J = F\Delta t$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$J = (400 \text{ N})(0.008 \text{ s})$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$J = 3.2$ N·s</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units are correct (N·s, which equals kg·m/s). The impulse is small, which makes sense for a light tennis ball.</p>
+    
+    <p><strong><span class="highlight">Answer: The racket delivers an impulse of 3.2 N·s to the ball.</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Multi-Step Problem Using Impulse-Momentum Theorem</h3>
+    <p><strong>Problem:</strong> A 0.15 kg baseball is pitched at 40 m/s toward a batter. The batter hits the ball, sending it back toward the pitcher at 50 m/s. The bat is in contact with the ball for 0.002 seconds. (a) What is the change in the ball's momentum? (b) What average force did the bat exert on the ball?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m = 0.15$ kg (mass of baseball)</li>
+        <li>$v_i = 40$ m/s (initial velocity, toward batter—we'll call this positive)</li>
+        <li>$v_f = -50$ m/s (final velocity, toward pitcher—opposite direction, so negative)</li>
+        <li>$\Delta t = 0.002$ s (contact time)</li>
+        <li>Find: (a) $\Delta p$ = ? and (b) $F$ = ?</li>
+    </ul>
+    
+    <p><strong>Part (a): Change in Momentum</strong></p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$\Delta p = mv_f - mv_i = m(v_f - v_i)$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$\Delta p = (0.15 \text{ kg})(-50 \text{ m/s} - 40 \text{ m/s})$</p>
+    <p>$\Delta p = (0.15 \text{ kg})(-90 \text{ m/s})$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$\Delta p = -13.5$ kg·m/s</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>The negative sign indicates the momentum change is in the direction toward the pitcher, which makes sense.</p>
+    
+    <p><strong><span class="highlight">Answer (a): The change in momentum is -13.5 kg·m/s (toward the pitcher).</span></strong></p>
+    
+    <p><strong>Part (b): Average Force</strong></p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$F\Delta t = \Delta p$, so $F = \frac{\Delta p}{\Delta t}$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$F = \frac{-13.5 \text{ kg·m/s}}{0.002 \text{ s}}$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$F = -6750$ N</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>The large force makes sense for the brief contact time. The negative sign indicates the force is toward the pitcher (the direction the bat pushed the ball).</p>
+    
+    <p><strong><span class="highlight">Answer (b): The average force exerted by the bat is 6750 N toward the pitcher.</span></strong></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Momentum is the product of an object's mass and velocity: $p = mv$. It is a vector quantity measured in kg·m/s.</li>
+    <li>Momentum depends on both mass and velocity—doubling either one doubles the momentum.</li>
+    <li>Because momentum is a vector, direction matters. We use positive and negative signs to indicate direction in one-dimensional motion.</li>
+    <li>Impulse is the change in momentum and equals the product of force and time: $J = F\Delta t$.</li>
+    <li>The impulse-momentum theorem states that impulse equals change in momentum: $F\Delta t = \Delta p = mv_f - mv_i$.</li>
+    <li>The same change in momentum can result from a large force acting for a short time or a small force acting for a long time.</li>
+    <li>Safety devices like airbags and crumple zones work by increasing collision time, thereby decreasing the force on passengers.</li>
+    <li>To maximize force (as in a karate chop or bat swing), minimize the time of contact.</li>
+    <li>Momentum and kinetic energy are different: momentum is $mv$ (vector), kinetic energy is $\frac{1}{2}mv^2$ (scalar).</li>
+    <li>The SI unit for impulse (N·s) is equivalent to the SI unit for momentum (kg·m/s).</li>
+</ul>
+
+<!-- ============== KEY TERMS ============== -->
+<h1>Key Terms</h1>
+
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Momentum</strong></td>
+        <td>The product of an object's mass and velocity ($p = mv$); a vector quantity that measures an object's motion</td>
+    </tr>
+    <tr>
+        <td><strong>Impulse</strong></td>
+        <td>The change in momentum of an object; also equal to the product of force and time interval ($J = F\Delta t$)</td>
+    </tr>
+    <tr>
+        <td><strong>Impulse-Momentum Theorem</strong></td>
+        <td>The principle stating that impulse equals the change in momentum: $F\Delta t = \Delta p$</td>
+    </tr>
+    <tr>
+        <td><strong>Vector Quantity</strong></td>
+        <td>A physical quantity that has both magnitude and direction (like momentum, velocity, and force)</td>
+    </tr>
+    <tr>
+        <td><strong>Change in Momentum</strong></td>
+        <td>The difference between final and initial momentum: $\Delta p = p_f - p_i = mv_f - mv_i$</td>
+    </tr>
+    <tr>
+        <td><strong>Average Force</strong></td>
+        <td>The constant force that would produce the same impulse as a varying force over a given time interval</td>
+    </tr>
+    <tr>
+        <td><strong>Newton-second (N·s)</strong></td>
+        <td>The SI unit of impulse, equivalent to kg·m/s</td>
+    </tr>
+    <tr>
+        <td><strong>Kilogram-meter per second (kg·m/s)</strong></td>
+        <td>The SI unit of momentum</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Define momentum in your own words and explain why it is a vector quantity.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> Explain why a slow-moving freight train has more momentum than a fast-moving bicycle, even though the bicycle is moving much faster.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> Describe how airbags use the impulse-momentum theorem to protect passengers during a car crash.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> Two objects have the same momentum. If object A has twice the mass of object B, how do their velocities compare? Explain your reasoning.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A 60 kg person running at 8.0 m/s has how much momentum?</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> A hockey puck with mass 0.16 kg is struck by a stick that exerts an average force of 95 N for 0.050 seconds. What impulse is delivered to the puck?</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> A 0.45 kg soccer ball is at rest. A player kicks it, giving it a velocity of 20 m/s. If the player's foot is in contact with the ball for 0.025 seconds, what average force did the player's foot exert on the ball?</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> A 1500 kg car traveling at 30 m/s brakes and comes to a stop in 5.0 seconds. (a) What is the car's initial momentum? (b) What is the change in the car's momentum? (c) What average braking force is required to stop the car?</p>
+<div class="answer-space"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> Momentum is a measure of how much motion an object has, combining both its mass and velocity. It is a vector quantity because it depends on velocity, which has direction. The direction of momentum is the same as the direction of velocity. An object's momentum tells us how hard it would be to stop the object or change its motion.</p>
+
+<p><strong>2.</strong> Momentum depends on both mass and velocity ($p = mv$). While the bicycle may have greater velocity, the freight train has much greater mass. The train's enormous mass more than compensates for its lower velocity, giving it much greater momentum overall. For example, a train with mass 100,000 kg moving at 2 m/s has momentum of 200,000 kg·m/s, while a 20 kg bicycle moving at 10 m/s has momentum of only 200 kg·m/s.</p>
+
+<p><strong>3.</strong> Airbags increase the time interval during which a passenger's momentum changes to zero during a crash. According to the impulse-momentum theorem ($F\Delta t = \Delta p$), if the time interval $\Delta t$ increases, the force $F$ decreases for the same change in momentum $\Delta p$. By extending the stopping time from milliseconds to tens of milliseconds, airbags significantly reduce the force experienced by passengers, reducing injuries.</p>
+
+<p><strong>4.</strong> Object B must have twice the velocity of object A. Since $p = mv$ and both objects have the same momentum, if object A has mass $2m$ and velocity $v$, then object B has mass $m$ and velocity $2v$. We can verify: $p_A = (2m)(v) = 2mv$ and $p_B = (m)(2v) = 2mv$. The lighter object must move faster to have the same momentum.</p>
+
+<p><strong>5.</strong></p>
+<p><strong>Given:</strong> $m = 60$ kg, $v = 8.0$ m/s</p>
+<p><strong>Find:</strong> $p = ?$</p>
+<p><strong>Formula:</strong> $p = mv$</p>
+<p><strong>Substitute:</strong> $p = (60 \text{ kg})(8.0 \text{ m/s})$</p>
+<p><strong>Solve:</strong> $p = 480$ kg·m/s</p>
+<p><strong><span class="highlight">Answer: 480 kg·m/s</span></strong></p>
+
+<p><strong>6.</strong></p>
+<p><strong>Given:</strong> $F = 95$ N, $\Delta t = 0.050$ s</p>
+<p><strong>Find:</strong> $J = ?$</p>
+<p><strong>Formula:</strong> $J = F\Delta t$</p>
+<p><strong>Substitute:</strong> $J = (95 \text{ N})(0.050 \text{ s})$</p>
+<p><strong>Solve:</strong> $J = 4.75$ N·s (or 4.75 kg·m/s)</p>
+<p><strong><span class="highlight">Answer: 4.75 N·s</span></strong></p>
+
+<p><strong>7.</strong></p>
+<p><strong>Given:</strong> $m = 0.45$ kg, $v_i = 0$ m/s, $v_f = 20$ m/s, $\Delta t = 0.025$ s</p>
+<p><strong>Find:</strong> $F = ?$</p>
+<p><strong>Step 1 - Find change in momentum:</strong></p>
+<p>$\Delta p = m(v_f - v_i) = (0.45 \text{ kg})(20 \text{ m/s} - 0) = 9.0$ kg·m/s</p>
+<p><strong>Step 2 - Use impulse-momentum theorem:</strong></p>
+<p>$F\Delta t = \Delta p$, so $F = \frac{\Delta p}{\Delta t} = \frac{9.0 \text{ kg·m/s}}{0.025 \text{ s}} = 360$ N</p>
+<p><strong><span class="highlight">Answer: 360 N</span></strong></p>
+
+<p><strong>8.</strong></p>
+<p><strong>Given:</strong> $m = 1500$ kg, $v_i = 30$ m/s, $v_f = 0$ m/s, $\Delta t = 5.0$ s</p>
+<p><strong>(a) Initial momentum:</strong></p>
+<p>$p_i = mv_i = (1500 \text{ kg})(30 \text{ m/s}) = 45{,}000$ kg·m/s</p>
+<p><strong><span class="highlight">Answer (a): 45,000 kg·m/s</span></strong></p>
+<p><strong>(b) Change in momentum:</strong></p>
+<p>$\Delta p = mv_f - mv_i = (1500 \text{ kg})(0) - 45{,}000 \text{ kg·m/s} = -45{,}000$ kg·m/s</p>
+<p>(Negative because momentum decreases)</p>
+<p><strong><span class="highlight">Answer (b): -45,000 kg·m/s</span></strong></p>
+<p><strong>(c) Average braking force:</strong></p>
+<p>$F = \frac{\Delta p}{\Delta t} = \frac{-45{,}000 \text{ kg·m/s}}{5.0 \text{ s}} = -9000$ N</p>
+<p>(Negative indicates force opposes motion)</p>
+<p><strong><span class="highlight">Answer (c): 9000 N (opposite to the direction of motion)</span></strong></p>
+
+</body>
+</html>

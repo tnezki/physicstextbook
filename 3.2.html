@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 3.2 - Friction</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #000000;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.06in 0;
+        }
+        
+        p {
+            text-align: justify;
+            margin: 0.05in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space-full {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .answer-space-short {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+            text-align: left;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 3.2</div>
+    <h1>Friction</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#f5f5f5"/>
+        
+        <!-- Ground surface (rough texture) -->
+        <rect x="50" y="200" width="500" height="80" fill="#8B7355"/>
+        <path d="M 50 200 L 60 195 L 70 200 L 80 195 L 90 200 L 100 195 L 110 200 L 120 195 L 130 200 L 140 195 L 150 200 L 160 195 L 170 200 L 180 195 L 190 200 L 200 195 L 210 200 L 220 195 L 230 200 L 240 195 L 250 200 L 260 195 L 270 200 L 280 195 L 290 200 L 300 195 L 310 200 L 320 195 L 330 200 L 340 195 L 350 200 L 360 195 L 370 200 L 380 195 L 390 200 L 400 195 L 410 200 L 420 195 L 430 200 L 440 195 L 450 200 L 460 195 L 470 200 L 480 195 L 490 200 L 500 195 L 510 200 L 520 195 L 530 200 L 540 195 L 550 200" stroke="#6B5345" stroke-width="2" fill="none"/>
+        
+        <!-- Box being pushed -->
+        <rect x="220" y="140" width="80" height="60" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        
+        <!-- Applied force arrow (pushing right) -->
+        <defs>
+            <marker id="arrowright" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#006633"/>
+            </marker>
+            <marker id="arrowleft" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto">
+                <polygon points="10 0, 0 3, 10 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        
+        <line x1="150" y1="170" x2="215" y2="170" stroke="#006633" stroke-width="4" marker-end="url(#arrowright)"/>
+        <text x="180" y="160" font-size="14" fill="#006633" font-weight="bold">F_applied</text>
+        
+        <!-- Friction force arrow (opposing motion - pointing left) -->
+        <line x1="305" y1="170" x2="370" y2="170" stroke="#CC3300" stroke-width="4" marker-end="url(#arrowleft)"/>
+        <text x="320" y="160" font-size="14" fill="#CC3300" font-weight="bold">f_friction</text>
+        
+        <!-- Weight and Normal force -->
+        <line x1="260" y1="140" x2="260" y2="100" stroke="#9900cc" stroke-width="3"/>
+        <text x="265" y="115" font-size="12" fill="#9900cc" font-weight="bold">N</text>
+        
+        <line x1="260" y1="200" x2="260" y2="240" stroke="#0066cc" stroke-width="3"/>
+        <text x="265" y="230" font-size="12" fill="#0066cc" font-weight="bold">W</text>
+        
+        <!-- Label -->
+        <text x="300" y="280" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Friction Opposes Motion</text>
+    </svg>
+    
+    <p>Friction is the force that resists the sliding motion between two surfaces in contact. Whether you're pushing a box across the floor, braking your bicycle, or simply walking, friction plays a crucial role. Without friction, we couldn't walk, cars couldn't stop, and objects would slide endlessly.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <p><strong>I can...</strong></p>
+    <ul>
+        <li>Describe friction as a force that opposes motion between surfaces in contact.</li>
+        <li>Distinguish between static friction and kinetic friction and explain when each type acts.</li>
+        <li>Calculate friction forces using the coefficient of friction and the normal force ($f = \mu N$).</li>
+        <li>Analyze factors that affect friction, including surface texture and the normal force.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Imagine trying to slide a heavy bookcase across a carpeted floor. You push and push, but it doesn't move—at least not at first. You need to push harder until suddenly the bookcase starts sliding. Once it's moving, you notice you don't need to push quite as hard to keep it moving. Why is that?</p>
+
+<p>The answer is <span class="vocab-term">friction</span>, a force that opposes the relative motion between two surfaces in contact. Friction is present everywhere in our daily lives. It allows us to walk without slipping, enables cars to accelerate and brake, lets us write with a pencil, and keeps pictures hanging on walls. While we often think of friction as an obstacle to overcome, it's actually essential for most activities we do.</p>
+
+<div class="real-world-box">
+    <h3>Life Without Friction</h3>
+    <p>Imagine a world without friction. You couldn't walk—your feet would slip with every step, like walking on perfectly smooth ice. Cars couldn't accelerate or brake. You couldn't hold anything because objects would slip through your fingers. Even sitting in a chair would be impossible as you'd slide right off. Friction, despite sometimes being inconvenient, is absolutely essential for everyday life.</p>
+</div>
+
+<p>The scientific study of friction dates back centuries, but it wasn't until the work of Guillaume Amontons in the late 1600s and Charles-Augustin de Coulomb in the 1700s that friction was properly understood and quantified. Their work established the fundamental laws of friction that we still use today.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>What is Friction?</h1>
+
+<p><span class="vocab-term">Friction</span> is a contact force that opposes the sliding or attempted sliding of two surfaces past each other. It always acts parallel to the surfaces in contact and in the direction opposite to the motion (or attempted motion).</p>
+
+<div class="vocab-box">
+    <p><strong>Friction:</strong> A force that opposes relative motion between two surfaces in contact. Friction acts parallel to the surfaces and opposite to the direction of motion or intended motion.</p>
+</div>
+
+<p>Friction arises from interactions between molecules and microscopic irregularities on the surfaces. Even surfaces that appear smooth to the eye have tiny bumps and valleys at the microscopic level. When two surfaces are pressed together, these microscopic bumps interlock, and molecular forces bind the surfaces together. When you try to slide one surface past another, these bonds must be broken, which requires force.</p>
+
+<h2>Types of Friction</h2>
+
+<p>There are two main types of friction that you'll encounter in physics problems:</p>
+
+<h3>Static Friction</h3>
+
+<p><span class="vocab-term">Static friction</span> is the friction force that acts on objects that are not moving relative to each other. It's the force that must be overcome to start an object moving. Static friction can vary in magnitude from zero up to a maximum value.</p>
+
+<div class="vocab-box">
+    <p><strong>Static friction:</strong> The friction force between surfaces that are not sliding relative to each other. Static friction prevents motion from starting and adjusts its magnitude to match applied forces up to a maximum value.</p>
+</div>
+
+<p>When you push gently on a stationary box, static friction pushes back with equal force, keeping the box at rest. As you push harder, static friction increases to match your push—up to a limit. Once your applied force exceeds the maximum static friction, the box breaks free and starts moving.</p>
+
+<p>The maximum static friction force is given by:</p>
+
+<div class="formula-box">
+    <p>$$f_s \leq \mu_s N$$</p>
+</div>
+
+<p>where $\mu_s$ (pronounced "mew sub s") is the <span class="vocab-term">coefficient of static friction</span> and $N$ is the normal force.</p>
+
+<h3>Kinetic Friction</h3>
+
+<p><span class="vocab-term">Kinetic friction</span> (also called sliding friction) is the friction force that acts on objects that are already sliding relative to each other. Once an object is moving, kinetic friction opposes its motion with a relatively constant force.</p>
+
+<div class="vocab-box">
+    <p><strong>Kinetic friction:</strong> The friction force between surfaces that are sliding relative to each other. Kinetic friction has a constant magnitude for a given pair of surfaces.</p>
+</div>
+
+<p>Kinetic friction is calculated using:</p>
+
+<div class="formula-box">
+    <p>$$f_k = \mu_k N$$</p>
+</div>
+
+<p>where $\mu_k$ (pronounced "mew sub k") is the <span class="vocab-term">coefficient of kinetic friction</span> and $N$ is the normal force.</p>
+
+<div class="info-box">
+    <p><strong>Key Relationship:</strong> For any pair of surfaces, the coefficient of static friction is always greater than the coefficient of kinetic friction: $\mu_s > \mu_k$. This is why it's harder to start something moving than to keep it moving once it's already in motion.</p>
+</div>
+
+<h2>The Coefficient of Friction</h2>
+
+<p>The <span class="vocab-term">coefficient of friction</span> ($\mu$) is a dimensionless number that represents how much friction exists between two surfaces. It depends on the materials and textures of both surfaces in contact.</p>
+
+<div class="vocab-box">
+    <p><strong>Coefficient of friction ($\mu$):</strong> A dimensionless number representing the "stickiness" between two surfaces. Higher values mean more friction. It depends only on the materials and surface conditions, not on the area of contact or the object's mass.</p>
+</div>
+
+<p>Typical values of friction coefficients:</p>
+<ul>
+    <li>Steel on ice: $\mu_s \approx 0.03$ to $0.05$</li>
+    <li>Rubber on dry concrete: $\mu_s \approx 0.7$ to $1.0$</li>
+    <li>Wood on wood: $\mu_s \approx 0.4$ to $0.6$</li>
+    <li>Rubber on wet concrete: $\mu_s \approx 0.5$ to $0.7$</li>
+    <li>Teflon on Teflon: $\mu_s \approx 0.04$</li>
+</ul>
+
+<p>Notice that coefficients of friction can be less than 1 or greater than 1. A coefficient greater than 1 means the maximum friction force can exceed the normal force.</p>
+
+<h2>The Normal Force and Friction</h2>
+
+<p>The <span class="vocab-term">normal force</span> ($N$) is the perpendicular contact force exerted by a surface on an object. "Normal" means perpendicular—the normal force always acts perpendicular to the surface.</p>
+
+<div class="vocab-box">
+    <p><strong>Normal force ($N$):</strong> The perpendicular force exerted by a surface on an object in contact with it. The normal force prevents objects from passing through surfaces.</p>
+</div>
+
+<p>For an object resting on a horizontal surface with no other vertical forces, the normal force equals the object's weight: $N = mg$. However, if the surface is tilted or if additional vertical forces act on the object, the normal force will differ from the weight.</p>
+
+<p>The friction force is directly proportional to the normal force. If you press down harder on an object (increasing $N$), the friction force increases proportionally. This is why it's harder to slide a box when someone is sitting on top of it.</p>
+
+<h2>Factors Affecting Friction</h2>
+
+<p><strong>Surface Texture:</strong> Rougher surfaces generally have higher friction coefficients. Smooth surfaces slide more easily past each other.</p>
+
+<p><strong>Normal Force:</strong> Greater normal force means greater friction. Pressing surfaces together more firmly increases friction.</p>
+
+<p><strong>Surface Area:</strong> Surprisingly, the area of contact does NOT affect friction force. A block lying flat has the same friction as the same block standing on its edge (assuming the normal force is the same). The friction depends only on the materials and the normal force.</p>
+
+<p><strong>Speed:</strong> For most materials, kinetic friction is relatively independent of speed, though at very high speeds, friction can decrease slightly.</p>
+
+<div class="real-world-box">
+    <h3>Friction in Technology</h3>
+    <p><strong>Brakes:</strong> Car brakes use friction between brake pads and rotors to convert kinetic energy into heat, slowing the vehicle. Engineers select materials with high friction coefficients for effective braking.</p>
+    <p><strong>Tires:</strong> Tire treads are designed to maximize friction with the road. Racing cars use soft rubber compounds for maximum grip. Winter tires have special patterns and rubber to maintain friction on ice and snow.</p>
+    <p><strong>Lubricants:</strong> Oil and grease reduce friction in engines and machinery, allowing parts to move smoothly and reducing wear. Lubricants work by creating a thin film that separates surfaces.</p>
+</div>
+
+<h1>Key Formulas for Practice Problems</h1>
+
+<p>The following formulas will be used in the example and practice problems:</p>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Maximum Static Friction</td>
+        <td style="text-align: center;">$f_s \leq \mu_s N$</td>
+        <td>$f_s$ = static friction force (N)<br>
+            $\mu_s$ = coefficient of static friction (no units)<br>
+            $N$ = normal force (N)</td>
+    </tr>
+    <tr>
+        <td>Kinetic Friction</td>
+        <td style="text-align: center;">$f_k = \mu_k N$</td>
+        <td>$f_k$ = kinetic friction force (N)<br>
+            $\mu_k$ = coefficient of kinetic friction (no units)<br>
+            $N$ = normal force (N)</td>
+    </tr>
+    <tr>
+        <td>Normal Force (horizontal surface)</td>
+        <td style="text-align: center;">$N = mg$</td>
+        <td>$N$ = normal force (N)<br>
+            $m$ = mass (kg)<br>
+            $g$ = acceleration due to gravity (m/s²)</td>
+    </tr>
+    <tr>
+        <td>Weight</td>
+        <td style="text-align: center;">$W = mg$</td>
+        <td>$W$ = weight (N)<br>
+            $m$ = mass (kg)<br>
+            $g$ = acceleration due to gravity (m/s²)</td>
+    </tr>
+</table>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="info-box">
+    <p><strong>Problem-Solving Strategy (5 Steps):</strong></p>
+    <ol>
+        <li><strong>List the Givens:</strong> Write down all known values with units</li>
+        <li><strong>Find the Formula:</strong> Identify the appropriate equation</li>
+        <li><strong>Substitute:</strong> Plug values into the formula</li>
+        <li><strong>Solve:</strong> Calculate the answer</li>
+        <li><strong>Check:</strong> Verify units and reasonableness</li>
+    </ol>
+</div>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Kinetic Friction</h3>
+    <p><strong>Problem:</strong> A 25 kg box is sliding across a floor. The coefficient of kinetic friction between the box and floor is 0.35. What is the kinetic friction force acting on the box?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$m = 25 \text{ kg}$</p>
+    <p>$\mu_k = 0.35$</p>
+    <p>$g = 9.8 \text{ m/s}^2$</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>First find normal force: $N = mg$</p>
+    <p>Then find friction: $f_k = \mu_k N$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$N = (25 \text{ kg})(9.8 \text{ m/s}^2) = 245 \text{ N}$</p>
+    <p>$f_k = (0.35)(245 \text{ N})$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$f_k = 85.75 \text{ N} \approx 86 \text{ N}$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units: (no units) × N = N ✓</p>
+    <p>Reasonableness: Friction is less than the weight (245 N), which makes sense ✓</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">The kinetic friction force is 86 N.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Maximum Static Friction</h3>
+    <p><strong>Problem:</strong> A 50 kg crate rests on a floor where $\mu_s = 0.60$. What is the maximum static friction force that can act on the crate before it starts to move?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$m = 50 \text{ kg}$</p>
+    <p>$\mu_s = 0.60$</p>
+    <p>$g = 9.8 \text{ m/s}^2$</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$N = mg$</p>
+    <p>$f_{s,max} = \mu_s N$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$N = (50 \text{ kg})(9.8 \text{ m/s}^2) = 490 \text{ N}$</p>
+    <p>$f_{s,max} = (0.60)(490 \text{ N})$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$f_{s,max} = 294 \text{ N}$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units correct ✓</p>
+    <p>The maximum friction (294 N) is less than the weight (490 N), which is reasonable ✓</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">The maximum static friction force is 294 N.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Comparing Static and Kinetic Friction (Multi-step)</h3>
+    <p><strong>Problem:</strong> A 30 kg wooden crate sits on a wooden floor. The coefficient of static friction is $\mu_s = 0.50$ and the coefficient of kinetic friction is $\mu_k = 0.30$. (a) What is the maximum force you can apply before the crate starts to move? (b) Once moving, what friction force acts on the crate? (c) How much less is the kinetic friction compared to maximum static friction?</p>
+    
+    <p><strong>Part (a): Maximum Static Friction</strong></p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$m = 30 \text{ kg}$, $\mu_s = 0.50$, $g = 9.8 \text{ m/s}^2$</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$N = mg$, then $f_{s,max} = \mu_s N$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$N = (30)(9.8) = 294 \text{ N}$</p>
+    <p>$f_{s,max} = (0.50)(294)$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$f_{s,max} = 147 \text{ N}$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units correct ✓</p>
+    
+    <p><strong>Part (b): Kinetic Friction</strong></p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$\mu_k = 0.30$, $N = 294 \text{ N}$ (from part a)</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$f_k = \mu_k N$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$f_k = (0.30)(294 \text{ N})$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$f_k = 88.2 \text{ N}$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Kinetic friction (88.2 N) is less than static friction (147 N) ✓</p>
+    
+    <p><strong>Part (c): Difference</strong></p>
+    
+    <p>Difference $= f_{s,max} - f_k = 147 - 88.2 = 58.8 \text{ N}$</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">(a) Maximum static friction is 147 N. (b) Kinetic friction is 88.2 N. (c) Kinetic friction is 58.8 N less than maximum static friction.</span></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Friction is a force that opposes the sliding or attempted sliding of surfaces in contact, acting parallel to the surfaces.</li>
+    <li>Static friction acts on objects at rest and can vary from zero up to a maximum value to prevent motion from starting.</li>
+    <li>Kinetic friction acts on objects already in motion and has a relatively constant magnitude.</li>
+    <li>The coefficient of static friction is always greater than the coefficient of kinetic friction: $\mu_s > \mu_k$.</li>
+    <li>Maximum static friction is calculated using $f_{s,max} = \mu_s N$, where $N$ is the normal force.</li>
+    <li>Kinetic friction is calculated using $f_k = \mu_k N$.</li>
+    <li>The coefficient of friction ($\mu$) is dimensionless and depends on the materials and surface conditions.</li>
+    <li>For horizontal surfaces, the normal force equals the weight: $N = mg$.</li>
+    <li>Friction increases with greater normal force but is independent of contact area.</li>
+    <li>Friction is essential for walking, driving, writing, and countless everyday activities.</li>
+</ul>
+
+<!-- ============== KEY TERMS ============== -->
+<h1>Key Terms</h1>
+
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Friction</strong></td>
+        <td>A force that opposes relative motion between two surfaces in contact</td>
+    </tr>
+    <tr>
+        <td><strong>Static friction</strong></td>
+        <td>Friction force between surfaces not sliding relative to each other; prevents motion from starting</td>
+    </tr>
+    <tr>
+        <td><strong>Kinetic friction</strong></td>
+        <td>Friction force between surfaces sliding relative to each other; opposes ongoing motion</td>
+    </tr>
+    <tr>
+        <td><strong>Coefficient of friction ($\mu$)</strong></td>
+        <td>Dimensionless number representing friction between two surfaces; depends on materials and conditions</td>
+    </tr>
+    <tr>
+        <td><strong>Normal force ($N$)</strong></td>
+        <td>Perpendicular contact force exerted by a surface on an object</td>
+    </tr>
+    <tr>
+        <td><strong>Coefficient of static friction ($\mu_s$)</strong></td>
+        <td>The ratio of maximum static friction to normal force</td>
+    </tr>
+    <tr>
+        <td><strong>Coefficient of kinetic friction ($\mu_k$)</strong></td>
+        <td>The ratio of kinetic friction to normal force</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Explain why it is harder to start pushing a heavy box across the floor than it is to keep it moving once it's already sliding.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>2.</strong> Why doesn't the area of contact between two surfaces affect the friction force?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>3.</strong> A book is resting on a table. You push it gently to the right, but it doesn't move. Draw a free-body diagram showing all forces on the book, including friction.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>4.</strong> Explain the relationship between the normal force and friction force. If you press down harder on an object, what happens to the friction?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>5.</strong> A 15 kg box slides across a floor where $\mu_k = 0.25$. Calculate the kinetic friction force acting on the box.</p>
+<div class="answer-space-full"></div>
+
+<p><strong>6.</strong> A 40 kg crate rests on a warehouse floor where $\mu_s = 0.45$. What is the maximum static friction force before the crate starts to move?</p>
+<div class="answer-space-full"></div>
+
+<p><strong>7.</strong> A 60 kg sled sits on snow where $\mu_s = 0.12$ and $\mu_k = 0.08$. (a) What force is needed to start the sled moving? (b) Once moving, what friction force acts on the sled? (c) How much less force is needed to keep it moving compared to starting it?</p>
+<div class="answer-space-full"></div>
+
+<p><strong>8.</strong> A 20 kg box requires a horizontal force of 100 N to start it moving across a floor. (a) What is the coefficient of static friction? (b) If the coefficient of kinetic friction is 0.35, what is the kinetic friction force once the box is moving? (c) What applied force would be needed to keep the box moving at constant velocity?</p>
+<div class="answer-space-full"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> It is harder to start the box moving because static friction ($\mu_s$) is greater than kinetic friction ($\mu_k$). When the box is at rest, you must overcome the maximum static friction force to break it free. Once moving, only kinetic friction opposes the motion, which requires less force. The microscopic bonds between surfaces are stronger when stationary than when sliding.</p>
+
+<p><strong>2.</strong> The friction force depends on how hard the surfaces are pressed together (normal force) and the materials involved (coefficient of friction), not on the contact area. When area increases, the force per unit area (pressure) decreases proportionally. These effects cancel out, making friction independent of area. This was first discovered experimentally by Amontons and Coulomb.</p>
+
+<p><strong>3.</strong> Free-body diagram should show:</p>
+<ul>
+    <li>Weight ($W$ or $mg$) pointing downward</li>
+    <li>Normal force ($N$) pointing upward (equal to weight)</li>
+    <li>Applied force ($F_{applied}$) pointing right</li>
+    <li>Static friction force ($f_s$) pointing left (equal to applied force since book isn't moving)</li>
+</ul>
+
+<p><strong>4.</strong> The friction force is directly proportional to the normal force through the equation $f = \mu N$. When you press down harder on an object, you increase the normal force, which increases the friction force by the same factor. For example, doubling the normal force doubles the friction force. This is why heavier objects are harder to push across a surface.</p>
+
+<p><strong>5.</strong> Given: $m = 15 \text{ kg}$, $\mu_k = 0.25$, $g = 9.8 \text{ m/s}^2$<br>
+Normal force: $N = mg = (15)(9.8) = 147 \text{ N}$<br>
+Kinetic friction: $f_k = \mu_k N = (0.25)(147) = 36.75 \text{ N}$<br>
+<strong>Answer:</strong> <span class="highlight">The kinetic friction force is 36.75 N or approximately 37 N.</span></p>
+
+<p><strong>6.</strong> Given: $m = 40 \text{ kg}$, $\mu_s = 0.45$, $g = 9.8 \text{ m/s}^2$<br>
+Normal force: $N = mg = (40)(9.8) = 392 \text{ N}$<br>
+Maximum static friction: $f_{s,max} = \mu_s N = (0.45)(392) = 176.4 \text{ N}$<br>
+<strong>Answer:</strong> <span class="highlight">The maximum static friction is 176.4 N or approximately 176 N.</span></p>
+
+<p><strong>7.</strong> Given: $m = 60 \text{ kg}$, $\mu_s = 0.12$, $\mu_k = 0.08$, $g = 9.8 \text{ m/s}^2$<br>
+<br>
+Normal force: $N = mg = (60)(9.8) = 588 \text{ N}$<br>
+<br>
+(a) Force to start: $f_{s,max} = \mu_s N = (0.12)(588) = 70.56 \text{ N}$<br>
+<br>
+(b) Friction while moving: $f_k = \mu_k N = (0.08)(588) = 47.04 \text{ N}$<br>
+<br>
+(c) Difference: $70.56 - 47.04 = 23.52 \text{ N}$<br>
+<br>
+<strong>Answer:</strong> <span class="highlight">(a) 70.6 N needed to start (b) 47.0 N friction while moving (c) 23.5 N less force needed to maintain motion</span></p>
+
+<p><strong>8.</strong> Given: $m = 20 \text{ kg}$, Force to start = $100 \text{ N}$, $\mu_k = 0.35$, $g = 9.8 \text{ m/s}^2$<br>
+<br>
+Normal force: $N = mg = (20)(9.8) = 196 \text{ N}$<br>
+<br>
+(a) Since $f_{s,max} = \mu_s N$ and $f_{s,max} = 100 \text{ N}$:<br>
+$\mu_s = \frac{f_{s,max}}{N} = \frac{100}{196} = 0.51$<br>
+<br>
+(b) Kinetic friction: $f_k = \mu_k N = (0.35)(196) = 68.6 \text{ N}$<br>
+<br>
+(c) To move at constant velocity, net force must be zero, so applied force must equal kinetic friction: $68.6 \text{ N}$<br>
+<br>
+<strong>Answer:</strong> <span class="highlight">(a) $\mu_s = 0.51$ (b) Kinetic friction = 68.6 N (c) Applied force needed = 68.6 N</span></p>
+
+</body>
+</html>

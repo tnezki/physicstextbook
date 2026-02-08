@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1.1 - Scope of Physics</title>
+    
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            padding: 0.5in;
+            margin: 0 auto;
+            background-color: white;
+            box-sizing: border-box;
+        }
+        
+        /* Title Page Styling */
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #000033;
+            padding: 6px;
+            margin: 0.15in 0 0.08in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #000033;
+            padding: 6px;
+            margin: 0.12in 0 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000033;
+            margin: 0.10in 0 0.06in 0;
+        }
+        
+        p {
+            margin: 0.05in 0;
+            text-align: justify;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 1px solid #cccccc;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            padding: 0.08in;
+            margin: 0.10in 0;
+            border-left: 4px solid #cc6600;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.08in 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
+</head>
+<body>
+    <!-- ============== TITLE PAGE ============== -->
+    <div class="title-page">
+        <div class="section-number">SECTION 1.1</div>
+        <h1>Scope of Physics</h1>
+        
+        <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+            <!-- Galaxy background gradient -->
+            <defs>
+                <radialGradient id="spaceGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#000080;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#000033;stop-opacity:1" />
+                </radialGradient>
+                <linearGradient id="atomGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#0066cc;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#1E90FF;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            
+            <!-- Space background -->
+            <rect width="600" height="300" fill="url(#spaceGradient)"/>
+            
+            <!-- Stars -->
+            <circle cx="50" cy="30" r="2" fill="white" opacity="0.8"/>
+            <circle cx="120" cy="50" r="1.5" fill="white" opacity="0.7"/>
+            <circle cx="550" cy="40" r="2" fill="white" opacity="0.9"/>
+            <circle cx="480" cy="70" r="1" fill="white" opacity="0.6"/>
+            <circle cx="90" cy="90" r="1.5" fill="white" opacity="0.8"/>
+            <circle cx="520" cy="150" r="2" fill="white" opacity="0.7"/>
+            
+            <!-- Large galaxy/planet on left -->
+            <circle cx="150" cy="100" r="50" fill="#1E90FF" opacity="0.3"/>
+            <circle cx="150" cy="100" r="35" fill="#0066cc" opacity="0.5"/>
+            
+            <!-- Atom symbol on right -->
+            <circle cx="450" cy="150" r="15" fill="url(#atomGradient)"/>
+            <ellipse cx="450" cy="150" rx="60" ry="20" fill="none" stroke="#1E90FF" stroke-width="2" opacity="0.8"/>
+            <ellipse cx="450" cy="150" rx="60" ry="20" fill="none" stroke="#1E90FF" stroke-width="2" opacity="0.8" transform="rotate(60 450 150)"/>
+            <ellipse cx="450" cy="150" rx="60" ry="20" fill="none" stroke="#1E90FF" stroke-width="2" opacity="0.8" transform="rotate(120 450 150)"/>
+            <circle cx="410" cy="160" r="5" fill="#cc6600"/>
+            <circle cx="490" cy="140" r="5" fill="#cc6600"/>
+            <circle cx="465" cy="175" r="5" fill="#cc6600"/>
+            
+            <!-- Center dividing line -->
+            <line x1="300" y1="50" x2="300" y2="250" stroke="white" stroke-width="2" opacity="0.3" stroke-dasharray="5,5"/>
+            
+            <!-- Labels -->
+            <text x="150" y="180" font-size="16" text-anchor="middle" fill="white" font-weight="bold">The Large</text>
+            <text x="150" y="200" font-size="14" text-anchor="middle" fill="white">(Astronomy)</text>
+            <text x="450" y="225" font-size="16" text-anchor="middle" fill="white" font-weight="bold">The Small</text>
+            <text x="450" y="245" font-size="14" text-anchor="middle" fill="white">(Quantum)</text>
+            
+            <!-- Title at bottom -->
+            <text x="300" y="285" font-size="18" text-anchor="middle" fill="white" font-weight="bold">PHYSICS: From Atoms to Galaxies</text>
+        </svg>
+        
+        <p>Physics is the study of matter, energy, and the fundamental forces that govern our universe. From the tiniest particles to the largest galaxies, physics helps us understand how everything works. In this section, we'll explore what physics is, what it studies, and how it connects to other sciences.</p>
+    </div>
+    
+    <div class="page">
+        <!-- ============== LEARNING OBJECTIVES ============== -->
+        <h1>Learning Objectives</h1>
+        
+        <div class="learning-objectives">
+            <ul>
+                <li><strong>I can</strong> define physics and describe what physics studies.</li>
+                <li><strong>I can</strong> identify the major branches of physics and give examples of what each branch studies.</li>
+                <li><strong>I can</strong> explain how physics connects to other sciences and everyday life.</li>
+                <li><strong>I can</strong> ask questions about physical phenomena and identify what makes them physics questions.</li>
+            </ul>
+        </div>
+        
+        <!-- ============== INTRODUCTION ============== -->
+        <h1>Introduction</h1>
+        
+        <p>Have you ever wondered why the sky is blue? Why does a ball thrown in the air eventually fall back down? How do cell phones communicate with towers miles away? What makes a roller coaster thrilling? All of these questions—and countless others—are answered by physics.</p>
+        
+        <p><span class="vocab-term">Physics</span> is the branch of science that studies matter, energy, and the interactions between them. The word "physics" comes from the Greek word "physikos," meaning "natural." Physics seeks to understand the natural world by discovering the fundamental laws that govern how everything works, from the smallest particles to the entire universe.</p>
+        
+        <div class="real-world-box">
+            <h3>Real-World Connection: Physics in Your Daily Life</h3>
+            <p>You experience physics every moment of every day. When you turn on a light, walk down stairs, listen to music, or check your phone, you're experiencing the laws of physics in action. Understanding physics helps you make sense of the world around you and appreciate the technology that shapes modern life.</p>
+        </div>
+        
+        <p>Physics is sometimes called the "fundamental science" because it provides the foundation for all other sciences. Chemistry studies how atoms and molecules interact—but atoms themselves are explained by physics. Biology studies living things—but the processes of life depend on chemical reactions, which depend on physics. Earth science studies our planet—but weather, earthquakes, and climate all follow physical laws.</p>
+        
+        <!-- ============== MAIN CONTENT ============== -->
+        <h1>What Does Physics Study?</h1>
+        
+        <p>Physics studies a huge range of phenomena, from the incredibly small to the unimaginably large. Here are the main topics that physics investigates:</p>
+        
+        <h3>Matter and Energy</h3>
+        <p>At its core, physics studies <span class="vocab-term">matter</span>—the "stuff" that makes up everything in the universe—and <span class="vocab-term">energy</span>—the ability to do work or cause change. These two concepts are fundamental to all of physics. In fact, Einstein's famous equation $E = mc^2$ shows that matter and energy are actually two forms of the same thing!</p>
+        
+        <div class="vocab-box">
+            <p><span class="vocab-term">Matter:</span> Anything that has mass and takes up space. Examples include air, water, rocks, people, and stars.</p>
+            <p><span class="vocab-term">Energy:</span> The ability to do work or cause a change. Energy exists in many forms including motion (kinetic), position (potential), heat (thermal), light (electromagnetic), and more.</p>
+        </div>
+        
+        <h3>Forces and Motion</h3>
+        <p>Physics explains why and how things move. <span class="vocab-term">Force</span> is a push or pull on an object, and <span class="vocab-term">motion</span> describes how an object's position changes over time. When you kick a soccer ball, throw a baseball, or ride a bike, you're experiencing forces and motion. Sir Isaac Newton's laws of motion, developed over 300 years ago, still accurately describe the motion of everything from cars to planets.</p>
+        
+        <h3>Interactions and Fields</h3>
+        <p>Physics studies how objects influence each other, even from a distance. Earth pulls on the Moon through the force of gravity, keeping it in orbit. Magnets attract or repel each other through magnetic fields. These <span class="vocab-term">interactions</span> happen through <span class="vocab-term">fields</span>—regions of space where forces can be exerted. The four fundamental forces in nature are gravity, electromagnetism, the strong nuclear force, and the weak nuclear force.</p>
+        
+        <!-- ============== BRANCHES OF PHYSICS ============== -->
+        <h1>The Major Branches of Physics</h1>
+        
+        <p>Physics is a vast field, so scientists divide it into specialized branches. Each branch focuses on a particular aspect of the physical world:</p>
+        
+        <h3>1. Mechanics</h3>
+        <p><span class="vocab-term">Mechanics</span> is the study of motion and forces. This is often the first topic students learn in physics because it describes everyday experiences like throwing a ball, driving a car, or riding a roller coaster. Mechanics includes:</p>
+        <ul>
+            <li><strong>Classical mechanics:</strong> Motion of ordinary objects at everyday speeds</li>
+            <li><strong>Fluid mechanics:</strong> Behavior of liquids and gases</li>
+            <li><strong>Statics:</strong> Objects at rest and in balance</li>
+        </ul>
+        
+        <h3>2. Thermodynamics</h3>
+        <p><span class="vocab-term">Thermodynamics</span> studies heat, temperature, and energy transfer. It explains why ice melts, how engines work, and why you feel cold when you step out of a pool. Thermodynamics is crucial for understanding everything from weather patterns to power plants.</p>
+        
+        <h3>3. Waves and Optics</h3>
+        <p>This branch studies how energy travels through waves and how light behaves. <span class="vocab-term">Waves</span> include sound waves, water waves, and light waves. <span class="vocab-term">Optics</span> specifically focuses on light and vision, explaining how mirrors, lenses, cameras, and your eyes work.</p>
+        
+        <h3>4. Electricity and Magnetism</h3>
+        <p>This branch, also called <span class="vocab-term">electromagnetism</span>, studies electric charges, electric currents, and magnetic fields. It explains how batteries work, why lightning strikes, and how electric motors operate. Modern technology—from computers to power grids—depends entirely on our understanding of electricity and magnetism.</p>
+        
+        <h3>5. Modern Physics</h3>
+        <p><span class="vocab-term">Modern physics</span> includes discoveries made in the 20th and 21st centuries. This includes:</p>
+        <ul>
+            <li><strong>Quantum mechanics:</strong> Behavior of atoms and subatomic particles</li>
+            <li><strong>Relativity:</strong> Motion at speeds close to the speed of light, and the nature of space and time</li>
+            <li><strong>Nuclear physics:</strong> The nucleus of atoms and nuclear reactions</li>
+            <li><strong>Particle physics:</strong> The most fundamental building blocks of matter</li>
+        </ul>
+        
+        <h3>6. Astronomy and Astrophysics</h3>
+        <p><span class="vocab-term">Astrophysics</span> applies physics to understand stars, planets, galaxies, and the universe as a whole. It explains how stars produce energy, why planets orbit, and what happens inside black holes.</p>
+        
+        <div class="real-world-box">
+            <h3>Historical Note: The Birth of Modern Physics</h3>
+            <p>For centuries, physics meant the study of motion and forces (mechanics). This changed dramatically around 1900 with revolutionary discoveries. Max Planck discovered that energy comes in tiny packets called "quanta" (1900). Albert Einstein published his theory of special relativity (1905) and explained the photoelectric effect, helping establish quantum mechanics. Ernest Rutherford discovered the atomic nucleus (1911). These breakthroughs created "modern physics" and revolutionized our understanding of reality itself.</p>
+        </div>
+        
+        <!-- ============== PHYSICS AND OTHER SCIENCES ============== -->
+        <h1>How Physics Connects to Other Sciences</h1>
+        
+        <p>Physics is interconnected with all other sciences. Understanding these connections shows why physics is called the "fundamental science."</p>
+        
+        <h3>Physics and Chemistry</h3>
+        <p>Chemistry studies how atoms bond together and how molecules interact. But atoms themselves—their structure and behavior—are explained by physics (quantum mechanics). Chemical reactions involve breaking and forming bonds, which involves electrical forces between electrons and nuclei. Physical chemistry uses physics principles to explain chemical phenomena.</p>
+        
+        <h3>Physics and Biology</h3>
+        <p>Biology studies living organisms, but life depends on physical processes. Your heart pumps blood using pressure (fluid mechanics). Your nervous system transmits signals using electricity (electromagnetism). Your eyes detect light (optics). Your ears hear sound (waves). Biophysics applies physics to understand biological systems, from how proteins fold to how birds fly.</p>
+        
+        <h3>Physics and Earth Science</h3>
+        <p>Earth science studies our planet, but Earth's processes follow physical laws. Weather patterns result from thermodynamics and fluid mechanics. Earthquakes are explained by wave motion. Earth's magnetic field comes from electromagnetism. Climate models use physics equations.</p>
+        
+        <h3>Physics and Engineering</h3>
+        <p>Engineering applies scientific knowledge to design and build technology. All engineering depends on physics. Civil engineers use mechanics to design buildings and bridges. Electrical engineers use electromagnetism to design circuits. Aerospace engineers use fluid mechanics to design aircraft. Understanding physics is essential for creating technology.</p>
+        
+        <div class="info-box">
+            <h3>Important Concept: Why Study Physics?</h3>
+            <p>Some students ask, "Why do I need to learn physics?" Here are several important reasons:</p>
+            <ul>
+                <li><strong>Understanding the world:</strong> Physics explains how the natural world works.</li>
+                <li><strong>Problem-solving skills:</strong> Physics teaches you to analyze complex problems logically.</li>
+                <li><strong>Career preparation:</strong> Many careers (engineering, medicine, computer science, research) require physics.</li>
+                <li><strong>Technological literacy:</strong> Understanding physics helps you make informed decisions about technology.</li>
+                <li><strong>Critical thinking:</strong> Physics teaches you to question, test ideas, and think scientifically.</li>
+            </ul>
+        </div>
+        
+        <!-- ============== PHYSICS IN EVERYDAY LIFE ============== -->
+        <h1>Physics in Everyday Life</h1>
+        
+        <p>You don't need a laboratory to experience physics—it's happening all around you, all the time. Here are just a few examples:</p>
+        
+        <ul>
+            <li><strong>Transportation:</strong> Cars, airplanes, bicycles, and boats all operate according to mechanics and thermodynamics.</li>
+            <li><strong>Communication:</strong> Cell phones, Wi-Fi, radio, and television all use electromagnetic waves.</li>
+            <li><strong>Entertainment:</strong> Music involves sound waves. Video games and movies use physics engines to simulate realistic motion.</li>
+            <li><strong>Sports:</strong> The trajectory of a basketball, the spin on a baseball, the aerodynamics of a golf ball—all explained by physics.</li>
+            <li><strong>Weather:</strong> Thunderstorms, hurricanes, and rainbows all result from physical processes involving heat, pressure, and light.</li>
+            <li><strong>Medicine:</strong> X-rays, MRI machines, ultrasound, laser surgery, and radiation therapy all use physics.</li>
+            <li><strong>Energy:</strong> Power plants (whether burning coal, splitting atoms, or capturing sunlight) convert energy from one form to another using physics principles.</li>
+        </ul>
+        
+        <div class="real-world-box">
+            <h3>Career Connection: Physics-Based Careers</h3>
+            <p>Physics opens doors to many exciting careers. Some physicists work in research, discovering new knowledge. Others apply physics in engineering, designing everything from smartphones to spacecraft. Medical physicists work in hospitals developing and operating imaging and treatment equipment. Geophysicists search for oil and study earthquakes. Meteorologists forecast weather. Astronomers study the cosmos. Data scientists use physics-based mathematical methods. Patent lawyers with physics backgrounds protect inventions. Physics provides skills valued in countless fields.</p>
+        </div>
+        
+        <!-- ============== KEY FORMULAS ============== -->
+        <h1>Key Formulas for Practice Problems</h1>
+        
+        <p>In this section, we'll practice the problem-solving method using some basic formulas. You'll use this same method throughout the entire physics course.</p>
+        
+        <table>
+            <tr>
+                <th>Formula Name</th>
+                <th>Formula</th>
+                <th>Variables and Units</th>
+            </tr>
+            <tr>
+                <td><strong>Density</strong></td>
+                <td style="text-align: center;">$$\rho = \frac{m}{V}$$</td>
+                <td>
+                    $\rho$ = density (g/cm³ or kg/m³)<br>
+                    $m$ = mass (g or kg)<br>
+                    $V$ = volume (cm³ or m³)
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Temperature Conversion (Celsius to Fahrenheit)</strong></td>
+                <td style="text-align: center;">$$T_F = \frac{9}{5}T_C + 32$$</td>
+                <td>
+                    $T_F$ = temperature in Fahrenheit (°F)<br>
+                    $T_C$ = temperature in Celsius (°C)
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Temperature Conversion (Fahrenheit to Celsius)</strong></td>
+                <td style="text-align: center;">$$T_C = \frac{5}{9}(T_F - 32)$$</td>
+                <td>
+                    $T_C$ = temperature in Celsius (°C)<br>
+                    $T_F$ = temperature in Fahrenheit (°F)
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Distance Formula</strong></td>
+                <td style="text-align: center;">$$d = vt$$</td>
+                <td>
+                    $d$ = distance (m, km, etc.)<br>
+                    $v$ = speed or velocity (m/s, km/h, etc.)<br>
+                    $t$ = time (s, h, etc.)
+                </td>
+            </tr>
+        </table>
+        
+        <div class="info-box">
+            <h3>Note About Formulas</h3>
+            <p>These formulas can be rearranged to solve for any variable. For example, the distance formula $d = vt$ can be rearranged to solve for velocity: $v = \frac{d}{t}$, or to solve for time: $t = \frac{d}{v}$. You'll learn this algebraic manipulation skill throughout the course.</p>
+        </div>
+        
+        <!-- ============== EXAMPLE PROBLEMS ============== -->
+        <h1>Example Problems</h1>
+        
+        <p>Physics requires problem-solving skills. Throughout this course, you'll solve many problems using formulas and mathematics. Here are three examples using basic formulas to practice the problem-solving method we'll use all year.</p>
+        
+        <div class="info-box">
+            <h3>Problem-Solving Strategy</h3>
+            <p>For every physics problem, follow these steps:</p>
+            <ol>
+                <li><strong>List the Givens:</strong> Write down all known values with their units.</li>
+                <li><strong>Find the Formula:</strong> Identify which formula relates the given quantities to the unknown.</li>
+                <li><strong>Substitute:</strong> Plug the known values into the formula.</li>
+                <li><strong>Solve:</strong> Use algebra to find the unknown value.</li>
+                <li><strong>Check:</strong> Make sure your answer has the correct units and makes sense.</li>
+            </ol>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 1: Density Calculation</h3>
+            <p><strong>Problem:</strong> A student in physics lab measures the mass of a metal cube and finds it to be 86.4 grams. The volume of the cube is 10.8 cm³. What is the density of the metal?</p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Mass: $m = 86.4$ g</li>
+                <li>Volume: $V = 10.8$ cm³</li>
+                <li>Find: Density ($\rho$)</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p>The formula relating density, mass, and volume is:</p>
+            <p style="text-align: center;">$$\rho = \frac{m}{V}$$</p>
+            <p>where $\rho$ is density (g/cm³), $m$ is mass (g), and $V$ is volume (cm³).</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$\rho = \frac{86.4 \text{ g}}{10.8 \text{ cm}^3}$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$\rho = 8.00 \text{ g/cm}^3$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The density of the metal is 8.00 g/cm³.</span> This is close to the density of brass or bronze.</p>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 2: Temperature Conversion</h3>
+            <p><strong>Problem:</strong> A physics experiment requires a temperature of 25°C. What is this temperature in Fahrenheit?</p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Temperature in Celsius: $T_C = 25°\text{C}$</li>
+                <li>Find: Temperature in Fahrenheit ($T_F$)</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p>The formula to convert Celsius to Fahrenheit is:</p>
+            <p style="text-align: center;">$$T_F = \frac{9}{5}T_C + 32$$</p>
+            <p>where $T_F$ is temperature in Fahrenheit and $T_C$ is temperature in Celsius.</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$T_F = \frac{9}{5}(25) + 32$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$T_F = 45 + 32 = 77°\text{F}$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The temperature is 77°F.</span> This is a comfortable room temperature.</p>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 3: Multi-Step Problem - Distance, Rate, and Time</h3>
+            <p><strong>Problem:</strong> A physics student drives from home to school at an average speed of 40 km/h. The trip takes 0.25 hours. After school, she drives to the library at an average speed of 50 km/h for 0.10 hours. What is the total distance traveled?</p>
+            
+            <p><strong>This problem requires two steps:</strong> First calculate the distance to school, then calculate the distance to the library, then add them together.</p>
+            
+            <p><strong>Part A: Distance from home to school</strong></p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Speed: $v_1 = 40$ km/h</li>
+                <li>Time: $t_1 = 0.25$ h</li>
+                <li>Find: Distance ($d_1$)</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p>The formula relating distance, speed, and time is:</p>
+            <p style="text-align: center;">$$d = vt$$</p>
+            <p>where $d$ is distance (km), $v$ is speed (km/h), and $t$ is time (h).</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$d_1 = (40 \text{ km/h})(0.25 \text{ h})$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$d_1 = 10 \text{ km}$$</p>
+            
+            <p><strong>Part B: Distance from school to library</strong></p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Speed: $v_2 = 50$ km/h</li>
+                <li>Time: $t_2 = 0.10$ h</li>
+                <li>Find: Distance ($d_2$)</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p style="text-align: center;">$$d = vt$$</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$d_2 = (50 \text{ km/h})(0.10 \text{ h})$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$d_2 = 5 \text{ km}$$</p>
+            
+            <p><strong>Part C: Total distance</strong></p>
+            <p>The total distance is the sum of the two distances:</p>
+            <p style="text-align: center;">$$d_{\text{total}} = d_1 + d_2 = 10 \text{ km} + 5 \text{ km} = 15 \text{ km}$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The total distance traveled is 15 km.</span></p>
+        </div>
+        
+        <!-- ============== SUMMARY ============== -->
+        <h1>Summary</h1>
+        
+        <ul>
+            <li>Physics is the study of matter, energy, and the fundamental forces governing the universe.</li>
+            <li>Physics is called the "fundamental science" because it provides the foundation for understanding all other sciences.</li>
+            <li>The main topics of physics include matter and energy, forces and motion, and interactions through fields.</li>
+            <li>The major branches of physics are mechanics, thermodynamics, waves and optics, electricity and magnetism, modern physics, and astrophysics.</li>
+            <li>Physics connects closely with chemistry, biology, Earth science, and engineering.</li>
+            <li>Mechanics studies motion and forces; thermodynamics studies heat and energy transfer.</li>
+            <li>Waves and optics study how energy travels; electromagnetism studies electric and magnetic phenomena.</li>
+            <li>Modern physics includes quantum mechanics, relativity, and nuclear physics.</li>
+            <li>Physics explains everyday phenomena from sports to weather to technology.</li>
+            <li>Studying physics develops problem-solving skills, critical thinking, and prepares you for many careers.</li>
+        </ul>
+        
+        <!-- ============== KEY TERMS TABLE ============== -->
+        <h1>Key Terms</h1>
+        
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+            </tr>
+            <tr>
+                <td><strong>Physics</strong></td>
+                <td>The branch of science that studies matter, energy, and their interactions</td>
+            </tr>
+            <tr>
+                <td><strong>Matter</strong></td>
+                <td>Anything that has mass and takes up space</td>
+            </tr>
+            <tr>
+                <td><strong>Energy</strong></td>
+                <td>The ability to do work or cause change</td>
+            </tr>
+            <tr>
+                <td><strong>Force</strong></td>
+                <td>A push or pull on an object</td>
+            </tr>
+            <tr>
+                <td><strong>Motion</strong></td>
+                <td>A change in an object's position over time</td>
+            </tr>
+            <tr>
+                <td><strong>Field</strong></td>
+                <td>A region of space where a force can be exerted on an object</td>
+            </tr>
+            <tr>
+                <td><strong>Mechanics</strong></td>
+                <td>The branch of physics that studies motion and forces</td>
+            </tr>
+            <tr>
+                <td><strong>Thermodynamics</strong></td>
+                <td>The branch of physics that studies heat, temperature, and energy transfer</td>
+            </tr>
+            <tr>
+                <td><strong>Optics</strong></td>
+                <td>The branch of physics that studies light and vision</td>
+            </tr>
+            <tr>
+                <td><strong>Electromagnetism</strong></td>
+                <td>The branch of physics that studies electricity and magnetism</td>
+            </tr>
+            <tr>
+                <td><strong>Modern Physics</strong></td>
+                <td>Physics developed in the 20th century and beyond, including quantum mechanics and relativity</td>
+            </tr>
+            <tr>
+                <td><strong>Astrophysics</strong></td>
+                <td>The application of physics to understand stars, planets, and the universe</td>
+            </tr>
+        </table>
+        
+        <!-- ============== PRACTICE PROBLEMS ============== -->
+        <h1>Practice Problems</h1>
+        
+        <p><strong>1.</strong> Define physics in your own words. What are the two main concepts that physics studies?</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>2.</strong> Explain why physics is called the "fundamental science." How does it connect to chemistry and biology?</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>3.</strong> List and briefly describe three major branches of physics. Give one example of what each branch studies.</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>4.</strong> Describe two examples of physics in your daily life. For each example, identify which branch of physics explains that phenomenon.</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>5.</strong> A metal cylinder has a mass of 156 grams and a volume of 20.0 cm³. Calculate the density of the metal. (Use the formula $\rho = \frac{m}{V}$)</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>6.</strong> A student measures the temperature in the physics lab as 68°F. Convert this temperature to Celsius using the formula $T_C = \frac{5}{9}(T_F - 32)$.</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>7.</strong> A physics teacher walks from the classroom to the lab at an average speed of 1.5 m/s. If the walk takes 40 seconds, what is the distance from the classroom to the lab? (Use $d = vt$)</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>8.</strong> <strong>Multi-step problem:</strong> A student drives to school at 60 km/h for 0.20 hours, then realizes she forgot her physics homework and drives back home at 75 km/h. 
+        <br>(a) How far is the school from her home?
+        <br>(b) How long does it take her to drive back home?
+        <br>(c) What is her total driving time?</p>
+        <div class="answer-space"></div>
+        
+        <!-- ============== ANSWER KEY ============== -->
+        <h1>Answer Key</h1>
+        
+        <p><strong>1.</strong> Physics is the study of how the natural world works. The two main concepts that physics studies are matter (the stuff that makes up everything) and energy (the ability to do work or cause change). Physics investigates how matter and energy interact with each other.</p>
+        
+        <p><strong>2.</strong> Physics is called the "fundamental science" because it explains the basic laws that govern all natural phenomena. Other sciences build on physics. For example, chemistry studies how atoms and molecules interact, but the structure and behavior of atoms themselves are explained by physics (quantum mechanics). Biology studies living organisms, but life processes depend on chemical reactions (which depend on physics) and physical phenomena like electrical signals in nerves and optical processes in vision.</p>
+        
+        <p><strong>3.</strong> Answers will vary, but should include three from: (1) <strong>Mechanics</strong> studies motion and forces, such as why a ball thrown upward eventually falls back down. (2) <strong>Thermodynamics</strong> studies heat and temperature, such as why ice melts when left at room temperature. (3) <strong>Waves and Optics</strong> studies how energy travels through waves, such as how sound reaches your ears or how light allows you to see. (4) <strong>Electromagnetism</strong> studies electricity and magnetism, such as how batteries provide power or how magnets attract metal. (5) <strong>Modern Physics</strong> includes quantum mechanics and relativity, studying atoms and very fast-moving objects. (6) <strong>Astrophysics</strong> applies physics to space, studying stars, planets, and galaxies.</p>
+        
+        <p><strong>4.</strong> Answers will vary. Examples might include: (1) Turning on a light bulb demonstrates electricity and magnetism (electromagnetism). (2) Hearing music from speakers involves sound waves traveling through air (waves and acoustics). (3) Riding a bicycle involves forces and motion (mechanics). (4) Using a cell phone involves electromagnetic waves carrying signals (electromagnetism and waves).</p>
+        
+        <p><strong>5.</strong></p>
+        <p><strong>Given:</strong> $m = 156$ g, $V = 20.0$ cm³</p>
+        <p><strong>Find:</strong> Density ($\rho$)</p>
+        <p><strong>Formula:</strong> $\rho = \frac{m}{V}$</p>
+        <p><strong>Substitute:</strong> $\rho = \frac{156 \text{ g}}{20.0 \text{ cm}^3}$</p>
+        <p><strong>Solve:</strong> $\rho = 7.80$ g/cm³</p>
+        <p><strong>Answer:</strong> The density is <strong>7.80 g/cm³</strong> (similar to steel or iron).</p>
+        
+        <p><strong>6.</strong></p>
+        <p><strong>Given:</strong> $T_F = 68°\text{F}$</p>
+        <p><strong>Find:</strong> $T_C$</p>
+        <p><strong>Formula:</strong> $T_C = \frac{5}{9}(T_F - 32)$</p>
+        <p><strong>Substitute:</strong> $T_C = \frac{5}{9}(68 - 32) = \frac{5}{9}(36)$</p>
+        <p><strong>Solve:</strong> $T_C = 20°\text{C}$</p>
+        <p><strong>Answer:</strong> The temperature is <strong>20°C</strong>.</p>
+        
+        <p><strong>7.</strong></p>
+        <p><strong>Given:</strong> $v = 1.5$ m/s, $t = 40$ s</p>
+        <p><strong>Find:</strong> Distance ($d$)</p>
+        <p><strong>Formula:</strong> $d = vt$</p>
+        <p><strong>Substitute:</strong> $d = (1.5 \text{ m/s})(40 \text{ s})$</p>
+        <p><strong>Solve:</strong> $d = 60$ m</p>
+        <p><strong>Answer:</strong> The distance is <strong>60 meters</strong>.</p>
+        
+        <p><strong>8.</strong></p>
+        <p><strong>Part (a): Distance to school</strong></p>
+        <p><strong>Given:</strong> $v_1 = 60$ km/h, $t_1 = 0.20$ h</p>
+        <p><strong>Find:</strong> $d_1$</p>
+        <p><strong>Formula:</strong> $d = vt$</p>
+        <p><strong>Substitute:</strong> $d_1 = (60 \text{ km/h})(0.20 \text{ h})$</p>
+        <p><strong>Solve:</strong> $d_1 = 12$ km</p>
+        <p><strong>Answer:</strong> The school is <strong>12 km</strong> from home.</p>
+        
+        <p><strong>Part (b): Time to drive back home</strong></p>
+        <p><strong>Given:</strong> $d_2 = 12$ km (same distance), $v_2 = 75$ km/h</p>
+        <p><strong>Find:</strong> $t_2$</p>
+        <p><strong>Formula:</strong> $d = vt$, so $t = \frac{d}{v}$</p>
+        <p><strong>Substitute:</strong> $t_2 = \frac{12 \text{ km}}{75 \text{ km/h}}$</p>
+        <p><strong>Solve:</strong> $t_2 = 0.16$ h (or 9.6 minutes)</p>
+        <p><strong>Answer:</strong> It takes <strong>0.16 hours</strong> to drive back home.</p>
+        
+        <p><strong>Part (c): Total driving time</strong></p>
+        <p><strong>Total time:</strong> $t_{\text{total}} = t_1 + t_2 = 0.20 \text{ h} + 0.16 \text{ h} = 0.36$ h</p>
+        <p><strong>Answer:</strong> The total driving time is <strong>0.36 hours</strong> (or 21.6 minutes).</p>
+    </div>
+</body>
+</html>

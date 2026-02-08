@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 1.4 - Vectors and Vector Components</title>
+    
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            padding: 0.5in;
+            margin: 0 auto;
+            background-color: white;
+            box-sizing: border-box;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #000033;
+            padding: 6px;
+            margin: 0.15in 0 0.08in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: #000033;
+            padding: 6px;
+            margin: 0.12in 0 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #000033;
+            margin: 0.10in 0 0.06in 0;
+        }
+        
+        p {
+            margin: 0.05in 0;
+            text-align: justify;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #cc6600;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border: 1px solid #cccccc;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            padding: 0.08in;
+            margin: 0.10in 0;
+            border-left: 4px solid #cc6600;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.08in 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 6px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-page">
+        <div class="section-number">SECTION 1.4</div>
+        <h1>Vectors and Vector Components</h1>
+        
+        <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#cc6600"/>
+                </marker>
+                <marker id="arrowhead4" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                    <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
+                </marker>
+            </defs>
+            <rect width="600" height="300" fill="#f0f8ff"/>
+            
+            <!-- Coordinate axes -->
+            <line x1="100" y1="250" x2="500" y2="250" stroke="#000033" stroke-width="2" marker-end="url(#arrowhead3)"/>
+            <line x1="100" y1="250" x2="100" y2="50" stroke="#000033" stroke-width="2" marker-end="url(#arrowhead3)"/>
+            <text x="510" y="255" font-size="14" fill="#000033">x</text>
+            <text x="105" y="40" font-size="14" fill="#000033">y</text>
+            
+            <!-- Main vector -->
+            <line x1="100" y1="250" x2="400" y2="100" stroke="#cc6600" stroke-width="4" marker-end="url(#arrowhead3)"/>
+            <text x="260" y="160" font-size="16" fill="#cc6600" font-weight="bold">A</text>
+            
+            <!-- X component (dashed) -->
+            <line x1="100" y1="250" x2="400" y2="250" stroke="#0066cc" stroke-width="3" stroke-dasharray="8,4" marker-end="url(#arrowhead4)"/>
+            <text x="240" y="270" font-size="14" fill="#0066cc" font-weight="bold">A_x</text>
+            
+            <!-- Y component (dashed) -->
+            <line x1="400" y1="250" x2="400" y2="100" stroke="#0066cc" stroke-width="3" stroke-dasharray="8,4" marker-end="url(#arrowhead4)"/>
+            <text x="410" y="175" font-size="14" fill="#0066cc" font-weight="bold">A_y</text>
+            
+            <!-- Angle arc -->
+            <path d="M 150 250 Q 160 240, 155 230" stroke="#000033" stroke-width="2" fill="none"/>
+            <text x="165" y="240" font-size="14" fill="#000033">θ</text>
+            
+            <!-- Right angle marker -->
+            <rect x="390" y="240" width="10" height="10" fill="none" stroke="#000033" stroke-width="1"/>
+        </svg>
+        
+        <p>Many physical quantities have both size and direction—like velocity, force, and displacement. Vectors are the mathematical tools we use to represent these quantities. In this section, you'll learn to work with vectors, break them into components, and use trigonometry to solve two-dimensional problems.</p>
+    </div>
+    
+    <div class="page">
+        <h1>Learning Objectives</h1>
+        
+        <div class="learning-objectives">
+            <ul>
+                <li><strong>I can</strong> distinguish between scalar and vector quantities and provide examples of each.</li>
+                <li><strong>I can</strong> represent vectors graphically using arrows showing magnitude and direction.</li>
+                <li><strong>I can</strong> resolve vectors into perpendicular components using trigonometry.</li>
+                <li><strong>I can</strong> calculate the magnitude and direction of a vector from its components.</li>
+            </ul>
+        </div>
+        
+        <h1>Introduction</h1>
+        
+        <p>Imagine you're giving someone directions. You could say, "Walk 500 meters." But that's not enough—your friend would ask, "In which direction?" To fully describe the motion, you need to specify both the distance (500 m) and the direction (north, east, at 30° from the x-axis, etc.). This is exactly what vectors do in physics—they represent quantities that have both magnitude and direction.</p>
+        
+        <p>Understanding vectors is essential in physics because many important quantities are vectors: velocity, acceleration, force, momentum, and electric and magnetic fields. In this section, you'll learn the mathematical tools to work with these quantities confidently.</p>
+        
+        <h1>Scalars vs. Vectors</h1>
+        
+        <p>Physical quantities fall into two categories:</p>
+        
+        <div class="vocab-box">
+            <p><span class="vocab-term">Scalar:</span> A quantity that has only magnitude (size). Examples: mass, time, temperature, speed, energy, volume.</p>
+            <p><span class="vocab-term">Vector:</span> A quantity that has both magnitude and direction. Examples: displacement, velocity, acceleration, force, momentum.</p>
+        </div>
+        
+        <table>
+            <tr>
+                <th>Scalar Quantities</th>
+                <th>Vector Quantities</th>
+            </tr>
+            <tr>
+                <td>Distance (50 m)</td>
+                <td>Displacement (50 m north)</td>
+            </tr>
+            <tr>
+                <td>Speed (30 m/s)</td>
+                <td>Velocity (30 m/s east)</td>
+            </tr>
+            <tr>
+                <td>Mass (5 kg)</td>
+                <td>Weight (49 N downward)</td>
+            </tr>
+            <tr>
+                <td>Temperature (25°C)</td>
+                <td>Force (100 N at 45°)</td>
+            </tr>
+            <tr>
+                <td>Time (10 s)</td>
+                <td>Acceleration (9.8 m/s² down)</td>
+            </tr>
+        </table>
+        
+        <div class="info-box">
+            <h3>Distance vs. Displacement</h3>
+            <p><strong>Distance</strong> is a scalar—it's the total length of path traveled. <strong>Displacement</strong> is a vector—it's the straight-line distance from start to finish with direction. If you walk 10 m east then 10 m west, your distance is 20 m, but your displacement is 0 m (you're back where you started).</p>
+        </div>
+        
+        <h1>Representing Vectors Graphically</h1>
+        
+        <p>We represent vectors as <span class="vocab-term">arrows</span>:</p>
+        <ul>
+            <li><strong>Length of arrow:</strong> Represents the magnitude (size)</li>
+            <li><strong>Direction of arrow:</strong> Represents the direction</li>
+            <li><strong>Arrowhead:</strong> Points in the direction of the vector</li>
+        </ul>
+        
+        <p>We denote vectors with boldface letters ($\mathbf{A}$, $\mathbf{B}$) or letters with arrows ($\vec{A}$, $\vec{B}$). The magnitude (size only) is written as $|\mathbf{A}|$ or simply $A$.</p>
+        
+        <h3>Specifying Direction</h3>
+        
+        <p>Directions can be specified in several ways:</p>
+        <ul>
+            <li><strong>Cardinal directions:</strong> "50 m north" or "30 m/s east"</li>
+            <li><strong>Angles from an axis:</strong> "100 N at 30° above the positive x-axis"</li>
+            <li><strong>Compass bearings:</strong> "N 30° E" means 30° east of north</li>
+            <li><strong>Standard position:</strong> Angle measured counterclockwise from the positive x-axis</li>
+        </ul>
+        
+        <h1>Vector Components</h1>
+        
+        <p>Any vector can be broken down into <span class="vocab-term">components</span>—perpendicular parts that add up to give the original vector. Usually, we use horizontal (x) and vertical (y) components.</p>
+        
+        <p>Think of it like this: Imagine pushing a lawnmower. Your force on the handle is at an angle. Part of your force pushes forward (horizontal component) and part pushes downward (vertical component). The components work together to create the total force.</p>
+        
+        <h3>Finding Components Using Trigonometry</h3>
+        
+        <p>Given a vector $\mathbf{A}$ with magnitude $A$ at angle $\theta$ from the positive x-axis:</p>
+        
+        <p style="text-align: center;"><strong>Horizontal (x) component:</strong> $A_x = A \cos(\theta)$</p>
+        <p style="text-align: center;"><strong>Vertical (y) component:</strong> $A_y = A \sin(\theta)$</p>
+        
+        <div class="real-world-box">
+            <h3>Trigonometry Review</h3>
+            <p>For a right triangle with angle $\theta$:</p>
+            <ul>
+                <li>$\sin(\theta) = \frac{\text{opposite}}{\text{hypotenuse}}$</li>
+                <li>$\cos(\theta) = \frac{\text{adjacent}}{\text{hypotenuse}}$</li>
+                <li>$\tan(\theta) = \frac{\text{opposite}}{\text{adjacent}}$</li>
+            </ul>
+            <p><strong>SOH-CAH-TOA:</strong> Sine = Opposite/Hypotenuse, Cosine = Adjacent/Hypotenuse, Tangent = Opposite/Adjacent</p>
+        </div>
+        
+        <h3>Finding Magnitude and Direction from Components</h3>
+        
+        <p>If you know the components $A_x$ and $A_y$, you can find the magnitude and direction:</p>
+        
+        <p style="text-align: center;"><strong>Magnitude:</strong> $A = \sqrt{A_x^2 + A_y^2}$ (Pythagorean theorem)</p>
+        <p style="text-align: center;"><strong>Direction:</strong> $\theta = \tan^{-1}\left(\frac{A_y}{A_x}\right)$ (inverse tangent)</p>
+        
+        <div class="info-box">
+            <h3>Important: Signs Matter!</h3>
+            <p>Components can be positive or negative:</p>
+            <ul>
+                <li>$A_x > 0$: vector points right (positive x-direction)</li>
+                <li>$A_x < 0$: vector points left (negative x-direction)</li>
+                <li>$A_y > 0$: vector points up (positive y-direction)</li>
+                <li>$A_y < 0$: vector points down (negative y-direction)</li>
+            </ul>
+            <p>When using $\tan^{-1}$, pay attention to which quadrant your vector is in!</p>
+        </div>
+        
+        <h1>Key Formulas</h1>
+        
+        <table>
+            <tr>
+                <th>Formula Name</th>
+                <th>Formula</th>
+                <th>Variables and Units</th>
+            </tr>
+            <tr>
+                <td><strong>X-Component</strong></td>
+                <td style="text-align: center;">$$A_x = A \cos(\theta)$$</td>
+                <td>
+                    $A$ = magnitude of vector (any units)<br>
+                    $A_x$ = x-component (same units as $A$)<br>
+                    $\theta$ = angle from positive x-axis (degrees or radians)
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Y-Component</strong></td>
+                <td style="text-align: center;">$$A_y = A \sin(\theta)$$</td>
+                <td>
+                    $A$ = magnitude of vector (any units)<br>
+                    $A_y$ = y-component (same units as $A$)<br>
+                    $\theta$ = angle from positive x-axis (degrees or radians)
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Magnitude from Components</strong></td>
+                <td style="text-align: center;">$$A = \sqrt{A_x^2 + A_y^2}$$</td>
+                <td>
+                    $A$ = magnitude of vector<br>
+                    $A_x$ = x-component<br>
+                    $A_y$ = y-component
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Direction from Components</strong></td>
+                <td style="text-align: center;">$$\theta = \tan^{-1}\left(\frac{A_y}{A_x}\right)$$</td>
+                <td>
+                    $\theta$ = angle from positive x-axis<br>
+                    $A_x$ = x-component<br>
+                    $A_y$ = y-component<br>
+                    (Check quadrant for correct angle!)
+                </td>
+            </tr>
+        </table>
+        
+        <h1>Example Problems</h1>
+        
+        <div class="info-box">
+            <h3>Problem-Solving Strategy</h3>
+            <ol>
+                <li><strong>List the Givens:</strong> Write down all known values with units.</li>
+                <li><strong>Find the Formula:</strong> Identify which formula to use.</li>
+                <li><strong>Substitute:</strong> Plug values into the formula.</li>
+                <li><strong>Solve:</strong> Calculate the answer.</li>
+                <li><strong>Check:</strong> Verify units and reasonableness.</li>
+            </ol>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 1: Finding X-Component</h3>
+            <p><strong>Problem:</strong> A force vector has a magnitude of 50 N and makes an angle of 30° with the positive x-axis. What is the x-component of this force?</p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Magnitude: $F = 50$ N</li>
+                <li>Angle: $\theta = 30°$</li>
+                <li>Find: $F_x$</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p style="text-align: center;">$$F_x = F \cos(\theta)$$</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$F_x = (50 \text{ N}) \cos(30°)$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p>Using $\cos(30°) = 0.866$:</p>
+            <p style="text-align: center;">$$F_x = 50 \times 0.866 = 43.3 \text{ N}$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The x-component is 43.3 N.</span></p>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 2: Finding Y-Component</h3>
+            <p><strong>Problem:</strong> A displacement vector has a magnitude of 75 m at an angle of 60° above the positive x-axis. What is the y-component of the displacement?</p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>Magnitude: $d = 75$ m</li>
+                <li>Angle: $\theta = 60°$</li>
+                <li>Find: $d_y$</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p style="text-align: center;">$$d_y = d \sin(\theta)$$</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$d_y = (75 \text{ m}) \sin(60°)$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p>Using $\sin(60°) = 0.866$:</p>
+            <p style="text-align: center;">$$d_y = 75 \times 0.866 = 65.0 \text{ m}$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The y-component is 65.0 m.</span></p>
+        </div>
+        
+        <div class="example-box">
+            <h3>Example 3: Multi-Step - Finding Magnitude and Direction</h3>
+            <p><strong>Problem:</strong> A velocity vector has an x-component of 24 m/s and a y-component of 18 m/s. Find (a) the magnitude of the velocity and (b) the direction of the velocity.</p>
+            
+            <p><strong>Part (a): Find magnitude</strong></p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>$v_x = 24$ m/s</li>
+                <li>$v_y = 18$ m/s</li>
+                <li>Find: magnitude $v$</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p style="text-align: center;">$$v = \sqrt{v_x^2 + v_y^2}$$</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$v = \sqrt{(24)^2 + (18)^2} = \sqrt{576 + 324}$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$v = \sqrt{900} = 30 \text{ m/s}$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The magnitude is 30 m/s.</span></p>
+            
+            <p><strong>Part (b): Find direction</strong></p>
+            
+            <p><strong>Step 1 - List the Givens:</strong></p>
+            <ul>
+                <li>$v_x = 24$ m/s</li>
+                <li>$v_y = 18$ m/s</li>
+                <li>Find: angle $\theta$</li>
+            </ul>
+            
+            <p><strong>Step 2 - Find the Formula:</strong></p>
+            <p style="text-align: center;">$$\theta = \tan^{-1}\left(\frac{v_y}{v_x}\right)$$</p>
+            
+            <p><strong>Step 3 - Substitute:</strong></p>
+            <p style="text-align: center;">$$\theta = \tan^{-1}\left(\frac{18}{24}\right) = \tan^{-1}(0.75)$$</p>
+            
+            <p><strong>Step 4 - Solve:</strong></p>
+            <p style="text-align: center;">$$\theta = 36.9°$$</p>
+            
+            <p><strong>Answer:</strong> <span style="background-color: #ffff99;">The direction is 36.9° above the positive x-axis.</span></p>
+        </div>
+        
+        <h1>Summary</h1>
+        
+        <ul>
+            <li>Scalars have only magnitude; vectors have both magnitude and direction.</li>
+            <li>Examples of scalars: mass, time, temperature, speed, distance.</li>
+            <li>Examples of vectors: displacement, velocity, acceleration, force.</li>
+            <li>Vectors are represented graphically as arrows where length = magnitude and direction = direction.</li>
+            <li>Any vector can be broken into perpendicular components (usually x and y).</li>
+            <li>The x-component is found using: $A_x = A \cos(\theta)$.</li>
+            <li>The y-component is found using: $A_y = A \sin(\theta)$.</li>
+            <li>The magnitude from components uses the Pythagorean theorem: $A = \sqrt{A_x^2 + A_y^2}$.</li>
+            <li>The direction from components uses inverse tangent: $\theta = \tan^{-1}(A_y/A_x)$.</li>
+            <li>Components can be positive or negative depending on direction; pay attention to signs!</li>
+        </ul>
+        
+        <h1>Key Terms</h1>
+        
+        <table>
+            <tr>
+                <th>Term</th>
+                <th>Definition</th>
+            </tr>
+            <tr>
+                <td><strong>Scalar</strong></td>
+                <td>A quantity with only magnitude (size)</td>
+            </tr>
+            <tr>
+                <td><strong>Vector</strong></td>
+                <td>A quantity with both magnitude and direction</td>
+            </tr>
+            <tr>
+                <td><strong>Magnitude</strong></td>
+                <td>The size or length of a vector</td>
+            </tr>
+            <tr>
+                <td><strong>Direction</strong></td>
+                <td>The orientation of a vector in space</td>
+            </tr>
+            <tr>
+                <td><strong>Component</strong></td>
+                <td>The projection of a vector along a coordinate axis</td>
+            </tr>
+            <tr>
+                <td><strong>X-component</strong></td>
+                <td>The horizontal part of a vector; $A_x = A \cos(\theta)$</td>
+            </tr>
+            <tr>
+                <td><strong>Y-component</strong></td>
+                <td>The vertical part of a vector; $A_y = A \sin(\theta)$</td>
+            </tr>
+            <tr>
+                <td><strong>Resultant</strong></td>
+                <td>The vector sum of two or more vectors</td>
+            </tr>
+        </table>
+        
+        <h1>Practice Problems</h1>
+        
+        <p><strong>1.</strong> Explain the difference between a scalar and a vector. Give two examples of each from everyday life.</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>2.</strong> A student walks 50 meters east, then 50 meters west, returning to the starting point. What is the distance traveled? What is the displacement?</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>3.</strong> Why do we break vectors into components? How does this help us solve physics problems?</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>4.</strong> A vector has a magnitude of 100 N at an angle of 0° (pointing along the positive x-axis). What are the x and y components? What if the angle is 90°?</p>
+        <div class="short-answer-space"></div>
+        
+        <p><strong>5.</strong> A force vector has a magnitude of 120 N at an angle of 40° above the positive x-axis. Calculate the x-component of the force. (Use $\cos(40°) = 0.766$)</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>6.</strong> A displacement vector has a magnitude of 85 m at an angle of 55° above the horizontal. Calculate the y-component of the displacement. (Use $\sin(55°) = 0.819$)</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>7.</strong> A velocity vector has components $v_x = 15$ m/s and $v_y = 20$ m/s. Calculate the magnitude of the velocity.</p>
+        <div class="answer-space"></div>
+        
+        <p><strong>8.</strong> <strong>Multi-step problem:</strong> An acceleration vector has components $a_x = 3.0$ m/s² and $a_y = 4.0$ m/s².
+        <br>(a) Calculate the magnitude of the acceleration.
+        <br>(b) Calculate the direction of the acceleration (angle from the positive x-axis).</p>
+        <div class="answer-space"></div>
+        
+        <h1>Answer Key</h1>
+        
+        <p><strong>1.</strong> A scalar is a quantity with only magnitude (size), while a vector has both magnitude and direction. Scalar examples: temperature (75°F), time (30 seconds), speed (50 mph), mass (10 kg). Vector examples: displacement (100 m north), velocity (30 m/s east), force (50 N downward), wind (15 mph from the southwest).</p>
+        
+        <p><strong>2.</strong> Distance is the total path length = 50 m + 50 m = <strong>100 m</strong> (scalar). Displacement is the straight-line distance from start to finish with direction. Since the student returns to the starting point, displacement = <strong>0 m</strong> (vector). This shows the key difference: distance is always positive, but displacement can be zero if you return to where you started.</p>
+        
+        <p><strong>3.</strong> We break vectors into components to work with each direction independently. This is useful because: (1) It's easier to work with perpendicular directions separately. (2) When adding vectors, we can add all x-components together and all y-components together. (3) Many physics laws and equations work separately in x and y directions. (4) Components allow us to use algebra instead of complex geometry.</p>
+        
+        <p><strong>4.</strong> At 0°: $F_x = 100 \cos(0°) = 100 \times 1 = 100$ N; $F_y = 100 \sin(0°) = 100 \times 0 = 0$ N. The vector points entirely in the x-direction.
+        <br>At 90°: $F_x = 100 \cos(90°) = 100 \times 0 = 0$ N; $F_y = 100 \sin(90°) = 100 \times 1 = 100$ N. The vector points entirely in the y-direction.</p>
+        
+        <p><strong>5.</strong></p>
+        <p><strong>Given:</strong> $F = 120$ N, $\theta = 40°$</p>
+        <p><strong>Find:</strong> $F_x$</p>
+        <p><strong>Formula:</strong> $F_x = F \cos(\theta)$</p>
+        <p><strong>Substitute:</strong> $F_x = (120 \text{ N}) \cos(40°) = 120 \times 0.766$</p>
+        <p><strong>Solve:</strong> $F_x = 91.9$ N</p>
+        <p><strong>Answer:</strong> The x-component is <strong>91.9 N</strong>.</p>
+        
+        <p><strong>6.</strong></p>
+        <p><strong>Given:</strong> $d = 85$ m, $\theta = 55°$</p>
+        <p><strong>Find:</strong> $d_y$</p>
+        <p><strong>Formula:</strong> $d_y = d \sin(\theta)$</p>
+        <p><strong>Substitute:</strong> $d_y = (85 \text{ m}) \sin(55°) = 85 \times 0.819$</p>
+        <p><strong>Solve:</strong> $d_y = 69.6$ m</p>
+        <p><strong>Answer:</strong> The y-component is <strong>69.6 m</strong>.</p>
+        
+        <p><strong>7.</strong></p>
+        <p><strong>Given:</strong> $v_x = 15$ m/s, $v_y = 20$ m/s</p>
+        <p><strong>Find:</strong> magnitude $v$</p>
+        <p><strong>Formula:</strong> $v = \sqrt{v_x^2 + v_y^2}$</p>
+        <p><strong>Substitute:</strong> $v = \sqrt{(15)^2 + (20)^2} = \sqrt{225 + 400} = \sqrt{625}$</p>
+        <p><strong>Solve:</strong> $v = 25$ m/s</p>
+        <p><strong>Answer:</strong> The magnitude is <strong>25 m/s</strong>.</p>
+        
+        <p><strong>8.</strong></p>
+        <p><strong>Part (a): Magnitude</strong></p>
+        <p><strong>Given:</strong> $a_x = 3.0$ m/s², $a_y = 4.0$ m/s²</p>
+        <p><strong>Formula:</strong> $a = \sqrt{a_x^2 + a_y^2}$</p>
+        <p><strong>Substitute:</strong> $a = \sqrt{(3.0)^2 + (4.0)^2} = \sqrt{9.0 + 16.0} = \sqrt{25.0}$</p>
+        <p><strong>Solve:</strong> $a = 5.0$ m/s²</p>
+        <p><strong>Answer:</strong> The magnitude is <strong>5.0 m/s²</strong>.</p>
+        
+        <p><strong>Part (b): Direction</strong></p>
+        <p><strong>Formula:</strong> $\theta = \tan^{-1}\left(\frac{a_y}{a_x}\right)$</p>
+        <p><strong>Substitute:</strong> $\theta = \tan^{-1}\left(\frac{4.0}{3.0}\right) = \tan^{-1}(1.333)$</p>
+        <p><strong>Solve:</strong> $\theta = 53.1°$</p>
+        <p><strong>Answer:</strong> The direction is <strong>53.1° above the positive x-axis</strong>.</p>
+    </div>
+</body>
+</html>

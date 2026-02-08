@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 4.2 - Conservation of Momentum in One Dimension</title>
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            background-color: #ffffff;
+            color: #000000;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.1in;
+            margin-bottom: 0.06in;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin-top: 0.1in;
+            margin-bottom: 0.06in;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin-top: 0.08in;
+            margin-bottom: 0.04in;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 0.05in;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .short-answer-space {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 4.2</div>
+    <h1>Conservation of Momentum in One Dimension</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#ffffff"/>
+        
+        <!-- Before collision -->
+        <text x="150" y="30" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">BEFORE</text>
+        
+        <!-- Cart A moving right -->
+        <rect x="80" y="50" width="60" height="40" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <text x="110" y="75" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">A</text>
+        
+        <!-- Velocity arrow A -->
+        <defs>
+            <marker id="arrow1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+            </marker>
+        </defs>
+        <line x1="145" y1="65" x2="195" y2="65" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow1)"/>
+        <text x="170" y="55" font-size="12" text-anchor="middle" fill="#CC3300">v₁</text>
+        
+        <!-- Cart B at rest -->
+        <rect x="200" y="50" width="60" height="40" fill="#cc6600" stroke="#000033" stroke-width="2"/>
+        <text x="230" y="75" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">B</text>
+        <text x="230" y="55" font-size="12" text-anchor="middle" fill="#000033">v₂ = 0</text>
+        
+        <!-- Total momentum before -->
+        <text x="150" y="120" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">p_total = m₁v₁ + m₂(0)</text>
+        
+        <!-- Dividing line -->
+        <line x1="300" y1="20" x2="300" y2="280" stroke="#000033" stroke-width="2" stroke-dasharray="5,5"/>
+        
+        <!-- After collision -->
+        <text x="450" y="30" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">AFTER</text>
+        
+        <!-- Both carts moving together -->
+        <rect x="380" y="50" width="60" height="40" fill="#0066cc" stroke="#000033" stroke-width="2"/>
+        <text x="410" y="75" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">A</text>
+        
+        <rect x="440" y="50" width="60" height="40" fill="#cc6600" stroke="#000033" stroke-width="2"/>
+        <text x="470" y="75" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">B</text>
+        
+        <!-- Combined velocity arrow -->
+        <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+            <polygon points="0 0, 10 3, 0 6" fill="#CC3300"/>
+        </marker>
+        <line x1="505" y1="65" x2="555" y2="65" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow2)"/>
+        <text x="530" y="55" font-size="12" text-anchor="middle" fill="#CC3300">v_f</text>
+        
+        <!-- Total momentum after -->
+        <text x="450" y="120" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">p_total = (m₁ + m₂)v_f</text>
+        
+        <!-- Conservation statement -->
+        <rect x="50" y="180" width="500" height="80" fill="#e8f4f8" stroke="#0066cc" stroke-width="3"/>
+        <text x="300" y="210" font-size="18" text-anchor="middle" fill="#000033" font-weight="bold">MOMENTUM IS CONSERVED</text>
+        <text x="300" y="235" font-size="16" text-anchor="middle" fill="#000033">p_before = p_after</text>
+    </svg>
+    
+    <p>In an isolated system where no external forces act, the total momentum before a collision equals the total momentum after. This fundamental law of conservation allows us to predict the outcomes of collisions ranging from billiard balls to car crashes to atomic particles. Whether objects bounce apart or stick together, momentum is always conserved.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<div class="learning-objectives">
+    <h2 style="background-color: transparent; color: #000033; padding: 0; margin: 0 0 0.05in 0;">Learning Objectives</h2>
+    <ul>
+        <li>I can state the law of conservation of momentum and identify when it applies</li>
+        <li>I can apply conservation of momentum to predict final velocities after one-dimensional collisions</li>
+        <li>I can solve collision problems involving two objects moving along a straight line</li>
+        <li>I can explain why momentum is conserved even when kinetic energy is not</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>When a moving pool ball strikes a stationary ball, something remarkable happens: the first ball slows down or stops, and the second ball speeds up. Where did the motion go? It wasn't lost—it was transferred. The total amount of motion, measured as momentum, stays exactly the same before and after the collision.</p>
+
+<p>This principle—that momentum is conserved in isolated systems—is one of the most powerful laws in physics. It applies to collisions at every scale imaginable: from subatomic particles in a particle accelerator to galaxies colliding in space. Unlike energy, which can change forms (kinetic to potential, mechanical to thermal), momentum in an isolated system simply transfers from one object to another without changing in total amount.</p>
+
+<p>In this section, you'll learn to use the law of conservation of momentum to predict what happens in collisions. This law is especially useful because it works even when we don't know all the forces involved in a collision. As long as external forces are negligible, we can predict the final velocities of colliding objects.</p>
+
+<div class="real-world-box">
+    <h3>Real-World Connection: Rocket Propulsion</h3>
+    <p>Rockets in space demonstrate conservation of momentum perfectly. When a rocket expels hot gases backward, the gases gain momentum in one direction. To conserve the total momentum of the system (rocket + gases), the rocket must gain an equal amount of momentum in the opposite direction, propelling it forward. This works even in the vacuum of space where there's nothing to "push against"—the rocket is simply conserving momentum.</p>
+</div>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>The Law of Conservation of Momentum</h1>
+
+<p>The <span class="vocab-term">law of conservation of momentum</span> states that in an isolated system (one with no net external forces), the total momentum before a collision equals the total momentum after the collision.</p>
+
+<div class="vocab-box">
+    <h3>Law of Conservation of Momentum</h3>
+    <p>In an <strong>isolated system</strong> (no net external forces), the total momentum remains constant:</p>
+    <p style="text-align: center; margin-top: 0.05in;"><strong>$$p_{\text{before}} = p_{\text{after}}$$</strong></p>
+    <p>For a two-object collision:</p>
+    <p style="text-align: center;"><strong>$$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$$</strong></p>
+    <p>where subscript $i$ means initial (before collision) and subscript $f$ means final (after collision)</p>
+</div>
+
+<h2>What Makes a System Isolated?</h2>
+
+<p>A system is considered <span class="vocab-term">isolated</span> when the net external force acting on it is zero or negligible. This doesn't mean there are no forces at all—the objects in the collision exert forces on each other. But these are <span class="vocab-term">internal forces</span> (forces between objects within the system). What matters is that external forces (forces from outside the system) are negligible.</p>
+
+<p>Common examples of approximately isolated systems include:</p>
+
+<ul>
+    <li><strong>Colliding billiard balls:</strong> Friction with the table is very small during the brief collision</li>
+    <li><strong>Ice skaters pushing apart:</strong> Friction with ice is minimal</li>
+    <li><strong>Astronauts in space:</strong> No air resistance or friction</li>
+    <li><strong>Exploding fireworks:</strong> Gravity acts on all pieces equally, so we can often ignore it for horizontal momentum</li>
+</ul>
+
+<div class="info-box">
+    <h3>Important Distinction: Internal vs. External Forces</h3>
+    <p><strong>Internal forces</strong> are forces that objects within a system exert on each other (like the collision force between two cars). These forces always come in action-reaction pairs and don't change the system's total momentum.</p>
+    <p><strong>External forces</strong> are forces from outside the system (like friction with the ground or air resistance). These CAN change the system's total momentum.</p>
+    <p>Conservation of momentum applies only when external forces are zero or negligible.</p>
+</div>
+
+<h1>Applying Conservation of Momentum</h1>
+
+<h2>Types of Collisions</h2>
+
+<p>While we'll study elastic and inelastic collisions in detail in the next section, it's important to note that <span class="vocab-term">momentum is conserved in ALL types of collisions</span> in isolated systems, regardless of what happens to kinetic energy.</p>
+
+<p>In one-dimensional collisions, all motion occurs along a single straight line. This simplifies our calculations because we can use positive and negative signs to indicate direction rather than dealing with vector components.</p>
+
+<h2>Setting Up Conservation Problems</h2>
+
+<p>When solving conservation of momentum problems, follow these steps:</p>
+
+<ol>
+    <li><strong>Define the system:</strong> Identify which objects are part of your system</li>
+    <li><strong>Choose a positive direction:</strong> Decide which direction is positive (usually right or east)</li>
+    <li><strong>List knowns and unknowns:</strong> Include masses and velocities before and after</li>
+    <li><strong>Write the conservation equation:</strong> $m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$</li>
+    <li><strong>Solve for the unknown:</strong> Use algebra to isolate the variable you're looking for</li>
+    <li><strong>Check your answer:</strong> Does the direction make sense? Are units correct?</li>
+</ol>
+
+<div class="real-world-box">
+    <h3>Historical Note: Conservation Laws</h3>
+    <p>The law of conservation of momentum was developed in the 17th century by scientists including John Wallis, Christopher Wren, and Christiaan Huygens. They studied colliding pendulum bobs and discovered that total motion was conserved. Later, Isaac Newton incorporated this into his third law of motion. Conservation laws are now recognized as fundamental principles in physics—alongside conservation of energy and conservation of electric charge.</p>
+</div>
+
+<h1>Momentum in Explosions and Separations</h1>
+
+<p>Conservation of momentum doesn't just apply to objects coming together—it also applies to objects flying apart. When an explosion or separation occurs, the total momentum after equals the total momentum before.</p>
+
+<p>If objects start at rest (like a firecracker or two ice skaters standing still), the total initial momentum is zero. Therefore, the total final momentum must also be zero. This means the objects must move in opposite directions with momenta that cancel out.</p>
+
+<p style="text-align: center;">If $p_{\text{before}} = 0$, then $m_1v_{1f} + m_2v_{2f} = 0$</p>
+
+<p>This means: $m_1v_{1f} = -m_2v_{2f}$</p>
+
+<p>The negative sign indicates opposite directions. Objects with equal mass will move at equal speeds in opposite directions. If one object is more massive, it will move more slowly.</p>
+
+<div class="info-box">
+    <h3>Recoil: A Special Case of Momentum Conservation</h3>
+    <p><strong>Recoil</strong> occurs when an object at rest separates into two parts. A gun recoiling when fired is a perfect example. The bullet gains forward momentum, so the gun must gain an equal amount of backward momentum to keep the total at zero. This is why larger guns (more mass) recoil more slowly than smaller guns firing the same bullet.</p>
+</div>
+
+<!-- ============== KEY FORMULAS ============== -->
+<h1>Key Formulas for Practice Problems</h1>
+
+<p>Here are the essential formulas for solving conservation of momentum problems in this section:</p>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Conservation of Momentum (General)</td>
+        <td style="text-align: center;">$p_{\text{before}} = p_{\text{after}}$</td>
+        <td>$p$ = momentum (kg·m/s)</td>
+    </tr>
+    <tr>
+        <td>Conservation of Momentum (Two Objects)</td>
+        <td style="text-align: center;">$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$</td>
+        <td>$m_1, m_2$ = masses (kg)<br>$v_{1i}, v_{2i}$ = initial velocities (m/s)<br>$v_{1f}, v_{2f}$ = final velocities (m/s)</td>
+    </tr>
+    <tr>
+        <td>Explosion from Rest</td>
+        <td style="text-align: center;">$m_1v_{1f} + m_2v_{2f} = 0$</td>
+        <td>$m_1, m_2$ = masses (kg)<br>$v_{1f}, v_{2f}$ = final velocities (m/s)<br>(Initial momentum = 0)</td>
+    </tr>
+    <tr>
+        <td>Momentum</td>
+        <td style="text-align: center;">$p = mv$</td>
+        <td>$p$ = momentum (kg·m/s)<br>$m$ = mass (kg)<br>$v$ = velocity (m/s)</td>
+    </tr>
+</table>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="info-box">
+    <h3>Problem-Solving Strategy</h3>
+    <p>Follow these five steps for every problem:</p>
+    <ol>
+        <li><strong>List the Givens:</strong> Write down all known values with units</li>
+        <li><strong>Find the Formula:</strong> Choose the appropriate equation</li>
+        <li><strong>Substitute:</strong> Plug in the known values</li>
+        <li><strong>Solve:</strong> Perform the calculation</li>
+        <li><strong>Check:</strong> Verify units and reasonableness of answer</li>
+    </ol>
+</div>
+
+<div class="example-box">
+    <h3>Example 1: Collision with One Object Initially at Rest</h3>
+    <p><strong>Problem:</strong> A 2.0 kg cart moving at 3.0 m/s to the right collides with a 1.0 kg cart at rest. After the collision, the 2.0 kg cart moves at 1.0 m/s to the right. What is the velocity of the 1.0 kg cart after the collision?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m_1 = 2.0$ kg (first cart)</li>
+        <li>$v_{1i} = 3.0$ m/s (initial velocity of first cart, to the right)</li>
+        <li>$m_2 = 1.0$ kg (second cart)</li>
+        <li>$v_{2i} = 0$ m/s (second cart initially at rest)</li>
+        <li>$v_{1f} = 1.0$ m/s (final velocity of first cart, to the right)</li>
+        <li>Find: $v_{2f}$ = ?</li>
+    </ul>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$(2.0 \text{ kg})(3.0 \text{ m/s}) + (1.0 \text{ kg})(0) = (2.0 \text{ kg})(1.0 \text{ m/s}) + (1.0 \text{ kg})(v_{2f})$</p>
+    <p>$6.0 \text{ kg·m/s} + 0 = 2.0 \text{ kg·m/s} + (1.0 \text{ kg})(v_{2f})$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$6.0 \text{ kg·m/s} = 2.0 \text{ kg·m/s} + (1.0 \text{ kg})(v_{2f})$</p>
+    <p>$4.0 \text{ kg·m/s} = (1.0 \text{ kg})(v_{2f})$</p>
+    <p>$v_{2f} = 4.0$ m/s</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units are correct (m/s). The positive value means the second cart moves to the right, which makes sense.</p>
+    
+    <p><strong><span class="highlight">Answer: The 1.0 kg cart moves at 4.0 m/s to the right after the collision.</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Head-On Collision</h3>
+    <p><strong>Problem:</strong> A 1500 kg car moving east at 20 m/s collides head-on with a 1000 kg car moving west at 15 m/s. After the collision, the two cars stick together. What is their combined velocity after the collision?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m_1 = 1500$ kg (first car)</li>
+        <li>$v_{1i} = 20$ m/s (east, positive direction)</li>
+        <li>$m_2 = 1000$ kg (second car)</li>
+        <li>$v_{2i} = -15$ m/s (west, negative because opposite to positive direction)</li>
+        <li>Cars stick together, so $v_{1f} = v_{2f} = v_f$</li>
+        <li>Find: $v_f$ = ?</li>
+    </ul>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f$ (since they stick together)</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$(1500 \text{ kg})(20 \text{ m/s}) + (1000 \text{ kg})(-15 \text{ m/s}) = (1500 \text{ kg} + 1000 \text{ kg})(v_f)$</p>
+    <p>$30{,}000 \text{ kg·m/s} - 15{,}000 \text{ kg·m/s} = (2500 \text{ kg})(v_f)$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$15{,}000 \text{ kg·m/s} = (2500 \text{ kg})(v_f)$</p>
+    <p>$v_f = \frac{15{,}000 \text{ kg·m/s}}{2500 \text{ kg}} = 6.0$ m/s</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units are correct. The positive value means they move east, which makes sense because the eastbound car had more momentum.</p>
+    
+    <p><strong><span class="highlight">Answer: The combined cars move at 6.0 m/s eastward after the collision.</span></strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Explosion from Rest (Multi-Step)</h3>
+    <p><strong>Problem:</strong> Two ice skaters stand at rest facing each other. Skater A has mass 50 kg and skater B has mass 70 kg. They push off from each other. After pushing apart, skater A moves at 2.8 m/s to the left. (a) What is the velocity of skater B? (b) What was the total momentum of the system before they pushed apart? (c) What is the total momentum after they pushed apart?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <ul>
+        <li>$m_A = 50$ kg</li>
+        <li>$m_B = 70$ kg</li>
+        <li>$v_{Ai} = 0$ m/s (both at rest initially)</li>
+        <li>$v_{Bi} = 0$ m/s</li>
+        <li>$v_{Af} = -2.8$ m/s (left is negative)</li>
+        <li>Find: (a) $v_{Bf}$ = ?, (b) $p_{\text{before}}$ = ?, (c) $p_{\text{after}}$ = ?</li>
+    </ul>
+    
+    <p><strong>Part (a): Velocity of Skater B</strong></p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>Since they start at rest: $m_Av_{Af} + m_Bv_{Bf} = 0$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$(50 \text{ kg})(-2.8 \text{ m/s}) + (70 \text{ kg})(v_{Bf}) = 0$</p>
+    <p>$-140 \text{ kg·m/s} + (70 \text{ kg})(v_{Bf}) = 0$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$(70 \text{ kg})(v_{Bf}) = 140 \text{ kg·m/s}$</p>
+    <p>$v_{Bf} = \frac{140 \text{ kg·m/s}}{70 \text{ kg}} = 2.0$ m/s</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>The positive value means skater B moves to the right, opposite to skater A. This makes sense!</p>
+    
+    <p><strong><span class="highlight">Answer (a): Skater B moves at 2.0 m/s to the right.</span></strong></p>
+    
+    <p><strong>Part (b): Total Momentum Before</strong></p>
+    
+    <p>$p_{\text{before}} = m_Av_{Ai} + m_Bv_{Bi} = (50 \text{ kg})(0) + (70 \text{ kg})(0) = 0$ kg·m/s</p>
+    
+    <p><strong><span class="highlight">Answer (b): The total momentum before is 0 kg·m/s.</span></strong></p>
+    
+    <p><strong>Part (c): Total Momentum After</strong></p>
+    
+    <p>$p_{\text{after}} = m_Av_{Af} + m_Bv_{Bf}$</p>
+    <p>$p_{\text{after}} = (50 \text{ kg})(-2.8 \text{ m/s}) + (70 \text{ kg})(2.0 \text{ m/s})$</p>
+    <p>$p_{\text{after}} = -140 \text{ kg·m/s} + 140 \text{ kg·m/s} = 0$ kg·m/s</p>
+    
+    <p><strong><span class="highlight">Answer (c): The total momentum after is 0 kg·m/s, which equals the momentum before—confirming conservation!</span></strong></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>The law of conservation of momentum states that in an isolated system, total momentum before a collision equals total momentum after: $p_{\text{before}} = p_{\text{after}}$</li>
+    <li>An isolated system is one where the net external force is zero or negligible; internal forces don't affect total momentum</li>
+    <li>For two-object collisions: $m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$</li>
+    <li>Momentum is conserved in ALL types of collisions in isolated systems, whether elastic or inelastic</li>
+    <li>In one-dimensional problems, use positive and negative signs to indicate direction</li>
+    <li>When solving problems, always define your positive direction first and be consistent</li>
+    <li>Conservation of momentum applies to explosions and separations as well as collisions</li>
+    <li>When objects explode from rest, they move in opposite directions with equal and opposite momenta</li>
+    <li>Recoil (like a gun firing) is an application of momentum conservation from rest</li>
+    <li>Unlike energy, momentum cannot change form—it only transfers between objects in the system</li>
+</ul>
+
+<!-- ============== KEY TERMS ============== -->
+<h1>Key Terms</h1>
+
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Conservation of Momentum</strong></td>
+        <td>The principle that total momentum in an isolated system remains constant before and after a collision or interaction</td>
+    </tr>
+    <tr>
+        <td><strong>Isolated System</strong></td>
+        <td>A system in which no net external force acts; only internal forces between objects within the system are present</td>
+    </tr>
+    <tr>
+        <td><strong>Internal Forces</strong></td>
+        <td>Forces that objects within a system exert on each other; these do not change the total momentum of the system</td>
+    </tr>
+    <tr>
+        <td><strong>External Forces</strong></td>
+        <td>Forces acting on the system from outside; these can change the total momentum of the system</td>
+    </tr>
+    <tr>
+        <td><strong>One-Dimensional Collision</strong></td>
+        <td>A collision where all motion occurs along a single straight line</td>
+    </tr>
+    <tr>
+        <td><strong>Recoil</strong></td>
+        <td>The backward motion of an object when it expels or releases another object (like a gun firing a bullet)</td>
+    </tr>
+    <tr>
+        <td><strong>Total Momentum</strong></td>
+        <td>The vector sum of the momenta of all objects in a system</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> State the law of conservation of momentum and explain what is meant by an "isolated system."</p>
+<div class="short-answer-space"></div>
+
+<p><strong>2.</strong> Explain why momentum is conserved even in collisions where kinetic energy is not conserved.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>3.</strong> Two identical cars collide head-on, each traveling at the same speed but in opposite directions. What happens to their velocities after the collision if they stick together? Explain using conservation of momentum.</p>
+<div class="short-answer-space"></div>
+
+<p><strong>4.</strong> When a rifle fires a bullet, the rifle recoils backward. If the bullet and rifle have the same magnitude of momentum, why does the rifle move much more slowly than the bullet?</p>
+<div class="short-answer-space"></div>
+
+<p><strong>5.</strong> A 3.0 kg ball moving at 4.0 m/s to the right collides with a 2.0 kg ball at rest. After the collision, the 3.0 kg ball moves at 1.5 m/s to the right. What is the velocity of the 2.0 kg ball after the collision?</p>
+<div class="answer-space"></div>
+
+<p><strong>6.</strong> A 0.50 kg ball moving at 6.0 m/s east collides with a 0.30 kg ball moving at 4.0 m/s west. After the collision, the 0.50 kg ball moves at 2.0 m/s east. What is the velocity of the 0.30 kg ball after the collision?</p>
+<div class="answer-space"></div>
+
+<p><strong>7.</strong> A 1200 kg car traveling at 15 m/s east collides with a 1800 kg truck traveling at 10 m/s west. After the collision, the vehicles stick together. (a) What is the total momentum before the collision? (b) What is the velocity of the combined wreckage after the collision?</p>
+<div class="answer-space"></div>
+
+<p><strong>8.</strong> An astronaut with mass 80 kg is floating at rest in space. She throws a 2.0 kg tool away from herself at 12 m/s. (a) What is the total momentum before she throws the tool? (b) What is her recoil velocity after throwing the tool? (c) Verify that momentum is conserved by calculating the total momentum after the throw.</p>
+<div class="answer-space"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> The law of conservation of momentum states that in an isolated system, the total momentum before any interaction equals the total momentum after the interaction. An isolated system is one where no net external force acts on the system—only internal forces (forces between objects within the system) are present. External forces like friction or air resistance must be zero or negligible for momentum to be conserved.</p>
+
+<p><strong>2.</strong> Momentum is conserved because of Newton's third law. When two objects collide, they exert equal and opposite forces on each other. These internal forces change each object's momentum, but the changes are equal and opposite, so the total momentum remains constant. Kinetic energy, however, can be converted to other forms like sound, heat, or deformation energy, so it is not necessarily conserved in collisions.</p>
+
+<p><strong>3.</strong> The two cars will come to a complete stop (zero velocity) after the collision. Since they have identical masses and speeds but opposite directions, their momenta are equal in magnitude but opposite in direction. The total momentum before the collision is zero (they cancel out). By conservation of momentum, the total momentum after must also be zero, which means the combined cars must be at rest.</p>
+
+<p><strong>4.</strong> Both the rifle and bullet have the same magnitude of momentum ($p = mv$), but the rifle has much greater mass than the bullet. Since $v = p/m$, the rifle's larger mass means it has a much smaller velocity. For example, if the rifle has 100 times the mass of the bullet, it will recoil at 1/100th the speed of the bullet to have equal and opposite momentum.</p>
+
+<p><strong>5.</strong></p>
+<p><strong>Given:</strong> $m_1 = 3.0$ kg, $v_{1i} = 4.0$ m/s, $m_2 = 2.0$ kg, $v_{2i} = 0$ m/s, $v_{1f} = 1.5$ m/s</p>
+<p><strong>Find:</strong> $v_{2f}$ = ?</p>
+<p>$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$</p>
+<p>$(3.0)(4.0) + (2.0)(0) = (3.0)(1.5) + (2.0)(v_{2f})$</p>
+<p>$12.0 = 4.5 + 2.0v_{2f}$</p>
+<p>$7.5 = 2.0v_{2f}$</p>
+<p>$v_{2f} = 3.75$ m/s</p>
+<p><strong><span class="highlight">Answer: 3.75 m/s to the right (or 3.8 m/s with 2 sig figs)</span></strong></p>
+
+<p><strong>6.</strong></p>
+<p><strong>Given:</strong> $m_1 = 0.50$ kg, $v_{1i} = 6.0$ m/s (east, +), $m_2 = 0.30$ kg, $v_{2i} = -4.0$ m/s (west, −), $v_{1f} = 2.0$ m/s</p>
+<p><strong>Find:</strong> $v_{2f}$ = ?</p>
+<p>$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$</p>
+<p>$(0.50)(6.0) + (0.30)(-4.0) = (0.50)(2.0) + (0.30)(v_{2f})$</p>
+<p>$3.0 - 1.2 = 1.0 + 0.30v_{2f}$</p>
+<p>$1.8 = 1.0 + 0.30v_{2f}$</p>
+<p>$0.8 = 0.30v_{2f}$</p>
+<p>$v_{2f} = 2.67$ m/s</p>
+<p><strong><span class="highlight">Answer: 2.7 m/s to the east</span></strong></p>
+
+<p><strong>7.</strong></p>
+<p><strong>Given:</strong> $m_1 = 1200$ kg, $v_{1i} = 15$ m/s (east, +), $m_2 = 1800$ kg, $v_{2i} = -10$ m/s (west, −)</p>
+<p><strong>(a) Total momentum before:</strong></p>
+<p>$p_{\text{before}} = m_1v_{1i} + m_2v_{2i}$</p>
+<p>$p_{\text{before}} = (1200)(15) + (1800)(-10)$</p>
+<p>$p_{\text{before}} = 18{,}000 - 18{,}000 = 0$ kg·m/s</p>
+<p><strong><span class="highlight">Answer (a): 0 kg·m/s</span></strong></p>
+<p><strong>(b) Velocity after collision:</strong></p>
+<p>$p_{\text{before}} = (m_1 + m_2)v_f$</p>
+<p>$0 = (1200 + 1800)v_f$</p>
+<p>$v_f = 0$ m/s</p>
+<p><strong><span class="highlight">Answer (b): 0 m/s (the vehicles come to rest)</span></strong></p>
+
+<p><strong>8.</strong></p>
+<p><strong>Given:</strong> $m_A = 80$ kg, $m_t = 2.0$ kg, initially both at rest, $v_{tf} = 12$ m/s (tool velocity)</p>
+<p><strong>(a) Total momentum before:</strong></p>
+<p>$p_{\text{before}} = 0$ kg·m/s (both at rest)</p>
+<p><strong><span class="highlight">Answer (a): 0 kg·m/s</span></strong></p>
+<p><strong>(b) Astronaut's recoil velocity:</strong></p>
+<p>$m_Av_{Af} + m_tv_{tf} = 0$</p>
+<p>$(80)v_{Af} + (2.0)(12) = 0$</p>
+<p>$(80)v_{Af} = -24$</p>
+<p>$v_{Af} = -0.30$ m/s</p>
+<p><strong><span class="highlight">Answer (b): 0.30 m/s in the opposite direction from the tool</span></strong></p>
+<p><strong>(c) Total momentum after:</strong></p>
+<p>$p_{\text{after}} = (80)(-0.30) + (2.0)(12) = -24 + 24 = 0$ kg·m/s</p>
+<p><strong><span class="highlight">Answer (c): 0 kg·m/s, which equals momentum before—momentum is conserved!</span></strong></p>
+
+</body>
+</html>

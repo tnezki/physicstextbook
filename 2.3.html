@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 2.3 - Acceleration</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #000000;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.06in 0;
+        }
+        
+        h4 {
+            font-size: 14px;
+            color: #cc6600;
+            font-weight: bold;
+            margin: 0.04in 0;
+        }
+        
+        p {
+            text-align: justify;
+            margin: 0.05in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space-full {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .answer-space-short {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+            text-align: left;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 2.3</div>
+    <h1>Acceleration</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#f0f8ff"/>
+        
+        <!-- Car at three positions showing increasing velocity -->
+        <!-- Position 1 - slow -->
+        <rect x="80" y="80" width="60" height="30" fill="#4a90e2" stroke="#000033" stroke-width="2"/>
+        <circle cx="95" cy="115" r="8" fill="#333"/>
+        <circle cx="125" cy="115" r="8" fill="#333"/>
+        <text x="110" y="70" font-size="12" text-anchor="middle" fill="#000033">t = 0 s</text>
+        
+        <!-- Velocity vector 1 - short -->
+        <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#cc6600"/>
+            </marker>
+            <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
+            </marker>
+        </defs>
+        <line x1="145" y1="95" x2="180" y2="95" stroke="#cc6600" stroke-width="3" marker-end="url(#arrowhead)"/>
+        <text x="162" y="85" font-size="10" fill="#cc6600">v₁</text>
+        
+        <!-- Position 2 - medium speed -->
+        <rect x="230" y="150" width="60" height="30" fill="#4a90e2" stroke="#000033" stroke-width="2"/>
+        <circle cx="245" cy="185" r="8" fill="#333"/>
+        <circle cx="275" cy="185" r="8" fill="#333"/>
+        <text x="260" y="140" font-size="12" text-anchor="middle" fill="#000033">t = 2 s</text>
+        
+        <!-- Velocity vector 2 - medium -->
+        <line x1="295" y1="165" x2="350" y2="165" stroke="#cc6600" stroke-width="3" marker-end="url(#arrowhead)"/>
+        <text x="322" y="155" font-size="10" fill="#cc6600">v₂</text>
+        
+        <!-- Position 3 - fast -->
+        <rect x="410" y="220" width="60" height="30" fill="#4a90e2" stroke="#000033" stroke-width="2"/>
+        <circle cx="425" cy="255" r="8" fill="#333"/>
+        <circle cx="455" cy="255" r="8" fill="#333"/>
+        <text x="440" y="210" font-size="12" text-anchor="middle" fill="#000033">t = 4 s</text>
+        
+        <!-- Velocity vector 3 - long -->
+        <line x1="475" y1="235" x2="550" y2="235" stroke="#cc6600" stroke-width="3" marker-end="url(#arrowhead)"/>
+        <text x="512" y="225" font-size="10" fill="#cc6600">v₃</text>
+        
+        <!-- Acceleration arrow -->
+        <line x1="100" y1="50" x2="500" y2="50" stroke="#0066cc" stroke-width="4" marker-end="url(#arrowhead2)"/>
+        <text x="300" y="40" font-size="16" text-anchor="middle" fill="#0066cc" font-weight="bold">Acceleration →</text>
+        
+        <!-- Label -->
+        <text x="300" y="25" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Velocity Increases Over Time</text>
+    </svg>
+    
+    <p>Acceleration is one of the most important—and most misunderstood—concepts in physics. When velocity changes, whether speeding up, slowing down, or changing direction, acceleration is at work. Understanding acceleration is crucial for analyzing everything from car crashes to rocket launches to the motion of planets.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <ul>
+        <li>I can define acceleration as the rate of change of velocity.</li>
+        <li>I can calculate average and instantaneous acceleration.</li>
+        <li>I can distinguish between positive, negative, and zero acceleration.</li>
+        <li>I can explain the relationship between acceleration and velocity.</li>
+    </ul>
+</div>
+
+<!-- INTRODUCTION -->
+<h2>Introduction</h2>
+<p>
+In Section 2.2, we explored velocity as the rate of change of position. But what happens when velocity itself changes? When you press the gas pedal in a car, your velocity increases. When you apply the brakes, your velocity decreases. When you navigate a curve at constant speed, your velocity changes direction. All of these situations involve <span class="highlight">acceleration</span>—one of the most important concepts in physics.
+</p>
+
+<p>
+Acceleration describes how quickly velocity changes. Just as velocity tells us the rate of position change, acceleration tells us the rate of velocity change. Understanding acceleration is crucial for analyzing everything from the motion of cars and airplanes to the orbits of planets and the behavior of subatomic particles. In this section, we'll develop a mathematical description of acceleration and explore its relationship to velocity and motion.
+</p>
+
+<p>
+It's important to note that acceleration is not the same as velocity, and an object can have zero velocity while having non-zero acceleration, or vice versa. The relationship between these quantities is subtle but crucial for understanding motion. We'll carefully examine these relationships and address common misconceptions about what acceleration means.
+</p>
+
+<!-- MAIN CONTENT -->
+<h2>What Is Acceleration?</h2>
+<p>
+<span class="highlight">Acceleration</span> is the rate at which velocity changes with time. Mathematically, we define average acceleration as the change in velocity divided by the time interval during which that change occurs.
+</p>
+
+<div class="vocab-box">
+    <strong>Acceleration:</strong> The rate of change of velocity with respect to time. Acceleration is a vector quantity with both magnitude and direction.
+</div>
+
+<p>
+The formula for average acceleration is:
+</p>
+
+$$a_{\text{avg}} = \frac{\Delta v}{\Delta t} = \frac{v_f - v_i}{t_f - t_i}$$
+
+<p>
+where:
+</p>
+<ul>
+    <li>$a_{\text{avg}}$ is the average acceleration</li>
+    <li>$\Delta v$ is the change in velocity</li>
+    <li>$\Delta t$ is the time interval</li>
+    <li>$v_f$ is the final velocity</li>
+    <li>$v_i$ is the initial velocity</li>
+    <li>$t_f$ is the final time</li>
+    <li>$t_i$ is the initial time</li>
+</ul>
+
+<p>
+The SI unit of acceleration is <span class="highlight">meters per second squared (m/s²)</span>. This unit makes sense when we consider that acceleration is velocity (m/s) divided by time (s), giving us (m/s)/s = m/s².
+</p>
+
+<h3>Instantaneous Acceleration</h3>
+<p>
+Just as we distinguished between average and instantaneous velocity, we can distinguish between average and instantaneous acceleration. <span class="highlight">Instantaneous acceleration</span> is the acceleration at a specific instant in time, calculated by making the time interval infinitesimally small.
+</p>
+
+<div class="vocab-box">
+    <strong>Instantaneous Acceleration:</strong> The acceleration of an object at a particular moment in time. It is the limit of the average acceleration as the time interval approaches zero.
+</div>
+
+<p>
+For most of our work in this course, we'll focus on situations with constant (uniform) acceleration, where the average acceleration equals the instantaneous acceleration at all times. This simplification allows us to analyze motion using straightforward mathematical relationships, which we'll explore in Section 2.4.
+</p>
+
+<h3>Understanding Positive, Negative, and Zero Acceleration</h3>
+<p>
+Since acceleration is a vector quantity, it can be positive, negative, or zero. However, interpreting these signs requires careful attention to the direction of motion:
+</p>
+
+<ul>
+    <li><strong>Positive acceleration:</strong> Can mean speeding up (if moving in the positive direction) OR slowing down (if moving in the negative direction)</li>
+    <li><strong>Negative acceleration:</strong> Can mean slowing down (if moving in the positive direction) OR speeding up (if moving in the negative direction)</li>
+    <li><strong>Zero acceleration:</strong> Means constant velocity (which could be zero velocity or non-zero constant velocity)</li>
+</ul>
+
+<div class="vocab-box">
+    <strong>Important:</strong> The sign of acceleration depends on your chosen coordinate system. "Negative acceleration" does NOT always mean slowing down! It depends on the direction of motion relative to your positive direction.
+</div>
+
+<p>
+Many students mistakenly believe that negative acceleration always means slowing down, or that positive acceleration always means speeding up. This is incorrect! The key is to compare the directions of the velocity and acceleration vectors:
+</p>
+
+<ul>
+    <li>If velocity and acceleration point in the <strong>same direction</strong>, the object is speeding up</li>
+    <li>If velocity and acceleration point in <strong>opposite directions</strong>, the object is slowing down</li>
+    <li>If acceleration is <strong>zero</strong>, velocity is constant (no change in speed or direction)</li>
+</ul>
+
+<h3>Uniform (Constant) Acceleration</h3>
+<p>
+When an object's acceleration remains constant over time, we say it has <span class="highlight">uniform acceleration</span> or constant acceleration. This is an important special case because:
+</p>
+
+<div class="vocab-box">
+    <strong>Uniform Acceleration:</strong> Acceleration that does not change in magnitude or direction over time. This allows us to use the kinematic equations (Section 2.4) to predict motion.
+</div>
+
+<ul>
+    <li>The mathematics becomes much simpler</li>
+    <li>We can use the kinematic equations to predict position and velocity at any time</li>
+    <li>Many real-world situations approximate constant acceleration (free fall, cars on level ground, etc.)</li>
+</ul>
+
+<p>
+When acceleration is constant, the average acceleration over any time interval equals the instantaneous acceleration at every moment during that interval. This makes problem-solving much more straightforward.
+</p>
+
+<h3>Distinguishing Acceleration from Velocity</h3>
+<p>
+One of the most common sources of confusion for students is the distinction between velocity and acceleration. Let's be clear about what each quantity tells us:
+</p>
+
+<table>
+    <tr>
+        <th>Quantity</th>
+        <th>What It Measures</th>
+        <th>Can Be Zero When...</th>
+    </tr>
+    <tr>
+        <td><strong>Velocity</strong></td>
+        <td>Rate of change of position</td>
+        <td>Object is at rest (not moving)</td>
+    </tr>
+    <tr>
+        <td><strong>Acceleration</strong></td>
+        <td>Rate of change of velocity</td>
+        <td>Velocity is constant (not changing)</td>
+    </tr>
+</table>
+
+<p>
+Key insights:
+</p>
+<ul>
+    <li>An object can have <strong>high velocity and zero acceleration</strong> (moving fast at constant speed)</li>
+    <li>An object can have <strong>zero velocity and non-zero acceleration</strong> (momentarily at rest but speeding up or slowing down, like a ball thrown upward at its highest point)</li>
+    <li>An object can have <strong>velocity and acceleration in opposite directions</strong> (slowing down)</li>
+</ul>
+
+<!-- REAL-WORLD APPLICATIONS -->
+<div class="real-world-box">
+    <h3>Real-World Application: Car Performance</h3>
+    <p>
+    When car manufacturers advertise their vehicles, they often highlight "0 to 60 mph in 5.2 seconds." This is a measure of acceleration! A car that can go from 0 to 60 mph (0 to 26.8 m/s) in 5.2 seconds has an average acceleration of approximately 5.2 m/s². Sports cars have higher acceleration values, while economy cars have lower values. The ability to accelerate quickly is important for merging onto highways, passing other vehicles, and emergency maneuvering.
+    </p>
+</div>
+
+<div class="real-world-box">
+    <h3>Real-World Application: Roller Coasters</h3>
+    <p>
+    Roller coasters are designed to create thrilling experiences through acceleration. When a coaster drops down a steep hill, riders experience positive acceleration (speeding up). When the coaster climbs a hill or comes to a stop, riders experience negative acceleration (slowing down). The acceleration you feel isn't just about speed—it's about how quickly that speed changes. This is why sudden stops and sharp turns feel so dramatic, even if the top speed isn't that high.
+    </p>
+</div>
+
+<div class="real-world-box">
+    <h3>Historical Context: Galileo's Insights</h3>
+    <p>
+    Galileo Galilei (1564-1642) was one of the first scientists to carefully study acceleration. Using inclined planes to "dilute" the effect of gravity, he discovered that objects in free fall experience constant acceleration. This was revolutionary because Aristotle had taught that heavier objects fall faster than lighter ones. Galileo's careful experiments showed that all objects fall with the same acceleration (ignoring air resistance), approximately 9.8 m/s² near Earth's surface. This discovery laid the groundwork for Newton's laws of motion.
+    </p>
+</div>
+
+<!-- KEY FORMULAS TABLE -->
+<h2>Key Formulas</h2>
+<table class="formula-table">
+    <tr>
+        <th>Formula</th>
+        <th>Description</th>
+        <th>Variables</th>
+    </tr>
+    <tr>
+        <td>$a_{\text{avg}} = \frac{\Delta v}{\Delta t}$</td>
+        <td>Average acceleration</td>
+        <td>$a$ = acceleration (m/s²)<br>$\Delta v$ = change in velocity (m/s)<br>$\Delta t$ = time interval (s)</td>
+    </tr>
+    <tr>
+        <td>$a = \frac{v_f - v_i}{t_f - t_i}$</td>
+        <td>Average acceleration (expanded form)</td>
+        <td>$v_f$ = final velocity (m/s)<br>$v_i$ = initial velocity (m/s)<br>$t_f$ = final time (s)<br>$t_i$ = initial time (s)</td>
+    </tr>
+    <tr>
+        <td>$v_f = v_i + a \cdot \Delta t$</td>
+        <td>Final velocity with constant acceleration</td>
+        <td>Used when acceleration is constant</td>
+    </tr>
+</table>
+
+<!-- EXAMPLE PROBLEMS -->
+<h2>Example Problems</h2>
+
+<div class="example-box">
+    <h3>Example 2.3.1: Calculating Average Acceleration</h3>
+    <p>
+    A car accelerates from rest to 25 m/s in 5.0 seconds. What is the car's average acceleration?
+    </p>
+    <p><strong>Solution:</strong></p>
+    <p><em>Step 1: Identify what you know and what you need to find</em></p>
+    <ul>
+        <li>Initial velocity: $v_i = 0$ m/s (starts from rest)</li>
+        <li>Final velocity: $v_f = 25$ m/s</li>
+        <li>Time interval: $\Delta t = 5.0$ s</li>
+        <li>Find: Average acceleration $a_{\text{avg}}$</li>
+    </ul>
+    
+    <p><em>Step 2: Choose the appropriate formula</em></p>
+    <p>We'll use the average acceleration formula:</p>
+    $$a_{\text{avg}} = \frac{\Delta v}{\Delta t} = \frac{v_f - v_i}{\Delta t}$$
+    
+    <p><em>Step 3: Substitute the known values</em></p>
+    $$a_{\text{avg}} = \frac{25 \text{ m/s} - 0 \text{ m/s}}{5.0 \text{ s}}$$
+    
+    <p><em>Step 4: Calculate the result</em></p>
+    $$a_{\text{avg}} = \frac{25 \text{ m/s}}{5.0 \text{ s}} = 5.0 \text{ m/s}^2$$
+    
+    <p><em>Step 5: Check your answer</em></p>
+    <p>The answer is positive, which makes sense because the car is speeding up in the positive direction. The units are correct (m/s²). A value of 5.0 m/s² is reasonable for a car's acceleration.</p>
+    
+    <p><strong>Answer: The car's average acceleration is 5.0 m/s²</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2.3.2: Finding Final Velocity</h3>
+    <p>
+    A cyclist traveling at 8.0 m/s accelerates at 2.0 m/s² for 3.0 seconds. What is the cyclist's final velocity?
+    </p>
+    <p><strong>Solution:</strong></p>
+    <p><em>Step 1: Identify what you know and what you need to find</em></p>
+    <ul>
+        <li>Initial velocity: $v_i = 8.0$ m/s</li>
+        <li>Acceleration: $a = 2.0$ m/s²</li>
+        <li>Time interval: $\Delta t = 3.0$ s</li>
+        <li>Find: Final velocity $v_f$</li>
+    </ul>
+    
+    <p><em>Step 2: Choose the appropriate formula</em></p>
+    <p>We can rearrange the acceleration formula to solve for final velocity:</p>
+    $$a = \frac{v_f - v_i}{\Delta t}$$
+    $$v_f = v_i + a \cdot \Delta t$$
+    
+    <p><em>Step 3: Substitute the known values</em></p>
+    $$v_f = 8.0 \text{ m/s} + (2.0 \text{ m/s}^2)(3.0 \text{ s})$$
+    
+    <p><em>Step 4: Calculate the result</em></p>
+    $$v_f = 8.0 \text{ m/s} + 6.0 \text{ m/s}$$
+    $$v_f = 14.0 \text{ m/s}$$
+    
+    <p><em>Step 5: Check your answer</em></p>
+    <p>The final velocity is greater than the initial velocity, which makes sense for positive acceleration. The units work out correctly. The change in velocity (6.0 m/s) equals acceleration times time, which checks out.</p>
+    
+    <p><strong>Answer: The cyclist's final velocity is 14.0 m/s</strong></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2.3.3: Multi-Step Acceleration Problem</h3>
+    <p>
+    A train traveling at 30.0 m/s begins to slow down with an acceleration of -2.5 m/s² (negative because it's slowing down). After 6.0 seconds, the train maintains constant velocity for 4.0 seconds, then accelerates at 1.5 m/s² for 5.0 seconds. What is the train's final velocity?
+    </p>
+    <p><strong>Solution:</strong></p>
+    <p><em>Step 1: Identify what you know and what you need to find</em></p>
+    <p>This problem has three distinct phases:</p>
+    <ul>
+        <li><strong>Phase 1:</strong> $v_{i1} = 30.0$ m/s, $a_1 = -2.5$ m/s², $\Delta t_1 = 6.0$ s</li>
+        <li><strong>Phase 2:</strong> Constant velocity for $\Delta t_2 = 4.0$ s</li>
+        <li><strong>Phase 3:</strong> $a_3 = 1.5$ m/s², $\Delta t_3 = 5.0$ s</li>
+        <li>Find: Final velocity $v_f$</li>
+    </ul>
+    
+    <p><em>Step 2: Choose the appropriate formula</em></p>
+    <p>We'll use $v_f = v_i + a \cdot \Delta t$ for each phase</p>
+    
+    <p><em>Step 3: Calculate velocity after Phase 1</em></p>
+    $$v_{f1} = v_{i1} + a_1 \cdot \Delta t_1$$
+    $$v_{f1} = 30.0 \text{ m/s} + (-2.5 \text{ m/s}^2)(6.0 \text{ s})$$
+    $$v_{f1} = 30.0 \text{ m/s} - 15.0 \text{ m/s}$$
+    $$v_{f1} = 15.0 \text{ m/s}$$
+    
+    <p><em>Step 4: Calculate velocity after Phase 2</em></p>
+    <p>Since acceleration is zero during constant velocity:</p>
+    $$v_{f2} = v_{f1} = 15.0 \text{ m/s}$$
+    
+    <p><em>Step 5: Calculate velocity after Phase 3</em></p>
+    $$v_{f3} = v_{f2} + a_3 \cdot \Delta t_3$$
+    $$v_{f3} = 15.0 \text{ m/s} + (1.5 \text{ m/s}^2)(5.0 \text{ s})$$
+    $$v_{f3} = 15.0 \text{ m/s} + 7.5 \text{ m/s}$$
+    $$v_{f3} = 22.5 \text{ m/s}$$
+    
+    <p><em>Step 6: Check your answer</em></p>
+    <p>The train started at 30.0 m/s, slowed to 15.0 m/s, maintained that speed, then accelerated to 22.5 m/s. This progression makes physical sense. The final velocity is less than the initial velocity but greater than the minimum, which is consistent with the described motion.</p>
+    
+    <p><strong>Answer: The train's final velocity is 22.5 m/s</strong></p>
+</div>
+
+<!-- SUMMARY -->
+<h2>Summary</h2>
+<ul>
+    <li>Acceleration is the rate of change of velocity with respect to time, calculated as $a = \Delta v / \Delta t$</li>
+    <li>The SI unit of acceleration is meters per second squared (m/s²)</li>
+    <li>Average acceleration is the change in velocity divided by the time interval; instantaneous acceleration is the acceleration at a specific instant</li>
+    <li>Positive acceleration can mean speeding up OR slowing down, depending on the direction of motion</li>
+    <li>Negative acceleration can mean slowing down OR speeding up, depending on the direction of motion</li>
+    <li>Zero acceleration means constant velocity (which could be zero or non-zero)</li>
+    <li>Acceleration and velocity are independent quantities—an object can have any combination of velocity and acceleration</li>
+    <li>If velocity and acceleration point in the same direction, the object speeds up; if they point in opposite directions, it slows down</li>
+    <li>Uniform (constant) acceleration allows us to use simplified equations to predict motion</li>
+    <li>Understanding acceleration is essential for analyzing real-world motion, from cars and trains to falling objects and planetary orbits</li>
+</ul>
+
+<!-- KEY TERMS TABLE -->
+<h2>Key Terms</h2>
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Acceleration</strong></td>
+        <td>The rate of change of velocity with respect to time; a vector quantity with SI units of m/s²</td>
+    </tr>
+    <tr>
+        <td><strong>Average Acceleration</strong></td>
+        <td>The change in velocity divided by the time interval during which the change occurs</td>
+    </tr>
+    <tr>
+        <td><strong>Instantaneous Acceleration</strong></td>
+        <td>The acceleration at a specific moment in time</td>
+    </tr>
+    <tr>
+        <td><strong>Uniform Acceleration</strong></td>
+        <td>Acceleration that remains constant in magnitude and direction over time</td>
+    </tr>
+    <tr>
+        <td><strong>Positive Acceleration</strong></td>
+        <td>Acceleration in the positive direction; can mean speeding up or slowing down depending on velocity direction</td>
+    </tr>
+    <tr>
+        <td><strong>Negative Acceleration</strong></td>
+        <td>Acceleration in the negative direction; can mean speeding up or slowing down depending on velocity direction</td>
+    </tr>
+    <tr>
+        <td><strong>Zero Acceleration</strong></td>
+        <td>No change in velocity; indicates constant velocity (including possibly zero velocity)</td>
+    </tr>
+    <tr>
+        <td><strong>Meters per Second Squared (m/s²)</strong></td>
+        <td>The SI unit of acceleration</td>
+    </tr>
+</table>
+
+<!-- PRACTICE PROBLEMS -->
+<h2>Practice Problems</h2>
+
+<p><strong>Conceptual Questions</strong></p>
+
+<p><strong>1.</strong> Can an object have zero velocity and non-zero acceleration at the same time? Explain your answer and give an example.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>2.</strong> A car travels around a circular track at constant speed. Is the car accelerating? Explain why or why not.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>3.</strong> Explain the difference between "negative acceleration" and "slowing down." Are they always the same thing?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>4.</strong> A student says, "The car has a velocity of 30 m/s and an acceleration of 5 m/s², so the car is speeding up." Is the student necessarily correct? Explain.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>Calculation Problems</strong></p>
+
+<p><strong>5.</strong> A bicycle accelerates from 5.0 m/s to 12.0 m/s in 4.0 seconds. Calculate the bicycle's average acceleration.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>6.</strong> A car traveling at 20.0 m/s slows to a stop with an acceleration of -4.0 m/s². How long does it take the car to stop?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>7.</strong> A rocket starts from rest and accelerates at 25 m/s² for 8.0 seconds. What is the rocket's final velocity?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>8.</strong> A runner moving at 6.0 m/s accelerates at 0.50 m/s² for 10.0 seconds, then maintains constant velocity for 5.0 seconds, then decelerates at -1.0 m/s² for 3.0 seconds. What is the runner's final velocity?</p>
+<div class="answer-space-short"></div>
+
+<!-- ANSWER KEY -->
+<h2>Answer Key</h2>
+
+<p><strong>1.</strong> Can an object have zero velocity and non-zero acceleration at the same time?</p>
+<p><strong>Answer:</strong> Yes! An object can have zero velocity and non-zero acceleration at the same time. This occurs when an object is momentarily at rest but changing its velocity. Example: A ball thrown straight upward reaches its highest point where its velocity is zero for an instant, but it still has acceleration due to gravity (9.8 m/s² downward). The ball is about to start moving downward, so its velocity is changing even though it's momentarily zero.</p>
+
+<p><strong>2.</strong> A car travels around a circular track at constant speed. Is the car accelerating?</p>
+<p><strong>Answer:</strong> Yes, the car is accelerating! Even though the car's speed is constant, its velocity is changing because velocity is a vector that includes direction. As the car goes around the curve, its direction of motion constantly changes, which means its velocity vector is changing. Since acceleration is the rate of change of velocity, a changing direction means non-zero acceleration. This is called centripetal acceleration and always points toward the center of the circular path.</p>
+
+<p><strong>3.</strong> Explain the difference between "negative acceleration" and "slowing down."</p>
+<p><strong>Answer:</strong> "Negative acceleration" simply means acceleration in the negative direction according to your chosen coordinate system. "Slowing down" means the object's speed is decreasing. These are NOT the same thing! Negative acceleration means slowing down only if the object is moving in the positive direction. If the object is moving in the negative direction, negative acceleration actually means speeding up! The key is whether velocity and acceleration point in the same direction (speeding up) or opposite directions (slowing down).</p>
+
+<p><strong>4.</strong> A student says, "The car has a velocity of 30 m/s and an acceleration of 5 m/s², so the car is speeding up." Is the student necessarily correct?</p>
+<p><strong>Answer:</strong> Not necessarily! We need to know the direction of each vector. If both velocity (+30 m/s) and acceleration (+5 m/s²) are in the same direction, then yes, the car is speeding up. However, if we assume the student meant the car is moving in the positive direction at 30 m/s, then positive acceleration of 5 m/s² would indeed mean speeding up. But without knowing the complete vector information, we can't be absolutely certain. The student should specify that velocity and acceleration are in the same direction.</p>
+
+<p><strong>5.</strong> A bicycle accelerates from 5.0 m/s to 12.0 m/s in 4.0 seconds. Calculate the average acceleration.</p>
+<p><strong>Answer:</strong></p>
+<p>Given: $v_i = 5.0$ m/s, $v_f = 12.0$ m/s, $\Delta t = 4.0$ s</p>
+<p>Find: $a_{\text{avg}}$</p>
+<p>Formula: $a_{\text{avg}} = \frac{v_f - v_i}{\Delta t}$</p>
+<p>Calculation:</p>
+$$a_{\text{avg}} = \frac{12.0 \text{ m/s} - 5.0 \text{ m/s}}{4.0 \text{ s}} = \frac{7.0 \text{ m/s}}{4.0 \text{ s}} = 1.75 \text{ m/s}^2$$
+<p><strong>Answer: 1.75 m/s² or 1.8 m/s² (rounded to 2 sig figs)</strong></p>
+
+<p><strong>6.</strong> A car traveling at 20.0 m/s slows to a stop with an acceleration of -4.0 m/s². How long does it take?</p>
+<p><strong>Answer:</strong></p>
+<p>Given: $v_i = 20.0$ m/s, $v_f = 0$ m/s (stops), $a = -4.0$ m/s²</p>
+<p>Find: $\Delta t$</p>
+<p>Formula: $a = \frac{v_f - v_i}{\Delta t}$, rearranged to $\Delta t = \frac{v_f - v_i}{a}$</p>
+<p>Calculation:</p>
+$$\Delta t = \frac{0 \text{ m/s} - 20.0 \text{ m/s}}{-4.0 \text{ m/s}^2} = \frac{-20.0 \text{ m/s}}{-4.0 \text{ m/s}^2} = 5.0 \text{ s}$$
+<p><strong>Answer: 5.0 seconds</strong></p>
+
+<p><strong>7.</strong> A rocket starts from rest and accelerates at 25 m/s² for 8.0 seconds. What is the final velocity?</p>
+<p><strong>Answer:</strong></p>
+<p>Given: $v_i = 0$ m/s (starts from rest), $a = 25$ m/s², $\Delta t = 8.0$ s</p>
+<p>Find: $v_f$</p>
+<p>Formula: $v_f = v_i + a \cdot \Delta t$</p>
+<p>Calculation:</p>
+$$v_f = 0 \text{ m/s} + (25 \text{ m/s}^2)(8.0 \text{ s}) = 200 \text{ m/s}$$
+<p><strong>Answer: 200 m/s (or 2.0 × 10² m/s)</strong></p>
+
+<p><strong>8.</strong> A runner moving at 6.0 m/s accelerates at 0.50 m/s² for 10.0 s, maintains constant velocity for 5.0 s, then decelerates at -1.0 m/s² for 3.0 s. What is the final velocity?</p>
+<p><strong>Answer:</strong></p>
+<p><strong>Phase 1:</strong> Acceleration for 10.0 s</p>
+<p>Given: $v_{i1} = 6.0$ m/s, $a_1 = 0.50$ m/s², $\Delta t_1 = 10.0$ s</p>
+$$v_{f1} = 6.0 \text{ m/s} + (0.50 \text{ m/s}^2)(10.0 \text{ s}) = 6.0 + 5.0 = 11.0 \text{ m/s}$$
+
+<p><strong>Phase 2:</strong> Constant velocity for 5.0 s</p>
+<p>$v_{f2} = v_{f1} = 11.0$ m/s (no change during constant velocity)</p>
+
+<p><strong>Phase 3:</strong> Deceleration for 3.0 s</p>
+<p>Given: $v_{i3} = 11.0$ m/s, $a_3 = -1.0$ m/s², $\Delta t_3 = 3.0$ s</p>
+$$v_{f3} = 11.0 \text{ m/s} + (-1.0 \text{ m/s}^2)(3.0 \text{ s}) = 11.0 - 3.0 = 8.0 \text{ m/s}$$
+
+<p><strong>Answer: 8.0 m/s</strong></p>
+
+</body>
+</html>

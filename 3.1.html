@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section 3.1 - Weight and Gravitational Force</title>
+    
+    <!-- MathJax Configuration -->
+    <script>
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$$']]
+        }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 1.3;
+            color: #000000;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0.5in;
+            max-width: 8.5in;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        h1 {
+            font-size: 24px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h2 {
+            font-size: 18px;
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            margin: 0.06in 0;
+        }
+        
+        h3 {
+            font-size: 16px;
+            color: #000033;
+            font-weight: bold;
+            margin: 0.06in 0;
+        }
+        
+        p {
+            text-align: justify;
+            margin: 0.05in 0;
+        }
+        
+        .vocab-term {
+            font-weight: bold;
+        }
+        
+        .learning-objectives {
+            background-color: #e8f4f8;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .vocab-box {
+            background-color: #f5f5f5;
+            border: 1px solid #cccccc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .example-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #cc6600;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        .real-world-box {
+            background-color: #e6f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 0.08in;
+            margin: 0.06in 0;
+        }
+        
+        .formula-box {
+            background-color: #f0f0f0;
+            border: 2px solid #000033;
+            padding: 0.08in;
+            margin: 0.06in 0;
+            text-align: center;
+        }
+        
+        .answer-space-full {
+            min-height: 1.2in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.1in 0;
+        }
+        
+        .answer-space-short {
+            min-height: 0.8in;
+            background-color: #fafafa;
+            border-bottom: 1px solid #ddd;
+            padding: 0.05in;
+            margin: 0.08in 0;
+        }
+        
+        .highlight {
+            background-color: #ffff99;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.06in 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background-color: #000033;
+            color: white;
+            padding: 6px;
+            border: 1px solid #cccccc;
+            text-align: left;
+        }
+        
+        td {
+            padding: 6px;
+            border: 1px solid #cccccc;
+        }
+        
+        ul, ol {
+            margin-left: 0.2in;
+        }
+        
+        .title-page {
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            min-height: 10in;
+            background-color: white;
+            color: #000033;
+            padding: 0.5in;
+            margin-bottom: 0.5in;
+            border: 2px solid #000033;
+        }
+        
+        .title-page-image {
+            width: 100%;
+            max-width: 5in;
+            height: auto;
+            margin-bottom: 0.3in;
+            margin-top: 0.2in;
+        }
+        
+        .section-number {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            letter-spacing: 2px;
+            color: #000033;
+        }
+        
+        .title-page h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 0.2in;
+            line-height: 1.4;
+            color: #000033;
+            letter-spacing: 2px;
+            background-color: transparent;
+            padding: 0;
+            margin: 0.15in 0 0.2in 0;
+        }
+        
+        .title-page p {
+            font-size: 16px;
+            max-width: 5.5in;
+            line-height: 1.6;
+            margin-top: 0.1in;
+            color: #000033;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============== TITLE PAGE ============== -->
+<div class="title-page">
+    <div class="section-number">SECTION 3.1</div>
+    <h1>Weight and Gravitational Force</h1>
+    
+    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background -->
+        <rect width="600" height="300" fill="#f0f8ff"/>
+        
+        <!-- Earth -->
+        <circle cx="300" cy="350" r="180" fill="#4A90E2" opacity="0.3"/>
+        <circle cx="300" cy="350" r="180" fill="none" stroke="#000033" stroke-width="2"/>
+        
+        <!-- Objects at different heights -->
+        <!-- Apple -->
+        <circle cx="200" cy="100" r="15" fill="#CC3300"/>
+        <ellipse cx="200" cy="100" rx="15" ry="15" fill="#CC3300" opacity="0.6"/>
+        
+        <!-- Basketball -->
+        <circle cx="400" cy="80" r="20" fill="#FF6600"/>
+        <path d="M 380 80 Q 400 60, 420 80" stroke="#000033" stroke-width="1" fill="none"/>
+        <path d="M 380 80 Q 400 100, 420 80" stroke="#000033" stroke-width="1" fill="none"/>
+        
+        <!-- Bowling ball -->
+        <circle cx="300" cy="120" r="18" fill="#1a1a1a"/>
+        <circle cx="295" cy="115" r="3" fill="#CC3300"/>
+        <circle cx="305" cy="115" r="3" fill="#CC3300"/>
+        <circle cx="300" cy="125" r="3" fill="#CC3300"/>
+        
+        <!-- Weight force arrows (pointing down) -->
+        <defs>
+            <marker id="arrowdown" markerWidth="10" markerHeight="10" refX="5" refY="9" orient="auto">
+                <polygon points="0 0, 10 0, 5 10" fill="#0066cc"/>
+            </marker>
+        </defs>
+        
+        <line x1="200" y1="120" x2="200" y2="180" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowdown)"/>
+        <text x="220" y="155" font-size="14" fill="#0066cc" font-weight="bold">W₁</text>
+        
+        <line x1="300" y1="143" x2="300" y2="203" stroke="#0066cc" stroke-width="4" marker-end="url(#arrowdown)"/>
+        <text x="320" y="180" font-size="14" fill="#0066cc" font-weight="bold">W₂</text>
+        
+        <line x1="400" y1="105" x2="400" y2="165" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowdown)"/>
+        <text x="420" y="140" font-size="14" fill="#0066cc" font-weight="bold">W₃</text>
+        
+        <!-- Label -->
+        <text x="300" y="250" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">All Objects Experience Weight Force</text>
+    </svg>
+    
+    <p>Weight is the gravitational force that pulls objects toward Earth. Every object with mass experiences this force, whether it's an apple falling from a tree, a basketball in mid-flight, or your own body standing on the ground. Understanding weight is fundamental to analyzing forces and motion.</p>
+</div>
+
+<!-- ============== LEARNING OBJECTIVES ============== -->
+<h1>Learning Objectives</h1>
+<div class="learning-objectives">
+    <p><strong>I can...</strong></p>
+    <ul>
+        <li>Define weight as the gravitational force acting on an object and explain how it differs from mass.</li>
+        <li>Calculate weight using the equation $W = mg$ and convert between mass and weight.</li>
+        <li>Explain how weight changes with location (on different planets or at different altitudes) while mass remains constant.</li>
+        <li>Use free-body diagrams to represent the weight force acting on objects.</li>
+    </ul>
+</div>
+
+<!-- ============== INTRODUCTION ============== -->
+<h1>Introduction</h1>
+
+<p>Have you ever wondered why objects fall to the ground when you drop them? Why does a feather fall more slowly than a rock? Why do astronauts float in space? The answer to all these questions lies in understanding <span class="vocab-term">weight</span> and gravitational force.</p>
+
+<p>Weight is something we experience every day. When you step on a scale, you're measuring your weight. When you pick up your backpack, you feel its weight. When you jump, Earth's gravity pulls you back down—that's weight in action. In physics, weight has a very specific meaning: it is the force of gravity acting on an object.</p>
+
+<div class="real-world-box">
+    <h3>Weight vs. Mass: A Common Confusion</h3>
+    <p>In everyday language, people often use "weight" and "mass" interchangeably. You might say "I weigh 150 pounds" or "I have a mass of 68 kilograms." However, in physics, weight and mass are two completely different concepts. Mass is the amount of matter in an object and never changes. Weight is the gravitational force acting on that mass and can change depending on location.</p>
+</div>
+
+<p>The concept of weight was first properly understood by Sir Isaac Newton in the 17th century. Newton realized that the same force that causes apples to fall from trees is the same force that keeps the Moon orbiting Earth and the planets orbiting the Sun. This universal force of gravity acts on all objects with mass.</p>
+
+<!-- ============== MAIN CONTENT ============== -->
+<h1>What is Weight?</h1>
+
+<p><span class="vocab-term">Weight</span> is defined as the force of gravity acting on an object. It is always directed toward the center of the planet or celestial body exerting the gravitational pull. On Earth, weight always points downward, toward Earth's center.</p>
+
+<div class="vocab-box">
+    <p><strong>Weight:</strong> The gravitational force acting on an object, measured in newtons (N). Weight depends on both the object's mass and the strength of the gravitational field.</p>
+</div>
+
+<p>Weight is a <span class="vocab-term">force</span>, which means it is a vector quantity—it has both magnitude (how strong the force is) and direction (which way it points). Since weight is a force, it is measured in newtons (N), the SI unit for force. One newton is the force required to accelerate a one-kilogram mass at one meter per second squared.</p>
+
+<h2>The Relationship Between Mass and Weight</h2>
+
+<p><span class="vocab-term">Mass</span> is the amount of matter in an object. It is a measure of how much "stuff" makes up the object. Mass is measured in kilograms (kg) and is a scalar quantity—it has magnitude but no direction. Crucially, mass does not change based on location. A 50 kg person has a mass of 50 kg whether they are on Earth, on the Moon, or floating in deep space.</p>
+
+<div class="vocab-box">
+    <p><strong>Mass:</strong> The amount of matter in an object, measured in kilograms (kg). Mass is an intrinsic property of an object and does not change with location.</p>
+</div>
+
+<p>Weight and mass are related by the equation:</p>
+
+<div class="formula-box">
+    <p>$$W = mg$$</p>
+    <p>where:</p>
+    <p>$W$ = weight (in newtons, N)</p>
+    <p>$m$ = mass (in kilograms, kg)</p>
+    <p>$g$ = acceleration due to gravity (in m/s²)</p>
+</div>
+
+<p>The variable $g$ represents the <span class="vocab-term">acceleration due to gravity</span>, which is the rate at which objects accelerate when falling freely under gravity alone. On Earth's surface, $g \approx 9.8 \text{ m/s}^2$. This means that for every second an object falls (ignoring air resistance), its velocity increases by 9.8 m/s.</p>
+
+<div class="vocab-box">
+    <p><strong>Acceleration due to gravity ($g$):</strong> The acceleration of objects in free fall near Earth's surface, approximately $9.8 \text{ m/s}^2$. This value varies slightly with location but is treated as constant for most calculations.</p>
+</div>
+
+<div class="info-box">
+    <p><strong>Important:</strong> The acceleration due to gravity on Earth's surface is often rounded to $g = 10 \text{ m/s}^2$ for simpler calculations. However, the more precise value is $g = 9.8 \text{ m/s}^2$, and we will use this value unless otherwise specified.</p>
+</div>
+
+<h2>How Weight Changes with Location</h2>
+
+<p>Because weight depends on both mass and $g$, and because $g$ varies from place to place, weight changes depending on where you are. Mass, however, remains constant.</p>
+
+<p>On the Moon, the gravitational field strength is about $1.6 \text{ m/s}^2$, which is roughly one-sixth of Earth's gravity. A person with a mass of 60 kg would have a weight of:</p>
+
+<p style="text-align: center;">$W = mg = (60 \text{ kg})(1.6 \text{ m/s}^2) = 96 \text{ N}$</p>
+
+<p>On Earth, that same 60 kg person would weigh:</p>
+
+<p style="text-align: center;">$W = mg = (60 \text{ kg})(9.8 \text{ m/s}^2) = 588 \text{ N}$</p>
+
+<p>Notice that the person's mass (60 kg) stays the same, but their weight changes dramatically based on the gravitational field strength.</p>
+
+<div class="real-world-box">
+    <h3>Weight on Other Planets</h3>
+    <p>The value of $g$ varies significantly across different planets and celestial bodies:</p>
+    <ul>
+        <li><strong>Mercury:</strong> $g = 3.7 \text{ m/s}^2$ (about 38% of Earth's)</li>
+        <li><strong>Venus:</strong> $g = 8.9 \text{ m/s}^2$ (about 91% of Earth's)</li>
+        <li><strong>Mars:</strong> $g = 3.7 \text{ m/s}^2$ (about 38% of Earth's)</li>
+        <li><strong>Jupiter:</strong> $g = 24.8 \text{ m/s}^2$ (about 253% of Earth's)</li>
+        <li><strong>Saturn:</strong> $g = 10.4 \text{ m/s}^2$ (about 106% of Earth's)</li>
+    </ul>
+    <p>On Jupiter, a 60 kg person would weigh over 1400 N—more than twice their Earth weight! On Mars, they would weigh only about 220 N.</p>
+</div>
+
+<h2>Free-Body Diagrams and Weight</h2>
+
+<p>In physics, we use <span class="vocab-term">free-body diagrams</span> to represent all the forces acting on an object. These diagrams are essential tools for analyzing motion and solving force problems.</p>
+
+<div class="vocab-box">
+    <p><strong>Free-body diagram:</strong> A simplified drawing that shows an object (usually represented as a dot or box) and all the forces acting on it, drawn as arrows pointing in the direction the forces act.</p>
+</div>
+
+<p>When drawing a free-body diagram, weight is always represented as an arrow pointing downward (toward the center of Earth). The length of the arrow can indicate the relative magnitude of the force, and the arrow is labeled with either "W," "$W$," "$F_g$," or "$mg$".</p>
+
+<p>For example, consider a book resting on a table. The free-body diagram would show:</p>
+<ul>
+    <li>The weight force ($W$ or $mg$) pointing downward</li>
+    <li>The normal force ($N$) from the table pointing upward</li>
+</ul>
+
+<p>When an object is stationary or moving at constant velocity, the forces are balanced. For the book on the table, the upward normal force exactly equals the downward weight force, so the net force is zero.</p>
+
+<div class="real-world-box">
+    <h3>Historical Context: Newton's Universal Law of Gravitation</h3>
+    <p>Sir Isaac Newton (1643-1727) was the first to mathematically describe gravity. According to legend, watching an apple fall from a tree inspired Newton to develop his theory. Newton realized that the force pulling the apple downward was the same type of force keeping the Moon in orbit around Earth.</p>
+    <p>Newton's Universal Law of Gravitation states that every object in the universe attracts every other object with a force proportional to their masses and inversely proportional to the square of the distance between them. On Earth's surface, this universal gravitational force simplifies to $W = mg$ because the distance from any object to Earth's center is essentially constant.</p>
+</div>
+
+<h1>Weight in Everyday Life</h1>
+
+<p>Understanding weight has practical applications in many areas:</p>
+
+<p><strong>Engineering and Construction:</strong> Engineers must calculate the weight of buildings, bridges, and vehicles to ensure structures can support them safely. The weight of materials determines what supports and foundations are needed.</p>
+
+<p><strong>Aviation and Space Travel:</strong> Aircraft design depends heavily on managing weight. Every kilogram of weight requires fuel to lift and keep airborne. In space travel, reducing weight is crucial because it costs thousands of dollars per kilogram to launch objects into orbit.</p>
+
+<p><strong>Sports and Athletics:</strong> Weight affects athletic performance. Gymnasts benefit from lower weight for aerial maneuvers, while football linemen benefit from greater weight for blocking. Understanding weight and center of gravity is essential in sports like diving, figure skating, and wrestling.</p>
+
+<p><strong>Medicine and Health:</strong> Doctors use weight as an important health indicator. However, they must also consider body composition—muscle weighs more than fat, so weight alone doesn't tell the whole story about health.</p>
+
+<h1>Key Formulas for Practice Problems</h1>
+
+<p>The following formulas will be used in the example and practice problems:</p>
+
+<table>
+    <tr>
+        <th>Formula Name</th>
+        <th>Formula</th>
+        <th>Variables and Units</th>
+    </tr>
+    <tr>
+        <td>Weight</td>
+        <td style="text-align: center;">$W = mg$</td>
+        <td>$W$ = weight (N)<br>
+            $m$ = mass (kg)<br>
+            $g$ = acceleration due to gravity (m/s²)</td>
+    </tr>
+    <tr>
+        <td>Rearranged for mass</td>
+        <td style="text-align: center;">$m = \frac{W}{g}$</td>
+        <td>$m$ = mass (kg)<br>
+            $W$ = weight (N)<br>
+            $g$ = acceleration due to gravity (m/s²)</td>
+    </tr>
+    <tr>
+        <td>Rearranged for $g$</td>
+        <td style="text-align: center;">$g = \frac{W}{m}$</td>
+        <td>$g$ = acceleration due to gravity (m/s²)<br>
+            $W$ = weight (N)<br>
+            $m$ = mass (kg)</td>
+    </tr>
+</table>
+
+<!-- ============== EXAMPLE PROBLEMS ============== -->
+<h1>Example Problems</h1>
+
+<div class="info-box">
+    <p><strong>Problem-Solving Strategy (5 Steps):</strong></p>
+    <ol>
+        <li><strong>List the Givens:</strong> Write down all known values with units</li>
+        <li><strong>Find the Formula:</strong> Identify the appropriate equation</li>
+        <li><strong>Substitute:</strong> Plug values into the formula</li>
+        <li><strong>Solve:</strong> Calculate the answer</li>
+        <li><strong>Check:</strong> Verify units and reasonableness</li>
+    </ol>
+</div>
+
+<div class="example-box">
+    <h3>Example 1: Calculating Weight on Earth</h3>
+    <p><strong>Problem:</strong> A student has a mass of 55 kg. What is the student's weight on Earth?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$m = 55 \text{ kg}$</p>
+    <p>$g = 9.8 \text{ m/s}^2$ (on Earth)</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$W = mg$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$W = (55 \text{ kg})(9.8 \text{ m/s}^2)$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$W = 539 \text{ N}$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units: kg × m/s² = N ✓</p>
+    <p>Reasonableness: A 55 kg person weighing 539 N is reasonable on Earth.</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">The student's weight on Earth is 539 N.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 2: Calculating Mass from Weight</h3>
+    <p><strong>Problem:</strong> An object weighs 294 N on Earth. What is its mass?</p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$W = 294 \text{ N}$</p>
+    <p>$g = 9.8 \text{ m/s}^2$ (on Earth)</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$m = \frac{W}{g}$ (rearranged from $W = mg$)</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$m = \frac{294 \text{ N}}{9.8 \text{ m/s}^2}$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$m = 30 \text{ kg}$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units: N ÷ (m/s²) = kg ✓</p>
+    <p>Reasonableness: Check by calculating weight: $(30)(9.8) = 294$ N ✓</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">The object's mass is 30 kg.</span></p>
+</div>
+
+<div class="example-box">
+    <h3>Example 3: Weight on Different Planets (Multi-step)</h3>
+    <p><strong>Problem:</strong> An astronaut has a mass of 80 kg. (a) What is the astronaut's weight on Earth? (b) What is the astronaut's weight on Mars, where $g = 3.7 \text{ m/s}^2$? (c) How many times greater is the astronaut's Earth weight compared to their Mars weight?</p>
+    
+    <p><strong>Part (a): Weight on Earth</strong></p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$m = 80 \text{ kg}$</p>
+    <p>$g_{\text{Earth}} = 9.8 \text{ m/s}^2$</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$W = mg$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$W_{\text{Earth}} = (80 \text{ kg})(9.8 \text{ m/s}^2)$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$W_{\text{Earth}} = 784 \text{ N}$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units correct ✓</p>
+    
+    <p><strong>Part (b): Weight on Mars</strong></p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$m = 80 \text{ kg}$</p>
+    <p>$g_{\text{Mars}} = 3.7 \text{ m/s}^2$</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>$W = mg$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>$W_{\text{Mars}} = (80 \text{ kg})(3.7 \text{ m/s}^2)$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>$W_{\text{Mars}} = 296 \text{ N}$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Units correct ✓ Mars weight is less than Earth weight ✓</p>
+    
+    <p><strong>Part (c): Comparison</strong></p>
+    
+    <p><strong>Step 1 - List the Givens:</strong></p>
+    <p>$W_{\text{Earth}} = 784 \text{ N}$</p>
+    <p>$W_{\text{Mars}} = 296 \text{ N}$</p>
+    
+    <p><strong>Step 2 - Find the Formula:</strong></p>
+    <p>Ratio $= \frac{W_{\text{Earth}}}{W_{\text{Mars}}}$</p>
+    
+    <p><strong>Step 3 - Substitute:</strong></p>
+    <p>Ratio $= \frac{784 \text{ N}}{296 \text{ N}}$</p>
+    
+    <p><strong>Step 4 - Solve:</strong></p>
+    <p>Ratio $= 2.65$</p>
+    
+    <p><strong>Step 5 - Check:</strong></p>
+    <p>Since Earth's $g$ is about 2.6 times Mars's $g$, the weights should have approximately the same ratio ✓</p>
+    
+    <p><strong>Answer:</strong> <span class="highlight">(a) The astronaut's weight on Earth is 784 N. (b) The astronaut's weight on Mars is 296 N. (c) The astronaut's Earth weight is 2.65 times greater than their Mars weight.</span></p>
+</div>
+
+<!-- ============== SUMMARY ============== -->
+<h1>Summary</h1>
+
+<ul>
+    <li>Weight is the gravitational force acting on an object, always directed toward the center of the gravitating body (downward on Earth).</li>
+    <li>Weight is a force measured in newtons (N), while mass is the amount of matter measured in kilograms (kg).</li>
+    <li>The relationship between weight and mass is given by $W = mg$, where $g$ is the acceleration due to gravity.</li>
+    <li>On Earth's surface, $g \approx 9.8 \text{ m/s}^2$, meaning objects accelerate at 9.8 m/s² when falling freely.</li>
+    <li>Mass is an intrinsic property that doesn't change with location, but weight varies depending on the strength of the gravitational field.</li>
+    <li>On the Moon ($g \approx 1.6 \text{ m/s}^2$), objects weigh about one-sixth of their Earth weight, but their mass remains unchanged.</li>
+    <li>Free-body diagrams represent forces as arrows; weight is always drawn pointing downward.</li>
+    <li>The weight formula can be rearranged to solve for mass ($m = W/g$) or gravitational field strength ($g = W/m$).</li>
+    <li>Understanding weight is essential in engineering, construction, aviation, space travel, athletics, and medicine.</li>
+    <li>Sir Isaac Newton first mathematically described gravity through his Universal Law of Gravitation, showing that the same force causes apples to fall and keeps planets in orbit.</li>
+</ul>
+
+<!-- ============== KEY TERMS ============== -->
+<h1>Key Terms</h1>
+
+<table>
+    <tr>
+        <th>Term</th>
+        <th>Definition</th>
+    </tr>
+    <tr>
+        <td><strong>Weight</strong></td>
+        <td>The gravitational force acting on an object, measured in newtons (N)</td>
+    </tr>
+    <tr>
+        <td><strong>Mass</strong></td>
+        <td>The amount of matter in an object, measured in kilograms (kg); an intrinsic property that doesn't change with location</td>
+    </tr>
+    <tr>
+        <td><strong>Force</strong></td>
+        <td>A push or pull on an object, measured in newtons (N); a vector quantity with magnitude and direction</td>
+    </tr>
+    <tr>
+        <td><strong>Acceleration due to gravity ($g$)</strong></td>
+        <td>The rate at which objects accelerate in free fall; approximately $9.8 \text{ m/s}^2$ on Earth's surface</td>
+    </tr>
+    <tr>
+        <td><strong>Newton (N)</strong></td>
+        <td>The SI unit of force; one newton equals one kg·m/s²</td>
+    </tr>
+    <tr>
+        <td><strong>Free-body diagram</strong></td>
+        <td>A simplified drawing showing an object and all forces acting on it, represented as arrows</td>
+    </tr>
+    <tr>
+        <td><strong>Gravitational field strength</strong></td>
+        <td>The acceleration due to gravity at a particular location; varies depending on the mass and radius of the celestial body</td>
+    </tr>
+    <tr>
+        <td><strong>Vector quantity</strong></td>
+        <td>A quantity that has both magnitude and direction (e.g., force, weight, velocity)</td>
+    </tr>
+    <tr>
+        <td><strong>Scalar quantity</strong></td>
+        <td>A quantity that has only magnitude, no direction (e.g., mass, temperature, time)</td>
+    </tr>
+</table>
+
+<!-- ============== PRACTICE PROBLEMS ============== -->
+<h1>Practice Problems</h1>
+
+<p><strong>1.</strong> Explain the difference between mass and weight. Why does your mass remain the same whether you are on Earth or on the Moon, but your weight changes?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>2.</strong> What does the acceleration due to gravity ($g = 9.8 \text{ m/s}^2$) tell us about falling objects on Earth?</p>
+<div class="answer-space-short"></div>
+
+<p><strong>3.</strong> A student says, "I weigh 50 kg." Explain what is incorrect about this statement and how it should be corrected.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>4.</strong> Draw a free-body diagram for a basketball sitting on the ground. Label all forces acting on the basketball.</p>
+<div class="answer-space-short"></div>
+
+<p><strong>5.</strong> A textbook has a mass of 2.5 kg. Calculate the weight of the textbook on Earth.</p>
+<div class="answer-space-full"></div>
+
+<p><strong>6.</strong> An elephant weighs 39,200 N on Earth. What is the elephant's mass?</p>
+<div class="answer-space-full"></div>
+
+<p><strong>7.</strong> A lunar rover has a mass of 210 kg. (a) Calculate its weight on Earth where $g = 9.8 \text{ m/s}^2$. (b) Calculate its weight on the Moon where $g = 1.6 \text{ m/s}^2$. (c) By what factor does the rover's weight decrease when it goes from Earth to the Moon?</p>
+<div class="answer-space-full"></div>
+
+<p><strong>8.</strong> An object weighs 450 N on Earth. (a) What is its mass? (b) If this object were taken to Jupiter where $g = 24.8 \text{ m/s}^2$, what would its weight be? (c) How many times heavier does the object weigh on Jupiter compared to Earth?</p>
+<div class="answer-space-full"></div>
+
+<!-- ============== ANSWER KEY ============== -->
+<h1>Answer Key</h1>
+
+<p><strong>1.</strong> Mass is the amount of matter in an object and is measured in kilograms (kg). It is an intrinsic property that never changes regardless of location. Weight is the gravitational force acting on an object and is measured in newtons (N). Weight depends on both mass and the local gravitational field strength ($g$). On the Moon, $g$ is only about 1.6 m/s² compared to Earth's 9.8 m/s², so while your mass stays the same (same amount of matter), your weight is much less because the gravitational force is weaker.</p>
+
+<p><strong>2.</strong> The acceleration due to gravity ($g = 9.8 \text{ m/s}^2$) means that objects in free fall near Earth's surface accelerate downward at 9.8 meters per second every second. This means that for each second an object falls (ignoring air resistance), its downward velocity increases by 9.8 m/s. This value also tells us the strength of Earth's gravitational field.</p>
+
+<p><strong>3.</strong> The statement is incorrect because weight should be measured in newtons (N), not kilograms (kg). The student has confused mass with weight. The correct statement would be either "My mass is 50 kg" or "I weigh 490 N" (calculated using $W = mg = (50)(9.8) = 490$ N).</p>
+
+<p><strong>4.</strong> Free-body diagram should show:</p>
+<ul>
+    <li>A dot or box representing the basketball</li>
+    <li>An arrow pointing downward labeled "$W$", "$mg$", or "weight" (gravitational force)</li>
+    <li>An arrow pointing upward labeled "$N$" or "normal force" (force from the ground)</li>
+    <li>The two arrows should be equal in length (balanced forces) since the ball is at rest</li>
+</ul>
+
+<p><strong>5.</strong> Given: $m = 2.5 \text{ kg}$, $g = 9.8 \text{ m/s}^2$<br>
+Formula: $W = mg$<br>
+Substitute: $W = (2.5 \text{ kg})(9.8 \text{ m/s}^2)$<br>
+Solve: $W = 24.5 \text{ N}$<br>
+<strong>Answer:</strong> <span class="highlight">The textbook weighs 24.5 N on Earth.</span></p>
+
+<p><strong>6.</strong> Given: $W = 39,200 \text{ N}$, $g = 9.8 \text{ m/s}^2$<br>
+Formula: $m = \frac{W}{g}$<br>
+Substitute: $m = \frac{39,200 \text{ N}}{9.8 \text{ m/s}^2}$<br>
+Solve: $m = 4,000 \text{ kg}$<br>
+<strong>Answer:</strong> <span class="highlight">The elephant's mass is 4,000 kg.</span></p>
+
+<p><strong>7.</strong> Given: $m = 210 \text{ kg}$, $g_{\text{Earth}} = 9.8 \text{ m/s}^2$, $g_{\text{Moon}} = 1.6 \text{ m/s}^2$<br>
+<br>
+(a) Earth weight:<br>
+$W_{\text{Earth}} = mg = (210 \text{ kg})(9.8 \text{ m/s}^2) = 2,058 \text{ N}$<br>
+<br>
+(b) Moon weight:<br>
+$W_{\text{Moon}} = mg = (210 \text{ kg})(1.6 \text{ m/s}^2) = 336 \text{ N}$<br>
+<br>
+(c) Factor: $\frac{W_{\text{Earth}}}{W_{\text{Moon}}} = \frac{2,058}{336} = 6.125$<br>
+<br>
+<strong>Answer:</strong> <span class="highlight">(a) 2,058 N on Earth (b) 336 N on the Moon (c) The rover weighs about 6.1 times less on the Moon than on Earth.</span></p>
+
+<p><strong>8.</strong> Given: $W_{\text{Earth}} = 450 \text{ N}$, $g_{\text{Earth}} = 9.8 \text{ m/s}^2$, $g_{\text{Jupiter}} = 24.8 \text{ m/s}^2$<br>
+<br>
+(a) Mass: $m = \frac{W}{g} = \frac{450 \text{ N}}{9.8 \text{ m/s}^2} = 45.92 \text{ kg} \approx 46 \text{ kg}$<br>
+<br>
+(b) Jupiter weight: $W_{\text{Jupiter}} = mg = (45.92 \text{ kg})(24.8 \text{ m/s}^2) = 1,139 \text{ N}$<br>
+<br>
+(c) Ratio: $\frac{W_{\text{Jupiter}}}{W_{\text{Earth}}} = \frac{1,139}{450} = 2.53$<br>
+<br>
+<strong>Answer:</strong> <span class="highlight">(a) The object's mass is 46 kg. (b) On Jupiter, the object would weigh 1,139 N. (c) The object weighs 2.53 times more on Jupiter than on Earth.</span></p>
+
+</body>
+</html>
