@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Vocabulary and Formulas Reference</title>
+    
+    <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$']],
+        displayMath: [['$$','$$']]
+      }
+    };
+    </script>
+    <script type="text/javascript" async
+       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa; color: #333; line-height: 1.6; padding: 20px; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 40px; }
+        header { background: linear-gradient(135deg, #2c3e50, #4a6491); color: white; padding: 30px 20px; text-align: center; margin: -40px -40px 40px -40px; border-radius: 10px 10px 0 0; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .module h2 { color: #000080; font-size: 1.8rem; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 3px solid #000080; }
+        .section { margin-bottom: 40px; background-color: #f9f9f9; padding: 20px; border-left: 4px solid #4a6491; border-radius: 5px; }
+        .section h3 { color: #000080; font-size: 1.2rem; margin-bottom: 20px; margin-top: 0; }
+        .vocab-list { background-color: white; border: 1px solid #e0e0e0; border-radius: 5px; padding: 15px 20px; margin-bottom: 15px; }
+        .vocab-term { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0; }
+        .vocab-term:last-child { border-bottom: none; }
+        .vocab-word { font-weight: 600; color: #000080; margin-bottom: 4px; }
+        .vocab-def { color: #555; font-size: 0.95rem; line-height: 1.5; margin-left: 15px; }
+        h4 { color: #333; font-size: 1rem; margin-bottom: 15px; margin-top: 20px; font-weight: 600; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; background-color: white; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        thead { background-color: #f0f0f0; }
+        th { padding: 12px 15px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #ddd; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f0f0; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Physics Vocabulary and Formulas Reference</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Module 2 - VERIFIED from Original Textbook</p>
+        </header>
+
+        <div class="module" id="module2">
+            <h2>Module 2. Motion in One-Dimension</h2>
+            
+            <div class="section">
+                <h3>2.1 Position, Displacement, and Distance</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Position</div><div class="vocab-def">The location of an object relative to a chosen reference point (origin), measured in meters (m). Can be positive or negative depending on which side of the origin the object is located.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Displacement</div><div class="vocab-def">The change in position of an object; a vector quantity with both magnitude and direction. Calculated as $\Delta x = x_f - x_i$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Distance</div><div class="vocab-def">The total length of the path traveled by an object, regardless of direction; a scalar quantity with magnitude only, always positive or zero.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coordinate System</div><div class="vocab-def">A reference frame with an origin and positive direction used to specify locations of objects in space.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Origin</div><div class="vocab-def">The reference point (position zero) in a coordinate system, from which all positions are measured.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Vector Quantity</div><div class="vocab-def">A physical quantity that has both magnitude and direction. Examples include displacement, velocity, acceleration, and force.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Scalar Quantity</div><div class="vocab-def">A physical quantity that has magnitude but no direction. Examples include distance, speed, time, mass, and temperature.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Delta (Δ)</div><div class="vocab-def">Greek letter meaning "change in"; used to indicate the difference between final and initial values of a quantity.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Magnitude</div><div class="vocab-def">The size or amount of a quantity, without regard to direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">One-Dimensional Motion</div><div class="vocab-def">Motion along a straight line in one direction or its opposite.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Displacement</strong></td><td>$$\Delta x = x_f - x_i$$</td><td>$\Delta x$ = displacement (m), $x_f$ = final position (m), $x_i$ = initial position (m)</td></tr>
+                        <tr><td><strong>Distance (Straight Path)</strong></td><td>$$d = |x_f - x_i|$$</td><td>$d$ = distance (m), $x_f$ = final position (m), $x_i$ = initial position (m)</td></tr>
+                        <tr><td><strong>Total Distance (Multiple Segments)</strong></td><td>$$d_{total} = d_1 + d_2 + d_3 + ...$$</td><td>$d_{total}$ = total distance (m), $d_1, d_2, d_3$ = segment distances (m)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>2.2 Velocity and Speed</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Average Velocity (v_avg or $\bar{v}$)</div><div class="vocab-def">The displacement divided by the time interval during which the displacement occurred; a vector quantity measured in meters per second (m/s).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Average Speed (s_avg)</div><div class="vocab-def">The total distance traveled divided by the time interval; a scalar quantity measured in meters per second (m/s), always positive or zero.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Instantaneous Velocity (v)</div><div class="vocab-def">The velocity of an object at a specific instant in time; the limit of average velocity as the time interval approaches zero.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Units of Velocity</div><div class="vocab-def">SI unit is meters per second (m/s); other common units include kilometers per hour (km/h), miles per hour (mph), and feet per second (ft/s).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Positive Velocity</div><div class="vocab-def">Motion in the positive direction (often right, forward, or upward in the chosen coordinate system).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Negative Velocity</div><div class="vocab-def">Motion in the negative direction (often left, backward, or downward); does NOT mean the object is slowing down.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Zero Velocity</div><div class="vocab-def">No motion; the object is at rest.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Average Velocity</strong></td><td>$$v_{avg} = \frac{\Delta x}{\Delta t}$$</td><td>$v_{avg}$ = average velocity (m/s), $\Delta x$ = displacement (m), $\Delta t$ = time interval (s)</td></tr>
+                        <tr><td><strong>Average Velocity (Alternate)</strong></td><td>$$v_{avg} = \frac{x_f - x_i}{t_f - t_i}$$</td><td>$x_f$ = final position (m), $x_i$ = initial position (m), $t_f$ = final time (s), $t_i$ = initial time (s)</td></tr>
+                        <tr><td><strong>Average Speed</strong></td><td>$$s_{avg} = \frac{d}{\Delta t}$$</td><td>$s_{avg}$ = average speed (m/s), $d$ = total distance (m), $\Delta t$ = time interval (s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>2.3 Acceleration</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Acceleration</div><div class="vocab-def">The rate of change of velocity with respect to time; a vector quantity with SI units of m/s².</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Average Acceleration</div><div class="vocab-def">The change in velocity divided by the time interval during which the change occurs.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Instantaneous Acceleration</div><div class="vocab-def">The acceleration at a specific moment in time.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Uniform Acceleration</div><div class="vocab-def">Acceleration that remains constant in magnitude and direction over time.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Positive Acceleration</div><div class="vocab-def">Acceleration in the positive direction; can mean speeding up or slowing down depending on velocity direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Negative Acceleration</div><div class="vocab-def">Acceleration in the negative direction; can mean speeding up or slowing down depending on velocity direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Zero Acceleration</div><div class="vocab-def">No change in velocity; indicates constant velocity (including possibly zero velocity).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Meters per Second Squared (m/s²)</div><div class="vocab-def">The SI unit of acceleration.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Average Acceleration</strong></td><td>$$a_{avg} = \frac{\Delta v}{\Delta t}$$</td><td>$a_{avg}$ = average acceleration (m/s²), $\Delta v$ = change in velocity (m/s), $\Delta t$ = time interval (s)</td></tr>
+                        <tr><td><strong>Average Acceleration (Expanded Form)</strong></td><td>$$a = \frac{v_f - v_i}{t_f - t_i}$$</td><td>$v_f$ = final velocity (m/s), $v_i$ = initial velocity (m/s), $t_f$ = final time (s), $t_i$ = initial time (s)</td></tr>
+                        <tr><td><strong>Final Velocity with Constant Acceleration</strong></td><td>$$v_f = v_i + a \cdot \Delta t$$</td><td>$v_f$ = final velocity (m/s), $v_i$ = initial velocity (m/s), $a$ = acceleration (m/s²), $\Delta t$ = time interval (s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>2.4 Kinematic Equations and Free Fall</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Kinematic Equations</div><div class="vocab-def">Four equations that describe motion with constant acceleration, relating position, velocity, acceleration, and time.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Free Fall</div><div class="vocab-def">Motion under the influence of gravity alone, with no other forces acting.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Gravitational Acceleration (g)</div><div class="vocab-def">The acceleration due to gravity near Earth's surface, approximately 9.8 m/s².</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Constant Acceleration</div><div class="vocab-def">Acceleration that does not change in magnitude or direction during the motion.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Symmetric Motion</div><div class="vocab-def">Projectile motion where an object returns to its starting height, with equal times and speeds going up and coming down.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Terminal Velocity</div><div class="vocab-def">The constant velocity reached when air resistance equals gravitational force, causing acceleration to become zero.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>When to Use</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Final Velocity</strong></td><td>$$v_f = v_i + at$$</td><td>When you don't know or need displacement</td></tr>
+                        <tr><td><strong>Displacement</strong></td><td>$$\Delta x = v_i t + \frac{1}{2}at^2$$</td><td>When you don't know or need final velocity</td></tr>
+                        <tr><td><strong>Velocity-Displacement Relation</strong></td><td>$$v_f^2 = v_i^2 + 2a\Delta x$$</td><td>When you don't know or need time</td></tr>
+                        <tr><td><strong>Displacement (Average Velocity Form)</strong></td><td>$$\Delta x = \frac{1}{2}(v_i + v_f)t$$</td><td>When you don't know or need acceleration</td></tr>
+                        <tr><td><strong>Gravitational Acceleration</strong></td><td>$$g = 9.8 \text{ m/s}^2$$</td><td>For free fall problems (use $a = -g$ if up is positive)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>2.5 Graphical Analysis of Motion</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Position vs. Time Graph (x-t graph)</div><div class="vocab-def">A graph showing an object's position on the vertical axis and time on the horizontal axis; slope equals velocity.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Velocity vs. Time Graph (v-t graph)</div><div class="vocab-def">A graph showing an object's velocity on the vertical axis and time on the horizontal axis; slope equals acceleration, area equals displacement.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Slope</div><div class="vocab-def">The rate of change of the vertical variable with respect to the horizontal variable; calculated as rise over run.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Tangent Line</div><div class="vocab-def">A straight line that touches a curve at exactly one point; used to find instantaneous slope of curved graphs.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Area Under Curve</div><div class="vocab-def">The region between a graph line and the horizontal axis; for v-t graphs, this area equals displacement.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Rise</div><div class="vocab-def">The vertical change between two points on a graph ($\Delta y$).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Run</div><div class="vocab-def">The horizontal change between two points on a graph ($\Delta x$).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Graphical Analysis</div><div class="vocab-def">The process of extracting quantitative information from graphs using slopes, areas, and other geometric properties.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Relationship</th><th>Formula</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Slope Formula</strong></td><td>$$m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$</td><td>General formula for calculating slope from two points</td></tr>
+                        <tr><td><strong>Velocity from x-t Graph</strong></td><td>$$v = \frac{\Delta x}{\Delta t}$$</td><td>Slope of position vs. time graph equals velocity</td></tr>
+                        <tr><td><strong>Acceleration from v-t Graph</strong></td><td>$$a = \frac{\Delta v}{\Delta t}$$</td><td>Slope of velocity vs. time graph equals acceleration</td></tr>
+                        <tr><td><strong>Displacement from v-t Graph</strong></td><td>$$\Delta x = \text{area under curve}$$</td><td>Area under velocity vs. time graph equals displacement</td></tr>
+                        <tr><td><strong>Area of Rectangle</strong></td><td>$$A = b \times h$$</td><td>For constant velocity: base = time, height = velocity</td></tr>
+                        <tr><td><strong>Area of Triangle</strong></td><td>$$A = \frac{1}{2}bh$$</td><td>For uniform acceleration from rest</td></tr>
+                        <tr><td><strong>Area of Trapezoid</strong></td><td>$$A = \frac{1}{2}(b_1 + b_2)h$$</td><td>For uniform acceleration (not from rest)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>Physics Vocabulary and Formulas Reference</p>
+            <p>Module 2 Complete - Ready for Module 3</p>
+        </footer>
+    </div>
+</body>
+</html>
