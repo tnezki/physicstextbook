@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Vocabulary and Formulas Reference - Module 7</title>
+    
+    <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$']],
+        displayMath: [['$$','$$']]
+      }
+    };
+    </script>
+    <script type="text/javascript" async
+       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa; color: #333; line-height: 1.6; padding: 20px; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 40px; }
+        header { background: linear-gradient(135deg, #2c3e50, #4a6491); color: white; padding: 30px 20px; text-align: center; margin: -40px -40px 40px -40px; border-radius: 10px 10px 0 0; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .module h2 { color: #000080; font-size: 1.8rem; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 3px solid #000080; }
+        .section { margin-bottom: 40px; background-color: #f9f9f9; padding: 20px; border-left: 4px solid #4a6491; border-radius: 5px; }
+        .section h3 { color: #000080; font-size: 1.2rem; margin-bottom: 20px; margin-top: 0; }
+        .vocab-list { background-color: white; border: 1px solid #e0e0e0; border-radius: 5px; padding: 15px 20px; margin-bottom: 15px; }
+        .vocab-term { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0; }
+        .vocab-term:last-child { border-bottom: none; }
+        .vocab-word { font-weight: 600; color: #000080; margin-bottom: 4px; }
+        .vocab-def { color: #555; font-size: 0.95rem; line-height: 1.5; margin-left: 15px; }
+        h4 { color: #333; font-size: 1rem; margin-bottom: 15px; margin-top: 20px; font-weight: 600; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; background-color: white; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        thead { background-color: #f0f0f0; }
+        th { padding: 12px 15px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #ddd; font-size: 0.9rem; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Physics Vocabulary and Formulas Reference</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Module 7 - VERIFIED from Original Textbook</p>
+        </header>
+
+        <div class="module" id="module7">
+            <h2>Module 7. Intro to Electricity</h2>
+            
+            <div class="section">
+                <h3>7.1 Electric Charge and Electric Force</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Static electricity</div><div class="vocab-def">Electric charge at rest; the buildup of charge on objects.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electric charge</div><div class="vocab-def">A fundamental property of matter that causes objects to experience force in an electromagnetic field.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Positive charge</div><div class="vocab-def">Electric charge carried by protons; has charge of +e.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Negative charge</div><div class="vocab-def">Electric charge carried by electrons; has charge of −e.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Elementary charge</div><div class="vocab-def">The magnitude of charge on a single proton or electron; $e = 1.60 \times 10^{-19}$ C.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coulomb (C)</div><div class="vocab-def">The SI unit of electric charge.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coulomb's Law</div><div class="vocab-def">The equation describing the electric force between two point charges: $F_e = k\frac{|q_1 q_2|}{r^2}$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Point charge</div><div class="vocab-def">An idealized charged object treated as a single point in space.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Law of Electric Charges</div><div class="vocab-def">Like charges repel; opposite charges attract.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Repulsion</div><div class="vocab-def">The force pushing two like charges apart.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Attraction</div><div class="vocab-def">The force pulling two opposite charges together.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Coulomb's Law</strong></td><td>$$F_e = k\frac{|q_1 q_2|}{r^2}$$</td><td>$F_e$ = electric force (N), $k = 8.99 \times 10^9$ N·m²/C², $q_1, q_2$ = charges (C), $r$ = distance (m)</td></tr>
+                        <tr><td><strong>Elementary Charge</strong></td><td>$$e = 1.60 \times 10^{-19} \text{ C}$$</td><td>$e$ = magnitude of charge on proton or electron (C)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>7.2 Electric Fields and Voltage</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Electric field</div><div class="vocab-def">The region around a charged object where electric force is exerted on other charges.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electric field lines</div><div class="vocab-def">Lines that show the direction and strength of the electric field; always point away from positive charges and toward negative charges.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Dipole</div><div class="vocab-def">A pair of equal and opposite charges separated by a distance.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Uniform electric field</div><div class="vocab-def">An electric field with the same strength and direction at every point.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electric potential energy</div><div class="vocab-def">Energy stored due to the position of a charge in an electric field.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Voltage</div><div class="vocab-def">The potential difference per unit charge; energy per coulomb; measured in volts (V).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Volt (V)</div><div class="vocab-def">The SI unit of voltage; 1 V = 1 J/C.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Potential difference</div><div class="vocab-def">The difference in electric potential between two points; voltage between two points.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Electric Field Strength</strong></td><td>$$E = \frac{F_e}{q}$$</td><td>$E$ = electric field (N/C or V/m), $F_e$ = electric force (N), $q$ = charge (C)</td></tr>
+                        <tr><td><strong>Force from Electric Field</strong></td><td>$$F_e = qE$$</td><td>$F_e$ = electric force (N), $q$ = charge (C), $E$ = electric field (N/C)</td></tr>
+                        <tr><td><strong>Electric Potential (Voltage)</strong></td><td>$$V = \frac{U_e}{q}$$</td><td>$V$ = voltage (V), $U_e$ = electric potential energy (J), $q$ = charge (C)</td></tr>
+                        <tr><td><strong>Work and Voltage</strong></td><td>$$W = qV$$</td><td>$W$ = work done (J), $q$ = charge (C), $V$ = voltage difference (V)</td></tr>
+                        <tr><td><strong>Field-Voltage Relationship (Uniform Field)</strong></td><td>$$E = \frac{V}{d}$$</td><td>$E$ = electric field (V/m), $V$ = voltage difference (V), $d$ = distance (m)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>7.3 Current, Power Sources, and Measurement</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Electric current</div><div class="vocab-def">The flow of electric charge through a conductor; measured in amperes (A).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ampere (A)</div><div class="vocab-def">The SI unit of electric current; 1 A = 1 C/s.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Drift velocity</div><div class="vocab-def">The average velocity of charge carriers (electrons) moving through a conductor.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Conventional current</div><div class="vocab-def">The flow of positive charge (opposite to electron flow direction).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Power source</div><div class="vocab-def">A device that provides electrical energy (e.g., battery, solar cell).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Chemical cell</div><div class="vocab-def">A device that converts chemical energy into electrical energy through a chemical reaction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electrodes</div><div class="vocab-def">The terminals of a power source where current enters or leaves.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electrolyte</div><div class="vocab-def">A substance in a chemical cell that allows ions to move and conduct current.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Photoelectric effect</div><div class="vocab-def">The emission of electrons from a material when light shines on it.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Voltmeter</div><div class="vocab-def">An instrument that measures voltage between two points.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ammeter</div><div class="vocab-def">An instrument that measures electric current.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Multimeter</div><div class="vocab-def">A device that can measure voltage, current, and resistance.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Electric Current</strong></td><td>$$I = \frac{Q}{t}$$</td><td>$I$ = current (A), $Q$ = charge (C), $t$ = time (s)</td></tr>
+                        <tr><td><strong>Charge from Current</strong></td><td>$$Q = I \cdot t$$</td><td>$Q$ = charge (C), $I$ = current (A), $t$ = time (s)</td></tr>
+                        <tr><td><strong>Electrical Energy</strong></td><td>$$E = QV$$</td><td>$E$ = energy (J), $Q$ = charge (C), $V$ = voltage (V)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>7.4 Ohm's Law and Circuit Analysis</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Resistance</div><div class="vocab-def">Opposition to the flow of electric current; measured in ohms (Ω).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ohm (Ω)</div><div class="vocab-def">The SI unit of electrical resistance; 1 Ω = 1 V/A.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ohm's Law</div><div class="vocab-def">The relationship stating that voltage equals current times resistance: $V = IR$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Series circuit</div><div class="vocab-def">A circuit in which components are connected one after another in a single path.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Parallel circuit</div><div class="vocab-def">A circuit in which components are connected along multiple paths.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Insulator</div><div class="vocab-def">A material with very high resistance that does not conduct electricity well.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Conductor</div><div class="vocab-def">A material with low resistance that conducts electricity easily (e.g., copper, aluminum).</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Ohm's Law</strong></td><td>$$V = IR$$</td><td>$V$ = voltage (V), $I$ = current (A), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Ohm's Law (solving for I)</strong></td><td>$$I = \frac{V}{R}$$</td><td>$I$ = current (A), $V$ = voltage (V), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Ohm's Law (solving for R)</strong></td><td>$$R = \frac{V}{I}$$</td><td>$R$ = resistance (Ω), $V$ = voltage (V), $I$ = current (A)</td></tr>
+                        <tr><td><strong>Series Resistance</strong></td><td>$$R_{\text{total}} = R_1 + R_2 + R_3 + \cdots$$</td><td>All resistances in ohms (Ω)</td></tr>
+                        <tr><td><strong>Parallel Resistance</strong></td><td>$$\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots$$</td><td>All resistances in ohms (Ω)</td></tr>
+                        <tr><td><strong>Two Resistors in Parallel</strong></td><td>$$R_{\text{total}} = \frac{R_1 \times R_2}{R_1 + R_2}$$</td><td>All resistances in ohms (Ω)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>7.5 Energy, Efficiency, and Circuit Design</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Electrical power</div><div class="vocab-def">The rate at which electrical energy is transferred; measured in watts (W).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Watt (W)</div><div class="vocab-def">The SI unit of power; 1 W = 1 J/s.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kilowatt (kW)</div><div class="vocab-def">1000 watts; used for larger power quantities.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electrical energy</div><div class="vocab-def">Energy transferred by electric current; measured in joules (J) or kilowatt-hours (kWh).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kilowatt-hour (kWh)</div><div class="vocab-def">A unit of energy equal to 1000 watts × 3600 seconds; commonly used for household electricity billing.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Efficiency</div><div class="vocab-def">The ratio of useful energy output to total energy input; expressed as a percentage.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Solar cell</div><div class="vocab-def">A device that converts light energy directly into electrical energy using the photoelectric effect.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Electrical Power</strong></td><td>$$P = IV$$</td><td>$P$ = power (W), $I$ = current (A), $V$ = voltage (V)</td></tr>
+                        <tr><td><strong>Power (using resistance)</strong></td><td>$$P = I^2R$$</td><td>$P$ = power (W), $I$ = current (A), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Power (using voltage)</strong></td><td>$$P = \frac{V^2}{R}$$</td><td>$P$ = power (W), $V$ = voltage (V), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Electrical Energy</strong></td><td>$$E = Pt$$</td><td>$E$ = energy (J or kWh), $P$ = power (W or kW), $t$ = time (s or h)</td></tr>
+                        <tr><td><strong>Cost of Electricity</strong></td><td>$$\text{Cost} = \text{Energy (kWh)} \times \text{Price per kWh}$$</td><td>Energy in kWh, Price in $/kWh</td></tr>
+                        <tr><td><strong>Efficiency</strong></td><td>$$\eta = \frac{\text{Useful Energy Out}}{\text{Total Energy In}} \times 100\%$$</td><td>$\eta$ = efficiency (%), expressed as percentage</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>Physics Vocabulary and Formulas Reference</p>
+            <p>Module 7 Complete - Ready for Module 8</p>
+        </footer>
+    </div>
+</body>
+</html>
