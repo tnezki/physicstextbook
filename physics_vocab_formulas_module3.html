@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Vocabulary and Formulas Reference</title>
+    
+    <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$']],
+        displayMath: [['$$','$$']]
+      }
+    };
+    </script>
+    <script type="text/javascript" async
+       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa; color: #333; line-height: 1.6; padding: 20px; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 40px; }
+        header { background: linear-gradient(135deg, #2c3e50, #4a6491); color: white; padding: 30px 20px; text-align: center; margin: -40px -40px 40px -40px; border-radius: 10px 10px 0 0; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .module h2 { color: #000080; font-size: 1.8rem; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 3px solid #000080; }
+        .section { margin-bottom: 40px; background-color: #f9f9f9; padding: 20px; border-left: 4px solid #4a6491; border-radius: 5px; }
+        .section h3 { color: #000080; font-size: 1.2rem; margin-bottom: 20px; margin-top: 0; }
+        .vocab-list { background-color: white; border: 1px solid #e0e0e0; border-radius: 5px; padding: 15px 20px; margin-bottom: 15px; }
+        .vocab-term { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0; }
+        .vocab-term:last-child { border-bottom: none; }
+        .vocab-word { font-weight: 600; color: #000080; margin-bottom: 4px; }
+        .vocab-def { color: #555; font-size: 0.95rem; line-height: 1.5; margin-left: 15px; }
+        h4 { color: #333; font-size: 1rem; margin-bottom: 15px; margin-top: 20px; font-weight: 600; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; background-color: white; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        thead { background-color: #f0f0f0; }
+        th { padding: 12px 15px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #ddd; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f0f0; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Physics Vocabulary and Formulas Reference</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Module 3 - VERIFIED from Original Textbook</p>
+        </header>
+
+        <div class="module" id="module3">
+            <h2>Module 3. Forces and Newton's Laws of Motion</h2>
+            
+            <div class="section">
+                <h3>3.1 Weight and Gravitational Force</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Weight</div><div class="vocab-def">The gravitational force acting on an object, measured in newtons (N).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Mass</div><div class="vocab-def">The amount of matter in an object, measured in kilograms (kg); an intrinsic property that doesn't change with location.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Force</div><div class="vocab-def">A push or pull on an object, measured in newtons (N); a vector quantity with magnitude and direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Acceleration due to gravity (g)</div><div class="vocab-def">The rate at which objects accelerate in free fall; approximately $9.8 \text{ m/s}^2$ on Earth's surface.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Newton (N)</div><div class="vocab-def">The SI unit of force; one newton equals one kg·m/s².</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Free-body diagram</div><div class="vocab-def">A simplified drawing showing an object and all forces acting on it, represented as arrows.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Gravitational field strength</div><div class="vocab-def">The acceleration due to gravity at a particular location; varies depending on the mass and radius of the celestial body.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Vector quantity</div><div class="vocab-def">A quantity that has both magnitude and direction (e.g., force, weight, velocity).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Scalar quantity</div><div class="vocab-def">A quantity that has only magnitude, no direction (e.g., mass, temperature, time).</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Weight</strong></td><td>$$W = mg$$</td><td>$W$ = weight (N), $m$ = mass (kg), $g$ = acceleration due to gravity (m/s²)</td></tr>
+                        <tr><td><strong>Rearranged for mass</strong></td><td>$$m = \frac{W}{g}$$</td><td>$m$ = mass (kg), $W$ = weight (N), $g$ = acceleration due to gravity (m/s²)</td></tr>
+                        <tr><td><strong>Rearranged for g</strong></td><td>$$g = \frac{W}{m}$$</td><td>$g$ = acceleration due to gravity (m/s²), $W$ = weight (N), $m$ = mass (kg)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>3.2 Friction</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Friction</div><div class="vocab-def">A force that opposes relative motion between two surfaces in contact.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Static friction</div><div class="vocab-def">Friction force between surfaces not sliding relative to each other; prevents motion from starting.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kinetic friction</div><div class="vocab-def">Friction force between surfaces sliding relative to each other; opposes ongoing motion.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coefficient of friction (μ)</div><div class="vocab-def">Dimensionless number representing friction between two surfaces; depends on materials and conditions.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Normal force (N)</div><div class="vocab-def">Perpendicular contact force exerted by a surface on an object.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coefficient of static friction (μ_s)</div><div class="vocab-def">The ratio of maximum static friction to normal force.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coefficient of kinetic friction (μ_k)</div><div class="vocab-def">The ratio of kinetic friction to normal force.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Weight</strong></td><td>$$W = mg$$</td><td>$W$ = weight (N), $m$ = mass (kg), $g$ = acceleration due to gravity (m/s²)</td></tr>
+                        <tr><td><strong>Maximum Static Friction</strong></td><td>$$f_s \leq \mu_s N$$</td><td>$f_s$ = static friction force (N), $\mu_s$ = coefficient of static friction (no units), $N$ = normal force (N)</td></tr>
+                        <tr><td><strong>Kinetic Friction</strong></td><td>$$f_k = \mu_k N$$</td><td>$f_k$ = kinetic friction force (N), $\mu_k$ = coefficient of kinetic friction (no units), $N$ = normal force (N)</td></tr>
+                        <tr><td><strong>Normal Force (horizontal surface)</strong></td><td>$$N = mg$$</td><td>$N$ = normal force (N), $m$ = mass (kg), $g$ = acceleration due to gravity (m/s²)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>3.3 Connecting Newton's First and Second Laws</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Newton's First Law</div><div class="vocab-def">Objects maintain constant velocity unless acted upon by unbalanced force; Law of Inertia.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Inertia</div><div class="vocab-def">The tendency of objects to resist changes in motion; measured by mass.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Net force</div><div class="vocab-def">The vector sum of all forces acting on an object.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Equilibrium</div><div class="vocab-def">The state when net force is zero and acceleration is zero.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Balanced forces</div><div class="vocab-def">Forces that sum to zero; object in equilibrium.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Unbalanced forces</div><div class="vocab-def">Forces that don't sum to zero; object accelerates.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Newton's Second Law</div><div class="vocab-def">Net force equals mass times acceleration: $F_{net} = ma$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Tension</div><div class="vocab-def">Pulling force transmitted through a rope, string, or cable.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Free-body diagram</div><div class="vocab-def">Diagram showing all forces acting on a single object.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Newton's Second Law</strong></td><td>$$F_{net} = ma$$</td><td>$F_{net}$ = net force (N), $m$ = mass (kg), $a$ = acceleration (m/s²)</td></tr>
+                        <tr><td><strong>Weight</strong></td><td>$$W = mg$$</td><td>$W$ = weight (N), $m$ = mass (kg), $g$ = 9.8 m/s²</td></tr>
+                        <tr><td><strong>Friction</strong></td><td>$$f = \mu N$$</td><td>$f$ = friction force (N), $\mu$ = coefficient of friction, $N$ = normal force (N)</td></tr>
+                        <tr><td><strong>Net Force (1D)</strong></td><td>$$F_{net} = \sum F$$</td><td>Sum of all forces (N); add forces with proper signs (+ and −)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>3.4 Newton's Third Law</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Newton's Third Law</div><div class="vocab-def">For every action force, there is an equal and opposite reaction force; forces occur in pairs.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Action-reaction pair</div><div class="vocab-def">Two forces equal in magnitude, opposite in direction, acting on different objects.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Action force</div><div class="vocab-def">One force in an interaction pair (the label is arbitrary—either can be called "action").</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reaction force</div><div class="vocab-def">The other force in an interaction pair (paired with the "action").</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Recoil</div><div class="vocab-def">Backward motion of a device that expels a projectile, caused by Newton's Third Law.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Propulsion</div><div class="vocab-def">Motion achieved by pushing something in the opposite direction (Newton's Third Law).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Momentum</div><div class="vocab-def">The product of mass and velocity; quantity of motion ($p = mv$).</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Newton's Third Law</strong></td><td>$$F_{AB} = -F_{BA}$$</td><td>$F_{AB}$ = force of A on B (N), $F_{BA}$ = force of B on A (N); negative sign indicates opposite directions</td></tr>
+                        <tr><td><strong>Newton's Second Law</strong></td><td>$$F_{net} = ma$$</td><td>$F_{net}$ = net force (N), $m$ = mass (kg), $a$ = acceleration (m/s²)</td></tr>
+                        <tr><td><strong>Momentum</strong></td><td>$$p = mv$$</td><td>$p$ = momentum (kg·m/s), $m$ = mass (kg), $v$ = velocity (m/s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>3.5 Gravitational Force and Inclined Planes</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Inclined plane</div><div class="vocab-def">A flat surface set at an angle to the horizontal; a ramp.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Angle of incline (θ)</div><div class="vocab-def">The angle between the inclined surface and the horizontal.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Parallel component</div><div class="vocab-def">The part of weight acting along the ramp surface; $W_\parallel = mg\sin\theta$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Perpendicular component</div><div class="vocab-def">The part of weight acting perpendicular to the ramp; $W_\perp = mg\cos\theta$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Component resolution</div><div class="vocab-def">Breaking a vector into perpendicular parts using trigonometry.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Normal force (on incline)</div><div class="vocab-def">Force perpendicular to ramp surface; equals $mg\cos\theta$ on incline.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Parallel Component</strong></td><td>$$W_\parallel = mg\sin\theta$$</td><td>$W_\parallel$ = component parallel to ramp (N), $m$ = mass (kg), $g$ = 9.8 m/s², $\theta$ = angle of incline (degrees)</td></tr>
+                        <tr><td><strong>Perpendicular Component</strong></td><td>$$W_\perp = mg\cos\theta$$</td><td>$W_\perp$ = component perpendicular to ramp (N), $m$ = mass (kg), $g$ = 9.8 m/s², $\theta$ = angle of incline (degrees)</td></tr>
+                        <tr><td><strong>Normal Force on Incline</strong></td><td>$$N = mg\cos\theta$$</td><td>$N$ = normal force (N), $m$ = mass (kg), $g$ = 9.8 m/s², $\theta$ = angle (degrees)</td></tr>
+                        <tr><td><strong>Friction on Incline</strong></td><td>$$f = \mu N$$</td><td>$f$ = friction force (N), $\mu$ = coefficient of friction, $N$ = normal force (N)</td></tr>
+                        <tr><td><strong>Acceleration (frictionless)</strong></td><td>$$a = g\sin\theta$$</td><td>$a$ = acceleration down ramp (m/s²), $g$ = 9.8 m/s², $\theta$ = angle (degrees)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>Physics Vocabulary and Formulas Reference</p>
+            <p>Module 3 Complete - Ready for Module 4</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Vocabulary and Formulas Reference</title>
+    
+    <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$']],
+        displayMath: [['$$','$$']]
+      }
+    };
+    </script>
+    <script type="text/javascript" async
+       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa; color: #333; line-height: 1.6; padding: 20px; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 40px; }
+        header { background: linear-gradient(135deg, #2c3e50, #4a6491); color: white; padding: 30px 20px; text-align: center; margin: -40px -40px 40px -40px; border-radius: 10px 10px 0 0; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .module h2 { color: #000080; font-size: 1.8rem; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 3px solid #000080; }
+        .section { margin-bottom: 40px; background-color: #f9f9f9; padding: 20px; border-left: 4px solid #4a6491; border-radius: 5px; }
+        .section h3 { color: #000080; font-size: 1.2rem; margin-bottom: 20px; margin-top: 0; }
+        .vocab-list { background-color: white; border: 1px solid #e0e0e0; border-radius: 5px; padding: 15px 20px; margin-bottom: 15px; }
+        .vocab-term { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0; }
+        .vocab-term:last-child { border-bottom: none; }
+        .vocab-word { font-weight: 600; color: #000080; margin-bottom: 4px; }
+        .vocab-def { color: #555; font-size: 0.95rem; line-height: 1.5; margin-left: 15px; }
+        h4 { color: #333; font-size: 1rem; margin-bottom: 15px; margin-top: 20px; font-weight: 600; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; background-color: white; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        thead { background-color: #f0f0f0; }
+        th { padding: 12px 15px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #ddd; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f0f0; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Physics Vocabulary and Formulas Reference</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Module 4 - VERIFIED from Original Textbook</p>
+        </header>
+
+        <div class="module" id="module4">
+            <h2>Module 4. Conservation Laws</h2>
+            
+            <div class="section">
+                <h3>4.1 Momentum and Impulse</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Momentum</div><div class="vocab-def">The product of an object's mass and velocity ($p = mv$); a vector quantity that measures an object's motion.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Impulse</div><div class="vocab-def">The change in momentum of an object; also equal to the product of force and time interval ($J = F\Delta t$).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Impulse-Momentum Theorem</div><div class="vocab-def">The principle stating that impulse equals the change in momentum: $F\Delta t = \Delta p$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Vector Quantity</div><div class="vocab-def">A physical quantity that has both magnitude and direction (like momentum, velocity, and force).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Change in Momentum</div><div class="vocab-def">The difference between final and initial momentum: $\Delta p = p_f - p_i = mv_f - mv_i$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Average Force</div><div class="vocab-def">The constant force that would produce the same impulse as a varying force over a given time interval.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Newton-second (N·s)</div><div class="vocab-def">The SI unit of impulse, equivalent to kg·m/s.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kilogram-meter per second (kg·m/s)</div><div class="vocab-def">The SI unit of momentum.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Momentum</strong></td><td>$$p = mv$$</td><td>$p$ = momentum (kg·m/s), $m$ = mass (kg), $v$ = velocity (m/s)</td></tr>
+                        <tr><td><strong>Impulse</strong></td><td>$$J = F\Delta t$$</td><td>$J$ = impulse (N·s or kg·m/s), $F$ = average force (N), $\Delta t$ = time interval (s)</td></tr>
+                        <tr><td><strong>Change in Momentum</strong></td><td>$$\Delta p = mv_f - mv_i$$</td><td>$\Delta p$ = change in momentum (kg·m/s), $m$ = mass (kg), $v_f$ = final velocity (m/s), $v_i$ = initial velocity (m/s)</td></tr>
+                        <tr><td><strong>Impulse-Momentum Theorem</strong></td><td>$$F\Delta t = \Delta p$$</td><td>Force × time interval equals change in momentum</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>4.2 Conservation of Momentum in One Dimension</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Conservation of Momentum</div><div class="vocab-def">The principle that total momentum in an isolated system remains constant before and after a collision or interaction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Isolated System</div><div class="vocab-def">A system in which no net external force acts; only internal forces between objects within the system are present.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Internal Forces</div><div class="vocab-def">Forces that objects within a system exert on each other; these do not change the total momentum of the system.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">External Forces</div><div class="vocab-def">Forces acting on the system from outside; these can change the total momentum of the system.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">One-Dimensional Collision</div><div class="vocab-def">A collision where all motion occurs along a single straight line.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Recoil</div><div class="vocab-def">The backward motion of an object when it expels or releases another object (like a gun firing a bullet).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Total Momentum</div><div class="vocab-def">The vector sum of the momenta of all objects in a system.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Conservation of Momentum (General)</strong></td><td>$$p_{\text{before}} = p_{\text{after}}$$</td><td>$p$ = momentum (kg·m/s)</td></tr>
+                        <tr><td><strong>Conservation of Momentum (Two Objects)</strong></td><td>$$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$$</td><td>$m_1, m_2$ = masses (kg), $v_{1i}, v_{2i}$ = initial velocities (m/s), $v_{1f}, v_{2f}$ = final velocities (m/s)</td></tr>
+                        <tr><td><strong>Explosion from Rest</strong></td><td>$$m_1v_{1f} + m_2v_{2f} = 0$$</td><td>Two objects separate in opposite directions; total momentum is zero</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>4.3 Elastic and Inelastic Collisions</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Elastic Collision</div><div class="vocab-def">A collision in which both momentum and kinetic energy are conserved; objects bounce apart.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Inelastic Collision</div><div class="vocab-def">A collision in which momentum is conserved but kinetic energy is not; some KE is converted to other forms.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Perfectly Inelastic Collision</div><div class="vocab-def">A collision in which objects stick together after impact, moving with a common final velocity; maximum KE loss.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kinetic Energy</div><div class="vocab-def">Energy of motion, calculated as $KE = \frac{1}{2}mv^2$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Energy Transformation</div><div class="vocab-def">The conversion of energy from one form to another (e.g., kinetic to thermal).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Deformation Energy</div><div class="vocab-def">Energy used to permanently change the shape of an object during a collision.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coefficient of Restitution</div><div class="vocab-def">A measure of how "bouncy" a collision is; ranges from 0 (perfectly inelastic) to 1 (perfectly elastic).</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Kinetic Energy</strong></td><td>$$KE = \frac{1}{2}mv^2$$</td><td>$KE$ = kinetic energy (J), $m$ = mass (kg), $v$ = speed (m/s)</td></tr>
+                        <tr><td><strong>Elastic Collision (Momentum)</strong></td><td>$$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$$</td><td>Momentum is conserved</td></tr>
+                        <tr><td><strong>Elastic Collision (KE)</strong></td><td>$$\frac{1}{2}m_1v_{1i}^2 + \frac{1}{2}m_2v_{2i}^2 = \frac{1}{2}m_1v_{1f}^2 + \frac{1}{2}m_2v_{2f}^2$$</td><td>Kinetic energy is conserved</td></tr>
+                        <tr><td><strong>Perfectly Inelastic Collision</strong></td><td>$$m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f$$</td><td>Objects stick together with common final velocity</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>4.4 Potential Energy</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Potential Energy</div><div class="vocab-def">Energy stored in a system due to the position or configuration of objects.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Gravitational Potential Energy</div><div class="vocab-def">Energy stored due to an object's position in a gravitational field; calculated as $PE = mgh$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reference Point</div><div class="vocab-def">The chosen location where potential energy is defined as zero ($h = 0$).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Height (h)</div><div class="vocab-def">Vertical distance above the reference point.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Gravitational Field</div><div class="vocab-def">The region around a massive object where gravitational force is exerted.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Work</div><div class="vocab-def">Energy transferred when a force moves an object; equal to $F \cdot d$ when force and displacement are in the same direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Joule (J)</div><div class="vocab-def">The SI unit of energy; 1 J = 1 kg·m²/s².</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Gravitational Potential Energy</strong></td><td>$$PE = mgh$$</td><td>$PE$ = potential energy (J), $m$ = mass (kg), $g$ = 9.8 m/s² (on Earth), $h$ = height (m)</td></tr>
+                        <tr><td><strong>Change in Potential Energy</strong></td><td>$$\Delta PE = mg\Delta h$$</td><td>$\Delta PE$ = change in PE (J), $\Delta h$ = change in height (m)</td></tr>
+                        <tr><td><strong>Weight</strong></td><td>$$W = mg$$</td><td>$W$ = weight/gravitational force (N), $m$ = mass (kg), $g$ = 9.8 m/s²</td></tr>
+                        <tr><td><strong>Work</strong></td><td>$$W = F \cdot d$$</td><td>$W$ = work (J), $F$ = force (N), $d$ = displacement (m)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>4.5 Kinetic Energy and Conservation of Energy</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Kinetic Energy</div><div class="vocab-def">Energy of motion; $KE = \frac{1}{2}mv^2$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Conservation of Energy</div><div class="vocab-def">Energy cannot be created or destroyed, only transformed between forms.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Mechanical Energy</div><div class="vocab-def">Sum of kinetic and potential energy in a system.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Energy Transformation</div><div class="vocab-def">The conversion of energy from one form to another.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Isolated System</div><div class="vocab-def">A system with no external forces doing work; mechanical energy is conserved.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Kinetic Energy</strong></td><td>$$KE = \frac{1}{2}mv^2$$</td><td>$KE$ = kinetic energy (J), $m$ = mass (kg), $v$ = speed (m/s)</td></tr>
+                        <tr><td><strong>Potential Energy</strong></td><td>$$PE = mgh$$</td><td>$PE$ = potential energy (J), $m$ = mass (kg), $g$ = 9.8 m/s², $h$ = height (m)</td></tr>
+                        <tr><td><strong>Conservation of Mechanical Energy</strong></td><td>$$PE_i + KE_i = PE_f + KE_f$$</td><td>Subscript $i$ = initial, subscript $f$ = final; all energies in joules (J)</td></tr>
+                        <tr><td><strong>Total Mechanical Energy</strong></td><td>$$E = PE + KE$$</td><td>$E$ = total mechanical energy (J)</td></tr>
+                        <tr><td><strong>Energy Conservation</strong></td><td>$$E_{\text{total}} = PE + KE = \text{constant}$$</td><td>Total mechanical energy remains constant in isolated systems</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>Physics Vocabulary and Formulas Reference</p>
+            <p>Module 4 Complete - All Conservation Laws</p>
+        </footer>
+    </div>
+</body>
+</html>
