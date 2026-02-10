@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Vocabulary and Formulas Reference</title>
+    
+    <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$']],
+        displayMath: [['$$','$$']]
+      }
+    };
+    </script>
+    <script type="text/javascript" async
+       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa; color: #333; line-height: 1.6; padding: 20px; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 40px; }
+        header { background: linear-gradient(135deg, #2c3e50, #4a6491); color: white; padding: 30px 20px; text-align: center; margin: -40px -40px 40px -40px; border-radius: 10px 10px 0 0; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .module h2 { color: #000080; font-size: 1.8rem; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 3px solid #000080; }
+        .section { margin-bottom: 40px; background-color: #f9f9f9; padding: 20px; border-left: 4px solid #4a6491; border-radius: 5px; }
+        .section h3 { color: #000080; font-size: 1.2rem; margin-bottom: 20px; margin-top: 0; }
+        .vocab-list { background-color: white; border: 1px solid #e0e0e0; border-radius: 5px; padding: 15px 20px; margin-bottom: 15px; }
+        .vocab-term { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0; }
+        .vocab-term:last-child { border-bottom: none; }
+        .vocab-word { font-weight: 600; color: #000080; margin-bottom: 4px; }
+        .vocab-def { color: #555; font-size: 0.95rem; line-height: 1.5; margin-left: 15px; }
+        h4 { color: #333; font-size: 1rem; margin-bottom: 15px; margin-top: 20px; font-weight: 600; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; background-color: white; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        thead { background-color: #f0f0f0; }
+        th { padding: 12px 15px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #ddd; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f0f0; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Physics Vocabulary and Formulas Reference</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Module 6 - VERIFIED from Original Textbook</p>
+        </header>
+
+        <div class="module" id="module6">
+            <h2>Module 6. Optics</h2>
+            
+            <div class="section">
+                <h3>6.1 Reflection and the Law of Reflection</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Light</div><div class="vocab-def">A form of electromagnetic energy that travels through space and allows us to see objects.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ray</div><div class="vocab-def">A straight line with an arrow that represents the direction light is traveling.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Speed of Light (c)</div><div class="vocab-def">The speed at which light travels through empty space, approximately $3 \times 10^8$ m/s.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ray Model</div><div class="vocab-def">A simplified way of representing light as straight lines (rays) traveling in specific directions.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reflection</div><div class="vocab-def">The bouncing of light off a surface when light strikes it.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reflecting Surface</div><div class="vocab-def">The surface off which light bounces.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Normal</div><div class="vocab-def">An imaginary line perpendicular (at a 90-degree angle) to the reflecting surface at the point where light hits it.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Angle of Incidence (θ₁)</div><div class="vocab-def">The angle between the incoming light ray and the normal.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Angle of Reflection (θ₂)</div><div class="vocab-def">The angle between the reflected light ray and the normal.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Incident Ray</div><div class="vocab-def">The light ray traveling toward the reflecting surface.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reflected Ray</div><div class="vocab-def">The light ray bouncing away from the reflecting surface.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Law of Reflection</div><div class="vocab-def">The principle that the angle of incidence equals the angle of reflection, both measured from the normal line.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ray Diagram</div><div class="vocab-def">A diagram showing the path of light rays, used to solve reflection problems.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Specular Reflection</div><div class="vocab-def">Reflection from a smooth, shiny surface like a mirror where all light rays reflect in the same direction, creating a clear reflection.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Diffuse Reflection</div><div class="vocab-def">Reflection from a rough, bumpy surface where light rays scatter in many different directions and no clear reflection is visible.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Concept</th><th>Equation/Definition</th><th>Variables</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Law of Reflection</strong></td><td>$$\theta_1 = \theta_2$$</td><td>θ₁ = angle of incidence (degrees), θ₂ = angle of reflection (degrees)</td></tr>
+                        <tr><td><strong>Angle Conversion</strong></td><td>$$\theta_{normal} = 90° - \theta_{surface}$$</td><td>θ_normal = angle from normal, θ_surface = angle from surface</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>6.2 Refraction and Snell's Law</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Refraction</div><div class="vocab-def">The bending of light when it passes from one material to another due to a change in wave speed.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Optical Density</div><div class="vocab-def">A property of a material related to its refractive index; high optical density means light travels slowly through it.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Refractive Index (n)</div><div class="vocab-def">A dimensionless number that describes how much a medium slows down light compared to vacuum; $n = c/v$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Snell's Law</div><div class="vocab-def">The mathematical relationship between angles of incidence and refraction and refractive indices: $n_1 \sin\theta_1 = n_2 \sin\theta_2$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Interface</div><div class="vocab-def">The boundary between two different materials through which light passes.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Refractive Index</strong></td><td>$$n = \frac{c}{v}$$</td><td>$c$ = speed of light in vacuum ($3 \times 10^8$ m/s), $v$ = speed of light in material (m/s)</td></tr>
+                        <tr><td><strong>Snell's Law</strong></td><td>$$n_1 \sin\theta_1 = n_2 \sin\theta_2$$</td><td>$n$ = refractive index (unitless), $\theta$ = angle from normal (degrees)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>6.3 Total Internal Reflection</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Critical Angle (θc)</div><div class="vocab-def">The angle of incidence at which the angle of refraction becomes 90°. Beyond this angle, total internal reflection occurs.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Total Internal Reflection</div><div class="vocab-def">The complete reflection of light back into a more optically dense material when light hits the interface with a less dense material at an angle greater than the critical angle.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Critical Angle</strong></td><td>$$\sin\theta_c = \frac{n_2}{n_1}$$</td><td>θc = critical angle (degrees), $n_1$ = denser material, $n_2$ = less dense material</td></tr>
+                        <tr><td><strong>Critical Angle (Alternative)</strong></td><td>$$\theta_c = \sin^{-1}\left(\frac{n_2}{n_1}\right)$$</td><td>Same as above</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>6.4 Mirrors: Plane, Concave, and Convex</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Plane Mirror</div><div class="vocab-def">A flat, reflective surface that produces virtual, upright images of the same size as the object.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Virtual Image</div><div class="vocab-def">An image formed at a location where light does not actually travel; appears behind a mirror.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Upright</div><div class="vocab-def">Image orientation property where the image is right-side up (not inverted).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Same Size</div><div class="vocab-def">Image property where the image is the same size as the object.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Curved Mirrors</div><div class="vocab-def">Mirrors whose surfaces are part of a sphere; includes concave and convex mirrors.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Concave Mirrors</div><div class="vocab-def">Curved mirrors that curve inward (like a spoon); also called converging mirrors because they bring light rays together.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Convex Mirrors</div><div class="vocab-def">Curved mirrors that curve outward (like the back of a spoon); also called diverging mirrors because they spread light rays apart.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Focal Point (F)</div><div class="vocab-def">The point where parallel light rays converge after reflection from a concave mirror.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Center of Curvature (C)</div><div class="vocab-def">The center of the sphere of which a curved mirror is a part.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Focal Length (f)</div><div class="vocab-def">The distance from a mirror to its focal point; for a curved mirror, $f = R/2$ where $R$ is radius of curvature.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Mirror Equation</strong></td><td>$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</td><td>$f$ = focal length, $d_o$ = object distance, $d_i$ = image distance</td></tr>
+                        <tr><td><strong>Magnification</strong></td><td>$$M = -\frac{d_i}{d_o} = \frac{h_i}{h_o}$$</td><td>$M$ = magnification, $h_o$ = object height, $h_i$ = image height</td></tr>
+                        <tr><td><strong>Focal Length and Radius</strong></td><td>$$f = \frac{R}{2}$$</td><td>$f$ = focal length, $R$ = radius of curvature</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>6.5 Lenses: Double Convex and Double Concave</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Double Convex Lenses</div><div class="vocab-def">Lenses that are thicker in the middle and thinner at the edges; also called converging lenses because they bend light rays toward each other.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Converging Lenses</div><div class="vocab-def">Lenses that bend light rays toward each other, causing them to converge at a focal point; have positive focal length.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Double Concave Lenses</div><div class="vocab-def">Lenses that are thinner in the middle and thicker at the edges; also called diverging lenses because they bend light rays away from each other.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Diverging Lenses</div><div class="vocab-def">Lenses that bend light rays away from each other, causing them to diverge; have negative focal length and always produce virtual images.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Lens Equation</strong></td><td>$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</td><td>$f$ = focal length, $d_o$ = object distance, $d_i$ = image distance</td></tr>
+                        <tr><td><strong>Magnification (Lenses)</strong></td><td>$$M = \frac{d_i}{d_o} = \frac{h_i}{h_o}$$</td><td>$M$ = magnification, $h_o$ = object height, $h_i$ = image height</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>Physics Vocabulary and Formulas Reference</p>
+            <p>Module 6 Complete - Ready for Module 7 and 8</p>
+        </footer>
+    </div>
+</body>
+</html>

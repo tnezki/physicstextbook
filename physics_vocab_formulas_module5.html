@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Vocabulary and Formulas Reference</title>
+    
+    <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$']],
+        displayMath: [['$$','$$']]
+      }
+    };
+    </script>
+    <script type="text/javascript" async
+       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f7fa; color: #333; line-height: 1.6; padding: 20px; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); overflow: hidden; padding: 40px; }
+        header { background: linear-gradient(135deg, #2c3e50, #4a6491); color: white; padding: 30px 20px; text-align: center; margin: -40px -40px 40px -40px; border-radius: 10px 10px 0 0; }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .module h2 { color: #000080; font-size: 1.8rem; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 3px solid #000080; }
+        .section { margin-bottom: 40px; background-color: #f9f9f9; padding: 20px; border-left: 4px solid #4a6491; border-radius: 5px; }
+        .section h3 { color: #000080; font-size: 1.2rem; margin-bottom: 20px; margin-top: 0; }
+        .vocab-list { background-color: white; border: 1px solid #e0e0e0; border-radius: 5px; padding: 15px 20px; margin-bottom: 15px; }
+        .vocab-term { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0; }
+        .vocab-term:last-child { border-bottom: none; }
+        .vocab-word { font-weight: 600; color: #000080; margin-bottom: 4px; }
+        .vocab-def { color: #555; font-size: 0.95rem; line-height: 1.5; margin-left: 15px; }
+        h4 { color: #333; font-size: 1rem; margin-bottom: 15px; margin-top: 20px; font-weight: 600; text-transform: uppercase; }
+        table { width: 100%; border-collapse: collapse; background-color: white; border: 1px solid #e0e0e0; margin-bottom: 20px; }
+        thead { background-color: #f0f0f0; }
+        th { padding: 12px 15px; text-align: left; font-weight: 600; color: #333; border-bottom: 2px solid #ddd; }
+        td { padding: 12px 15px; border-bottom: 1px solid #f0f0f0; }
+        tr:nth-child(even) { background-color: #fafafa; }
+        footer { text-align: center; padding: 20px; color: #7f8c8d; font-size: 0.9rem; border-top: 1px solid #eee; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Physics Vocabulary and Formulas Reference</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Module 5 - VERIFIED from Original Textbook</p>
+        </header>
+
+        <div class="module" id="module5">
+            <h2>Module 5. Harmonic Motion, Waves, and Sound</h2>
+            
+            <div class="section">
+                <h3>5.1 Introduction to Simple Harmonic Motion</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Oscillation</div><div class="vocab-def">Repeating motion around a central position.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Simple Harmonic Motion (SHM)</div><div class="vocab-def">The repetitive back-and-forth movement of an object through an equilibrium position, where the restoring force is directly proportional to the displacement from equilibrium.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Equilibrium Position</div><div class="vocab-def">The central resting position where the net force on an object is zero and the object would remain at rest if not disturbed.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Displacement</div><div class="vocab-def">The distance and direction of an object from its equilibrium position, measured in meters (m).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Restoring Force</div><div class="vocab-def">The force that acts to bring an oscillating object back toward its equilibrium position; it always points toward equilibrium.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Periodic Motion</div><div class="vocab-def">Motion that repeats in a regular cycle.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Amplitude (A)</div><div class="vocab-def">The maximum displacement from equilibrium position, measured in meters (m). This represents how far the object moves from center to its farthest point.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Period (T)</div><div class="vocab-def">The time required for one complete cycle of motion, measured in seconds (s). One complete cycle means going from a starting point, through all positions, and back to the starting point moving in the same direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Frequency (f)</div><div class="vocab-def">The number of complete cycles per second, measured in hertz (Hz) or cycles per second (1 Hz = 1 cycle/s).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Hooke's Law</div><div class="vocab-def">The principle that the restoring force of a spring is proportional to its displacement: $F = -kx$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Spring Constant (k)</div><div class="vocab-def">A measure of a spring's stiffness, measured in newtons per meter (N/m). A larger spring constant means a stiffer spring that requires more force to stretch or compress.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Simple Pendulum</div><div class="vocab-def">A mass (called a bob) suspended from a fixed point by a string or rod of negligible mass; exhibits simple harmonic motion for small angles.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Frequency-Period Relationship</strong></td><td>$$f = \frac{1}{T}$$</td><td>$f$ = frequency (Hz), $T$ = period (s)</td></tr>
+                        <tr><td><strong>Hooke's Law</strong></td><td>$$F = -kx$$</td><td>$F$ = restoring force (N), $k$ = spring constant (N/m), $x$ = displacement (m)</td></tr>
+                        <tr><td><strong>Period of Mass-Spring System</strong></td><td>$$T = 2\pi\sqrt{\frac{m}{k}}$$</td><td>$T$ = period (s), $m$ = mass (kg), $k$ = spring constant (N/m)</td></tr>
+                        <tr><td><strong>Period of Simple Pendulum</strong></td><td>$$T = 2\pi\sqrt{\frac{L}{g}}$$</td><td>$T$ = period (s), $L$ = length (m), $g$ = 9.8 m/s$^2$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>5.2 Transverse Waves</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Wave</div><div class="vocab-def">A disturbance that transfers energy from one place to another without permanently transferring matter.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Transverse Wave</div><div class="vocab-def">A wave in which the particles of the medium move perpendicular (at right angles) to the direction of wave propagation.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Medium</div><div class="vocab-def">The material substance through which a wave travels. For mechanical waves, a medium is required; electromagnetic waves can travel through empty space.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Propagation</div><div class="vocab-def">The movement or spreading of a wave through space or a medium.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Crest</div><div class="vocab-def">The highest point of a wave above the equilibrium position; represents maximum positive displacement.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Trough</div><div class="vocab-def">The lowest point of a wave below the equilibrium position; represents maximum negative displacement.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Wavelength (λ)</div><div class="vocab-def">The distance between two consecutive corresponding points on a wave, such as crest to crest or trough to trough, measured in meters (m). Represented by the Greek letter lambda (λ).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Wave Speed</div><div class="vocab-def">The speed at which the wave pattern travels through the medium, measured in meters per second (m/s).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electromagnetic Wave</div><div class="vocab-def">A transverse wave consisting of oscillating electric and magnetic fields that can travel through empty space; includes visible light, radio waves, and X-rays.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Frequency-Period Relationship</strong></td><td>$$f = \frac{1}{T}$$</td><td>$f$ = frequency (Hz), $T$ = period (s)</td></tr>
+                        <tr><td><strong>Wave Equation</strong></td><td>$$v = f\lambda$$</td><td>$v$ = wave speed (m/s), $f$ = frequency (Hz), $\lambda$ = wavelength (m)</td></tr>
+                        <tr><td><strong>Wave Speed (Alternative)</strong></td><td>$$v = \frac{\lambda}{T}$$</td><td>$v$ = wave speed (m/s), $\lambda$ = wavelength (m), $T$ = period (s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>5.3 Longitudinal Waves</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Longitudinal Wave</div><div class="vocab-def">A wave in which particles oscillate parallel to the direction of wave propagation.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Compression</div><div class="vocab-def">A region in a longitudinal wave where particles are pushed closer together than normal, creating higher density and higher pressure.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Rarefaction</div><div class="vocab-def">A region in a longitudinal wave where particles are pulled farther apart than normal, creating lower density and lower pressure.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Sound Wave</div><div class="vocab-def">A longitudinal wave of pressure variations that travels through a medium by creating compressions and rarefactions.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Mechanical Wave</div><div class="vocab-def">A wave that requires a physical medium (matter) to travel through; cannot propagate through a vacuum.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ultrasound</div><div class="vocab-def">Sound waves with frequencies above the range of human hearing (above 20,000 Hz); used in medical imaging and other applications.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Infrasound</div><div class="vocab-def">Sound waves with frequencies below the range of human hearing (below 20 Hz); produced by earthquakes, ocean waves, and large animals.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Wave Equation</strong></td><td>$$v = f\lambda$$</td><td>$v$ = wave speed (m/s), $f$ = frequency (Hz), $\lambda$ = wavelength (m)</td></tr>
+                        <tr><td><strong>Frequency-Period Relationship</strong></td><td>$$f = \frac{1}{T}$$</td><td>$f$ = frequency (Hz), $T$ = period (s)</td></tr>
+                        <tr><td><strong>Distance from Echo Time</strong></td><td>$$d = vt$$</td><td>$d$ = distance (m), $v$ = wave speed (m/s), $t$ = time (s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>5.4 Wave Properties and Behavior</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Reflection</div><div class="vocab-def">The bouncing back of a wave when it strikes a boundary or obstacle.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Incident Wave</div><div class="vocab-def">The wave traveling toward a surface or boundary.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reflected Wave</div><div class="vocab-def">The wave bouncing back from a surface or boundary.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Normal Line</div><div class="vocab-def">A line perpendicular to a surface, used as a reference for measuring angles of incidence and reflection.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Angle of Incidence</div><div class="vocab-def">The angle between the incident wave and the normal line to a surface.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Angle of Reflection</div><div class="vocab-def">The angle between the reflected wave and the normal line to a surface.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Law of Reflection</div><div class="vocab-def">The principle that the angle of incidence equals the angle of reflection, both measured from the normal line to a surface.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Specular Reflection</div><div class="vocab-def">Reflection from a smooth surface where all reflected rays are parallel to each other.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Diffuse Reflection</div><div class="vocab-def">Reflection from a rough surface where reflected rays scatter in many different directions.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Refraction</div><div class="vocab-def">The bending of a wave as it passes from one medium to another due to a change in wave speed.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Index of Refraction (n)</div><div class="vocab-def">A dimensionless number that describes how much a medium slows down light or other waves compared to vacuum; higher values mean slower wave speed.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Snell's Law</div><div class="vocab-def">The mathematical relationship between angles and indices of refraction when a wave enters a different medium: $n_1 \sin\theta_1 = n_2 \sin\theta_2$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Diffraction</div><div class="vocab-def">The spreading of a wave around obstacles and through openings; more pronounced when wavelength is large compared to the obstacle size.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Diffraction Pattern</div><div class="vocab-def">The pattern of wave intensity created when a wave spreads around an obstacle or through an opening.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Interference</div><div class="vocab-def">The combination of two or more waves that interact and produce a new wave pattern; can result in reinforcement (constructive) or cancellation (destructive).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Superposition</div><div class="vocab-def">The principle that when two waves overlap, the resultant displacement at any point is the sum of the displacements from each wave.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Constructive Interference</div><div class="vocab-def">Occurs when waves arrive with crests aligned with crests (in phase); amplitudes add, producing a larger combined amplitude.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Destructive Interference</div><div class="vocab-def">Occurs when waves arrive with crests aligned with troughs (out of phase by 180 degrees); amplitudes subtract, potentially resulting in zero amplitude.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Phase</div><div class="vocab-def">The position of a wave relative to a reference point; determines whether waves arriving at the same point interfere constructively or destructively.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Standing Wave</div><div class="vocab-def">A wave pattern that appears to stand still rather than propagate, formed when incident and reflected waves interfere at specific frequencies.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Node</div><div class="vocab-def">A point of zero amplitude in a standing wave where destructive interference always occurs; particles at nodes do not move.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Antinode</div><div class="vocab-def">A point of maximum amplitude in a standing wave where constructive interference occurs; particles at antinodes oscillate with maximum displacement.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Law of Reflection</strong></td><td>$$\theta_i = \theta_r$$</td><td>$\theta_i$ = angle of incidence (degrees), $\theta_r$ = angle of reflection (degrees)</td></tr>
+                        <tr><td><strong>Snell's Law</strong></td><td>$$n_1 \sin\theta_1 = n_2 \sin\theta_2$$</td><td>$n$ = index of refraction (unitless), $\theta$ = angle from normal (degrees)</td></tr>
+                        <tr><td><strong>Constructive Interference</strong></td><td>Path difference = $n\lambda$</td><td>$n$ = 0, 1, 2, 3... (integer), $\lambda$ = wavelength (m)</td></tr>
+                        <tr><td><strong>Destructive Interference</strong></td><td>Path difference = $(n + \frac{1}{2})\lambda$</td><td>$n$ = 0, 1, 2, 3... (integer), $\lambda$ = wavelength (m)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>5.5 Sound Waves</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Sound</div><div class="vocab-def">A longitudinal mechanical wave consisting of pressure variations that travel through a medium.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Pitch</div><div class="vocab-def">The perceived highness or lowness of a sound; directly related to frequency (high frequency = high pitch).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Loudness</div><div class="vocab-def">The perceived intensity of sound; related to amplitude and the amount of energy the wave carries.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Timbre</div><div class="vocab-def">The quality or color of a sound that distinguishes different sources; related to the combination of frequencies (harmonics) present.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Audible Range</div><div class="vocab-def">The range of sound frequencies detectable by humans, approximately 20 Hz to 20,000 Hz (20 kHz); varies with age.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Doppler Effect</div><div class="vocab-def">The change in observed frequency of a wave when the source and observer are moving relative to each other; frequency increases when approaching and decreases when receding.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Harmonic</div><div class="vocab-def">A frequency component of a complex sound that is a whole-number multiple of the fundamental frequency; contributes to the timbre of an instrument.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Fundamental Frequency</div><div class="vocab-def">The lowest frequency at which an object vibrates naturally; determines the basic pitch of the sound produced by an instrument.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Intensity</div><div class="vocab-def">The power per unit area carried by a wave, measured in watts per square meter (W/m²); related to how loud a sound is perceived.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Decibel (dB)</div><div class="vocab-def">A logarithmic unit used to measure sound intensity and loudness; based on a reference level (threshold of hearing at 0 dB).</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Wave Equation</strong></td><td>$$v = f\lambda$$</td><td>$v$ = wave speed (m/s), $f$ = frequency (Hz), $\lambda$ = wavelength (m)</td></tr>
+                        <tr><td><strong>Speed of Sound in Air</strong></td><td>$$v = 331 + 0.6T$$</td><td>$v$ = speed (m/s), $T$ = temperature ($^\circ$C)</td></tr>
+                        <tr><td><strong>Doppler Effect (Moving Source)</strong></td><td>$$f_{obs} = f_{source} \left(\frac{v_{sound}}{v_{sound} \mp v_{source}}\right)$$</td><td>$f$ = frequency (Hz), $v$ = speed (m/s); use $-$ for approaching, $+$ for receding</td></tr>
+                        <tr><td><strong>Fundamental Frequency (String)</strong></td><td>$$f_1 = \frac{v}{2L}$$</td><td>$f_1$ = fundamental frequency (Hz), $v$ = wave speed on string (m/s), $L$ = string length (m)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>Physics Vocabulary and Formulas Reference</p>
+            <p>Module 5 Complete - Ready for Modules 6-8</p>
+        </footer>
+    </div>
+</body>
+</html>
