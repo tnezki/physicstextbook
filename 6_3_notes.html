@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Section 6.3 – Total Internal Reflection and the Critical Angle</title>
+
+<!-- MATHJAX (REQUIRED FOR ALL SECTIONS) -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    processEscapes: true
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+body {
+    margin: 0.25in;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 6px 0 6px 0;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0 4px 0;
+}
+
+p {
+    margin: 3px 0 5px 0;
+}
+
+.objectives {
+    margin: 4px 0 6px 18px;
+}
+
+.objectives li {
+    margin-bottom: 3px;
+}
+
+.workspace-large {
+    width: 100%;
+    margin: 6px 0 10px 0;
+}
+
+.workspace-large svg {
+    width: 100%;
+    height: 500px;
+    display: block;
+}
+</style>
+</head>
+
+<body>
+
+<h1>SECTION 6.3 – Total Internal Reflection and the Critical Angle</h1>
+
+<h2>Explore Notes</h2>
+
+<div class="workspace-large">
+<svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="smallGrid63" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#smallGrid63)" />
+</svg>
+</div>
+
+<hr>
+
+<h2>Opening</h2>
+<p>
+When light travels from a material with higher refractive index into a material with lower refractive index,
+it bends away from the normal. If the angle becomes large enough, the light will not leave the material at all.
+</p>
+
+<hr>
+
+<h2>Objectives</h2>
+<ul class="objectives">
+<li>I can describe the conditions required for total internal reflection.</li>
+<li>I can define the critical angle.</li>
+<li>I can calculate the critical angle using Snell's Law.</li>
+<li>I can determine whether total internal reflection will occur.</li>
+</ul>
+
+<hr>
+
+<h2>Introduction</h2>
+
+<p>
+Snell's Law is:
+\( n_1 \sin \theta_1 = n_2 \sin \theta_2 \).
+</p>
+
+<p>
+At the critical angle, the refracted angle equals 90.
+Substituting into Snell's Law gives:
+\( \sin \theta_c = \frac{n_2}{n_1} \).
+</p>
+
+<p>
+If the angle of incidence is greater than the critical angle,
+light reflects completely inside the material.
+This is called total internal reflection.
+</p>
+
+<hr>
+
+<h2>Vocabulary</h2>
+
+<p><strong>Critical Angle:</strong> The angle of incidence that produces a refracted angle of 90.</p>
+
+<p><strong>Total Internal Reflection:</strong> The complete reflection of light inside a material when the angle of incidence exceeds the critical angle.</p>
+<hr>
+
+<h2>Core Strategies</h2>
+
+<p><strong>1. Check the Direction of Travel</strong></p>
+<p>
+Total internal reflection only occurs when light travels from a higher refractive index
+to a lower refractive index.
+</p>
+
+<p><strong>2. Identify the Critical Angle Condition</strong></p>
+<p>
+The critical angle occurs when the refracted angle equals 90.
+This means the refracted ray travels along the boundary.
+</p>
+
+<p><strong>3. Compare the Incident Angle to the Critical Angle</strong></p>
+<p>
+If the angle of incidence is less than the critical angle, refraction occurs.
+If it equals the critical angle, the refracted ray travels along the boundary.
+If it is greater than the critical angle, total internal reflection occurs.
+</p>
+
+<p><strong>4. Use Snell's Law Carefully</strong></p>
+<p>
+Begin with
+\( n_1 \sin \theta_1 = n_2 \sin \theta_2 \),
+then substitute 90 for the refracted angle when solving for the critical angle.
+</p>
+
+<hr>
+
+<h2>Formulas</h2>
+
+<p><strong>Snell's Law:</strong></p>
+<p>\( n_1 \sin \theta_1 = n_2 \sin \theta_2 \)</p>
+
+<p><strong>Critical Angle Equation:</strong></p>
+<p>\( \sin \theta_c = \frac{n_2}{n_1} \)</p>
+
+<hr>
+
+<h2>Example 1</h2>
+<p>
+Light travels from glass (\( n_1 = 1.50 \)) into air (\( n_2 = 1.00 \)).
+Determine the critical angle.
+</p>
+
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63Ex1" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63Ex1)" />
+</svg>
+</div>
+
+<hr>
+
+<h2>Example 2</h2>
+<p>
+Light travels from water (\( n_1 = 1.33 \)) into air (\( n_2 = 1.00 \)).
+The angle of incidence is 60.
+Determine whether total internal reflection occurs.
+</p>
+
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63Ex2" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63Ex2)" />
+</svg>
+</div>
+
+<hr>
+
+<h2>Example 3</h2>
+<p>
+A light ray travels from a material with refractive index 1.80 into air.
+Determine the smallest angle of incidence that will produce total internal reflection.
+</p>
+
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63Ex3" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63Ex3)" />
+</svg>
+</div>
+
+<hr>
+
+<h2>Example 4</h2>
+<p>
+A beam of light travels from glass into air at an angle of 50.
+If the critical angle for this interface is 42,
+describe what happens to the ray.
+</p>
+
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63Ex4" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63Ex4)" />
+</svg>
+</div>
+<hr>
+
+<h2>Summary of Key Concepts</h2>
+
+<ul class="objectives">
+<li>Total internal reflection occurs when light travels from a higher refractive index to a lower refractive index.</li>
+<li>The critical angle is the angle of incidence that produces a refracted angle of 90.</li>
+<li>The critical angle equation is \( \sin \theta_c = \frac{n_2}{n_1} \).</li>
+<li>If the angle of incidence is greater than the critical angle, no refraction occurs.</li>
+<li>Snell's Law must be used to calculate the critical angle.</li>
+<li>All angles are measured from the normal.</li>
+</ul>
+
+<hr>
+
+<h2>Common Mistakes</h2>
+
+<ul class="objectives">
+<li>Attempting to calculate a critical angle when light travels from lower index to higher index.</li>
+<li>Switching \( n_1 \) and \( n_2 \) in the critical angle equation.</li>
+<li>Forgetting that total internal reflection only occurs when \( n_1 > n_2 \).</li>
+<li>Using degrees and radians inconsistently on a calculator.</li>
+<li>Measuring angles from the surface instead of the normal.</li>
+<li>Assuming light always refracts instead of checking for total internal reflection.</li>
+</ul>
+<hr>
+
+<h2>Practice</h2>
+
+<hr>
+
+<h2>Vocabulary Review</h2>
+
+<p><strong>1.</strong> Define the critical angle.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P1" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P1)" />
+</svg>
+</div>
+
+<p><strong>2.</strong> Define total internal reflection.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P2" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P2)" />
+</svg>
+</div>
+
+<p><strong>3.</strong> Under what condition can total internal reflection occur?</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P3" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P3)" />
+</svg>
+</div>
+
+<p><strong>4.</strong> State the equation used to calculate the critical angle.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P4" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P4)" />
+</svg>
+</div>
+
+<p><strong>5.</strong> What happens when the angle of incidence equals the critical angle?</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P5" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P5)" />
+</svg>
+</div>
+
+<p><strong>6.</strong> Why does total internal reflection not occur when light travels from air into glass?</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P6" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P6)" />
+</svg>
+</div>
+
+<hr>
+
+<h2>Conceptual Understanding</h2>
+
+<p><strong>7.</strong> Explain why total internal reflection only occurs when light travels from a higher refractive index to a lower refractive index.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P7" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P7)" />
+</svg>
+</div>
+
+<p><strong>8.</strong> If the critical angle for a material is 40, what happens when the angle of incidence is 30? Explain.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P8" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P8)" />
+</svg>
+</div>
+
+<p><strong>9.</strong> What happens when the angle of incidence is exactly equal to the critical angle?</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P9" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P9)" />
+</svg>
+</div>
+
+<p><strong>10.</strong> Why does increasing refractive index difference affect the size of the critical angle?</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P10" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P10)" />
+</svg>
+</div>
+
+<p><strong>11.</strong> Why do diamonds sparkle strongly compared to glass?</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P11" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P11)" />
+</svg>
+</div>
+
+<p><strong>12.</strong> Describe how fiber optic cables use total internal reflection.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P12" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P12)" />
+</svg>
+</div>
+<hr>
+
+<h2>Single-Step Calculations</h2>
+
+<p><strong>13.</strong> Light travels from glass (\( n_1 = 1.50 \)) into air (\( n_2 = 1.00 \)).  
+Determine the critical angle.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P13" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P13)" />
+</svg>
+</div>
+
+<p><strong>14.</strong> A material has a refractive index of 1.70.  
+Light exits into air.  
+Determine the critical angle.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P14" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P14)" />
+</svg>
+</div>
+
+<p><strong>15.</strong> The critical angle for a certain material in air is 42.  
+Determine the refractive index of the material.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P15" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P15)" />
+</svg>
+</div>
+
+<p><strong>16.</strong> Light travels from water (\( n_1 = 1.33 \)) into air.  
+If the angle of incidence is 48, determine whether total internal reflection occurs.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P16" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P16)" />
+</svg>
+</div>
+
+<p><strong>17.</strong> A material has a refractive index of 2.00.  
+Light exits into a medium with refractive index 1.20.  
+Determine the critical angle.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P17" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P17)" />
+</svg>
+</div>
+
+<hr>
+
+<h2>Multi-Step Problems</h2>
+
+<p><strong>18.</strong> Light travels from glass (\( n_1 = 1.50 \)) into air.  
+a) Calculate the critical angle.  
+b) If the angle of incidence is 50, determine what happens to the ray.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P18" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P18)" />
+</svg>
+</div>
+
+<p><strong>19.</strong> A beam of light travels from a material with refractive index 1.80 into water (\( n_2 = 1.33 \)).  
+a) Calculate the critical angle.  
+b) If the angle of incidence is 40, determine whether total internal reflection occurs.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P19" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P19)" />
+</svg>
+</div>
+
+<p><strong>20.</strong> A fiber optic cable has a core with refractive index 1.60 and cladding with refractive index 1.40.  
+a) Calculate the critical angle at the core boundary.  
+b) Explain how this allows light to remain trapped inside the fiber.</p>
+<div class="workspace-regular">
+<svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid63P20" width="22" height="22" patternUnits="userSpaceOnUse">
+      <path d="M 22 0 L 0 0 0 22"
+            fill="none"
+            stroke="#6f6f6f"
+            stroke-width="2.5"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid63P20)" />
+</svg>
+</div>
+<hr>
+
+<h2>Solutions</h2>
+
+<hr>
+
+<h2>1–6 Vocabulary</h2>
+
+<p><strong>1.</strong> The critical angle is the angle of incidence that produces a refracted angle of 90.</p>
+
+<p><strong>2.</strong> Total internal reflection is the complete reflection of light inside a material when the angle of incidence exceeds the critical angle.</p>
+
+<p><strong>3.</strong> Total internal reflection occurs only when light travels from a higher refractive index to a lower refractive index and the angle of incidence exceeds the critical angle.</p>
+
+<p><strong>4.</strong> The equation for the critical angle is \( \sin \theta_c = \frac{n_2}{n_1} \).</p>
+
+<p><strong>5.</strong> When the angle equals the critical angle, the refracted ray travels along the boundary.</p>
+
+<p><strong>6.</strong> Total internal reflection does not occur from air into glass because light is entering a material with higher refractive index.</p>
+
+<hr>
+
+<h2>7–12 Conceptual</h2>
+
+<p><strong>7.</strong> Total internal reflection only occurs when light travels from a higher refractive index to a lower refractive index because only then can the refracted angle reach 90.</p>
+
+<p><strong>8.</strong> If the angle of incidence is less than the critical angle, refraction occurs and the ray exits the material.</p>
+
+<p><strong>9.</strong> If the angle equals the critical angle, the refracted ray travels along the boundary at 90.</p>
+
+<p><strong>10.</strong> A larger difference in refractive indices changes the value of the critical angle. A higher refractive index in the first material produces a smaller critical angle.</p>
+
+<p><strong>11.</strong> Diamonds have a very high refractive index, producing a small critical angle. Light undergoes many internal reflections, creating strong sparkle.</p>
+
+<p><strong>12.</strong> Fiber optic cables trap light inside the core because the angle of incidence remains greater than the critical angle at the boundary.</p>
+
+<hr>
+
+<h2>13–17 Single-Step Calculations</h2>
+
+<p><strong>13.</strong>  
+\( \sin \theta_c = \frac{1.00}{1.50} = 0.667 \)  
+\( \theta_c = 41.8 \)</p>
+
+<p><strong>14.</strong>  
+\( \sin \theta_c = \frac{1.00}{1.70} = 0.588 \)  
+\( \theta_c = 36.0 \)</p>
+
+<p><strong>15.</strong>  
+\( \sin 42 = \frac{1.00}{n_1} \)  
+\( 0.669 = \frac{1.00}{n_1} \)  
+\( n_1 = 1.49 \)</p>
+
+<p><strong>16.</strong>  
+\( \sin \theta_c = \frac{1.00}{1.33} = 0.752 \)  
+\( \theta_c = 48.8 \)  
+Since 48 is slightly less than 48.8, total internal reflection does not occur.</p>
+
+<p><strong>17.</strong>  
+\( \sin \theta_c = \frac{1.20}{2.00} = 0.600 \)  
+\( \theta_c = 36.9 \)</p>
+
+<hr>
+
+<h2>18–20 Multi-Step Problems</h2>
+
+<p><strong>18.</strong>  
+a) \( \sin \theta_c = \frac{1.00}{1.50} = 0.667 \)  
+\( \theta_c = 41.8 \)  
+
+b) Since 50 is greater than 41.8, total internal reflection occurs.</p>
+
+<p><strong>19.</strong>  
+a) \( \sin \theta_c = \frac{1.33}{1.80} = 0.739 \)  
+\( \theta_c = 47.6 \)  
+
+b) Since 40 is less than 47.6, total internal reflection does not occur.</p>
+
+<p><strong>20.</strong>  
+a) \( \sin \theta_c = \frac{1.40}{1.60} = 0.875 \)  
+\( \theta_c = 61.0 \)  
+
+b) Light remains trapped because rays inside the core strike the boundary at angles greater than 61, producing total internal reflection.</p>
+
+</body>
+</html>
