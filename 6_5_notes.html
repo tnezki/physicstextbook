@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta charset="UTF-8">
 <title>Section 6.5 – Lenses: Double Convex and Double Concave</title>
 
@@ -15,677 +17,418 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
-body { margin: 0.25in; font-family: Arial, sans-serif; font-size: 12px; line-height: 1.35; }
-h1 { font-size: 16px; margin: 6px 0; }
-h2 { font-size: 14px; margin: 10px 0 4px 0; }
-p { margin: 3px 0 5px 0; }
-ul { margin-left: 18px; }
-.workspace svg { width: 100%; height: 500px; display: block; }
+
+body {
+    margin: 0.25in;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 6px 0;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0 2px 0;
+}
+
+p {
+    margin: 3px 0 5px 0;
+}
+
+ul {
+    margin-left: 18px;
+}
+
+.section-block {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 12px;
+}
+
+.workspace-large,
+.workspace-regular,
+.workspace-300,
+.workspace-200 {
+    width: 100%;
+    margin: 6px 0 10px 0;
+    border: 1px solid #e3e3e3;
+    background-color: #ffffff;
+}
+
+.workspace-large { height: 500px; }
+.workspace-regular { height: 400px; }
+.workspace-300 { height: 300px; }
+.workspace-200 { height: 200px; }
+
 </style>
+
 </head>
 
 <body>
 
 <h1>SECTION 6.5 – Lenses: Double Convex and Double Concave</h1>
 
-<h2>Explore Notes</h2>
+<!-- ================= EXPLORE ================= -->
 
-<div class="workspace">
-<svg viewBox="0 0 1000 500">
-  <defs>
-    <pattern id="grid65" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65)" />
-</svg>
+<div class="section-block">
+  <h2>Explore Notes</h2>
+  <hr>
+  <div class="workspace-large"></div>
 </div>
 
-<hr>
+<!-- ================= OPENING ================= -->
 
-<h2>Opening</h2>
-<p>
-Lenses bend light through refraction instead of reflection.
-Like mirrors, different lens shapes produce different types of images.
-Understanding lens behavior allows us to predict image location and size.
-</p>
-
-<hr>
-
-<h2>Objectives</h2>
-<ul>
-<li>I can identify the properties of converging and diverging lenses</li>
-<li>I can use the lens equation to calculate image location and size</li>
-<li>I can determine whether a lens produces a real or virtual image</li>
-<li>I can apply magnification to determine image height</li>
-</ul>
-
-<hr>
-
-<h2>Introduction</h2>
-<p>
-A double convex lens is thicker in the middle and thinner at the edges.
-It converges parallel light rays to a focal point.
-A double concave lens is thinner in the middle and thicker at the edges.
-It diverges parallel light rays.
-</p>
-
-<hr>
-
-<h2>Real-World</h2>
-<p>
-Converging lenses are used in cameras, microscopes, and the human eye.
-Diverging lenses are used in eyeglasses for nearsightedness.
-</p>
-
-<hr>
-
-<h2>Historical</h2>
-<p>
-The study of lenses advanced during the development of telescopes and microscopes in the 1600s.
-Understanding refraction allowed scientists to design optical instruments that expanded human observation.
-</p>
-
-<hr>
-
-<h2>Vocabulary</h2>
-
-<p><strong>Double Convex Lenses:</strong> Lenses that are thicker in the middle and thinner at the edges; also called converging lenses because they bend light rays toward each other.</p>
-
-<p><strong>Converging Lenses:</strong> Lenses that bend light rays toward each other, causing them to converge at a focal point; have positive focal length.</p>
-
-<p><strong>Double Concave Lenses:</strong> Lenses that are thinner in the middle and thicker at the edges; also called diverging lenses because they bend light rays away from each other.</p>
-
-<p><strong>Diverging Lenses:</strong> Lenses that bend light rays away from each other, causing them to diverge; have negative focal length and always produce virtual images.</p>
-
-<hr>
-
-<h2>Formula</h2>
-
-<p><strong>Lens Equation:</strong></p>
-$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$
-
-<p><strong>Magnification (Lenses):</strong></p>
-$$M = \frac{d_i}{d_o} = \frac{h_i}{h_o}$$
-
-<hr>
-
-<h2>Core Strategies</h2>
-
-<p><strong>1. Identify the Lens Type</strong></p>
-<p>
-Converging lenses have positive focal length.
-Diverging lenses have negative focal length.
-</p>
-
-<p><strong>2. Apply the Lens Equation Carefully</strong></p>
-<p>
-Use the lens equation to determine image distance:
-$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$
-</p>
-
-<p><strong>3. Use Magnification to Determine Image Size and Orientation</strong></p>
-<p>
-Magnification is:
-$$M = \frac{d_i}{d_o} = \frac{h_i}{h_o}$$
-A negative magnification indicates an inverted image.
-</p>
-
-<p><strong>4. Check Sign Conventions</strong></p>
-<p>
-Positive $d_i$ indicates a real image.
-Negative $d_i$ indicates a virtual image.
-</p>
-
-<hr>
-
-<h2>Example 1</h2>
-<p>
-An object is placed 30 cm in front of a converging lens with focal length 10 cm.
-Determine the image distance.
-</p>
-
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65Ex1" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65Ex1)" />
-</svg>
+<div class="section-block">
+  <h2>Opening</h2>
+  <hr>
+  <p>
+  Lenses bend light through refraction instead of reflection.
+  Like mirrors, different lens shapes produce different types of images.
+  Understanding lens behavior allows us to predict image location and size.
+  </p>
 </div>
 
-<hr>
+<!-- ================= OBJECTIVES ================= -->
 
-<h2>Example 2</h2>
-<p>
-An object 5 cm tall is placed 15 cm from a converging lens with focal length 8 cm.
-Determine the magnification.
-</p>
-
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65Ex2" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65Ex2)" />
-</svg>
+<div class="section-block">
+  <h2>Objectives</h2>
+  <hr>
+  <ul>
+  <li>I can identify the properties of converging and diverging lenses</li>
+  <li>I can use the lens equation to calculate image location and size</li>
+  <li>I can determine whether a lens produces a real or virtual image</li>
+  <li>I can apply magnification to determine image height</li>
+  </ul>
 </div>
 
-<hr>
+<!-- ================= INTRODUCTION ================= -->
 
-<h2>Example 3</h2>
-<p>
-An object is placed 12 cm in front of a diverging lens with focal length -6 cm.
-Determine the image distance.
-</p>
-
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65Ex3" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65Ex3)" />
-</svg>
+<div class="section-block">
+  <h2>Introduction</h2>
+  <hr>
+  <p>
+  A double convex lens is thicker in the middle and thinner at the edges.
+  It converges parallel light rays to a focal point.
+  A double concave lens is thinner in the middle and thicker at the edges.
+  It diverges parallel light rays.
+  </p>
 </div>
 
-<hr>
+<!-- ================= REAL WORLD ================= -->
 
-<h2>Example 4</h2>
-<p>
-A converging lens has focal length 20 cm.
-An object is placed at 25 cm.
-Determine whether the image is real or virtual and predict orientation.
-</p>
-
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65Ex4" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65Ex4)" />
-</svg>
-</div>
-<hr>
-
-<h2>Summary of Key Concepts</h2>
-
-<ul>
-<li>Converging lenses have positive focal length and can produce real or virtual images.</li>
-<li>Diverging lenses have negative focal length and always produce virtual images.</li>
-<li>The lens equation relates focal length, object distance, and image distance.</li>
-<li>Magnification determines image size and orientation.</li>
-<li>Real images have positive image distance and can be projected.</li>
-<li>Virtual images have negative image distance and cannot be projected.</li>
-</ul>
-
-<hr>
-
-<h2>Common Mistakes</h2>
-
-<ul>
-<li>Forgetting that diverging lenses have negative focal length.</li>
-<li>Using incorrect sign conventions for image distance.</li>
-<li>Confusing mirror and lens magnification formulas.</li>
-<li>Failing to check whether the image is real or virtual after solving.</li>
-<li>Incorrectly interpreting magnification sign.</li>
-<li>Using inconsistent units for distances.</li>
-</ul>
-<hr>
-
-<h2>Practice</h2>
-
-<hr>
-
-<h2>Vocabulary Review</h2>
-
-<p><strong>1.</strong> Define converging lens.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P1" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P1)" />
-</svg>
+<div class="section-block">
+  <h2>Real-World</h2>
+  <hr>
+  <p>
+  Converging lenses are used in cameras, microscopes, and the human eye.
+  Diverging lenses are used in eyeglasses for nearsightedness.
+  </p>
 </div>
 
-<p><strong>2.</strong> Define diverging lens.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P2" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P2)" />
-</svg>
+<!-- ================= HISTORICAL ================= -->
+
+<div class="section-block">
+  <h2>Historical</h2>
+  <hr>
+  <p>
+  The study of lenses advanced during the development of telescopes and microscopes in the 1600s.
+  Understanding refraction allowed scientists to design optical instruments that expanded human observation.
+  </p>
 </div>
 
-<p><strong>3.</strong> What does positive focal length indicate?</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P3" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P3)" />
-</svg>
+<!-- ================= VOCAB ================= -->
+
+<div class="section-block">
+  <h2>Vocabulary</h2>
+  <hr>
+
+  <p><strong>Double Convex Lenses:</strong> Lenses that are thicker in the middle and thinner at the edges; also called converging lenses because they bend light rays toward each other.</p>
+
+  <p><strong>Converging Lenses:</strong> Lenses that bend light rays toward each other, causing them to converge at a focal point; have positive focal length.</p>
+
+  <p><strong>Double Concave Lenses:</strong> Lenses that are thinner in the middle and thicker at the edges; also called diverging lenses because they bend light rays away from each other.</p>
+
+  <p><strong>Diverging Lenses:</strong> Lenses that bend light rays away from each other, causing them to diverge; have negative focal length and always produce virtual images.</p>
 </div>
 
-<p><strong>4.</strong> What does negative focal length indicate?</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P4" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P4)" />
-</svg>
+<!-- ================= FORMULA ================= -->
+
+<div class="section-block">
+  <h2>Formula</h2>
+  <hr>
+
+  <p><strong>Lens Equation:</strong></p>
+  $$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$
+
+  <p><strong>Magnification (Lenses):</strong></p>
+  $$M = \frac{d_i}{d_o} = \frac{h_i}{h_o}$$
 </div>
+<!-- ================= CORE STRATEGIES ================= -->
 
-<p><strong>5.</strong> State the lens equation.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P5" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P5)" />
-</svg>
-</div>
+<div class="section-block">
+    <h2>Core Strategies</h2>
+    <hr>
+  
+    <p><strong>1. Identify the Lens Type</strong></p>
+    <p>
+    Converging lenses have positive focal length.
+    Diverging lenses have negative focal length.
+    </p>
+  
+    <p><strong>2. Apply the Lens Equation Carefully</strong></p>
+    <p>
+    Use the lens equation to determine image distance:
+    $$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$
+    </p>
+  
+    <p><strong>3. Use Magnification to Determine Image Size and Orientation</strong></p>
+    <p>
+    Magnification is:
+    $$M = \frac{d_i}{d_o} = \frac{h_i}{h_o}$$
+    A negative magnification indicates an inverted image.
+    </p>
+  </div>
+  
+  <!-- ================= KEY IDEAS 1 ================= -->
+  
+  <div class="section-block">
+    <h2>Key Ideas 1</h2>
+    <hr>
+    <div class="workspace-large"></div>
+  </div>
+  
+  <!-- ================= KEY IDEAS 2 ================= -->
+  
+  <div class="section-block">
+    <h2>Key Ideas 2</h2>
+    <hr>
+    <div class="workspace-large"></div>
+  </div>
+  
+  <!-- ================= EXAMPLES ================= -->
+  
+  <div class="section-block">
+    <h2>Example 1</h2>
+    <hr>
+    <p>
+    An object is placed 30 cm in front of a converging lens with focal length 10 cm.
+    Determine the image distance.
+    </p>
+    <div class="workspace-regular"></div>
+  </div>
+  
+  <div class="section-block">
+    <h2>Example 2</h2>
+    <hr>
+    <p>
+    An object 5 cm tall is placed 15 cm from a converging lens with focal length 8 cm.
+    Determine the magnification.
+    </p>
+    <div class="workspace-regular"></div>
+  </div>
+  
+  <div class="section-block">
+    <h2>Example 3</h2>
+    <hr>
+    <p>
+    An object is placed 12 cm in front of a diverging lens with focal length -6 cm.
+    Determine the image distance.
+    </p>
+    <div class="workspace-regular"></div>
+  </div>
+  
+  <div class="section-block">
+    <h2>Example 4</h2>
+    <hr>
+    <p>
+    A converging lens has focal length 20 cm.
+    An object is placed at 25 cm.
+    Determine whether the image is real or virtual and predict orientation.
+    </p>
+    <div class="workspace-regular"></div>
+  </div>
+<!-- ================= SUMMARY ================= -->
 
-<p><strong>6.</strong> What does magnification represent?</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P6" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P6)" />
-</svg>
-</div>
-
-<hr>
-
-<h2>Conceptual Understanding</h2>
-
-<p><strong>7.</strong> Why can a converging lens produce a real image?</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P7" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P7)" />
-</svg>
-</div>
-
-<p><strong>8.</strong> Why does a diverging lens always produce a virtual image?</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P8" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P8)" />
-</svg>
-</div>
-
-<p><strong>9.</strong> What determines whether a lens image is upright or inverted?</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P9" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P9)" />
-</svg>
-</div>
-
-<p><strong>10.</strong> Why can real images be projected onto a screen?</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P10" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P10)" />
-</svg>
-</div>
-
-<p><strong>11.</strong> How does increasing focal length affect image position?</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P11" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P11)" />
-</svg>
-</div>
-
-<p><strong>12.</strong> Why is magnification positive for upright images?</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P12" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P12)" />
-</svg>
-</div>
-<hr>
-
-<h2>Single-Step Calculations</h2>
-
-<p><strong>13.</strong> An object is placed 40 cm in front of a converging lens with focal length 10 cm.  
-Determine the image distance.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P13" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P13)" />
-</svg>
-</div>
-
-<p><strong>14.</strong> A diverging lens has focal length -15 cm.  
-An object is placed 30 cm from the lens.  
-Determine the image distance.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P14" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P14)" />
-</svg>
-</div>
-
-<p><strong>15.</strong> An object 4 cm tall is placed 20 cm from a converging lens with focal length 8 cm.  
-Determine the magnification.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P15" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P15)" />
-</svg>
-</div>
-
-<p><strong>16.</strong> An image forms 25 cm from a converging lens.  
-The object distance is 50 cm.  
-Determine the focal length.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P16" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P16)" />
-</svg>
-</div>
-
-<p><strong>17.</strong> A converging lens has focal length 12 cm.  
-An object is placed 18 cm from the lens.  
-Determine the image distance.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P17" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P17)" />
-</svg>
-</div>
-
-<hr>
-
-<h2>Multi-Step Problems</h2>
-
-<p><strong>18.</strong> A converging lens has focal length 15 cm.  
-An object is placed 10 cm from the lens.  
-a) Determine the image distance.  
-b) Determine whether the image is real or virtual.  
-c) Determine image orientation.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P18" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P18)" />
-</svg>
-</div>
-
-<p><strong>19.</strong> An object 6 cm tall is placed 30 cm from a converging lens with focal length 10 cm.  
-a) Determine image distance.  
-b) Determine magnification.  
-c) Determine image height.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P19" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P19)" />
-</svg>
-</div>
-
-<p><strong>20.</strong> A diverging lens has focal length -18 cm.  
-An object is placed 24 cm from the lens.  
-a) Determine image distance.  
-b) Determine magnification.  
-c) Describe the image.</p>
-<div class="workspace">
-<svg viewBox="0 0 1000 400">
-  <defs>
-    <pattern id="grid65P20" width="22" height="22" patternUnits="userSpaceOnUse">
-      <path d="M 22 0 L 0 0 0 22"
-            fill="none"
-            stroke="#6f6f6f"
-            stroke-width="2.5"/>
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#grid65P20)" />
-</svg>
-</div>
-<hr>
-
-<h2>Solutions</h2>
-
-<hr>
-
-<h2>1–6 Vocabulary</h2>
-
-<p><strong>1.</strong> A converging lens bends light rays toward each other and has positive focal length.</p>
-
-<p><strong>2.</strong> A diverging lens bends light rays away from each other and has negative focal length.</p>
-
-<p><strong>3.</strong> Positive focal length indicates a converging lens.</p>
-
-<p><strong>4.</strong> Negative focal length indicates a diverging lens.</p>
-
-<p><strong>5.</strong> The lens equation is $$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</p>
-
-<p><strong>6.</strong> Magnification represents the ratio of image height to object height and indicates image orientation.</p>
-
-<hr>
-
-<h2>7–12 Conceptual</h2>
-
-<p><strong>7.</strong> A converging lens can produce a real image because refracted rays can converge on the opposite side of the lens.</p>
-
-<p><strong>8.</strong> A diverging lens always produces a virtual image because refracted rays spread apart.</p>
-
-<p><strong>9.</strong> Image orientation is determined by the sign of magnification. Negative magnification means inverted.</p>
-
-<p><strong>10.</strong> Real images can be projected because light rays physically converge at the image location.</p>
-
-<p><strong>11.</strong> Increasing focal length generally increases image distance for a fixed object position.</p>
-
-<p><strong>12.</strong> Magnification is positive for upright images and negative for inverted images.</p>
-
-<hr>
-
-<h2>13–17 Single-Step Calculations</h2>
-
-<p><strong>13.</strong>  
-$$\frac{1}{10} = \frac{1}{40} + \frac{1}{d_i}$$  
-$$\frac{1}{d_i} = \frac{1}{10} - \frac{1}{40} = \frac{4-1}{40} = \frac{3}{40}$$  
-$$d_i = 13.3 \text{ cm}$$</p>
-
-<p><strong>14.</strong>  
-$$\frac{1}{-15} = \frac{1}{30} + \frac{1}{d_i}$$  
-$$\frac{1}{d_i} = -\frac{1}{15} - \frac{1}{30} = -\frac{2+1}{30} = -\frac{3}{30}$$  
-$$d_i = -10 \text{ cm}$$</p>
-
-<p><strong>15.</strong>  
-First find $d_i$:  
-$$\frac{1}{8} = \frac{1}{20} + \frac{1}{d_i}$$  
-$$\frac{1}{d_i} = \frac{1}{8} - \frac{1}{20} = \frac{5-2}{40} = \frac{3}{40}$$  
-$$d_i = 13.3 \text{ cm}$$  
-
-$$M = \frac{13.3}{20} = 0.67$$</p>
-
-<p><strong>16.</strong>  
-$$\frac{1}{f} = \frac{1}{50} + \frac{1}{25}$$  
-$$\frac{1}{f} = \frac{1+2}{50} = \frac{3}{50}$$  
-$$f = 16.7 \text{ cm}$$</p>
-
-<p><strong>17.</strong>  
-$$\frac{1}{12} = \frac{1}{18} + \frac{1}{d_i}$$  
-$$\frac{1}{d_i} = \frac{1}{12} - \frac{1}{18} = \frac{3-2}{36} = \frac{1}{36}$$  
-$$d_i = 36 \text{ cm}$$</p>
-
-<hr>
-
-<h2>18–20 Multi-Step Problems</h2>
-
-<p><strong>18.</strong>  
-$$\frac{1}{15} = \frac{1}{10} + \frac{1}{d_i}$$  
-$$\frac{1}{d_i} = \frac{1}{15} - \frac{1}{10} = \frac{2-3}{30} = -\frac{1}{30}$$  
-$$d_i = -30 \text{ cm}$$  
-
-Virtual image (negative $d_i$).  
-Magnification is positive, so upright.</p>
-
-<p><strong>19.</strong>  
-$$\frac{1}{10} = \frac{1}{30} + \frac{1}{d_i}$$  
-$$\frac{1}{d_i} = \frac{1}{10} - \frac{1}{30} = \frac{3-1}{30} = \frac{2}{30}$$  
-$$d_i = 15 \text{ cm}$$  
-
-$$M = \frac{15}{30} = 0.5$$  
-$$h_i = 0.5 \times 6 = 3 \text{ cm}$$</p>
-
-<p><strong>20.</strong>  
-$$\frac{1}{-18} = \frac{1}{24} + \frac{1}{d_i}$$  
-$$\frac{1}{d_i} = -\frac{1}{18} - \frac{1}{24} = -\frac{4+3}{72} = -\frac{7}{72}$$  
-$$d_i = -10.3 \text{ cm}$$  
-
-$$M = \frac{-10.3}{24} = -0.43$$  
-
-Virtual (negative $d_i$), upright (since diverging lens), reduced.</p>
-
-</body>
-</html>
+<div class="section-block">
+    <h2>Summary of Key Concepts</h2>
+    <hr>
+    <ul>
+      <li>Converging lenses have positive focal length and can produce real or virtual images.</li>
+      <li>Diverging lenses have negative focal length and always produce virtual images.</li>
+      <li>The lens equation relates focal length, object distance, and image distance.</li>
+      <li>Magnification determines image size and orientation.</li>
+      <li>Real images have positive image distance and can be projected.</li>
+      <li>Virtual images have negative image distance and cannot be projected.</li>
+    </ul>
+  </div>
+  
+  <!-- ================= COMMON MISTAKES ================= -->
+  
+  <div class="section-block">
+    <h2>Common Mistakes</h2>
+    <hr>
+    <ul>
+      <li>Forgetting that diverging lenses have negative focal length.</li>
+      <li>Using incorrect sign conventions for image distance.</li>
+      <li>Confusing mirror and lens magnification formulas.</li>
+      <li>Failing to check whether the image is real or virtual after solving.</li>
+      <li>Incorrectly interpreting magnification sign.</li>
+      <li>Using inconsistent units for distances.</li>
+    </ul>
+  </div>
+  
+  <!-- ================= PRACTICE VOCABULARY REVIEW ================= -->
+  
+  <div class="section-block">
+    <h2>Practice Vocabulary Review</h2>
+    <hr>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>1.</strong> Define converging lens.</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>2.</strong> Define diverging lens.</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>3.</strong> What does positive focal length indicate?</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>4.</strong> What does negative focal length indicate?</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>5.</strong> State the lens equation.</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>6.</strong> What does magnification represent?</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <!-- ================= CONCEPTUAL ================= -->
+  
+  <div class="section-block">
+    <h2>Conceptual Understanding</h2>
+    <hr>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>7.</strong> Why can a converging lens produce a real image?</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>8.</strong> Why does a diverging lens always produce a virtual image?</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>9.</strong> What determines whether a lens image is upright or inverted?</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>10.</strong> Why can real images be projected onto a screen?</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>11.</strong> How does increasing focal length affect image position?</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>12.</strong> Why is magnification positive for upright images?</p>
+    <div class="workspace-200"></div>
+  </div>
+  
+  <!-- ================= SINGLE-STEP ================= -->
+  
+  <div class="section-block">
+    <h2>Single-Step Calculations</h2>
+    <hr>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>13.</strong> An object is placed 40 cm in front of a converging lens with focal length 10 cm. Determine the image distance.</p>
+    <div class="workspace-300"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>14.</strong> A diverging lens has focal length -15 cm. An object is placed 30 cm from the lens. Determine the image distance.</p>
+    <div class="workspace-300"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>15.</strong> An object 4 cm tall is placed 20 cm from a converging lens with focal length 8 cm. Determine the magnification.</p>
+    <div class="workspace-300"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>16.</strong> An image forms 25 cm from a converging lens. The object distance is 50 cm. Determine the focal length.</p>
+    <div class="workspace-300"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>17.</strong> A converging lens has focal length 12 cm. An object is placed 18 cm from the lens. Determine the image distance.</p>
+    <div class="workspace-300"></div>
+  </div>
+  
+  <!-- ================= MULTI-STEP ================= -->
+  
+  <div class="section-block">
+    <h2>Multi-Step Problems</h2>
+    <hr>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>18.</strong> A converging lens has focal length 15 cm. An object is placed 10 cm from the lens. a) Determine image distance. b) Determine whether the image is real or virtual. c) Determine image orientation.</p>
+    <div class="workspace-300"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>19.</strong> An object 6 cm tall is placed 30 cm from a converging lens with focal length 10 cm. a) Determine image distance. b) Determine magnification. c) Determine image height.</p>
+    <div class="workspace-300"></div>
+  </div>
+  
+  <div class="section-block">
+    <p><strong>20.</strong> A diverging lens has focal length -18 cm. An object is placed 24 cm from the lens. a) Determine image distance. b) Determine magnification. c) Describe the image.</p>
+    <div class="workspace-300"></div>
+  </div>
+  
+  <!-- ================= SOLUTIONS ================= -->
+  
+  <div class="section-block">
+    <h2>Solutions</h2>
+    <hr>
+  </div>
+  
+  <div class="section-block">
+    <h2>1–6 Vocabulary</h2>
+    <hr>
+    <p><strong>1.</strong> A converging lens bends light rays toward each other and has positive focal length.</p>
+    <p><strong>2.</strong> A diverging lens bends light rays away from each other and has negative focal length.</p>
+    <p><strong>3.</strong> Positive focal length indicates a converging lens.</p>
+    <p><strong>4.</strong> Negative focal length indicates a diverging lens.</p>
+    <p><strong>5.</strong> $$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</p>
+    <p><strong>6.</strong> Magnification represents the ratio of image height to object height and indicates image orientation.</p>
+  </div>
+  
+  </body>
+  </html>
+    

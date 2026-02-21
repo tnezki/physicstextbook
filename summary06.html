@@ -1,741 +1,903 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Module 06 Summary – Geometric Optics</title>
 
+<head>
+
+<!-- ================= META ================= -->
+<meta charset="UTF-8">
+<title>Module 06 Summary</title>
+
+<!-- ================= MATHJAX ================= -->
 <script>
-window.MathJax = {
-  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-  svg: { fontCache: 'global' }
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
 };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
+
+/* ================= DOCUMENT SETTINGS ================= */
+
 body {
-  margin: 0.5in;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+    margin: 0.25in;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.35;
 }
 
-/* Workspace system */
-.workspace {
-  width: 100%;
+/* ================= HEADINGS ================= */
+
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 6px 0;
 }
 
-.workspace.regular {
-  height: 420px;
+h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0 2px 0;
 }
 
-.workspace.large {
-  height: 600px;
+p {
+    margin: 3px 0 5px 0;
 }
 
-.workspace.extra-large {
-  height: 850px;
+ul {
+    margin-left: 18px;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 10px;
+/* ================= SECTION BLOCK ================= */
+
+.section-block {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 18px;
 }
 
-th, td {
-  border: 1px solid black;
-  padding: 8px;
-  vertical-align: top;
+/* ================= PAGE BREAK CONTROL ================= */
+
+.page-break {
+    page-break-after: always;
 }
+
+/* ================= WORKSPACE OPTIONS ================= */
+
+/* ================= CUMULATIVE REVIEW WORKSPACE ================= */
+
+.workspace-200,
+.workspace-300 {
+    width: 100%;
+    margin: 8px 0 16px 0;
+    background-color: #ffffff;
+}
+
+.workspace-200 {
+    height: 200px;
+}
+
+.workspace-300 {
+    height: 300px;
+}
+
+
+
+
 </style>
-</head>
 
+</head>
 <body>
 
-<!-- Global Grid Definition -->
-<svg width="0" height="0" style="position:absolute">
-  <defs>
-    <pattern id="grid"
-             width="20"
-             height="20"
-             patternUnits="userSpaceOnUse">
-      <path d="M20 0 L0 0 0 20"
-            fill="none"
-            stroke="#555"
-            stroke-width="1.2"/>
-    </pattern>
-  </defs>
-</svg>
-
-<h1>MODULE 06 SUMMARY<br>Geometric Optics</h1>
-
-<hr>
-
-<h2>Big Picture</h2>
-
-<p>
-Module 06 develops the geometric model of light behavior. Students analyze how light reflects, refracts, undergoes total internal reflection, and forms images in mirrors and lenses.
-</p>
-
-<p>
-The module begins with predictable reflection behavior, expands to boundary bending through Snell’s Law, and culminates in image formation using mirrors and lenses. Mathematical reasoning, trigonometry, and proportional relationships are used to predict angles, image locations, and magnification.
-</p>
-
-<hr>
-
-<h2>Essential Standard</h2>
-
-<p>
-Students will apply the Law of Reflection, Snell’s Law, and image formation equations to analyze and predict the behavior of light in reflection, refraction, total internal reflection, mirrors, and lenses using mathematical reasoning and ray diagrams.
-</p>
-
-<hr>
-
-<h2>Top 10 Core Concepts</h2>
-
-<table>
-<tr>
-<th>Concept</th>
-<th>Description</th>
-</tr>
-
-<tr>
-<td>1. Law of Reflection</td>
-<td>\(\theta_i = \theta_r\)</td>
-</tr>
-
-<tr>
-<td>2. Angles Measured from the Normal</td>
-<td>All reflection and refraction angles are measured from the normal line.</td>
-</tr>
-
-<tr>
-<td>3. Refraction</td>
-<td>Light bends when it changes speed between materials.</td>
-</tr>
-
-<tr>
-<td>4. Refractive Index</td>
-<td>\(n = \frac{c}{v}\)</td>
-</tr>
-
-<tr>
-<td>5. Snell’s Law</td>
-<td>\(n_1 \sin \theta_1 = n_2 \sin \theta_2\)</td>
-</tr>
-
-<tr>
-<td>6. Critical Angle</td>
-<td>\(\sin \theta_c = \frac{n_2}{n_1}\)</td>
-</tr>
-
-<tr>
-<td>7. Total Internal Reflection</td>
-<td>Occurs when light travels from higher to lower refractive index and exceeds the critical angle.</td>
-</tr>
-
-<tr>
-<td>8. Mirror Equation</td>
-<td>\(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\)</td>
-</tr>
-
-<tr>
-<td>9. Lens Equation</td>
-<td>\(\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}\)</td>
-</tr>
-
-<tr>
-<td>10. Magnification</td>
-<td>Relates image size and orientation to object and image distance.</td>
-</tr>
-</table>
-
-<hr>
-
-<h2>Section 6.1 — Reflection and the Law of Reflection</h2>
-
-<h3>Key Concepts</h3>
-
-<ul>
-<li>Light travels in straight rays.</li>
-<li>Angles are always measured from the normal.</li>
-<li>The angle of incidence equals the angle of reflection.</li>
-<li>Reflection can be specular (smooth) or diffuse (rough).</li>
-<li>The incident and reflected rays are symmetric about the normal.</li>
-</ul>
-
-<h3>Vocabulary</h3>
-
-<ul>
-<li>Incident Ray</li>
-<li>Reflected Ray</li>
-<li>Normal</li>
-<li>Angle of Incidence</li>
-<li>Angle of Reflection</li>
-<li>Specular Reflection</li>
-<li>Diffuse Reflection</li>
-<li>Ray</li>
-</ul>
-
-<h3>Formula</h3>
-
-<p><strong>Law of Reflection:</strong></p>
-<p>\(\theta_i = \theta_r\)</p>
-
-<hr>
-
-<h3>Representative Questions</h3>
-
-<p><strong>1. Vocabulary</strong><br>
-Define the angle of incidence.</p>
-
-<p><strong>2. Vocabulary</strong><br>
-What is the normal in a reflection diagram?</p>
-
-<p><strong>3. Conceptual</strong><br>
-Why must angles be measured from the normal rather than from the surface?</p>
-
-<p><strong>4. Conceptual</strong><br>
-Explain the difference between specular and diffuse reflection.</p>
-
-<p><strong>5. Conceptual</strong><br>
-If the angle of incidence increases, what happens to the angle of reflection?</p>
-
-<p><strong>6. Single Formula</strong><br>
-A ray strikes a mirror at 37° from the normal. Determine the angle of reflection.</p>
-
-<p><strong>7. Single Formula</strong><br>
-A ray strikes a mirror at 52° from the normal. Determine the reflected angle.</p>
-
-<p><strong>8. Multi-Step</strong><br>
-A ray strikes a mirror at 42° from the normal.<br>
-a) Determine the reflected angle.<br>
-b) Determine the angle between the incident and reflected rays.<br>
-c) Sketch and label the ray diagram.</p>
-
-<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-<h2>Section 6.2 — Refraction and Snell’s Law</h2>
-
-<h3>Key Concepts</h3>
-
-<ul>
-<li>Refraction occurs when light passes from one material to another.</li>
-<li>Light changes speed when entering a new medium.</li>
-<li>The change in speed causes light to bend.</li>
-<li>Angles are measured from the normal.</li>
-<li>If light enters a higher refractive index, it bends toward the normal.</li>
-<li>If light enters a lower refractive index, it bends away from the normal.</li>
-</ul>
-
-<h3>Vocabulary</h3>
-
-<ul>
-<li>Refraction</li>
-<li>Refractive Index (n)</li>
-<li>Optical Density</li>
-<li>Angle of Refraction</li>
-<li>Snell’s Law</li>
-</ul>
-
-<h3>Formulas</h3>
-
-<p><strong>Refractive Index:</strong></p>
-<p>\( n = \frac{c}{v} \)</p>
-
-<p><strong>Snell’s Law:</strong></p>
-<p>\( n_1 \sin \theta_1 = n_2 \sin \theta_2 \)</p>
-
-<hr>
-
-<h3>Representative Questions</h3>
-
-<p><strong>1. Vocabulary</strong><br>
-Define refractive index.</p>
-
-<p><strong>2. Vocabulary</strong><br>
-What is the angle of refraction?</p>
-
-<p><strong>3. Conceptual</strong><br>
-Why does light bend when it passes from air into water?</p>
-
-<p><strong>4. Conceptual</strong><br>
-If light enters a material with a higher refractive index, does it bend toward or away from the normal? Explain.</p>
-
-<p><strong>5. Conceptual</strong><br>
-Why must angles in Snell’s Law be measured from the normal instead of the surface?</p>
-
-<p><strong>6. Single Formula</strong><br>
-Light travels in a material at \(2.0 \times 10^8\) m/s.  
-Calculate the refractive index of the material.  
-(Use \(c = 3.0 \times 10^8\) m/s.)</p>
-
-<p><strong>7. Single Formula</strong><br>
-Light travels from air (\(n_1 = 1.00\)) into water (\(n_2 = 1.33\)) at an incident angle of 40°.  
-Calculate the angle of refraction.</p>
-
-<p><strong>8. Multi-Step</strong><br>
-Light travels from glass (\(n_1 = 1.50\)) into water (\(n_2 = 1.33\)) at an incident angle of 50°.<br>
-a) Predict whether the ray bends toward or away from the normal.<br>
-b) Calculate the angle of refraction.<br>
-c) Sketch and label the ray diagram.</p>
-
-<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-<h2>Section 6.3 — Total Internal Reflection and the Critical Angle</h2>
-
-<h3>Key Concepts</h3>
-
-<ul>
-<li>Total internal reflection occurs only when light travels from a higher refractive index to a lower refractive index.</li>
-<li>The critical angle is the angle of incidence that produces a refracted angle of 90°.</li>
-<li>If the angle of incidence exceeds the critical angle, no refraction occurs.</li>
-<li>Snell’s Law is used to derive the critical angle relationship.</li>
-<li>Total internal reflection is used in fiber optics and optical systems.</li>
-</ul>
-
-<h3>Vocabulary</h3>
-
-<ul>
-<li>Critical Angle</li>
-<li>Total Internal Reflection</li>
-</ul>
-
-<h3>Formulas</h3>
-
-<p><strong>Snell’s Law:</strong></p>
-<p>\( n_1 \sin \theta_1 = n_2 \sin \theta_2 \)</p>
-
-<p><strong>Critical Angle Equation:</strong></p>
-<p>\( \sin \theta_c = \frac{n_2}{n_1} \)</p>
-
-<hr>
-
-<h3>Representative Questions</h3>
-
-<p><strong>1. Vocabulary</strong><br>
-Define the critical angle.</p>
-
-<p><strong>2. Vocabulary</strong><br>
-What is total internal reflection?</p>
-
-<p><strong>3. Conceptual</strong><br>
-Why can total internal reflection only occur when light travels from a higher refractive index to a lower refractive index?</p>
-
-<p><strong>4. Conceptual</strong><br>
-What happens to the refracted ray when the angle of incidence equals the critical angle?</p>
-
-<p><strong>5. Conceptual</strong><br>
-If the angle of incidence is greater than the critical angle, describe what happens to the light ray.</p>
-
-<p><strong>6. Single Formula</strong><br>
-Light travels from glass (\(n_1 = 1.50\)) into air (\(n_2 = 1.00\)).  
-Calculate the critical angle.</p>
-
-<p><strong>7. Single Formula</strong><br>
-Light travels from water (\(n_1 = 1.33\)) into air (\(n_2 = 1.00\)).  
-Determine the critical angle.</p>
-
-<p><strong>8. Multi-Step</strong><br>
-Light travels from a material with refractive index 1.60 into air.<br>
-a) Calculate the critical angle.<br>
-b) If the angle of incidence is 50°, determine whether total internal reflection occurs.<br>
-c) Justify your answer using comparison.</p>
-
-<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-<h2>Section 6.4 — Mirrors: Plane, Concave, and Convex</h2>
-
-<h3>Key Concepts</h3>
-
-<ul>
-<li>Plane mirrors produce virtual, upright images of the same size as the object.</li>
-<li>Concave mirrors converge light and can produce real or virtual images.</li>
-<li>Convex mirrors diverge light and always produce virtual images.</li>
-<li>The mirror equation relates focal length, object distance, and image distance.</li>
-<li>Magnification determines image size and orientation.</li>
-<li>Concave mirrors have positive focal length; convex mirrors have negative focal length.</li>
-</ul>
-
-<h3>Vocabulary</h3>
-
-<ul>
-<li>Plane Mirror</li>
-<li>Virtual Image</li>
-<li>Concave Mirror</li>
-<li>Convex Mirror</li>
-<li>Focal Point (F)</li>
-<li>Center of Curvature (C)</li>
-<li>Focal Length (f)</li>
-<li>Magnification</li>
-</ul>
-
-<h3>Formulas</h3>
-
-<p><strong>Mirror Equation:</strong></p>
-<p>\( \frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i} \)</p>
-
-<p><strong>Magnification:</strong></p>
-<p>\( M = -\frac{d_i}{d_o} = \frac{h_i}{h_o} \)</p>
-
-<p><strong>Focal Length and Radius:</strong></p>
-<p>\( f = \frac{R}{2} \)</p>
-
-<hr>
-
-<h3>Representative Questions</h3>
-
-<p><strong>1. Vocabulary</strong><br>
-What is a virtual image?</p>
-
-<p><strong>2. Vocabulary</strong><br>
-Define focal length.</p>
-
-<p><strong>3. Conceptual</strong><br>
-Why do convex mirrors always produce virtual images?</p>
-
-<p><strong>4. Conceptual</strong><br>
-How can you determine whether an image formed by a concave mirror is real or virtual?</p>
-
-<p><strong>5. Conceptual</strong><br>
-What does a negative magnification value indicate about an image?</p>
-
-<p><strong>6. Single Formula</strong><br>
-A concave mirror has a focal length of 15 cm.  
-An object is placed 45 cm in front of the mirror.  
-Calculate the image distance.</p>
-
-<p><strong>7. Single Formula</strong><br>
-An object is placed 20 cm in front of a convex mirror with focal length -10 cm.  
-Calculate the image distance.</p>
-
-<p><strong>8. Multi-Step</strong><br>
-An object 4 cm tall is placed 30 cm in front of a concave mirror with focal length 10 cm.<br>
-a) Calculate the image distance.<br>
-b) Calculate the magnification.<br>
-c) Determine the image height and classify the image (real or virtual, upright or inverted).</p>
-
-<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-<h2>Section 6.5 — Lenses: Double Convex and Double Concave</h2>
-
-<h3>Key Concepts</h3>
-
-<ul>
-<li>Converging (double convex) lenses bring parallel rays to a focal point.</li>
-<li>Diverging (double concave) lenses spread parallel rays apart.</li>
-<li>Converging lenses have positive focal length.</li>
-<li>Diverging lenses have negative focal length.</li>
-<li>The lens equation relates focal length, object distance, and image distance.</li>
-<li>Positive image distance indicates a real image; negative image distance indicates a virtual image.</li>
-</ul>
-
-<h3>Vocabulary</h3>
-
-<ul>
-<li>Double Convex Lens</li>
-<li>Converging Lens</li>
-<li>Double Concave Lens</li>
-<li>Diverging Lens</li>
-<li>Focal Length (f)</li>
-<li>Magnification</li>
-<li>Real Image</li>
-<li>Virtual Image</li>
-</ul>
-
-<h3>Formulas</h3>
-
-<p><strong>Lens Equation:</strong></p>
-<p>\( \frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i} \)</p>
-
-<p><strong>Magnification (Lenses):</strong></p>
-<p>\( M = \frac{d_i}{d_o} = \frac{h_i}{h_o} \)</p>
-
-<hr>
-
-<h3>Representative Questions</h3>
-
-<p><strong>1. Vocabulary</strong><br>
-Define a converging lens.</p>
-
-<p><strong>2. Vocabulary</strong><br>
-What is a diverging lens?</p>
-
-<p><strong>3. Conceptual</strong><br>
-Why can a converging lens produce either a real or virtual image, but a diverging lens always produces a virtual image?</p>
-
-<p><strong>4. Conceptual</strong><br>
-How can you determine whether an image formed by a lens is real or virtual using sign conventions?</p>
-
-<p><strong>5. Conceptual</strong><br>
-What does a negative magnification value indicate for a lens?</p>
-
-<p><strong>6. Single Formula</strong><br>
-An object is placed 30 cm in front of a converging lens with focal length 10 cm.  
-Calculate the image distance.</p>
-
-<p><strong>7. Single Formula</strong><br>
-An object is placed 15 cm in front of a diverging lens with focal length -5 cm.  
-Calculate the image distance.</p>
-
-<p><strong>8. Multi-Step</strong><br>
-An object 6 cm tall is placed 25 cm in front of a converging lens with focal length 12 cm.<br>
-a) Calculate the image distance.<br>
-b) Calculate the magnification.<br>
-c) Determine the image height and classify the image (real or virtual, upright or inverted).</p>
-
-<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-<h2>Cumulative Mixed Review — Version 1</h2>
-
-<p><strong>1. Vocabulary (Easy)</strong><br>
-Define critical angle.</p>
-
-<p><strong>2. Vocabulary (Easy)</strong><br>
-What is a converging lens?</p>
-
-<p><strong>3. Conceptual (Easier)</strong><br>
-When light enters a material with a higher refractive index, does it bend toward or away from the normal?</p>
-
-<p><strong>4. Conceptual (Easier)</strong><br>
-Why are angles always measured from the normal in reflection and refraction problems?</p>
-
-<p><strong>5. Conceptual (Medium)</strong><br>
-Explain why a convex mirror always produces a virtual image.</p>
-
-<p><strong>6. Single Formula (Direct)</strong><br>
-A ray strikes a mirror at 48° from the normal. Determine the reflected angle.</p>
-
-<p><strong>7. Single Formula (Rearranging Required)</strong><br>
-Light travels in a material with refractive index 1.50.  
-Calculate the speed of light in the material.  
-(Use \( c = 3.0 \times 10^8 \) m/s.)</p>
-
-<p><strong>8. Multi-Formula</strong><br>
-An object 5 cm tall is placed 30 cm in front of a converging lens with focal length 15 cm.<br>
-a) Calculate the image distance.<br>
-b) Calculate the magnification.<br>
-c) Determine the image height.</p>
-
-<p><strong>9. Harder Conceptual</strong><br>
-A ray travels from water into air at an angle greater than the critical angle.  
-Describe what happens and explain why using refractive index reasoning.</p>
-
-<p><strong>10. Harder Conceptual</strong><br>
-Compare image formation in a concave mirror and a converging lens when the object is placed beyond the focal length.  
-How are the images similar and how are they different?</p>
-
-<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-
-<h2>Cumulative Mixed Review — Version 2</h2>
-
-<p><strong>1. Vocabulary (Easy)</strong><br>
-Define total internal reflection.</p>
-
-<p><strong>2. Vocabulary (Easy)</strong><br>
-What is focal length?</p>
-
-<p><strong>3. Conceptual (Easier)</strong><br>
-If the angle of incidence increases, what happens to the angle of reflection?</p>
-
-<p><strong>4. Conceptual (Easier)</strong><br>
-Why does light slow down in materials with higher refractive index?</p>
-
-<p><strong>5. Conceptual (Medium)</strong><br>
-How can you determine whether an image formed by a lens is real or virtual using sign conventions?</p>
-
-<p><strong>6. Single Formula (Direct)</strong><br>
-Light travels from air (1.00) into water (1.33) at 30°.  
-Calculate the angle of refraction.</p>
-
-<p><strong>7. Single Formula (Rearranging Required)</strong><br>
-A concave mirror forms an image 20 cm in front of the mirror when the object is 60 cm away.  
-Calculate the focal length.</p>
-
-<p><strong>8. Multi-Formula</strong><br>
-An object is placed 25 cm in front of a concave mirror with focal length 10 cm.<br>
-a) Calculate the image distance.<br>
-b) Calculate the magnification.<br>
-c) State whether the image is upright or inverted.</p>
-
-<p><strong>9. Harder Conceptual</strong><br>
-Explain why total internal reflection cannot occur when light travels from air into glass.</p>
-
-<p><strong>10. Harder Conceptual</strong><br>
-Two students claim that a diverging lens and a convex mirror behave the same way.  
-Are they correct? Compare image properties and explain.</p>
-
-<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-
-<hr>
-
-<h2>Cumulative Mixed Review — Version 3</h2>
-
-<p><strong>1. Vocabulary (Easy)</strong><br>
-Define angle of refraction.</p>
-
-<p><strong>2. Vocabulary (Easy)</strong><br>
-What is magnification?</p>
-
-<p><strong>3. Conceptual (Easier)</strong><br>
-What happens to a refracted ray when the angle of incidence equals the critical angle?</p>
-
-<p><strong>4. Conceptual (Easier)</strong><br>
-Why does a plane mirror produce an image the same size as the object?</p>
-
-<p><strong>5. Conceptual (Medium)</strong><br>
-Explain how changing object distance affects image location in a converging lens.</p>
-
-<p><strong>6. Single Formula (Direct)</strong><br>
-Light travels from glass (1.50) into air (1.00).  
-Calculate the critical angle.</p>
-
-<p><strong>7. Single Formula (Rearranging Required)</strong><br>
-An object is placed 40 cm in front of a lens and forms an image 20 cm on the opposite side.  
-Calculate the focal length.</p>
-
-<p><strong>8. Multi-Formula</strong><br>
-An object 8 cm tall is placed 20 cm in front of a converging lens with focal length 12 cm.<br>
-a) Calculate the image distance.<br>
-b) Calculate the magnification.<br>
-c) Determine image height and orientation.</p>
-
-<p><strong>9. Harder Conceptual</strong><br>
-A ray travels from glass into water at an angle just below the critical angle.  
-Describe how the refracted ray behaves and explain why.</p>
-
-<p><strong>10. Harder Conceptual</strong><br>
-Compare how mirrors and lenses use reflection and refraction differently to form images.  
-Why do their magnification equations differ in sign convention?</p>
-
-<svg class="workspace extra-large" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="url(#grid)" />
-</svg>
-<h1>Cumulative Mixed Review — Answer Key</h1>
-
-<hr>
-
-<h2>Version 1 — Solutions</h2>
-
-<p><strong>1.</strong> The critical angle is the angle of incidence that produces a refracted angle of 90°.</p>
-
-<p><strong>2.</strong> A converging lens (double convex lens) bends parallel rays toward a focal point and has positive focal length.</p>
-
-<p><strong>3.</strong> Light bends toward the normal.</p>
-
-<p><strong>4.</strong> Because the normal provides a consistent perpendicular reference line required for the Law of Reflection and Snell’s Law.</p>
-
-<p><strong>5.</strong> Convex mirrors diverge light rays. The reflected rays never actually meet, so the image forms behind the mirror and is virtual.</p>
-
-<p><strong>6.</strong> 48°</p>
-
-<p><strong>7.</strong>  
-\( n = \frac{c}{v} \Rightarrow v = \frac{c}{n} \)  
-\( v = \frac{3.0 \times 10^8}{1.50} \)  
-<strong>Answer:</strong> \( 2.0 \times 10^8 \) m/s</p>
-
-<p><strong>8.</strong>  
-Mirror equation: \( \frac{1}{15} = \frac{1}{30} + \frac{1}{d_i} \)  
-\( d_i = 30 \) cm  
-Magnification: \( M = \frac{30}{30} = 1 \)  
-Image height = 5 cm</p>
-
-<p><strong>9.</strong> Total internal reflection occurs because the angle exceeds the critical angle and light is traveling from higher to lower refractive index.</p>
-
-<p><strong>10.</strong> Both produce real, inverted images when the object is beyond the focal length. Mirrors use reflection; lenses use refraction.</p>
-
-<hr>
-
-<h2>Version 2 — Solutions</h2>
-
-<p><strong>1.</strong> Total internal reflection is the complete reflection of light inside a material when the angle of incidence exceeds the critical angle.</p>
-
-<p><strong>2.</strong> Focal length is the distance from a mirror or lens to its focal point.</p>
-
-<p><strong>3.</strong> The angle of reflection increases equally (θᵢ = θᵣ).</p>
-
-<p><strong>4.</strong> Higher refractive index means lower speed of light in that material.</p>
-
-<p><strong>5.</strong> If image distance is positive → real image.  
-If image distance is negative → virtual image.</p>
-
-<p><strong>6.</strong>  
-\( 1.00 \sin 30° = 1.33 \sin \theta_2 \)  
-\( 0.5 = 1.33 \sin \theta_2 \)  
-\( \sin \theta_2 = 0.376 \)  
-<strong>Answer:</strong> \( \theta_2 ≈ 22° \)</p>
-
-<p><strong>7.</strong>  
-\( \frac{1}{f} = \frac{1}{60} + \frac{1}{20} \)  
-\( \frac{1}{f} = \frac{1}{15} \)  
-<strong>Answer:</strong> f = 15 cm</p>
-
-<p><strong>8.</strong>  
-\( \frac{1}{10} = \frac{1}{25} + \frac{1}{d_i} \)  
-\( d_i ≈ 16.7 \) cm  
-\( M = -\frac{16.7}{25} ≈ -0.67 \)  
-Inverted image.</p>
-
-<p><strong>9.</strong> Because total internal reflection only occurs when light travels from higher to lower refractive index.</p>
-
-<p><strong>10.</strong> They are similar: both produce virtual, upright, reduced images.  
-They differ: mirrors reflect; lenses refract.</p>
-
-<hr>
-
-<h2>Version 3 — Solutions</h2>
-
-<p><strong>1.</strong> The angle between the refracted ray and the normal.</p>
-
-<p><strong>2.</strong> Magnification is the ratio of image height to object height and relates to image distance and object distance.</p>
-
-<p><strong>3.</strong> The refracted ray travels along the boundary (90°).</p>
-
-<p><strong>4.</strong> Because reflected rays diverge symmetrically, creating a virtual image equal in size to the object.</p>
-
-<p><strong>5.</strong> As object distance decreases toward focal length, image distance increases. Inside focal length produces virtual image.</p>
-
-<p><strong>6.</strong>  
-\( \sin \theta_c = \frac{1.00}{1.50} = 0.667 \)  
-<strong>Answer:</strong> \( \theta_c ≈ 42° \)</p>
-
-<p><strong>7.</strong>  
-\( \frac{1}{f} = \frac{1}{40} + \frac{1}{20} \)  
-\( \frac{1}{f} = \frac{3}{40} \)  
-<strong>Answer:</strong> f ≈ 13.3 cm</p>
-
-<p><strong>8.</strong>  
-\( \frac{1}{12} = \frac{1}{20} + \frac{1}{d_i} \)  
-\( d_i = 30 \) cm  
-\( M = \frac{30}{20} = 1.5 \)  
-Image height = 12 cm  
-Image is inverted (real image).</p>
-
-<p><strong>9.</strong> The ray refracts out but bends strongly away from the normal because it is near the critical angle.</p>
-
-<p><strong>10.</strong> Mirrors use reflection, lenses use refraction.  
-Mirror magnification includes a negative sign because of reflection geometry; lens sign depends on image distance.</p>
-
+    <h1>MODULE 06 SUMMARY<br>Geometric Optics</h1>
+    
+    <div class="section-block">
+      <h2>Big Picture</h2>
+      <hr>
+    
+      <p>
+      Module 06 develops the geometric model of light behavior. Students analyze how light reflects, refracts, undergoes total internal reflection, and forms images in mirrors and lenses.
+      </p>
+    
+      <p>
+      The module begins with predictable reflection behavior, expands to boundary bending through Snell’s Law, and culminates in image formation using mirrors and lenses. Mathematical reasoning, trigonometry, and proportional relationships are used to predict angles, image locations, and magnification.
+      </p>
+    </div>
+    
+    <div class="section-block">
+      <h2>Essential Standard</h2>
+      <hr>
+    
+      <p>
+      Students will apply the Law of Reflection, Snell’s Law, and image formation equations to analyze and predict the behavior of light in reflection, refraction, total internal reflection, mirrors, and lenses using mathematical reasoning and ray diagrams.
+      </p>
+    </div>
+    
+    <div class="section-block">
+      <h2>Top 10 Core Concepts</h2>
+      <hr>
+    
+      <table>
+      <tr>
+      <th>Concept</th>
+      <th>Description</th>
+      </tr>
+    
+      <tr>
+      <td>1. Law of Reflection</td>
+      <td>$\theta_i = \theta_r$</td>
+      </tr>
+    
+      <tr>
+      <td>2. Angles Measured from the Normal</td>
+      <td>All reflection and refraction angles are measured from the normal line.</td>
+      </tr>
+    
+      <tr>
+      <td>3. Refraction</td>
+      <td>Light bends when it changes speed between materials.</td>
+      </tr>
+    
+      <tr>
+      <td>4. Refractive Index</td>
+      <td>$n = \frac{c}{v}$</td>
+      </tr>
+    
+      <tr>
+      <td>5. Snell’s Law</td>
+      <td>$n_1 \sin \theta_1 = n_2 \sin \theta_2$</td>
+      </tr>
+    
+      <tr>
+      <td>6. Critical Angle</td>
+      <td>$\sin \theta_c = \frac{n_2}{n_1}$</td>
+      </tr>
+    
+      <tr>
+      <td>7. Total Internal Reflection</td>
+      <td>Occurs when light travels from higher to lower refractive index and exceeds the critical angle.</td>
+      </tr>
+    
+      <tr>
+      <td>8. Mirror Equation</td>
+      <td>$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$</td>
+      </tr>
+    
+      <tr>
+      <td>9. Lens Equation</td>
+      <td>$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$</td>
+      </tr>
+    
+      <tr>
+      <td>10. Magnification</td>
+      <td>Relates image size and orientation to object and image distance.</td>
+      </tr>
+      </table>
+    </div>
+<!-- ================= SECTION 6.1 SUMMARY ================= -->
+
+<div class="section-block">
+    <h2>Section 6.1 — Reflection and the Law of Reflection</h2>
+    <hr>
+  </div>
+  
+  <!-- ================= KEY CONCEPTS ================= -->
+  
+  <div class="section-block">
+    <h3>Key Concepts</h3>
+  
+    <ul>
+    <li>Light travels in straight rays.</li>
+    <li>Angles are always measured from the normal.</li>
+    <li>The angle of incidence equals the angle of reflection.</li>
+    <li>Reflection can be specular (smooth) or diffuse (rough).</li>
+    <li>The incident and reflected rays are symmetric about the normal.</li>
+    </ul>
+  </div>
+  
+  <!-- ================= VOCABULARY ================= -->
+  
+  <div class="section-block">
+    <h3>Vocabulary</h3>
+  
+    <ul>
+    <li>Incident Ray</li>
+    <li>Reflected Ray</li>
+    <li>Normal</li>
+    <li>Angle of Incidence</li>
+    <li>Angle of Reflection</li>
+    <li>Specular Reflection</li>
+    <li>Diffuse Reflection</li>
+    <li>Ray</li>
+    </ul>
+  </div>
+  
+  <!-- ================= FORMULA ================= -->
+  
+  <div class="section-block">
+    <h3>Formula</h3>
+  
+    <p><strong>Law of Reflection:</strong></p>
+    <p>$\theta_i = \theta_r$</p>
+  </div>
+  
+  <!-- ================= PAGE BREAK BEFORE QUESTIONS ================= -->
+  
+  <div class="page-break"></div>
+  
+  <!-- ================= REPRESENTATIVE QUESTIONS ================= -->
+  
+  <div class="section-block">
+    <h3>Representative Questions</h3>
+  
+    <p><strong>1. Vocabulary</strong><br>
+    Define the angle of incidence.</p>
+  
+    <p><strong>2. Vocabulary</strong><br>
+    What is the normal in a reflection diagram?</p>
+  
+    <p><strong>3. Conceptual</strong><br>
+    Why must angles be measured from the normal rather than from the surface?</p>
+  
+    <p><strong>4. Conceptual</strong><br>
+    Explain the difference between specular and diffuse reflection.</p>
+  
+    <p><strong>5. Conceptual</strong><br>
+    If the angle of incidence increases, what happens to the angle of reflection?</p>
+  
+    <p><strong>6. Single Formula</strong><br>
+    A ray strikes a mirror at 37° from the normal. Determine the angle of reflection.</p>
+  
+    <p><strong>7. Single Formula</strong><br>
+    A ray strikes a mirror at 52° from the normal. Determine the reflected angle.</p>
+  
+    <p><strong>8. Multi-Step</strong><br>
+    A ray strikes a mirror at 42° from the normal.<br>
+    a) Determine the reflected angle.<br>
+    b) Determine the angle between the incident and reflected rays.<br>
+    c) Sketch and label the ray diagram.</p>
+  </div>
+<!-- ================= SECTION 6.2 ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Section 6.2 — Refraction and Snell’s Law</h2>
+    <hr>
+  
+    <h3>Key Concepts</h3>
+  
+    <ul>
+    <li>Refraction occurs when light passes from one material to another.</li>
+    <li>Light changes speed when entering a new medium.</li>
+    <li>The change in speed causes light to bend.</li>
+    <li>Angles are measured from the normal.</li>
+    <li>If light enters a higher refractive index, it bends toward the normal.</li>
+    <li>If light enters a lower refractive index, it bends away from the normal.</li>
+    </ul>
+  
+    <h3>Vocabulary</h3>
+  
+    <ul>
+    <li>Refraction</li>
+    <li>Refractive Index (n)</li>
+    <li>Optical Density</li>
+    <li>Angle of Refraction</li>
+    <li>Snell’s Law</li>
+    </ul>
+  
+    <h3>Formulas</h3>
+  
+    <p><strong>Refractive Index:</strong></p>
+    <p>$ n = \frac{c}{v} $</p>
+  
+    <p><strong>Snell’s Law:</strong></p>
+    <p>$ n_1 \sin \theta_1 = n_2 \sin \theta_2 $</p>
+  </div>
+  
+  <div class="page-break"></div>
+  
+  <div class="section-block">
+    <h3>Representative Questions</h3>
+  
+    <p><strong>1. Vocabulary</strong><br>
+    Define refractive index.</p>
+  
+    <p><strong>2. Vocabulary</strong><br>
+    What is the angle of refraction?</p>
+  
+    <p><strong>3. Conceptual</strong><br>
+    Why does light bend when it passes from air into water?</p>
+  
+    <p><strong>4. Conceptual</strong><br>
+    If light enters a material with a higher refractive index, does it bend toward or away from the normal? Explain.</p>
+  
+    <p><strong>5. Conceptual</strong><br>
+    Why must angles in Snell’s Law be measured from the normal instead of the surface?</p>
+  
+    <p><strong>6. Single Formula</strong><br>
+    Light travels in a material at $2.0 \times 10^8$ m/s.  
+    Calculate the refractive index of the material.  
+    (Use $c = 3.0 \times 10^8$ m/s.)</p>
+  
+    <p><strong>7. Single Formula</strong><br>
+    Light travels from air ($n_1 = 1.00$) into water ($n_2 = 1.33$) at an incident angle of 40°.  
+    Calculate the angle of refraction.</p>
+  
+    <p><strong>8. Multi-Step</strong><br>
+    Light travels from glass ($n_1 = 1.50$) into water ($n_2 = 1.33$) at an incident angle of 50°.<br>
+    a) Predict whether the ray bends toward or away from the normal.<br>
+    b) Calculate the angle of refraction.<br>
+    c) Sketch and label the ray diagram.</p>
+  </div>
+
+  
+<!-- ================= SECTION 6.3 ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Section 6.3 — Total Internal Reflection and the Critical Angle</h2>
+    <hr>
+  
+    <h3>Key Concepts</h3>
+  
+    <ul>
+    <li>Total internal reflection occurs only when light travels from a higher refractive index to a lower refractive index.</li>
+    <li>The critical angle is the angle of incidence that produces a refracted angle of 90°.</li>
+    <li>If the angle of incidence exceeds the critical angle, no refraction occurs.</li>
+    <li>Snell’s Law is used to derive the critical angle relationship.</li>
+    <li>Total internal reflection is used in fiber optics and optical systems.</li>
+    </ul>
+  
+    <h3>Vocabulary</h3>
+  
+    <ul>
+    <li>Critical Angle</li>
+    <li>Total Internal Reflection</li>
+    </ul>
+  
+    <h3>Formulas</h3>
+  
+    <p><strong>Snell’s Law:</strong></p>
+    <p>$ n_1 \sin \theta_1 = n_2 \sin \theta_2 $</p>
+  
+    <p><strong>Critical Angle Equation:</strong></p>
+    <p>$ \sin \theta_c = \frac{n_2}{n_1} $</p>
+  </div>
+  
+  <div class="page-break"></div>
+  
+  <div class="section-block">
+    <h3>Representative Questions</h3>
+  
+    <p><strong>1. Vocabulary</strong><br>
+    Define the critical angle.</p>
+  
+    <p><strong>2. Vocabulary</strong><br>
+    What is total internal reflection?</p>
+  
+    <p><strong>3. Conceptual</strong><br>
+    Why can total internal reflection only occur when light travels from a higher refractive index to a lower refractive index?</p>
+  
+    <p><strong>4. Conceptual</strong><br>
+    What happens to the refracted ray when the angle of incidence equals the critical angle?</p>
+  
+    <p><strong>5. Conceptual</strong><br>
+    If the angle of incidence is greater than the critical angle, describe what happens to the light ray.</p>
+  
+    <p><strong>6. Single Formula</strong><br>
+    Light travels from glass ($n_1 = 1.50$) into air ($n_2 = 1.00$).  
+    Calculate the critical angle.</p>
+  
+    <p><strong>7. Single Formula</strong><br>
+    Light travels from water ($n_1 = 1.33$) into air ($n_2 = 1.00$).  
+    Determine the critical angle.</p>
+  
+    <p><strong>8. Multi-Step</strong><br>
+    Light travels from a material with refractive index 1.60 into air.<br>
+    a) Calculate the critical angle.<br>
+    b) If the angle of incidence is 50°, determine whether total internal reflection occurs.<br>
+    c) Justify your answer using comparison.</p>
+  </div>
+<!-- ================= SECTION 6.4 ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Section 6.4 — Mirrors: Plane, Concave, and Convex</h2>
+    <hr>
+  
+    <h3>Key Concepts</h3>
+  
+    <ul>
+    <li>Plane mirrors produce virtual, upright images of the same size as the object.</li>
+    <li>Concave mirrors converge light and can produce real or virtual images.</li>
+    <li>Convex mirrors diverge light and always produce virtual images.</li>
+    <li>The mirror equation relates focal length, object distance, and image distance.</li>
+    <li>Magnification determines image size and orientation.</li>
+    <li>Concave mirrors have positive focal length; convex mirrors have negative focal length.</li>
+    </ul>
+  
+    <h3>Vocabulary</h3>
+  
+    <ul>
+    <li>Plane Mirror</li>
+    <li>Virtual Image</li>
+    <li>Concave Mirror</li>
+    <li>Convex Mirror</li>
+    <li>Focal Point (F)</li>
+    <li>Center of Curvature (C)</li>
+    <li>Focal Length (f)</li>
+    <li>Magnification</li>
+    </ul>
+  
+    <h3>Formulas</h3>
+  
+    <p><strong>Mirror Equation:</strong></p>
+    <p>$ \frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i} $</p>
+  
+    <p><strong>Magnification:</strong></p>
+    <p>$ M = -\frac{d_i}{d_o} = \frac{h_i}{h_o} $</p>
+  
+    <p><strong>Focal Length and Radius:</strong></p>
+    <p>$ f = \frac{R}{2} $</p>
+  </div>
+  
+  <div class="page-break"></div>
+  
+  <div class="section-block">
+    <h3>Representative Questions</h3>
+  
+    <p><strong>1. Vocabulary</strong><br>
+    What is a virtual image?</p>
+  
+    <p><strong>2. Vocabulary</strong><br>
+    Define focal length.</p>
+  
+    <p><strong>3. Conceptual</strong><br>
+    Why do convex mirrors always produce virtual images?</p>
+  
+    <p><strong>4. Conceptual</strong><br>
+    How can you determine whether an image formed by a concave mirror is real or virtual?</p>
+  
+    <p><strong>5. Conceptual</strong><br>
+    What does a negative magnification value indicate about an image?</p>
+  
+    <p><strong>6. Single Formula</strong><br>
+    A concave mirror has a focal length of 15 cm.  
+    An object is placed 45 cm in front of the mirror.  
+    Calculate the image distance.</p>
+  
+    <p><strong>7. Single Formula</strong><br>
+    An object is placed 20 cm in front of a convex mirror with focal length -10 cm.  
+    Calculate the image distance.</p>
+  
+    <p><strong>8. Multi-Step</strong><br>
+    An object 4 cm tall is placed 30 cm in front of a concave mirror with focal length 10 cm.<br>
+    a) Calculate the image distance.<br>
+    b) Calculate the magnification.<br>
+    c) Determine the image height and classify the image (real or virtual, upright or inverted).</p>
+  </div>
+            
+  <!-- ================= SECTION 6.5 ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Section 6.5 — Lenses: Double Convex and Double Concave</h2>
+    <hr>
+  
+    <h3>Key Concepts</h3>
+  
+    <ul>
+    <li>Converging (double convex) lenses bring parallel rays to a focal point.</li>
+    <li>Diverging (double concave) lenses spread parallel rays apart.</li>
+    <li>Converging lenses have positive focal length.</li>
+    <li>Diverging lenses have negative focal length.</li>
+    <li>The lens equation relates focal length, object distance, and image distance.</li>
+    <li>Positive image distance indicates a real image; negative image distance indicates a virtual image.</li>
+    </ul>
+  
+    <h3>Vocabulary</h3>
+  
+    <ul>
+    <li>Double Convex Lens</li>
+    <li>Converging Lens</li>
+    <li>Double Concave Lens</li>
+    <li>Diverging Lens</li>
+    <li>Focal Length (f)</li>
+    <li>Magnification</li>
+    <li>Real Image</li>
+    <li>Virtual Image</li>
+    </ul>
+  
+    <h3>Formulas</h3>
+  
+    <p><strong>Lens Equation:</strong></p>
+    <p>$ \frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i} $</p>
+  
+    <p><strong>Magnification (Lenses):</strong></p>
+    <p>$ M = \frac{d_i}{d_o} = \frac{h_i}{h_o} $</p>
+  </div>
+  
+  <div class="page-break"></div>
+  
+  <div class="section-block">
+    <h3>Representative Questions</h3>
+  
+    <p><strong>1. Vocabulary</strong><br>
+    Define a converging lens.</p>
+  
+    <p><strong>2. Vocabulary</strong><br>
+    What is a diverging lens?</p>
+  
+    <p><strong>3. Conceptual</strong><br>
+    Why can a converging lens produce either a real or virtual image, but a diverging lens always produces a virtual image?</p>
+  
+    <p><strong>4. Conceptual</strong><br>
+    How can you determine whether an image formed by a lens is real or virtual using sign conventions?</p>
+  
+    <p><strong>5. Conceptual</strong><br>
+    What does a negative magnification value indicate for a lens?</p>
+  
+    <p><strong>6. Single Formula</strong><br>
+    An object is placed 30 cm in front of a converging lens with focal length 10 cm.  
+    Calculate the image distance.</p>
+  
+    <p><strong>7. Single Formula</strong><br>
+    An object is placed 15 cm in front of a diverging lens with focal length -5 cm.  
+    Calculate the image distance.</p>
+  
+    <p><strong>8. Multi-Step</strong><br>
+    An object 6 cm tall is placed 25 cm in front of a converging lens with focal length 12 cm.<br>
+    a) Calculate the image distance.<br>
+    b) Calculate the magnification.<br>
+    c) Determine the image height and classify the image (real or virtual, upright or inverted).</p>
+  </div>
+  <!-- ================= CUMULATIVE MIXED REVIEW — VERSION 1 ================= -->
+
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Cumulative Mixed Review — Version 1</h2>
+    <hr>
+</div>
+
+<div class="section-block">
+    <p><strong>1. Vocabulary (Easy)</strong><br>
+    Define critical angle.</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>2. Vocabulary (Easy)</strong><br>
+    What is a converging lens?</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>3. Conceptual (Easier)</strong><br>
+    When light enters a material with a higher refractive index, does it bend toward or away from the normal?</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>4. Conceptual (Easier)</strong><br>
+    Why are angles always measured from the normal in reflection and refraction problems?</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>5. Conceptual (Medium)</strong><br>
+    Explain why a convex mirror always produces a virtual image.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>6. Single Formula (Direct)</strong><br>
+    A ray strikes a mirror at 48° from the normal. Determine the reflected angle.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>7. Single Formula (Rearranging Required)</strong><br>
+    Light travels in a material with refractive index 1.50.  
+    Calculate the speed of light in the material.  
+    (Use $ c = 3.0 \times 10^8 $ m/s.)</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>8. Multi-Formula</strong><br>
+    An object 5 cm tall is placed 30 cm in front of a converging lens with focal length 15 cm.<br>
+    a) Calculate the image distance.<br>
+    b) Calculate the magnification.<br>
+    c) Determine the image height.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>9. Harder Conceptual</strong><br>
+    A ray travels from water into air at an angle greater than the critical angle.  
+    Describe what happens and explain why using refractive index reasoning.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>10. Harder Conceptual</strong><br>
+    Compare image formation in a concave mirror and a converging lens when the object is placed beyond the focal length.  
+    How are the images similar and how are they different?</p>
+    <div class="workspace-300"></div>
+</div>
+
+<!-- ================= CUMULATIVE MIXED REVIEW — VERSION 2 ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Cumulative Mixed Review — Version 2</h2>
+    <hr>
+</div>
+
+<div class="section-block">
+    <p><strong>1. Vocabulary (Easy)</strong><br>
+    Define total internal reflection.</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>2. Vocabulary (Easy)</strong><br>
+    What is focal length?</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>3. Conceptual (Easier)</strong><br>
+    If the angle of incidence increases, what happens to the angle of reflection?</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>4. Conceptual (Easier)</strong><br>
+    Why does light slow down in materials with higher refractive index?</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>5. Conceptual (Medium)</strong><br>
+    How can you determine whether an image formed by a lens is real or virtual using sign conventions?</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>6. Single Formula (Direct)</strong><br>
+    Light travels from air (1.00) into water (1.33) at 30°.  
+    Calculate the angle of refraction.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>7. Single Formula (Rearranging Required)</strong><br>
+    A concave mirror forms an image 20 cm in front of the mirror when the object is 60 cm away.  
+    Calculate the focal length.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>8. Multi-Formula</strong><br>
+    An object is placed 25 cm in front of a concave mirror with focal length 10 cm.<br>
+    a) Calculate the image distance.<br>
+    b) Calculate the magnification.<br>
+    c) State whether the image is upright or inverted.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>9. Harder Conceptual</strong><br>
+    Explain why total internal reflection cannot occur when light travels from air into glass.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>10. Harder Conceptual</strong><br>
+    Two students claim that a diverging lens and a convex mirror behave the same way.  
+    Are they correct? Compare image properties and explain.</p>
+    <div class="workspace-300"></div>
+</div>
+<!-- ================= CUMULATIVE MIXED REVIEW — VERSION 3 ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Cumulative Mixed Review — Version 3</h2>
+    <hr>
+</div>
+
+<div class="section-block">
+    <p><strong>1. Vocabulary (Easy)</strong><br>
+    Define angle of refraction.</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>2. Vocabulary (Easy)</strong><br>
+    What is magnification?</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>3. Conceptual (Easier)</strong><br>
+    What happens to a refracted ray when the angle of incidence equals the critical angle?</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>4. Conceptual (Easier)</strong><br>
+    Why does a plane mirror produce an image the same size as the object?</p>
+    <div class="workspace-200"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>5. Conceptual (Medium)</strong><br>
+    Explain how changing object distance affects image location in a converging lens.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>6. Single Formula (Direct)</strong><br>
+    Light travels from glass (1.50) into air (1.00).  
+    Calculate the critical angle.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>7. Single Formula (Rearranging Required)</strong><br>
+    An object is placed 40 cm in front of a lens and forms an image 20 cm on the opposite side.  
+    Calculate the focal length.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>8. Multi-Formula</strong><br>
+    An object 8 cm tall is placed 20 cm in front of a converging lens with focal length 12 cm.<br>
+    a) Calculate the image distance.<br>
+    b) Calculate the magnification.<br>
+    c) Determine image height and orientation.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>9. Harder Conceptual</strong><br>
+    A ray travels from glass into water at an angle just below the critical angle.  
+    Describe how the refracted ray behaves and explain why.</p>
+    <div class="workspace-300"></div>
+</div>
+
+<div class="section-block">
+    <p><strong>10. Harder Conceptual</strong><br>
+    Compare how mirrors and lenses use reflection and refraction differently to form images.  
+    Why do their magnification equations differ in sign convention?</p>
+    <div class="workspace-300"></div>
+</div>
+<!-- ================= ANSWER KEY ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h1>Cumulative Mixed Review — Answer Key</h1>
+    <hr>
+</div>
+
+<!-- ================= VERSION 1 SOLUTIONS ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Version 1 — Solutions</h2>
+    <hr>
+
+    <p><strong>1.</strong> The critical angle is the angle of incidence that produces a refracted angle of 90°.</p>
+
+    <p><strong>2.</strong> A converging lens (double convex lens) bends parallel rays toward a focal point and has positive focal length.</p>
+
+    <p><strong>3.</strong> Light bends toward the normal.</p>
+
+    <p><strong>4.</strong> Because the normal provides a consistent perpendicular reference line required for the Law of Reflection and Snell’s Law.</p>
+
+    <p><strong>5.</strong> Convex mirrors diverge light rays. The reflected rays never actually meet, so the image forms behind the mirror and is virtual.</p>
+
+    <p><strong>6.</strong> 48°</p>
+
+    <p><strong>7.</strong>  
+    $ n = \frac{c}{v} \Rightarrow v = \frac{c}{n} $  
+    $ v = \frac{3.0 \times 10^8}{1.50} $  
+    <strong>Answer:</strong> $ 2.0 \times 10^8 $ m/s</p>
+
+    <p><strong>8.</strong>  
+    Mirror equation: $ \frac{1}{15} = \frac{1}{30} + \frac{1}{d_i} $  
+    $ d_i = 30 $ cm  
+    Magnification: $ M = \frac{30}{30} = 1 $  
+    Image height = 5 cm</p>
+
+    <p><strong>9.</strong> Total internal reflection occurs because the angle exceeds the critical angle and light is traveling from higher to lower refractive index.</p>
+
+    <p><strong>10.</strong> Both produce real, inverted images when the object is beyond the focal length. Mirrors use reflection; lenses use refraction.</p>
+</div>
+
+<!-- ================= VERSION 2 SOLUTIONS ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Version 2 — Solutions</h2>
+    <hr>
+
+    <p><strong>1.</strong> Total internal reflection is the complete reflection of light inside a material when the angle of incidence exceeds the critical angle.</p>
+
+    <p><strong>2.</strong> Focal length is the distance from a mirror or lens to its focal point.</p>
+
+    <p><strong>3.</strong> The angle of reflection increases equally (θᵢ = θᵣ).</p>
+
+    <p><strong>4.</strong> Higher refractive index means lower speed of light in that material.</p>
+
+    <p><strong>5.</strong> If image distance is positive → real image.  
+    If image distance is negative → virtual image.</p>
+
+    <p><strong>6.</strong>  
+    $ 1.00 \sin 30° = 1.33 \sin \theta_2 $  
+    $ 0.5 = 1.33 \sin \theta_2 $  
+    $ \sin \theta_2 = 0.376 $  
+    <strong>Answer:</strong> $ \theta_2 ≈ 22° $</p>
+
+    <p><strong>7.</strong>  
+    $ \frac{1}{f} = \frac{1}{60} + \frac{1}{20} $  
+    $ \frac{1}{f} = \frac{1}{15} $  
+    <strong>Answer:</strong> f = 15 cm</p>
+
+    <p><strong>8.</strong>  
+    $ \frac{1}{10} = \frac{1}{25} + \frac{1}{d_i} $  
+    $ d_i ≈ 16.7 $ cm  
+    $ M = -\frac{16.7}{25} ≈ -0.67 $  
+    Inverted image.</p>
+
+    <p><strong>9.</strong> Because total internal reflection only occurs when light travels from higher to lower refractive index.</p>
+
+    <p><strong>10.</strong> They are similar: both produce virtual, upright, reduced images.  
+    They differ: mirrors reflect; lenses refract.</p>
+</div>
+
+<!-- ================= VERSION 3 SOLUTIONS ================= -->
+
+<div class="section-block">
+    <div class="page-break"></div>
+    <h2>Version 3 — Solutions</h2>
+    <hr>
+
+    <p><strong>1.</strong> The angle between the refracted ray and the normal.</p>
+
+    <p><strong>2.</strong> Magnification is the ratio of image height to object height and relates to image distance and object distance.</p>
+
+    <p><strong>3.</strong> The refracted ray travels along the boundary (90°).</p>
+
+    <p><strong>4.</strong> Because reflected rays diverge symmetrically, creating a virtual image equal in size to the object.</p>
+
+    <p><strong>5.</strong> As object distance decreases toward focal length, image distance increases. Inside focal length produces virtual image.</p>
+
+    <p><strong>6.</strong>  
+    $ \sin \theta_c = \frac{1.00}{1.50} = 0.667 $  
+    <strong>Answer:</strong> $ \theta_c ≈ 42° $</p>
+
+    <p><strong>7.</strong>  
+    $ \frac{1}{f} = \frac{1}{40} + \frac{1}{20} $  
+    $ \frac{1}{f} = \frac{3}{40} $  
+    <strong>Answer:</strong> f ≈ 13.3 cm</p>
+
+    <p><strong>8.</strong>  
+    $ \frac{1}{12} = \frac{1}{20} + \frac{1}{d_i} $  
+    $ d_i = 30 $ cm  
+    $ M = -\frac{30}{20} = -1.5 $  
+    Image height = 12 cm  
+    Image is inverted (real image).</p>
+
+    <p><strong>9.</strong> The ray refracts out but bends strongly away from the normal because it is near the critical angle.</p>
+
+    <p><strong>10.</strong> Mirrors use reflection, lenses use refraction.  
+    Mirror magnification includes a negative sign because of reflection geometry; lens sign depends on image distance.</p>
+</div>
 </body>
 </html>
