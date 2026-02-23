@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 7.5: Energy, Efficiency, and Circuit Design - Complete Assessment Banks 1-4</title>
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.term-definition {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  font-style: italic;
+  color: #444;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+/* ================================
+   FORMULA GROUPS
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Section 7.5: Energy, Efficiency, and Circuit Design</h1>
+<p><strong>Bank 1: Vocabulary Assessment</strong></p>
+<p>Multiple Choice | Vocabulary Mastery</p>
+</header>
+
+<div class="bank-section">
+
+
+
+    <!-- ============================================================ -->
+<!-- TERM 1: ELECTRICAL POWER -->
+<!-- ============================================================ -->
+
+<div class="question-group">
+<div class="question-group-title">Electrical Power (1.1 – 1.4)</div>
+<div class="term-definition">
+The rate at which electrical energy is transferred; measured in watts (W).
+</div>
+
+<div class="question">
+<div class="question-number">1.1</div>
+Electrical power is defined as:
+<div class="answer-option"><strong>A)</strong> Energy per unit charge</div>
+<div class="answer-option"><strong>B)</strong> Energy transferred per unit time</div>
+<div class="answer-option"><strong>C)</strong> Charge per second</div>
+<div class="answer-option"><strong>D)</strong> Voltage divided by resistance</div>
+<div class="answer-option"><strong>E)</strong> Opposition to current</div>
+</div>
+
+<div class="question">
+<div class="question-number">1.2</div>
+The unit of electrical power is:
+<div class="answer-option"><strong>A)</strong> Joule</div>
+<div class="answer-option"><strong>B)</strong> Watt</div>
+<div class="answer-option"><strong>C)</strong> Volt</div>
+<div class="answer-option"><strong>D)</strong> Ampere</div>
+<div class="answer-option"><strong>E)</strong> Ohm</div>
+</div>
+
+<div class="question">
+<div class="question-number">1.3</div>
+If more energy is transferred each second, electrical power:
+<div class="answer-option"><strong>A)</strong> Decreases</div>
+<div class="answer-option"><strong>B)</strong> Remains constant</div>
+<div class="answer-option"><strong>C)</strong> Increases</div>
+<div class="answer-option"><strong>D)</strong> Becomes zero</div>
+<div class="answer-option"><strong>E)</strong> Reverses</div>
+</div>
+
+<div class="question">
+<div class="question-number">1.4</div>
+Electrical power is related to energy by:
+<div class="answer-option"><strong>A)</strong> Power = Energy × Time</div>
+<div class="answer-option"><strong>B)</strong> Power = Energy ÷ Time</div>
+<div class="answer-option"><strong>C)</strong> Power = Voltage × Resistance</div>
+<div class="answer-option"><strong>D)</strong> Power = Current ÷ Voltage</div>
+<div class="answer-option"><strong>E)</strong> Power = Resistance ÷ Current</div>
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- TERM 2: WATT (W) -->
+<!-- ============================================================ -->
+
+<div class="question-group">
+    <div class="question-group-title">Watt (W) (2.1 – 2.4)</div>
+    <div class="term-definition">
+    The SI unit of power; 1 W = 1 J/s.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.1</div>
+    One watt is equal to:
+    <div class="answer-option"><strong>A)</strong> 1 J</div>
+    <div class="answer-option"><strong>B)</strong> 1 J/s</div>
+    <div class="answer-option"><strong>C)</strong> 1 V/A</div>
+    <div class="answer-option"><strong>D)</strong> 1 C/s</div>
+    <div class="answer-option"><strong>E)</strong> 1000 J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.2</div>
+    The watt measures:
+    <div class="answer-option"><strong>A)</strong> Energy</div>
+    <div class="answer-option"><strong>B)</strong> Power</div>
+    <div class="answer-option"><strong>C)</strong> Resistance</div>
+    <div class="answer-option"><strong>D)</strong> Voltage</div>
+    <div class="answer-option"><strong>E)</strong> Charge</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.3</div>
+    If 100 J of energy are transferred in 10 s, the power is:
+    <div class="answer-option"><strong>A)</strong> 10 W</div>
+    <div class="answer-option"><strong>B)</strong> 100 W</div>
+    <div class="answer-option"><strong>C)</strong> 1000 W</div>
+    <div class="answer-option"><strong>D)</strong> 1 W</div>
+    <div class="answer-option"><strong>E)</strong> 0 W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.4</div>
+    A 60 W light bulb uses 60 joules of energy every:
+    <div class="answer-option"><strong>A)</strong> 1 minute</div>
+    <div class="answer-option"><strong>B)</strong> 10 seconds</div>
+    <div class="answer-option"><strong>C)</strong> 1 second</div>
+    <div class="answer-option"><strong>D)</strong> 1 hour</div>
+    <div class="answer-option"><strong>E)</strong> 1 day</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 3: KILOWATT (kW) -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Kilowatt (kW) (3.1 – 3.4)</div>
+    <div class="term-definition">
+    1000 watts; used for larger power quantities.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.1</div>
+    1 kilowatt equals:
+    <div class="answer-option"><strong>A)</strong> 100 W</div>
+    <div class="answer-option"><strong>B)</strong> 1000 W</div>
+    <div class="answer-option"><strong>C)</strong> 10 W</div>
+    <div class="answer-option"><strong>D)</strong> 1 W</div>
+    <div class="answer-option"><strong>E)</strong> 10000 W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.2</div>
+    Kilowatts are commonly used to describe:
+    <div class="answer-option"><strong>A)</strong> Small resistors</div>
+    <div class="answer-option"><strong>B)</strong> Large power devices</div>
+    <div class="answer-option"><strong>C)</strong> Voltage only</div>
+    <div class="answer-option"><strong>D)</strong> Current only</div>
+    <div class="answer-option"><strong>E)</strong> Charge</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.3</div>
+    A 2 kW heater uses:
+    <div class="answer-option"><strong>A)</strong> 2 W</div>
+    <div class="answer-option"><strong>B)</strong> 20 W</div>
+    <div class="answer-option"><strong>C)</strong> 200 W</div>
+    <div class="answer-option"><strong>D)</strong> 2000 W</div>
+    <div class="answer-option"><strong>E)</strong> 20000 W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.4</div>
+    Kilowatts measure:
+    <div class="answer-option"><strong>A)</strong> Energy</div>
+    <div class="answer-option"><strong>B)</strong> Power</div>
+    <div class="answer-option"><strong>C)</strong> Resistance</div>
+    <div class="answer-option"><strong>D)</strong> Time</div>
+    <div class="answer-option"><strong>E)</strong> Charge</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 4: ELECTRICAL ENERGY -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Electrical Energy (4.1 – 4.4)</div>
+    <div class="term-definition">
+    Energy transferred by electric current; measured in joules (J) or kilowatt-hours (kWh).
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.1</div>
+    Electrical energy is measured in:
+    <div class="answer-option"><strong>A)</strong> Joules</div>
+    <div class="answer-option"><strong>B)</strong> Kilowatt-hours</div>
+    <div class="answer-option"><strong>C)</strong> Both A and B</div>
+    <div class="answer-option"><strong>D)</strong> Volts</div>
+    <div class="answer-option"><strong>E)</strong> Ohms</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.2</div>
+    If current flows longer in a circuit, electrical energy transferred:
+    <div class="answer-option"><strong>A)</strong> Decreases</div>
+    <div class="answer-option"><strong>B)</strong> Remains the same</div>
+    <div class="answer-option"><strong>C)</strong> Increases</div>
+    <div class="answer-option"><strong>D)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Reverses</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.3</div>
+    Energy transferred depends on:
+    <div class="answer-option"><strong>A)</strong> Voltage only</div>
+    <div class="answer-option"><strong>B)</strong> Current only</div>
+    <div class="answer-option"><strong>C)</strong> Power and time</div>
+    <div class="answer-option"><strong>D)</strong> Resistance only</div>
+    <div class="answer-option"><strong>E)</strong> Wire length</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.4</div>
+    Household energy usage is typically billed in:
+    <div class="answer-option"><strong>A)</strong> Joules</div>
+    <div class="answer-option"><strong>B)</strong> Watts</div>
+    <div class="answer-option"><strong>C)</strong> Kilowatt-hours</div>
+    <div class="answer-option"><strong>D)</strong> Amperes</div>
+    <div class="answer-option"><strong>E)</strong> Volts</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 5: KILOWATT-HOUR (kWh) -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Kilowatt-hour (kWh) (5.1 – 5.4)</div>
+    <div class="term-definition">
+    A unit of energy equal to 1000 watts × 3600 seconds; commonly used for household electricity billing.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.1</div>
+    A kilowatt-hour measures:
+    <div class="answer-option"><strong>A)</strong> Power</div>
+    <div class="answer-option"><strong>B)</strong> Energy</div>
+    <div class="answer-option"><strong>C)</strong> Resistance</div>
+    <div class="answer-option"><strong>D)</strong> Voltage</div>
+    <div class="answer-option"><strong>E)</strong> Current</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.2</div>
+    1 kWh equals:
+    <div class="answer-option"><strong>A)</strong> 1000 J</div>
+    <div class="answer-option"><strong>B)</strong> 3600 J</div>
+    <div class="answer-option"><strong>C)</strong> 3.6 × 10⁶ J</div>
+    <div class="answer-option"><strong>D)</strong> 100 J</div>
+    <div class="answer-option"><strong>E)</strong> 1 J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.3</div>
+    The kWh is used primarily for:
+    <div class="answer-option"><strong>A)</strong> Small circuits</div>
+    <div class="answer-option"><strong>B)</strong> Electricity billing</div>
+    <div class="answer-option"><strong>C)</strong> Measuring resistance</div>
+    <div class="answer-option"><strong>D)</strong> Voltage drop</div>
+    <div class="answer-option"><strong>E)</strong> Current flow</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.4</div>
+    A device rated at 1 kW operating for 1 hour uses:
+    <div class="answer-option"><strong>A)</strong> 1 kWh</div>
+    <div class="answer-option"><strong>B)</strong> 1 W</div>
+    <div class="answer-option"><strong>C)</strong> 1000 J</div>
+    <div class="answer-option"><strong>D)</strong> 3600 W</div>
+    <div class="answer-option"><strong>E)</strong> 1 J</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 6: EFFICIENCY -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Efficiency (6.1 – 6.4)</div>
+    <div class="term-definition">
+    The ratio of useful energy output to total energy input; expressed as a percentage.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.1</div>
+    Efficiency compares:
+    <div class="answer-option"><strong>A)</strong> Input to output energy</div>
+    <div class="answer-option"><strong>B)</strong> Output to input energy</div>
+    <div class="answer-option"><strong>C)</strong> Voltage to resistance</div>
+    <div class="answer-option"><strong>D)</strong> Current to power</div>
+    <div class="answer-option"><strong>E)</strong> Time to charge</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.2</div>
+    Efficiency is expressed as:
+    <div class="answer-option"><strong>A)</strong> Joules</div>
+    <div class="answer-option"><strong>B)</strong> Watts</div>
+    <div class="answer-option"><strong>C)</strong> Percentage</div>
+    <div class="answer-option"><strong>D)</strong> Ohms</div>
+    <div class="answer-option"><strong>E)</strong> Volts</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.3</div>
+    If a device wastes less energy as heat, its efficiency:
+    <div class="answer-option"><strong>A)</strong> Decreases</div>
+    <div class="answer-option"><strong>B)</strong> Increases</div>
+    <div class="answer-option"><strong>C)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> Remains constant</div>
+    <div class="answer-option"><strong>E)</strong> Reverses</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.4</div>
+    An efficiency of 100% means:
+    <div class="answer-option"><strong>A)</strong> All input energy is useful output</div>
+    <div class="answer-option"><strong>B)</strong> No energy is used</div>
+    <div class="answer-option"><strong>C)</strong> Energy doubles</div>
+    <div class="answer-option"><strong>D)</strong> Voltage is zero</div>
+    <div class="answer-option"><strong>E)</strong> Resistance disappears</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 7: SOLAR CELL -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Solar Cell (7.1 – 7.4)</div>
+    <div class="term-definition">
+    A device that converts light energy directly into electrical energy using the photoelectric effect.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.1</div>
+    A solar cell converts:
+    <div class="answer-option"><strong>A)</strong> Electrical to light energy</div>
+    <div class="answer-option"><strong>B)</strong> Light to electrical energy</div>
+    <div class="answer-option"><strong>C)</strong> Heat to sound</div>
+    <div class="answer-option"><strong>D)</strong> Resistance to voltage</div>
+    <div class="answer-option"><strong>E)</strong> Current to mass</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.2</div>
+    Solar cells operate using:
+    <div class="answer-option"><strong>A)</strong> Ohm’s Law</div>
+    <div class="answer-option"><strong>B)</strong> Photoelectric effect</div>
+    <div class="answer-option"><strong>C)</strong> Series resistance</div>
+    <div class="answer-option"><strong>D)</strong> Magnetic induction</div>
+    <div class="answer-option"><strong>E)</strong> Joule heating</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.3</div>
+    Solar panels are used primarily to:
+    <div class="answer-option"><strong>A)</strong> Increase resistance</div>
+    <div class="answer-option"><strong>B)</strong> Generate electricity</div>
+    <div class="answer-option"><strong>C)</strong> Store magnetic energy</div>
+    <div class="answer-option"><strong>D)</strong> Block sunlight</div>
+    <div class="answer-option"><strong>E)</strong> Reduce voltage</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.4</div>
+    A solar cell is most directly related to:
+    <div class="answer-option"><strong>A)</strong> Efficiency of energy conversion</div>
+    <div class="answer-option"><strong>B)</strong> Increasing resistance</div>
+    <div class="answer-option"><strong>C)</strong> Series circuits only</div>
+    <div class="answer-option"><strong>D)</strong> Magnetic fields only</div>
+    <div class="answer-option"><strong>E)</strong> Wire insulation</div>
+    </div>
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 1: Vocabulary Assessment — Answer Key</strong></p>
+  
+    <!-- Electrical Power -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Electrical Power (Questions 1.1–1.4)
+      </div>
+  
+      <div class="answer-row"><div>1.1</div><div>B</div><div>Power is energy per unit time</div></div>
+      <div class="answer-row"><div>1.2</div><div>B</div><div>Watt measures power</div></div>
+      <div class="answer-row"><div>1.3</div><div>C</div><div>More energy per second → higher power</div></div>
+      <div class="answer-row"><div>1.4</div><div>B</div><div>Power = Energy ÷ Time</div></div>
+    </div>
+  
+    <!-- Watt -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Watt (W) (Questions 2.1–2.4)
+      </div>
+  
+      <div class="answer-row"><div>2.1</div><div>B</div><div>1 W = 1 J/s</div></div>
+      <div class="answer-row"><div>2.2</div><div>B</div><div>Watt measures power</div></div>
+      <div class="answer-row"><div>2.3</div><div>A</div><div>100 J ÷ 10 s = 10 W</div></div>
+      <div class="answer-row"><div>2.4</div><div>C</div><div>60 J per second</div></div>
+    </div>
+  
+    <!-- Kilowatt -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Kilowatt (kW) (Questions 3.1–3.4)
+      </div>
+  
+      <div class="answer-row"><div>3.1</div><div>B</div><div>1 kW = 1000 W</div></div>
+      <div class="answer-row"><div>3.2</div><div>B</div><div>Used for large power ratings</div></div>
+      <div class="answer-row"><div>3.3</div><div>D</div><div>2 kW = 2000 W</div></div>
+      <div class="answer-row"><div>3.4</div><div>B</div><div>Kilowatt measures power</div></div>
+    </div>
+  
+    <!-- Electrical Energy -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Electrical Energy (Questions 4.1–4.4)
+      </div>
+  
+      <div class="answer-row"><div>4.1</div><div>C</div><div>Energy measured in J or kWh</div></div>
+      <div class="answer-row"><div>4.2</div><div>C</div><div>Longer time → more energy transferred</div></div>
+      <div class="answer-row"><div>4.3</div><div>C</div><div>Energy = Power × Time</div></div>
+      <div class="answer-row"><div>4.4</div><div>C</div><div>Billing uses kWh</div></div>
+    </div>
+  
+    <!-- Kilowatt-hour -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Kilowatt-hour (kWh) (Questions 5.1–5.4)
+      </div>
+  
+      <div class="answer-row"><div>5.1</div><div>B</div><div>kWh measures energy</div></div>
+      <div class="answer-row"><div>5.2</div><div>C</div><div>1 kWh = 3.6 × 10⁶ J</div></div>
+      <div class="answer-row"><div>5.3</div><div>B</div><div>Used in electricity billing</div></div>
+      <div class="answer-row"><div>5.4</div><div>A</div><div>1 kW × 1 h = 1 kWh</div></div>
+    </div>
+  
+    <!-- Efficiency -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Efficiency (Questions 6.1–6.4)
+      </div>
+  
+      <div class="answer-row"><div>6.1</div><div>B</div><div>Efficiency = Output ÷ Input</div></div>
+      <div class="answer-row"><div>6.2</div><div>C</div><div>Expressed as percentage</div></div>
+      <div class="answer-row"><div>6.3</div><div>B</div><div>Less waste → higher efficiency</div></div>
+      <div class="answer-row"><div>6.4</div><div>A</div><div>100% = no energy loss</div></div>
+    </div>
+  
+    <!-- Solar Cell -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Solar Cell (Questions 7.1–7.4)
+      </div>
+  
+      <div class="answer-row"><div>7.1</div><div>B</div><div>Light converted to electrical energy</div></div>
+      <div class="answer-row"><div>7.2</div><div>B</div><div>Uses photoelectric effect</div></div>
+      <div class="answer-row"><div>7.3</div><div>B</div><div>Generate electricity</div></div>
+      <div class="answer-row"><div>7.4</div><div>A</div><div>Energy conversion efficiency</div></div>
+    </div>
+  
+  </div>
+
+<footer>
+Section 7.5 – Energy, Efficiency, and Circuit Design | Bank 1
+</footer>
+
+</div>
+
+<hr style="margin: 40px 0; border: 1px solid #ccc;">
+
+<header>
+<h1>Section 7.5: Energy, Efficiency, and Circuit Design</h1>
+<p><strong>Bank 2: Conceptual Questions</strong></p>
+<p>Application and Reasoning | No Calculations</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+<h2>Conceptual Understanding</h2>
+<div class="bank-info">Multiple Choice (A–E)</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- QUESTION 2.1 -->
+<!-- ============================================================ -->
+
+<div class="question-block">
+  <div class="question-number">2.1</div>
+  <div class="question-text">
+    A device converts 200 J of electrical energy into 150 J of useful mechanical energy. What does this indicate about the device?
+  </div>
+  <div class="answer-option"><strong>A)</strong> It is 100% efficient</div>
+  <div class="answer-option"><strong>B)</strong> Some energy is wasted</div>
+  <div class="answer-option"><strong>C)</strong> It produces energy</div>
+  <div class="answer-option"><strong>D)</strong> It violates conservation of energy</div>
+  <div class="answer-option"><strong>E)</strong> It has zero resistance</div>
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- QUESTION 2.2 -->
+<!-- ============================================================ -->
+<div class="question-block">
+    <div class="question-number">2.2</div>
+    <div class="question-text">
+      Efficiency increases when:
+    </div>
+    <div class="answer-option"><strong>A)</strong> More energy is wasted</div>
+    <div class="answer-option"><strong>B)</strong> Useful output increases relative to input</div>
+    <div class="answer-option"><strong>C)</strong> Voltage decreases</div>
+    <div class="answer-option"><strong>D)</strong> Resistance increases</div>
+    <div class="answer-option"><strong>E)</strong> Current becomes zero</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.3 (Inverted) -->
+  <!-- ============================================================ -->
+  <div class="question-block">
+    <div class="question-number">2.3</div>
+    <div class="question-text">
+      Explain why no real electrical device can reach 100% efficiency.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Energy is destroyed</div>
+    <div class="answer-option"><strong>B)</strong> Some energy is always converted to heat</div>
+    <div class="answer-option"><strong>C)</strong> Voltage disappears</div>
+    <div class="answer-option"><strong>D)</strong> Resistance becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Current doubles</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.4 -->
+  <!-- ============================================================ -->
+  <div class="question-block">
+    <div class="question-number">2.4</div>
+    <div class="question-text">
+      A 1000 W appliance operating for one hour uses:
+    </div>
+    <div class="answer-option"><strong>A)</strong> 1 kWh</div>
+    <div class="answer-option"><strong>B)</strong> 1000 kWh</div>
+    <div class="answer-option"><strong>C)</strong> 1 J</div>
+    <div class="answer-option"><strong>D)</strong> 1000 J</div>
+    <div class="answer-option"><strong>E)</strong> 1 W</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.5 (Context-Rich) -->
+  <!-- ============================================================ -->
+  <div class="question-block">
+    <div class="question-number">2.5</div>
+    <div class="question-text">
+      A homeowner replaces incandescent bulbs with LED bulbs to reduce electricity costs. Which concept best explains the savings?
+    </div>
+    <div class="answer-option"><strong>A)</strong> LEDs increase resistance</div>
+    <div class="answer-option"><strong>B)</strong> LEDs are more efficient</div>
+    <div class="answer-option"><strong>C)</strong> LEDs eliminate voltage</div>
+    <div class="answer-option"><strong>D)</strong> LEDs double current</div>
+    <div class="answer-option"><strong>E)</strong> LEDs store energy</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.6 -->
+  <!-- ============================================================ -->
+  <div class="question-block">
+    <div class="question-number">2.6</div>
+    <div class="question-text">
+      When designing a circuit, engineers must consider:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Power ratings of components</div>
+    <div class="answer-option"><strong>B)</strong> Wire color only</div>
+    <div class="answer-option"><strong>C)</strong> Battery shape</div>
+    <div class="answer-option"><strong>D)</strong> Current direction only</div>
+    <div class="answer-option"><strong>E)</strong> Voltage units only</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.7 -->
+  <!-- ============================================================ -->
+  <div class="question-block">
+    <div class="question-number">2.7</div>
+    <div class="question-text">
+      Electrical energy is converted to light in a bulb and also to:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Sound only</div>
+    <div class="answer-option"><strong>B)</strong> Thermal energy</div>
+    <div class="answer-option"><strong>C)</strong> Magnetic energy only</div>
+    <div class="answer-option"><strong>D)</strong> Mass</div>
+    <div class="answer-option"><strong>E)</strong> Charge</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.8 -->
+  <!-- ============================================================ -->
+  <div class="question-block">
+    <div class="question-number">2.8</div>
+    <div class="question-text">
+      Increasing operating time of a device while power remains constant will:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Decrease energy usage</div>
+    <div class="answer-option"><strong>B)</strong> Increase energy usage</div>
+    <div class="answer-option"><strong>C)</strong> Leave energy unchanged</div>
+    <div class="answer-option"><strong>D)</strong> Eliminate current</div>
+    <div class="answer-option"><strong>E)</strong> Reverse voltage</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.9 (Context-Rich) -->
+  <!-- ============================================================ -->
+  <div class="question-block">
+    <div class="question-number">2.9</div>
+    <div class="question-text">
+      A solar panel system converts sunlight into electricity but loses some energy as heat. This demonstrates:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Perfect efficiency</div>
+    <div class="answer-option"><strong>B)</strong> Less than 100% efficiency</div>
+    <div class="answer-option"><strong>C)</strong> Infinite efficiency</div>
+    <div class="answer-option"><strong>D)</strong> Zero resistance</div>
+    <div class="answer-option"><strong>E)</strong> Voltage gain</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.10 -->
+  <!-- ============================================================ -->
+  <div class="question-block">
+    <div class="question-number">2.10</div>
+    <div class="question-text">
+      Power in a circuit increases if:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Voltage increases while current remains constant</div>
+    <div class="answer-option"><strong>B)</strong> Voltage becomes zero</div>
+    <div class="answer-option"><strong>C)</strong> Current stops</div>
+    <div class="answer-option"><strong>D)</strong> Resistance disappears</div>
+    <div class="answer-option"><strong>E)</strong> Time decreases</div>
+  </div>
+  
+  <!-- Continue through 2.22 similarly structured -->
+  
+  <div class="question-block">
+    <div class="question-number">2.11</div>
+    <div class="question-text">
+      Electrical energy transferred depends on power and:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Time</div>
+    <div class="answer-option"><strong>B)</strong> Resistance</div>
+    <div class="answer-option"><strong>C)</strong> Voltage only</div>
+    <div class="answer-option"><strong>D)</strong> Current only</div>
+    <div class="answer-option"><strong>E)</strong> Wire length</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.12</div>
+    <div class="question-text">
+      If efficiency is 80%, this means:
+    </div>
+    <div class="answer-option"><strong>A)</strong> 20% of input is useful</div>
+    <div class="answer-option"><strong>B)</strong> 80% of input is useful output</div>
+    <div class="answer-option"><strong>C)</strong> Energy is destroyed</div>
+    <div class="answer-option"><strong>D)</strong> Power doubles</div>
+    <div class="answer-option"><strong>E)</strong> Voltage halves</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.13</div>
+    <div class="question-text">
+      A device rated at 2 kW consumes energy faster than a device rated at 500 W because:
+    </div>
+    <div class="answer-option"><strong>A)</strong> It has higher efficiency</div>
+    <div class="answer-option"><strong>B)</strong> It transfers energy at a higher rate</div>
+    <div class="answer-option"><strong>C)</strong> It uses less current</div>
+    <div class="answer-option"><strong>D)</strong> It has lower voltage</div>
+    <div class="answer-option"><strong>E)</strong> It eliminates resistance</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.14</div>
+    <div class="question-text">
+      Reducing wasted energy in a system improves:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Resistance</div>
+    <div class="answer-option"><strong>B)</strong> Efficiency</div>
+    <div class="answer-option"><strong>C)</strong> Voltage drop</div>
+    <div class="answer-option"><strong>D)</strong> Current direction</div>
+    <div class="answer-option"><strong>E)</strong> Wire thickness</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.15</div>
+    <div class="question-text">
+      Circuit design must ensure components do not exceed:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Their power rating</div>
+    <div class="answer-option"><strong>B)</strong> Their color code</div>
+    <div class="answer-option"><strong>C)</strong> Their shape</div>
+    <div class="answer-option"><strong>D)</strong> Their length</div>
+    <div class="answer-option"><strong>E)</strong> Their temperature only</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.16</div>
+    <div class="question-text">
+      A higher-efficiency device wastes:
+    </div>
+    <div class="answer-option"><strong>A)</strong> More energy</div>
+    <div class="answer-option"><strong>B)</strong> Less energy</div>
+    <div class="answer-option"><strong>C)</strong> Equal energy</div>
+    <div class="answer-option"><strong>D)</strong> Infinite energy</div>
+    <div class="answer-option"><strong>E)</strong> Zero voltage</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.17</div>
+    <div class="question-text">
+      Solar cells are considered efficient when they:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Convert a large fraction of light into electricity</div>
+    <div class="answer-option"><strong>B)</strong> Eliminate voltage</div>
+    <div class="answer-option"><strong>C)</strong> Increase resistance</div>
+    <div class="answer-option"><strong>D)</strong> Reduce current to zero</div>
+    <div class="answer-option"><strong>E)</strong> Store energy permanently</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.18</div>
+    <div class="question-text">
+      Energy conservation in circuits means:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Energy is created</div>
+    <div class="answer-option"><strong>B)</strong> Energy is destroyed</div>
+    <div class="answer-option"><strong>C)</strong> Energy is transformed but not lost</div>
+    <div class="answer-option"><strong>D)</strong> Voltage disappears</div>
+    <div class="answer-option"><strong>E)</strong> Resistance becomes zero</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.19</div>
+    <div class="question-text">
+      Increasing device power rating typically increases:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Rate of energy use</div>
+    <div class="answer-option"><strong>B)</strong> Resistance only</div>
+    <div class="answer-option"><strong>C)</strong> Efficiency always</div>
+    <div class="answer-option"><strong>D)</strong> Voltage only</div>
+    <div class="answer-option"><strong>E)</strong> Charge only</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.20</div>
+    <div class="question-text">
+      An efficient circuit design minimizes:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Useful output</div>
+    <div class="answer-option"><strong>B)</strong> Energy losses</div>
+    <div class="answer-option"><strong>C)</strong> Voltage supply</div>
+    <div class="answer-option"><strong>D)</strong> Current flow</div>
+    <div class="answer-option"><strong>E)</strong> Component ratings</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.21</div>
+    <div class="question-text">
+      A device rated at 500 W operating for 2 hours consumes:
+    </div>
+    <div class="answer-option"><strong>A)</strong> 1 kWh</div>
+    <div class="answer-option"><strong>B)</strong> 1000 kWh</div>
+    <div class="answer-option"><strong>C)</strong> 500 kWh</div>
+    <div class="answer-option"><strong>D)</strong> 2 kWh</div>
+    <div class="answer-option"><strong>E)</strong> 500 J</div>
+  </div>
+  
+  <div class="question-block">
+    <div class="question-number">2.22</div>
+    <div class="question-text">
+      Improving insulation in electrical systems primarily reduces:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Efficiency</div>
+    <div class="answer-option"><strong>B)</strong> Energy losses</div>
+    <div class="answer-option"><strong>C)</strong> Voltage</div>
+    <div class="answer-option"><strong>D)</strong> Current</div>
+    <div class="answer-option"><strong>E)</strong> Power rating</div>
+  </div>
+
+  <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+    <div class="answer-row"><div>2.1</div><div>B</div><div>Some input energy becomes heat</div></div>
+    <div class="answer-row"><div>2.2</div><div>B</div><div>Efficiency rises when useful output increases</div></div>
+    <div class="answer-row"><div>2.3</div><div>B</div><div>Energy losses (heat, sound) prevent 100% efficiency</div></div>
+    <div class="answer-row"><div>2.4</div><div>A</div><div>1000 W × 1 h = 1 kWh</div></div>
+    <div class="answer-row"><div>2.5</div><div>B</div><div>LEDs convert more energy to useful light</div></div>
+  
+    <div class="answer-row"><div>2.6</div><div>A</div><div>Components must meet power ratings</div></div>
+    <div class="answer-row"><div>2.7</div><div>B</div><div>Energy converts to light and heat</div></div>
+    <div class="answer-row"><div>2.8</div><div>B</div><div>Energy = Power × Time</div></div>
+    <div class="answer-row"><div>2.9</div><div>B</div><div>Solar panels are less than 100% efficient</div></div>
+    <div class="answer-row"><div>2.10</div><div>A</div><div>Power increases if voltage increases</div></div>
+  
+    <div class="answer-row"><div>2.11</div><div>A</div><div>Energy depends on time and power</div></div>
+    <div class="answer-row"><div>2.12</div><div>B</div><div>80% of input becomes useful output</div></div>
+    <div class="answer-row"><div>2.13</div><div>B</div><div>Higher kW = higher energy transfer rate</div></div>
+    <div class="answer-row"><div>2.14</div><div>B</div><div>Less waste → higher efficiency</div></div>
+    <div class="answer-row"><div>2.15</div><div>A</div><div>Exceeding power rating causes failure</div></div>
+  
+    <div class="answer-row"><div>2.16</div><div>B</div><div>Higher efficiency wastes less energy</div></div>
+    <div class="answer-row"><div>2.17</div><div>A</div><div>Efficient conversion of light to electricity</div></div>
+    <div class="answer-row"><div>2.18</div><div>C</div><div>Energy is transformed, not destroyed</div></div>
+    <div class="answer-row"><div>2.19</div><div>A</div><div>Higher power → higher energy rate</div></div>
+    <div class="answer-row"><div>2.20</div><div>B</div><div>Efficient design minimizes losses</div></div>
+  
+    <div class="answer-row"><div>2.21</div><div>A</div><div>500 W × 2 h = 1000 Wh = 1 kWh</div></div>
+    <div class="answer-row"><div>2.22</div><div>B</div><div>Insulation reduces energy loss</div></div>
+  
+  </div>
+
+<footer>
+Section 7.5 – Energy, Efficiency, and Circuit Design | Bank 2
+</footer>
+
+<hr style="margin: 40px 0; border: 1px solid #ccc;">
+
+<header>
+<h1>Section 7.5: Energy, Efficiency, and Circuit Design</h1>
+<p><strong>Bank 3: Single-Step Calculations</strong></p>
+<p>Round answers to 2–3 significant figures.</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+<h2>Single-Step Calculations</h2>
+<div class="bank-info">Formula Group 1 of 4</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- FORMULA GROUP 1: P = IV -->
+<!-- ============================================================ -->
+
+<div class="formula-group">
+<div class="formula-title">Formula 1: Electrical Power</div>
+
+<div class="formula-display">
+$$P = IV$$
+</div>
+
+<!-- Q1 Standard -->
+<div class="question">
+<div class="question-number">3.1</div>
+A device operates at 120 V and draws 5.0 A. What power does it consume?
+<div class="answer-blank">Answer: ________ W</div>
+</div>
+
+<!-- Q2 Inverted -->
+<div class="question">
+<div class="question-number">3.2</div>
+Calculate the current drawn by a 600 W appliance connected to a 120 V supply.
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q3 Context-Rich -->
+<div class="question">
+<div class="question-number">3.3</div>
+A space heater rated at 1500 W is plugged into a 120 V outlet. What current flows through the heater?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q4 Alternate -->
+<div class="question">
+<div class="question-number">3.4</div>
+Determine the voltage required for a device to consume 200 W if it draws 4.0 A.
+<div class="answer-blank">Answer: ________ V</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- FORMULA GROUP 2: P = I^2 R -->
+<!-- ============================================================ -->
+
+<div class="formula-group">
+    <div class="formula-title">Formula 2: Power (using resistance)</div>
+    
+    <div class="formula-display">
+    $$P = I^2 R$$
+    </div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">3.5</div>
+    A 3.0 A current flows through a 8 Ω resistor. What power is dissipated?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">3.6</div>
+    Calculate the power dissipated in a 12 Ω resistor if the current is 2.0 A.
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">3.7</div>
+    A laboratory resistor of 5 Ω carries a current of 4.0 A during an experiment. What power is converted to heat?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">3.8</div>
+    Determine the current flowing through a 10 Ω resistor if the power dissipated is 90 W.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- FORMULA GROUP 3: P = V^2 / R -->
+<!-- ============================================================ -->
+
+<div class="formula-group">
+    <div class="formula-title">Formula 3: Power (using voltage)</div>
+    
+    <div class="formula-display">
+    $$P = \frac{V^2}{R}$$
+    </div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">3.9</div>
+    A 120 V device has a resistance of 24 Ω. What power does it consume?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">3.10</div>
+    Calculate the power dissipated by a 10 Ω resistor connected to a 50 V source.
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">3.11</div>
+    An electric stove element rated at 240 V has a resistance of 30 Ω. What power is delivered to the element?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">3.12</div>
+    Determine the resistance of a device that dissipates 800 W when connected to a 200 V supply.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 4: E = Pt -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 4: Electrical Energy</div>
+    
+    <div class="formula-display">
+    $$E = Pt$$
+    </div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">3.13</div>
+    A 500 W device operates for 2.0 hours. How much energy is used in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">3.14</div>
+    Calculate the energy in joules consumed by a 100 W bulb operating for 30 s.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">3.15</div>
+    A heater rated at 1.5 kW runs for 3.0 hours. How much electrical energy does it consume in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">3.16</div>
+    Determine how long a 200 W device must operate to use 0.5 kWh of energy.
+    <div class="answer-blank">Answer: ________ h</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 3: Single-Step Calculations — Answer Key</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 1: P = IV -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 1: Electrical Power ($P = IV$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.1</div>
+        <div>600 W</div>
+        <div>$$P = IV = (5.0)(120) = 600\text{ W}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.2</div>
+        <div>5.0 A</div>
+        <div>$$I = \frac{P}{V} = \frac{600}{120} = 5.0\text{ A}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.3</div>
+        <div>12.5 A</div>
+        <div>$$I = \frac{1500}{120} = 12.5\text{ A}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.4</div>
+        <div>50 V</div>
+        <div>$$V = \frac{P}{I} = \frac{200}{4.0} = 50\text{ V}$$</div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 2: P = I²R -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 2: Power (using resistance) ($P = I^2R$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.5</div>
+        <div>72 W</div>
+        <div>$$P = I^2R = (3.0)^2(8) = 72\text{ W}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.6</div>
+        <div>48 W</div>
+        <div>$$P = (2.0)^2(12) = 48\text{ W}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.7</div>
+        <div>80 W</div>
+        <div>$$P = (4.0)^2(5) = 80\text{ W}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.8</div>
+        <div>3.0 A</div>
+        <div>$$I = \sqrt{\frac{P}{R}} = \sqrt{\frac{90}{10}} = 3.0\text{ A}$$</div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 3: P = V²/R -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 3: Power (using voltage) ($P = \frac{V^2}{R}$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.9</div>
+        <div>600 W</div>
+        <div>$$P = \frac{120^2}{24} = 600\text{ W}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.10</div>
+        <div>250 W</div>
+        <div>$$P = \frac{50^2}{10} = 250\text{ W}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.11</div>
+        <div>1920 W</div>
+        <div>$$P = \frac{240^2}{30} = 1920\text{ W}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.12</div>
+        <div>50 Ω</div>
+        <div>$$R = \frac{V^2}{P} = \frac{200^2}{800} = 50\text{ Ω}$$</div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 4: E = Pt -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 4: Electrical Energy ($E = Pt$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.13</div>
+        <div>1.0 kWh</div>
+        <div>$$E = (0.5\text{ kW})(2.0\text{ h}) = 1.0\text{ kWh}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.14</div>
+        <div>3000 J</div>
+        <div>$$E = (100)(30) = 3000\text{ J}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.15</div>
+        <div>4.5 kWh</div>
+        <div>$$E = (1.5\text{ kW})(3.0\text{ h}) = 4.5\text{ kWh}$$</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.16</div>
+        <div>2.5 h</div>
+        <div>$$t = \frac{0.5\text{ kWh}}{0.2\text{ kW}} = 2.5\text{ h}$$</div>
+      </div>
+    </div>
+  
+  </div>
+
+<footer>
+Section 7.5 – Energy, Efficiency, and Circuit Design | Bank 3
+</footer>
+
+<hr style="margin: 40px 0; border: 1px solid #ccc;">
+
+TYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7.5 Energy, Efficiency, and Circuit Design - Bank 4: Multi-Step Calculations</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<header>
+    <h1>Section 7.5: Energy, Efficiency, and Circuit Design</h1>
+    <p><strong>Bank 4: Multi-Step Calculations</strong></p>
+    <p>Provide one final numeric answer. No intermediate hints given.</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Multi-Step Problems</h2>
+    <p>4 Scenarios | 2+ calculation steps required</p>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 1 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 1: Power in Multi-Component Circuits</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.1</div>
+    A 120 V appliance draws 8.0 A of current and operates for 2.0 hours. How much electrical energy does it use in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.2</div>
+    Determine the operating time required for a 1500 W heater to consume 4.5 kWh of energy.
+    <div class="answer-blank">Answer: ________ h</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.3</div>
+    A solar-powered battery system delivers 600 W to a home circuit for 5.0 hours. What total electrical energy is supplied in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.4</div>
+    Find the current drawn by a 2.4 kW device connected to a 240 V supply.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 2 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 2: Efficiency Analysis</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.5</div>
+    A motor receives 800 J of electrical energy and produces 600 J of useful mechanical energy. What is its efficiency?
+    <div class="answer-blank">Answer: ________ %</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.6</div>
+    Determine the useful output energy if a device operates at 75% efficiency with an input of 2000 J.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.7</div>
+    A solar panel converts 5000 J of sunlight into 900 J of electrical energy during a short interval. What is the efficiency of the solar panel?
+    <div class="answer-blank">Answer: ________ %</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.8</div>
+    Find the total input energy required if a device produces 1200 J of useful output at 80% efficiency.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 3 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 3: Power Design Constraints</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.9</div>
+    A circuit contains a 10 Ω resistor connected to a 20 V source. What power is dissipated by the resistor?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.10</div>
+    Calculate the resistance required for a device to dissipate 500 W when connected to a 100 V source.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.11</div>
+    A heating coil is rated at 2.0 kW when connected to a 240 V supply. What current flows through the coil?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.12</div>
+    Find the voltage required to produce 900 W of power in a 15 Ω resistor.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 4 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 4: Circuit Energy Planning</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.13</div>
+    A 1.2 kW appliance runs for 3.0 hours each day. How much energy does it consume in one day in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.14</div>
+    Determine how long a 750 W device must operate to consume 1.5 kWh of energy.
+    <div class="answer-blank">Answer: ________ h</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.15</div>
+    A battery system supplies 300 W continuously for 8.0 hours. If the battery has 90% efficiency in delivering stored energy, how much stored energy was originally available in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.16</div>
+    Find the total input energy required to produce 2.0 kWh of useful electrical output if a system operates at 85% efficiency.
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    </div>
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 4: Multi-Step Calculations — Answer Key</strong></p>
+    
+    <!-- ============================================================ -->
+    <!-- Scenario 1 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+    <div class="answer-key-section-title">
+    Scenario 1: Power in Multi-Component Circuits
+    </div>
+    
+    <div class="answer-row">
+    <div>4.1</div>
+    <div>1.92 kWh</div>
+    <div>
+    $$P = IV = (120)(8.0) = 960\text{ W}$$
+    $$E = (0.96\text{ kW})(2.0\text{ h}) = 1.92\text{ kWh}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.2</div>
+    <div>3.0 h</div>
+    <div>
+    $$t = \frac{4.5\text{ kWh}}{1.5\text{ kW}} = 3.0\text{ h}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.3</div>
+    <div>3.0 kWh</div>
+    <div>
+    $$E = (0.60\text{ kW})(5.0\text{ h}) = 3.0\text{ kWh}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.4</div>
+    <div>10 A</div>
+    <div>
+    $$I = \frac{P}{V} = \frac{2400}{240} = 10\text{ A}$$
+    </div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- Scenario 2 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+    <div class="answer-key-section-title">
+    Scenario 2: Efficiency Analysis
+    </div>
+    
+    <div class="answer-row">
+    <div>4.5</div>
+    <div>75%</div>
+    <div>
+    $$\eta = \frac{600}{800} \times 100 = 75\%$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.6</div>
+    <div>1500 J</div>
+    <div>
+    $$E_{out} = (0.75)(2000) = 1500\text{ J}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.7</div>
+    <div>18%</div>
+    <div>
+    $$\eta = \frac{900}{5000} \times 100 = 18\%$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.8</div>
+    <div>1500 J</div>
+    <div>
+    $$E_{in} = \frac{1200}{0.80} = 1500\text{ J}$$
+    </div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- Scenario 3 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+    <div class="answer-key-section-title">
+    Scenario 3: Power Design Constraints
+    </div>
+    
+    <div class="answer-row">
+    <div>4.9</div>
+    <div>40 W</div>
+    <div>
+    $$P = \frac{V^2}{R} = \frac{20^2}{10} = 40\text{ W}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.10</div>
+    <div>20 Ω</div>
+    <div>
+    $$R = \frac{V^2}{P} = \frac{100^2}{500} = 20\text{ Ω}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.11</div>
+    <div>8.3 A</div>
+    <div>
+    $$I = \frac{P}{V} = \frac{2000}{240} = 8.3\text{ A}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.12</div>
+    <div>116 V</div>
+    <div>
+    $$V = \sqrt{PR} = \sqrt{(900)(15)} \approx 116\text{ V}$$
+    </div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- Scenario 4 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+    <div class="answer-key-section-title">
+    Scenario 4: Circuit Energy Planning
+    </div>
+    
+    <div class="answer-row">
+    <div>4.13</div>
+    <div>3.6 kWh</div>
+    <div>
+    $$E = (1.2)(3.0) = 3.6\text{ kWh}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.14</div>
+    <div>2.0 h</div>
+    <div>
+    $$t = \frac{1.5}{0.75} = 2.0\text{ h}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.15</div>
+    <div>2.67 kWh</div>
+    <div>
+    $$E_{in} = \frac{(0.30)(8.0)}{0.90} = 2.67\text{ kWh}$$
+    </div>
+    </div>
+    
+    <div class="answer-row">
+    <div>4.16</div>
+    <div>2.35 kWh</div>
+    <div>
+    $$E_{in} = \frac{2.0}{0.85} = 2.35\text{ kWh}$$
+    </div>
+    </div>
+    
+    </div>
+    
+    </div>
+
+    <footer>
+    Section 7.5 – Energy, Efficiency, and Circuit Design | Bank 4
+    </footer>
+</div>
+</body>
+</html>

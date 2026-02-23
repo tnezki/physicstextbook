@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 7.4: Ohm's Law and Circuit Analysis - Complete Assessment Banks 1-4</title>
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.term-definition {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  font-style: italic;
+  color: #444;
+}
+
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+.option-label {
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ================================
+   FORMULA GROUPS
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+/* ================================
+   ANSWER KEY
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+/* ================================
+   SCENARIO GROUPS
+================================ */
+
+.scenario-group {
+  margin-bottom: 35px;
+}
+
+.scenario-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Section 7.4: Ohm’s Law and Circuit Analysis</h1>
+<p><strong>Bank 1: Vocabulary Assessment</strong></p>
+<p>Multiple Choice | Vocabulary Mastery</p>
+</header>
+
+<div class="bank-section">
+
+<!-- ============================================================ -->
+<!-- TERM 1: RESISTANCE -->
+<!-- ============================================================ -->
+
+<div class="question-group">
+<div class="question-group-title">Resistance (1.1 – 1.4)</div>
+<div class="term-definition">
+Opposition to the flow of electric current; measured in ohms (Ω).
+</div>
+
+<div class="question">
+<div class="question-number">1.1</div>
+Resistance is best described as:
+<div class="option"><span class="option-label">A)</span> The flow of electric charge</div>
+<div class="option"><span class="option-label">B)</span> Opposition to current</div>
+<div class="option"><span class="option-label">C)</span> Energy per unit charge</div>
+<div class="option"><span class="option-label">D)</span> Voltage per second</div>
+<div class="option"><span class="option-label">E)</span> Magnetic force</div>
+</div>
+
+<div class="question">
+<div class="question-number">1.2</div>
+Which unit measures resistance?
+<div class="option"><span class="option-label">A)</span> Volt</div>
+<div class="option"><span class="option-label">B)</span> Ampere</div>
+<div class="option"><span class="option-label">C)</span> Ohm</div>
+<div class="option"><span class="option-label">D)</span> Watt</div>
+<div class="option"><span class="option-label">E)</span> Coulomb</div>
+</div>
+
+<div class="question">
+<div class="question-number">1.3</div>
+A material with high resistance:
+<div class="option"><span class="option-label">A)</span> Allows charge to flow easily</div>
+<div class="option"><span class="option-label">B)</span> Opposes charge flow strongly</div>
+<div class="option"><span class="option-label">C)</span> Has zero voltage</div>
+<div class="option"><span class="option-label">D)</span> Is a perfect conductor</div>
+<div class="option"><span class="option-label">E)</span> Stores magnetic energy</div>
+</div>
+
+<div class="question">
+<div class="question-number">1.4</div>
+Resistance in a circuit affects:
+<div class="option"><span class="option-label">A)</span> Only voltage</div>
+<div class="option"><span class="option-label">B)</span> Only charge</div>
+<div class="option"><span class="option-label">C)</span> The amount of current that flows</div>
+<div class="option"><span class="option-label">D)</span> Magnetic polarity</div>
+<div class="option"><span class="option-label">E)</span> Light speed</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- TERM 2: OHM (Ω) -->
+<!-- ============================================================ -->
+
+<div class="question-group">
+    <div class="question-group-title">Ohm (2.1 – 2.4)</div>
+    <div class="term-definition">
+    The SI unit of resistance; symbol Ω.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.1</div>
+    One ohm represents:
+    <div class="option"><span class="option-label">A)</span> One coulomb per second</div>
+    <div class="option"><span class="option-label">B)</span> One volt per ampere</div>
+    <div class="option"><span class="option-label">C)</span> One watt per volt</div>
+    <div class="option"><span class="option-label">D)</span> One joule per coulomb</div>
+    <div class="option"><span class="option-label">E)</span> One ampere per volt</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.2</div>
+    The symbol for ohm is:
+    <div class="option"><span class="option-label">A)</span> V</div>
+    <div class="option"><span class="option-label">B)</span> A</div>
+    <div class="option"><span class="option-label">C)</span> Ω</div>
+    <div class="option"><span class="option-label">D)</span> W</div>
+    <div class="option"><span class="option-label">E)</span> C</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.3</div>
+    If resistance increases while voltage remains constant, current:
+    <div class="option"><span class="option-label">A)</span> Increases</div>
+    <div class="option"><span class="option-label">B)</span> Decreases</div>
+    <div class="option"><span class="option-label">C)</span> Remains unchanged</div>
+    <div class="option"><span class="option-label">D)</span> Becomes zero instantly</div>
+    <div class="option"><span class="option-label">E)</span> Doubles automatically</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.4</div>
+    Resistance is commonly measured using:
+    <div class="option"><span class="option-label">A)</span> Ammeter</div>
+    <div class="option"><span class="option-label">B)</span> Voltmeter</div>
+    <div class="option"><span class="option-label">C)</span> Multimeter</div>
+    <div class="option"><span class="option-label">D)</span> Battery</div>
+    <div class="option"><span class="option-label">E)</span> Capacitor</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 3: OHM’S LAW -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Ohm’s Law (3.1 – 3.4)</div>
+    <div class="term-definition">
+    The relationship between voltage, current, and resistance: V = IR.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.1</div>
+    Ohm’s Law states that:
+    <div class="option"><span class="option-label">A)</span> V = IR</div>
+    <div class="option"><span class="option-label">B)</span> I = Q/t</div>
+    <div class="option"><span class="option-label">C)</span> E = QV</div>
+    <div class="option"><span class="option-label">D)</span> P = IV</div>
+    <div class="option"><span class="option-label">E)</span> R = QV</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.2</div>
+    If voltage increases and resistance stays constant, current:
+    <div class="option"><span class="option-label">A)</span> Decreases</div>
+    <div class="option"><span class="option-label">B)</span> Increases</div>
+    <div class="option"><span class="option-label">C)</span> Remains constant</div>
+    <div class="option"><span class="option-label">D)</span> Becomes zero</div>
+    <div class="option"><span class="option-label">E)</span> Reverses</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.3</div>
+    Ohm’s Law applies most directly to:
+    <div class="option"><span class="option-label">A)</span> Ideal conductors</div>
+    <div class="option"><span class="option-label">B)</span> Resistors</div>
+    <div class="option"><span class="option-label">C)</span> Capacitors only</div>
+    <div class="option"><span class="option-label">D)</span> Magnetic coils</div>
+    <div class="option"><span class="option-label">E)</span> Solar cells only</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.4</div>
+    In the equation V = IR, I represents:
+    <div class="option"><span class="option-label">A)</span> Resistance</div>
+    <div class="option"><span class="option-label">B)</span> Current</div>
+    <div class="option"><span class="option-label">C)</span> Voltage</div>
+    <div class="option"><span class="option-label">D)</span> Energy</div>
+    <div class="option"><span class="option-label">E)</span> Power</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 4: SERIES CIRCUIT -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Series Circuit (4.1 – 4.4)</div>
+    <div class="term-definition">
+    A circuit where components are connected end-to-end so current has only one path.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.1</div>
+    In a series circuit, current:
+    <div class="option"><span class="option-label">A)</span> Splits into branches</div>
+    <div class="option"><span class="option-label">B)</span> Is the same through all components</div>
+    <div class="option"><span class="option-label">C)</span> Is zero</div>
+    <div class="option"><span class="option-label">D)</span> Doubles automatically</div>
+    <div class="option"><span class="option-label">E)</span> Stops instantly</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.2</div>
+    In a series circuit, total resistance:
+    <div class="option"><span class="option-label">A)</span> Decreases</div>
+    <div class="option"><span class="option-label">B)</span> Adds together</div>
+    <div class="option"><span class="option-label">C)</span> Becomes zero</div>
+    <div class="option"><span class="option-label">D)</span> Is always constant</div>
+    <div class="option"><span class="option-label">E)</span> Is ignored</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.3</div>
+    If one component fails in a series circuit:
+    <div class="option"><span class="option-label">A)</span> Others continue working</div>
+    <div class="option"><span class="option-label">B)</span> Entire circuit stops</div>
+    <div class="option"><span class="option-label">C)</span> Resistance disappears</div>
+    <div class="option"><span class="option-label">D)</span> Voltage doubles</div>
+    <div class="option"><span class="option-label">E)</span> Current increases</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.4</div>
+    A string of holiday lights wired in one loop is typically:
+    <div class="option"><span class="option-label">A)</span> Parallel</div>
+    <div class="option"><span class="option-label">B)</span> Series</div>
+    <div class="option"><span class="option-label">C)</span> Independent</div>
+    <div class="option"><span class="option-label">D)</span> Insulated</div>
+    <div class="option"><span class="option-label">E)</span> Magnetic</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 5: PARALLEL CIRCUIT -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Parallel Circuit (5.1 – 5.4)</div>
+    <div class="term-definition">
+    A circuit in which components are connected across the same two points, providing multiple paths for current.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.1</div>
+    In a parallel circuit, voltage:
+    <div class="option"><span class="option-label">A)</span> Is the same across all branches</div>
+    <div class="option"><span class="option-label">B)</span> Is zero</div>
+    <div class="option"><span class="option-label">C)</span> Doubles</div>
+    <div class="option"><span class="option-label">D)</span> Is random</div>
+    <div class="option"><span class="option-label">E)</span> Reverses</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.2</div>
+    In a parallel circuit, total resistance:
+    <div class="option"><span class="option-label">A)</span> Is greater than any branch</div>
+    <div class="option"><span class="option-label">B)</span> Is less than the smallest branch</div>
+    <div class="option"><span class="option-label">C)</span> Equals sum directly</div>
+    <div class="option"><span class="option-label">D)</span> Becomes zero</div>
+    <div class="option"><span class="option-label">E)</span> Is unchanged</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.3</div>
+    If one branch opens in a parallel circuit:
+    <div class="option"><span class="option-label">A)</span> Entire circuit stops</div>
+    <div class="option"><span class="option-label">B)</span> Other branches continue working</div>
+    <div class="option"><span class="option-label">C)</span> Voltage disappears</div>
+    <div class="option"><span class="option-label">D)</span> Current doubles</div>
+    <div class="option"><span class="option-label">E)</span> Resistance becomes infinite</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.4</div>
+    Household wiring is typically arranged in:
+    <div class="option"><span class="option-label">A)</span> Series</div>
+    <div class="option"><span class="option-label">B)</span> Parallel</div>
+    <div class="option"><span class="option-label">C)</span> Single loop only</div>
+    <div class="option"><span class="option-label">D)</span> Magnetic circuits</div>
+    <div class="option"><span class="option-label">E)</span> Insulated loops</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 6: INSULATOR -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Insulator (6.1 – 6.4)</div>
+    <div class="term-definition">
+    A material that resists the flow of electric charge.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.1</div>
+    An insulator:
+    <div class="option"><span class="option-label">A)</span> Allows charge to move freely</div>
+    <div class="option"><span class="option-label">B)</span> Opposes current strongly</div>
+    <div class="option"><span class="option-label">C)</span> Has zero resistance</div>
+    <div class="option"><span class="option-label">D)</span> Is always metallic</div>
+    <div class="option"><span class="option-label">E)</span> Produces voltage</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.2</div>
+    Rubber coating on wires acts as:
+    <div class="option"><span class="option-label">A)</span> Conductor</div>
+    <div class="option"><span class="option-label">B)</span> Insulator</div>
+    <div class="option"><span class="option-label">C)</span> Battery</div>
+    <div class="option"><span class="option-label">D)</span> Resistor</div>
+    <div class="option"><span class="option-label">E)</span> Ammeter</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.3</div>
+    Materials with high resistance are generally:
+    <div class="option"><span class="option-label">A)</span> Conductors</div>
+    <div class="option"><span class="option-label">B)</span> Insulators</div>
+    <div class="option"><span class="option-label">C)</span> Multimeters</div>
+    <div class="option"><span class="option-label">D)</span> Cells</div>
+    <div class="option"><span class="option-label">E)</span> Electrolytes</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.4</div>
+    Plastic is commonly used as:
+    <div class="option"><span class="option-label">A)</span> Conductor</div>
+    <div class="option"><span class="option-label">B)</span> Insulator</div>
+    <div class="option"><span class="option-label">C)</span> Electrode</div>
+    <div class="option"><span class="option-label">D)</span> Current source</div>
+    <div class="option"><span class="option-label">E)</span> Capacitor</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 7: CONDUCTOR -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Conductor (7.1 – 7.4)</div>
+    <div class="term-definition">
+    A material that allows electric charge to flow easily.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.1</div>
+    A conductor:
+    <div class="option"><span class="option-label">A)</span> Resists charge flow</div>
+    <div class="option"><span class="option-label">B)</span> Allows charge flow</div>
+    <div class="option"><span class="option-label">C)</span> Blocks voltage</div>
+    <div class="option"><span class="option-label">D)</span> Stores energy</div>
+    <div class="option"><span class="option-label">E)</span> Is always plastic</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.2</div>
+    Copper wire is used in circuits because it is a:
+    <div class="option"><span class="option-label">A)</span> Resistor</div>
+    <div class="option"><span class="option-label">B)</span> Conductor</div>
+    <div class="option"><span class="option-label">C)</span> Insulator</div>
+    <div class="option"><span class="option-label">D)</span> Battery</div>
+    <div class="option"><span class="option-label">E)</span> Capacitor</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.3</div>
+    Conductors typically have:
+    <div class="option"><span class="option-label">A)</span> High resistance</div>
+    <div class="option"><span class="option-label">B)</span> Low resistance</div>
+    <div class="option"><span class="option-label">C)</span> Zero voltage</div>
+    <div class="option"><span class="option-label">D)</span> Infinite energy</div>
+    <div class="option"><span class="option-label">E)</span> Magnetic poles</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.4</div>
+    Metal materials are usually:
+    <div class="option"><span class="option-label">A)</span> Insulators</div>
+    <div class="option"><span class="option-label">B)</span> Conductors</div>
+    <div class="option"><span class="option-label">C)</span> Electrolytes</div>
+    <div class="option"><span class="option-label">D)</span> Open circuits</div>
+    <div class="option"><span class="option-label">E)</span> Light sources</div>
+    </div>
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 1: Vocabulary Assessment — Answer Key</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- Resistance -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Resistance (Questions 1.1–1.4)
+      </div>
+  
+      <div class="answer-row">
+        <div>1.1</div>
+        <div>B</div>
+        <div>Resistance opposes current</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>1.2</div>
+        <div>C</div>
+        <div>Unit of resistance is ohm</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>1.3</div>
+        <div>B</div>
+        <div>High resistance → strong opposition</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>1.4</div>
+        <div>C</div>
+        <div>Resistance limits current</div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Ohm -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Ohm (Questions 2.1–2.4)
+      </div>
+  
+      <div class="answer-row"><div>2.1</div><div>B</div><div>1 Ω = 1 V/A</div></div>
+      <div class="answer-row"><div>2.2</div><div>C</div><div>Symbol for ohm is Ω</div></div>
+      <div class="answer-row"><div>2.3</div><div>B</div><div>Increased R → decreased I</div></div>
+      <div class="answer-row"><div>2.4</div><div>C</div><div>Multimeter measures resistance</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Ohm’s Law -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Ohm’s Law (Questions 3.1–3.4)
+      </div>
+  
+      <div class="answer-row"><div>3.1</div><div>A</div><div>V = IR</div></div>
+      <div class="answer-row"><div>3.2</div><div>B</div><div>Higher V → higher I (R constant)</div></div>
+      <div class="answer-row"><div>3.3</div><div>B</div><div>Ohm’s Law applies to resistors</div></div>
+      <div class="answer-row"><div>3.4</div><div>B</div><div>I represents current</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Series Circuit -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Series Circuit (Questions 4.1–4.4)
+      </div>
+  
+      <div class="answer-row"><div>4.1</div><div>B</div><div>Current same through all components</div></div>
+      <div class="answer-row"><div>4.2</div><div>B</div><div>Resistances add in series</div></div>
+      <div class="answer-row"><div>4.3</div><div>B</div><div>Open component stops entire circuit</div></div>
+      <div class="answer-row"><div>4.4</div><div>B</div><div>Single path → series</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Parallel Circuit -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Parallel Circuit (Questions 5.1–5.4)
+      </div>
+  
+      <div class="answer-row"><div>5.1</div><div>A</div><div>Voltage same across branches</div></div>
+      <div class="answer-row"><div>5.2</div><div>B</div><div>Total R less than smallest branch</div></div>
+      <div class="answer-row"><div>5.3</div><div>B</div><div>Other branches continue</div></div>
+      <div class="answer-row"><div>5.4</div><div>B</div><div>Homes wired in parallel</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Insulator -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Insulator (Questions 6.1–6.4)
+      </div>
+  
+      <div class="answer-row"><div>6.1</div><div>B</div><div>Insulator resists charge flow</div></div>
+      <div class="answer-row"><div>6.2</div><div>B</div><div>Rubber is insulator</div></div>
+      <div class="answer-row"><div>6.3</div><div>B</div><div>High resistance materials</div></div>
+      <div class="answer-row"><div>6.4</div><div>B</div><div>Plastic insulates wires</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Conductor -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Conductor (Questions 7.1–7.4)
+      </div>
+  
+      <div class="answer-row"><div>7.1</div><div>B</div><div>Conductors allow charge flow</div></div>
+      <div class="answer-row"><div>7.2</div><div>B</div><div>Copper is conductor</div></div>
+      <div class="answer-row"><div>7.3</div><div>B</div><div>Low resistance</div></div>
+      <div class="answer-row"><div>7.4</div><div>B</div><div>Metals conduct electricity</div></div>
+    </div>
+  
+  </div>
+<footer>
+Section 7.4 – Ohm’s Law and Circuit Analysis | Bank 1
+</footer>
+
+<hr style="margin: 40px 0; border: 1px solid #ccc;">
+
+<header>
+  <h1>Section 7.4: Ohm’s Law and Circuit Analysis</h1>
+  <p><strong>Bank 2: Conceptual Questions</strong></p>
+  <p>Application and Reasoning | No Calculations</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+  <h2>Conceptual Understanding</h2>
+  <div class="bank-info">Multiple Choice (A–E)</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- QUESTION 2.1 -->
+<!-- ============================================================ -->
+
+<div class="question-block">
+  <div class="question-number">2.1</div>
+  <div class="question-text">
+    A circuit contains a fixed resistor connected to a battery. If the battery voltage increases while the resistance remains constant, what happens to the current?
+  </div>
+  <div class="answer-option"><strong>A)</strong> It decreases</div>
+  <div class="answer-option"><strong>B)</strong> It increases</div>
+  <div class="answer-option"><strong>C)</strong> It remains the same</div>
+  <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> It reverses direction</div>
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- QUESTION 2.2 -->
+<!-- ============================================================ -->
+
+<div class="question-block">
+    <div class="question-number">2.2</div>
+    <div class="question-text">
+      In a series circuit containing two resistors, how does adding a third identical resistor affect total resistance?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It decreases</div>
+    <div class="answer-option"><strong>B)</strong> It remains the same</div>
+    <div class="answer-option"><strong>C)</strong> It increases</div>
+    <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> It oscillates</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.3 (Inverted) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.3</div>
+    <div class="question-text">
+      Determine what happens to total resistance in a parallel circuit when an additional branch is added.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It increases</div>
+    <div class="answer-option"><strong>B)</strong> It decreases</div>
+    <div class="answer-option"><strong>C)</strong> It remains constant</div>
+    <div class="answer-option"><strong>D)</strong> It becomes infinite</div>
+    <div class="answer-option"><strong>E)</strong> It reverses polarity</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.4 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.4</div>
+    <div class="question-text">
+      In a parallel circuit, what happens to the current in the main line when more branches are added?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It decreases</div>
+    <div class="answer-option"><strong>B)</strong> It increases</div>
+    <div class="answer-option"><strong>C)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> It reverses direction</div>
+    <div class="answer-option"><strong>E)</strong> It remains unchanged</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.5 (Context-Rich) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.5</div>
+    <div class="question-text">
+      A student replaces a 5 Ω resistor in a simple series circuit with a 10 Ω resistor while keeping the same battery. What happens to the brightness of the bulb?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It becomes brighter</div>
+    <div class="answer-option"><strong>B)</strong> It becomes dimmer</div>
+    <div class="answer-option"><strong>C)</strong> It remains unchanged</div>
+    <div class="answer-option"><strong>D)</strong> It turns off permanently</div>
+    <div class="answer-option"><strong>E)</strong> It flashes repeatedly</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.6 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.6</div>
+    <div class="question-text">
+      Which statement best explains why household circuits are wired in parallel?
+    </div>
+    <div class="answer-option"><strong>A)</strong> So total resistance increases</div>
+    <div class="answer-option"><strong>B)</strong> So each device receives the same voltage</div>
+    <div class="answer-option"><strong>C)</strong> So current is identical everywhere</div>
+    <div class="answer-option"><strong>D)</strong> So power becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> So voltage doubles automatically</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.7 (Inverted) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.7</div>
+    <div class="question-text">
+      Explain why increasing resistance in a circuit decreases current when voltage remains constant.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Because V = IR</div>
+    <div class="answer-option"><strong>B)</strong> Because I = Q/t</div>
+    <div class="answer-option"><strong>C)</strong> Because E = QV</div>
+    <div class="answer-option"><strong>D)</strong> Because resistance adds in parallel</div>
+    <div class="answer-option"><strong>E)</strong> Because voltage becomes zero</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.8 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.8</div>
+    <div class="question-text">
+      In a series circuit, if one component fails, the current:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Continues through other components</div>
+    <div class="answer-option"><strong>B)</strong> Stops entirely</div>
+    <div class="answer-option"><strong>C)</strong> Doubles</div>
+    <div class="answer-option"><strong>D)</strong> Decreases slightly</div>
+    <div class="answer-option"><strong>E)</strong> Reverses</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.9 (Context-Rich) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.9</div>
+    <div class="question-text">
+      A home circuit has multiple appliances plugged into different outlets. One appliance is unplugged. What happens to the others?
+    </div>
+    <div class="answer-option"><strong>A)</strong> They all stop working</div>
+    <div class="answer-option"><strong>B)</strong> They continue operating normally</div>
+    <div class="answer-option"><strong>C)</strong> Their voltage doubles</div>
+    <div class="answer-option"><strong>D)</strong> Their resistance becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Their current reverses</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.10 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.10</div>
+    <div class="question-text">
+      When two resistors are connected in parallel, the total resistance is:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Greater than both</div>
+    <div class="answer-option"><strong>B)</strong> Less than the smallest</div>
+    <div class="answer-option"><strong>C)</strong> Equal to their sum</div>
+    <div class="answer-option"><strong>D)</strong> Infinite</div>
+    <div class="answer-option"><strong>E)</strong> Zero</div>
+  </div>
+
+  <!-- ============================================================ -->
+<!-- QUESTION 2.11 -->
+<!-- ============================================================ -->
+
+<div class="question-block">
+    <div class="question-number">2.11</div>
+    <div class="question-text">
+      In a series circuit, voltage across each resistor depends on:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Total resistance only</div>
+    <div class="answer-option"><strong>B)</strong> Individual resistance values</div>
+    <div class="answer-option"><strong>C)</strong> Current only</div>
+    <div class="answer-option"><strong>D)</strong> Battery size only</div>
+    <div class="answer-option"><strong>E)</strong> Wire color</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.12 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.12</div>
+    <div class="question-text">
+      If total resistance increases while voltage remains constant, total current:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Increases</div>
+    <div class="answer-option"><strong>B)</strong> Decreases</div>
+    <div class="answer-option"><strong>C)</strong> Remains unchanged</div>
+    <div class="answer-option"><strong>D)</strong> Becomes infinite</div>
+    <div class="answer-option"><strong>E)</strong> Doubles</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.13 (Inverted) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.13</div>
+    <div class="question-text">
+      Determine why adding resistors in series reduces the overall current supplied by a battery.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Because voltage increases</div>
+    <div class="answer-option"><strong>B)</strong> Because total resistance increases</div>
+    <div class="answer-option"><strong>C)</strong> Because charge disappears</div>
+    <div class="answer-option"><strong>D)</strong> Because energy doubles</div>
+    <div class="answer-option"><strong>E)</strong> Because resistance cancels</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.14 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.14</div>
+    <div class="question-text">
+      In a parallel circuit, each branch has:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Different voltage</div>
+    <div class="answer-option"><strong>B)</strong> Same voltage</div>
+    <div class="answer-option"><strong>C)</strong> Same resistance</div>
+    <div class="answer-option"><strong>D)</strong> Zero current</div>
+    <div class="answer-option"><strong>E)</strong> Infinite resistance</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.15 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.15</div>
+    <div class="question-text">
+      If one resistor is removed from a parallel circuit, total resistance:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Decreases</div>
+    <div class="answer-option"><strong>B)</strong> Increases</div>
+    <div class="answer-option"><strong>C)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> Remains constant</div>
+    <div class="answer-option"><strong>E)</strong> Doubles automatically</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.16 (Context-Rich) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.16</div>
+    <div class="question-text">
+      A student wires two identical light bulbs in series instead of parallel. Compared to a single bulb, how will their brightness change?
+    </div>
+    <div class="answer-option"><strong>A)</strong> Both become brighter</div>
+    <div class="answer-option"><strong>B)</strong> Both become dimmer</div>
+    <div class="answer-option"><strong>C)</strong> One becomes brighter</div>
+    <div class="answer-option"><strong>D)</strong> No change</div>
+    <div class="answer-option"><strong>E)</strong> They explode</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.17 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.17</div>
+    <div class="question-text">
+      In a parallel circuit, total current equals:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Current in one branch</div>
+    <div class="answer-option"><strong>B)</strong> Sum of branch currents</div>
+    <div class="answer-option"><strong>C)</strong> Voltage divided by zero</div>
+    <div class="answer-option"><strong>D)</strong> Resistance only</div>
+    <div class="answer-option"><strong>E)</strong> Battery current minus resistance</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.18 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.18</div>
+    <div class="question-text">
+      The main reason resistance causes heating in a conductor is:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Magnetic reversal</div>
+    <div class="answer-option"><strong>B)</strong> Energy conversion to thermal energy</div>
+    <div class="answer-option"><strong>C)</strong> Voltage cancellation</div>
+    <div class="answer-option"><strong>D)</strong> Current disappearance</div>
+    <div class="answer-option"><strong>E)</strong> Charge accumulation</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.19 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.19</div>
+    <div class="question-text">
+      Ohm’s Law describes the relationship between:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Energy and time</div>
+    <div class="answer-option"><strong>B)</strong> Voltage, current, and resistance</div>
+    <div class="answer-option"><strong>C)</strong> Charge and mass</div>
+    <div class="answer-option"><strong>D)</strong> Current and temperature only</div>
+    <div class="answer-option"><strong>E)</strong> Voltage and power only</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.20 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.20</div>
+    <div class="question-text">
+      If voltage across a resistor doubles and resistance remains constant, current:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Doubles</div>
+    <div class="answer-option"><strong>B)</strong> Halves</div>
+    <div class="answer-option"><strong>C)</strong> Remains constant</div>
+    <div class="answer-option"><strong>D)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Decreases slightly</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.21 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.21</div>
+    <div class="question-text">
+      In a series circuit, total resistance is:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Less than smallest resistor</div>
+    <div class="answer-option"><strong>B)</strong> Equal to sum of resistances</div>
+    <div class="answer-option"><strong>C)</strong> Equal to voltage</div>
+    <div class="answer-option"><strong>D)</strong> Zero</div>
+    <div class="answer-option"><strong>E)</strong> Infinite</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.22 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.22</div>
+    <div class="question-text">
+      In a parallel circuit, adding additional branches generally causes total current to:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Decrease</div>
+    <div class="answer-option"><strong>B)</strong> Increase</div>
+    <div class="answer-option"><strong>C)</strong> Become zero</div>
+    <div class="answer-option"><strong>D)</strong> Reverse</div>
+    <div class="answer-option"><strong>E)</strong> Stay constant</div>
+  </div>
+
+  <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+    <div class="answer-row">
+      <div>2.1</div>
+      <div>B</div>
+      <div>Higher voltage with constant resistance increases current</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.2</div>
+      <div>C</div>
+      <div>Adding series resistors increases total resistance</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.3</div>
+      <div>B</div>
+      <div>Adding parallel branch decreases total resistance</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.4</div>
+      <div>B</div>
+      <div>More branches → more total current</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.5</div>
+      <div>B</div>
+      <div>Higher resistance lowers current and brightness</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.6</div>
+      <div>B</div>
+      <div>Parallel wiring ensures equal voltage to each device</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.7</div>
+      <div>A</div>
+      <div>Ohm’s Law: increasing R lowers I when V constant</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.8</div>
+      <div>B</div>
+      <div>Open component stops series circuit</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.9</div>
+      <div>B</div>
+      <div>Parallel branches operate independently</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.10</div>
+      <div>B</div>
+      <div>Total resistance in parallel is less than smallest branch</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.11</div>
+      <div>B</div>
+      <div>Voltage division depends on individual resistances</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.12</div>
+      <div>B</div>
+      <div>Increasing resistance reduces current</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.13</div>
+      <div>B</div>
+      <div>Series resistances increase total resistance</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.14</div>
+      <div>B</div>
+      <div>Parallel branches share same voltage</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.15</div>
+      <div>B</div>
+      <div>Removing branch increases total resistance</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.16</div>
+      <div>B</div>
+      <div>Series bulbs share voltage → dimmer</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.17</div>
+      <div>B</div>
+      <div>Total current equals sum of branch currents</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.18</div>
+      <div>B</div>
+      <div>Electrical energy converts to thermal energy</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.19</div>
+      <div>B</div>
+      <div>Ohm’s Law relates V, I, and R</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.20</div>
+      <div>A</div>
+      <div>Doubling voltage doubles current (R constant)</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.21</div>
+      <div>B</div>
+      <div>Series resistance equals sum</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.22</div>
+      <div>B</div>
+      <div>More branches increase total current demand</div>
+    </div>
+  
+  </div>
+
+<footer>
+Section 7.4 – Ohm’s Law and Circuit Analysis | Bank 2
+</footer>
+
+<hr style="margin: 40px 0; border: 1px solid #ccc;">
+
+<header>
+<h1>Section 7.4: Ohm’s Law and Circuit Analysis</h1>
+<p><strong>Bank 3: Single-Step Calculations</strong></p>
+<p>Round answers to 2–3 significant figures.</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+<h2>Single-Step Calculations</h2>
+<div class="bank-info">Formula Group 1 of 3</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- FORMULA GROUP 1: V = IR -->
+<!-- ============================================================ -->
+
+<div class="formula-group">
+<div class="formula-title">Formula 1: Ohm’s Law</div>
+
+<div class="formula-display">
+$$V = IR$$
+</div>
+
+<!-- Q1 Standard -->
+<div class="question">
+<div class="question-number">3.1</div>
+A 6 Ω resistor carries a current of 2.0 A. What is the voltage across the resistor?
+<div class="answer-blank">Answer: ________ V</div>
+</div>
+
+<!-- Q2 Inverted -->
+<div class="question">
+<div class="question-number">3.2</div>
+Calculate the current through a 12 Ω resistor if the applied voltage is 24 V.
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q3 Context-Rich -->
+<div class="question">
+<div class="question-number">3.3</div>
+A small heating element has a resistance of 10 Ω and is connected to a 120 V source. What current flows through the element?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q4 Alternate -->
+<div class="question">
+<div class="question-number">3.4</div>
+Determine the resistance of a device that draws 3.0 A when connected to a 9.0 V battery.
+<div class="answer-blank">Answer: ________ Ω</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- FORMULA GROUP 2: SERIES RESISTANCE -->
+<!-- ============================================================ -->
+
+<div class="formula-group">
+    <div class="formula-title">Formula 2: Series Resistance</div>
+    
+    <div class="formula-display">
+    $$R_T = R_1 + R_2 + R_3 + ...$$
+    </div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">3.5</div>
+    Two resistors of 4 Ω and 6 Ω are connected in series. What is the total resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">3.6</div>
+    Calculate the total resistance when three resistors of 5 Ω, 10 Ω, and 15 Ω are connected in series.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">3.7</div>
+    A decorative lighting strip contains three resistors in series with resistances of 8 Ω, 12 Ω, and 20 Ω. What is the equivalent resistance of the strip?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">3.8</div>
+    Determine the total resistance of four resistors in series if each has a resistance of 3.0 Ω.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- FORMULA GROUP 3: PARALLEL RESISTANCE (TWO RESISTORS) -->
+<!-- ============================================================ -->
+
+<div class="formula-group">
+    <div class="formula-title">Formula 3: Parallel Resistance (Two Resistors)</div>
+    
+    <div class="formula-display">
+    $$\frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2}$$
+    </div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">3.9</div>
+    Two resistors of 6 Ω and 3 Ω are connected in parallel. What is the total resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">3.10</div>
+    Calculate the equivalent resistance when 8 Ω and 12 Ω resistors are connected in parallel.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">3.11</div>
+    A circuit contains two parallel heating elements rated at 4 Ω and 6 Ω. What is their combined resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">3.12</div>
+    Determine the total resistance of two identical 10 Ω resistors connected in parallel.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 3: Single-Step Calculations — Answer Key</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 1: Ohm’s Law -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 1: Ohm’s Law ($V = IR$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.1</div>
+        <div>12 V</div>
+        <div>
+          $$V = IR = (2.0)(6) = 12\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.2</div>
+        <div>2.0 A</div>
+        <div>
+          $$I = \frac{V}{R} = \frac{24}{12} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.3</div>
+        <div>12 A</div>
+        <div>
+          $$I = \frac{V}{R} = \frac{120}{10} = 12\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.4</div>
+        <div>3.0 Ω</div>
+        <div>
+          $$R = \frac{V}{I} = \frac{9.0}{3.0} = 3.0\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 2: Series Resistance -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 2: Series Resistance ($R_T = R_1 + R_2 + ...$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.5</div>
+        <div>10 Ω</div>
+        <div>
+          $$R_T = 4 + 6 = 10\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.6</div>
+        <div>30 Ω</div>
+        <div>
+          $$R_T = 5 + 10 + 15 = 30\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.7</div>
+        <div>40 Ω</div>
+        <div>
+          $$R_T = 8 + 12 + 20 = 40\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.8</div>
+        <div>12 Ω</div>
+        <div>
+          $$R_T = 3.0 + 3.0 + 3.0 + 3.0 = 12\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 3: Parallel Resistance -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 3: Parallel Resistance ($\frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2}$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.9</div>
+        <div>2.0 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{6} + \frac{1}{3} = \frac{3}{6}$$
+          $$R_T = 2.0\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.10</div>
+        <div>4.8 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{8} + \frac{1}{12} = \frac{5}{24}$$
+          $$R_T = 4.8\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.11</div>
+        <div>2.4 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{4} + \frac{1}{6} = \frac{5}{12}$$
+          $$R_T = 2.4\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.12</div>
+        <div>5.0 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{10} + \frac{1}{10} = \frac{1}{5}$$
+          $$R_T = 5.0\text{ Ω}$$
+        </div>
+      </div>
+  
+    </div>
+  
+  </div>
+
+<footer>
+Section 7.4 – Ohm’s Law and Circuit Analysis | Bank 3
+</footer>
+
+<hr style="margin: 40px 0; border: 1px solid #ccc;">
+
+<header>
+<h1>Section 7.4: Ohm’s Law and Circuit Analysis</h1>
+<p><strong>Bank 4: Multi-Step Calculations</strong></p>
+<p>Provide one final numeric answer. No intermediate hints given.</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+<h2>Multi-Step Problems</h2>
+<p>4 Scenarios | 2+ calculation steps required</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCENARIO 1 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+<div class="scenario-title">Scenario 1: Ohm’s Law in Multi-Component Circuits</div>
+
+<!-- Q1 Standard -->
+<div class="question">
+<div class="question-number">4.1</div>
+A 24 V battery is connected to a circuit containing two resistors in series with values of 4 Ω and 8 Ω. What is the current in the circuit?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q2 Inverted -->
+<div class="question">
+<div class="question-number">4.2</div>
+Determine the voltage across a 6 Ω resistor in a circuit carrying 3.0 A of current.
+<div class="answer-blank">Answer: ________ V</div>
+</div>
+
+<!-- Q3 Context-Rich -->
+<div class="question">
+<div class="question-number">4.3</div>
+A heating device contains two resistors of 5 Ω and 10 Ω connected in series to a 30 V source. What is the current drawn from the source?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q4 Alternate -->
+<div class="question">
+<div class="question-number">4.4</div>
+Find the total resistance of a circuit connected to a 18 V battery if the current measured is 2.0 A.
+<div class="answer-blank">Answer: ________ Ω</div>
+</div>
+
+</div>
+
+</div>
+
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 7.4: Ohm’s Law and Circuit Analysis - Bank 4 (Multi-Step Calculations)</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+/* ================================
+   SCENARIO GROUPS
+================================ */
+
+.scenario-group {
+  margin-bottom: 35px;
+}
+
+.scenario-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<div class="container">
+
+<header>
+<h1>Section 7.4: Ohm’s Law and Circuit Analysis</h1>
+<p><strong>Bank 4: Multi-Step Calculations</strong></p>
+<p>Provide one final numeric answer. No intermediate hints given.</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+<h2>Multi-Step Problems</h2>
+<p>4 Scenarios | 2+ calculation steps required</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCENARIO 1 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+<div class="scenario-title">Scenario 1: Ohm’s Law in Multi-Component Circuits</div>
+
+<!-- Q1 Standard -->
+<div class="question">
+<div class="question-number">4.1</div>
+A 24 V battery is connected to a circuit containing two resistors in series with values of 4 Ω and 8 Ω. What is the current in the circuit?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q2 Inverted -->
+<div class="question">
+<div class="question-number">4.2</div>
+Determine the voltage across a 6 Ω resistor in a circuit carrying 3.0 A of current.
+<div class="answer-blank">Answer: ________ V</div>
+</div>
+
+<!-- Q3 Context-Rich -->
+<div class="question">
+<div class="question-number">4.3</div>
+A heating device contains two resistors of 5 Ω and 10 Ω connected in series to a 30 V source. What is the current drawn from the source?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q4 Alternate -->
+<div class="question">
+<div class="question-number">4.4</div>
+Find the total resistance of a circuit connected to a 18 V battery if the current measured is 2.0 A.
+<div class="answer-blank">Answer: ________ Ω</div>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+Section 7.4 – Ohm’s Law and Circuit Analysis | Bank 4
+</footer>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- SCENARIO 3 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+    <div class="scenario-title">Scenario 3: Parallel Circuit Analysis</div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">4.9</div>
+    Two resistors of 6 Ω and 12 Ω are connected in parallel to a 24 V battery. What is the total current supplied by the battery?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">4.10</div>
+    Determine the equivalent resistance of the circuit described in Question 4.9.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">4.11</div>
+    A home circuit connects two appliances rated at 8 Ω and 16 Ω in parallel across a 32 V supply. What total current is drawn from the source?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">4.12</div>
+    Find the equivalent resistance of two identical 10 Ω resistors connected in parallel.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- SCENARIO 4 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+    <div class="scenario-title">Scenario 4: Mixed Series and Parallel Circuits</div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">4.13</div>
+    A 48 V battery is connected to a 4 Ω resistor in series with two resistors of 6 Ω and 3 Ω connected in parallel. What is the total current supplied by the battery?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">4.14</div>
+    Determine the total resistance of the circuit described in Question 4.13.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">4.15</div>
+    A portable generator supplies 60 V to a circuit where a 5 Ω resistor is connected in series with two parallel resistors of 10 Ω and 20 Ω. What total current is drawn from the generator?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">4.16</div>
+    Find the equivalent resistance of a circuit consisting of a 2 Ω resistor in series with two parallel resistors of 4 Ω and 12 Ω.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 4: Multi-Step Calculations — Answer Key</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- Scenario 1 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 1: Ohm’s Law in Multi-Component Circuits
+      </div>
+  
+      <div class="answer-row">
+        <div>4.1</div>
+        <div>2.0 A</div>
+        <div>
+          $$R_T = 4 + 8 = 12\text{ Ω}$$
+          $$I = \frac{V}{R_T} = \frac{24}{12} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.2</div>
+        <div>18 V</div>
+        <div>
+          $$V = IR = (3.0)(6) = 18\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.3</div>
+        <div>2.0 A</div>
+        <div>
+          $$R_T = 5 + 10 = 15\text{ Ω}$$
+          $$I = \frac{30}{15} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.4</div>
+        <div>9.0 Ω</div>
+        <div>
+          $$R = \frac{V}{I} = \frac{18}{2.0} = 9.0\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Scenario 2 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 2: Series Circuit Analysis
+      </div>
+  
+      <div class="answer-row">
+        <div>4.5</div>
+        <div>2.0 A</div>
+        <div>
+          $$R_T = 3 + 6 + 9 = 18\text{ Ω}$$
+          $$I = \frac{36}{18} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.6</div>
+        <div>12 V</div>
+        <div>
+          $$V = IR = (2.0)(6) = 12\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.7</div>
+        <div>2.0 A</div>
+        <div>
+          $$R_T = 4 + 4 + 4 + 4 = 16\text{ Ω}$$
+          $$I = \frac{32}{16} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.8</div>
+        <div>15 Ω</div>
+        <div>
+          $$R = \frac{V}{I} = \frac{45}{3.0} = 15\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Scenario 3 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 3: Parallel Circuit Analysis
+      </div>
+  
+      <div class="answer-row">
+        <div>4.9</div>
+        <div>6.0 A</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{6} + \frac{1}{12} = \frac{3}{12}$$
+          $$R_T = 4.0\text{ Ω}$$
+          $$I = \frac{24}{4.0} = 6.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.10</div>
+        <div>4.0 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{6} + \frac{1}{12} = \frac{3}{12}$$
+          $$R_T = 4.0\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.11</div>
+        <div>6.0 A</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{8} + \frac{1}{16} = \frac{3}{16}$$
+          $$R_T = 5.33\text{ Ω}$$
+          $$I = \frac{32}{5.33} \approx 6.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.12</div>
+        <div>5.0 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{10} + \frac{1}{10} = \frac{1}{5}$$
+          $$R_T = 5.0\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Scenario 4 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 4: Mixed Series and Parallel Circuits
+      </div>
+  
+      <div class="answer-row">
+        <div>4.13</div>
+        <div>4.0 A</div>
+        <div>
+          $$\frac{1}{R_P} = \frac{1}{6} + \frac{1}{3} = \frac{1}{2}$$
+          $$R_P = 2.0\text{ Ω}$$
+          $$R_T = 4 + 2.0 = 6.0\text{ Ω}$$
+          $$I = \frac{48}{6.0} = 8.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.14</div>
+        <div>6.0 Ω</div>
+        <div>
+          $$R_P = 2.0\text{ Ω}$$
+          $$R_T = 4 + 2.0 = 6.0\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.15</div>
+        <div>6.0 A</div>
+        <div>
+          $$\frac{1}{R_P} = \frac{1}{10} + \frac{1}{20} = \frac{3}{20}$$
+          $$R_P = 6.67\text{ Ω}$$
+          $$R_T = 5 + 6.67 = 11.67\text{ Ω}$$
+          $$I = \frac{60}{11.67} \approx 5.1\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.16</div>
+        <div>4.0 Ω</div>
+        <div>
+          $$\frac{1}{R_P} = \frac{1}{4} + \frac{1}{12} = \frac{1}{3}$$
+          $$R_P = 3.0\text{ Ω}$$
+          $$R_T = 2 + 3.0 = 5.0\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+<footer>
+Section 7.4 – Ohm’s Law and Circuit Analysis | Bank 4
+</footer>
+</div>
+</body>
+</html>
