@@ -13,6 +13,7 @@ body {
     color: #222;
 }
 
+/* HEADER */
 header {
     background: #d4a300;
     color: #0b2a4a;
@@ -23,6 +24,7 @@ header {
 header h1 { margin: 0; }
 header p { margin-top: 8px; }
 
+/* LAYOUT */
 .container {
     max-width: 1300px;
     margin: 30px auto;
@@ -47,6 +49,7 @@ header p { margin-top: 8px; }
     color: #d4a300;
 }
 
+/* MODULE CARD */
 .module {
     background: white;
     padding: 18px;
@@ -60,6 +63,7 @@ header p { margin-top: 8px; }
     color: #0b2a4a;
 }
 
+/* TOPIC LIST */
 .topic-list {
     list-style: none;
     padding-left: 0;
@@ -68,24 +72,42 @@ header p { margin-top: 8px; }
 .topic-list li {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin: 6px 0;
+    gap: 10px;
+    margin: 8px 0;
 }
 
-.topic-list a {
+/* MAIN LINK */
+.topic-list .lesson-link {
     text-decoration: none;
     color: #0b2a4a;
+    font-weight: 500;
     transition: 0.2s ease;
 }
 
-.topic-list a:hover {
+.topic-list .lesson-link:hover {
     color: #d4a300;
 }
 
-.note-icon { text-decoration: none; }
+/* ICON LINKS */
+.icon-link {
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.2s ease;
+}
 
+/* Distinct icon colors */
+.notes-icon { color: #2a7ae2; }     /* Blue */
+.key-icon   { color: #2e8b57; }     /* Green */
+.bank-icon  { color: #c0392b; }     /* Red */
+
+.icon-link:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+}
+
+/* RESOURCE SECTION */
 .resources {
-    margin-top: 12px;
+    margin-top: 14px;
     padding-top: 10px;
     border-top: 2px solid #eee;
     font-weight: bold;
@@ -95,61 +117,70 @@ header p { margin-top: 8px; }
 .resources a {
     text-decoration: none;
     color: #0b2a4a;
+    transition: 0.2s ease;
 }
 
 .resources a:hover {
     color: #d4a300;
 }
 
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .semesters { flex-direction: column; }
+}
+
+/* ---------- BOTTOM GLOBAL RESOURCES ---------- */
+
 .bottom-resources {
     max-width: 1300px;
-    margin: 50px auto 60px auto;
-    padding: 30px;
+    margin: 60px auto 70px auto;
+    padding: 35px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
 .bottom-resources h2 {
     text-align: center;
     color: #0b2a4a;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     border-bottom: 4px solid #d4a300;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
 }
 
 .resource-links {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .resource-links a {
     background: #0b2a4a;
     color: white;
-    padding: 14px 28px;
-    border-radius: 6px;
+    padding: 14px 30px;
+    border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
-    transition: 0.2s ease;
+    transition: 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .resource-links a:hover {
     background: #d4a300;
     color: #0b2a4a;
+    transform: translateY(-3px);
 }
+
+/* ---------- FOOTER ---------- */
 
 footer {
     text-align: center;
-    padding: 25px;
-    border-top: 2px solid #0b2a4a;
+    padding: 30px;
+    border-top: 3px solid #0b2a4a;
     color: #555;
     font-size: 0.9rem;
-}
-
-@media (max-width: 900px) {
-    .semesters { flex-direction: column; }
+    background: #f4f6f9;
 }
 </style>
 </head>
@@ -171,132 +202,264 @@ footer {
 <div class="module">
 <h3>Module 1. Introduction to Physics</h3>
 <ul class="topic-list">
-<li>📝 🔑 ❓ <a href="1.1.html">1.1 Scope of Physics</a></li>
-<li>📝 🔑 ❓ <a href="1.2.html">1.2 Scientific Method</a></li>
-<li>📝 🔑 ❓ <a href="1.3.html">1.3 Scientific Measurement and Math Tools</a></li>
-<li>📝 🔑 ❓ <a href="1.4.html">1.4 Vectors and Vector Components</a></li>
-<li>📝 🔑 ❓ <a href="1.5.html">1.5 Vector Addition</a></li>
+
+<li>
+<a href="1_1_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+<a href="keys/1_1_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+<a href="banks/bank_1_1.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+<a href="1.1.html" class="lesson-link">1.1 Scope of Physics</a>
+</li>
+
+<li>
+<a href="1_2_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+<a href="keys/1_2_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+<a href="banks/bank_1_2.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+<a href="1.2.html" class="lesson-link">1.2 Scientific Method</a>
+</li>
+
+<li>
+<a href="1_3_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+<a href="keys/1_3_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+<a href="banks/bank_1_3.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+<a href="1.3.html" class="lesson-link">1.3 Scientific Measurement and Math Tools</a>
+</li>
+
+<li>
+<a href="1_4_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+<a href="keys/1_4_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+<a href="banks/bank_1_4.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+<a href="1.4.html" class="lesson-link">1.4 Vectors and Vector Components</a>
+</li>
+
+<li>
+<a href="1_5_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+<a href="keys/1_5_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+<a href="banks/bank_1_5.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+<a href="1.5.html" class="lesson-link">1.5 Vector Addition</a>
+</li>
+
 </ul>
+
 <div class="resources">
-    <a href="physics_vocab_formulas_module1.html">Vocab & Formulas</a> |
-    <a href="bank01.html">Master Bank</a> |
-    <a href="notes01.html">Teacher Notes</a> |
-    <a href="https://docs.google.com/document/d/11IAm6FtB-LpnETzZ9kaMPFF5wjgx_INGMI4XSWiE7EU/edit?usp=sharing">Ladders</a>
-    </div>
+<a href="physics_vocab_formulas_module1.html">Vocab & Formulas</a> |
+<a href="banks/bank_1.html">Master Bank</a> |
+<a href="notes01.html">Teacher Notes</a> |
+<a href="https://docs.google.com/document/d/11IAm6FtB-LpnETzZ9kaMPFF5wjgx_INGMI4XSWiE7EU/edit?usp=sharing">Ladders</a>
+</div>
 </div>
 
-
+<!-- MODULE 2 -->
 <div class="module">
-<h3>Module 2. Motion in One-Dimension</h3>
-<ul class="topic-list">
-<li>📝 🔑 ❓ <a href="2.1.html">2.1 Position, Displacement, and Distance</a></li>
-<li>📝 🔑 ❓ <a href="2.2.html">2.2 Velocity and Speed</a></li>
-<li>📝 🔑 ❓ <a href="2.3.html">2.3 Acceleration</a></li>
-<li>📝 🔑 ❓ <a href="2.4.html">2.4 Kinematic Equations and Free Fall</a></li>
-<li>📝 🔑 ❓ <a href="2.5.html">2.5 Graphical Analysis of Motion</a></li>
-</ul>
-<div class="resources">
+    <h3>Module 2. Motion in One-Dimension</h3>
+    <ul class="topic-list">
+    
+    <li>
+    <a href="2_1_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/2_1_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_2_1.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="2.1.html" class="lesson-link">2.1 Position, Displacement, and Distance</a>
+    </li>
+    
+    <li>
+    <a href="2_2_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/2_2_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_2_2.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="2.2.html" class="lesson-link">2.2 Velocity and Speed</a>
+    </li>
+    
+    <li>
+    <a href="2_3_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/2_3_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_2_3.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="2.3.html" class="lesson-link">2.3 Acceleration</a>
+    </li>
+    
+    <li>
+    <a href="2_4_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/2_4_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_2_4.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="2.4.html" class="lesson-link">2.4 Kinematic Equations and Free Fall</a>
+    </li>
+    
+    <li>
+    <a href="2_5_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/2_5_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_2_5.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="2.5.html" class="lesson-link">2.5 Graphical Analysis of Motion</a>
+    </li>
+    
+    </ul>
+    
+    <div class="resources">
     <a href="physics_vocab_formulas_module2.html">Vocab & Formulas</a> |
-    <a href="bank02.html">Master Bank</a> |
+    <a href="banks/bank_2.html">Master Bank</a> |
     <a href="notes02.html">Teacher Notes</a> |
     <a href="https://docs.google.com/document/d/10YHkLIPrxqk5hmQBTz3Nhbdx-iUtshtn9t6UDe60IS4/edit?usp=sharing">Ladders</a>
     </div>
-</div>
+    </div>
 
+    <!-- MODULE 3 -->
 <div class="module">
-<h3>Module 3. Forces, Gravity, and Projectile Motion</h3>
-<ul class="topic-list">
-<li>📝 🔑 ❓ <a href="3.1.html">3.1 Weight and Gravitational Force</a></li>
-<li>📝 🔑 ❓ <a href="3.2.html">3.2 Friction</a></li>
-<li>📝 🔑 ❓ <a href="3.3.html">3.3 Newton’s Laws</a></li>
-<li>📝 🔑 ❓ <a href="3.4.html">3.4 Gravitational Force and Inclined Planes</a></li>
-<li>📝 🔑 ❓ <a href="3.5.html">3.5 Projectile Motion</a></li>
-</ul>
-<div class="resources">
+    <h3>Module 3. Forces, Gravity, and Projectile Motion</h3>
+    <ul class="topic-list">
+    
+    <li>
+    <a href="3_1_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/3_1_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_3_1.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="3.1.html" class="lesson-link">3.1 Weight and Gravitational Force</a>
+    </li>
+    
+    <li>
+    <a href="3_2_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/3_2_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_3_2.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="3.2.html" class="lesson-link">3.2 Friction</a>
+    </li>
+    
+    <li>
+    <a href="3_3_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/3_3_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_3_3.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="3.3.html" class="lesson-link">3.3 Newton’s Laws</a>
+    </li>
+    
+    <li>
+    <a href="3_4_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/3_4_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_3_4.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="3.4.html" class="lesson-link">3.4 Gravitational Force and Inclined Planes</a>
+    </li>
+    
+    <li>
+    <a href="3_5_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/3_5_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_3_5.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="3.5.html" class="lesson-link">3.5 Projectile Motion</a>
+    </li>
+    
+    </ul>
+    
+    <div class="resources">
     <a href="physics_vocab_formulas_module3.html">Vocab & Formulas</a> |
-    <a href="bank03.html">Master Bank</a> |
+    <a href="banks/bank_3.html">Master Bank</a> |
     <a href="notes03.html">Teacher Notes</a> |
     <a href="https://docs.google.com/document/d/1EKncnKsyryYNoSuAevwZxdSCfHbb0FAA6R9abJvFiFE/edit?usp=sharing">Ladders</a>
     </div>
-</div>
+    </div>
 
+<!-- MODULE 4 -->
 <div class="module">
-<h3>Module 4. Conservation Laws</h3>
-<ul class="topic-list">
-<li>📝 🔑 ❓ <a href="4.1.html">4.1 Momentum and Impulse</a></li>
-<li>📝 🔑 ❓ <a href="4.2.html">4.2 Conservation of Momentum in One Dimension</a></li>
-<li>📝 🔑 ❓ <a href="4.3.html">4.3 Elastic and Inelastic Collisions</a></li>
-<li>📝 🔑 ❓ <a href="4.4.html">4.4 Potential Energy</a></li>
-<li>📝 🔑 ❓ <a href="4.5.html">4.5 Kinetic Energy and Conservation of Energy</a></li>
-</ul>
-<div class="resources">
+    <h3>Module 4. Conservation Laws</h3>
+    <ul class="topic-list">
+    <li><a href="4_1_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a><a href="keys/4_1_key.html" class="icon-link key-icon" title="Answer Key">🔑</a><a href="banks/bank_4_1.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a><a href="4.1.html" class="lesson-link">4.1 Momentum and Impulse</a></li>
+    <li><a href="4_2_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a><a href="keys/4_2_key.html" class="icon-link key-icon" title="Answer Key">🔑</a><a href="banks/bank_4_2.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a><a href="4.2.html" class="lesson-link">4.2 Conservation of Momentum in One Dimension</a></li>
+    <li><a href="4_3_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a><a href="keys/4_3_key.html" class="icon-link key-icon" title="Answer Key">🔑</a><a href="banks/bank_4_3.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a><a href="4.3.html" class="lesson-link">4.3 Elastic and Inelastic Collisions</a></li>
+    <li><a href="4_4_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a><a href="keys/4_4_key.html" class="icon-link key-icon" title="Answer Key">🔑</a><a href="banks/bank_4_4.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a><a href="4.4.html" class="lesson-link">4.4 Potential Energy</a></li>
+    <li><a href="4_5_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a><a href="keys/4_5_key.html" class="icon-link key-icon" title="Answer Key">🔑</a><a href="banks/bank_4_5.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a><a href="4.5.html" class="lesson-link">4.5 Kinetic Energy and Conservation of Energy</a></li>
+    </ul>
+    <div class="resources">
     <a href="physics_vocab_formulas_module4.html">Vocab & Formulas</a> |
-    <a href="bank04.html">Master Bank</a> |
+    <a href="banks/bank_4.html">Master Bank</a> |
     <a href="notes04.html">Teacher Notes</a> |
     <a href="https://docs.google.com/document/d/1sG1JBO__7Mb0G_SITrE2TPMNmCAAL39OAppJHya80FI/edit?usp=sharing">Ladders</a>
     </div>
-</div>
+    </div>
+</div> <!-- END FIRST SEMESTER -->
 
-</div>
-
-<!-- SECOND SEMESTER -->
+<!-- FIRST SEMESTER -->
 <div class="semester">
-<h2>Topics Second Semester</h2>
-
+    <h2>Topics Second Semester</h2>
+    <!-- MODULE 5 -->
 <div class="module">
-<h3>Module 5. Harmonic Motion, Waves, and Sound</h3>
-<ul class="topic-list">
-<li>📝 🔑 ❓ <a href="5.1.html">5.1 Intro to Simple Harmonic Motion</a></li>
-<li>📝 🔑 ❓ <a href="5.2.html">5.2 Transverse Wave</a></li>
-<li>📝 🔑 ❓ <a href="5.3.html">5.3 Longitudinal Wave</a></li>
-<li>📝 🔑 ❓ <a href="5.4.html">5.4 Wave Properties and Behaviors</a></li>
-<li>📝 🔑 ❓ <a href="5.5.html">5.5 Sound Waves</a></li>
-</ul>
-<div class="resources">
+    <h3>Module 5. Harmonic Motion, Waves, and Sound</h3>
+    <ul class="topic-list">
+    
+    <li>
+    <a href="5_1_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/5_1_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_5_1.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="5.1.html" class="lesson-link">5.1 Intro to Simple Harmonic Motion</a>
+    </li>
+    
+    <li>
+    <a href="5_2_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/5_2_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_5_2.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="5.2.html" class="lesson-link">5.2 Transverse Wave</a>
+    </li>
+    
+    <li>
+    <a href="5_3_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/5_3_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_5_3.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="5.3.html" class="lesson-link">5.3 Longitudinal Wave</a>
+    </li>
+    
+    <li>
+    <a href="5_4_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/5_4_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_5_4.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="5.4.html" class="lesson-link">5.4 Wave Properties and Behaviors</a>
+    </li>
+    
+    <li>
+    <a href="5_5_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/5_5_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_5_5.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="5.5.html" class="lesson-link">5.5 Sound Waves</a>
+    </li>
+    
+    </ul>
+    
+    <div class="resources">
     <a href="physics_vocab_formulas_module5.html">Vocab & Formulas</a> |
-    <a href="bank05.html">Master Bank</a> |
+    <a href="banks/bank_5.html">Master Bank</a> |
     <a href="notes05.html">Teacher Notes</a> |
     <a href="https://docs.google.com/document/d/11xrrBboWx4j7olD04BXFv1GYuLAamRGG6lU3v-q8Dwk/edit?usp=sharing">Ladders</a>
     </div>
-</div>
+    </div>
 
+    <!-- MODULE 6 -->
 <div class="module">
     <h3>Module 6. Optics</h3>
     <ul class="topic-list">
+    
     <li>
-    <a href="6_1_notes.html">📝 </a>
-    <a href="keys/6_1_key.html">🔑 </a>
-    <a href="banks/bank_6_1.html">❓ </a>
-    <a href="6.1.html">6.1 Reflection and the Law of Reflection</a>
+    <a href="6_1_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/6_1_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_6_1.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="6.1.html" class="lesson-link">6.1 Reflection and the Law of Reflection</a>
     </li>
     
     <li>
-    <a href="6_2_notes.html">📝 </a>
-    <a href="keys/6_2_key.html">🔑 </a>
-    <a href="banks/bank_6_2.html">❓ </a>
-    <a href="6.2.html">6.2 Refraction and Snell's Law</a>
+    <a href="6_2_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/6_2_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_6_2.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="6.2.html" class="lesson-link">6.2 Refraction and Snell's Law</a>
     </li>
     
     <li>
-    <a href="6_3_notes.html">📝 </a>
-    <a href="keys/6_3_key.html">🔑 </a>
-    <a href="banks/bank_6_3.html">❓ </a>
-    <a href="6.3.html">6.3 Total Internal Reflection</a>
+    <a href="6_3_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/6_3_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_6_3.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="6.3.html" class="lesson-link">6.3 Total Internal Reflection</a>
     </li>
     
     <li>
-    <a href="6_4_notes.html">📝 </a>
-    <a href="keys/6_4_key.html">🔑 </a>
-    <a href="banks/bank_6_4.html">❓ </a>
-    <a href="6.4.html">6.4 Mirrors: Plane, Concave, and Convex</a>
+    <a href="6_4_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/6_4_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_6_4.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="6.4.html" class="lesson-link">6.4 Mirrors: Plane, Concave, and Convex</a>
     </li>
     
     <li>
-    <a href="6_5_notes.html">📝 </a>
-    <a href="keys/6_5_key.html">🔑 </a>
-    <a href="banks/bank_6_5.html">❓ </a>
-    <a href="6.5.html">6.5 Lenses: Double Convex and Double Concave</a>
+    <a href="6_5_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/6_5_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_6_5.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="6.5.html" class="lesson-link">6.5 Lenses: Double Convex and Double Concave</a>
     </li>
+    
     </ul>
     
     <div class="resources">
@@ -307,56 +470,137 @@ footer {
     </div>
     </div>
 
+    <!-- MODULE 7 -->
 <div class="module">
-<h3>Module 7. Intro to Electricity</h3>
-<ul class="topic-list">
-<li>📝 🔑 ❓ <a href="7.1.html">7.1 Electric Charge and Electric Force</a></li>
-<li>📝 🔑 ❓ <a href="7.2.html">7.2 Electric Fields and Voltage</a></li>
-<li>📝 🔑 ❓ <a href="7.3.html">7.3 Current, Power Sources, and Measurement</a></li>
-<li>📝 🔑 ❓ <a href="7.4.html">7.4 Ohm's Law and Circuit Analysis</a></li>
-<li>📝 🔑 ❓ <a href="7.5.html">7.5 Energy, Efficiency, and Circuit Design</a></li>
-</ul>
-<div class="resources">
+    <h3>Module 7. Intro to Electricity</h3>
+    <ul class="topic-list">
+    
+    <li>
+    <a href="7_1_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/7_1_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_7_1.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="7.1.html" class="lesson-link">7.1 Electric Charge and Electric Force</a>
+    </li>
+    
+    <li>
+    <a href="7_2_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/7_2_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_7_2.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="7.2.html" class="lesson-link">7.2 Electric Fields and Voltage</a>
+    </li>
+    
+    <li>
+    <a href="7_3_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/7_3_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_7_3.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="7.3.html" class="lesson-link">7.3 Current, Power Sources, and Measurement</a>
+    </li>
+    
+    <li>
+    <a href="7_4_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/7_4_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_7_4.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="7.4.html" class="lesson-link">7.4 Ohm's Law and Circuit Analysis</a>
+    </li>
+    
+    <li>
+    <a href="7_5_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/7_5_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_7_5.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="7.5.html" class="lesson-link">7.5 Energy, Efficiency, and Circuit Design</a>
+    </li>
+    
+    </ul>
+    
+    <div class="resources">
     <a href="physics_vocab_formulas_module7.html">Vocab & Formulas</a> |
-    <a href="bank07.html">Master Bank</a> |
+    <a href="banks/bank_7.html">Master Bank</a> |
     <a href="notes07.html">Teacher Notes</a> |
     <a href="https://docs.google.com/document/d/1gze5PCCYlUpPvTUk5cIvtO3rV8xQkHNnwBPSm6mnCRI/edit?usp=sharing">Ladders</a>
     </div>
-</div>
+    </div>
 
+    <!-- MODULE 8 -->
 <div class="module">
-<h3>Module 8. Electric Circuits</h3>
-<ul class="topic-list">
-<li>📝 🔑 ❓ <a href="8.1.html">8.1 Energy Transfer in Electric Circuits</a></li>
-<li>📝 🔑 ❓ <a href="8.2.html">8.2 Measuring and Analyzing Circuit Behavior</a></li>
-<li>📝 🔑 ❓ <a href="8.3.html">8.3 Series and Parallel Circuits</a></li>
-<li>📝 🔑 ❓ <a href="8.4.html">8.4 Complex Circuit Analysis</a></li>
-<li>📝 🔑 ❓ <a href="8.5.html">8.5 Capacitors and Practical Applications</a></li>
-</ul>
-<div class="resources">
+    <h3>Module 8. Electric Circuits</h3>
+    <ul class="topic-list">
+    
+    <li>
+    <a href="8_1_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/8_1_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_8_1.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="8.1.html" class="lesson-link">8.1 Energy Transfer in Electric Circuits</a>
+    </li>
+    
+    <li>
+    <a href="8_2_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/8_2_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_8_2.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="8.2.html" class="lesson-link">8.2 Measuring and Analyzing Circuit Behavior</a>
+    </li>
+    
+    <li>
+    <a href="8_3_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/8_3_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_8_3.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="8.3.html" class="lesson-link">8.3 Series and Parallel Circuits</a>
+    </li>
+    
+    <li>
+    <a href="8_4_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/8_4_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_8_4.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="8.4.html" class="lesson-link">8.4 Complex Circuit Analysis</a>
+    </li>
+    
+    <li>
+    <a href="8_5_notes.html" class="icon-link notes-icon" title="Lesson Notes">📝</a>
+    <a href="keys/8_5_key.html" class="icon-link key-icon" title="Answer Key">🔑</a>
+    <a href="banks/bank_8_5.html" class="icon-link bank-icon" title="Practice Question Bank">❓</a>
+    <a href="8.5.html" class="lesson-link">8.5 Capacitors and Practical Applications</a>
+    </li>
+    
+    </ul>
+    
+    <div class="resources">
     <a href="physics_vocab_formulas_module8.html">Vocab & Formulas</a> |
-    <a href="bank08.html">Master Bank</a> |
+    <a href="banks/bank_8.html">Master Bank</a> |
     <a href="notes08.html">Teacher Notes</a> |
     <a href="https://docs.google.com/document/d/1Jit9qk5jrIJl4vmNplDkRrC4Nb3HB-lbw4LqZ63sBac/edit?usp=sharing">Ladders</a>
     </div>
-</div>
+    </div>
 
-</div>
-</div>
-</div>
+</div> <!-- END SECOND SEMESTER -->
+</div> <!-- END SEMESTERS -->
+</div> <!-- END CONTAINER -->
 
-<!-- GLOBAL BUTTONS -->
+<!-- GLOBAL RESOURCE SECTION -->
 
 <div class="bottom-resources">
-    <h2>Additional Resources</h2>
-    <div class="resource-links">
-    <a href="https://docs.google.com/document/d/1Wuv3etiYpoN35A79hRCsMU0Z0sB8QtmtOsEH-2cOMjE/edit?usp=sharing">All Ladders</a>
-    <a href="banks_toc.html">All Master Banks</a>
-    <a href="Physics_All_Summaries.html">All Summaries</a>
-    <a href="physics_vocab_formulas_ALL.html">All Vocab and Formulas</a>
-    <a href="Physics_All_Teacher_Notes.html">All Teacher Notes</a>
-    </div>
-    </div>
+<h2>Additional Resources</h2>
+
+<div class="resource-links">
+<a href="https://docs.google.com/document/d/1Wuv3etiYpoN35A79hRCsMU0Z0sB8QtmtOsEH-2cOMjE/edit?usp=sharing">
+All Ladders
+</a>
+
+<a href="banks_toc.html">
+All Master Banks
+</a>
+
+<a href="Physics_All_Summaries.html">
+All Summaries
+</a>
+
+<a href="physics_vocab_formulas_ALL.html">
+All Vocab and Formulas
+</a>
+
+<a href="Physics_All_Teacher_Notes.html">
+All Teacher Notes
+</a>
+</div>
+</div>
 
 <footer>
 Physics Curriculum Navigation
