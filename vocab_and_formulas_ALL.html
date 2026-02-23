@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Vocabulary and Formulas Reference - Complete Guide</title>
+    
+    <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$','$']],
+        displayMath: [['$$','$$']]
+      }
+    };
+    </script>
+    <script type="text/javascript" async
+       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <style>
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f5f7fa; 
+            color: #333; 
+            line-height: 1.6; 
+            padding: 20px; 
+            margin: 0; 
+        }
+        
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background-color: white; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+            padding: 40px; 
+        }
+        
+        header { 
+            background: linear-gradient(135deg, #2c3e50, #4a6491); 
+            color: white; 
+            padding: 30px 20px; 
+            text-align: center; 
+            margin: -40px -40px 40px -40px; 
+            border-radius: 10px 10px 0 0; 
+        }
+        
+        header h1 { 
+            font-size: 2.5rem; 
+            margin-bottom: 10px; 
+        }
+        
+        /* Table of Contents Styles */
+        .toc-container { 
+            background-color: #f0f4f8; 
+            padding: 30px; 
+            border-radius: 8px; 
+            margin-bottom: 40px; 
+            border: 2px solid #000080; 
+        }
+        
+        .toc-container h2 { 
+            color: #000080; 
+            margin-top: 0; 
+            font-size: 1.5rem; 
+            border-bottom: 2px solid #000080; 
+            padding-bottom: 15px; 
+        }
+        
+        .toc-list { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0;
+        }
+        
+        .toc-module { 
+            margin-bottom: 20px; 
+        }
+        
+        .toc-module-title { 
+            color: #000080; 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            margin-bottom: 8px; 
+        }
+        
+        .toc-sections { 
+            list-style: none; 
+            padding-left: 20px; 
+            margin: 0; 
+        }
+        
+        .toc-sections li { 
+            margin-bottom: 6px; 
+        }
+        
+        .toc-sections a { 
+            color: #4a6491; 
+            text-decoration: none; 
+            transition: color 0.3s; 
+        }
+        
+        .toc-sections a:hover { 
+            color: #2c3e50; 
+            text-decoration: underline; 
+        }
+        
+        .modules-content {
+            width: 100%;
+        }
+        
+        .module h2 { 
+            color: #000080; 
+            font-size: 1.8rem; 
+            margin-bottom: 30px; 
+            padding-bottom: 15px; 
+            border-bottom: 3px solid #000080; 
+            margin-top: 50px; 
+            padding-top: 20px; 
+        }
+        
+        .module h2:first-of-type { 
+            margin-top: 0; 
+        }
+        
+        .section { 
+            margin-bottom: 40px; 
+            background-color: #f9f9f9; 
+            padding: 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .section h3 { 
+            color: #000080; 
+            font-size: 1.2rem; 
+            margin-bottom: 20px; 
+            margin-top: 0;
+            padding: 20px 20px 0 20px;
+        }
+        
+        .vocab-list { 
+            background-color: white; 
+            border: 1px solid #e0e0e0; 
+            border-radius: 0; 
+            padding: 15px 20px; 
+            margin: 20px 0 15px 0;
+        }
+        
+        .vocab-list:first-of-type {
+            margin-top: 0;
+        }
+        
+        .vocab-term { 
+            margin-bottom: 12px; 
+            padding-bottom: 12px; 
+            border-bottom: 1px solid #f0f0f0; 
+        }
+        
+        .vocab-term:last-child { 
+            border-bottom: none; 
+        }
+        
+        .vocab-word { 
+            font-weight: 600; 
+            color: #000080; 
+            margin-bottom: 4px; 
+        }
+        
+        .vocab-def { 
+            color: #555; 
+            font-size: 0.95rem; 
+            line-height: 1.5; 
+            margin-left: 15px; 
+        }
+        
+        h4 { 
+            color: #333; 
+            font-size: 1rem; 
+            margin-bottom: 15px; 
+            margin-top: 20px;
+            padding: 0 20px;
+            font-weight: 600; 
+            text-transform: uppercase; 
+        }
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            background-color: white; 
+            border: 1px solid #e0e0e0;
+            border-radius: 0;
+            margin: 0;
+        }
+        
+        thead { 
+            background-color: #f0f0f0; 
+        }
+        
+        th { 
+            padding: 12px 15px; 
+            text-align: left; 
+            font-weight: 600; 
+            color: #333; 
+            border-bottom: 2px solid #ddd; 
+            font-size: 0.9rem; 
+        }
+        
+        td { 
+            padding: 12px 15px; 
+            border-bottom: 1px solid #f0f0f0; 
+            font-size: 0.9rem; 
+        }
+        
+        tr:nth-child(even) { 
+            background-color: #fafafa; 
+        }
+        
+        .section > :last-child {
+            margin-bottom: 20px;
+        }
+        
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            color: #7f8c8d; 
+            font-size: 0.9rem; 
+            border-top: 1px solid #eee; 
+            margin-top: 40px; 
+        }
+        
+        /* Return to Top Button */
+        .return-to-top {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #000080;
+            color: white;
+            padding: 12px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 1000;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            line-height: 26px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, opacity 0.3s;
+        }
+        
+        .return-to-top:hover {
+            background-color: #4a6491;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .return-to-top.show {
+            display: block;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body { 
+                background-color: white; 
+                padding: 0; 
+                margin: 0;
+            }
+            
+            @page {
+                margin: 0.25in;
+            }
+            
+            .container { 
+                max-width: 100%; 
+                margin: 0; 
+                padding: 0; 
+                border-radius: 0; 
+                box-shadow: none; 
+            }
+            
+            header { 
+                margin: 0 0 0.5in 0; 
+                padding: 0.3in 0; 
+                border-radius: 0; 
+            }
+            
+            .return-to-top { 
+                display: none !important; 
+            }
+            
+            .toc-container { 
+                page-break-after: always; 
+                background-color: white; 
+                border: 1px solid #ccc; 
+                box-shadow: none;
+            }
+            
+            .section { 
+                background-color: white;
+                margin-bottom: 1.5em;
+                page-break-inside: avoid;
+                border: none;
+                padding: 0;
+            }
+            
+            .modules-content { 
+                width: 100%; 
+            }
+            
+            table { 
+                page-break-inside: avoid; 
+            }
+            
+            .module h2 { 
+                page-break-before: avoid; 
+                margin-top: 1.5em; 
+                margin-bottom: 0.5em;
+            }
+            
+            .section h3 { 
+                page-break-before: avoid;
+                margin-top: 0.5em;
+            }
+            
+            footer { 
+                margin-top: 1in; 
+                padding-top: 0.5in; 
+                border-top: 1px solid #ccc; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Physics Vocabulary and Formulas Reference</h1>
+            <p style="font-size: 1.1rem; opacity: 0.9;">Complete Guide - All 8 Modules</p>
+        </header>
+
+        <!-- Table of Contents -->
+        <div class="toc-container" id="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul class="toc-list">
+        <li class="toc-module">
+            <div class="toc-module-title">Module 1: Introduction to Physics</div>
+            <ul class="toc-sections">
+            <li><a href="#section-1-1">1.1 Scope of Physics</a></li>
+            <li><a href="#section-1-2">1.2 Scientific Method</a></li>
+            <li><a href="#section-1-3">1.3 Scientific Measurement and Math Tools</a></li>
+            <li><a href="#section-1-4">1.4 Vectors and Vector Components</a></li>
+            <li><a href="#section-1-5">1.5 Vector Addition</a></li>
+            </ul>
+        </li>
+        <li class="toc-module">
+            <div class="toc-module-title">Module 2: Motion in One-Dimension</div>
+            <ul class="toc-sections">
+            <li><a href="#section-2-1">2.1 Position, Displacement, and Distance</a></li>
+            <li><a href="#section-2-2">2.2 Velocity and Speed</a></li>
+            <li><a href="#section-2-3">2.3 Acceleration</a></li>
+            <li><a href="#section-2-4">2.4 Kinematic Equations and Free Fall</a></li>
+            <li><a href="#section-2-5">2.5 Graphical Analysis of Motion</a></li>
+            </ul>
+        </li>
+        <li class="toc-module">
+            <div class="toc-module-title">Module 3: Forces and Newton's Laws of Motion</div>
+            <ul class="toc-sections">
+            <li><a href="#section-3-1">3.1 Weight and Gravitational Force</a></li>
+            <li><a href="#section-3-2">3.2 Friction</a></li>
+            <li><a href="#section-3-3">3.3 Newton's Laws</a></li>
+            <li><a href="#section-3-4">3.4 Gravitational Force and Inclined Planes</a></li>
+            <li><a href="#section-3-5">3.5 Projectile Motion</a></li>
+            </ul>
+        </li>
+        <li class="toc-module">
+            <div class="toc-module-title">Module 4: Conservation Laws</div>
+            <ul class="toc-sections">
+            <li><a href="#section-4-1">4.1 Momentum and Impulse</a></li>
+            <li><a href="#section-4-2">4.2 Conservation of Momentum in One Dimension</a></li>
+            <li><a href="#section-4-3">4.3 Elastic and Inelastic Collisions</a></li>
+            <li><a href="#section-4-4">4.4 Potential Energy</a></li>
+            <li><a href="#section-4-5">4.5 Kinetic Energy and Conservation of Energy</a></li>
+            </ul>
+        </li>
+        <li class="toc-module">
+            <div class="toc-module-title">Module 5: Harmonic Motion, Waves, and Sound</div>
+            <ul class="toc-sections">
+            <li><a href="#section-5-1">5.1 Introduction to Simple Harmonic Motion</a></li>
+            <li><a href="#section-5-2">5.2 Transverse Waves</a></li>
+            <li><a href="#section-5-3">5.3 Longitudinal Waves</a></li>
+            <li><a href="#section-5-4">5.4 Wave Properties and Behavior</a></li>
+            <li><a href="#section-5-5">5.5 Sound Waves</a></li>
+            </ul>
+        </li>
+        <li class="toc-module">
+            <div class="toc-module-title">Module 6: Optics</div>
+            <ul class="toc-sections">
+            <li><a href="#section-6-1">6.1 Reflection and the Law of Reflection</a></li>
+            <li><a href="#section-6-2">6.2 Refraction and Snell's Law</a></li>
+            <li><a href="#section-6-3">6.3 Total Internal Reflection</a></li>
+            <li><a href="#section-6-4">6.4 Mirrors: Plane, Concave, and Convex</a></li>
+            <li><a href="#section-6-5">6.5 Lenses: Double Convex and Double Concave</a></li>
+            </ul>
+        </li>
+        <li class="toc-module">
+            <div class="toc-module-title">Module 7: Intro to Electricity</div>
+            <ul class="toc-sections">
+            <li><a href="#section-7-1">7.1 Electric Charge and Electric Force</a></li>
+            <li><a href="#section-7-2">7.2 Electric Fields and Voltage</a></li>
+            <li><a href="#section-7-3">7.3 Current, Power Sources, and Measurement</a></li>
+            <li><a href="#section-7-4">7.4 Ohm's Law and Circuit Analysis</a></li>
+            <li><a href="#section-7-5">7.5 Energy, Efficiency, and Circuit Design</a></li>
+            </ul>
+        </li>
+        <li class="toc-module">
+            <div class="toc-module-title">Module 8: Electric Circuits</div>
+            <ul class="toc-sections">
+            <li><a href="#section-8-1">8.1 Energy Transfer in Electric Circuits</a></li>
+            <li><a href="#section-8-2">8.2 Measuring and Analyzing Circuit Behavior</a></li>
+            <li><a href="#section-8-3">8.3 Series and Parallel Circuits</a></li>
+            <li><a href="#section-8-4">8.4 Complex Circuit Analysis</a></li>
+            <li><a href="#section-8-5">8.5 Capacitors and Practical Applications</a></li>
+            </ul>
+        </li>
+            </ul>
+        </div>
+
+        <!-- Content -->
+        <div class="modules-content">
+
+            <h2>Module 1. Introduction to Physics</h2>
+            
+            <div class="section">
+                <h3 id="section-1-1">1.1 Scope of Physics</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Physics</div><div class="vocab-def">The branch of science that studies matter, energy, and the interactions between them.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Matter</div><div class="vocab-def">Anything that has mass and takes up space.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Energy</div><div class="vocab-def">The ability to do work or cause a change.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Force</div><div class="vocab-def">A push or pull on an object.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Motion</div><div class="vocab-def">How an object's position changes over time.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Mechanics</div><div class="vocab-def">The study of motion and forces.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Thermodynamics</div><div class="vocab-def">The study of heat, temperature, and energy transfer.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Waves</div><div class="vocab-def">How energy travels through waves.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Optics</div><div class="vocab-def">The study of light and vision.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electromagnetism</div><div class="vocab-def">The study of electric charges and magnetic fields.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Quantity</th><th>Formula</th><th>Variables</th></tr></thead>
+                    <tbody>
+                        <tr><td>Density</td><td>$$\rho = \frac{m}{V}$$</td><td>$\rho$ = density, $m$ = mass, $V$ = volume</td></tr>
+                        <tr><td>Celsius to Fahrenheit</td><td>$$T_F = \frac{9}{5}T_C + 32$$</td><td>Temperature conversion</td></tr>
+                        <tr><td>Fahrenheit to Celsius</td><td>$$T_C = \frac{5}{9}(T_F - 32)$$</td><td>Temperature conversion</td></tr>
+                        <tr><td>Distance</td><td>$$d = vt$$</td><td>$d$ = distance, $v$ = velocity, $t$ = time</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-1-2">1.2 Scientific Method</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Scientific Method</div><div class="vocab-def">A systematic approach to investigating questions and solving problems.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Observation</div><div class="vocab-def">Using your senses to gather information about the world.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Qualitative</div><div class="vocab-def">Descriptive observations (e.g., "the liquid is blue").</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Quantitative</div><div class="vocab-def">Numerical observations (e.g., "the temperature is 25°C").</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Scientific Question</div><div class="vocab-def">A question that can be answered through investigation and experimentation.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Hypothesis</div><div class="vocab-def">A testable prediction or proposed explanation for an observation.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Experiment</div><div class="vocab-def">A controlled procedure designed to test a hypothesis.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Independent Variable</div><div class="vocab-def">The variable you deliberately change or manipulate.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Dependent Variable</div><div class="vocab-def">The variable you observe or measure that responds to changes.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Control Group</div><div class="vocab-def">The group not exposed to the experimental variable; used for comparison.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Theory</div><div class="vocab-def">A well-tested explanation supported by extensive evidence from many experiments.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Scientific Law</div><div class="vocab-def">A statement describing a consistent pattern in nature, often expressed mathematically.</div></div>
+                </div>
+                <h4>Formulas - Geometry for Lab Work</h4>
+                <table>
+                    <thead><tr><th>Shape</th><th>Formula</th><th>Variables</th></tr></thead>
+                    <tbody>
+                        <tr><td>Area of Rectangle</td><td>$$A = lw$$</td><td>$A$ = area, $l$ = length, $w$ = width</td></tr>
+                        <tr><td>Area of Circle</td><td>$$A = \pi r^2$$</td><td>$A$ = area, $r$ = radius</td></tr>
+                        <tr><td>Perimeter of Rectangle</td><td>$$P = 2l + 2w$$</td><td>$P$ = perimeter</td></tr>
+                        <tr><td>Volume of Rectangular Solid</td><td>$$V = lwh$$</td><td>$V$ = volume, $h$ = height</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-1-3">1.3 Scientific Measurement and Math Tools</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">SI Units</div><div class="vocab-def">The standardized system of measurement.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Meter</div><div class="vocab-def">SI unit of length.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kilogram</div><div class="vocab-def">SI unit of mass.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Second</div><div class="vocab-def">SI unit of time.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Significant Figures</div><div class="vocab-def">The digits in a number meaningful to its precision.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Scientific Notation</div><div class="vocab-def">A method of expressing numbers as a coefficient times a power of 10.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Precision</div><div class="vocab-def">How closely repeated measurements agree with each other.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Accuracy</div><div class="vocab-def">How close a measurement is to the true or accepted value.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Quantity</th><th>Formula</th><th>Variables</th></tr></thead>
+                    <tbody>
+                        <tr><td>Percent Error</td><td>$$\text{% error} = \frac{|\text{Exp} - \text{Theo}|}{\text{Theo}} \times 100\%$$</td><td>Compare experimental to theoretical</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-1-4">1.4 Vectors and Vector Components</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Scalar</div><div class="vocab-def">A quantity that has only magnitude (size). Examples: mass, time, temperature, speed, energy, volume.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Vector</div><div class="vocab-def">A quantity that has both magnitude and direction. Examples: displacement, velocity, acceleration, force, momentum.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Components</div><div class="vocab-def">Perpendicular parts of a vector that add up to give the original vector.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Magnitude</div><div class="vocab-def">The size or length of a vector.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>X-Component</strong></td><td>$$A_x = A \cos(\theta)$$</td><td>$A$ = magnitude of vector (any units)<br/>$A_x$ = x-component (same units as $A$)<br/>$\theta$ = angle from positive x-axis (degrees or radians)</td></tr>
+                        <tr><td><strong>Y-Component</strong></td><td>$$A_y = A \sin(\theta)$$</td><td>$A$ = magnitude of vector (any units)<br/>$A_y$ = y-component (same units as $A$)<br/>$\theta$ = angle from positive x-axis (degrees or radians)</td></tr>
+                        <tr><td><strong>Magnitude from Components</strong></td><td>$$A = \sqrt{A_x^2 + A_y^2}$$</td><td>$A$ = magnitude of vector<br/>$A_x$ = x-component<br/>$A_y$ = y-component</td></tr>
+                        <tr><td><strong>Direction from Components</strong></td><td>$$\theta = \tan^{-1}\left(\frac{A_y}{A_x}\right)$$</td><td>$\theta$ = angle from positive x-axis<br/>$A_x$ = x-component<br/>$A_y$ = y-component<br/>(Check quadrant for correct angle!)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-1-5">1.5 Vector Addition</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Resultant Vector</div><div class="vocab-def">The vector sum of two or more vectors.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Tip-to-Tail Method</div><div class="vocab-def">Graphical method: place vectors head-to-tail, resultant goes from first tail to last head.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Parallelogram Method</div><div class="vocab-def">Graphical method: place vectors tail-to-tail, resultant is the diagonal.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Analytical Method</div><div class="vocab-def">Mathematical method using components to add vectors precisely.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Component Addition</div><div class="vocab-def">Adding corresponding components of vectors: $R_x = A_x + B_x$, etc.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Commutative</div><div class="vocab-def">Property where order doesn't matter: $\mathbf{A} + \mathbf{B} = \mathbf{B} + \mathbf{A}$.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Resultant X-Component</strong></td><td>$$R_x = A_x + B_x$$</td><td>Adding x-components of all vectors</td></tr>
+                        <tr><td><strong>Resultant Y-Component</strong></td><td>$$R_y = A_y + B_y$$</td><td>Adding y-components of all vectors</td></tr>
+                        <tr><td><strong>Resultant Magnitude</strong></td><td>$$R = \sqrt{R_x^2 + R_y^2}$$</td><td>Finding size of resultant from components</td></tr>
+                        <tr><td><strong>Resultant Direction</strong></td><td>$$\theta = \tan^{-1}\left(\frac{R_y}{R_x}\right)$$</td><td>Finding angle of resultant</td></tr>
+                        <tr><td><strong>Vector Components</strong></td><td>$$A_x = A\cos\theta, A_y = A\sin\theta$$</td><td>Breaking vectors into components first</td></tr>
+                    </tbody>
+                </table>
+            
+            <h2>Module 2. Motion in One-Dimension</h2>
+            
+            <div class="section">
+                <h3 id="section-2-1">2.1 Position, Displacement, and Distance</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Position</div><div class="vocab-def">The location of an object relative to a chosen reference point (origin), measured in meters (m). Can be positive or negative depending on which side of the origin the object is located.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Displacement</div><div class="vocab-def">The change in position of an object; a vector quantity with both magnitude and direction. Calculated as $\Delta x = x_f - x_i$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Distance</div><div class="vocab-def">The total length of the path traveled by an object, regardless of direction; a scalar quantity with magnitude only, always positive or zero.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coordinate System</div><div class="vocab-def">A reference frame with an origin and positive direction used to specify locations of objects in space.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Origin</div><div class="vocab-def">The reference point (position zero) in a coordinate system, from which all positions are measured.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Vector Quantity</div><div class="vocab-def">A physical quantity that has both magnitude and direction. Examples include displacement, velocity, acceleration, and force.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Scalar Quantity</div><div class="vocab-def">A physical quantity that has magnitude but no direction. Examples include distance, speed, time, mass, and temperature.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Delta (Δ)</div><div class="vocab-def">Greek letter meaning "change in"; used to indicate the difference between final and initial values of a quantity.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Magnitude</div><div class="vocab-def">The size or amount of a quantity, without regard to direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">One-Dimensional Motion</div><div class="vocab-def">Motion along a straight line in one direction or its opposite.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Displacement</strong></td><td>$$\Delta x = x_f - x_i$$</td><td>$\Delta x$ = displacement (m), $x_f$ = final position (m), $x_i$ = initial position (m)</td></tr>
+                        <tr><td><strong>Distance (Straight Path)</strong></td><td>$$d = |x_f - x_i|$$</td><td>$d$ = distance (m), $x_f$ = final position (m), $x_i$ = initial position (m)</td></tr>
+                        <tr><td><strong>Total Distance (Multiple Segments)</strong></td><td>$$d_{total} = d_1 + d_2 + d_3 + ...$$</td><td>$d_{total}$ = total distance (m), $d_1, d_2, d_3$ = segment distances (m)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-2-2">2.2 Velocity and Speed</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Average Velocity (v_avg or $\bar{v}$)</div><div class="vocab-def">The displacement divided by the time interval during which the displacement occurred; a vector quantity measured in meters per second (m/s).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Average Speed (s_avg)</div><div class="vocab-def">The total distance traveled divided by the time interval; a scalar quantity measured in meters per second (m/s), always positive or zero.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Instantaneous Velocity (v)</div><div class="vocab-def">The velocity of an object at a specific instant in time; the limit of average velocity as the time interval approaches zero.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Units of Velocity</div><div class="vocab-def">SI unit is meters per second (m/s); other common units include kilometers per hour (km/h), miles per hour (mph), and feet per second (ft/s).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Positive Velocity</div><div class="vocab-def">Motion in the positive direction (often right, forward, or upward in the chosen coordinate system).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Negative Velocity</div><div class="vocab-def">Motion in the negative direction (often left, backward, or downward); does NOT mean the object is slowing down.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Zero Velocity</div><div class="vocab-def">No motion; the object is at rest.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Average Velocity</strong></td><td>$$v_{avg} = \frac{\Delta x}{\Delta t}$$</td><td>$v_{avg}$ = average velocity (m/s), $\Delta x$ = displacement (m), $\Delta t$ = time interval (s)</td></tr>
+                        <tr><td><strong>Average Velocity (Alternate)</strong></td><td>$$v_{avg} = \frac{x_f - x_i}{t_f - t_i}$$</td><td>$x_f$ = final position (m), $x_i$ = initial position (m), $t_f$ = final time (s), $t_i$ = initial time (s)</td></tr>
+                        <tr><td><strong>Average Speed</strong></td><td>$$s_{avg} = \frac{d}{\Delta t}$$</td><td>$s_{avg}$ = average speed (m/s), $d$ = total distance (m), $\Delta t$ = time interval (s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-2-3">2.3 Acceleration</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Acceleration</div><div class="vocab-def">The rate of change of velocity with respect to time; a vector quantity with SI units of m/s².</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Average Acceleration</div><div class="vocab-def">The change in velocity divided by the time interval during which the change occurs.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Instantaneous Acceleration</div><div class="vocab-def">The acceleration at a specific moment in time.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Uniform Acceleration</div><div class="vocab-def">Acceleration that remains constant in magnitude and direction over time.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Positive Acceleration</div><div class="vocab-def">Acceleration in the positive direction; can mean speeding up or slowing down depending on velocity direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Negative Acceleration</div><div class="vocab-def">Acceleration in the negative direction; can mean speeding up or slowing down depending on velocity direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Zero Acceleration</div><div class="vocab-def">No change in velocity; indicates constant velocity (including possibly zero velocity).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Meters per Second Squared (m/s²)</div><div class="vocab-def">The SI unit of acceleration.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Average Acceleration</strong></td><td>$$a_{avg} = \frac{\Delta v}{\Delta t}$$</td><td>$a_{avg}$ = average acceleration (m/s²), $\Delta v$ = change in velocity (m/s), $\Delta t$ = time interval (s)</td></tr>
+                        <tr><td><strong>Average Acceleration (Expanded Form)</strong></td><td>$$a = \frac{v_f - v_i}{t_f - t_i}$$</td><td>$v_f$ = final velocity (m/s), $v_i$ = initial velocity (m/s), $t_f$ = final time (s), $t_i$ = initial time (s)</td></tr>
+                        <tr><td><strong>Final Velocity with Constant Acceleration</strong></td><td>$$v_f = v_i + a \cdot \Delta t$$</td><td>$v_f$ = final velocity (m/s), $v_i$ = initial velocity (m/s), $a$ = acceleration (m/s²), $\Delta t$ = time interval (s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-2-4">2.4 Kinematic Equations and Free Fall</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Kinematic Equations</div><div class="vocab-def">Four equations that describe motion with constant acceleration, relating position, velocity, acceleration, and time.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Free Fall</div><div class="vocab-def">Motion under the influence of gravity alone, with no other forces acting.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Gravitational Acceleration (g)</div><div class="vocab-def">The acceleration due to gravity near Earth's surface, approximately 9.8 m/s².</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Constant Acceleration</div><div class="vocab-def">Acceleration that does not change in magnitude or direction during the motion.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Symmetric Motion</div><div class="vocab-def">Projectile motion where an object returns to its starting height, with equal times and speeds going up and coming down.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Terminal Velocity</div><div class="vocab-def">The constant velocity reached when air resistance equals gravitational force, causing acceleration to become zero.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>When to Use</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Final Velocity</strong></td><td>$$v_f = v_i + at$$</td><td>When you don't know or need displacement</td></tr>
+                        <tr><td><strong>Displacement</strong></td><td>$$\Delta x = v_i t + \frac{1}{2}at^2$$</td><td>When you don't know or need final velocity</td></tr>
+                        <tr><td><strong>Velocity-Displacement Relation</strong></td><td>$$v_f^2 = v_i^2 + 2a\Delta x$$</td><td>When you don't know or need time</td></tr>
+                        <tr><td><strong>Displacement (Average Velocity Form)</strong></td><td>$$\Delta x = \frac{1}{2}(v_i + v_f)t$$</td><td>When you don't know or need acceleration</td></tr>
+                        <tr><td><strong>Gravitational Acceleration</strong></td><td>$$g = 9.8 \text{ m/s}^2$$</td><td>For free fall problems (use $a = -g$ if up is positive)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-2-5">2.5 Graphical Analysis of Motion</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Position vs. Time Graph (x-t graph)</div><div class="vocab-def">A graph showing an object's position on the vertical axis and time on the horizontal axis; slope equals velocity.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Velocity vs. Time Graph (v-t graph)</div><div class="vocab-def">A graph showing an object's velocity on the vertical axis and time on the horizontal axis; slope equals acceleration, area equals displacement.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Slope</div><div class="vocab-def">The rate of change of the vertical variable with respect to the horizontal variable; calculated as rise over run.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Tangent Line</div><div class="vocab-def">A straight line that touches a curve at exactly one point; used to find instantaneous slope of curved graphs.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Area Under Curve</div><div class="vocab-def">The region between a graph line and the horizontal axis; for v-t graphs, this area equals displacement.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Rise</div><div class="vocab-def">The vertical change between two points on a graph ($\Delta y$).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Run</div><div class="vocab-def">The horizontal change between two points on a graph ($\Delta x$).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Graphical Analysis</div><div class="vocab-def">The process of extracting quantitative information from graphs using slopes, areas, and other geometric properties.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Relationship</th><th>Formula</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Slope Formula</strong></td><td>$$m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$</td><td>General formula for calculating slope from two points</td></tr>
+                        <tr><td><strong>Velocity from x-t Graph</strong></td><td>$$v = \frac{\Delta x}{\Delta t}$$</td><td>Slope of position vs. time graph equals velocity</td></tr>
+                        <tr><td><strong>Acceleration from v-t Graph</strong></td><td>$$a = \frac{\Delta v}{\Delta t}$$</td><td>Slope of velocity vs. time graph equals acceleration</td></tr>
+                        <tr><td><strong>Displacement from v-t Graph</strong></td><td>$$\Delta x = \text{area under curve}$$</td><td>Area under velocity vs. time graph equals displacement</td></tr>
+                        <tr><td><strong>Area of Rectangle</strong></td><td>$$A = b \times h$$</td><td>For constant velocity: base = time, height = velocity</td></tr>
+                        <tr><td><strong>Area of Triangle</strong></td><td>$$A = \frac{1}{2}bh$$</td><td>For uniform acceleration from rest</td></tr>
+                        <tr><td><strong>Area of Trapezoid</strong></td><td>$$A = \frac{1}{2}(b_1 + b_2)h$$</td><td>For uniform acceleration (not from rest)</td></tr>
+                    </tbody>
+                </table>
+            
+    
+
+        <div class="module" id="module3">
+            <h2>Module 3. Forces, Gravity, and Projectile Motion</h2>
+            
+            <div class="section">
+                 <h3 id="section-3-1">3.1 Weight and Gravitational Force</h3>
+            
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    
+                    <div class="vocab-term">
+                        <div class="vocab-word">Force</div>
+                        <div class="vocab-def">
+                            A push or pull on an object that can cause acceleration; measured in newtons (N).
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Mass</div>
+                        <div class="vocab-def">
+                            The amount of matter in an object; measured in kilograms (kg). Mass does not change with location.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Weight</div>
+                        <div class="vocab-def">
+                            The gravitational force acting on an object due to a nearby celestial body.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Acceleration due to Gravity (g)</div>
+                        <div class="vocab-def">
+                            The acceleration experienced by objects in free fall near Earth's surface; 
+                            approximately $9.8 \text{ m/s}^2$ downward.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Gravitational Force</div>
+                        <div class="vocab-def">
+                            The attractive force between any two masses.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Universal Gravitational Constant (G)</div>
+                        <div class="vocab-def">
+                            The constant used in Newton’s Law of Universal Gravitation; 
+                            $G = 6.67 \times 10^{-11} \text{ N·m}^2/\text{kg}^2$.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Free-Body Diagram (FBD)</div>
+                        <div class="vocab-def">
+                            A simplified diagram that represents an object as a dot and shows all forces acting on it as arrows.
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <h4>Formulas</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formula Name</th>
+                            <th>Formula</th>
+                            <th>Variables and Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        
+                        <tr>
+                            <td><strong>Weight</strong></td>
+                            <td>$$W = mg$$</td>
+                            <td>
+                                $W$ = weight (N) <br>
+                                $m$ = mass (kg) <br>
+                                $g$ = acceleration due to gravity (m/s²)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Newton’s Law of Universal Gravitation</strong></td>
+                            <td>$$F_g = \dfrac{G m_1 m_2}{r^2}$$</td>
+                            <td>
+                                $F_g$ = gravitational force (N) <br>
+                                $G$ = universal gravitational constant <br>
+                                $m_1, m_2$ = masses (kg) <br>
+                                $r$ = distance between centers of mass (m)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Gravitational Field Strength</strong></td>
+                            <td>$$g = \dfrac{F_g}{m}$$</td>
+                            <td>
+                                $g$ = gravitational field strength (m/s²) <br>
+                                $F_g$ = gravitational force (N) <br>
+                                $m$ = mass (kg)
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-3-2">3.2 Friction</h3>
+                
+                
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Friction</div>
+                        <div class="vocab-def">
+                            A force that opposes relative motion (or attempted motion) between two surfaces in contact.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Static Friction ($f_s$)</div>
+                        <div class="vocab-def">
+                            The friction force that prevents motion between surfaces at rest relative to each other. 
+                            It adjusts up to a maximum value.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Maximum Static Friction</div>
+                        <div class="vocab-def">
+                            The greatest value static friction can reach before motion begins.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Kinetic Friction ($f_k$)</div>
+                        <div class="vocab-def">
+                            The friction force that acts between surfaces that are sliding past each other.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Coefficient of Friction ($\mu$)</div>
+                        <div class="vocab-def">
+                            A dimensionless constant that depends on the materials in contact and 
+                            describes how much frictional force is produced.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Coefficient of Static Friction ($\mu_s$)</div>
+                        <div class="vocab-def">
+                            The ratio of maximum static friction to the normal force.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Coefficient of Kinetic Friction ($\mu_k$)</div>
+                        <div class="vocab-def">
+                            The ratio of kinetic friction to the normal force.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Normal Force ($N$)</div>
+                        <div class="vocab-def">
+                            The support force exerted perpendicular to a surface in contact with an object.
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <h4>Formulas</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formula Name</th>
+                            <th>Formula</th>
+                            <th>Variables and Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        
+                        <tr>
+                            <td><strong>Maximum Static Friction</strong></td>
+                            <td>$$f_s^{max} = \mu_s N$$</td>
+                            <td>
+                                $f_s^{max}$ = maximum static friction (N) <br>
+                                $\mu_s$ = coefficient of static friction (no units) <br>
+                                $N$ = normal force (N)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Kinetic Friction</strong></td>
+                            <td>$$f_k = \mu_k N$$</td>
+                            <td>
+                                $f_k$ = kinetic friction force (N) <br>
+                                $\mu_k$ = coefficient of kinetic friction (no units) <br>
+                                $N$ = normal force (N)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Static Friction Inequality</strong></td>
+                            <td>$$f_s \le \mu_s N$$</td>
+                            <td>
+                                $f_s$ = actual static friction force (N) <br>
+                                $\mu_s N$ = maximum possible static friction (N)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Normal Force (Horizontal Surface)</strong></td>
+                            <td>$$N = mg$$</td>
+                            <td>
+                                $N$ = normal force (N) <br>
+                                $m$ = mass (kg) <br>
+                                $g$ = 9.8 m/s²
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-3-3">3.3 Newton’s Laws</h3>
+                
+                
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Newton’s First Law (Law of Inertia)</div>
+                        <div class="vocab-def">
+                            An object at rest remains at rest, and an object in motion remains in motion at constant velocity 
+                            unless acted upon by a net external force.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Inertia</div>
+                        <div class="vocab-def">
+                            The tendency of an object to resist changes in its state of motion. 
+                            Inertia is directly related to mass.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Net Force ($F_{net}$)</div>
+                        <div class="vocab-def">
+                            The vector sum of all forces acting on an object.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Equilibrium</div>
+                        <div class="vocab-def">
+                            The condition in which the net force on an object is zero, resulting in zero acceleration.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Newton’s Second Law</div>
+                        <div class="vocab-def">
+                            The acceleration of an object is directly proportional to the net force 
+                            and inversely proportional to its mass.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Newton’s Third Law</div>
+                        <div class="vocab-def">
+                            For every action force, there is an equal and opposite reaction force. 
+                            These forces act on different objects.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Action–Reaction Pair</div>
+                        <div class="vocab-def">
+                            Two forces that are equal in magnitude and opposite in direction, 
+                            acting on two interacting objects.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Tension ($T$)</div>
+                        <div class="vocab-def">
+                            The pulling force transmitted through a rope, string, or cable.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Applied Force ($F_{app}$)</div>
+                        <div class="vocab-def">
+                            A force exerted on an object by a person or another object.
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <h4>Formulas</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formula Name</th>
+                            <th>Formula</th>
+                            <th>Variables and Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        
+                        <tr>
+                            <td><strong>Newton’s Second Law</strong></td>
+                            <td>$$F_{net} = ma$$</td>
+                            <td>
+                                $F_{net}$ = net force (N) <br>
+                                $m$ = mass (kg) <br>
+                                $a$ = acceleration (m/s²)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Net Force (1-D)</strong></td>
+                            <td>$$F_{net} = \sum F$$</td>
+                            <td>
+                                Sum of all forces (N) <br>
+                                Use positive and negative signs based on chosen direction.
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Acceleration from Net Force</strong></td>
+                            <td>$$a = \frac{F_{net}}{m}$$</td>
+                            <td>
+                                $a$ = acceleration (m/s²) <br>
+                                $F_{net}$ = net force (N) <br>
+                                $m$ = mass (kg)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Third Law Force Pair</strong></td>
+                            <td>$$F_{AB} = -F_{BA}$$</td>
+                            <td>
+                                $F_{AB}$ = force of A on B (N) <br>
+                                $F_{BA}$ = force of B on A (N)
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-3-4">3.4 Gravitational Force and Inclined Planes</h3>
+                
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Inclined Plane</div>
+                        <div class="vocab-def">
+                            A flat surface tilted at an angle relative to the horizontal.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Angle of Incline ($\theta$)</div>
+                        <div class="vocab-def">
+                            The angle between the inclined surface and the horizontal.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Component of a Vector</div>
+                        <div class="vocab-def">
+                            One part of a vector resolved into perpendicular directions using trigonometry.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Parallel Component of Weight</div>
+                        <div class="vocab-def">
+                            The component of gravitational force acting down the slope: $W_{\parallel} = mg\sin\theta$.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Perpendicular Component of Weight</div>
+                        <div class="vocab-def">
+                            The component of gravitational force acting perpendicular to the surface: 
+                            $W_{\perp} = mg\cos\theta$.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Normal Force on an Incline</div>
+                        <div class="vocab-def">
+                            The support force exerted perpendicular to the surface of the incline.
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <h4>Formulas</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formula Name</th>
+                            <th>Formula</th>
+                            <th>Variables and Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        
+                        <tr>
+                            <td><strong>Parallel Component of Weight</strong></td>
+                            <td>$$W_{\parallel} = mg\sin\theta$$</td>
+                            <td>
+                                $m$ = mass (kg) <br>
+                                $g$ = 9.8 m/s² <br>
+                                $\theta$ = angle of incline
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Perpendicular Component of Weight</strong></td>
+                            <td>$$W_{\perp} = mg\cos\theta$$</td>
+                            <td>
+                                $m$ = mass (kg) <br>
+                                $g$ = 9.8 m/s² <br>
+                                $\theta$ = angle of incline
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Normal Force (Incline)</strong></td>
+                            <td>$$N = mg\cos\theta$$</td>
+                            <td>
+                                $N$ = normal force (N) <br>
+                                $m$ = mass (kg) <br>
+                                $\theta$ = angle
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Acceleration Down a Frictionless Incline</strong></td>
+                            <td>$$a = g\sin\theta$$</td>
+                            <td>
+                                $a$ = acceleration (m/s²) <br>
+                                $g$ = 9.8 m/s² <br>
+                                $\theta$ = angle
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Net Force Along Incline (with Friction)</strong></td>
+                            <td>$$F_{net} = mg\sin\theta - f$$</td>
+                            <td>
+                                $f$ = friction force (N)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Acceleration on Incline (with Friction)</strong></td>
+                            <td>$$a = g\sin\theta - \mu g\cos\theta$$</td>
+                            <td>
+                                $\mu$ = coefficient of friction <br>
+                                $\theta$ = angle
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-3-5">3.5 Projectile Motion</h3>
+                
+                
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Projectile</div>
+                        <div class="vocab-def">
+                            An object launched into the air that moves under the influence of gravity alone 
+                            (neglecting air resistance).
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Projectile Motion</div>
+                        <div class="vocab-def">
+                            Two-dimensional motion consisting of constant horizontal velocity 
+                            and uniformly accelerated vertical motion.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Initial Velocity ($v_0$)</div>
+                        <div class="vocab-def">
+                            The velocity of an object at the moment it is launched.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Launch Angle ($\theta$)</div>
+                        <div class="vocab-def">
+                            The angle at which a projectile is launched relative to the horizontal.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Horizontal Velocity ($v_x$)</div>
+                        <div class="vocab-def">
+                            The component of velocity parallel to the ground. 
+                            It remains constant during projectile motion.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Vertical Velocity ($v_y$)</div>
+                        <div class="vocab-def">
+                            The component of velocity perpendicular to the ground. 
+                            It changes due to gravitational acceleration.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Time of Flight</div>
+                        <div class="vocab-def">
+                            The total time a projectile remains in the air.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Maximum Height</div>
+                        <div class="vocab-def">
+                            The highest vertical position reached by the projectile.
+                        </div>
+                    </div>
+        
+                    <div class="vocab-term">
+                        <div class="vocab-word">Range</div>
+                        <div class="vocab-def">
+                            The horizontal distance traveled by a projectile.
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <h4>Formulas</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Formula Name</th>
+                            <th>Formula</th>
+                            <th>Variables and Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        
+                        <tr>
+                            <td><strong>Horizontal Velocity Component</strong></td>
+                            <td>$$v_x = v_0 \cos\theta$$</td>
+                            <td>
+                                $v_0$ = initial velocity (m/s) <br>
+                                $\theta$ = launch angle
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Vertical Velocity Component</strong></td>
+                            <td>$$v_y = v_0 \sin\theta$$</td>
+                            <td>
+                                $v_0$ = initial velocity (m/s) <br>
+                                $\theta$ = launch angle
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Horizontal Motion</strong></td>
+                            <td>$$x = v_x t$$</td>
+                            <td>
+                                $x$ = horizontal displacement (m) <br>
+                                $t$ = time (s)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Vertical Motion (Position)</strong></td>
+                            <td>$$y = v_y t - \frac{1}{2}gt^2$$</td>
+                            <td>
+                                $y$ = vertical displacement (m) <br>
+                                $g$ = 9.8 m/s²
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Vertical Velocity</strong></td>
+                            <td>$$v_y = v_{0y} - gt$$</td>
+                            <td>
+                                $v_{0y}$ = initial vertical velocity (m/s) <br>
+                                $t$ = time (s)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Time of Flight (Same Launch & Landing Height)</strong></td>
+                            <td>$$T = \frac{2 v_0 \sin\theta}{g}$$</td>
+                            <td>
+                                $T$ = total time (s)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Maximum Height</strong></td>
+                            <td>$$H = \frac{(v_0 \sin\theta)^2}{2g}$$</td>
+                            <td>
+                                $H$ = maximum height (m)
+                            </td>
+                        </tr>
+        
+                        <tr>
+                            <td><strong>Range (Same Launch & Landing Height)</strong></td>
+                            <td>$$R = \frac{v_0^2 \sin(2\theta)}{g}$$</td>
+                            <td>
+                                $R$ = horizontal distance (m)
+                            </td>
+                        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+            
+            <h2>Module 4. Conservation Laws</h2>
+            
+            <div class="section">
+                <h3 id="section-4-1">4.1 Momentum and Impulse</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Momentum</div><div class="vocab-def">The product of an object's mass and velocity ($p = mv$); a vector quantity that measures an object's motion.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Impulse</div><div class="vocab-def">The change in momentum of an object; also equal to the product of force and time interval ($J = F\Delta t$).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Impulse-Momentum Theorem</div><div class="vocab-def">The principle stating that impulse equals the change in momentum: $F\Delta t = \Delta p$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Vector Quantity</div><div class="vocab-def">A physical quantity that has both magnitude and direction (like momentum, velocity, and force).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Change in Momentum</div><div class="vocab-def">The difference between final and initial momentum: $\Delta p = p_f - p_i = mv_f - mv_i$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Average Force</div><div class="vocab-def">The constant force that would produce the same impulse as a varying force over a given time interval.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Newton-second (N·s)</div><div class="vocab-def">The SI unit of impulse, equivalent to kg·m/s.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kilogram-meter per second (kg·m/s)</div><div class="vocab-def">The SI unit of momentum.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Momentum</strong></td><td>$$p = mv$$</td><td>$p$ = momentum (kg·m/s), $m$ = mass (kg), $v$ = velocity (m/s)</td></tr>
+                        <tr><td><strong>Impulse</strong></td><td>$$J = F\Delta t$$</td><td>$J$ = impulse (N·s or kg·m/s), $F$ = average force (N), $\Delta t$ = time interval (s)</td></tr>
+                        <tr><td><strong>Change in Momentum</strong></td><td>$$\Delta p = mv_f - mv_i$$</td><td>$\Delta p$ = change in momentum (kg·m/s), $m$ = mass (kg), $v_f$ = final velocity (m/s), $v_i$ = initial velocity (m/s)</td></tr>
+                        <tr><td><strong>Impulse-Momentum Theorem</strong></td><td>$$F\Delta t = \Delta p$$</td><td>Force × time interval equals change in momentum</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-4-2">4.2 Conservation of Momentum in One Dimension</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Conservation of Momentum</div><div class="vocab-def">The principle that total momentum in an isolated system remains constant before and after a collision or interaction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Isolated System</div><div class="vocab-def">A system in which no net external force acts; only internal forces between objects within the system are present.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Internal Forces</div><div class="vocab-def">Forces that objects within a system exert on each other; these do not change the total momentum of the system.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">External Forces</div><div class="vocab-def">Forces acting on the system from outside; these can change the total momentum of the system.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">One-Dimensional Collision</div><div class="vocab-def">A collision where all motion occurs along a single straight line.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Recoil</div><div class="vocab-def">The backward motion of an object when it expels or releases another object (like a gun firing a bullet).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Total Momentum</div><div class="vocab-def">The vector sum of the momenta of all objects in a system.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Conservation of Momentum (General)</strong></td><td>$$p_{\text{before}} = p_{\text{after}}$$</td><td>$p$ = momentum (kg·m/s)</td></tr>
+                        <tr><td><strong>Conservation of Momentum (Two Objects)</strong></td><td>$$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$$</td><td>$m_1, m_2$ = masses (kg), $v_{1i}, v_{2i}$ = initial velocities (m/s), $v_{1f}, v_{2f}$ = final velocities (m/s)</td></tr>
+                        <tr><td><strong>Explosion from Rest</strong></td><td>$$m_1v_{1f} + m_2v_{2f} = 0$$</td><td>Two objects separate in opposite directions; total momentum is zero</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-4-3">4.3 Elastic and Inelastic Collisions</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Elastic Collision</div><div class="vocab-def">A collision in which both momentum and kinetic energy are conserved; objects bounce apart.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Inelastic Collision</div><div class="vocab-def">A collision in which momentum is conserved but kinetic energy is not; some KE is converted to other forms.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Perfectly Inelastic Collision</div><div class="vocab-def">A collision in which objects stick together after impact, moving with a common final velocity; maximum KE loss.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kinetic Energy</div><div class="vocab-def">Energy of motion, calculated as $KE = \frac{1}{2}mv^2$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Energy Transformation</div><div class="vocab-def">The conversion of energy from one form to another (e.g., kinetic to thermal).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Deformation Energy</div><div class="vocab-def">Energy used to permanently change the shape of an object during a collision.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coefficient of Restitution</div><div class="vocab-def">A measure of how "bouncy" a collision is; ranges from 0 (perfectly inelastic) to 1 (perfectly elastic).</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Kinetic Energy</strong></td><td>$$KE = \frac{1}{2}mv^2$$</td><td>$KE$ = kinetic energy (J), $m$ = mass (kg), $v$ = speed (m/s)</td></tr>
+                        <tr><td><strong>Elastic Collision (Momentum)</strong></td><td>$$m_1v_{1i} + m_2v_{2i} = m_1v_{1f} + m_2v_{2f}$$</td><td>Momentum is conserved</td></tr>
+                        <tr><td><strong>Elastic Collision (KE)</strong></td><td>$$\frac{1}{2}m_1v_{1i}^2 + \frac{1}{2}m_2v_{2i}^2 = \frac{1}{2}m_1v_{1f}^2 + \frac{1}{2}m_2v_{2f}^2$$</td><td>Kinetic energy is conserved</td></tr>
+                        <tr><td><strong>Perfectly Inelastic Collision</strong></td><td>$$m_1v_{1i} + m_2v_{2i} = (m_1 + m_2)v_f$$</td><td>Objects stick together with common final velocity</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-4-4">4.4 Potential Energy</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Potential Energy</div><div class="vocab-def">Energy stored in a system due to the position or configuration of objects.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Gravitational Potential Energy</div><div class="vocab-def">Energy stored due to an object's position in a gravitational field; calculated as $PE = mgh$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reference Point</div><div class="vocab-def">The chosen location where potential energy is defined as zero ($h = 0$).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Height (h)</div><div class="vocab-def">Vertical distance above the reference point.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Gravitational Field</div><div class="vocab-def">The region around a massive object where gravitational force is exerted.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Work</div><div class="vocab-def">Energy transferred when a force moves an object; equal to $F \cdot d$ when force and displacement are in the same direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Joule (J)</div><div class="vocab-def">The SI unit of energy; 1 J = 1 kg·m²/s².</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Gravitational Potential Energy</strong></td><td>$$PE = mgh$$</td><td>$PE$ = potential energy (J), $m$ = mass (kg), $g$ = 9.8 m/s² (on Earth), $h$ = height (m)</td></tr>
+                        <tr><td><strong>Change in Potential Energy</strong></td><td>$$\Delta PE = mg\Delta h$$</td><td>$\Delta PE$ = change in PE (J), $\Delta h$ = change in height (m)</td></tr>
+                        <tr><td><strong>Weight</strong></td><td>$$W = mg$$</td><td>$W$ = weight/gravitational force (N), $m$ = mass (kg), $g$ = 9.8 m/s²</td></tr>
+                        <tr><td><strong>Work</strong></td><td>$$W = F \cdot d$$</td><td>$W$ = work (J), $F$ = force (N), $d$ = displacement (m)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-4-5">4.5 Kinetic Energy and Conservation of Energy</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Kinetic Energy</div><div class="vocab-def">Energy of motion; $KE = \frac{1}{2}mv^2$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Conservation of Energy</div><div class="vocab-def">Energy cannot be created or destroyed, only transformed between forms.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Mechanical Energy</div><div class="vocab-def">Sum of kinetic and potential energy in a system.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Energy Transformation</div><div class="vocab-def">The conversion of energy from one form to another.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Isolated System</div><div class="vocab-def">A system with no external forces doing work; mechanical energy is conserved.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Kinetic Energy</strong></td><td>$$KE = \frac{1}{2}mv^2$$</td><td>$KE$ = kinetic energy (J), $m$ = mass (kg), $v$ = speed (m/s)</td></tr>
+                        <tr><td><strong>Potential Energy</strong></td><td>$$PE = mgh$$</td><td>$PE$ = potential energy (J), $m$ = mass (kg), $g$ = 9.8 m/s², $h$ = height (m)</td></tr>
+                        <tr><td><strong>Conservation of Mechanical Energy</strong></td><td>$$PE_i + KE_i = PE_f + KE_f$$</td><td>Subscript $i$ = initial, subscript $f$ = final; all energies in joules (J)</td></tr>
+                        <tr><td><strong>Total Mechanical Energy</strong></td><td>$$E = PE + KE$$</td><td>$E$ = total mechanical energy (J)</td></tr>
+                        <tr><td><strong>Energy Conservation</strong></td><td>$$E_{\text{total}} = PE + KE = \text{constant}$$</td><td>Total mechanical energy remains constant in isolated systems</td></tr>
+                    </tbody>
+                </table>
+            
+            <h2>Module 5. Harmonic Motion, Waves, and Sound</h2>
+            
+            <div class="section">
+                <h3 id="section-5-1">5.1 Introduction to Simple Harmonic Motion</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Oscillation</div><div class="vocab-def">Repeating motion around a central position.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Simple Harmonic Motion (SHM)</div><div class="vocab-def">The repetitive back-and-forth movement of an object through an equilibrium position, where the restoring force is directly proportional to the displacement from equilibrium.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Equilibrium Position</div><div class="vocab-def">The central resting position where the net force on an object is zero and the object would remain at rest if not disturbed.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Displacement</div><div class="vocab-def">The distance and direction of an object from its equilibrium position, measured in meters (m).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Restoring Force</div><div class="vocab-def">The force that acts to bring an oscillating object back toward its equilibrium position; it always points toward equilibrium.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Periodic Motion</div><div class="vocab-def">Motion that repeats in a regular cycle.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Amplitude (A)</div><div class="vocab-def">The maximum displacement from equilibrium position, measured in meters (m). This represents how far the object moves from center to its farthest point.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Period (T)</div><div class="vocab-def">The time required for one complete cycle of motion, measured in seconds (s). One complete cycle means going from a starting point, through all positions, and back to the starting point moving in the same direction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Frequency (f)</div><div class="vocab-def">The number of complete cycles per second, measured in hertz (Hz) or cycles per second (1 Hz = 1 cycle/s).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Hooke's Law</div><div class="vocab-def">The principle that the restoring force of a spring is proportional to its displacement: $F = -kx$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Spring Constant (k)</div><div class="vocab-def">A measure of a spring's stiffness, measured in newtons per meter (N/m). A larger spring constant means a stiffer spring that requires more force to stretch or compress.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Simple Pendulum</div><div class="vocab-def">A mass (called a bob) suspended from a fixed point by a string or rod of negligible mass; exhibits simple harmonic motion for small angles.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Frequency-Period Relationship</strong></td><td>$$f = \frac{1}{T}$$</td><td>$f$ = frequency (Hz), $T$ = period (s)</td></tr>
+                        <tr><td><strong>Hooke's Law</strong></td><td>$$F = -kx$$</td><td>$F$ = restoring force (N), $k$ = spring constant (N/m), $x$ = displacement (m)</td></tr>
+                        <tr><td><strong>Period of Mass-Spring System</strong></td><td>$$T = 2\pi\sqrt{\frac{m}{k}}$$</td><td>$T$ = period (s), $m$ = mass (kg), $k$ = spring constant (N/m)</td></tr>
+                        <tr><td><strong>Period of Simple Pendulum</strong></td><td>$$T = 2\pi\sqrt{\frac{L}{g}}$$</td><td>$T$ = period (s), $L$ = length (m), $g$ = 9.8 m/s$^2$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-5-2">5.2 Transverse Waves</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Wave</div><div class="vocab-def">A disturbance that transfers energy from one place to another without permanently transferring matter.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Transverse Wave</div><div class="vocab-def">A wave in which the particles of the medium move perpendicular (at right angles) to the direction of wave propagation.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Medium</div><div class="vocab-def">The material substance through which a wave travels. For mechanical waves, a medium is required; electromagnetic waves can travel through empty space.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Propagation</div><div class="vocab-def">The movement or spreading of a wave through space or a medium.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Crest</div><div class="vocab-def">The highest point of a wave above the equilibrium position; represents maximum positive displacement.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Trough</div><div class="vocab-def">The lowest point of a wave below the equilibrium position; represents maximum negative displacement.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Wavelength (λ)</div><div class="vocab-def">The distance between two consecutive corresponding points on a wave, such as crest to crest or trough to trough, measured in meters (m). Represented by the Greek letter lambda (λ).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Wave Speed</div><div class="vocab-def">The speed at which the wave pattern travels through the medium, measured in meters per second (m/s).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electromagnetic Wave</div><div class="vocab-def">A transverse wave consisting of oscillating electric and magnetic fields that can travel through empty space; includes visible light, radio waves, and X-rays.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Frequency-Period Relationship</strong></td><td>$$f = \frac{1}{T}$$</td><td>$f$ = frequency (Hz), $T$ = period (s)</td></tr>
+                        <tr><td><strong>Wave Equation</strong></td><td>$$v = f\lambda$$</td><td>$v$ = wave speed (m/s), $f$ = frequency (Hz), $\lambda$ = wavelength (m)</td></tr>
+                        <tr><td><strong>Wave Speed (Alternative)</strong></td><td>$$v = \frac{\lambda}{T}$$</td><td>$v$ = wave speed (m/s), $\lambda$ = wavelength (m), $T$ = period (s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-5-3">5.3 Longitudinal Waves</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Longitudinal Wave</div><div class="vocab-def">A wave in which particles oscillate parallel to the direction of wave propagation.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Compression</div><div class="vocab-def">A region in a longitudinal wave where particles are pushed closer together than normal, creating higher density and higher pressure.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Rarefaction</div><div class="vocab-def">A region in a longitudinal wave where particles are pulled farther apart than normal, creating lower density and lower pressure.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Sound Wave</div><div class="vocab-def">A longitudinal wave of pressure variations that travels through a medium by creating compressions and rarefactions.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Mechanical Wave</div><div class="vocab-def">A wave that requires a physical medium (matter) to travel through; cannot propagate through a vacuum.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ultrasound</div><div class="vocab-def">Sound waves with frequencies above the range of human hearing (above 20,000 Hz); used in medical imaging and other applications.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Infrasound</div><div class="vocab-def">Sound waves with frequencies below the range of human hearing (below 20 Hz); produced by earthquakes, ocean waves, and large animals.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Wave Equation</strong></td><td>$$v = f\lambda$$</td><td>$v$ = wave speed (m/s), $f$ = frequency (Hz), $\lambda$ = wavelength (m)</td></tr>
+                        <tr><td><strong>Frequency-Period Relationship</strong></td><td>$$f = \frac{1}{T}$$</td><td>$f$ = frequency (Hz), $T$ = period (s)</td></tr>
+                        <tr><td><strong>Distance from Echo Time</strong></td><td>$$d = vt$$</td><td>$d$ = distance (m), $v$ = wave speed (m/s), $t$ = time (s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3>5.4 Wave Properties and Behavior</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term">
+                        <div class="vocab-word">Diffraction</div>
+                        <div class="vocab-def">The spreading of a wave around obstacles and through openings; more pronounced when wavelength is large compared to the obstacle size.</div>
+                    </div>
+                    <div class="vocab-term">
+                        <div class="vocab-word">Diffraction Pattern</div>
+                        <div class="vocab-def">The pattern of wave intensity created when a wave spreads around an obstacle or through an opening.</div>
+                    </div>
+                    <div class="vocab-term">
+                        <div class="vocab-word">Interference</div>
+                        <div class="vocab-def">The combination of two or more waves that interact and produce a new wave pattern; can result in reinforcement (constructive) or cancellation (destructive).</div>
+                    </div>
+                    <div class="vocab-term">
+                        <div class="vocab-word">Superposition</div>
+                        <div class="vocab-def">The principle that when two waves overlap, the resultant displacement at any point is the sum of the displacements from each wave.</div>
+                    </div>
+                    <div class="vocab-term">
+                        <div class="vocab-word">Constructive Interference</div>
+                        <div class="vocab-def">Occurs when waves arrive with crests aligned with crests (in phase); amplitudes add, producing a larger combined amplitude.</div>
+                    </div>
+                    <div class="vocab-term">
+                        <div class="vocab-word">Destructive Interference</div>
+                        <div class="vocab-def">Occurs when waves arrive with crests aligned with troughs (out of phase by 180 degrees); amplitudes subtract, potentially resulting in zero amplitude.</div>
+                    </div>
+                    <div class="vocab-term">
+                        <div class="vocab-word">Phase</div>
+                        <div class="vocab-def">The position of a wave relative to a reference point; determines whether waves arriving at the same point interfere constructively or destructively.</div>
+                    </div>
+                    <div class="vocab-term">
+                        <div class="vocab-word">Standing Wave</div>
+                        <div class="vocab-def">A wave pattern that appears to stand still rather than propagate, formed when incident and reflected waves interfere at specific frequencies.</div>
+                    </div>
+                    <div class="vocab-term">
+                        <div class="vocab-word">Node</div>
+                        <div class="vocab-def">A point of zero amplitude in a standing wave where destructive interference always occurs; particles at nodes do not move.</div>
+                    </div>
+                    <div class="vocab-term">
+                        <div class="vocab-word">Antinode</div>
+                        <div class="vocab-def">A point of maximum amplitude in a standing wave where constructive interference occurs; particles at antinodes oscillate with maximum displacement.</div>
+                    </div>
+                </div>
+            
+                <h4>Formulas</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Equation Name</th>
+                            <th>Formula</th>
+                            <th>Variables and Units</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Standing Wave on a String (nth Harmonic)</strong></td>
+                            <td>$$\lambda_n = \frac{2L}{n}$$</td>
+                            <td>$\lambda_n$ = wavelength (m), $L$ = string length (m), $n$ = harmonic number (1, 2, 3...)</td>
+                        </tr>
+                
+                        <tr>
+                            <td><strong>Open–Open Air Column (nth Harmonic)</strong></td>
+                            <td>$$f_n = \frac{nv}{2L}$$</td>
+                            <td>$f_n$ = frequency (Hz), $v$ = speed of sound (m/s), $L$ = column length (m), $n$ = 1, 2, 3...</td>
+                        </tr>
+                
+                        <tr>
+                            <td><strong>Open–Open Air Column (Fundamental)</strong></td>
+                            <td>$$f_1 = \frac{v}{2L}$$</td>
+                            <td>$f_1$ = fundamental frequency (Hz), $v$ = speed of sound (m/s), $L$ = column length (m)</td>
+                        </tr>
+                
+                        <tr>
+                            <td><strong>Open–Closed Air Column (nth Harmonic)</strong></td>
+                            <td>$$f_n = \frac{nv}{4L}$$</td>
+                            <td>$f_n$ = frequency (Hz), $v$ = speed of sound (m/s), $L$ = column length (m), $n$ = 1, 3, 5... (odd only)</td>
+                        </tr>
+                
+                        <tr>
+                            <td><strong>Open–Closed Air Column (Fundamental)</strong></td>
+                            <td>$$f_1 = \frac{v}{4L}$$</td>
+                            <td>$f_1$ = fundamental frequency (Hz), $v$ = speed of sound (m/s), $L$ = column length (m)</td>
+                        </tr>
+                
+                        <tr>
+                            <td><strong>Constructive Interference</strong></td>
+                            <td>Path difference = $n\lambda$</td>
+                            <td>$n$ = 0, 1, 2, 3... (integer), $\lambda$ = wavelength (m)</td>
+                        </tr>
+                
+                        <tr>
+                            <td><strong>Destructive Interference</strong></td>
+                            <td>Path difference = $(n + \frac{1}{2})\lambda$</td>
+                            <td>$n$ = 0, 1, 2, 3... (integer), $\lambda$ = wavelength (m)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+
+            <div class="section">
+                <h3 id="section-5-5">5.5 Sound Waves</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Sound</div><div class="vocab-def">A longitudinal mechanical wave consisting of pressure variations that travel through a medium.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Pitch</div><div class="vocab-def">The perceived highness or lowness of a sound; directly related to frequency (high frequency = high pitch).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Loudness</div><div class="vocab-def">The perceived intensity of sound; related to amplitude and the amount of energy the wave carries.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Timbre</div><div class="vocab-def">The quality or color of a sound that distinguishes different sources; related to the combination of frequencies (harmonics) present.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Audible Range</div><div class="vocab-def">The range of sound frequencies detectable by humans, approximately 20 Hz to 20,000 Hz (20 kHz); varies with age.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Doppler Effect</div><div class="vocab-def">The change in observed frequency of a wave when the source and observer are moving relative to each other; frequency increases when approaching and decreases when receding.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Harmonic</div><div class="vocab-def">A frequency component of a complex sound that is a whole-number multiple of the fundamental frequency; contributes to the timbre of an instrument.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Fundamental Frequency</div><div class="vocab-def">The lowest frequency at which an object vibrates naturally; determines the basic pitch of the sound produced by an instrument.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Intensity</div><div class="vocab-def">The power per unit area carried by a wave, measured in watts per square meter (W/m²); related to how loud a sound is perceived.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Decibel (dB)</div><div class="vocab-def">A logarithmic unit used to measure sound intensity and loudness; based on a reference level (threshold of hearing at 0 dB).</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Wave Equation</strong></td><td>$$v = f\lambda$$</td><td>$v$ = wave speed (m/s), $f$ = frequency (Hz), $\lambda$ = wavelength (m)</td></tr>
+                        <tr><td><strong>Speed of Sound in Air</strong></td><td>$$v = 331 + 0.6T$$</td><td>$v$ = speed (m/s), $T$ = temperature ($^\circ$C)</td></tr>
+                        <tr>
+    <td><strong>Doppler Effect (Source and Observer Moving)</strong></td>
+    <td>$$f_{obs} = f_{source} \left(\frac{v \pm v_{obs}}{v \mp v_{source}}\right)$$</td>
+    <td>
+        $f_{obs}$ = observed frequency (Hz), 
+        $f_{source}$ = source frequency (Hz), 
+        $v$ = speed of sound (m/s), 
+        $v_{obs}$ = observer speed (m/s), 
+        $v_{source}$ = source speed (m/s) <br>
+        Use + in numerator if observer moves toward source, − if away. <br>
+        Use − in denominator if source moves toward observer, + if away.
+    </td>
+</tr>
+
+                        <tr><td><strong>Fundamental Frequency (String)</strong></td><td>$$f_1 = \frac{v}{2L}$$</td><td>$f_1$ = fundamental frequency (Hz), $v$ = wave speed on string (m/s), $L$ = string length (m)</td></tr>
+                    </tbody>
+                </table>
+            
+            <h2>Module 6. Optics</h2>
+            
+            <div class="section">
+                <h3 id="section-6-1">6.1 Reflection and the Law of Reflection</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Light</div><div class="vocab-def">A form of electromagnetic energy that travels through space and allows us to see objects.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ray</div><div class="vocab-def">A straight line with an arrow that represents the direction light is traveling.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Speed of Light (c)</div><div class="vocab-def">The speed at which light travels through empty space, approximately $3 \times 10^8$ m/s.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ray Model</div><div class="vocab-def">A simplified way of representing light as straight lines (rays) traveling in specific directions.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reflection</div><div class="vocab-def">The bouncing of light off a surface when light strikes it.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reflecting Surface</div><div class="vocab-def">The surface off which light bounces.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Normal</div><div class="vocab-def">An imaginary line perpendicular (at a 90-degree angle) to the reflecting surface at the point where light hits it.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Angle of Incidence (θ₁)</div><div class="vocab-def">The angle between the incoming light ray and the normal.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Angle of Reflection (θ₂)</div><div class="vocab-def">The angle between the reflected light ray and the normal.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Incident Ray</div><div class="vocab-def">The light ray traveling toward the reflecting surface.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Reflected Ray</div><div class="vocab-def">The light ray bouncing away from the reflecting surface.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Law of Reflection</div><div class="vocab-def">The principle that the angle of incidence equals the angle of reflection, both measured from the normal line.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ray Diagram</div><div class="vocab-def">A diagram showing the path of light rays, used to solve reflection problems.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Specular Reflection</div><div class="vocab-def">Reflection from a smooth, shiny surface like a mirror where all light rays reflect in the same direction, creating a clear reflection.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Diffuse Reflection</div><div class="vocab-def">Reflection from a rough, bumpy surface where light rays scatter in many different directions and no clear reflection is visible.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Concept</th><th>Equation/Definition</th><th>Variables</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Law of Reflection</strong></td><td>$$\theta_1 = \theta_2$$</td><td>θ₁ = angle of incidence (degrees), θ₂ = angle of reflection (degrees)</td></tr>
+                        <tr><td><strong>Angle Conversion</strong></td><td>$$\theta_{normal} = 90° - \theta_{surface}$$</td><td>θ_normal = angle from normal, θ_surface = angle from surface</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-6-2">6.2 Refraction and Snell's Law</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Refraction</div><div class="vocab-def">The bending of light when it passes from one material to another due to a change in wave speed.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Optical Density</div><div class="vocab-def">A property of a material related to its refractive index; high optical density means light travels slowly through it.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Refractive Index (n)</div><div class="vocab-def">A dimensionless number that describes how much a medium slows down light compared to vacuum; $n = c/v$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Snell's Law</div><div class="vocab-def">The mathematical relationship between angles of incidence and refraction and refractive indices: $n_1 \sin\theta_1 = n_2 \sin\theta_2$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Interface</div><div class="vocab-def">The boundary between two different materials through which light passes.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Refractive Index</strong></td><td>$$n = \frac{c}{v}$$</td><td>$c$ = speed of light in vacuum ($3 \times 10^8$ m/s), $v$ = speed of light in material (m/s)</td></tr>
+                        <tr><td><strong>Snell's Law</strong></td><td>$$n_1 \sin\theta_1 = n_2 \sin\theta_2$$</td><td>$n$ = refractive index (unitless), $\theta$ = angle from normal (degrees)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-6-3">6.3 Total Internal Reflection</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Critical Angle (θc)</div><div class="vocab-def">The angle of incidence at which the angle of refraction becomes 90°. Beyond this angle, total internal reflection occurs.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Total Internal Reflection</div><div class="vocab-def">The complete reflection of light back into a more optically dense material when light hits the interface with a less dense material at an angle greater than the critical angle.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Equation Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Critical Angle</strong></td><td>$$\sin\theta_c = \frac{n_2}{n_1}$$</td><td>θc = critical angle (degrees), $n_1$ = denser material, $n_2$ = less dense material</td></tr>
+                        <tr><td><strong>Critical Angle (Alternative)</strong></td><td>$$\theta_c = \sin^{-1}\left(\frac{n_2}{n_1}\right)$$</td><td>Same as above</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-6-4">6.4 Mirrors: Plane, Concave, and Convex</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Plane Mirror</div><div class="vocab-def">A flat, reflective surface that produces virtual, upright images of the same size as the object.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Virtual Image</div><div class="vocab-def">An image formed at a location where light does not actually travel; appears behind a mirror.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Upright</div><div class="vocab-def">Image orientation property where the image is right-side up (not inverted).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Same Size</div><div class="vocab-def">Image property where the image is the same size as the object.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Curved Mirrors</div><div class="vocab-def">Mirrors whose surfaces are part of a sphere; includes concave and convex mirrors.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Concave Mirrors</div><div class="vocab-def">Curved mirrors that curve inward (like a spoon); also called converging mirrors because they bring light rays together.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Convex Mirrors</div><div class="vocab-def">Curved mirrors that curve outward (like the back of a spoon); also called diverging mirrors because they spread light rays apart.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Focal Point (F)</div><div class="vocab-def">The point where parallel light rays converge after reflection from a concave mirror.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Center of Curvature (C)</div><div class="vocab-def">The center of the sphere of which a curved mirror is a part.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Focal Length (f)</div><div class="vocab-def">The distance from a mirror to its focal point; for a curved mirror, $f = R/2$ where $R$ is radius of curvature.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Mirror Equation</strong></td><td>$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</td><td>$f$ = focal length, $d_o$ = object distance, $d_i$ = image distance</td></tr>
+                        <tr><td><strong>Magnification</strong></td><td>$$M = -\frac{d_i}{d_o} = \frac{h_i}{h_o}$$</td><td>$M$ = magnification, $h_o$ = object height, $h_i$ = image height</td></tr>
+                        <tr><td><strong>Focal Length and Radius</strong></td><td>$$f = \frac{R}{2}$$</td><td>$f$ = focal length, $R$ = radius of curvature</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-6-5">6.5 Lenses: Double Convex and Double Concave</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Double Convex Lenses</div><div class="vocab-def">Lenses that are thicker in the middle and thinner at the edges; also called converging lenses because they bend light rays toward each other.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Converging Lenses</div><div class="vocab-def">Lenses that bend light rays toward each other, causing them to converge at a focal point; have positive focal length.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Double Concave Lenses</div><div class="vocab-def">Lenses that are thinner in the middle and thicker at the edges; also called diverging lenses because they bend light rays away from each other.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Diverging Lenses</div><div class="vocab-def">Lenses that bend light rays away from each other, causing them to diverge; have negative focal length and always produce virtual images.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Lens Equation</strong></td><td>$$\frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}$$</td><td>$f$ = focal length, $d_o$ = object distance, $d_i$ = image distance</td></tr>
+                        <tr><td><strong>Magnification (Lenses)</strong></td><td>$$M = \frac{d_i}{d_o} = \frac{h_i}{h_o}$$</td><td>$M$ = magnification, $h_o$ = object height, $h_i$ = image height</td></tr>
+                    </tbody>
+                </table>
+            
+            <h2>Module 7. Intro to Electricity</h2>
+            
+            <div class="section">
+                <h3 id="section-7-1">7.1 Electric Charge and Electric Force</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Static electricity</div><div class="vocab-def">Electric charge at rest; the buildup of charge on objects.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electric charge</div><div class="vocab-def">A fundamental property of matter that causes objects to experience force in an electromagnetic field.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Positive charge</div><div class="vocab-def">Electric charge carried by protons; has charge of +e.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Negative charge</div><div class="vocab-def">Electric charge carried by electrons; has charge of −e.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Elementary charge</div><div class="vocab-def">The magnitude of charge on a single proton or electron; $e = 1.60 \times 10^{-19}$ C.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coulomb (C)</div><div class="vocab-def">The SI unit of electric charge.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Coulomb's Law</div><div class="vocab-def">The equation describing the electric force between two point charges: $F_e = k\frac{|q_1 q_2|}{r^2}$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Point charge</div><div class="vocab-def">An idealized charged object treated as a single point in space.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Law of Electric Charges</div><div class="vocab-def">Like charges repel; opposite charges attract.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Repulsion</div><div class="vocab-def">The force pushing two like charges apart.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Attraction</div><div class="vocab-def">The force pulling two opposite charges together.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Coulomb's Law</strong></td><td>$$F_e = k\frac{|q_1 q_2|}{r^2}$$</td><td>$F_e$ = electric force (N), $k = 8.99 \times 10^9$ N·m²/C², $q_1, q_2$ = charges (C), $r$ = distance (m)</td></tr>
+                        <tr><td><strong>Elementary Charge</strong></td><td>$$e = 1.60 \times 10^{-19} \text{ C}$$</td><td>$e$ = magnitude of charge on proton or electron (C)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-7-2">7.2 Electric Fields and Voltage</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Electric field</div><div class="vocab-def">The region around a charged object where electric force is exerted on other charges.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electric field lines</div><div class="vocab-def">Lines that show the direction and strength of the electric field; always point away from positive charges and toward negative charges.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Dipole</div><div class="vocab-def">A pair of equal and opposite charges separated by a distance.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Uniform electric field</div><div class="vocab-def">An electric field with the same strength and direction at every point.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electric potential energy</div><div class="vocab-def">Energy stored due to the position of a charge in an electric field.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Voltage</div><div class="vocab-def">The potential difference per unit charge; energy per coulomb; measured in volts (V).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Volt (V)</div><div class="vocab-def">The SI unit of voltage; 1 V = 1 J/C.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Potential difference</div><div class="vocab-def">The difference in electric potential between two points; voltage between two points.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Electric Field Strength</strong></td><td>$$E = \frac{F_e}{q}$$</td><td>$E$ = electric field (N/C or V/m), $F_e$ = electric force (N), $q$ = charge (C)</td></tr>
+                        <tr><td><strong>Force from Electric Field</strong></td><td>$$F_e = qE$$</td><td>$F_e$ = electric force (N), $q$ = charge (C), $E$ = electric field (N/C)</td></tr>
+                        <tr><td><strong>Electric Potential (Voltage)</strong></td><td>$$V = \frac{U_e}{q}$$</td><td>$V$ = voltage (V), $U_e$ = electric potential energy (J), $q$ = charge (C)</td></tr>
+                        <tr><td><strong>Work and Voltage</strong></td><td>$$W = qV$$</td><td>$W$ = work done (J), $q$ = charge (C), $V$ = voltage difference (V)</td></tr>
+                        <tr><td><strong>Field-Voltage Relationship (Uniform Field)</strong></td><td>$$E = \frac{V}{d}$$</td><td>$E$ = electric field (V/m), $V$ = voltage difference (V), $d$ = distance (m)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-7-3">7.3 Current, Power Sources, and Measurement</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Electric current</div><div class="vocab-def">The flow of electric charge through a conductor; measured in amperes (A).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ampere (A)</div><div class="vocab-def">The SI unit of electric current; 1 A = 1 C/s.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Drift velocity</div><div class="vocab-def">The average velocity of charge carriers (electrons) moving through a conductor.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Conventional current</div><div class="vocab-def">The flow of positive charge (opposite to electron flow direction).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Power source</div><div class="vocab-def">A device that provides electrical energy (e.g., battery, solar cell).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Chemical cell</div><div class="vocab-def">A device that converts chemical energy into electrical energy through a chemical reaction.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electrodes</div><div class="vocab-def">The terminals of a power source where current enters or leaves.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electrolyte</div><div class="vocab-def">A substance in a chemical cell that allows ions to move and conduct current.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Photoelectric effect</div><div class="vocab-def">The emission of electrons from a material when light shines on it.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Voltmeter</div><div class="vocab-def">An instrument that measures voltage between two points.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ammeter</div><div class="vocab-def">An instrument that measures electric current.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Multimeter</div><div class="vocab-def">A device that can measure voltage, current, and resistance.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Electric Current</strong></td><td>$$I = \frac{Q}{t}$$</td><td>$I$ = current (A), $Q$ = charge (C), $t$ = time (s)</td></tr>
+                        <tr><td><strong>Charge from Current</strong></td><td>$$Q = I \cdot t$$</td><td>$Q$ = charge (C), $I$ = current (A), $t$ = time (s)</td></tr>
+                        <tr><td><strong>Electrical Energy</strong></td><td>$$E = QV$$</td><td>$E$ = energy (J), $Q$ = charge (C), $V$ = voltage (V)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-7-4">7.4 Ohm's Law and Circuit Analysis</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Resistance</div><div class="vocab-def">Opposition to the flow of electric current; measured in ohms (Ω).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ohm (Ω)</div><div class="vocab-def">The SI unit of electrical resistance; 1 Ω = 1 V/A.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ohm's Law</div><div class="vocab-def">The relationship stating that voltage equals current times resistance: $V = IR$.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Series circuit</div><div class="vocab-def">A circuit in which components are connected one after another in a single path.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Parallel circuit</div><div class="vocab-def">A circuit in which components are connected along multiple paths.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Insulator</div><div class="vocab-def">A material with very high resistance that does not conduct electricity well.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Conductor</div><div class="vocab-def">A material with low resistance that conducts electricity easily (e.g., copper, aluminum).</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Ohm's Law</strong></td><td>$$V = IR$$</td><td>$V$ = voltage (V), $I$ = current (A), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Ohm's Law (solving for I)</strong></td><td>$$I = \frac{V}{R}$$</td><td>$I$ = current (A), $V$ = voltage (V), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Ohm's Law (solving for R)</strong></td><td>$$R = \frac{V}{I}$$</td><td>$R$ = resistance (Ω), $V$ = voltage (V), $I$ = current (A)</td></tr>
+                        <tr><td><strong>Series Resistance</strong></td><td>$$R_{\text{total}} = R_1 + R_2 + R_3 + \cdots$$</td><td>All resistances in ohms (Ω)</td></tr>
+                        <tr><td><strong>Parallel Resistance</strong></td><td>$$\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots$$</td><td>All resistances in ohms (Ω)</td></tr>
+                        <tr><td><strong>Two Resistors in Parallel</strong></td><td>$$R_{\text{total}} = \frac{R_1 \times R_2}{R_1 + R_2}$$</td><td>All resistances in ohms (Ω)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-7-5">7.5 Energy, Efficiency, and Circuit Design</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Electrical power</div><div class="vocab-def">The rate at which electrical energy is transferred; measured in watts (W).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Watt (W)</div><div class="vocab-def">The SI unit of power; 1 W = 1 J/s.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kilowatt (kW)</div><div class="vocab-def">1000 watts; used for larger power quantities.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electrical energy</div><div class="vocab-def">Energy transferred by electric current; measured in joules (J) or kilowatt-hours (kWh).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Kilowatt-hour (kWh)</div><div class="vocab-def">A unit of energy equal to 1000 watts × 3600 seconds; commonly used for household electricity billing.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Efficiency</div><div class="vocab-def">The ratio of useful energy output to total energy input; expressed as a percentage.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Solar cell</div><div class="vocab-def">A device that converts light energy directly into electrical energy using the photoelectric effect.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Electrical Power</strong></td><td>$$P = IV$$</td><td>$P$ = power (W), $I$ = current (A), $V$ = voltage (V)</td></tr>
+                        <tr><td><strong>Power (using resistance)</strong></td><td>$$P = I^2R$$</td><td>$P$ = power (W), $I$ = current (A), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Power (using voltage)</strong></td><td>$$P = \frac{V^2}{R}$$</td><td>$P$ = power (W), $V$ = voltage (V), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Electrical Energy</strong></td><td>$$E = Pt$$</td><td>$E$ = energy (J or kWh), $P$ = power (W or kW), $t$ = time (s or h)</td></tr>
+                        <tr><td><strong>Cost of Electricity</strong></td><td>$$\text{Cost} = \text{Energy (kWh)} \times \text{Price per kWh}$$</td><td>Energy in kWh, Price in $/kWh</td></tr>
+                        <tr><td><strong>Efficiency</strong></td><td>$$\eta = \frac{\text{Useful Energy Out}}{\text{Total Energy In}} \times 100\%$$</td><td>$\eta$ = efficiency (%), expressed as percentage</td></tr>
+                    </tbody>
+                </table>
+            
+            <h2>Module 8. Electric Circuits</h2>
+            
+            <div class="section">
+                <h3 id="section-8-1">8.1 Energy Transfer in Electric Circuits</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Electric charge</div><div class="vocab-def">A fundamental property of matter; measured in coulombs (C).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electric current</div><div class="vocab-def">The flow of electric charge through a conductor; measured in amperes (A).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Voltage</div><div class="vocab-def">The potential difference that drives electric current; measured in volts (V).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Resistance</div><div class="vocab-def">Opposition to the flow of electric current; measured in ohms (Ω).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Chemical cells and batteries</div><div class="vocab-def">Devices that convert chemical energy into electrical energy to power circuits.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Solar cells</div><div class="vocab-def">Devices that convert light energy directly into electrical energy.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electrical power</div><div class="vocab-def">The rate at which electrical energy is transferred; measured in watts (W).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Electrical energy</div><div class="vocab-def">Energy transferred by electric current; measured in joules (J) or kilowatt-hours (kWh).</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Electric Current</strong></td><td>$$I = \frac{Q}{t}$$</td><td>$I$ = current (A), $Q$ = charge (C), $t$ = time (s)</td></tr>
+                        <tr><td><strong>Voltage</strong></td><td>$$V = \frac{E}{Q}$$</td><td>$V$ = voltage (V), $E$ = energy (J), $Q$ = charge (C)</td></tr>
+                        <tr><td><strong>Electrical Power</strong></td><td>$$P = IV$$</td><td>$P$ = power (W), $I$ = current (A), $V$ = voltage (V)</td></tr>
+                        <tr><td><strong>Power (Resistance Form)</strong></td><td>$$P = I^2R$$</td><td>$P$ = power (W), $I$ = current (A), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Power (Voltage Form)</strong></td><td>$$P = \frac{V^2}{R}$$</td><td>$P$ = power (W), $V$ = voltage (V), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Electrical Energy</strong></td><td>$$E = Pt$$</td><td>$E$ = energy (J), $P$ = power (W), $t$ = time (s)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-8-2">8.2 Measuring and Analyzing Circuit Behavior</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Multimeter</div><div class="vocab-def">An instrument that can measure voltage, current, and resistance in circuits.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Ohmic materials</div><div class="vocab-def">Materials that obey Ohm's Law; resistance remains constant over a range of voltages.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Resistance measurement</div><div class="vocab-def">The process of using an ohmmeter to determine the resistance of a component or circuit.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Formula Name</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Ohm's Law (Standard Form)</strong></td><td>$$V = IR$$</td><td>$V$ = voltage (V), $I$ = current (A), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Ohm's Law (Current Form)</strong></td><td>$$I = \frac{V}{R}$$</td><td>$I$ = current (A), $V$ = voltage (V), $R$ = resistance (Ω)</td></tr>
+                        <tr><td><strong>Ohm's Law (Resistance Form)</strong></td><td>$$R = \frac{V}{I}$$</td><td>$R$ = resistance (Ω), $V$ = voltage (V), $I$ = current (A)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-8-3">8.3 Series and Parallel Circuits</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Series circuit</div><div class="vocab-def">A circuit in which components are connected one after another in a single path; current is same everywhere.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Parallel circuit</div><div class="vocab-def">A circuit in which components are connected along multiple paths; voltage is same across all branches.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Circuit Type</th><th>Formula</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Series Current</strong></td><td>$$I_{\text{total}} = I_1 = I_2 = I_3$$</td><td>Current is same everywhere in series circuit</td></tr>
+                        <tr><td><strong>Series Voltage</strong></td><td>$$V_{\text{total}} = V_1 + V_2 + V_3$$</td><td>Voltages add up in series circuit</td></tr>
+                        <tr><td><strong>Series Resistance</strong></td><td>$$R_{\text{total}} = R_1 + R_2 + R_3$$</td><td>Resistances add directly in series</td></tr>
+                        <tr><td><strong>Parallel Voltage</strong></td><td>$$V_1 = V_2 = V_3$$</td><td>Voltage is same across all branches in parallel</td></tr>
+                        <tr><td><strong>Parallel Current</strong></td><td>$$I_{\text{total}} = I_1 + I_2 + I_3$$</td><td>Currents add up in parallel circuit</td></tr>
+                        <tr><td><strong>Parallel Resistance</strong></td><td>$$\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$$</td><td>Reciprocals add in parallel</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-8-4">8.4 Complex Circuit Analysis</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Complex circuits</div><div class="vocab-def">Circuits that combine series and parallel sections; requires systematic analysis using equivalent resistance.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Quantity</th><th>Formula</th><th>When to Use</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Equivalent Resistance (Series)</strong></td><td>$$R_{\text{eq}} = R_1 + R_2 + R_3$$</td><td>For components in series</td></tr>
+                        <tr><td><strong>Equivalent Resistance (Parallel)</strong></td><td>$$\frac{1}{R_{\text{eq}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}$$</td><td>For components in parallel</td></tr>
+                        <tr><td><strong>Total Current</strong></td><td>$$I_{\text{total}} = \frac{V}{R_{\text{total}}}$$</td><td>After finding equivalent resistance</td></tr>
+                        <tr><td><strong>Voltage Drop (Series)</strong></td><td>$$V = IR$$</td><td>For individual components in series</td></tr>
+                        <tr><td><strong>Branch Current (Parallel)</strong></td><td>$$I = \frac{V}{R}$$</td><td>For individual branches in parallel</td></tr>
+                        <tr><td><strong>Power in Component</strong></td><td>$$P = IV = I^2R = \frac{V^2}{R}$$</td><td>To verify component safety limits</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section">
+                <h3 id="section-8-5">8.5 Capacitors and Practical Applications</h3>
+                <h4>Vocabulary</h4>
+                <div class="vocab-list">
+                    <div class="vocab-term"><div class="vocab-word">Capacitor</div><div class="vocab-def">A device that stores electrical energy in an electric field between two plates.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Capacitance</div><div class="vocab-def">The ability of a capacitor to store charge; measured in farads (F).</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Farad (F)</div><div class="vocab-def">The SI unit of capacitance; 1 F = 1 C/V.</div></div>
+                    <div class="vocab-term"><div class="vocab-word">Time constant</div><div class="vocab-def">The time it takes for a capacitor to charge to 63% (or discharge to 37%) of its final value; $\tau = RC$.</div></div>
+                </div>
+                <h4>Formulas</h4>
+                <table>
+                    <thead><tr><th>Quantity</th><th>Formula</th><th>Variables and Units</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Capacitance</strong></td><td>$$C = \frac{Q}{V}$$</td><td>$C$ = capacitance (F), $Q$ = charge (C), $V$ = voltage (V)</td></tr>
+                        <tr><td><strong>Energy Stored</strong></td><td>$$E = \frac{1}{2}CV^2$$</td><td>$E$ = energy (J), $C$ = capacitance (F), $V$ = voltage (V)</td></tr>
+                        <tr><td><strong>Energy (Alternative)</strong></td><td>$$E = \frac{1}{2}QV$$</td><td>$E$ = energy (J), $Q$ = charge (C), $V$ = voltage (V)</td></tr>
+                        <tr><td><strong>Time Constant</strong></td><td>$$\tau = RC$$</td><td>$\tau$ = time constant (s), $R$ = resistance (Ω), $C$ = capacitance (F)</td></tr>
+                    </tbody>
+                </table>
+                    </div>
+
+        <footer>
+            <p>Physics Vocabulary and Formulas Reference - Complete Guide</p>
+            <p>All 8 Modules Complete - Comprehensive Reference Material</p>
+        </footer>
+    </div>
+
+    <!-- Return to Top Button -->
+    <div class="return-to-top" id="returnToTop" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // Show/hide return to top button
+        const returnToTopBtn = document.getElementById('returnToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                returnToTopBtn.classList.add('show');
+            } else {
+                returnToTopBtn.classList.remove('show');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
