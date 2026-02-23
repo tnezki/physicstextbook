@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.4 Bank 2</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+
+  <header>
+    <h1>Section 5.4: Wave Properties and Behavior</h1>
+    <p><strong>Bank 2: Conceptual Questions</strong></p>
+    <p>Application and Reasoning | No Calculations Required</p>
+  </header>
+  
+  <div class="bank-section">
+  
+  <div class="bank-header">
+    <h2>Bank 2: Conceptual Understanding</h2>
+    <div class="bank-info">22 Questions | Multiple Choice (A–E) | Reasoning Focused</div>
+  </div>
+  
+  <!-- ================= STANDARD ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.1</div>
+  When a wave bends around an obstacle, what wave property is being demonstrated?
+  <div class="answer-option">A) Interference</div>
+  <div class="answer-option">B) Diffraction</div>
+  <div class="answer-option">C) Reflection</div>
+  <div class="answer-option">D) Superposition</div>
+  <div class="answer-option">E) Refraction</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.2</div>
+  Two waves meet and create a region of increased amplitude. What type of interference has occurred?
+  <div class="answer-option">A) Destructive</div>
+  <div class="answer-option">B) Constructive</div>
+  <div class="answer-option">C) Diffraction</div>
+  <div class="answer-option">D) Refraction</div>
+  <div class="answer-option">E) Absorption</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.3</div>
+  A standing wave forms on a string fixed at both ends. What must occur for this pattern to form?
+  <div class="answer-option">A) Diffraction only</div>
+  <div class="answer-option">B) Two waves traveling in opposite directions</div>
+  <div class="answer-option">C) Increased amplitude</div>
+  <div class="answer-option">D) Frequency doubling</div>
+  <div class="answer-option">E) Wave absorption</div>
+  </div>
+  
+  <!-- ================= INVERTED ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.4</div>
+  Determine what happens when two waves of equal amplitude and opposite phase overlap.
+  <div class="answer-option">A) Larger amplitude results</div>
+  <div class="answer-option">B) Frequency increases</div>
+  <div class="answer-option">C) Complete cancellation occurs</div>
+  <div class="answer-option">D) Wave speed changes</div>
+  <div class="answer-option">E) Wavelength doubles</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.5</div>
+  Identify which point on a standing wave always has zero displacement.
+  <div class="answer-option">A) Antinode</div>
+  <div class="answer-option">B) Crest</div>
+  <div class="answer-option">C) Node</div>
+  <div class="answer-option">D) Rarefaction</div>
+  <div class="answer-option">E) Compression</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.6</div>
+  Explain why longer wavelengths produce more noticeable diffraction.
+  <div class="answer-option">A) They travel faster</div>
+  <div class="answer-option">B) They have higher frequency</div>
+  <div class="answer-option">C) Their size is comparable to obstacle size</div>
+  <div class="answer-option">D) They create nodes</div>
+  <div class="answer-option">E) They reduce amplitude</div>
+  </div>
+  
+  <!-- ================= CONTEXT-RICH ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.7</div>
+  A narrow doorway allows low-frequency sound to spread throughout a room, but high-frequency sound is more directional. What property explains this difference?
+  <div class="answer-option">A) Interference</div>
+  <div class="answer-option">B) Diffraction</div>
+  <div class="answer-option">C) Reflection</div>
+  <div class="answer-option">D) Superposition</div>
+  <div class="answer-option">E) Standing waves</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.8</div>
+  Two speakers emit identical tones in phase. A listener standing between them hears a louder sound. What principle explains this?
+  <div class="answer-option">A) Destructive interference</div>
+  <div class="answer-option">B) Constructive interference</div>
+  <div class="answer-option">C) Refraction</div>
+  <div class="answer-option">D) Diffraction</div>
+  <div class="answer-option">E) Absorption</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.9</div>
+  A rope fixed at both ends vibrates in a pattern with three loops. What is true about the nodes?
+  <div class="answer-option">A) Only one node exists</div>
+  <div class="answer-option">B) Nodes occur at both ends and between loops</div>
+  <div class="answer-option">C) Nodes are at antinodes</div>
+  <div class="answer-option">D) Nodes disappear</div>
+  <div class="answer-option">E) Nodes move along the rope</div>
+  </div>
+  
+ <!-- ================= STANDARD ================= -->
+
+<div class="question-block">
+  <div class="question-number">2.10</div>
+  When two waves meet and pass through each other, what happens after they overlap?
+  <div class="answer-option">A) They permanently combine</div>
+  <div class="answer-option">B) They stop moving</div>
+  <div class="answer-option">C) They continue unchanged</div>
+  <div class="answer-option">D) They double in speed</div>
+  <div class="answer-option">E) They lose frequency</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.11</div>
+  Which property determines whether interference will be constructive or destructive?
+  <div class="answer-option">A) Amplitude only</div>
+  <div class="answer-option">B) Wave speed</div>
+  <div class="answer-option">C) Phase difference</div>
+  <div class="answer-option">D) Medium density</div>
+  <div class="answer-option">E) Wavelength only</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.12</div>
+  In a standing wave, where does maximum energy oscillation occur?
+  <div class="answer-option">A) At nodes</div>
+  <div class="answer-option">B) At antinodes</div>
+  <div class="answer-option">C) At the midpoint only</div>
+  <div class="answer-option">D) At the boundary only</div>
+  <div class="answer-option">E) At compressions only</div>
+  </div>
+  
+  <!-- ================= INVERTED ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.13</div>
+  Determine what must be true for two waves to produce a standing wave.
+  <div class="answer-option">A) They travel in the same direction</div>
+  <div class="answer-option">B) They have different frequencies</div>
+  <div class="answer-option">C) They have the same frequency and opposite directions</div>
+  <div class="answer-option">D) They have different speeds</div>
+  <div class="answer-option">E) They have different amplitudes</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.14</div>
+  Identify the effect of destructive interference on amplitude.
+  <div class="answer-option">A) It increases</div>
+  <div class="answer-option">B) It decreases or becomes zero</div>
+  <div class="answer-option">C) It doubles</div>
+  <div class="answer-option">D) It remains constant</div>
+  <div class="answer-option">E) It reverses speed</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.15</div>
+  Explain why nodes in a standing wave never move.
+  <div class="answer-option">A) They are points of constructive interference</div>
+  <div class="answer-option">B) They are points of destructive interference</div>
+  <div class="answer-option">C) They have maximum energy</div>
+  <div class="answer-option">D) They increase wavelength</div>
+  <div class="answer-option">E) They change frequency</div>
+  </div>
+  
+  <!-- ================= CONTEXT-RICH ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.16</div>
+  A ripple tank experiment shows bright and dark lines when waves pass through two narrow openings. What causes this pattern?
+  <div class="answer-option">A) Refraction</div>
+  <div class="answer-option">B) Absorption</div>
+  <div class="answer-option">C) Interference</div>
+  <div class="answer-option">D) Reflection</div>
+  <div class="answer-option">E) Dispersion</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.17</div>
+  A guitar string vibrates and forms a pattern with several stationary points along its length. What are these stationary points called?
+  <div class="answer-option">A) Antinodes</div>
+  <div class="answer-option">B) Crests</div>
+  <div class="answer-option">C) Nodes</div>
+  <div class="answer-option">D) Rarefactions</div>
+  <div class="answer-option">E) Compressions</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.18</div>
+  Two identical speakers emit sound waves out of phase. A listener standing at a certain position hears almost no sound. What explains this?
+  <div class="answer-option">A) Diffraction</div>
+  <div class="answer-option">B) Refraction</div>
+  <div class="answer-option">C) Destructive interference</div>
+  <div class="answer-option">D) Constructive interference</div>
+  <div class="answer-option">E) Absorption</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.19</div>
+  Light passing through a single narrow slit spreads out on the other side. What wave behavior is responsible?
+  <div class="answer-option">A) Reflection</div>
+  <div class="answer-option">B) Refraction</div>
+  <div class="answer-option">C) Diffraction</div>
+  <div class="answer-option">D) Superposition</div>
+  <div class="answer-option">E) Polarization</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.20</div>
+  A standing wave on a rope shows five loops between fixed ends. What does each loop represent?
+  <div class="answer-option">A) A node</div>
+  <div class="answer-option">B) A half-wavelength</div>
+  <div class="answer-option">C) A full wavelength</div>
+  <div class="answer-option">D) A compression</div>
+  <div class="answer-option">E) A rarefaction</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.21</div>
+  When waves interfere constructively, how does the resulting amplitude compare to the individual amplitudes?
+  <div class="answer-option">A) Smaller</div>
+  <div class="answer-option">B) Equal</div>
+  <div class="answer-option">C) Larger</div>
+  <div class="answer-option">D) Zero</div>
+  <div class="answer-option">E) Negative</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.22</div>
+  A student observes alternating bright and dark regions on a screen in a double-slit experiment. What fundamental principle explains this observation?
+  <div class="answer-option">A) Reflection</div>
+  <div class="answer-option">B) Superposition</div>
+  <div class="answer-option">C) Absorption</div>
+  <div class="answer-option">D) Dispersion</div>
+  <div class="answer-option">E) Polarization</div>
+  </div>
+  
+  </div>
+  
+  <div class="answer-key">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Section 5.4: Wave Properties and Behavior</div>
+  
+      <div class="answer-row"><div>2.1</div><div>B</div><div>Diffraction is bending around obstacles</div></div>
+      <div class="answer-row"><div>2.2</div><div>B</div><div>Constructive interference increases amplitude</div></div>
+      <div class="answer-row"><div>2.3</div><div>B</div><div>Standing waves form from opposite-direction waves</div></div>
+      <div class="answer-row"><div>2.4</div><div>C</div><div>Out-of-phase waves cancel</div></div>
+      <div class="answer-row"><div>2.5</div><div>C</div><div>Nodes have zero displacement</div></div>
+      <div class="answer-row"><div>2.6</div><div>C</div><div>Wavelength comparable to obstacle size</div></div>
+      <div class="answer-row"><div>2.7</div><div>B</div><div>Low-frequency waves diffract more</div></div>
+      <div class="answer-row"><div>2.8</div><div>B</div><div>In-phase waves reinforce</div></div>
+      <div class="answer-row"><div>2.9</div><div>B</div><div>Nodes at ends and between loops</div></div>
+      <div class="answer-row"><div>2.10</div><div>C</div><div>Waves pass through and continue unchanged</div></div>
+      <div class="answer-row"><div>2.11</div><div>C</div><div>Phase difference determines interference</div></div>
+      <div class="answer-row"><div>2.12</div><div>B</div><div>Maximum motion at antinodes</div></div>
+      <div class="answer-row"><div>2.13</div><div>C</div><div>Standing waves require equal frequency and opposite direction</div></div>
+      <div class="answer-row"><div>2.14</div><div>B</div><div>Destructive interference reduces amplitude</div></div>
+      <div class="answer-row"><div>2.15</div><div>B</div><div>Nodes are points of destructive interference</div></div>
+      <div class="answer-row"><div>2.16</div><div>C</div><div>Bright/dark lines from interference</div></div>
+      <div class="answer-row"><div>2.17</div><div>C</div><div>Stationary points are nodes</div></div>
+      <div class="answer-row"><div>2.18</div><div>C</div><div>Out-of-phase waves cancel</div></div>
+      <div class="answer-row"><div>2.19</div><div>C</div><div>Spreading after slit = diffraction</div></div>
+      <div class="answer-row"><div>2.20</div><div>B</div><div>Each loop represents half wavelength</div></div>
+      <div class="answer-row"><div>2.21</div><div>C</div><div>Constructive interference increases amplitude</div></div>
+      <div class="answer-row"><div>2.22</div><div>B</div><div>Superposition explains double-slit pattern</div></div>
+  
+    </div>
+  </div>
+
+  <footer>
+  Section 5.4 – Wave Properties and Behavior | Bank 2: Conceptual Questions
+  </footer>
+  
+  
+  
+ 
+
+</body>
+</html>

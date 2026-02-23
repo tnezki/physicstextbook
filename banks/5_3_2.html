@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.3 Bank 2</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+
+  <header>
+    <h1>Section 5.3: Longitudinal Waves</h1>
+    <p><strong>Bank 2: Conceptual Questions</strong></p>
+    <p>Application and Reasoning | No Calculations Required</p>
+  </header>
+  
+  <div class="bank-section">
+  
+  <div class="bank-header">
+    <h2>Bank 2: Conceptual Understanding</h2>
+    <div class="bank-info">22 Questions | Multiple Choice (A–E) | Reasoning Focused</div>
+  </div>
+  
+  <!-- ================= STANDARD ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.1</div>
+  In a longitudinal wave, how do particles move relative to the direction of wave propagation?
+  <div class="answer-option">A) Perpendicular</div>
+  <div class="answer-option">B) Parallel</div>
+  <div class="answer-option">C) Circular</div>
+  <div class="answer-option">D) Random</div>
+  <div class="answer-option">E) Not at all</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.2</div>
+  Why are sound waves classified as longitudinal?
+  <div class="answer-option">A) They create crests and troughs</div>
+  <div class="answer-option">B) They travel without a medium</div>
+  <div class="answer-option">C) They involve compressions and rarefactions</div>
+  <div class="answer-option">D) They move perpendicular to propagation</div>
+  <div class="answer-option">E) They are electromagnetic</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.3</div>
+  In a region of compression, what happens to particle spacing?
+  <div class="answer-option">A) It increases</div>
+  <div class="answer-option">B) It decreases</div>
+  <div class="answer-option">C) It stays constant</div>
+  <div class="answer-option">D) It becomes zero</div>
+  <div class="answer-option">E) It reverses direction</div>
+  </div>
+  
+  <!-- ================= INVERTED ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.4</div>
+  Determine which region of a longitudinal wave corresponds to lower pressure.
+  <div class="answer-option">A) Compression</div>
+  <div class="answer-option">B) Crest</div>
+  <div class="answer-option">C) Rarefaction</div>
+  <div class="answer-option">D) Wavelength</div>
+  <div class="answer-option">E) Amplitude</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.5</div>
+  Explain why sound cannot propagate through outer space.
+  <div class="answer-option">A) No frequency</div>
+  <div class="answer-option">B) No pressure changes</div>
+  <div class="answer-option">C) No medium</div>
+  <div class="answer-option">D) No wavelength</div>
+  <div class="answer-option">E) No oscillation</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.6</div>
+  Identify what changes as a sound wave passes from compression to rarefaction.
+  <div class="answer-option">A) Frequency</div>
+  <div class="answer-option">B) Pressure</div>
+  <div class="answer-option">C) Wave speed</div>
+  <div class="answer-option">D) Medium type</div>
+  <div class="answer-option">E) Direction of propagation</div>
+  </div>
+  
+  <!-- ================= CONTEXT-RICH ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.7</div>
+  A slinky is stretched across the floor. One end is pushed forward and pulled back, creating moving regions where coils bunch together and spread apart. What type of wave is observed?
+  <div class="answer-option">A) Transverse</div>
+  <div class="answer-option">B) Electromagnetic</div>
+  <div class="answer-option">C) Longitudinal</div>
+  <div class="answer-option">D) Surface</div>
+  <div class="answer-option">E) Standing</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.8</div>
+  A loudspeaker vibrates and produces regions of high and low pressure in air. These alternating regions represent:
+  <div class="answer-option">A) Crests and troughs</div>
+  <div class="answer-option">B) Reflections</div>
+  <div class="answer-option">C) Compressions and rarefactions</div>
+  <div class="answer-option">D) Electromagnetic fields</div>
+  <div class="answer-option">E) Permanent displacement</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.9</div>
+  Elephants communicate using very low-frequency sounds that humans cannot hear. These sounds are classified as:
+  <div class="answer-option">A) Ultrasound</div>
+  <div class="answer-option">B) Infrasound</div>
+  <div class="answer-option">C) Electromagnetic waves</div>
+  <div class="answer-option">D) Mechanical transverse waves</div>
+  <div class="answer-option">E) Standing waves</div>
+  </div>
+  
+ <!-- ================= STANDARD ================= -->
+
+<div class="question-block">
+  <div class="question-number">2.10</div>
+  In a longitudinal wave, what happens to the medium after the wave passes?
+  <div class="answer-option">A) It permanently shifts forward</div>
+  <div class="answer-option">B) It remains compressed</div>
+  <div class="answer-option">C) It returns to its original position</div>
+  <div class="answer-option">D) It changes density permanently</div>
+  <div class="answer-option">E) It stops oscillating entirely</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.11</div>
+  Which property determines whether a sound is classified as ultrasound or infrasound?
+  <div class="answer-option">A) Amplitude</div>
+  <div class="answer-option">B) Speed</div>
+  <div class="answer-option">C) Frequency</div>
+  <div class="answer-option">D) Wavelength only</div>
+  <div class="answer-option">E) Medium density</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.12</div>
+  A region of rarefaction in air corresponds to:
+  <div class="answer-option">A) Increased pressure</div>
+  <div class="answer-option">B) Decreased pressure</div>
+  <div class="answer-option">C) Maximum density</div>
+  <div class="answer-option">D) Zero particle motion</div>
+  <div class="answer-option">E) Maximum amplitude</div>
+  </div>
+  
+  <!-- ================= INVERTED ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.13</div>
+  Determine what distinguishes a compression from a rarefaction.
+  <div class="answer-option">A) Direction of wave travel</div>
+  <div class="answer-option">B) Frequency value</div>
+  <div class="answer-option">C) Particle spacing and pressure</div>
+  <div class="answer-option">D) Wave speed</div>
+  <div class="answer-option">E) Type of medium</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.14</div>
+  Explain why increasing amplitude makes a sound louder but does not change its frequency.
+  <div class="answer-option">A) Frequency depends on source vibration rate</div>
+  <div class="answer-option">B) Amplitude controls wave speed</div>
+  <div class="answer-option">C) Amplitude changes wavelength only</div>
+  <div class="answer-option">D) Frequency equals amplitude times speed</div>
+  <div class="answer-option">E) Amplitude changes medium properties</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.15</div>
+  Identify which wave type always requires a physical medium.
+  <div class="answer-option">A) Electromagnetic wave</div>
+  <div class="answer-option">B) Mechanical wave</div>
+  <div class="answer-option">C) Light wave</div>
+  <div class="answer-option">D) Gamma ray</div>
+  <div class="answer-option">E) Radio wave</div>
+  </div>
+  
+  <!-- ================= CONTEXT-RICH ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.16</div>
+  A submarine uses sonar to detect objects underwater by sending sound pulses and listening for echoes. What type of wave allows sonar to function?
+  <div class="answer-option">A) Transverse mechanical wave</div>
+  <div class="answer-option">B) Electromagnetic wave</div>
+  <div class="answer-option">C) Longitudinal mechanical wave</div>
+  <div class="answer-option">D) Surface wave</div>
+  <div class="answer-option">E) Standing wave</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.17</div>
+  A loud explosion produces powerful infrasound that travels long distances. Why can these waves travel so far?
+  <div class="answer-option">A) They have high frequency</div>
+  <div class="answer-option">B) They have very short wavelengths</div>
+  <div class="answer-option">C) Low-frequency waves lose less energy to the medium</div>
+  <div class="answer-option">D) They are electromagnetic</div>
+  <div class="answer-option">E) They require no medium</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.18</div>
+  Medical technicians use ultrasound to create images of internal organs. Why is ultrasound suitable for this purpose?
+  <div class="answer-option">A) It travels through vacuum</div>
+  <div class="answer-option">B) Its high frequency allows detailed imaging</div>
+  <div class="answer-option">C) It permanently alters tissue</div>
+  <div class="answer-option">D) It is electromagnetic</div>
+  <div class="answer-option">E) It requires no medium</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.19</div>
+  A speaker cone moves forward, compressing air, then backward, creating rarefaction. What does this alternating motion generate?
+  <div class="answer-option">A) Electromagnetic radiation</div>
+  <div class="answer-option">B) Longitudinal sound waves</div>
+  <div class="answer-option">C) Surface waves</div>
+  <div class="answer-option">D) Permanent displacement</div>
+  <div class="answer-option">E) Standing waves</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.20</div>
+  Bats use high-frequency sound to locate prey in the dark. These sounds are classified as:
+  <div class="answer-option">A) Infrasound</div>
+  <div class="answer-option">B) Electromagnetic radiation</div>
+  <div class="answer-option">C) Ultrasound</div>
+  <div class="answer-option">D) Surface waves</div>
+  <div class="answer-option">E) Rarefactions</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.21</div>
+  An earthquake generates very low-frequency vibrations that humans cannot hear. These vibrations are examples of:
+  <div class="answer-option">A) Ultrasound</div>
+  <div class="answer-option">B) Infrasound</div>
+  <div class="answer-option">C) Transverse waves only</div>
+  <div class="answer-option">D) Electromagnetic waves</div>
+  <div class="answer-option">E) Crests</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.22</div>
+  A scientist observes alternating regions of high and low air pressure moving away from a source. What conclusion can be drawn?
+  <div class="answer-option">A) A transverse electromagnetic wave is present</div>
+  <div class="answer-option">B) A longitudinal mechanical wave is propagating</div>
+  <div class="answer-option">C) Matter is permanently moving outward</div>
+  <div class="answer-option">D) A vacuum has formed</div>
+  <div class="answer-option">E) The wave has no frequency</div>
+  </div>
+  
+  </div>
+  <div class="answer-key">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Section 5.3: Longitudinal Waves</div>
+  
+      <div class="answer-row"><div>2.1</div><div>B</div><div>Particles move parallel to wave propagation</div></div>
+      <div class="answer-row"><div>2.2</div><div>C</div><div>Sound consists of compressions and rarefactions</div></div>
+      <div class="answer-row"><div>2.3</div><div>B</div><div>Compression reduces particle spacing</div></div>
+      <div class="answer-row"><div>2.4</div><div>C</div><div>Rarefaction corresponds to lower pressure</div></div>
+      <div class="answer-row"><div>2.5</div><div>C</div><div>Sound requires a medium</div></div>
+      <div class="answer-row"><div>2.6</div><div>B</div><div>Pressure changes between compression and rarefaction</div></div>
+      <div class="answer-row"><div>2.7</div><div>C</div><div>Slinky compressions illustrate longitudinal waves</div></div>
+      <div class="answer-row"><div>2.8</div><div>C</div><div>Alternating high/low pressure regions</div></div>
+      <div class="answer-row"><div>2.9</div><div>B</div><div>Very low frequency → infrasound</div></div>
+      <div class="answer-row"><div>2.10</div><div>C</div><div>Particles return to equilibrium after wave passes</div></div>
+      <div class="answer-row"><div>2.11</div><div>C</div><div>Frequency determines classification</div></div>
+      <div class="answer-row"><div>2.12</div><div>B</div><div>Rarefaction = decreased pressure</div></div>
+      <div class="answer-row"><div>2.13</div><div>C</div><div>Compression and rarefaction differ in pressure and spacing</div></div>
+      <div class="answer-row"><div>2.14</div><div>A</div><div>Frequency determined by vibration rate of source</div></div>
+      <div class="answer-row"><div>2.15</div><div>B</div><div>Mechanical waves require medium</div></div>
+      <div class="answer-row"><div>2.16</div><div>C</div><div>Sonar uses longitudinal mechanical waves</div></div>
+      <div class="answer-row"><div>2.17</div><div>C</div><div>Low-frequency waves attenuate less over distance</div></div>
+      <div class="answer-row"><div>2.18</div><div>B</div><div>High frequency improves imaging resolution</div></div>
+      <div class="answer-row"><div>2.19</div><div>B</div><div>Speaker creates longitudinal pressure waves</div></div>
+      <div class="answer-row"><div>2.20</div><div>C</div><div>Bats use ultrasound</div></div>
+      <div class="answer-row"><div>2.21</div><div>B</div><div>Earthquakes produce infrasound</div></div>
+      <div class="answer-row"><div>2.22</div><div>B</div><div>Alternating pressure regions indicate longitudinal wave</div></div>
+  
+    </div>
+  </div>
+
+  <footer>
+  Section 5.3 – Longitudinal Waves | Bank 2: Conceptual Questions
+  </footer>
+  
+
+</body>
+</html>

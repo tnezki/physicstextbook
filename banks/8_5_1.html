@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.5 Bank 1</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.5: Capacitors and Practical Applications</h1>
+    <p><strong>Bank 1: Vocabulary Assessment</strong></p>
+    <p>Multiple Choice | Vocabulary Mastery</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <!-- ============================================================ -->
+    <!-- TERM 1: CAPACITOR -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Capacitor (1.1 – 1.4)</div>
+    <div class="term-definition">
+    A device that stores electrical energy in an electric field between two plates.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.1</div>
+    A capacitor primarily stores:
+    <div class="answer-option"><strong>A)</strong> Current</div>
+    <div class="answer-option"><strong>B)</strong> Electrical energy in an electric field</div>
+    <div class="answer-option"><strong>C)</strong> Magnetic energy</div>
+    <div class="answer-option"><strong>D)</strong> Resistance</div>
+    <div class="answer-option"><strong>E)</strong> Voltage only</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.2</div>
+    A capacitor consists of:
+    <div class="answer-option"><strong>A)</strong> A single wire</div>
+    <div class="answer-option"><strong>B)</strong> Two conducting plates separated by an insulator</div>
+    <div class="answer-option"><strong>C)</strong> A resistor and battery</div>
+    <div class="answer-option"><strong>D)</strong> A magnetic coil</div>
+    <div class="answer-option"><strong>E)</strong> A power supply</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.3</div>
+    When a capacitor charges, it stores energy in the form of:
+    <div class="answer-option"><strong>A)</strong> Heat</div>
+    <div class="answer-option"><strong>B)</strong> Kinetic energy</div>
+    <div class="answer-option"><strong>C)</strong> Electric field energy</div>
+    <div class="answer-option"><strong>D)</strong> Mechanical energy</div>
+    <div class="answer-option"><strong>E)</strong> Chemical energy</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.4</div>
+    A fully charged capacitor in a DC circuit eventually behaves like:
+    <div class="answer-option"><strong>A)</strong> A short circuit</div>
+    <div class="answer-option"><strong>B)</strong> An open circuit</div>
+    <div class="answer-option"><strong>C)</strong> A battery</div>
+    <div class="answer-option"><strong>D)</strong> A resistor</div>
+    <div class="answer-option"><strong>E)</strong> A switch</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 2: CAPACITANCE -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Capacitance (2.1 – 2.4)</div>
+    <div class="term-definition">
+    The ability of a capacitor to store charge; measured in farads (F).
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.1</div>
+    Capacitance measures a capacitor’s ability to store:
+    <div class="answer-option"><strong>A)</strong> Current</div>
+    <div class="answer-option"><strong>B)</strong> Resistance</div>
+    <div class="answer-option"><strong>C)</strong> Charge</div>
+    <div class="answer-option"><strong>D)</strong> Voltage only</div>
+    <div class="answer-option"><strong>E)</strong> Power</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.2</div>
+    Capacitance is measured in:
+    <div class="answer-option"><strong>A)</strong> Volts</div>
+    <div class="answer-option"><strong>B)</strong> Amperes</div>
+    <div class="answer-option"><strong>C)</strong> Ohms</div>
+    <div class="answer-option"><strong>D)</strong> Farads</div>
+    <div class="answer-option"><strong>E)</strong> Joules</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.3</div>
+    If capacitance increases while voltage remains constant, stored charge:
+    <div class="answer-option"><strong>A)</strong> Decreases</div>
+    <div class="answer-option"><strong>B)</strong> Remains unchanged</div>
+    <div class="answer-option"><strong>C)</strong> Increases</div>
+    <div class="answer-option"><strong>D)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Reverses</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.4</div>
+    A larger plate area generally results in:
+    <div class="answer-option"><strong>A)</strong> Lower capacitance</div>
+    <div class="answer-option"><strong>B)</strong> Higher capacitance</div>
+    <div class="answer-option"><strong>C)</strong> Zero capacitance</div>
+    <div class="answer-option"><strong>D)</strong> Higher resistance</div>
+    <div class="answer-option"><strong>E)</strong> No stored charge</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 3: FARAD (F) -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Farad (F) (3.1 – 3.4)</div>
+    <div class="term-definition">
+    The SI unit of capacitance; 1 F = 1 C/V.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.1</div>
+    One farad is equal to:
+    <div class="answer-option"><strong>A)</strong> 1 C × V</div>
+    <div class="answer-option"><strong>B)</strong> 1 C/V</div>
+    <div class="answer-option"><strong>C)</strong> 1 V/C</div>
+    <div class="answer-option"><strong>D)</strong> 1 J/V</div>
+    <div class="answer-option"><strong>E)</strong> 1 Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.2</div>
+    A capacitor has capacitance of 2.0 F if it stores:
+    <div class="answer-option"><strong>A)</strong> 2 C at 1 V</div>
+    <div class="answer-option"><strong>B)</strong> 1 C at 2 V</div>
+    <div class="answer-option"><strong>C)</strong> 2 C at 2 V</div>
+    <div class="answer-option"><strong>D)</strong> 4 C at 2 V</div>
+    <div class="answer-option"><strong>E)</strong> 1 C at 1 V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.3</div>
+    If 3 C of charge are stored at 6 V, the capacitance is:
+    <div class="answer-option"><strong>A)</strong> 18 F</div>
+    <div class="answer-option"><strong>B)</strong> 3 F</div>
+    <div class="answer-option"><strong>C)</strong> 0.5 F</div>
+    <div class="answer-option"><strong>D)</strong> 2 F</div>
+    <div class="answer-option"><strong>E)</strong> 9 F</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.4</div>
+    Capacitance increases if:
+    <div class="answer-option"><strong>A)</strong> Charge decreases at fixed voltage</div>
+    <div class="answer-option"><strong>B)</strong> More charge is stored per volt</div>
+    <div class="answer-option"><strong>C)</strong> Voltage becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> Resistance increases</div>
+    <div class="answer-option"><strong>E)</strong> Current doubles</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 4: TIME CONSTANT -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Time constant (4.1 – 4.4)</div>
+    <div class="term-definition">
+    The time it takes for a capacitor to charge to 63% (or discharge to 37%) of its final value; $\tau = RC$.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.1</div>
+    The time constant depends on:
+    <div class="answer-option"><strong>A)</strong> Voltage only</div>
+    <div class="answer-option"><strong>B)</strong> Resistance only</div>
+    <div class="answer-option"><strong>C)</strong> Capacitance only</div>
+    <div class="answer-option"><strong>D)</strong> Both resistance and capacitance</div>
+    <div class="answer-option"><strong>E)</strong> Current only</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.2</div>
+    A larger resistance results in:
+    <div class="answer-option"><strong>A)</strong> Smaller time constant</div>
+    <div class="answer-option"><strong>B)</strong> Larger time constant</div>
+    <div class="answer-option"><strong>C)</strong> Zero charging time</div>
+    <div class="answer-option"><strong>D)</strong> No stored energy</div>
+    <div class="answer-option"><strong>E)</strong> Lower voltage</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.3</div>
+    If capacitance increases while resistance remains constant, the time constant:
+    <div class="answer-option"><strong>A)</strong> Decreases</div>
+    <div class="answer-option"><strong>B)</strong> Remains constant</div>
+    <div class="answer-option"><strong>C)</strong> Increases</div>
+    <div class="answer-option"><strong>D)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Reverses</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.4</div>
+    The time constant represents:
+    <div class="answer-option"><strong>A)</strong> The full charging time</div>
+    <div class="answer-option"><strong>B)</strong> The time to reach 63% of final charge</div>
+    <div class="answer-option"><strong>C)</strong> The time current stops</div>
+    <div class="answer-option"><strong>D)</strong> The maximum voltage</div>
+    <div class="answer-option"><strong>E)</strong> The total energy stored</div>
+    </div>
+    
+    </div>
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 1: Vocabulary Assessment — Answer Key</strong></p>
+  
+  <!-- Capacitor -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Capacitor (Questions 1.1–1.4)
+  </div>
+  
+  <div class="answer-row"><div>1.1</div><div>B</div><div>Stores electrical energy in an electric field</div></div>
+  <div class="answer-row"><div>1.2</div><div>B</div><div>Two plates separated by an insulator (dielectric)</div></div>
+  <div class="answer-row"><div>1.3</div><div>C</div><div>Energy stored in electric field</div></div>
+  <div class="answer-row"><div>1.4</div><div>B</div><div>Fully charged capacitor acts like an open circuit (DC)</div></div>
+  
+  </div>
+  
+  <!-- Capacitance -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Capacitance (Questions 2.1–2.4)
+  </div>
+  
+  <div class="answer-row"><div>2.1</div><div>C</div><div>Capacitance measures ability to store charge</div></div>
+  <div class="answer-row"><div>2.2</div><div>D</div><div>Measured in farads (F)</div></div>
+  <div class="answer-row"><div>2.3</div><div>C</div><div>More capacitance → more charge stored at same voltage</div></div>
+  <div class="answer-row"><div>2.4</div><div>B</div><div>Larger plate area increases capacitance</div></div>
+  
+  </div>
+  
+  <!-- Farad -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Farad (F) (Questions 3.1–3.4)
+  </div>
+  
+  <div class="answer-row"><div>3.1</div><div>B</div><div>1 F = 1 C/V</div></div>
+  <div class="answer-row"><div>3.2</div><div>A</div><div>2 C stored at 1 V gives 2 F</div></div>
+  <div class="answer-row"><div>3.3</div><div>C</div><div>C = Q/V = 3/6 = 0.5 F</div></div>
+  <div class="answer-row"><div>3.4</div><div>B</div><div>More charge per volt increases capacitance</div></div>
+  
+  </div>
+  
+  <!-- Time Constant -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Time constant (Questions 4.1–4.4)
+  </div>
+  
+  <div class="answer-row"><div>4.1</div><div>D</div><div>τ = RC depends on resistance and capacitance</div></div>
+  <div class="answer-row"><div>4.2</div><div>B</div><div>Larger R increases time constant</div></div>
+  <div class="answer-row"><div>4.3</div><div>C</div><div>Larger C increases time constant</div></div>
+  <div class="answer-row"><div>4.4</div><div>B</div><div>Time to reach 63% of final charge</div></div>
+  
+  </div>
+  
+  </div>
+
+    <footer>
+    Section 8.5 – Capacitors and Practical Applications | Bank 1
+    </footer>
+    
+    </div>
+
+
+</body>
+</html>

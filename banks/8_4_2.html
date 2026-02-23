@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.4 Bank 2</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.4: Complex Circuit Analysis</h1>
+    <p><strong>Bank 2: Conceptual Questions</strong></p>
+    <p>Application and Reasoning | No Calculations</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Conceptual Understanding</h2>
+    <div class="bank-info">Multiple Choice (A–E)</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- QUESTIONS -->
+    <!-- ============================================================ -->
+    
+    <div class="question-block">
+    <div class="question-number">2.1</div>
+    <div class="question-text">
+    A circuit contains both series and parallel sections. What is the first step in analyzing it?
+    </div>
+    <div class="answer-option"><strong>A)</strong> Measure voltage across each resistor</div>
+    <div class="answer-option"><strong>B)</strong> Increase battery voltage</div>
+    <div class="answer-option"><strong>C)</strong> Simplify sections to find equivalent resistance</div>
+    <div class="answer-option"><strong>D)</strong> Remove parallel branches</div>
+    <div class="answer-option"><strong>E)</strong> Reverse current direction</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.2</div>
+    <div class="question-text">
+    After finding the equivalent resistance of a complex circuit, the total current can be found using:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Ohm’s Law</div>
+    <div class="answer-option"><strong>B)</strong> Kirchhoff’s Law only</div>
+    <div class="answer-option"><strong>C)</strong> Power formula only</div>
+    <div class="answer-option"><strong>D)</strong> Voltage addition</div>
+    <div class="answer-option"><strong>E)</strong> Energy equation</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.3</div>
+    <div class="question-text">
+    Explain why voltage drops must be considered separately for series components in a complex circuit.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Each component may drop a different portion of the total voltage</div>
+    <div class="answer-option"><strong>B)</strong> Voltage is always equal everywhere</div>
+    <div class="answer-option"><strong>C)</strong> Current doubles in series</div>
+    <div class="answer-option"><strong>D)</strong> Resistance disappears</div>
+    <div class="answer-option"><strong>E)</strong> Energy is destroyed</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.4</div>
+    <div class="question-text">
+    In a parallel branch of a complex circuit, the branch current depends primarily on:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Total circuit resistance only</div>
+    <div class="answer-option"><strong>B)</strong> The voltage across the branch and its resistance</div>
+    <div class="answer-option"><strong>C)</strong> The number of resistors in series</div>
+    <div class="answer-option"><strong>D)</strong> The battery size only</div>
+    <div class="answer-option"><strong>E)</strong> The wire length only</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.5</div>
+    <div class="question-text">
+    A complex circuit is simplified step-by-step. Why is this approach necessary?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It increases power output</div>
+    <div class="answer-option"><strong>B)</strong> It allows calculation of equivalent resistance progressively</div>
+    <div class="answer-option"><strong>C)</strong> It eliminates voltage drops</div>
+    <div class="answer-option"><strong>D)</strong> It removes current from the circuit</div>
+    <div class="answer-option"><strong>E)</strong> It doubles resistance</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.6</div>
+    <div class="question-text">
+    Describe what happens to total current when total equivalent resistance decreases.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Total current decreases</div>
+    <div class="answer-option"><strong>B)</strong> Total current increases</div>
+    <div class="answer-option"><strong>C)</strong> Total current becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> Total current reverses</div>
+    <div class="answer-option"><strong>E)</strong> Total current remains constant regardless of resistance</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.7</div>
+    <div class="question-text">
+    A parallel section is replaced with its equivalent resistance. What happens to the rest of the circuit?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It becomes open</div>
+    <div class="answer-option"><strong>B)</strong> It can now be treated as a simpler series circuit</div>
+    <div class="answer-option"><strong>C)</strong> Current stops flowing</div>
+    <div class="answer-option"><strong>D)</strong> Voltage doubles</div>
+    <div class="answer-option"><strong>E)</strong> Resistance disappears</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.8</div>
+    <div class="question-text">
+    Predict what happens if one branch in a complex circuit has very low resistance.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It will carry more current than other branches</div>
+    <div class="answer-option"><strong>B)</strong> It will carry no current</div>
+    <div class="answer-option"><strong>C)</strong> It will reduce battery voltage</div>
+    <div class="answer-option"><strong>D)</strong> It will eliminate total resistance</div>
+    <div class="answer-option"><strong>E)</strong> It will increase total resistance</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.9</div>
+    <div class="question-text">
+    In a complex circuit, the total voltage supplied by the battery equals:
+    </div>
+    <div class="answer-option"><strong>A)</strong> The sum of voltage drops across all components</div>
+    <div class="answer-option"><strong>B)</strong> The highest branch voltage only</div>
+    <div class="answer-option"><strong>C)</strong> The lowest branch voltage only</div>
+    <div class="answer-option"><strong>D)</strong> Zero volts</div>
+    <div class="answer-option"><strong>E)</strong> Twice the current</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.10</div>
+    <div class="question-text">
+    Determine why power ratings must be checked in complex circuits.
+    </div>
+    <div class="answer-option"><strong>A)</strong> To ensure components are not overloaded</div>
+    <div class="answer-option"><strong>B)</strong> To eliminate resistance</div>
+    <div class="answer-option"><strong>C)</strong> To double voltage</div>
+    <div class="answer-option"><strong>D)</strong> To reduce current to zero</div>
+    <div class="answer-option"><strong>E)</strong> To simplify the circuit</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.11</div>
+    <div class="question-text">
+    If two parallel branches are replaced by their equivalent resistance, what remains unchanged across that section?
+    </div>
+    <div class="answer-option"><strong>A)</strong> Current in each branch</div>
+    <div class="answer-option"><strong>B)</strong> Voltage across the section</div>
+    <div class="answer-option"><strong>C)</strong> Power in each resistor</div>
+    <div class="answer-option"><strong>D)</strong> Individual resistances</div>
+    <div class="answer-option"><strong>E)</strong> Energy transfer</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.12</div>
+    <div class="question-text">
+    Explain why equivalent resistance in parallel is always less than the smallest branch resistance.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Parallel circuits increase voltage</div>
+    <div class="answer-option"><strong>B)</strong> Additional paths allow more current flow</div>
+    <div class="answer-option"><strong>C)</strong> Resistance adds directly</div>
+    <div class="answer-option"><strong>D)</strong> Current becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Energy doubles</div>
+    </div>
+    
+
+
+<div class="question-block">
+  <div class="question-number">2.13</div>
+  <div class="question-text">
+  A complex circuit contains a series resistor followed by a parallel section. Which part should be simplified first?
+  </div>
+  <div class="answer-option"><strong>A)</strong> The series resistor</div>
+  <div class="answer-option"><strong>B)</strong> The parallel section</div>
+  <div class="answer-option"><strong>C)</strong> The battery</div>
+  <div class="answer-option"><strong>D)</strong> The wires</div>
+  <div class="answer-option"><strong>E)</strong> The highest resistance only</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.14</div>
+  <div class="question-text">
+  Explain why total current must be found before calculating individual voltage drops in series sections.
+  </div>
+  <div class="answer-option"><strong>A)</strong> Voltage determines resistance</div>
+  <div class="answer-option"><strong>B)</strong> Series voltage depends on current through each resistor</div>
+  <div class="answer-option"><strong>C)</strong> Current is always constant in parallel</div>
+  <div class="answer-option"><strong>D)</strong> Resistance becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> Energy is destroyed</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.15</div>
+  <div class="question-text">
+  A branch in a complex circuit has twice the resistance of another parallel branch. How does its current compare?
+  </div>
+  <div class="answer-option"><strong>A)</strong> It carries twice the current</div>
+  <div class="answer-option"><strong>B)</strong> It carries half the current</div>
+  <div class="answer-option"><strong>C)</strong> It carries the same current</div>
+  <div class="answer-option"><strong>D)</strong> It carries no current</div>
+  <div class="answer-option"><strong>E)</strong> It doubles voltage</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.16</div>
+  <div class="question-text">
+  Predict what happens to total resistance if an additional parallel branch is added to a complex circuit.
+  </div>
+  <div class="answer-option"><strong>A)</strong> It increases</div>
+  <div class="answer-option"><strong>B)</strong> It remains constant</div>
+  <div class="answer-option"><strong>C)</strong> It decreases</div>
+  <div class="answer-option"><strong>D)</strong> It becomes infinite</div>
+  <div class="answer-option"><strong>E)</strong> It doubles automatically</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.17</div>
+  <div class="question-text">
+  A battery supplies 18 V to a complex circuit. What must be true about the sum of all voltage drops?
+  </div>
+  <div class="answer-option"><strong>A)</strong> It equals 18 V</div>
+  <div class="answer-option"><strong>B)</strong> It is less than 18 V</div>
+  <div class="answer-option"><strong>C)</strong> It is greater than 18 V</div>
+  <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> It depends only on power</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.18</div>
+  <div class="question-text">
+  Determine why analyzing branch currents is important in complex circuits.
+  </div>
+  <div class="answer-option"><strong>A)</strong> To eliminate resistance</div>
+  <div class="answer-option"><strong>B)</strong> To verify components stay within safe operating limits</div>
+  <div class="answer-option"><strong>C)</strong> To double voltage</div>
+  <div class="answer-option"><strong>D)</strong> To stop current flow</div>
+  <div class="answer-option"><strong>E)</strong> To simplify wires</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.19</div>
+  <div class="question-text">
+  If equivalent resistance increases while supply voltage stays constant, what happens to total current?
+  </div>
+  <div class="answer-option"><strong>A)</strong> It increases</div>
+  <div class="answer-option"><strong>B)</strong> It decreases</div>
+  <div class="answer-option"><strong>C)</strong> It remains constant</div>
+  <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> It reverses</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.20</div>
+  <div class="question-text">
+  A complex circuit contains a short circuit in one branch. What is the most likely outcome?
+  </div>
+  <div class="answer-option"><strong>A)</strong> Total resistance increases</div>
+  <div class="answer-option"><strong>B)</strong> Excessive current flows through that branch</div>
+  <div class="answer-option"><strong>C)</strong> Voltage doubles everywhere</div>
+  <div class="answer-option"><strong>D)</strong> Current stops completely</div>
+  <div class="answer-option"><strong>E)</strong> Resistance disappears everywhere</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.21</div>
+  <div class="question-text">
+  Explain why simplifying a complex circuit step-by-step is more effective than analyzing it all at once.
+  </div>
+  <div class="answer-option"><strong>A)</strong> It increases voltage</div>
+  <div class="answer-option"><strong>B)</strong> It reduces calculation errors and clarifies relationships</div>
+  <div class="answer-option"><strong>C)</strong> It doubles resistance</div>
+  <div class="answer-option"><strong>D)</strong> It eliminates current</div>
+  <div class="answer-option"><strong>E)</strong> It increases energy transfer</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.22</div>
+  <div class="question-text">
+  A complex circuit ultimately reduces to a single equivalent resistor. What does this allow you to determine?
+  </div>
+  <div class="answer-option"><strong>A)</strong> The total current from the battery</div>
+  <div class="answer-option"><strong>B)</strong> The resistance of each branch individually</div>
+  <div class="answer-option"><strong>C)</strong> The internal battery resistance</div>
+  <div class="answer-option"><strong>D)</strong> The wire temperature</div>
+  <div class="answer-option"><strong>E)</strong> The color of resistors</div>
+  </div>
+
+<!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+  <div class="answer-row"><div>2.1</div><div>C</div><div>Simplify circuit using equivalent resistance</div></div>
+  <div class="answer-row"><div>2.2</div><div>A</div><div>Use Ohm’s Law after finding equivalent resistance</div></div>
+  <div class="answer-row"><div>2.3</div><div>A</div><div>Each series component drops part of total voltage</div></div>
+  <div class="answer-row"><div>2.4</div><div>B</div><div>Branch current depends on branch voltage and resistance</div></div>
+  <div class="answer-row"><div>2.5</div><div>B</div><div>Stepwise simplification finds total resistance</div></div>
+  
+  <div class="answer-row"><div>2.6</div><div>B</div><div>Lower resistance → higher total current</div></div>
+  <div class="answer-row"><div>2.7</div><div>B</div><div>Parallel section becomes a single equivalent resistor</div></div>
+  <div class="answer-row"><div>2.8</div><div>A</div><div>Lower resistance branch draws more current</div></div>
+  <div class="answer-row"><div>2.9</div><div>A</div><div>Total battery voltage equals sum of voltage drops</div></div>
+  <div class="answer-row"><div>2.10</div><div>A</div><div>Check power to prevent component overload</div></div>
+  
+  <div class="answer-row"><div>2.11</div><div>B</div><div>Voltage across the section remains unchanged</div></div>
+  <div class="answer-row"><div>2.12</div><div>B</div><div>More paths reduce equivalent resistance</div></div>
+  <div class="answer-row"><div>2.13</div><div>B</div><div>Parallel sections are simplified first</div></div>
+  <div class="answer-row"><div>2.14</div><div>B</div><div>Series voltage depends on current</div></div>
+  <div class="answer-row"><div>2.15</div><div>B</div><div>Higher resistance branch carries less current</div></div>
+  
+  <div class="answer-row"><div>2.16</div><div>C</div><div>Adding parallel branches lowers total resistance</div></div>
+  <div class="answer-row"><div>2.17</div><div>A</div><div>Sum of voltage drops equals supply voltage</div></div>
+  <div class="answer-row"><div>2.18</div><div>B</div><div>Branch currents verify safe operating limits</div></div>
+  <div class="answer-row"><div>2.19</div><div>B</div><div>Higher resistance → lower total current</div></div>
+  <div class="answer-row"><div>2.20</div><div>B</div><div>Short circuit causes excessive current</div></div>
+  
+  <div class="answer-row"><div>2.21</div><div>B</div><div>Stepwise method reduces errors and clarifies structure</div></div>
+  <div class="answer-row"><div>2.22</div><div>A</div><div>Equivalent resistor allows calculation of total current</div></div>
+  
+  </div>
+
+    <footer>
+    Section 8.4 – Complex Circuit Analysis | Bank 2
+    </footer>
+    
+    </div>
+
+</body>
+</html>

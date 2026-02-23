@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.1 Bank 2</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 5.1: Simple Harmonic Motion</h1>
+    <p><strong>Bank 2: Conceptual Questions</strong></p>
+    <p>Application and Reasoning | No Calculations Required</p>
+  </header>
+  
+  <div class="bank-section">
+  
+    <div class="bank-header">
+      <h2>Bank 2: Conceptual Understanding</h2>
+      <div class="bank-info">22 Questions | Multiple Choice (A–E) | Conceptual Reasoning Only</div>
+    </div>
+  
+    <!-- ================= STANDARD ================= -->
+  
+    <div class="question-block">
+      <div class="question-number">2.1</div>
+      <div class="question-text">
+        A mass on a spring oscillates back and forth about an equilibrium position. What force is responsible for continually pulling the mass back toward equilibrium?
+      </div>
+      <div class="answer-option">A) Gravitational force</div>
+      <div class="answer-option">B) Applied force</div>
+      <div class="answer-option">C) Restoring force</div>
+      <div class="answer-option">D) Normal force</div>
+      <div class="answer-option">E) Frictional force</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.2</div>
+      <div class="question-text">
+        A pendulum swings through its lowest point. At that instant, what can be said about the net force on the bob in the direction of motion?
+      </div>
+      <div class="answer-option">A) It is maximum toward equilibrium</div>
+      <div class="answer-option">B) It is zero in the tangential direction</div>
+      <div class="answer-option">C) It is directed away from equilibrium</div>
+      <div class="answer-option">D) It equals the weight only</div>
+      <div class="answer-option">E) It is constant throughout motion</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.3</div>
+      <div class="question-text">
+        In Simple Harmonic Motion, how does acceleration change as displacement increases?
+      </div>
+      <div class="answer-option">A) Acceleration decreases</div>
+      <div class="answer-option">B) Acceleration remains constant</div>
+      <div class="answer-option">C) Acceleration increases proportionally</div>
+      <div class="answer-option">D) Acceleration becomes zero</div>
+      <div class="answer-option">E) Acceleration becomes independent of displacement</div>
+    </div>
+  
+    <!-- ================= INVERTED ================= -->
+  
+    <div class="question-block">
+      <div class="question-number">2.4</div>
+      <div class="question-text">
+        Determine where velocity is greatest during one full oscillation of SHM.
+      </div>
+      <div class="answer-option">A) At maximum displacement</div>
+      <div class="answer-option">B) At equilibrium</div>
+      <div class="answer-option">C) Halfway between equilibrium and amplitude</div>
+      <div class="answer-option">D) At all points equally</div>
+      <div class="answer-option">E) At turning points only</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.5</div>
+      <div class="question-text">
+        Explain what happens to the restoring force if displacement is reversed in direction.
+      </div>
+      <div class="answer-option">A) Force remains unchanged</div>
+      <div class="answer-option">B) Force becomes zero</div>
+      <div class="answer-option">C) Force reverses direction</div>
+      <div class="answer-option">D) Force doubles</div>
+      <div class="answer-option">E) Force becomes independent of displacement</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.6</div>
+      <div class="question-text">
+        Identify what happens to kinetic energy at maximum displacement.
+      </div>
+      <div class="answer-option">A) It is maximum</div>
+      <div class="answer-option">B) It is zero</div>
+      <div class="answer-option">C) It equals potential energy</div>
+      <div class="answer-option">D) It doubles</div>
+      <div class="answer-option">E) It becomes negative</div>
+    </div>
+  
+    <!-- ================= CONTEXT-RICH ================= -->
+  
+    <div class="question-block">
+      <div class="question-number">2.7</div>
+      <div class="question-text">
+        A grandfather clock uses a pendulum to keep time. If the pendulum is moved to the Moon where gravity is weaker, how will the motion change?
+      </div>
+      <div class="answer-option">A) Period decreases</div>
+      <div class="answer-option">B) Period increases</div>
+      <div class="answer-option">C) Amplitude increases automatically</div>
+      <div class="answer-option">D) Frequency increases</div>
+      <div class="answer-option">E) Motion stops</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.8</div>
+      <div class="question-text">
+        A student doubles the mass attached to a spring while keeping the same spring constant. What conceptual change occurs?
+      </div>
+      <div class="answer-option">A) The restoring force increases</div>
+      <div class="answer-option">B) The system oscillates more slowly</div>
+      <div class="answer-option">C) The amplitude must double</div>
+      <div class="answer-option">D) Acceleration becomes zero</div>
+      <div class="answer-option">E) The equilibrium position disappears</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.9</div>
+      <div class="question-text">
+        A mass-spring system is pulled farther from equilibrium but released from rest. How does this affect maximum speed?
+      </div>
+      <div class="answer-option">A) Maximum speed increases</div>
+      <div class="answer-option">B) Maximum speed decreases</div>
+      <div class="answer-option">C) Maximum speed remains constant</div>
+      <div class="answer-option">D) Speed becomes zero</div>
+      <div class="answer-option">E) Speed becomes negative only</div>
+    </div>
+  
+    <!-- ================= MIXED DISTRIBUTION CONTINUES ================= -->
+  
+    <div class="question-block">
+      <div class="question-number">2.10</div>
+      <div class="question-text">
+        At what position during SHM is potential energy greatest?
+      </div>
+      <div class="answer-option">A) At equilibrium</div>
+      <div class="answer-option">B) At maximum displacement</div>
+      <div class="answer-option">C) Halfway to amplitude</div>
+      <div class="answer-option">D) Always constant</div>
+      <div class="answer-option">E) At all positions equally</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.11</div>
+      <div class="question-text">
+        Describe how frequency changes if the spring constant increases while mass remains constant.
+      </div>
+      <div class="answer-option">A) Frequency decreases</div>
+      <div class="answer-option">B) Frequency increases</div>
+      <div class="answer-option">C) Frequency remains unchanged</div>
+      <div class="answer-option">D) Frequency becomes zero</div>
+      <div class="answer-option">E) Frequency depends only on amplitude</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.12</div>
+      <div class="question-text">
+        A pendulum swings with small amplitude. Why is its motion considered SHM only for small angles?
+      </div>
+      <div class="answer-option">A) Restoring force is proportional to displacement only at small angles</div>
+      <div class="answer-option">B) Gravity changes at large angles</div>
+      <div class="answer-option">C) Mass changes during motion</div>
+      <div class="answer-option">D) The string shortens</div>
+      <div class="answer-option">E) Frequency becomes zero</div>
+    </div>
+  
+    <!-- Continue until 22 -->
+  
+    <div class="question-block">
+      <div class="question-number">2.13</div>
+      <div class="question-text">
+        An oscillating object passes equilibrium moving to the right. What is the direction of acceleration at that instant?
+      </div>
+      <div class="answer-option">A) To the right</div>
+      <div class="answer-option">B) To the left</div>
+      <div class="answer-option">C) Zero</div>
+      <div class="answer-option">D) Upward</div>
+      <div class="answer-option">E) Downward</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.14</div>
+      <div class="question-text">
+        A system oscillates with constant amplitude and no friction. What happens to total mechanical energy?
+      </div>
+      <div class="answer-option">A) It increases</div>
+      <div class="answer-option">B) It decreases</div>
+      <div class="answer-option">C) It remains constant</div>
+      <div class="answer-option">D) It becomes zero</div>
+      <div class="answer-option">E) It alternates unpredictably</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.15</div>
+      <div class="question-text">
+        A spring is stretched twice as far. How does the restoring force compare?
+      </div>
+      <div class="answer-option">A) Half as large</div>
+      <div class="answer-option">B) Twice as large</div>
+      <div class="answer-option">C) Unchanged</div>
+      <div class="answer-option">D) Zero</div>
+      <div class="answer-option">E) Four times as large</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.16</div>
+      <div class="question-text">
+        During SHM, when displacement is zero, which quantity is maximum?
+      </div>
+      <div class="answer-option">A) Acceleration</div>
+      <div class="answer-option">B) Restoring force</div>
+      <div class="answer-option">C) Velocity</div>
+      <div class="answer-option">D) Potential energy</div>
+      <div class="answer-option">E) Displacement</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.17</div>
+      <div class="question-text">
+        A pendulum’s length is shortened. What conceptual effect does this have?
+      </div>
+      <div class="answer-option">A) It swings more slowly</div>
+      <div class="answer-option">B) It swings more quickly</div>
+      <div class="answer-option">C) It stops oscillating</div>
+      <div class="answer-option">D) Its mass increases</div>
+      <div class="answer-option">E) Its amplitude doubles</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.18</div>
+      <div class="question-text">
+        If friction is introduced into an oscillating system, what happens to amplitude over time?
+      </div>
+      <div class="answer-option">A) It increases</div>
+      <div class="answer-option">B) It remains constant</div>
+      <div class="answer-option">C) It decreases</div>
+      <div class="answer-option">D) It doubles</div>
+      <div class="answer-option">E) It becomes negative</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.19</div>
+      <div class="question-text">
+        Why does SHM require a central equilibrium position?
+      </div>
+      <div class="answer-option">A) To eliminate gravity</div>
+      <div class="answer-option">B) To define zero displacement and restoring direction</div>
+      <div class="answer-option">C) To increase amplitude</div>
+      <div class="answer-option">D) To remove acceleration</div>
+      <div class="answer-option">E) To change mass</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.20</div>
+      <div class="question-text">
+        A system oscillates with larger amplitude but identical mass and spring constant. What remains unchanged?
+      </div>
+      <div class="answer-option">A) Maximum speed</div>
+      <div class="answer-option">B) Restoring force magnitude</div>
+      <div class="answer-option">C) Period</div>
+      <div class="answer-option">D) Maximum acceleration</div>
+      <div class="answer-option">E) Potential energy</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.21</div>
+      <div class="question-text">
+        An object is released from maximum displacement. What is its initial velocity?
+      </div>
+      <div class="answer-option">A) Maximum</div>
+      <div class="answer-option">B) Zero</div>
+      <div class="answer-option">C) Negative only</div>
+      <div class="answer-option">D) Infinite</div>
+      <div class="answer-option">E) Constant</div>
+    </div>
+  
+    <div class="question-block">
+      <div class="question-number">2.22</div>
+      <div class="question-text">
+        What characteristic distinguishes periodic motion from Simple Harmonic Motion?
+      </div>
+      <div class="answer-option">A) SHM must involve circular motion</div>
+      <div class="answer-option">B) All periodic motion has proportional restoring force</div>
+      <div class="answer-option">C) SHM specifically requires restoring force proportional to displacement</div>
+      <div class="answer-option">D) Periodic motion has no equilibrium position</div>
+      <div class="answer-option">E) SHM requires friction</div>
+    </div>
+  
+  </div>
+  
+  <div class="answer-key">
+    <h2>Answer Key – Bank 2: Conceptual Questions</h2>
+  
+    <div class="answer-key-section">
+  
+      <div class="answer-row"><div>2.1</div><div>C</div><div>Restoring force returns object to equilibrium</div></div>
+      <div class="answer-row"><div>2.2</div><div>B</div><div>Tangential net force is zero at equilibrium</div></div>
+      <div class="answer-row"><div>2.3</div><div>C</div><div>Acceleration proportional to displacement</div></div>
+      <div class="answer-row"><div>2.4</div><div>B</div><div>Velocity maximum at equilibrium</div></div>
+      <div class="answer-row"><div>2.5</div><div>C</div><div>Force reverses with displacement direction</div></div>
+  
+      <div class="answer-row"><div>2.6</div><div>B</div><div>Kinetic energy zero at maximum displacement</div></div>
+      <div class="answer-row"><div>2.7</div><div>B</div><div>Weaker gravity increases pendulum period</div></div>
+      <div class="answer-row"><div>2.8</div><div>B</div><div>Greater mass increases period (slower oscillation)</div></div>
+      <div class="answer-row"><div>2.9</div><div>A</div><div>Larger amplitude increases maximum speed</div></div>
+      <div class="answer-row"><div>2.10</div><div>B</div><div>Potential energy maximum at amplitude</div></div>
+  
+      <div class="answer-row"><div>2.11</div><div>B</div><div>Larger spring constant increases frequency</div></div>
+      <div class="answer-row"><div>2.12</div><div>A</div><div>Small-angle approximation gives proportional restoring force</div></div>
+      <div class="answer-row"><div>2.13</div><div>B</div><div>Acceleration always toward equilibrium</div></div>
+      <div class="answer-row"><div>2.14</div><div>C</div><div>Total mechanical energy conserved without friction</div></div>
+      <div class="answer-row"><div>2.15</div><div>B</div><div>Hooke’s Law: F ∝ x</div></div>
+  
+      <div class="answer-row"><div>2.16</div><div>C</div><div>Velocity maximum when displacement is zero</div></div>
+      <div class="answer-row"><div>2.17</div><div>B</div><div>Shorter pendulum → shorter period</div></div>
+      <div class="answer-row"><div>2.18</div><div>C</div><div>Friction causes amplitude to decrease over time</div></div>
+      <div class="answer-row"><div>2.19</div><div>B</div><div>Equilibrium defines restoring direction</div></div>
+      <div class="answer-row"><div>2.20</div><div>C</div><div>Period independent of amplitude</div></div>
+  
+      <div class="answer-row"><div>2.21</div><div>B</div><div>Velocity zero at maximum displacement</div></div>
+      <div class="answer-row"><div>2.22</div><div>C</div><div>SHM requires proportional restoring force</div></div>
+  
+    </div>
+  </div>
+
+  <footer>
+  Section 5.1 – Simple Harmonic Motion | Bank 2: Conceptual Questions
+  </footer>
+
+
+</body>
+</html>

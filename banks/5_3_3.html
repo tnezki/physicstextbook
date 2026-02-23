@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.3 Bank 3</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+
+  <header>
+    <h1>Section 5.3: Longitudinal Waves</h1>
+    <p><strong>Bank 3: Single-Step Calculations</strong></p>
+    <p>Use v = 343 m/s for sound in air unless otherwise stated.</p>
+  </header>
+  
+  <div class="bank-section">
+  
+  <div class="bank-header">
+    <h2>Bank 3: Single-Step Calculations</h2>
+    <div class="bank-info">12 Questions | One calculation each | 2–3 significant figures</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 1 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Formula 1: Wave Equation</div>
+  <div class="formula-display">
+  <strong>Formula:</strong> $$v = f\lambda$$  
+  <strong>Variables:</strong> v (m/s), f (Hz), λ (m)
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.1</div>
+  A sound wave has frequency 500 Hz. What is its wavelength in air?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.2</div>
+  Calculate the frequency of a sound wave with wavelength 0.70 m.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.3</div>
+  A sonar pulse travels through air with wavelength 1.5 m. What is its frequency?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.4</div>
+  Determine the wavelength of a 686 Hz tone.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 2 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Formula 2: Frequency–Period Relationship</div>
+  <div class="formula-display">
+  <strong>Formula:</strong> $$f = \frac{1}{T}$$  
+  <strong>Variables:</strong> f (Hz), T (s)
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.5</div>
+  A sound wave has period 0.0020 s. What is its frequency?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.6</div>
+  Find the period of a wave with frequency 250 Hz.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ s</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.7</div>
+  A vibration occurs 20,000 times per second. What is the period?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ s</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.8</div>
+  Determine the frequency of a wave that completes one cycle every 0.10 s.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 3 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Formula 3: Distance from Echo Time</div>
+  <div class="formula-display">
+  <strong>Formula:</strong> $$d = vt$$  
+  <strong>Variables:</strong> d (m), v (m/s), t (s)
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.9</div>
+  An echo returns 0.50 s after a sound is emitted. How far away is the reflecting surface?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.10</div>
+  A sonar signal travels for 1.2 s before returning. What is the total distance traveled by the sound wave?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.11</div>
+  A bat emits a sound that returns after 0.020 s. How far away is the object?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.12</div>
+  A sound wave travels for 0.15 s before reflecting back to the source. What is the distance to the reflecting surface?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+  </div>
+  
+  </div>
+  
+  </div>
+  
+  <div class="answer-key">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 3: Single-Step Calculations — Worked Solutions</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 1 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Formula 1: Wave Equation ($v = f\lambda$)</div>
+  
+      <div class="answer-row">
+        <div>3.1</div>
+        <div>0.686 m</div>
+        <div>$\lambda = \frac{343}{500} = 0.686$ m</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.2</div>
+        <div>490 Hz</div>
+        <div>$f = \frac{343}{0.70} = 490$ Hz</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.3</div>
+        <div>229 Hz</div>
+        <div>$f = \frac{343}{1.5} = 229$ Hz (3 sig figs)</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.4</div>
+        <div>0.500 m</div>
+        <div>$\lambda = \frac{343}{686} = 0.500$ m</div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 2 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Formula 2: Frequency–Period Relationship ($f = \frac{1}{T}$)</div>
+  
+      <div class="answer-row">
+        <div>3.5</div>
+        <div>500 Hz</div>
+        <div>$f = \frac{1}{0.0020} = 500$ Hz</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.6</div>
+        <div>0.00400 s</div>
+        <div>$T = \frac{1}{250} = 0.00400$ s</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.7</div>
+        <div>0.0000500 s</div>
+        <div>$T = \frac{1}{20000} = 5.00 \times 10^{-5}$ s</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.8</div>
+        <div>10.0 Hz</div>
+        <div>$f = \frac{1}{0.10} = 10.0$ Hz</div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 3 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Formula 3: Distance from Echo Time ($d = vt$)</div>
+  
+      <div class="answer-row">
+        <div>3.9</div>
+        <div>85.8 m</div>
+        <div>
+        Round-trip distance = $343(0.50) = 171.5$ m  
+        One-way distance = $\frac{171.5}{2} = 85.8$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.10</div>
+        <div>412 m</div>
+        <div>$d = 343(1.2) = 412$ m</div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.11</div>
+        <div>3.43 m</div>
+        <div>
+        Round-trip distance = $343(0.020) = 6.86$ m  
+        One-way distance = $\frac{6.86}{2} = 3.43$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.12</div>
+        <div>25.7 m</div>
+        <div>
+        Round-trip distance = $343(0.15) = 51.5$ m  
+        One-way distance = $\frac{51.5}{2} = 25.7$ m
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <footer>
+  Section 5.3 – Longitudinal Waves | Bank 3: Single-Step Calculations
+  </footer>
+
+</body>
+</html>

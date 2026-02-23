@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.4 Bank 1</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.4: Complex Circuit Analysis</h1>
+    <p><strong>Bank 1: Vocabulary Assessment</strong></p>
+    <p>Multiple Choice | Vocabulary Mastery</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <!-- ============================================================ -->
+    <!-- TERM 1: COMPLEX CIRCUITS -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Complex circuits (1.1 – 1.4)</div>
+    <div class="term-definition">
+    Circuits that combine series and parallel sections; requires systematic analysis using equivalent resistance.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.1</div>
+    A complex circuit is best described as:
+    <div class="answer-option"><strong>A)</strong> A circuit with only one resistor</div>
+    <div class="answer-option"><strong>B)</strong> A circuit containing both series and parallel sections</div>
+    <div class="answer-option"><strong>C)</strong> A circuit with zero resistance</div>
+    <div class="answer-option"><strong>D)</strong> A purely parallel circuit</div>
+    <div class="answer-option"><strong>E)</strong> A circuit without voltage</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.2</div>
+    To analyze a complex circuit, the first major step is usually to:
+    <div class="answer-option"><strong>A)</strong> Measure current directly</div>
+    <div class="answer-option"><strong>B)</strong> Increase voltage</div>
+    <div class="answer-option"><strong>C)</strong> Find the equivalent resistance</div>
+    <div class="answer-option"><strong>D)</strong> Remove all resistors</div>
+    <div class="answer-option"><strong>E)</strong> Reverse the battery</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.3</div>
+    Equivalent resistance refers to:
+    <div class="answer-option"><strong>A)</strong> The resistance of one branch only</div>
+    <div class="answer-option"><strong>B)</strong> The total resistance that replaces a combination of resistors</div>
+    <div class="answer-option"><strong>C)</strong> The highest resistance in the circuit</div>
+    <div class="answer-option"><strong>D)</strong> The voltage across the battery</div>
+    <div class="answer-option"><strong>E)</strong> The resistance of a wire</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.4</div>
+    In a complex circuit, simplifying parallel sections first often helps because:
+    <div class="answer-option"><strong>A)</strong> Voltage becomes zero</div>
+    <div class="answer-option"><strong>B)</strong> It reduces multiple paths into a single equivalent value</div>
+    <div class="answer-option"><strong>C)</strong> Current disappears</div>
+    <div class="answer-option"><strong>D)</strong> Resistance doubles</div>
+    <div class="answer-option"><strong>E)</strong> Power increases automatically</div>
+    </div>
+    
+    </div>
+    
+    <footer>
+    Section 8.4 – Complex Circuit Analysis | Bank 1
+    </footer>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 1: Vocabulary Assessment — Answer Key</strong></p>
+  
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Complex circuits (Questions 1.1–1.4)
+  </div>
+  
+  <div class="answer-row"><div>1.1</div><div>B</div><div>Complex circuits combine series and parallel sections</div></div>
+  <div class="answer-row"><div>1.2</div><div>C</div><div>Equivalent resistance simplifies analysis</div></div>
+  <div class="answer-row"><div>1.3</div><div>B</div><div>Equivalent resistance replaces combined resistors</div></div>
+  <div class="answer-row"><div>1.4</div><div>B</div><div>Simplifying parallel sections reduces circuit complexity</div></div>
+  
+  </div>
+  
+  </div>
+
+
+</body>
+</html>

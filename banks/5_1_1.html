@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.1 Bank 1</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="bank-section">
+
+
+    <header>
+      <h1>Section 5.1: Simple Harmonic Motion</h1>
+      <p><strong>Bank 1: Vocabulary Assessment</strong></p>
+      <p>48 Multiple Choice Questions | 12 Vocabulary Terms × 4 Question Types</p>
+    </header>
+    
+    <div class="bank-section">
+      <div class="bank-header">
+        <h2>Bank 1: Vocabulary Assessment</h2>
+        <div class="bank-info">48 questions | 4 question types per vocabulary term | Multiple choice (A–E)</div>
+      </div>
+  
+    <!-- ============================================================ -->
+    <!-- Oscillation -->
+    <!-- ============================================================ -->
+    <div class="question-group">
+      <div class="question-group-title">Oscillation (1.1 – 1.4)</div>
+      <div class="question-text"><strong>Definition:</strong> Repeating motion around a central position.</div>
+  
+      <div class="question">
+        <div class="question-number">1.1</div>
+        <div class="question-text">What is oscillation?</div>
+        <div class="answer-option">A) The maximum displacement from equilibrium</div>
+        <div class="answer-option">B) Repeating motion around a central position</div>
+        <div class="answer-option">C) The time for one complete cycle</div>
+        <div class="answer-option">D) A force that opposes motion</div>
+        <div class="answer-option">E) Motion in a straight line at constant speed</div>
+      </div>
+  
+      <div class="question">
+        <div class="question-number">1.2</div>
+        <div class="question-text">Motion that repeatedly moves back and forth about a middle point is called:</div>
+        <div class="answer-option">A) Frequency</div>
+        <div class="answer-option">B) Period</div>
+        <div class="answer-option">C) Oscillation</div>
+        <div class="answer-option">D) Displacement</div>
+        <div class="answer-option">E) Acceleration</div>
+      </div>
+  
+      <div class="question">
+        <div class="question-number">1.3</div>
+        <div class="question-text">A playground swing moves back and forth through the same path over and over. This motion is an example of:</div>
+        <div class="answer-option">A) Equilibrium</div>
+        <div class="answer-option">B) Oscillation</div>
+        <div class="answer-option">C) Projectile motion</div>
+        <div class="answer-option">D) Uniform motion</div>
+        <div class="answer-option">E) Circular motion</div>
+      </div>
+  
+      <div class="question">
+        <div class="question-number">1.4</div>
+        <div class="question-text">Which situation does NOT represent oscillation?</div>
+        <div class="answer-option">A) A pendulum swinging</div>
+        <div class="answer-option">B) A vibrating guitar string</div>
+        <div class="answer-option">C) A mass bouncing on a spring</div>
+        <div class="answer-option">D) A car driving steadily down a highway</div>
+        <div class="answer-option">E) A child rocking in a chair</div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Simple Harmonic Motion -->
+    <!-- ============================================================ -->
+    <div class="question-group">
+      <div class="question-group-title">Simple Harmonic Motion (2.1 – 2.4)</div>
+      <div class="question-text"><strong>Definition:</strong> Repetitive back-and-forth motion through equilibrium where restoring force is directly proportional to displacement.</div>
+  
+      <div class="question">
+        <div class="question-number">2.1</div>
+        <div class="question-text">What is Simple Harmonic Motion (SHM)?</div>
+        <div class="answer-option">A) Any repetitive motion</div>
+        <div class="answer-option">B) Motion with constant velocity</div>
+        <div class="answer-option">C) Motion where restoring force is proportional to displacement</div>
+        <div class="answer-option">D) Circular motion at constant speed</div>
+        <div class="answer-option">E) Motion without acceleration</div>
+      </div>
+  
+      <div class="question">
+        <div class="question-number">2.2</div>
+        <div class="question-text">Back-and-forth motion in which the restoring force increases as displacement increases describes:</div>
+        <div class="answer-option">A) Uniform motion</div>
+        <div class="answer-option">B) Simple Harmonic Motion</div>
+        <div class="answer-option">C) Projectile motion</div>
+        <div class="answer-option">D) Rotational motion</div>
+        <div class="answer-option">E) Translational motion</div>
+      </div>
+  
+      <div class="question">
+        <div class="question-number">2.3</div>
+        <div class="question-text">A mass on a spring oscillates such that doubling the displacement doubles the restoring force. This motion is:</div>
+        <div class="answer-option">A) Chaotic motion</div>
+        <div class="answer-option">B) Damped motion</div>
+        <div class="answer-option">C) Simple Harmonic Motion</div>
+        <div class="answer-option">D) Linear drift</div>
+        <div class="answer-option">E) Uniform circular motion</div>
+      </div>
+  
+      <div class="question">
+        <div class="question-number">2.4</div>
+        <div class="question-text">Which condition must be true for motion to qualify as SHM?</div>
+        <div class="answer-option">A) Restoring force is constant</div>
+        <div class="answer-option">B) Restoring force is proportional to displacement</div>
+        <div class="answer-option">C) Velocity is constant</div>
+        <div class="answer-option">D) Acceleration is zero</div>
+        <div class="answer-option">E) Mass is zero</div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+  <!-- Equilibrium Position -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Equilibrium Position (3.1 – 3.4)</div>
+    <div class="question-text"><strong>Definition:</strong> The central resting position where the net force on an object is zero and the object would remain at rest if not disturbed.</div>
+
+    <div class="question">
+      <div class="question-number">3.1</div>
+      <div class="question-text">What is the equilibrium position?</div>
+      <div class="answer-option">A) The point of maximum displacement</div>
+      <div class="answer-option">B) The central position where net force is zero</div>
+      <div class="answer-option">C) The highest point of motion</div>
+      <div class="answer-option">D) The position of maximum velocity</div>
+      <div class="answer-option">E) The starting point of motion</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">3.2</div>
+      <div class="question-text">The position where forces balance and an object would stay at rest if undisturbed is called:</div>
+      <div class="answer-option">A) Amplitude</div>
+      <div class="answer-option">B) Period</div>
+      <div class="answer-option">C) Equilibrium position</div>
+      <div class="answer-option">D) Turning point</div>
+      <div class="answer-option">E) Displacement</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">3.3</div>
+      <div class="question-text">A pendulum passes through its lowest point during each swing. That lowest point represents the:</div>
+      <div class="answer-option">A) Maximum acceleration</div>
+      <div class="answer-option">B) Maximum displacement</div>
+      <div class="answer-option">C) Equilibrium position</div>
+      <div class="answer-option">D) Amplitude</div>
+      <div class="answer-option">E) Period</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">3.4</div>
+      <div class="question-text">At equilibrium during SHM, which statement is true?</div>
+      <div class="answer-option">A) Displacement is maximum</div>
+      <div class="answer-option">B) Restoring force is maximum</div>
+      <div class="answer-option">C) Net force is zero</div>
+      <div class="answer-option">D) Acceleration is maximum</div>
+      <div class="answer-option">E) Velocity is zero</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Displacement -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Displacement (4.1 – 4.4)</div>
+    <div class="question-text"><strong>Definition:</strong> The distance and direction of an object from its equilibrium position, measured in meters (m).</div>
+
+    <div class="question">
+      <div class="question-number">4.1</div>
+      <div class="question-text">What is displacement in oscillatory motion?</div>
+      <div class="answer-option">A) Total distance traveled</div>
+      <div class="answer-option">B) Distance and direction from equilibrium</div>
+      <div class="answer-option">C) Speed at equilibrium</div>
+      <div class="answer-option">D) Maximum force</div>
+      <div class="answer-option">E) Time for one cycle</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">4.2</div>
+      <div class="question-text">The measurement of how far and in which direction an object is from equilibrium is called:</div>
+      <div class="answer-option">A) Velocity</div>
+      <div class="answer-option">B) Frequency</div>
+      <div class="answer-option">C) Displacement</div>
+      <div class="answer-option">D) Amplitude</div>
+      <div class="answer-option">E) Period</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">4.3</div>
+      <div class="question-text">A spring stretches 0.20 m to the right of equilibrium. The 0.20 m value represents:</div>
+      <div class="answer-option">A) Amplitude</div>
+      <div class="answer-option">B) Period</div>
+      <div class="answer-option">C) Displacement</div>
+      <div class="answer-option">D) Frequency</div>
+      <div class="answer-option">E) Spring constant</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">4.4</div>
+      <div class="question-text">If displacement doubles in a spring system obeying Hooke’s Law, the restoring force will:</div>
+      <div class="answer-option">A) Stay the same</div>
+      <div class="answer-option">B) Double</div>
+      <div class="answer-option">C) Be cut in half</div>
+      <div class="answer-option">D) Become zero</div>
+      <div class="answer-option">E) Reverse direction only</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Restoring Force -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Restoring Force (5.1 – 5.4)</div>
+    <div class="question-text"><strong>Definition:</strong> The force that acts to bring an oscillating object back toward its equilibrium position; it always points toward equilibrium.</div>
+
+    <div class="question">
+      <div class="question-number">5.1</div>
+      <div class="question-text">What is a restoring force?</div>
+      <div class="answer-option">A) A force that increases velocity</div>
+      <div class="answer-option">B) A force that returns an object toward equilibrium</div>
+      <div class="answer-option">C) A force that keeps motion constant</div>
+      <div class="answer-option">D) A force that stops oscillation</div>
+      <div class="answer-option">E) A force equal to mass times acceleration only</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">5.2</div>
+      <div class="question-text">The force that always points toward the center of oscillation is called the:</div>
+      <div class="answer-option">A) Gravitational force</div>
+      <div class="answer-option">B) Applied force</div>
+      <div class="answer-option">C) Restoring force</div>
+      <div class="answer-option">D) Normal force</div>
+      <div class="answer-option">E) Magnetic force</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">5.3</div>
+      <div class="question-text">When a stretched spring pulls back toward its original length, that pull is an example of:</div>
+      <div class="answer-option">A) Inertia</div>
+      <div class="answer-option">B) Restoring force</div>
+      <div class="answer-option">C) Friction</div>
+      <div class="answer-option">D) Tension only</div>
+      <div class="answer-option">E) Centripetal force</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">5.4</div>
+      <div class="question-text">At maximum displacement in SHM, the restoring force is:</div>
+      <div class="answer-option">A) Zero</div>
+      <div class="answer-option">B) Minimum</div>
+      <div class="answer-option">C) Maximum</div>
+      <div class="answer-option">D) Equal to weight only</div>
+      <div class="answer-option">E) Independent of displacement</div>
+    </div>
+  </div>
+  
+  </div>
+
+    <!-- ============================================================ -->
+  <!-- Periodic Motion -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Periodic Motion (6.1 – 6.4)</div>
+    <div class="question-text"><strong>Definition:</strong> Motion that repeats in a regular cycle.</div>
+
+    <div class="question">
+      <div class="question-number">6.1</div>
+      <div class="question-text">What is periodic motion?</div>
+      <div class="answer-option">A) Motion that increases in speed</div>
+      <div class="answer-option">B) Motion that repeats in a regular cycle</div>
+      <div class="answer-option">C) Motion in a straight line</div>
+      <div class="answer-option">D) Motion with constant acceleration</div>
+      <div class="answer-option">E) Motion without forces</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">6.2</div>
+      <div class="question-text">Motion that repeats itself over equal time intervals is called:</div>
+      <div class="answer-option">A) Uniform motion</div>
+      <div class="answer-option">B) Projectile motion</div>
+      <div class="answer-option">C) Periodic motion</div>
+      <div class="answer-option">D) Displacement</div>
+      <div class="answer-option">E) Acceleration</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">6.3</div>
+      <div class="question-text">A clock pendulum returns to the same position every 2 seconds. This is an example of:</div>
+      <div class="answer-option">A) Random motion</div>
+      <div class="answer-option">B) Periodic motion</div>
+      <div class="answer-option">C) Linear motion</div>
+      <div class="answer-option">D) Non-repeating motion</div>
+      <div class="answer-option">E) Translational motion</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">6.4</div>
+      <div class="question-text">Which of the following is periodic but NOT necessarily Simple Harmonic Motion?</div>
+      <div class="answer-option">A) A mass on an ideal spring</div>
+      <div class="answer-option">B) A small-angle pendulum</div>
+      <div class="answer-option">C) Earth orbiting the Sun</div>
+      <div class="answer-option">D) A vibrating tuning fork</div>
+      <div class="answer-option">E) A bouncing mass-spring system</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Amplitude -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Amplitude (7.1 – 7.4)</div>
+    <div class="question-text"><strong>Definition:</strong> The maximum displacement from equilibrium position, measured in meters (m).</div>
+
+    <div class="question">
+      <div class="question-number">7.1</div>
+      <div class="question-text">What is amplitude?</div>
+      <div class="answer-option">A) Total distance traveled in one cycle</div>
+      <div class="answer-option">B) Maximum displacement from equilibrium</div>
+      <div class="answer-option">C) Time for one oscillation</div>
+      <div class="answer-option">D) Frequency of motion</div>
+      <div class="answer-option">E) Restoring force value</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">7.2</div>
+      <div class="question-text">The greatest distance an object moves from its equilibrium position is called:</div>
+      <div class="answer-option">A) Displacement</div>
+      <div class="answer-option">B) Period</div>
+      <div class="answer-option">C) Frequency</div>
+      <div class="answer-option">D) Amplitude</div>
+      <div class="answer-option">E) Velocity</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">7.3</div>
+      <div class="question-text">A spring oscillates 8 cm above and 8 cm below equilibrium. The amplitude is:</div>
+      <div class="answer-option">A) 16 cm</div>
+      <div class="answer-option">B) 8 cm</div>
+      <div class="answer-option">C) 4 cm</div>
+      <div class="answer-option">D) 2 cm</div>
+      <div class="answer-option">E) 0 cm</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">7.4</div>
+      <div class="question-text">If amplitude doubles while mass and spring constant remain the same, the period will:</div>
+      <div class="answer-option">A) Double</div>
+      <div class="answer-option">B) Be cut in half</div>
+      <div class="answer-option">C) Remain unchanged</div>
+      <div class="answer-option">D) Increase four times</div>
+      <div class="answer-option">E) Decrease four times</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Period -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Period (8.1 – 8.4)</div>
+    <div class="question-text"><strong>Definition:</strong> The time required for one complete cycle of motion, measured in seconds (s).</div>
+
+    <div class="question">
+      <div class="question-number">8.1</div>
+      <div class="question-text">What is the period of motion?</div>
+      <div class="answer-option">A) Number of cycles per second</div>
+      <div class="answer-option">B) Time for one complete cycle</div>
+      <div class="answer-option">C) Maximum displacement</div>
+      <div class="answer-option">D) Restoring force</div>
+      <div class="answer-option">E) Total distance traveled</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">8.2</div>
+      <div class="question-text">The time required for one full oscillation is called the:</div>
+      <div class="answer-option">A) Frequency</div>
+      <div class="answer-option">B) Displacement</div>
+      <div class="answer-option">C) Period</div>
+      <div class="answer-option">D) Amplitude</div>
+      <div class="answer-option">E) Velocity</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">8.3</div>
+      <div class="question-text">A pendulum completes one full cycle in 3.0 s. Its period is:</div>
+      <div class="answer-option">A) 0.33 s</div>
+      <div class="answer-option">B) 1.5 s</div>
+      <div class="answer-option">C) 3.0 s</div>
+      <div class="answer-option">D) 6.0 s</div>
+      <div class="answer-option">E) 9.0 s</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">8.4</div>
+      <div class="question-text">If frequency increases, the period will:</div>
+      <div class="answer-option">A) Increase</div>
+      <div class="answer-option">B) Decrease</div>
+      <div class="answer-option">C) Stay the same</div>
+      <div class="answer-option">D) Become zero</div>
+      <div class="answer-option">E) Become infinite</div>
+    </div>
+  </div>
+  
+   <!-- ============================================================ -->
+  <!-- Frequency -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Frequency (9.1 – 9.4)</div>
+    <div class="question-text"><strong>Definition:</strong> The number of complete cycles per second, measured in hertz (Hz).</div>
+
+    <div class="question">
+      <div class="question-number">9.1</div>
+      <div class="question-text">What is frequency?</div>
+      <div class="answer-option">A) Time for one complete cycle</div>
+      <div class="answer-option">B) Maximum displacement from equilibrium</div>
+      <div class="answer-option">C) Number of cycles per second</div>
+      <div class="answer-option">D) Total distance traveled</div>
+      <div class="answer-option">E) Restoring force</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">9.2</div>
+      <div class="question-text">The number of complete oscillations that occur each second is called:</div>
+      <div class="answer-option">A) Period</div>
+      <div class="answer-option">B) Amplitude</div>
+      <div class="answer-option">C) Frequency</div>
+      <div class="answer-option">D) Displacement</div>
+      <div class="answer-option">E) Velocity</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">9.3</div>
+      <div class="question-text">A vibrating object completes 20 oscillations in one second. Its frequency is:</div>
+      <div class="answer-option">A) 0.05 Hz</div>
+      <div class="answer-option">B) 0.20 Hz</div>
+      <div class="answer-option">C) 5 Hz</div>
+      <div class="answer-option">D) 20 Hz</div>
+      <div class="answer-option">E) 200 Hz</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">9.4</div>
+      <div class="question-text">If the period of a system is 0.50 s, its frequency is:</div>
+      <div class="answer-option">A) 0.50 Hz</div>
+      <div class="answer-option">B) 1.0 Hz</div>
+      <div class="answer-option">C) 2.0 Hz</div>
+      <div class="answer-option">D) 5.0 Hz</div>
+      <div class="answer-option">E) 10 Hz</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Hooke's Law -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Hooke's Law (10.1 – 10.4)</div>
+    <div class="question-text"><strong>Definition:</strong> The restoring force of a spring is proportional to its displacement: $F = -kx$.</div>
+
+    <div class="question">
+      <div class="question-number">10.1</div>
+      <div class="question-text">What does Hooke’s Law describe?</div>
+      <div class="answer-option">A) The relationship between period and frequency</div>
+      <div class="answer-option">B) The proportional relationship between restoring force and displacement</div>
+      <div class="answer-option">C) The conservation of energy</div>
+      <div class="answer-option">D) The effect of mass on acceleration</div>
+      <div class="answer-option">E) The effect of gravity on pendulums</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">10.2</div>
+      <div class="question-text">In the equation $F = -kx$, the negative sign indicates that:</div>
+      <div class="answer-option">A) Force and displacement are unrelated</div>
+      <div class="answer-option">B) Force increases with velocity</div>
+      <div class="answer-option">C) Force is directed opposite the displacement</div>
+      <div class="answer-option">D) Force is constant</div>
+      <div class="answer-option">E) Force equals zero at all times</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">10.3</div>
+      <div class="question-text">If the displacement of a spring doubles, the restoring force will:</div>
+      <div class="answer-option">A) Stay the same</div>
+      <div class="answer-option">B) Double</div>
+      <div class="answer-option">C) Be cut in half</div>
+      <div class="answer-option">D) Become zero</div>
+      <div class="answer-option">E) Reverse sign only</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">10.4</div>
+      <div class="question-text">Which quantity determines how stiff a spring is in Hooke’s Law?</div>
+      <div class="answer-option">A) Mass</div>
+      <div class="answer-option">B) Displacement</div>
+      <div class="answer-option">C) Spring constant</div>
+      <div class="answer-option">D) Period</div>
+      <div class="answer-option">E) Frequency</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Spring Constant -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Spring Constant (11.1 – 11.4)</div>
+    <div class="question-text"><strong>Definition:</strong> A measure of a spring’s stiffness, measured in newtons per meter (N/m).</div>
+
+    <div class="question">
+      <div class="question-number">11.1</div>
+      <div class="question-text">What is the spring constant?</div>
+      <div class="answer-option">A) The time for one oscillation</div>
+      <div class="answer-option">B) The maximum stretch of a spring</div>
+      <div class="answer-option">C) A measure of stiffness in N/m</div>
+      <div class="answer-option">D) The total energy in a system</div>
+      <div class="answer-option">E) The mass attached to the spring</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">11.2</div>
+      <div class="question-text">A larger spring constant indicates a spring that is:</div>
+      <div class="answer-option">A) More flexible</div>
+      <div class="answer-option">B) Less stiff</div>
+      <div class="answer-option">C) Stiffer</div>
+      <div class="answer-option">D) Slower to oscillate only</div>
+      <div class="answer-option">E) Independent of force</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">11.3</div>
+      <div class="question-text">If two springs stretch the same distance but one requires more force, that spring has:</div>
+      <div class="answer-option">A) Smaller amplitude</div>
+      <div class="answer-option">B) Larger frequency</div>
+      <div class="answer-option">C) Larger spring constant</div>
+      <div class="answer-option">D) Smaller period</div>
+      <div class="answer-option">E) Smaller displacement</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">11.4</div>
+      <div class="question-text">In a mass-spring system, increasing the spring constant while keeping mass constant will:</div>
+      <div class="answer-option">A) Increase the period</div>
+      <div class="answer-option">B) Decrease the period</div>
+      <div class="answer-option">C) Leave the period unchanged</div>
+      <div class="answer-option">D) Double the amplitude</div>
+      <div class="answer-option">E) Eliminate oscillation</div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- Simple Pendulum -->
+  <!-- ============================================================ -->
+  <div class="question-group">
+    <div class="question-group-title">Simple Pendulum (12.1 – 12.4)</div>
+    <div class="question-text"><strong>Definition:</strong> A mass (bob) suspended from a fixed point by a string of negligible mass; exhibits SHM for small angles.</div>
+
+    <div class="question">
+      <div class="question-number">12.1</div>
+      <div class="question-text">What is a simple pendulum?</div>
+      <div class="answer-option">A) A mass attached to a horizontal spring</div>
+      <div class="answer-option">B) A rotating disk</div>
+      <div class="answer-option">C) A mass suspended from a fixed point by a string</div>
+      <div class="answer-option">D) A block sliding on a surface</div>
+      <div class="answer-option">E) A vibrating tuning fork</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">12.2</div>
+      <div class="question-text">For small angles, a simple pendulum exhibits:</div>
+      <div class="answer-option">A) Uniform circular motion</div>
+      <div class="answer-option">B) Projectile motion</div>
+      <div class="answer-option">C) Simple Harmonic Motion</div>
+      <div class="answer-option">D) Linear motion only</div>
+      <div class="answer-option">E) No acceleration</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">12.3</div>
+      <div class="question-text">Which factor does NOT affect the period of a simple pendulum?</div>
+      <div class="answer-option">A) Length of the string</div>
+      <div class="answer-option">B) Gravitational acceleration</div>
+      <div class="answer-option">C) Mass of the bob</div>
+      <div class="answer-option">D) Local gravitational field</div>
+      <div class="answer-option">E) Length of the pendulum arm</div>
+    </div>
+
+    <div class="question">
+      <div class="question-number">12.4</div>
+      <div class="question-text">If the length of a pendulum increases, its period will:</div>
+      <div class="answer-option">A) Decrease</div>
+      <div class="answer-option">B) Increase</div>
+      <div class="answer-option">C) Stay the same</div>
+      <div class="answer-option">D) Become zero</div>
+      <div class="answer-option">E) Reverse direction</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="answer-key">
+  <h2>Answer Key – Bank 1: Vocabulary</h2>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Oscillation</div>
+    <div class="answer-row"><div>1.1</div><div>B</div><div>Repeating motion around a central position</div></div>
+    <div class="answer-row"><div>1.2</div><div>C</div><div>Back-and-forth motion about a middle point</div></div>
+    <div class="answer-row"><div>1.3</div><div>B</div><div>Swing motion repeats around center</div></div>
+    <div class="answer-row"><div>1.4</div><div>D</div><div>Steady driving is not repeating motion</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Simple Harmonic Motion</div>
+    <div class="answer-row"><div>2.1</div><div>C</div><div>Restoring force proportional to displacement</div></div>
+    <div class="answer-row"><div>2.2</div><div>B</div><div>Force increases with displacement</div></div>
+    <div class="answer-row"><div>2.3</div><div>C</div><div>Doubling x doubles restoring force</div></div>
+    <div class="answer-row"><div>2.4</div><div>B</div><div>Requires proportional restoring force</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Equilibrium Position</div>
+    <div class="answer-row"><div>3.1</div><div>B</div><div>Net force equals zero</div></div>
+    <div class="answer-row"><div>3.2</div><div>C</div><div>Balanced forces define equilibrium</div></div>
+    <div class="answer-row"><div>3.3</div><div>C</div><div>Lowest pendulum point is equilibrium</div></div>
+    <div class="answer-row"><div>3.4</div><div>C</div><div>Net force is zero at equilibrium</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Displacement</div>
+    <div class="answer-row"><div>4.1</div><div>B</div><div>Distance and direction from equilibrium</div></div>
+    <div class="answer-row"><div>4.2</div><div>C</div><div>Measured from equilibrium</div></div>
+    <div class="answer-row"><div>4.3</div><div>C</div><div>Specific position relative to center</div></div>
+    <div class="answer-row"><div>4.4</div><div>B</div><div>Hooke’s Law: force ∝ displacement</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Restoring Force</div>
+    <div class="answer-row"><div>5.1</div><div>B</div><div>Acts toward equilibrium</div></div>
+    <div class="answer-row"><div>5.2</div><div>C</div><div>Points toward center position</div></div>
+    <div class="answer-row"><div>5.3</div><div>B</div><div>Spring pulling back is restoring force</div></div>
+    <div class="answer-row"><div>5.4</div><div>C</div><div>Maximum at maximum displacement</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Periodic Motion</div>
+    <div class="answer-row"><div>6.1</div><div>B</div><div>Repeats in regular cycles</div></div>
+    <div class="answer-row"><div>6.2</div><div>C</div><div>Equal time interval repetition</div></div>
+    <div class="answer-row"><div>6.3</div><div>B</div><div>Pendulum motion repeats</div></div>
+    <div class="answer-row"><div>6.4</div><div>C</div><div>Orbit repeats but not SHM</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Amplitude</div>
+    <div class="answer-row"><div>7.1</div><div>B</div><div>Maximum displacement</div></div>
+    <div class="answer-row"><div>7.2</div><div>D</div><div>Greatest distance from equilibrium</div></div>
+    <div class="answer-row"><div>7.3</div><div>B</div><div>Amplitude is one-side distance</div></div>
+    <div class="answer-row"><div>7.4</div><div>C</div><div>Period independent of amplitude</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Period</div>
+    <div class="answer-row"><div>8.1</div><div>B</div><div>Time for one cycle</div></div>
+    <div class="answer-row"><div>8.2</div><div>C</div><div>Measured in seconds</div></div>
+    <div class="answer-row"><div>8.3</div><div>C</div><div>Given cycle time is period</div></div>
+    <div class="answer-row"><div>8.4</div><div>B</div><div>Inverse relationship with frequency</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Frequency</div>
+    <div class="answer-row"><div>9.1</div><div>C</div><div>Cycles per second</div></div>
+    <div class="answer-row"><div>9.2</div><div>C</div><div>Oscillations per second</div></div>
+    <div class="answer-row"><div>9.3</div><div>D</div><div>20 cycles per second = 20 Hz</div></div>
+    <div class="answer-row"><div>9.4</div><div>C</div><div>$f = 1/T = 1/0.50 = 2$ Hz</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Hooke's Law</div>
+    <div class="answer-row"><div>10.1</div><div>B</div><div>Force proportional to displacement</div></div>
+    <div class="answer-row"><div>10.2</div><div>C</div><div>Opposite direction to displacement</div></div>
+    <div class="answer-row"><div>10.3</div><div>B</div><div>Doubling displacement doubles force</div></div>
+    <div class="answer-row"><div>10.4</div><div>C</div><div>Spring constant measures stiffness</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Spring Constant</div>
+    <div class="answer-row"><div>11.1</div><div>C</div><div>Measured in N/m</div></div>
+    <div class="answer-row"><div>11.2</div><div>C</div><div>Larger k = stiffer spring</div></div>
+    <div class="answer-row"><div>11.3</div><div>C</div><div>More force for same stretch → larger k</div></div>
+    <div class="answer-row"><div>11.4</div><div>B</div><div>Larger k → shorter period</div></div>
+  </div>
+
+  <div class="answer-key-section">
+    <div class="answer-key-section-title">Simple Pendulum</div>
+    <div class="answer-row"><div>12.1</div><div>C</div><div>Mass suspended by string</div></div>
+    <div class="answer-row"><div>12.2</div><div>C</div><div>Small-angle motion is SHM</div></div>
+    <div class="answer-row"><div>12.3</div><div>C</div><div>Mass does not affect period</div></div>
+    <div class="answer-row"><div>12.4</div><div>B</div><div>Longer length → longer period</div></div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Section 5.1 – Bank 1: Vocabulary</p>
+  <p>Master Physics Module System | No Answer Key Generated Yet</p>
+</footer>
+
+
+</body>
+</html>

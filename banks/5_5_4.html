@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 5.X: [Section Title] - Bank X ([Bank Type])</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <header>
+      <h1>Section 5.5: Sound Waves</h1>
+      <p><strong>Bank 4: Multi-Step Calculations</strong></p>
+      <p>16 Numeric Response Questions | Multi-Step Reasoning Required</p>
+    </header>
+    
+    <div class="bank-section">
+    <div class="bank-header">
+      <h2>Bank 4: Multi-Step Calculations</h2>
+      <div class="bank-info">Use v = 343 m/s unless temperature formula is required. Follow significant figure rules.</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 1 -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Scenario 1: Frequency, Wavelength, and Travel Time</div>
+    
+    <!-- Standard -->
+    <div class="question">
+    <div class="question-number">4.1</div>
+    A sound wave has a frequency of 490 Hz and travels through air. What distance does one full wavelength occupy?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+    </div>
+    
+    <!-- Inverted -->
+    <div class="question">
+    <div class="question-number">4.2</div>
+    Determine how long it takes for 10 wavelengths of a 686 Hz sound to pass a fixed point.
+    <div class="answer-blank"><div class="answer-label">Answer: __________ s</div></div>
+    </div>
+    
+    <!-- Context-rich -->
+    <div class="question">
+    <div class="question-number">4.3</div>
+    A sonar pulse with frequency 343 Hz travels through air toward a wall 51.5 m away. How long does it take for the echo to return to the source?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ s</div></div>
+    </div>
+    
+    <!-- Alternate -->
+    <div class="question">
+    <div class="question-number">4.4</div>
+    A wave with wavelength 0.25 m propagates in air. What is the time required for 20 crests to pass a detector?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ s</div></div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 2 -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Scenario 2: Temperature and Wave Behavior</div>
+    
+    <!-- Standard -->
+    <div class="question">
+    <div class="question-number">4.5</div>
+    The air temperature is 25°C. What is the wavelength of a 500 Hz sound?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+    </div>
+    
+    <!-- Inverted -->
+    <div class="question">
+    <div class="question-number">4.6</div>
+    Find the frequency of a sound wave with wavelength 0.80 m when the temperature is 10°C.
+    <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+    </div>
+    
+    <!-- Context-rich -->
+    <div class="question">
+    <div class="question-number">4.7</div>
+    A weather balloon measures a temperature of -15°C. A radio technician emits a 400 Hz test tone upward. What wavelength does the wave have at that temperature?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+    </div>
+    
+    <!-- Alternate -->
+    <div class="question">
+    <div class="question-number">4.8</div>
+    How far does a 600 Hz sound travel in 0.75 s when the temperature is 20°C?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 3 -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Scenario 3: Doppler Applications</div>
+    
+    <!-- Standard -->
+    <div class="question">
+    <div class="question-number">4.9</div>
+    A 700 Hz siren approaches a stationary observer at 30 m/s. What frequency is detected?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+    </div>
+    
+    <!-- Inverted -->
+    <div class="question">
+    <div class="question-number">4.10</div>
+    Calculate the frequency heard when a 450 Hz source moves away at 20 m/s from a stationary observer.
+    <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+    </div>
+    
+    <!-- Context-rich -->
+    <div class="question">
+    <div class="question-number">4.11</div>
+    An ambulance emits a 600 Hz siren while moving at 25 m/s toward a pedestrian who is walking toward it at 5 m/s. What frequency does the pedestrian hear?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+    </div>
+    
+    <!-- Alternate -->
+    <div class="question">
+    <div class="question-number">4.12</div>
+    An observer runs away from a stationary 800 Hz source at 15 m/s. What frequency does the observer measure?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 4 -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Scenario 4: Fundamental Frequency and Wave Speed</div>
+    
+    <!-- Standard -->
+    <div class="question">
+    <div class="question-number">4.13</div>
+    A string 0.40 m long produces a fundamental tone. What frequency is produced if wave speed is 343 m/s?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+    </div>
+    
+    <!-- Inverted -->
+    <div class="question">
+    <div class="question-number">4.14</div>
+    Determine the length of a string that produces a 256 Hz fundamental tone.
+    <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div>
+    </div>
+    
+    <!-- Context-rich -->
+    <div class="question">
+    <div class="question-number">4.15</div>
+    A guitar technician shortens a string so its length becomes 0.30 m. If the wave speed remains 343 m/s, what new fundamental frequency results?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div>
+    </div>
+    
+    <!-- Alternate -->
+    <div class="question">
+    <div class="question-number">4.16</div>
+    A string produces a 400 Hz fundamental tone. What wave speed must exist along a 0.50 m string?
+    <div class="answer-blank"><div class="answer-label">Answer: __________ m/s</div></div>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+<!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 4: Multi-Step Calculations — Answer Key</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 1 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 1: Frequency, Wavelength, and Travel Time</div>
+  
+      <div class="answer-row">
+        <div>4.1</div>
+        <div>0.700 m</div>
+        <div>
+        Step 1: λ = v / f  
+        λ = 343 / 490 = 0.700 m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.2</div>
+        <div>0.0146 s</div>
+        <div>
+        Step 1: T = 1 / f = 1 / 686 = 0.00146 s  
+        Step 2: Time for 10 wavelengths = 10T  
+        = 10(0.00146) = 0.0146 s
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.3</div>
+        <div>0.300 s</div>
+        <div>
+        Step 1: Round-trip distance = 2(51.5) = 103 m  
+        Step 2: t = d / v = 103 / 343 = 0.300 s
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.4</div>
+        <div>0.0146 s</div>
+        <div>
+        Step 1: f = v / λ = 343 / 0.25 = 1372 Hz  
+        Step 2: T = 1 / f = 1 / 1372 = 0.000729 s  
+        Step 3: Time for 20 crests = 20T  
+        = 20(0.000729) = 0.0146 s
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 2 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 2: Temperature and Wave Behavior</div>
+  
+      <div class="answer-row">
+        <div>4.5</div>
+        <div>0.698 m</div>
+        <div>
+        Step 1: v = 331 + 0.6(25) = 346 m/s  
+        Step 2: λ = v / f = 346 / 500 = 0.692 m  
+        (3 sig figs → 0.692 m)
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.6</div>
+        <div>419 Hz</div>
+        <div>
+        Step 1: v = 331 + 0.6(10) = 337 m/s  
+        Step 2: f = v / λ = 337 / 0.80 = 421 Hz  
+        (3 sig figs → 421 Hz)
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.7</div>
+        <div>0.840 m</div>
+        <div>
+        Step 1: v = 331 + 0.6(-15) = 322 m/s  
+        Step 2: λ = v / f = 322 / 400 = 0.805 m  
+        (3 sig figs → 0.805 m)
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.8</div>
+        <div>257 m</div>
+        <div>
+        Step 1: v = 331 + 0.6(20) = 343 m/s  
+        Step 2: d = vt = 343(0.75) = 257 m
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 3 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 3: Doppler Applications</div>
+  
+      <div class="answer-row">
+        <div>4.9</div>
+        <div>764 Hz</div>
+        <div>
+        f' = 700(343 / (343 − 30))  
+        = 700(343 / 313)  
+        = 764 Hz
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.10</div>
+        <div>425 Hz</div>
+        <div>
+        f' = 450(343 / (343 + 20))  
+        = 450(343 / 363)  
+        = 425 Hz
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.11</div>
+        <div>653 Hz</div>
+        <div>
+        f' = 600((343 + 5) / (343 − 25))  
+        = 600(348 / 318)  
+        = 657 Hz
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.12</div>
+        <div>765 Hz</div>
+        <div>
+        f' = 800((343 − 15) / 343)  
+        = 800(328 / 343)  
+        = 765 Hz
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 4 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 4: Fundamental Frequency</div>
+  
+      <div class="answer-row">
+        <div>4.13</div>
+        <div>429 Hz</div>
+        <div>
+        f₁ = v / (2L)  
+        = 343 / (2 × 0.40)  
+        = 343 / 0.80  
+        = 429 Hz
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.14</div>
+        <div>0.670 m</div>
+        <div>
+        L = v / (2f)  
+        = 343 / (2 × 256)  
+        = 343 / 512  
+        = 0.670 m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.15</div>
+        <div>572 Hz</div>
+        <div>
+        f₁ = 343 / (2 × 0.30)  
+        = 343 / 0.60  
+        = 572 Hz
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.16</div>
+        <div>400 m/s</div>
+        <div>
+        v = 2Lf  
+        = 2(0.50)(400)  
+        = 400 m/s
+        </div>
+      </div>
+  
+    </div>
+  
+  </div><!-- end answer-key -->
+
+    <footer>
+    Section 5.5 – Sound Waves | Bank 4: Multi-Step Calculations
+    </footer>
+    
+    </div>
+    </body>
+    </html>

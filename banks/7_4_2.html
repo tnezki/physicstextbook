@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 7.4: Ohm’s Law and Circuit Analysis - Bank 2 (Conceptual Questions)</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <h1>Section 7.4: Ohm’s Law and Circuit Analysis</h1>
+  <p><strong>Bank 2: Conceptual Questions</strong></p>
+  <p>Application and Reasoning | No Calculations</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+  <h2>Conceptual Understanding</h2>
+  <div class="bank-info">Multiple Choice (A–E)</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- QUESTION 2.1 -->
+<!-- ============================================================ -->
+
+<div class="question-block">
+  <div class="question-number">2.1</div>
+  <div class="question-text">
+    A circuit contains a fixed resistor connected to a battery. If the battery voltage increases while the resistance remains constant, what happens to the current?
+  </div>
+  <div class="answer-option"><strong>A)</strong> It decreases</div>
+  <div class="answer-option"><strong>B)</strong> It increases</div>
+  <div class="answer-option"><strong>C)</strong> It remains the same</div>
+  <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> It reverses direction</div>
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- QUESTION 2.2 -->
+<!-- ============================================================ -->
+
+<div class="question-block">
+    <div class="question-number">2.2</div>
+    <div class="question-text">
+      In a series circuit containing two resistors, how does adding a third identical resistor affect total resistance?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It decreases</div>
+    <div class="answer-option"><strong>B)</strong> It remains the same</div>
+    <div class="answer-option"><strong>C)</strong> It increases</div>
+    <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> It oscillates</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.3 (Inverted) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.3</div>
+    <div class="question-text">
+      Determine what happens to total resistance in a parallel circuit when an additional branch is added.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It increases</div>
+    <div class="answer-option"><strong>B)</strong> It decreases</div>
+    <div class="answer-option"><strong>C)</strong> It remains constant</div>
+    <div class="answer-option"><strong>D)</strong> It becomes infinite</div>
+    <div class="answer-option"><strong>E)</strong> It reverses polarity</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.4 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.4</div>
+    <div class="question-text">
+      In a parallel circuit, what happens to the current in the main line when more branches are added?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It decreases</div>
+    <div class="answer-option"><strong>B)</strong> It increases</div>
+    <div class="answer-option"><strong>C)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> It reverses direction</div>
+    <div class="answer-option"><strong>E)</strong> It remains unchanged</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.5 (Context-Rich) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.5</div>
+    <div class="question-text">
+      A student replaces a 5 Ω resistor in a simple series circuit with a 10 Ω resistor while keeping the same battery. What happens to the brightness of the bulb?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It becomes brighter</div>
+    <div class="answer-option"><strong>B)</strong> It becomes dimmer</div>
+    <div class="answer-option"><strong>C)</strong> It remains unchanged</div>
+    <div class="answer-option"><strong>D)</strong> It turns off permanently</div>
+    <div class="answer-option"><strong>E)</strong> It flashes repeatedly</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.6 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.6</div>
+    <div class="question-text">
+      Which statement best explains why household circuits are wired in parallel?
+    </div>
+    <div class="answer-option"><strong>A)</strong> So total resistance increases</div>
+    <div class="answer-option"><strong>B)</strong> So each device receives the same voltage</div>
+    <div class="answer-option"><strong>C)</strong> So current is identical everywhere</div>
+    <div class="answer-option"><strong>D)</strong> So power becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> So voltage doubles automatically</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.7 (Inverted) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.7</div>
+    <div class="question-text">
+      Explain why increasing resistance in a circuit decreases current when voltage remains constant.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Because V = IR</div>
+    <div class="answer-option"><strong>B)</strong> Because I = Q/t</div>
+    <div class="answer-option"><strong>C)</strong> Because E = QV</div>
+    <div class="answer-option"><strong>D)</strong> Because resistance adds in parallel</div>
+    <div class="answer-option"><strong>E)</strong> Because voltage becomes zero</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.8 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.8</div>
+    <div class="question-text">
+      In a series circuit, if one component fails, the current:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Continues through other components</div>
+    <div class="answer-option"><strong>B)</strong> Stops entirely</div>
+    <div class="answer-option"><strong>C)</strong> Doubles</div>
+    <div class="answer-option"><strong>D)</strong> Decreases slightly</div>
+    <div class="answer-option"><strong>E)</strong> Reverses</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.9 (Context-Rich) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.9</div>
+    <div class="question-text">
+      A home circuit has multiple appliances plugged into different outlets. One appliance is unplugged. What happens to the others?
+    </div>
+    <div class="answer-option"><strong>A)</strong> They all stop working</div>
+    <div class="answer-option"><strong>B)</strong> They continue operating normally</div>
+    <div class="answer-option"><strong>C)</strong> Their voltage doubles</div>
+    <div class="answer-option"><strong>D)</strong> Their resistance becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Their current reverses</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.10 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.10</div>
+    <div class="question-text">
+      When two resistors are connected in parallel, the total resistance is:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Greater than both</div>
+    <div class="answer-option"><strong>B)</strong> Less than the smallest</div>
+    <div class="answer-option"><strong>C)</strong> Equal to their sum</div>
+    <div class="answer-option"><strong>D)</strong> Infinite</div>
+    <div class="answer-option"><strong>E)</strong> Zero</div>
+  </div>
+
+  <!-- ============================================================ -->
+<!-- QUESTION 2.11 -->
+<!-- ============================================================ -->
+
+<div class="question-block">
+    <div class="question-number">2.11</div>
+    <div class="question-text">
+      In a series circuit, voltage across each resistor depends on:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Total resistance only</div>
+    <div class="answer-option"><strong>B)</strong> Individual resistance values</div>
+    <div class="answer-option"><strong>C)</strong> Current only</div>
+    <div class="answer-option"><strong>D)</strong> Battery size only</div>
+    <div class="answer-option"><strong>E)</strong> Wire color</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.12 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.12</div>
+    <div class="question-text">
+      If total resistance increases while voltage remains constant, total current:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Increases</div>
+    <div class="answer-option"><strong>B)</strong> Decreases</div>
+    <div class="answer-option"><strong>C)</strong> Remains unchanged</div>
+    <div class="answer-option"><strong>D)</strong> Becomes infinite</div>
+    <div class="answer-option"><strong>E)</strong> Doubles</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.13 (Inverted) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.13</div>
+    <div class="question-text">
+      Determine why adding resistors in series reduces the overall current supplied by a battery.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Because voltage increases</div>
+    <div class="answer-option"><strong>B)</strong> Because total resistance increases</div>
+    <div class="answer-option"><strong>C)</strong> Because charge disappears</div>
+    <div class="answer-option"><strong>D)</strong> Because energy doubles</div>
+    <div class="answer-option"><strong>E)</strong> Because resistance cancels</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.14 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.14</div>
+    <div class="question-text">
+      In a parallel circuit, each branch has:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Different voltage</div>
+    <div class="answer-option"><strong>B)</strong> Same voltage</div>
+    <div class="answer-option"><strong>C)</strong> Same resistance</div>
+    <div class="answer-option"><strong>D)</strong> Zero current</div>
+    <div class="answer-option"><strong>E)</strong> Infinite resistance</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.15 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.15</div>
+    <div class="question-text">
+      If one resistor is removed from a parallel circuit, total resistance:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Decreases</div>
+    <div class="answer-option"><strong>B)</strong> Increases</div>
+    <div class="answer-option"><strong>C)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> Remains constant</div>
+    <div class="answer-option"><strong>E)</strong> Doubles automatically</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.16 (Context-Rich) -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.16</div>
+    <div class="question-text">
+      A student wires two identical light bulbs in series instead of parallel. Compared to a single bulb, how will their brightness change?
+    </div>
+    <div class="answer-option"><strong>A)</strong> Both become brighter</div>
+    <div class="answer-option"><strong>B)</strong> Both become dimmer</div>
+    <div class="answer-option"><strong>C)</strong> One becomes brighter</div>
+    <div class="answer-option"><strong>D)</strong> No change</div>
+    <div class="answer-option"><strong>E)</strong> They explode</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.17 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.17</div>
+    <div class="question-text">
+      In a parallel circuit, total current equals:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Current in one branch</div>
+    <div class="answer-option"><strong>B)</strong> Sum of branch currents</div>
+    <div class="answer-option"><strong>C)</strong> Voltage divided by zero</div>
+    <div class="answer-option"><strong>D)</strong> Resistance only</div>
+    <div class="answer-option"><strong>E)</strong> Battery current minus resistance</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.18 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.18</div>
+    <div class="question-text">
+      The main reason resistance causes heating in a conductor is:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Magnetic reversal</div>
+    <div class="answer-option"><strong>B)</strong> Energy conversion to thermal energy</div>
+    <div class="answer-option"><strong>C)</strong> Voltage cancellation</div>
+    <div class="answer-option"><strong>D)</strong> Current disappearance</div>
+    <div class="answer-option"><strong>E)</strong> Charge accumulation</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.19 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.19</div>
+    <div class="question-text">
+      Ohm’s Law describes the relationship between:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Energy and time</div>
+    <div class="answer-option"><strong>B)</strong> Voltage, current, and resistance</div>
+    <div class="answer-option"><strong>C)</strong> Charge and mass</div>
+    <div class="answer-option"><strong>D)</strong> Current and temperature only</div>
+    <div class="answer-option"><strong>E)</strong> Voltage and power only</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.20 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.20</div>
+    <div class="question-text">
+      If voltage across a resistor doubles and resistance remains constant, current:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Doubles</div>
+    <div class="answer-option"><strong>B)</strong> Halves</div>
+    <div class="answer-option"><strong>C)</strong> Remains constant</div>
+    <div class="answer-option"><strong>D)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Decreases slightly</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.21 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.21</div>
+    <div class="question-text">
+      In a series circuit, total resistance is:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Less than smallest resistor</div>
+    <div class="answer-option"><strong>B)</strong> Equal to sum of resistances</div>
+    <div class="answer-option"><strong>C)</strong> Equal to voltage</div>
+    <div class="answer-option"><strong>D)</strong> Zero</div>
+    <div class="answer-option"><strong>E)</strong> Infinite</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- QUESTION 2.22 -->
+  <!-- ============================================================ -->
+  
+  <div class="question-block">
+    <div class="question-number">2.22</div>
+    <div class="question-text">
+      In a parallel circuit, adding additional branches generally causes total current to:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Decrease</div>
+    <div class="answer-option"><strong>B)</strong> Increase</div>
+    <div class="answer-option"><strong>C)</strong> Become zero</div>
+    <div class="answer-option"><strong>D)</strong> Reverse</div>
+    <div class="answer-option"><strong>E)</strong> Stay constant</div>
+  </div>
+
+  <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+    <div class="answer-row">
+      <div>2.1</div>
+      <div>B</div>
+      <div>Higher voltage with constant resistance increases current</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.2</div>
+      <div>C</div>
+      <div>Adding series resistors increases total resistance</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.3</div>
+      <div>B</div>
+      <div>Adding parallel branch decreases total resistance</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.4</div>
+      <div>B</div>
+      <div>More branches → more total current</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.5</div>
+      <div>B</div>
+      <div>Higher resistance lowers current and brightness</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.6</div>
+      <div>B</div>
+      <div>Parallel wiring ensures equal voltage to each device</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.7</div>
+      <div>A</div>
+      <div>Ohm’s Law: increasing R lowers I when V constant</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.8</div>
+      <div>B</div>
+      <div>Open component stops series circuit</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.9</div>
+      <div>B</div>
+      <div>Parallel branches operate independently</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.10</div>
+      <div>B</div>
+      <div>Total resistance in parallel is less than smallest branch</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.11</div>
+      <div>B</div>
+      <div>Voltage division depends on individual resistances</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.12</div>
+      <div>B</div>
+      <div>Increasing resistance reduces current</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.13</div>
+      <div>B</div>
+      <div>Series resistances increase total resistance</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.14</div>
+      <div>B</div>
+      <div>Parallel branches share same voltage</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.15</div>
+      <div>B</div>
+      <div>Removing branch increases total resistance</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.16</div>
+      <div>B</div>
+      <div>Series bulbs share voltage → dimmer</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.17</div>
+      <div>B</div>
+      <div>Total current equals sum of branch currents</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.18</div>
+      <div>B</div>
+      <div>Electrical energy converts to thermal energy</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.19</div>
+      <div>B</div>
+      <div>Ohm’s Law relates V, I, and R</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.20</div>
+      <div>A</div>
+      <div>Doubling voltage doubles current (R constant)</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.21</div>
+      <div>B</div>
+      <div>Series resistance equals sum</div>
+    </div>
+  
+    <div class="answer-row">
+      <div>2.22</div>
+      <div>B</div>
+      <div>More branches increase total current demand</div>
+    </div>
+  
+  </div>
+
+<footer>
+Section 7.4 – Ohm’s Law and Circuit Analysis | Bank 2
+</footer>
+
+</div>
+</body>
+</html>

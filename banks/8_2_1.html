@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.2 Bank 1</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.2: Measuring and Analyzing Circuit Behavior</h1>
+    <p><strong>Bank 1: Vocabulary Assessment</strong></p>
+    <p>Multiple Choice | Vocabulary Mastery</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <!-- ============================================================ -->
+    <!-- TERM 1: MULTIMETER -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Multimeter (1.1 – 1.4)</div>
+    <div class="term-definition">
+    An instrument that can measure voltage, current, and resistance in circuits.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.1</div>
+    A multimeter is best described as:
+    <div class="answer-option"><strong>A)</strong> A device that generates voltage</div>
+    <div class="answer-option"><strong>B)</strong> An instrument used to measure electrical quantities</div>
+    <div class="answer-option"><strong>C)</strong> A source of electric current</div>
+    <div class="answer-option"><strong>D)</strong> A type of resistor</div>
+    <div class="answer-option"><strong>E)</strong> A power supply</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.2</div>
+    Which quantity can be measured using a multimeter?
+    <div class="answer-option"><strong>A)</strong> Voltage</div>
+    <div class="answer-option"><strong>B)</strong> Current</div>
+    <div class="answer-option"><strong>C)</strong> Resistance</div>
+    <div class="answer-option"><strong>D)</strong> All of the above</div>
+    <div class="answer-option"><strong>E)</strong> Mechanical energy</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.3</div>
+    To measure current with a multimeter, it must be connected:
+    <div class="answer-option"><strong>A)</strong> In parallel</div>
+    <div class="answer-option"><strong>B)</strong> In series</div>
+    <div class="answer-option"><strong>C)</strong> Across the battery only</div>
+    <div class="answer-option"><strong>D)</strong> Without breaking the circuit</div>
+    <div class="answer-option"><strong>E)</strong> Directly to ground</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">1.4</div>
+    If a multimeter reads zero resistance across a wire, this most likely indicates:
+    <div class="answer-option"><strong>A)</strong> The wire is broken</div>
+    <div class="answer-option"><strong>B)</strong> The wire has very low resistance</div>
+    <div class="answer-option"><strong>C)</strong> The battery is removed</div>
+    <div class="answer-option"><strong>D)</strong> The voltage is high</div>
+    <div class="answer-option"><strong>E)</strong> The circuit is open</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 2: OHMIC MATERIALS -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Ohmic materials (2.1 – 2.4)</div>
+    <div class="term-definition">
+    Materials that obey Ohm's Law; resistance remains constant over a range of voltages.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.1</div>
+    Ohmic materials are characterized by:
+    <div class="answer-option"><strong>A)</strong> Changing resistance with voltage</div>
+    <div class="answer-option"><strong>B)</strong> Constant resistance over a range of voltages</div>
+    <div class="answer-option"><strong>C)</strong> Zero current flow</div>
+    <div class="answer-option"><strong>D)</strong> Infinite voltage</div>
+    <div class="answer-option"><strong>E)</strong> No measurable resistance</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.2</div>
+    A graph of voltage vs. current for an ohmic material is:
+    <div class="answer-option"><strong>A)</strong> Curved</div>
+    <div class="answer-option"><strong>B)</strong> Horizontal</div>
+    <div class="answer-option"><strong>C)</strong> A straight line through the origin</div>
+    <div class="answer-option"><strong>D)</strong> Vertical</div>
+    <div class="answer-option"><strong>E)</strong> Random</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.3</div>
+    If voltage doubles across an ohmic resistor, the current:
+    <div class="answer-option"><strong>A)</strong> Remains the same</div>
+    <div class="answer-option"><strong>B)</strong> Doubles</div>
+    <div class="answer-option"><strong>C)</strong> Is cut in half</div>
+    <div class="answer-option"><strong>D)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Reverses direction</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">2.4</div>
+    Which device is most likely made of an ohmic material?
+    <div class="answer-option"><strong>A)</strong> A standard metal resistor</div>
+    <div class="answer-option"><strong>B)</strong> A light bulb filament at high temperature</div>
+    <div class="answer-option"><strong>C)</strong> A diode</div>
+    <div class="answer-option"><strong>D)</strong> A battery</div>
+    <div class="answer-option"><strong>E)</strong> A solar panel</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 3: RESISTANCE MEASUREMENT -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Resistance measurement (3.1 – 3.4)</div>
+    <div class="term-definition">
+    The process of using an ohmmeter to determine the resistance of a component or circuit.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.1</div>
+    Resistance measurement is performed using:
+    <div class="answer-option"><strong>A)</strong> A voltmeter</div>
+    <div class="answer-option"><strong>B)</strong> An ammeter</div>
+    <div class="answer-option"><strong>C)</strong> An ohmmeter</div>
+    <div class="answer-option"><strong>D)</strong> A power supply</div>
+    <div class="answer-option"><strong>E)</strong> A capacitor</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.2</div>
+    Before measuring resistance in a circuit, the power source should be:
+    <div class="answer-option"><strong>A)</strong> Increased</div>
+    <div class="answer-option"><strong>B)</strong> Left on</div>
+    <div class="answer-option"><strong>C)</strong> Removed or turned off</div>
+    <div class="answer-option"><strong>D)</strong> Reversed</div>
+    <div class="answer-option"><strong>E)</strong> Short-circuited</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.3</div>
+    If an ohmmeter reads very high resistance across a component, this may indicate:
+    <div class="answer-option"><strong>A)</strong> A short circuit</div>
+    <div class="answer-option"><strong>B)</strong> An open circuit</div>
+    <div class="answer-option"><strong>C)</strong> Zero voltage</div>
+    <div class="answer-option"><strong>D)</strong> High current</div>
+    <div class="answer-option"><strong>E)</strong> Increased efficiency</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.4</div>
+    Measuring resistance directly with a multimeter provides information about:
+    <div class="answer-option"><strong>A)</strong> Power consumption</div>
+    <div class="answer-option"><strong>B)</strong> Energy transfer rate</div>
+    <div class="answer-option"><strong>C)</strong> Opposition to current flow</div>
+    <div class="answer-option"><strong>D)</strong> Charge per second</div>
+    <div class="answer-option"><strong>E)</strong> Voltage supply</div>
+    </div>
+    
+    </div>
+    
+    <footer>
+    Section 8.2 – Measuring and Analyzing Circuit Behavior | Bank 1
+    </footer>
+    
+    </div>
+
+<!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 1: Vocabulary Assessment — Answer Key</strong></p>
+  
+  <!-- Multimeter -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Multimeter (Questions 1.1–1.4)
+  </div>
+  
+  <div class="answer-row"><div>1.1</div><div>B</div><div>Measures electrical quantities</div></div>
+  <div class="answer-row"><div>1.2</div><div>D</div><div>Measures voltage, current, and resistance</div></div>
+  <div class="answer-row"><div>1.3</div><div>B</div><div>Ammeter function requires series connection</div></div>
+  <div class="answer-row"><div>1.4</div><div>B</div><div>Zero resistance indicates very low resistance</div></div>
+  
+  </div>
+  
+  <!-- Ohmic materials -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Ohmic materials (Questions 2.1–2.4)
+  </div>
+  
+  <div class="answer-row"><div>2.1</div><div>B</div><div>Resistance remains constant</div></div>
+  <div class="answer-row"><div>2.2</div><div>C</div><div>Linear V–I relationship through origin</div></div>
+  <div class="answer-row"><div>2.3</div><div>B</div><div>Current doubles when voltage doubles</div></div>
+  <div class="answer-row"><div>2.4</div><div>A</div><div>Metal resistors are typically ohmic</div></div>
+  
+  </div>
+  
+  <!-- Resistance measurement -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Resistance measurement (Questions 3.1–3.4)
+  </div>
+  
+  <div class="answer-row"><div>3.1</div><div>C</div><div>Ohmmeter measures resistance</div></div>
+  <div class="answer-row"><div>3.2</div><div>C</div><div>Power must be removed before measuring resistance</div></div>
+  <div class="answer-row"><div>3.3</div><div>B</div><div>High resistance suggests open circuit</div></div>
+  <div class="answer-row"><div>3.4</div><div>C</div><div>Resistance is opposition to current flow</div></div>
+  
+  </div>
+  
+  </div>
+
+</body>
+</html>

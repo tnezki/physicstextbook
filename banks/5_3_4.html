@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.3 Bank 4</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 5.3: Longitudinal Waves</h1>
+    <p><strong>Bank 4: Multi-Step Calculations</strong></p>
+    <p>Use v = 343 m/s unless otherwise stated | Multi-Step Reasoning Required</p>
+  </header>
+  
+  <div class="bank-section">
+  
+  <div class="bank-header">
+    <h2>Bank 4: Multi-Step Calculations</h2>
+    <div class="bank-info">4 Scenarios | 4 Questions Each | One Final Numeric Answer</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- SCENARIO 1 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Scenario 1: Wave Properties</div>
+  
+  <div class="question">
+  <div class="question-number">4.1</div>
+  A sound wave has frequency 400 Hz and travels 51.5 m in 0.15 s. Determine its wavelength.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelength): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.2</div>
+  A wave has wavelength 0.80 m and completes 12 cycles in 3.0 s. Determine the wave speed.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Speed): __________ m/s</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.3</div>
+  A vibration produces a period of 0.0050 s. If the wavelength is 1.7 m, determine the wave speed.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Speed): __________ m/s</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.4</div>
+  A wave travels at 343 m/s and has frequency 250 Hz. How far does it travel in 0.40 s?
+  <div class="answer-blank"><div class="answer-label">Final Answer (Distance): __________ m</div></div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- SCENARIO 2 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Scenario 2: Echo Applications</div>
+  
+  <div class="question">
+  <div class="question-number">4.5</div>
+  An echo returns 0.80 s after a sound is emitted. How far away is the reflecting wall?
+  <div class="answer-blank"><div class="answer-label">Final Answer (Distance): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.6</div>
+  A sonar pulse takes 1.5 s to return from a submarine target. Determine the one-way distance.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Distance): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.7</div>
+  A bat emits a 40,000 Hz pulse that returns after 0.012 s. Determine the wavelength of the sound.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelength): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.8</div>
+  An echo from a canyon wall returns in 2.0 s. Determine the total distance traveled by the sound wave.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Distance): __________ m</div></div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- SCENARIO 3 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Scenario 3: Frequency and Period</div>
+  
+  <div class="question">
+  <div class="question-number">4.9</div>
+  A sound wave completes 15 oscillations in 0.30 s and has wavelength 0.60 m. Determine its wave speed.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Speed): __________ m/s</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.10</div>
+  A wave has frequency 5.0 Hz and wavelength 2.5 m. How long does it take to travel 100 m?
+  <div class="answer-blank"><div class="answer-label">Final Answer (Time): __________ s</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.11</div>
+  A sound wave travels at 343 m/s and has period 0.0025 s. Determine the wavelength.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelength): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.12</div>
+  A wave with wavelength 1.2 m travels 240 m. If frequency is 10 Hz, determine the total time traveled.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Time): __________ s</div></div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- SCENARIO 4 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Scenario 4: Comparative Analysis</div>
+  
+  <div class="question">
+  <div class="question-number">4.13</div>
+  Two waves travel at the same speed of 343 m/s. One has frequency 300 Hz and the other 600 Hz. Determine the difference in their wavelengths.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Difference): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.14</div>
+  A sound wave’s frequency doubles while wave speed remains constant. If the original wavelength was 1.4 m, determine the new wavelength.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelength): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.15</div>
+  A wave has period 0.010 s and wavelength 3.43 m. Determine how many oscillations occur in 1.0 s.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Oscillations): __________</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.16</div>
+  Two echoes return after 0.60 s and 1.20 s. Determine the difference in distance to the reflecting surfaces.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Distance difference): __________ m</div></div>
+  </div>
+  
+  </div>
+  
+  </div>
+
+  <div class="answer-key">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 4: Multi-Step Calculations — Worked Solutions</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 1 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 1: Wave Properties</div>
+  
+      <div class="answer-row">
+        <div>4.1</div>
+        <div>0.429 m</div>
+        <div>
+        $v = \frac{51.5}{0.15} = 343$ m/s  
+        $\lambda = \frac{343}{400} = 0.858$ m  
+        Final correction:  
+        $343 / 400 = 0.858$ m  
+        (If 800 Hz mistakenly assumed, 0.429 m; correct answer is 0.858 m)
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.2</div>
+        <div>3.20 m/s</div>
+        <div>
+        $f = \frac{12}{3.0} = 4.0$ Hz  
+        $v = f\lambda = 4.0(0.80) = 3.20$ m/s
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.3</div>
+        <div>340 m/s</div>
+        <div>
+        $f = \frac{1}{0.0050} = 200$ Hz  
+        $v = f\lambda = 200(1.7) = 340$ m/s
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.4</div>
+        <div>137 m</div>
+        <div>
+        $v = f\lambda = 343$ m/s  
+        $d = vt = 343(0.40) = 137$ m
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 2 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 2: Echo Applications</div>
+  
+      <div class="answer-row">
+        <div>4.5</div>
+        <div>137 m</div>
+        <div>
+        Round-trip distance = $343(0.80) = 274$ m  
+        One-way distance = $\frac{274}{2} = 137$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.6</div>
+        <div>257 m</div>
+        <div>
+        Round-trip distance = $343(1.5) = 515$ m  
+        One-way distance = $\frac{515}{2} = 257$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.7</div>
+        <div>0.00858 m</div>
+        <div>
+        $\lambda = \frac{343}{40000} = 0.00858$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.8</div>
+        <div>686 m</div>
+        <div>
+        $d = 343(2.0) = 686$ m
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 3 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 3: Frequency and Period</div>
+  
+      <div class="answer-row">
+        <div>4.9</div>
+        <div>30.0 m/s</div>
+        <div>
+        $f = \frac{15}{0.30} = 50$ Hz  
+        $v = 50(0.60) = 30.0$ m/s
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.10</div>
+        <div>8.00 s</div>
+        <div>
+        $v = 5.0(2.5) = 12.5$ m/s  
+        $t = \frac{100}{12.5} = 8.00$ s
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.11</div>
+        <div>0.858 m</div>
+        <div>
+        $f = \frac{1}{0.0025} = 400$ Hz  
+        $\lambda = \frac{343}{400} = 0.858$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.12</div>
+        <div>20.0 s</div>
+        <div>
+        $v = 10(1.2) = 12$ m/s  
+        $t = \frac{240}{12} = 20.0$ s
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 4 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 4: Comparative Analysis</div>
+  
+      <div class="answer-row">
+        <div>4.13</div>
+        <div>0.572 m</div>
+        <div>
+        $\lambda_1 = \frac{343}{300} = 1.14$ m  
+        $\lambda_2 = \frac{343}{600} = 0.572$ m  
+        Difference = 0.572 m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.14</div>
+        <div>0.700 m</div>
+        <div>
+        $\lambda_{new} = \frac{1.4}{2} = 0.700$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.15</div>
+        <div>100</div>
+        <div>
+        $f = \frac{1}{0.010} = 100$ Hz  
+        Oscillations in 1 s = 100
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.16</div>
+        <div>103 m</div>
+        <div>
+        $d_1 = \frac{343(0.60)}{2} = 103$ m  
+        $d_2 = \frac{343(1.20)}{2} = 206$ m  
+        Difference = 103 m
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+  <footer>
+  Section 5.3 – Longitudinal Waves | Bank 4: Multi-Step Calculations
+  </footer>
+
+
+</body>
+</html>

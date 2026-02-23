@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.4 Bank 3</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 5.4: Wave Properties and Behavior</h1>
+    <p><strong>Bank 3: Single-Step Calculations</strong></p>
+    <p>Use v = 343 m/s unless otherwise stated | 2–3 significant figures</p>
+  </header>
+  
+  <div class="bank-section">
+  
+  <div class="bank-header">
+    <h2>Bank 3: Single-Step Calculations</h2>
+    <div class="bank-info">7 Formula Groups | 4 Questions Each</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- 1. Standing Wave on a String -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Standing Wave on a String (nth Harmonic)</div>
+  <div class="formula-display">
+  $$\lambda_n = \frac{2L}{n}$$
+  </div>
+  
+  <div class="question"><div class="question-number">3.1</div>
+  A 1.20 m string vibrates in the second harmonic. What is the wavelength?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  <div class="question"><div class="question-number">3.2</div>
+  Find the wavelength of the third harmonic on a 0.90 m string.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  <div class="question"><div class="question-number">3.3</div>
+  A 2.0 m string vibrates in the first harmonic. Determine the wavelength.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  <div class="question"><div class="question-number">3.4</div>
+  Determine the wavelength for the fourth harmonic on a 1.50 m string.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- 2. Open–Open Air Column (nth) -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Open–Open Air Column (nth Harmonic)</div>
+  <div class="formula-display">
+  $$f_n = \frac{nv}{2L}$$
+  </div>
+  
+  <div class="question"><div class="question-number">3.5</div>
+  An open–open pipe 0.85 m long vibrates in the second harmonic. What is the frequency?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.6</div>
+  A 1.0 m open–open pipe vibrates in the third harmonic. Determine the frequency.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.7</div>
+  Find the fourth harmonic frequency of a 0.60 m open–open pipe.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.8</div>
+  A 2.0 m open–open air column vibrates in the second harmonic. Determine the frequency.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- 3. Open–Open Fundamental -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Open–Open Air Column (Fundamental)</div>
+  <div class="formula-display">
+  $$f_1 = \frac{v}{2L}$$
+  </div>
+  
+  <div class="question"><div class="question-number">3.9</div>
+  What is the fundamental frequency of a 1.0 m open–open pipe?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.10</div>
+  Determine the fundamental frequency of a 0.75 m open–open pipe.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.11</div>
+  A 1.25 m open–open pipe produces its fundamental tone. Find the frequency.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.12</div>
+  Find the fundamental frequency of a 2.5 m open–open air column.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- 4. Open–Closed Air Column (nth) -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Open–Closed Air Column (nth Harmonic)</div>
+  <div class="formula-display">
+  $$f_n = \frac{nv}{4L} \quad (n = 1,3,5...)$$
+  </div>
+  
+  <div class="question"><div class="question-number">3.13</div>
+  An open–closed pipe 1.0 m long vibrates in the third harmonic. Determine the frequency.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.14</div>
+  A 0.80 m open–closed pipe vibrates in the fifth harmonic. Find the frequency.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.15</div>
+  Determine the third harmonic frequency of a 1.25 m open–closed pipe.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.16</div>
+  Find the fifth harmonic frequency of a 0.60 m open–closed pipe.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- 5. Open–Closed Fundamental -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Open–Closed Air Column (Fundamental)</div>
+  <div class="formula-display">
+  $$f_1 = \frac{v}{4L}$$
+  </div>
+  
+  <div class="question"><div class="question-number">3.17</div>
+  What is the fundamental frequency of a 1.0 m open–closed pipe?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.18</div>
+  Determine the fundamental frequency of a 0.75 m open–closed pipe.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.19</div>
+  A 1.5 m open–closed pipe vibrates in its fundamental mode. Find the frequency.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  <div class="question"><div class="question-number">3.20</div>
+  Find the fundamental frequency of a 2.0 m open–closed air column.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ Hz</div></div></div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- 6. Constructive Interference -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Constructive Interference</div>
+  <div class="formula-display">
+  $$\Delta x = n\lambda$$
+  </div>
+  
+  <div class="question"><div class="question-number">3.21</div>
+  What path difference produces the first constructive interference for λ = 0.80 m?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  <div class="question"><div class="question-number">3.22</div>
+  Determine the path difference for the second constructive maximum when λ = 1.2 m.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  <div class="question"><div class="question-number">3.23</div>
+  Find the path difference for the third constructive maximum when λ = 0.50 m.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  <div class="question"><div class="question-number">3.24</div>
+  Determine the path difference for the fourth constructive maximum if λ = 2.0 m.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- 7. Destructive Interference -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Destructive Interference</div>
+  <div class="formula-display">
+  $$\Delta x = \left(n + \frac{1}{2}\right)\lambda$$
+  </div>
+  
+  <div class="question"><div class="question-number">3.25</div>
+  What path difference produces the first destructive interference for λ = 1.0 m?
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  <div class="question"><div class="question-number">3.26</div>
+  Determine the path difference for the second destructive minimum when λ = 0.60 m.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  <div class="question"><div class="question-number">3.27</div>
+  Find the path difference for the third destructive minimum when λ = 1.2 m.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  <div class="question"><div class="question-number">3.28</div>
+  Determine the path difference for the fourth destructive minimum when λ = 0.80 m.
+  <div class="answer-blank"><div class="answer-label">Answer: __________ m</div></div></div>
+  
+  </div>
+  
+  </div>
+  
+  <div class="answer-key">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 3: Single-Step Calculations — Worked Solutions</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- 1. Standing Wave on a String -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Standing Wave on a String (nth Harmonic)</div>
+  
+      <div class="answer-row"><div>3.1</div><div>1.20 m</div><div>$\lambda = \frac{2(1.20)}{2} = 1.20$ m</div></div>
+      <div class="answer-row"><div>3.2</div><div>0.600 m</div><div>$\lambda = \frac{2(0.90)}{3} = 0.600$ m</div></div>
+      <div class="answer-row"><div>3.3</div><div>4.00 m</div><div>$\lambda = \frac{2(2.0)}{1} = 4.00$ m</div></div>
+      <div class="answer-row"><div>3.4</div><div>0.750 m</div><div>$\lambda = \frac{2(1.50)}{4} = 0.750$ m</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- 2. Open–Open Air Column (nth Harmonic) -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Open–Open Air Column (nth Harmonic)</div>
+  
+      <div class="answer-row"><div>3.5</div><div>404 Hz</div><div>$f = \frac{2(343)}{2(0.85)} = 404$ Hz</div></div>
+      <div class="answer-row"><div>3.6</div><div>514 Hz</div><div>$f = \frac{3(343)}{2(1.0)} = 514$ Hz</div></div>
+      <div class="answer-row"><div>3.7</div><div>1143 Hz</div><div>$f = \frac{4(343)}{2(0.60)} = 1143$ Hz</div></div>
+      <div class="answer-row"><div>3.8</div><div>343 Hz</div><div>$f = \frac{2(343)}{2(2.0)} = 343$ Hz</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- 3. Open–Open Fundamental -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Open–Open Air Column (Fundamental)</div>
+  
+      <div class="answer-row"><div>3.9</div><div>172 Hz</div><div>$f = \frac{343}{2(1.0)} = 172$ Hz</div></div>
+      <div class="answer-row"><div>3.10</div><div>229 Hz</div><div>$f = \frac{343}{2(0.75)} = 229$ Hz</div></div>
+      <div class="answer-row"><div>3.11</div><div>137 Hz</div><div>$f = \frac{343}{2(1.25)} = 137$ Hz</div></div>
+      <div class="answer-row"><div>3.12</div><div>68.6 Hz</div><div>$f = \frac{343}{2(2.5)} = 68.6$ Hz</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- 4. Open–Closed Air Column (nth Harmonic) -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Open–Closed Air Column (nth Harmonic)</div>
+  
+      <div class="answer-row"><div>3.13</div><div>257 Hz</div><div>$f = \frac{3(343)}{4(1.0)} = 257$ Hz</div></div>
+      <div class="answer-row"><div>3.14</div><div>536 Hz</div><div>$f = \frac{5(343)}{4(0.80)} = 536$ Hz</div></div>
+      <div class="answer-row"><div>3.15</div><div>206 Hz</div><div>$f = \frac{3(343)}{4(1.25)} = 206$ Hz</div></div>
+      <div class="answer-row"><div>3.16</div><div>715 Hz</div><div>$f = \frac{5(343)}{4(0.60)} = 715$ Hz</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- 5. Open–Closed Fundamental -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Open–Closed Air Column (Fundamental)</div>
+  
+      <div class="answer-row"><div>3.17</div><div>85.8 Hz</div><div>$f = \frac{343}{4(1.0)} = 85.8$ Hz</div></div>
+      <div class="answer-row"><div>3.18</div><div>114 Hz</div><div>$f = \frac{343}{4(0.75)} = 114$ Hz</div></div>
+      <div class="answer-row"><div>3.19</div><div>57.2 Hz</div><div>$f = \frac{343}{4(1.5)} = 57.2$ Hz</div></div>
+      <div class="answer-row"><div>3.20</div><div>42.9 Hz</div><div>$f = \frac{343}{4(2.0)} = 42.9$ Hz</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- 6. Constructive Interference -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Constructive Interference</div>
+  
+      <div class="answer-row"><div>3.21</div><div>0.00 m</div><div>$\Delta x = 0\lambda = 0$ m</div></div>
+      <div class="answer-row"><div>3.22</div><div>1.20 m</div><div>$\Delta x = 1\lambda = 1.20$ m</div></div>
+      <div class="answer-row"><div>3.23</div><div>1.50 m</div><div>$\Delta x = 3(0.50) = 1.50$ m</div></div>
+      <div class="answer-row"><div>3.24</div><div>8.00 m</div><div>$\Delta x = 4(2.0) = 8.00$ m</div></div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- 7. Destructive Interference -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Destructive Interference</div>
+  
+      <div class="answer-row"><div>3.25</div><div>0.50 m</div><div>$\Delta x = \frac{1}{2}(1.0) = 0.50$ m</div></div>
+      <div class="answer-row"><div>3.26</div><div>0.90 m</div><div>$\Delta x = \frac{3}{2}(0.60) = 0.90$ m</div></div>
+      <div class="answer-row"><div>3.27</div><div>3.00 m</div><div>$\Delta x = \frac{5}{2}(1.2) = 3.00$ m</div></div>
+      <div class="answer-row"><div>3.28</div><div>2.80 m</div><div>$\Delta x = \frac{7}{2}(0.80) = 2.80$ m</div></div>
+    </div>
+  
+  </div>
+
+  <footer>
+  Section 5.4 – Wave Properties and Behavior | Bank 3: Single-Step Calculations
+  </footer>
+
+
+</body>
+</html>

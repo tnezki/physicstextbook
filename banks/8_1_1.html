@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.1 Bank 1</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <header>
+        <h1>Section 8.1: Energy Transfer in Electric Circuits</h1>
+        <p><strong>Bank 1: Vocabulary Assessment</strong></p>
+        <p>Multiple Choice | Vocabulary Mastery</p>
+        </header>
+        
+        <div class="bank-section">
+        
+        <!-- ============================================================ -->
+        <!-- TERM 1: ELECTRIC CHARGE -->
+        <!-- ============================================================ -->
+        
+        <div class="question-group">
+        <div class="question-group-title">Electric charge (1.1 – 1.4)</div>
+        <div class="term-definition">
+        A fundamental property of matter; measured in coulombs (C).
+        </div>
+        
+        <div class="question">
+        <div class="question-number">1.1</div>
+        Electric charge is defined as:
+        <div class="answer-option"><strong>A)</strong> The rate of energy transfer</div>
+        <div class="answer-option"><strong>B)</strong> A fundamental property of matter</div>
+        <div class="answer-option"><strong>C)</strong> The opposition to current flow</div>
+        <div class="answer-option"><strong>D)</strong> Energy per unit time</div>
+        <div class="answer-option"><strong>E)</strong> The flow of electrons</div>
+        </div>
+        
+        <div class="question">
+        <div class="question-number">1.2</div>
+        The SI unit of electric charge is:
+        <div class="answer-option"><strong>A)</strong> Ampere</div>
+        <div class="answer-option"><strong>B)</strong> Volt</div>
+        <div class="answer-option"><strong>C)</strong> Coulomb</div>
+        <div class="answer-option"><strong>D)</strong> Ohm</div>
+        <div class="answer-option"><strong>E)</strong> Watt</div>
+        </div>
+        
+        <div class="question">
+        <div class="question-number">1.3</div>
+        When charge moves through a conductor, it produces:
+        <div class="answer-option"><strong>A)</strong> Resistance</div>
+        <div class="answer-option"><strong>B)</strong> Voltage</div>
+        <div class="answer-option"><strong>C)</strong> Electric current</div>
+        <div class="answer-option"><strong>D)</strong> Power</div>
+        <div class="answer-option"><strong>E)</strong> Energy loss only</div>
+        </div>
+        
+        <div class="question">
+        <div class="question-number">1.4</div>
+        If more coulombs pass a point in a circuit, the amount of electric charge:
+        <div class="answer-option"><strong>A)</strong> Decreases</div>
+        <div class="answer-option"><strong>B)</strong> Remains zero</div>
+        <div class="answer-option"><strong>C)</strong> Increases</div>
+        <div class="answer-option"><strong>D)</strong> Becomes resistance</div>
+        <div class="answer-option"><strong>E)</strong> Converts to voltage</div>
+        </div>
+        
+        </div>
+        
+        <!-- ============================================================ -->
+        <!-- TERM 2: ELECTRIC CURRENT -->
+        <!-- ============================================================ -->
+        
+        <div class="question-group">
+        <div class="question-group-title">Electric current (2.1 – 2.4)</div>
+        <div class="term-definition">
+        The flow of electric charge through a conductor; measured in amperes (A).
+        </div>
+        
+        <div class="question">
+        <div class="question-number">2.1</div>
+        Electric current is:
+        <div class="answer-option"><strong>A)</strong> Stored energy</div>
+        <div class="answer-option"><strong>B)</strong> The flow of electric charge</div>
+        <div class="answer-option"><strong>C)</strong> Resistance to motion</div>
+        <div class="answer-option"><strong>D)</strong> Energy per charge</div>
+        <div class="answer-option"><strong>E)</strong> Chemical conversion</div>
+        </div>
+        
+        <div class="question">
+        <div class="question-number">2.2</div>
+        Electric current is measured in:
+        <div class="answer-option"><strong>A)</strong> Volts</div>
+        <div class="answer-option"><strong>B)</strong> Ohms</div>
+        <div class="answer-option"><strong>C)</strong> Watts</div>
+        <div class="answer-option"><strong>D)</strong> Amperes</div>
+        <div class="answer-option"><strong>E)</strong> Coulombs</div>
+        </div>
+        
+        <div class="question">
+        <div class="question-number">2.3</div>
+        If more charge passes a point each second, current:
+        <div class="answer-option"><strong>A)</strong> Decreases</div>
+        <div class="answer-option"><strong>B)</strong> Remains constant</div>
+        <div class="answer-option"><strong>C)</strong> Increases</div>
+        <div class="answer-option"><strong>D)</strong> Stops</div>
+        <div class="answer-option"><strong>E)</strong> Reverses automatically</div>
+        </div>
+        
+        <div class="question">
+        <div class="question-number">2.4</div>
+        A break in a circuit will cause electric current to:
+        <div class="answer-option"><strong>A)</strong> Increase</div>
+        <div class="answer-option"><strong>B)</strong> Continue unchanged</div>
+        <div class="answer-option"><strong>C)</strong> Stop flowing</div>
+        <div class="answer-option"><strong>D)</strong> Double</div>
+        <div class="answer-option"><strong>E)</strong> Become voltage</div>
+        </div>
+        
+        </div>
+        
+        <!-- ============================================================ -->
+<!-- TERM 3: VOLTAGE -->
+<!-- ============================================================ -->
+
+<div class="question-group">
+    <div class="question-group-title">Voltage (3.1 – 3.4)</div>
+    <div class="term-definition">
+    The potential difference that drives electric current; measured in volts (V).
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.1</div>
+    Voltage is defined as:
+    <div class="answer-option"><strong>A)</strong> Charge per second</div>
+    <div class="answer-option"><strong>B)</strong> Energy per unit time</div>
+    <div class="answer-option"><strong>C)</strong> Potential difference</div>
+    <div class="answer-option"><strong>D)</strong> Opposition to current</div>
+    <div class="answer-option"><strong>E)</strong> Stored resistance</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.2</div>
+    The SI unit of voltage is:
+    <div class="answer-option"><strong>A)</strong> Ampere</div>
+    <div class="answer-option"><strong>B)</strong> Volt</div>
+    <div class="answer-option"><strong>C)</strong> Ohm</div>
+    <div class="answer-option"><strong>D)</strong> Coulomb</div>
+    <div class="answer-option"><strong>E)</strong> Watt</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.3</div>
+    If voltage increases in a circuit with constant resistance, current:
+    <div class="answer-option"><strong>A)</strong> Decreases</div>
+    <div class="answer-option"><strong>B)</strong> Remains zero</div>
+    <div class="answer-option"><strong>C)</strong> Increases</div>
+    <div class="answer-option"><strong>D)</strong> Stops</div>
+    <div class="answer-option"><strong>E)</strong> Reverses</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.4</div>
+    A battery provides voltage in order to:
+    <div class="answer-option"><strong>A)</strong> Stop charge motion</div>
+    <div class="answer-option"><strong>B)</strong> Increase resistance</div>
+    <div class="answer-option"><strong>C)</strong> Drive electric current</div>
+    <div class="answer-option"><strong>D)</strong> Remove energy</div>
+    <div class="answer-option"><strong>E)</strong> Eliminate charge</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 4: RESISTANCE -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Resistance (4.1 – 4.4)</div>
+    <div class="term-definition">
+    Opposition to the flow of electric current; measured in ohms (Ω).
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.1</div>
+    Resistance is:
+    <div class="answer-option"><strong>A)</strong> Energy transferred per second</div>
+    <div class="answer-option"><strong>B)</strong> Opposition to current flow</div>
+    <div class="answer-option"><strong>C)</strong> Charge per second</div>
+    <div class="answer-option"><strong>D)</strong> Potential difference</div>
+    <div class="answer-option"><strong>E)</strong> Chemical conversion</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.2</div>
+    Resistance is measured in:
+    <div class="answer-option"><strong>A)</strong> Volts</div>
+    <div class="answer-option"><strong>B)</strong> Watts</div>
+    <div class="answer-option"><strong>C)</strong> Amperes</div>
+    <div class="answer-option"><strong>D)</strong> Ohms</div>
+    <div class="answer-option"><strong>E)</strong> Coulombs</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.3</div>
+    If resistance increases while voltage stays constant, current:
+    <div class="answer-option"><strong>A)</strong> Increases</div>
+    <div class="answer-option"><strong>B)</strong> Remains unchanged</div>
+    <div class="answer-option"><strong>C)</strong> Decreases</div>
+    <div class="answer-option"><strong>D)</strong> Doubles</div>
+    <div class="answer-option"><strong>E)</strong> Becomes zero instantly</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.4</div>
+    A thicker wire typically has:
+    <div class="answer-option"><strong>A)</strong> Greater resistance</div>
+    <div class="answer-option"><strong>B)</strong> Less resistance</div>
+    <div class="answer-option"><strong>C)</strong> Zero voltage</div>
+    <div class="answer-option"><strong>D)</strong> No current</div>
+    <div class="answer-option"><strong>E)</strong> Infinite energy</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 5: CHEMICAL CELLS AND BATTERIES -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Chemical cells and batteries (5.1 – 5.4)</div>
+    <div class="term-definition">
+    Devices that convert chemical energy into electrical energy to power circuits.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.1</div>
+    Chemical cells convert:
+    <div class="answer-option"><strong>A)</strong> Electrical to chemical energy</div>
+    <div class="answer-option"><strong>B)</strong> Chemical to electrical energy</div>
+    <div class="answer-option"><strong>C)</strong> Light to heat</div>
+    <div class="answer-option"><strong>D)</strong> Resistance to voltage</div>
+    <div class="answer-option"><strong>E)</strong> Current to mass</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.2</div>
+    A battery’s primary function in a circuit is to:
+    <div class="answer-option"><strong>A)</strong> Increase resistance</div>
+    <div class="answer-option"><strong>B)</strong> Store current only</div>
+    <div class="answer-option"><strong>C)</strong> Provide voltage</div>
+    <div class="answer-option"><strong>D)</strong> Stop charge flow</div>
+    <div class="answer-option"><strong>E)</strong> Remove energy</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.3</div>
+    Without a battery, a simple closed circuit would:
+    <div class="answer-option"><strong>A)</strong> Have no voltage source</div>
+    <div class="answer-option"><strong>B)</strong> Double its resistance</div>
+    <div class="answer-option"><strong>C)</strong> Produce light automatically</div>
+    <div class="answer-option"><strong>D)</strong> Reverse current</div>
+    <div class="answer-option"><strong>E)</strong> Increase power</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">5.4</div>
+    Chemical energy in a battery is eventually transferred as:
+    <div class="answer-option"><strong>A)</strong> Mechanical energy only</div>
+    <div class="answer-option"><strong>B)</strong> Electrical energy</div>
+    <div class="answer-option"><strong>C)</strong> Resistance</div>
+    <div class="answer-option"><strong>D)</strong> Voltage loss</div>
+    <div class="answer-option"><strong>E)</strong> Coulombs</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 6: SOLAR CELLS -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Solar cells (6.1 – 6.4)</div>
+    <div class="term-definition">
+    Devices that convert light energy directly into electrical energy.
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.1</div>
+    Solar cells convert:
+    <div class="answer-option"><strong>A)</strong> Electrical energy to light</div>
+    <div class="answer-option"><strong>B)</strong> Light energy to electrical energy</div>
+    <div class="answer-option"><strong>C)</strong> Heat to resistance</div>
+    <div class="answer-option"><strong>D)</strong> Voltage to current</div>
+    <div class="answer-option"><strong>E)</strong> Current to mass</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.2</div>
+    Solar panels are commonly used to:
+    <div class="answer-option"><strong>A)</strong> Increase resistance</div>
+    <div class="answer-option"><strong>B)</strong> Generate electricity</div>
+    <div class="answer-option"><strong>C)</strong> Store magnetic energy</div>
+    <div class="answer-option"><strong>D)</strong> Block sunlight</div>
+    <div class="answer-option"><strong>E)</strong> Reduce current</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.3</div>
+    On a cloudy day, the electrical output of a solar cell will generally:
+    <div class="answer-option"><strong>A)</strong> Increase</div>
+    <div class="answer-option"><strong>B)</strong> Remain unchanged</div>
+    <div class="answer-option"><strong>C)</strong> Decrease</div>
+    <div class="answer-option"><strong>D)</strong> Reverse polarity</div>
+    <div class="answer-option"><strong>E)</strong> Double</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">6.4</div>
+    Solar cells are an example of:
+    <div class="answer-option"><strong>A)</strong> Chemical energy conversion</div>
+    <div class="answer-option"><strong>B)</strong> Mechanical amplification</div>
+    <div class="answer-option"><strong>C)</strong> Light-to-electric energy conversion</div>
+    <div class="answer-option"><strong>D)</strong> Resistance control</div>
+    <div class="answer-option"><strong>E)</strong> Current storage</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 7: ELECTRICAL POWER -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Electrical power (7.1 – 7.4)</div>
+    <div class="term-definition">
+    The rate at which electrical energy is transferred; measured in watts (W).
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.1</div>
+    Electrical power is:
+    <div class="answer-option"><strong>A)</strong> Energy per unit time</div>
+    <div class="answer-option"><strong>B)</strong> Charge per second</div>
+    <div class="answer-option"><strong>C)</strong> Opposition to current</div>
+    <div class="answer-option"><strong>D)</strong> Potential difference</div>
+    <div class="answer-option"><strong>E)</strong> Stored energy only</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.2</div>
+    Electrical power is measured in:
+    <div class="answer-option"><strong>A)</strong> Joules</div>
+    <div class="answer-option"><strong>B)</strong> Watts</div>
+    <div class="answer-option"><strong>C)</strong> Volts</div>
+    <div class="answer-option"><strong>D)</strong> Amperes</div>
+    <div class="answer-option"><strong>E)</strong> Ohms</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.3</div>
+    If power increases while time remains constant, energy transferred:
+    <div class="answer-option"><strong>A)</strong> Decreases</div>
+    <div class="answer-option"><strong>B)</strong> Remains zero</div>
+    <div class="answer-option"><strong>C)</strong> Increases</div>
+    <div class="answer-option"><strong>D)</strong> Reverses</div>
+    <div class="answer-option"><strong>E)</strong> Stops</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">7.4</div>
+    A higher power rating on a device means it transfers energy:
+    <div class="answer-option"><strong>A)</strong> More slowly</div>
+    <div class="answer-option"><strong>B)</strong> At a lower voltage</div>
+    <div class="answer-option"><strong>C)</strong> More quickly</div>
+    <div class="answer-option"><strong>D)</strong> With greater resistance</div>
+    <div class="answer-option"><strong>E)</strong> Without current</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- TERM 8: ELECTRICAL ENERGY -->
+    <!-- ============================================================ -->
+    
+    <div class="question-group">
+    <div class="question-group-title">Electrical energy (8.1 – 8.4)</div>
+    <div class="term-definition">
+    Energy transferred by electric current; measured in joules (J) or kilowatt-hours (kWh).
+    </div>
+    
+    <div class="question">
+    <div class="question-number">8.1</div>
+    Electrical energy is measured in:
+    <div class="answer-option"><strong>A)</strong> Joules</div>
+    <div class="answer-option"><strong>B)</strong> Kilowatt-hours</div>
+    <div class="answer-option"><strong>C)</strong> Both A and B</div>
+    <div class="answer-option"><strong>D)</strong> Volts</div>
+    <div class="answer-option"><strong>E)</strong> Ohms</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">8.2</div>
+    If current flows longer in a circuit, the electrical energy transferred:
+    <div class="answer-option"><strong>A)</strong> Decreases</div>
+    <div class="answer-option"><strong>B)</strong> Remains constant</div>
+    <div class="answer-option"><strong>C)</strong> Increases</div>
+    <div class="answer-option"><strong>D)</strong> Becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Reverses</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">8.3</div>
+    Electrical energy depends on:
+    <div class="answer-option"><strong>A)</strong> Power and time</div>
+    <div class="answer-option"><strong>B)</strong> Resistance only</div>
+    <div class="answer-option"><strong>C)</strong> Voltage only</div>
+    <div class="answer-option"><strong>D)</strong> Charge only</div>
+    <div class="answer-option"><strong>E)</strong> Wire length</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">8.4</div>
+    Household electrical usage is typically billed in:
+    <div class="answer-option"><strong>A)</strong> Joules</div>
+    <div class="answer-option"><strong>B)</strong> Watts</div>
+    <div class="answer-option"><strong>C)</strong> Kilowatt-hours</div>
+    <div class="answer-option"><strong>D)</strong> Amperes</div>
+    <div class="answer-option"><strong>E)</strong> Volts</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 1: Vocabulary Assessment — Answer Key</strong></p>
+  
+    <!-- Electric Charge -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Electric charge (Questions 1.1–1.4)
+      </div>
+  
+      <div class="answer-row"><div>1.1</div><div>B</div><div>Charge is a fundamental property of matter</div></div>
+      <div class="answer-row"><div>1.2</div><div>C</div><div>Coulomb (C) is the SI unit</div></div>
+      <div class="answer-row"><div>1.3</div><div>C</div><div>Moving charge produces electric current</div></div>
+      <div class="answer-row"><div>1.4</div><div>C</div><div>More coulombs → greater total charge</div></div>
+    </div>
+  
+    <!-- Electric Current -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Electric current (Questions 2.1–2.4)
+      </div>
+  
+      <div class="answer-row"><div>2.1</div><div>B</div><div>Current is the flow of electric charge</div></div>
+      <div class="answer-row"><div>2.2</div><div>D</div><div>Ampere (A) is the SI unit</div></div>
+      <div class="answer-row"><div>2.3</div><div>C</div><div>More charge per second → higher current</div></div>
+      <div class="answer-row"><div>2.4</div><div>C</div><div>Open circuit stops current flow</div></div>
+    </div>
+  
+    <!-- Voltage -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Voltage (Questions 3.1–3.4)
+      </div>
+  
+      <div class="answer-row"><div>3.1</div><div>C</div><div>Voltage is potential difference</div></div>
+      <div class="answer-row"><div>3.2</div><div>B</div><div>Volt (V) is the SI unit</div></div>
+      <div class="answer-row"><div>3.3</div><div>C</div><div>Higher voltage → higher current (constant R)</div></div>
+      <div class="answer-row"><div>3.4</div><div>C</div><div>Batteries provide voltage to drive current</div></div>
+    </div>
+  
+    <!-- Resistance -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Resistance (Questions 4.1–4.4)
+      </div>
+  
+      <div class="answer-row"><div>4.1</div><div>B</div><div>Resistance opposes current flow</div></div>
+      <div class="answer-row"><div>4.2</div><div>D</div><div>Ohm (Ω) is the unit</div></div>
+      <div class="answer-row"><div>4.3</div><div>C</div><div>Higher resistance → lower current (constant V)</div></div>
+      <div class="answer-row"><div>4.4</div><div>B</div><div>Thicker wires have less resistance</div></div>
+    </div>
+  
+    <!-- Chemical Cells and Batteries -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Chemical cells and batteries (Questions 5.1–5.4)
+      </div>
+  
+      <div class="answer-row"><div>5.1</div><div>B</div><div>Chemical energy → electrical energy</div></div>
+      <div class="answer-row"><div>5.2</div><div>C</div><div>Battery provides voltage</div></div>
+      <div class="answer-row"><div>5.3</div><div>A</div><div>No source → no voltage</div></div>
+      <div class="answer-row"><div>5.4</div><div>B</div><div>Chemical energy becomes electrical energy</div></div>
+    </div>
+  
+    <!-- Solar Cells -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Solar cells (Questions 6.1–6.4)
+      </div>
+  
+      <div class="answer-row"><div>6.1</div><div>B</div><div>Light → electrical energy</div></div>
+      <div class="answer-row"><div>6.2</div><div>B</div><div>Used to generate electricity</div></div>
+      <div class="answer-row"><div>6.3</div><div>C</div><div>Less light → less electrical output</div></div>
+      <div class="answer-row"><div>6.4</div><div>C</div><div>Light-to-electric conversion</div></div>
+    </div>
+  
+    <!-- Electrical Power -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Electrical power (Questions 7.1–7.4)
+      </div>
+  
+      <div class="answer-row"><div>7.1</div><div>A</div><div>Power = energy per unit time</div></div>
+      <div class="answer-row"><div>7.2</div><div>B</div><div>Measured in watts (W)</div></div>
+      <div class="answer-row"><div>7.3</div><div>C</div><div>More power → more energy (same time)</div></div>
+      <div class="answer-row"><div>7.4</div><div>C</div><div>Higher power → faster energy transfer</div></div>
+    </div>
+  
+    <!-- Electrical Energy -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Electrical energy (Questions 8.1–8.4)
+      </div>
+  
+      <div class="answer-row"><div>8.1</div><div>C</div><div>Measured in joules or kWh</div></div>
+      <div class="answer-row"><div>8.2</div><div>C</div><div>Longer time → more energy</div></div>
+      <div class="answer-row"><div>8.3</div><div>A</div><div>Energy = Power × Time</div></div>
+      <div class="answer-row"><div>8.4</div><div>C</div><div>Billing uses kWh</div></div>
+    </div>
+  
+  </div>
+        
+        <footer>
+        Section 8.1 – Energy Transfer in Electric Circuits | Bank 1
+        </footer>
+        
+        </div>
+
+    </body>
+    </html>

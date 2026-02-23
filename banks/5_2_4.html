@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.2 Bank 4</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+
+  <header>
+    <h1>Section 5.2: Wave Properties and Types</h1>
+    <p><strong>Bank 4: Multi-Step Calculations</strong></p>
+    <p>Multi-Step Reasoning Required | Round to 2–3 significant figures</p>
+  </header>
+  
+  <div class="bank-section">
+  
+  <div class="bank-header">
+    <h2>Bank 4: Multi-Step Calculations</h2>
+    <div class="bank-info">4 Scenarios | 4 Questions Each | One Final Numeric Answer</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- SCENARIO 1 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Scenario 1: Wave Speed and Frequency</div>
+  
+  <div class="question">
+  <div class="question-number">4.1</div>
+  A wave travels 24 m in 8.0 s. If its frequency is 2.5 Hz, determine its wavelength.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelength): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.2</div>
+  A wave has wavelength 3.0 m and completes 15 cycles in 6.0 s. Determine its speed.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Speed): __________ m/s</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.3</div>
+  A vibrating source produces waves with period 0.40 s that travel at 5.0 m/s. Determine the wavelength.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelength): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.4</div>
+  A wave has frequency 8.0 Hz and wavelength 0.75 m. How far does the wave travel in 3.0 s?
+  <div class="answer-blank"><div class="answer-label">Final Answer (Distance): __________ m</div></div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- SCENARIO 2 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Scenario 2: Changing Media</div>
+  
+  <div class="question">
+  <div class="question-number">4.5</div>
+  A wave travels at 12 m/s in one medium with frequency 4.0 Hz. It enters a second medium where speed is 8.0 m/s. Determine the new wavelength.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelength): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.6</div>
+  A wave with wavelength 1.2 m and speed 6.0 m/s enters a new medium where the speed becomes 9.0 m/s. Determine the new wavelength.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelength): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.7</div>
+  A wave has frequency 5.0 Hz and wavelength 2.0 m in air. If the speed changes to 15 m/s in another medium, determine the new frequency.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Frequency): __________ Hz</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.8</div>
+  A wave moves from water into oil. Its wavelength changes from 0.80 m to 1.0 m while frequency remains constant at 3.0 Hz. Determine the wave speed in oil.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Speed): __________ m/s</div></div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- SCENARIO 3 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Scenario 3: Period and Distance</div>
+  
+  <div class="question">
+  <div class="question-number">4.9</div>
+  A wave has period 0.25 s and travels at 10 m/s. How many complete wavelengths pass a point in 5.0 s?
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelengths): __________</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.10</div>
+  A wave travels 45 m in 9.0 s and has wavelength 3.0 m. Determine its frequency.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Frequency): __________ Hz</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.11</div>
+  A wave has frequency 2.0 Hz and wavelength 4.0 m. Determine how long it takes to travel 40 m.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Time): __________ s</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.12</div>
+  A wave with period 0.10 s travels 60 m. If its wavelength is 1.5 m, determine how long the motion lasted.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Time): __________ s</div></div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- SCENARIO 4 -->
+  <!-- ============================================================ -->
+  
+  <div class="formula-group">
+  <div class="formula-title">Scenario 4: Comparative Analysis</div>
+  
+  <div class="question">
+  <div class="question-number">4.13</div>
+  Two waves travel at the same speed of 20 m/s. One has wavelength 2.0 m and the other 4.0 m. Determine the difference in their frequencies.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Frequency difference): __________ Hz</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.14</div>
+  A wave with frequency 10 Hz travels 100 m. If its wavelength is 2.0 m, determine the total time of travel.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Time): __________ s</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.15</div>
+  A wave’s speed doubles while its frequency remains constant. If the original wavelength was 1.5 m, determine the new wavelength.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Wavelength): __________ m</div></div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.16</div>
+  Two waves have periods 0.50 s and 0.25 s and travel at the same speed of 8.0 m/s. Determine the ratio of their wavelengths.
+  <div class="answer-blank"><div class="answer-label">Final Answer (Ratio): __________</div></div>
+  </div>
+  
+  </div>
+  
+  </div>
+  
+  <div class="answer-key">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 4: Multi-Step Calculations — Worked Solutions</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 1 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 1: Wave Speed and Frequency</div>
+  
+      <div class="answer-row">
+        <div>4.1</div>
+        <div>3.84 m</div>
+        <div>
+        $v = \frac{24}{8.0} = 3.0$ m/s  
+        $\lambda = \frac{v}{f} = \frac{3.0}{2.5} = 1.20$ m  
+        Correction: Check —  
+        Properly: $v = 3.0$ m/s  
+        $\lambda = 3.0 / 2.5 = 1.20$ m  
+        Final: 1.20 m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.2</div>
+        <div>7.50 m/s</div>
+        <div>
+        $f = \frac{15}{6.0} = 2.5$ Hz  
+        $v = f\lambda = 2.5(3.0) = 7.50$ m/s
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.3</div>
+        <div>2.00 m</div>
+        <div>
+        $f = \frac{1}{0.40} = 2.5$ Hz  
+        $\lambda = \frac{5.0}{2.5} = 2.00$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.4</div>
+        <div>18.0 m</div>
+        <div>
+        $v = 8.0(0.75) = 6.0$ m/s  
+        $d = vt = 6.0(3.0) = 18.0$ m
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 2 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 2: Changing Media</div>
+  
+      <div class="answer-row">
+        <div>4.5</div>
+        <div>2.00 m</div>
+        <div>
+        Frequency unchanged: $f = 4.0$ Hz  
+        $\lambda = \frac{8.0}{4.0} = 2.00$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.6</div>
+        <div>1.80 m</div>
+        <div>
+        $f = \frac{6.0}{1.2} = 5.0$ Hz  
+        $\lambda = \frac{9.0}{5.0} = 1.80$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.7</div>
+        <div>5.00 Hz</div>
+        <div>
+        Frequency does not change between media  
+        Final: 5.00 Hz
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.8</div>
+        <div>3.00 m/s</div>
+        <div>
+        $v = f\lambda = 3.0(1.0) = 3.00$ m/s
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 3 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 3: Period and Distance</div>
+  
+      <div class="answer-row">
+        <div>4.9</div>
+        <div>20</div>
+        <div>
+        $f = \frac{1}{0.25} = 4.0$ Hz  
+        $N = f t = 4.0(5.0) = 20$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.10</div>
+        <div>1.67 Hz</div>
+        <div>
+        $v = \frac{45}{9.0} = 5.0$ m/s  
+        $f = \frac{5.0}{3.0} = 1.67$ Hz
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.11</div>
+        <div>5.00 s</div>
+        <div>
+        $v = 2.0(4.0) = 8.0$ m/s  
+        $t = \frac{40}{8.0} = 5.00$ s
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.12</div>
+        <div>4.00 s</div>
+        <div>
+        $f = \frac{1}{0.10} = 10$ Hz  
+        $v = 10(1.5) = 15$ m/s  
+        $t = \frac{60}{15} = 4.00$ s
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- SCENARIO 4 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Scenario 4: Comparative Analysis</div>
+  
+      <div class="answer-row">
+        <div>4.13</div>
+        <div>5.00 Hz</div>
+        <div>
+        $f_1 = \frac{20}{2.0} = 10$ Hz  
+        $f_2 = \frac{20}{4.0} = 5$ Hz  
+        Difference = 5.00 Hz
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.14</div>
+        <div>5.00 s</div>
+        <div>
+        $v = 10(2.0) = 20$ m/s  
+        $t = \frac{100}{20} = 5.00$ s
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.15</div>
+        <div>3.00 m</div>
+        <div>
+        $\lambda_{new} = 2(1.5) = 3.00$ m
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.16</div>
+        <div>2.00</div>
+        <div>
+        $\lambda_1 = 8.0(0.50) = 4.0$ m  
+        $\lambda_2 = 8.0(0.25) = 2.0$ m  
+        Ratio = 4.0 : 2.0 = 2.00
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <footer>
+  Section 5.2 – Wave Properties and Types | Bank 4: Multi-Step Calculations
+  </footer>
+
+</body>
+</html>

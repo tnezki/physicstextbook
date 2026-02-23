@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.2 Bank 2</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+
+  <header>
+    <h1>Section 5.2: Wave Properties and Types</h1>
+    <p><strong>Bank 2: Conceptual Questions</strong></p>
+    <p>Application and Reasoning | No Calculations Required</p>
+  </header>
+  
+  <div class="bank-section">
+  
+  <div class="bank-header">
+    <h2>Bank 2: Conceptual Understanding</h2>
+    <div class="bank-info">22 Questions | Multiple Choice (A–E) | Reasoning Focused</div>
+  </div>
+  
+  <!-- ================= STANDARD ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.1</div>
+  A water wave travels across a lake. What actually moves from one side of the lake to the other?
+  <div class="answer-option">A) Water molecules permanently</div>
+  <div class="answer-option">B) The entire medium</div>
+  <div class="answer-option">C) Energy</div>
+  <div class="answer-option">D) Matter and energy equally</div>
+  <div class="answer-option">E) Air above the lake</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.2</div>
+  A transverse wave moves along a rope. In what direction do the rope particles move?
+  <div class="answer-option">A) Along the direction of wave travel</div>
+  <div class="answer-option">B) Perpendicular to the direction of wave travel</div>
+  <div class="answer-option">C) In a circular path forward</div>
+  <div class="answer-option">D) Randomly</div>
+  <div class="answer-option">E) Not at all</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.3</div>
+  A sound wave travels through air. Why is this considered a mechanical wave?
+  <div class="answer-option">A) It moves perpendicular to motion</div>
+  <div class="answer-option">B) It requires a medium</div>
+  <div class="answer-option">C) It travels at light speed</div>
+  <div class="answer-option">D) It forms crests and troughs</div>
+  <div class="answer-option">E) It has electric fields</div>
+  </div>
+  
+  <!-- ================= INVERTED ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.4</div>
+  Determine which property of a wave changes when frequency increases but wave speed remains constant.
+  <div class="answer-option">A) Amplitude</div>
+  <div class="answer-option">B) Wavelength</div>
+  <div class="answer-option">C) Medium density</div>
+  <div class="answer-option">D) Energy transfer stops</div>
+  <div class="answer-option">E) Crest height</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.5</div>
+  Identify what remains constant when a wave passes from one medium into another.
+  <div class="answer-option">A) Wave speed</div>
+  <div class="answer-option">B) Wavelength</div>
+  <div class="answer-option">C) Frequency</div>
+  <div class="answer-option">D) Amplitude</div>
+  <div class="answer-option">E) Energy level</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.6</div>
+  Explain why electromagnetic waves do not require a medium.
+  <div class="answer-option">A) They are longitudinal</div>
+  <div class="answer-option">B) They consist of oscillating electric and magnetic fields</div>
+  <div class="answer-option">C) They transfer matter</div>
+  <div class="answer-option">D) They have zero wavelength</div>
+  <div class="answer-option">E) They only travel in solids</div>
+  </div>
+  
+  <!-- ================= CONTEXT-RICH ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.7</div>
+  A student shakes one end of a rope up and down. The pulse travels horizontally across the rope. What type of wave is produced?
+  <div class="answer-option">A) Longitudinal</div>
+  <div class="answer-option">B) Transverse</div>
+  <div class="answer-option">C) Mechanical longitudinal</div>
+  <div class="answer-option">D) Electromagnetic</div>
+  <div class="answer-option">E) Stationary</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.8</div>
+  Ocean swells approach a beach. The water moves mostly up and down while the wave travels forward. What does this illustrate?
+  <div class="answer-option">A) Matter transport</div>
+  <div class="answer-option">B) Transverse wave motion</div>
+  <div class="answer-option">C) Longitudinal propagation</div>
+  <div class="answer-option">D) Energy loss</div>
+  <div class="answer-option">E) Electromagnetic transfer</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.9</div>
+  Astronauts outside a spacecraft cannot hear each other without radios. What explains this?
+  <div class="answer-option">A) Sound frequency too low</div>
+  <div class="answer-option">B) No medium in space</div>
+  <div class="answer-option">C) Sound speed too slow</div>
+  <div class="answer-option">D) Waves become transverse</div>
+  <div class="answer-option">E) Energy disappears</div>
+  </div>
+  
+  <!-- Continue to 22 total -->
+  
+  <div class="question-block">
+  <div class="question-number">2.10</div>
+  What distinguishes crest from wavelength?
+  <div class="answer-option">A) Crest measures distance</div>
+  <div class="answer-option">B) Wavelength measures displacement</div>
+  <div class="answer-option">C) Crest is a point; wavelength is a distance</div>
+  <div class="answer-option">D) They are identical</div>
+  <div class="answer-option">E) Neither relates to wave shape</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.11</div>
+  A wave with longer wavelength but same speed must have:
+  <div class="answer-option">A) Higher frequency</div>
+  <div class="answer-option">B) Lower frequency</div>
+  <div class="answer-option">C) Greater amplitude</div>
+  <div class="answer-option">D) No energy</div>
+  <div class="answer-option">E) Smaller medium</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.12</div>
+  Describe what happens to wave speed when moving from air into water.
+  <div class="answer-option">A) It remains the same</div>
+  <div class="answer-option">B) It depends on medium properties</div>
+  <div class="answer-option">C) It becomes zero</div>
+  <div class="answer-option">D) It equals frequency</div>
+  <div class="answer-option">E) It equals amplitude</div>
+  </div>
+  
+  <!-- ================= STANDARD ================= -->
+
+<div class="question-block">
+  <div class="question-number">2.13</div>
+  A wave travels along a string tied to a wall. The wall does not move. What happens to the energy carried by the wave when it reaches the wall?
+  <div class="answer-option">A) It disappears completely</div>
+  <div class="answer-option">B) It reflects back along the string</div>
+  <div class="answer-option">C) It permanently moves the wall</div>
+  <div class="answer-option">D) It changes frequency</div>
+  <div class="answer-option">E) It doubles in amplitude</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.14</div>
+  A wave’s frequency increases while its speed stays constant. What must happen to the wavelength?
+  <div class="answer-option">A) It increases</div>
+  <div class="answer-option">B) It decreases</div>
+  <div class="answer-option">C) It remains unchanged</div>
+  <div class="answer-option">D) It becomes zero</div>
+  <div class="answer-option">E) It becomes infinite</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.15</div>
+  A wave pulse moves through a medium. The particles of the medium return to their original positions after the wave passes. What does this demonstrate?
+  <div class="answer-option">A) Permanent displacement</div>
+  <div class="answer-option">B) Matter transfer</div>
+  <div class="answer-option">C) Energy transfer without matter transfer</div>
+  <div class="answer-option">D) Increasing wavelength</div>
+  <div class="answer-option">E) Wave cancellation</div>
+  </div>
+  
+  <!-- ================= INVERTED ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.16</div>
+  Identify the type of wave in which particle motion is parallel to the direction of propagation.
+  <div class="answer-option">A) Transverse wave</div>
+  <div class="answer-option">B) Electromagnetic wave</div>
+  <div class="answer-option">C) Longitudinal wave</div>
+  <div class="answer-option">D) Surface wave</div>
+  <div class="answer-option">E) Standing wave</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.17</div>
+  Determine what happens to frequency when a wave enters a new medium.
+  <div class="answer-option">A) It increases</div>
+  <div class="answer-option">B) It decreases</div>
+  <div class="answer-option">C) It remains constant</div>
+  <div class="answer-option">D) It becomes zero</div>
+  <div class="answer-option">E) It doubles automatically</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.18</div>
+  Explain why increasing amplitude does not change wave speed in a given medium.
+  <div class="answer-option">A) Wave speed depends on medium properties</div>
+  <div class="answer-option">B) Amplitude determines frequency</div>
+  <div class="answer-option">C) Amplitude controls wavelength</div>
+  <div class="answer-option">D) Speed equals amplitude times time</div>
+  <div class="answer-option">E) Energy cannot change</div>
+  </div>
+  
+  <!-- ================= CONTEXT-RICH ================= -->
+  
+  <div class="question-block">
+  <div class="question-number">2.19</div>
+  A radio signal travels from Earth through empty space to a satellite. What type of wave allows this communication?
+  <div class="answer-option">A) Mechanical longitudinal wave</div>
+  <div class="answer-option">B) Transverse mechanical wave</div>
+  <div class="answer-option">C) Electromagnetic wave</div>
+  <div class="answer-option">D) Surface water wave</div>
+  <div class="answer-option">E) Seismic wave</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.20</div>
+  A slinky is stretched along the floor and pushed forward and backward, creating compressions that travel along its length. What type of wave is this?
+  <div class="answer-option">A) Transverse</div>
+  <div class="answer-option">B) Electromagnetic</div>
+  <div class="answer-option">C) Longitudinal</div>
+  <div class="answer-option">D) Standing</div>
+  <div class="answer-option">E) Circular</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.21</div>
+  Light passes from air into glass and slows down. What happens to the wavelength of the light?
+  <div class="answer-option">A) It increases</div>
+  <div class="answer-option">B) It decreases</div>
+  <div class="answer-option">C) It stays the same</div>
+  <div class="answer-option">D) It becomes zero</div>
+  <div class="answer-option">E) It becomes infinite</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.22</div>
+  A surfer notices that waves with greater spacing between crests move at the same speed as closely spaced waves. What does this imply?
+  <div class="answer-option">A) Wave speed depends only on amplitude</div>
+  <div class="answer-option">B) Frequency adjusts to maintain wave speed</div>
+  <div class="answer-option">C) Wavelength controls energy transfer permanently</div>
+  <div class="answer-option">D) Medium properties determine wave speed</div>
+  <div class="answer-option">E) Wave speed is random</div>
+  </div>
+  
+  </div>
+  <div class="answer-key">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">Section 5.2: Wave Properties and Types</div>
+  
+      <div class="answer-row"><div>2.1</div><div>C</div><div>Waves transfer energy, not matter permanently</div></div>
+      <div class="answer-row"><div>2.2</div><div>B</div><div>Transverse motion is perpendicular to propagation</div></div>
+      <div class="answer-row"><div>2.3</div><div>B</div><div>Mechanical waves require a medium</div></div>
+      <div class="answer-row"><div>2.4</div><div>B</div><div>v = fλ; wavelength decreases if frequency increases</div></div>
+      <div class="answer-row"><div>2.5</div><div>C</div><div>Frequency remains constant across media</div></div>
+      <div class="answer-row"><div>2.6</div><div>B</div><div>EM waves consist of oscillating electric and magnetic fields</div></div>
+      <div class="answer-row"><div>2.7</div><div>B</div><div>Rope motion perpendicular → transverse wave</div></div>
+      <div class="answer-row"><div>2.8</div><div>B</div><div>Up–down motion with forward propagation</div></div>
+      <div class="answer-row"><div>2.9</div><div>B</div><div>No medium in space for sound</div></div>
+      <div class="answer-row"><div>2.10</div><div>C</div><div>Crest is a point; wavelength is a distance</div></div>
+      <div class="answer-row"><div>2.11</div><div>B</div><div>Longer wavelength → lower frequency (constant speed)</div></div>
+      <div class="answer-row"><div>2.12</div><div>B</div><div>Wave speed depends on medium properties</div></div>
+      <div class="answer-row"><div>2.13</div><div>B</div><div>Energy reflects at boundary</div></div>
+      <div class="answer-row"><div>2.14</div><div>B</div><div>Higher frequency → shorter wavelength</div></div>
+      <div class="answer-row"><div>2.15</div><div>C</div><div>Energy transfer without permanent matter transfer</div></div>
+      <div class="answer-row"><div>2.16</div><div>C</div><div>Parallel particle motion defines longitudinal wave</div></div>
+      <div class="answer-row"><div>2.17</div><div>C</div><div>Frequency stays constant at boundary</div></div>
+      <div class="answer-row"><div>2.18</div><div>A</div><div>Wave speed determined by medium, not amplitude</div></div>
+      <div class="answer-row"><div>2.19</div><div>C</div><div>Radio signals are electromagnetic waves</div></div>
+      <div class="answer-row"><div>2.20</div><div>C</div><div>Compressions → longitudinal wave</div></div>
+      <div class="answer-row"><div>2.21</div><div>B</div><div>Slower speed in glass → shorter wavelength</div></div>
+      <div class="answer-row"><div>2.22</div><div>D</div><div>Wave speed determined by medium properties</div></div>
+  
+    </div>
+  </div>
+
+  <footer>
+  Section 5.2 – Wave Properties and Types | Bank 2: Conceptual Questions
+  </footer>
+  </div>
+  
+ 
+
+</body>
+</html>

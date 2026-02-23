@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.5 Bank 4</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.5: Capacitors and Practical Applications</h1>
+    <p><strong>Bank 4: Multi-Step Calculations</strong></p>
+    <p>Provide one final numeric answer. No intermediate hints given.</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Multi-Step Problems</h2>
+    <p>4 Scenarios | 2+ calculation steps required</p>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 1 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 1: Charging Energy Analysis</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.1</div>
+    A 4.0 F capacitor is connected to a 10 V battery. Determine the charge stored and the total energy stored.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.2</div>
+    A 2.0 F capacitor is charged to 12 V. If connected to a resistor and fully discharged, how much energy is released?
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.3</div>
+    A capacitor stores 0.50 C at 20 V. Determine its capacitance and the energy stored.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.4</div>
+    A defibrillator capacitor must deliver 200 J at 400 V. Determine the capacitance required.
+    <div class="answer-blank">Answer: ________ F</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 2 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 2: RC Time Constant Applications</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.5</div>
+    A 5.0 Ω resistor is connected to a 3.0 F capacitor. Determine the time constant and the charge stored when connected to 9.0 V.
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.6</div>
+    An RC circuit has resistance of 8.0 Ω and capacitance of 2.0 F. Determine the time constant and the energy stored at 6.0 V.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.7</div>
+    A capacitor of 1.5 F is connected to a 4.0 Ω resistor and a 12 V supply. Determine the time constant and total stored energy.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.8</div>
+    An RC circuit has a time constant of 10 s and a capacitance of 2.0 F. Determine the resistance and the charge stored at 5.0 V.
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 3 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 3: Discharge and Power</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.9</div>
+    A 3.0 F capacitor charged to 8.0 V discharges through a resistor. Determine the initial energy stored and the initial charge.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.10</div>
+    A capacitor stores 50 J at 10 V. Determine its capacitance and the charge stored.
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.11</div>
+    A 6.0 F capacitor connected to 5.0 V discharges completely through a resistor. Determine the energy dissipated and the charge released.
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.12</div>
+    A 2.5 F capacitor stores 45 J of energy. Determine the voltage and the charge stored.
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 4 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 4: Practical Design Considerations</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.13</div>
+    A power supply uses a 10 F capacitor at 6.0 V. Determine the stored energy and the time constant if connected to a 4.0 Ω resistor.
+    <div class="answer-blank">Answer: ________ s</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.14</div>
+    A 3.0 F capacitor must store 90 J. Determine the required voltage and the time constant if paired with a 5.0 Ω resistor.
+    <div class="answer-blank">Answer: ________ s</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.15</div>
+    A capacitor with capacitance 2.0 F is connected to a 15 V battery through a 6.0 Ω resistor. Determine the time constant and total energy stored.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.16</div>
+    A 4.0 F capacitor charged to 9.0 V is connected to an 8.0 Ω resistor. Determine the time constant and total energy delivered during full discharge.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 4: Multi-Step Calculations — Answer Key</strong></p>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 1 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 1: Charging Energy Analysis
+  </div>
+  
+  <div class="answer-row">
+  <div>4.1</div>
+  <div>200 J</div>
+  <div>
+  $$Q=CV=(4.0)(10)=40\text{ C}$$
+  $$E=\frac{1}{2}(4.0)(10^2)=200\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.2</div>
+  <div>144 J</div>
+  <div>
+  $$E=\frac{1}{2}(2.0)(12^2)=144\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.3</div>
+  <div>5.0 J</div>
+  <div>
+  $$C=\frac{0.50}{20}=0.025\text{ F}$$
+  $$E=\frac{1}{2}(0.50)(20)=5.0\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.4</div>
+  <div>0.0025 F</div>
+  <div>
+  $$200=\frac{1}{2}C(400^2)$$
+  $$C=0.0025\text{ F}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 2 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 2: RC Time Constant Applications
+  </div>
+  
+  <div class="answer-row">
+  <div>4.5</div>
+  <div>27 C</div>
+  <div>
+  $$\tau=(5.0)(3.0)=15\text{ s}$$
+  $$Q=CV=(3.0)(9.0)=27\text{ C}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.6</div>
+  <div>36 J</div>
+  <div>
+  $$\tau=(8.0)(2.0)=16\text{ s}$$
+  $$E=\frac{1}{2}(2.0)(6.0^2)=36\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.7</div>
+  <div>108 J</div>
+  <div>
+  $$\tau=(4.0)(1.5)=6.0\text{ s}$$
+  $$E=\frac{1}{2}(1.5)(12^2)=108\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.8</div>
+  <div>10 C</div>
+  <div>
+  $$R=\frac{10}{2.0}=5.0\ \Omega$$
+  $$Q=(2.0)(5.0)=10\text{ C}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 3 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 3: Discharge and Power
+  </div>
+  
+  <div class="answer-row">
+  <div>4.9</div>
+  <div>96 J</div>
+  <div>
+  $$E=\frac{1}{2}(3.0)(8.0^2)=96\text{ J}$$
+  $$Q=(3.0)(8.0)=24\text{ C}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.10</div>
+  <div>10 C</div>
+  <div>
+  $$C=\frac{2E}{V^2}=\frac{100}{100}=1.0\text{ F}$$
+  $$Q=CV=10\text{ C}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.11</div>
+  <div>30 C</div>
+  <div>
+  $$E=\frac{1}{2}(6.0)(5.0^2)=75\text{ J}$$
+  $$Q=(6.0)(5.0)=30\text{ C}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.12</div>
+  <div>15 C</div>
+  <div>
+  $$45=\frac{1}{2}(2.5)V^2$$
+  $$V=6.0\text{ V}$$
+  $$Q=(2.5)(6.0)=15\text{ C}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 4 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 4: Practical Design Considerations
+  </div>
+  
+  <div class="answer-row">
+  <div>4.13</div>
+  <div>40 s</div>
+  <div>
+  $$E=\frac{1}{2}(10)(6.0^2)=180\text{ J}$$
+  $$\tau=(4.0)(10)=40\text{ s}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.14</div>
+  <div>15 s</div>
+  <div>
+  $$90=\frac{1}{2}(3.0)V^2$$
+  $$V=7.75\text{ V}$$
+  $$\tau=(5.0)(3.0)=15\text{ s}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.15</div>
+  <div>225 J</div>
+  <div>
+  $$\tau=(6.0)(2.0)=12\text{ s}$$
+  $$E=\frac{1}{2}(2.0)(15^2)=225\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.16</div>
+  <div>162 J</div>
+  <div>
+  $$\tau=(8.0)(4.0)=32\text{ s}$$
+  $$E=\frac{1}{2}(4.0)(9.0^2)=162\text{ J}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  </div>
+
+
+</body>
+</html>

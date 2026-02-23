@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.2 Bank 3</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.2: Measuring and Analyzing Circuit Behavior</h1>
+    <p><strong>Bank 3: Single-Step Calculations</strong></p>
+    <p>Round answers to 2–3 significant figures.</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Single-Step Calculations</h2>
+    <div class="bank-info">Formula Group 1 of 3</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 1: V = IR -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 1: Ohm’s Law (Voltage Form)</div>
+    
+    <div class="formula-display">
+    $$V = IR$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.1</div>
+    A current of 2.0 A flows through a 15 Ω resistor. What voltage is across the resistor?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.2</div>
+    Calculate the voltage across a 10 Ω resistor carrying 3.5 A of current.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.3</div>
+    A laboratory resistor of 8.0 Ω carries 4.0 A during a test. What potential difference is measured across it?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.4</div>
+    Determine the voltage required to produce a current of 6.0 A in a 5.0 Ω resistor.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 2: I = V / R -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 2: Ohm’s Law (Current Form)</div>
+    
+    <div class="formula-display">
+    $$I = \frac{V}{R}$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.5</div>
+    A 24 V source is connected to a 12 Ω resistor. What current flows?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.6</div>
+    Calculate the current through a 30 Ω resistor connected to a 90 V supply.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.7</div>
+    A student measures 15 V across a 5.0 Ω resistor in a circuit. What current does the multimeter read?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.8</div>
+    Determine the current drawn when a 120 V outlet is connected to a 40 Ω heater.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 3: R = V / I -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 3: Ohm’s Law (Resistance Form)</div>
+    
+    <div class="formula-display">
+    $$R = \frac{V}{I}$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.9</div>
+    A resistor has 18 V across it and a current of 3.0 A. What is its resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.10</div>
+    Calculate the resistance of a device that draws 4.0 A from a 48 V supply.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.11</div>
+    A circuit measurement shows 9.0 V across a component and 0.50 A flowing through it. What resistance does this indicate?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.12</div>
+    Determine the resistance required to limit current to 2.5 A when connected to a 20 V source.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 3: Single-Step Calculations — Answer Key</strong></p>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 1: V = IR -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 1: Ohm’s Law (Voltage Form) ($V = IR$)
+  </div>
+  
+  <div class="answer-row">
+  <div>3.1</div>
+  <div>30 V</div>
+  <div>$$V = (2.0)(15) = 30\text{ V}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.2</div>
+  <div>35 V</div>
+  <div>$$V = (3.5)(10) = 35\text{ V}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.3</div>
+  <div>32 V</div>
+  <div>$$V = (4.0)(8.0) = 32\text{ V}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.4</div>
+  <div>30 V</div>
+  <div>$$V = (6.0)(5.0) = 30\text{ V}$$</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 2: I = V / R -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 2: Ohm’s Law (Current Form) ($I = \frac{V}{R}$)
+  </div>
+  
+  <div class="answer-row">
+  <div>3.5</div>
+  <div>2.0 A</div>
+  <div>$$I = \frac{24}{12} = 2.0\text{ A}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.6</div>
+  <div>3.0 A</div>
+  <div>$$I = \frac{90}{30} = 3.0\text{ A}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.7</div>
+  <div>3.0 A</div>
+  <div>$$I = \frac{15}{5.0} = 3.0\text{ A}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.8</div>
+  <div>3.0 A</div>
+  <div>$$I = \frac{120}{40} = 3.0\text{ A}$$</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 3: R = V / I -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 3: Ohm’s Law (Resistance Form) ($R = \frac{V}{I}$)
+  </div>
+  
+  <div class="answer-row">
+  <div>3.9</div>
+  <div>6.0 Ω</div>
+  <div>$$R = \frac{18}{3.0} = 6.0\text{ Ω}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.10</div>
+  <div>12 Ω</div>
+  <div>$$R = \frac{48}{4.0} = 12\text{ Ω}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.11</div>
+  <div>18 Ω</div>
+  <div>$$R = \frac{9.0}{0.50} = 18\text{ Ω}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.12</div>
+  <div>8.0 Ω</div>
+  <div>$$R = \frac{20}{2.5} = 8.0\text{ Ω}$$</div>
+  </div>
+  
+  </div>
+  
+  </div>
+    
+    <footer>
+    Section 8.2 – Measuring and Analyzing Circuit Behavior | Bank 3
+    </footer>
+    
+    </div>
+
+
+</body>
+</html>

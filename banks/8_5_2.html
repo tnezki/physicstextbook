@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.5 Bank 2</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.5: Capacitors and Practical Applications</h1>
+    <p><strong>Bank 2: Conceptual Questions</strong></p>
+    <p>Application and Reasoning | No Calculations</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Conceptual Understanding</h2>
+    <div class="bank-info">Multiple Choice (A–E)</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- QUESTIONS -->
+    <!-- ============================================================ -->
+    
+    <div class="question-block">
+    <div class="question-number">2.1</div>
+    <div class="question-text">
+    A capacitor is connected to a DC battery and allowed to fully charge. What happens to the current after a long time?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It increases steadily</div>
+    <div class="answer-option"><strong>B)</strong> It remains constant</div>
+    <div class="answer-option"><strong>C)</strong> It drops to zero</div>
+    <div class="answer-option"><strong>D)</strong> It reverses direction</div>
+    <div class="answer-option"><strong>E)</strong> It doubles</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.2</div>
+    <div class="question-text">
+    Capacitance increases when:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Plate area decreases</div>
+    <div class="answer-option"><strong>B)</strong> Plate separation increases</div>
+    <div class="answer-option"><strong>C)</strong> Plate area increases</div>
+    <div class="answer-option"><strong>D)</strong> Voltage decreases</div>
+    <div class="answer-option"><strong>E)</strong> Current increases</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.3</div>
+    <div class="question-text">
+    Explain why capacitors are used in camera flashes.
+    </div>
+    <div class="answer-option"><strong>A)</strong> They reduce resistance permanently</div>
+    <div class="answer-option"><strong>B)</strong> They store energy and release it quickly</div>
+    <div class="answer-option"><strong>C)</strong> They eliminate voltage</div>
+    <div class="answer-option"><strong>D)</strong> They double current continuously</div>
+    <div class="answer-option"><strong>E)</strong> They increase battery life directly</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.4</div>
+    <div class="question-text">
+    When a capacitor discharges through a resistor, the voltage across it:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Instantly drops to zero</div>
+    <div class="answer-option"><strong>B)</strong> Remains constant</div>
+    <div class="answer-option"><strong>C)</strong> Decreases gradually</div>
+    <div class="answer-option"><strong>D)</strong> Increases</div>
+    <div class="answer-option"><strong>E)</strong> Reverses direction</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.5</div>
+    <div class="question-text">
+    A larger time constant means the capacitor will:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Charge faster</div>
+    <div class="answer-option"><strong>B)</strong> Charge more slowly</div>
+    <div class="answer-option"><strong>C)</strong> Store less charge</div>
+    <div class="answer-option"><strong>D)</strong> Have zero voltage</div>
+    <div class="answer-option"><strong>E)</strong> Produce infinite current</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.6</div>
+    <div class="question-text">
+    Determine what happens to stored energy if voltage across a capacitor doubles.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Energy doubles</div>
+    <div class="answer-option"><strong>B)</strong> Energy remains constant</div>
+    <div class="answer-option"><strong>C)</strong> Energy increases by a factor of four</div>
+    <div class="answer-option"><strong>D)</strong> Energy becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Energy halves</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.7</div>
+    <div class="question-text">
+    A capacitor blocks DC current after it is fully charged because:
+    </div>
+    <div class="answer-option"><strong>A)</strong> It becomes a short circuit</div>
+    <div class="answer-option"><strong>B)</strong> The electric field stops further charge movement</div>
+    <div class="answer-option"><strong>C)</strong> Resistance becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> Voltage disappears</div>
+    <div class="answer-option"><strong>E)</strong> Energy is destroyed</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.8</div>
+    <div class="question-text">
+    Predict what happens to the time constant if resistance is doubled while capacitance remains constant.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It halves</div>
+    <div class="answer-option"><strong>B)</strong> It doubles</div>
+    <div class="answer-option"><strong>C)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> It remains unchanged</div>
+    <div class="answer-option"><strong>E)</strong> It reverses</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.9</div>
+    <div class="question-text">
+    A capacitor initially uncharged is connected to a battery. At the moment of connection, it behaves most like:
+    </div>
+    <div class="answer-option"><strong>A)</strong> An open circuit</div>
+    <div class="answer-option"><strong>B)</strong> A short circuit</div>
+    <div class="answer-option"><strong>C)</strong> A battery</div>
+    <div class="answer-option"><strong>D)</strong> A diode</div>
+    <div class="answer-option"><strong>E)</strong> A resistor with infinite resistance</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.10</div>
+    <div class="question-text">
+    Explain why the voltage across a charging capacitor approaches the battery voltage over time.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Charge accumulates until electric field balances battery</div>
+    <div class="answer-option"><strong>B)</strong> Current doubles automatically</div>
+    <div class="answer-option"><strong>C)</strong> Resistance disappears</div>
+    <div class="answer-option"><strong>D)</strong> Capacitance becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Energy is lost immediately</div>
+    </div>
+    
+   
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- CONTINUED QUESTIONS -->
+<!-- ============================================================ -->
+
+<div class="question-block">
+  <div class="question-number">2.11</div>
+  <div class="question-text">
+  A capacitor stores more charge when connected to a higher voltage source because:
+  </div>
+  <div class="answer-option"><strong>A)</strong> Capacitance increases automatically</div>
+  <div class="answer-option"><strong>B)</strong> Charge is directly proportional to voltage</div>
+  <div class="answer-option"><strong>C)</strong> Resistance decreases</div>
+  <div class="answer-option"><strong>D)</strong> Current remains constant</div>
+  <div class="answer-option"><strong>E)</strong> Energy is destroyed</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.12</div>
+  <div class="question-text">
+  Describe what happens to current in an RC charging circuit over time.
+  </div>
+  <div class="answer-option"><strong>A)</strong> It increases steadily</div>
+  <div class="answer-option"><strong>B)</strong> It remains constant</div>
+  <div class="answer-option"><strong>C)</strong> It decreases gradually</div>
+  <div class="answer-option"><strong>D)</strong> It instantly becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> It reverses direction</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.13</div>
+  <div class="question-text">
+  A large capacitance connected to a fixed resistor will result in:
+  </div>
+  <div class="answer-option"><strong>A)</strong> A shorter charging time</div>
+  <div class="answer-option"><strong>B)</strong> A longer charging time</div>
+  <div class="answer-option"><strong>C)</strong> No stored energy</div>
+  <div class="answer-option"><strong>D)</strong> Zero time constant</div>
+  <div class="answer-option"><strong>E)</strong> Infinite voltage</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.14</div>
+  <div class="question-text">
+  Predict what happens to stored energy if capacitance doubles while voltage remains constant.
+  </div>
+  <div class="answer-option"><strong>A)</strong> Energy halves</div>
+  <div class="answer-option"><strong>B)</strong> Energy doubles</div>
+  <div class="answer-option"><strong>C)</strong> Energy quadruples</div>
+  <div class="answer-option"><strong>D)</strong> Energy becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> Energy stays the same</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.15</div>
+  <div class="question-text">
+  A capacitor discharging through a resistor transfers energy primarily into:
+  </div>
+  <div class="answer-option"><strong>A)</strong> Magnetic energy</div>
+  <div class="answer-option"><strong>B)</strong> Light energy only</div>
+  <div class="answer-option"><strong>C)</strong> Thermal energy in the resistor</div>
+  <div class="answer-option"><strong>D)</strong> Mechanical motion</div>
+  <div class="answer-option"><strong>E)</strong> Chemical energy</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.16</div>
+  <div class="question-text">
+  Explain why capacitors are often used in power supply filtering.
+  </div>
+  <div class="answer-option"><strong>A)</strong> They increase resistance</div>
+  <div class="answer-option"><strong>B)</strong> They smooth out voltage fluctuations</div>
+  <div class="answer-option"><strong>C)</strong> They eliminate current completely</div>
+  <div class="answer-option"><strong>D)</strong> They double voltage</div>
+  <div class="answer-option"><strong>E)</strong> They prevent charge storage</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.17</div>
+  <div class="question-text">
+  A capacitor initially charged to 12 V begins to discharge. After one time constant, the voltage will be approximately:
+  </div>
+  <div class="answer-option"><strong>A)</strong> 12 V</div>
+  <div class="answer-option"><strong>B)</strong> 7.6 V</div>
+  <div class="answer-option"><strong>C)</strong> 4.4 V</div>
+  <div class="answer-option"><strong>D)</strong> 0 V</div>
+  <div class="answer-option"><strong>E)</strong> 24 V</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.18</div>
+  <div class="question-text">
+  Determine what happens to the time constant if both resistance and capacitance are doubled.
+  </div>
+  <div class="answer-option"><strong>A)</strong> It doubles</div>
+  <div class="answer-option"><strong>B)</strong> It halves</div>
+  <div class="answer-option"><strong>C)</strong> It quadruples</div>
+  <div class="answer-option"><strong>D)</strong> It remains unchanged</div>
+  <div class="answer-option"><strong>E)</strong> It becomes zero</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.19</div>
+  <div class="question-text">
+  A capacitor connected in series with a resistor in an AC circuit primarily:
+  </div>
+  <div class="answer-option"><strong>A)</strong> Blocks all signals</div>
+  <div class="answer-option"><strong>B)</strong> Stores energy temporarily and releases it cyclically</div>
+  <div class="answer-option"><strong>C)</strong> Eliminates voltage</div>
+  <div class="answer-option"><strong>D)</strong> Doubles resistance</div>
+  <div class="answer-option"><strong>E)</strong> Stops current permanently</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.20</div>
+  <div class="question-text">
+  If plate separation decreases in a capacitor, capacitance will:
+  </div>
+  <div class="answer-option"><strong>A)</strong> Decrease</div>
+  <div class="answer-option"><strong>B)</strong> Increase</div>
+  <div class="answer-option"><strong>C)</strong> Remain constant</div>
+  <div class="answer-option"><strong>D)</strong> Become zero</div>
+  <div class="answer-option"><strong>E)</strong> Reverse polarity</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.21</div>
+  <div class="question-text">
+  Explain why energy stored in a capacitor depends on the square of the voltage.
+  </div>
+  <div class="answer-option"><strong>A)</strong> Energy increases linearly with voltage</div>
+  <div class="answer-option"><strong>B)</strong> Energy depends on both charge and voltage</div>
+  <div class="answer-option"><strong>C)</strong> Capacitance becomes zero</div>
+  <div class="answer-option"><strong>D)</strong> Current doubles</div>
+  <div class="answer-option"><strong>E)</strong> Resistance disappears</div>
+  </div>
+  
+  <div class="question-block">
+  <div class="question-number">2.22</div>
+  <div class="question-text">
+  A capacitor rated at a maximum voltage should not exceed that value because:
+  </div>
+  <div class="answer-option"><strong>A)</strong> Capacitance increases</div>
+  <div class="answer-option"><strong>B)</strong> The dielectric may break down</div>
+  <div class="answer-option"><strong>C)</strong> Current becomes zero</div>
+  <div class="answer-option"><strong>D)</strong> Energy disappears</div>
+  <div class="answer-option"><strong>E)</strong> Resistance doubles</div>
+  </div>
+
+<!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+  <div class="answer-row"><div>2.1</div><div>C</div><div>Current goes to zero after full charge (DC)</div></div>
+  <div class="answer-row"><div>2.2</div><div>C</div><div>Larger plate area increases capacitance</div></div>
+  <div class="answer-row"><div>2.3</div><div>B</div><div>Stores energy and releases it quickly</div></div>
+  <div class="answer-row"><div>2.4</div><div>C</div><div>Voltage decreases gradually during discharge</div></div>
+  <div class="answer-row"><div>2.5</div><div>B</div><div>Larger τ means slower charging</div></div>
+  
+  <div class="answer-row"><div>2.6</div><div>C</div><div>Energy ∝ V², so doubling V quadruples energy</div></div>
+  <div class="answer-row"><div>2.7</div><div>B</div><div>Electric field prevents further charge flow</div></div>
+  <div class="answer-row"><div>2.8</div><div>B</div><div>τ = RC, doubling R doubles τ</div></div>
+  <div class="answer-row"><div>2.9</div><div>B</div><div>Initially behaves like a short circuit</div></div>
+  <div class="answer-row"><div>2.10</div><div>A</div><div>Charge builds until capacitor voltage equals battery</div></div>
+  
+  <div class="answer-row"><div>2.11</div><div>B</div><div>Q = CV, so charge increases with voltage</div></div>
+  <div class="answer-row"><div>2.12</div><div>C</div><div>Charging current decreases over time</div></div>
+  <div class="answer-row"><div>2.13</div><div>B</div><div>Larger capacitance → longer τ</div></div>
+  <div class="answer-row"><div>2.14</div><div>B</div><div>Energy ∝ C when V constant</div></div>
+  <div class="answer-row"><div>2.15</div><div>C</div><div>Energy dissipates as heat in resistor</div></div>
+  
+  <div class="answer-row"><div>2.16</div><div>B</div><div>Capacitors smooth voltage changes</div></div>
+  <div class="answer-row"><div>2.17</div><div>B</div><div>After 1τ, V ≈ 37% of initial during discharge</div></div>
+  <div class="answer-row"><div>2.18</div><div>C</div><div>τ = RC; doubling both → 4×</div></div>
+  <div class="answer-row"><div>2.19</div><div>B</div><div>Energy stored and released cyclically</div></div>
+  <div class="answer-row"><div>2.20</div><div>B</div><div>Smaller separation increases capacitance</div></div>
+  
+  <div class="answer-row"><div>2.21</div><div>B</div><div>Energy depends on both charge and voltage</div></div>
+  <div class="answer-row"><div>2.22</div><div>B</div><div>Exceeding rating can cause dielectric breakdown</div></div>
+  
+  </div>
+
+  <footer>
+    Section 8.5 – Capacitors and Practical Applications | Bank 2
+    </footer>
+</body>
+</html>

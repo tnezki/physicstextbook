@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.2 Bank 4</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.2: Measuring and Analyzing Circuit Behavior</h1>
+    <p><strong>Bank 4: Multi-Step Calculations</strong></p>
+    <p>Provide one final numeric answer. No intermediate hints given.</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Multi-Step Problems</h2>
+    <p>4 Scenarios | 2+ calculation steps required</p>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 1 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 1: Voltage–Current Analysis</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.1</div>
+    A 24 V source is connected to a 6.0 Ω resistor. Determine the current flowing and the power dissipated.
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.2</div>
+    A resistor carries 4.0 A when connected to a 20 V supply. What is its resistance, and how much power does it dissipate?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.3</div>
+    A 12 V battery is connected to a component that draws 3.0 A. Calculate the resistance and energy transferred in 15 s.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.4</div>
+    Find the voltage required to produce 8.0 A through a 5.0 Ω resistor, then determine the energy used in 10 s.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 2 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 2: Ohmic Material Testing</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.5</div>
+    During a lab test, a resistor has 10 V across it and a current of 2.0 A. If voltage is increased to 20 V, what current flows and what power is dissipated?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.6</div>
+    A metal resistor shows a linear V–I graph. At 15 V it draws 3.0 A. Determine its resistance and predict the current at 30 V.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.7</div>
+    A resistor dissipates 60 W when connected to a 30 V supply. What resistance does it have, and what current flows?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.8</div>
+    A component has resistance 8.0 Ω and is connected to a 16 V source. Calculate the current and total energy dissipated in 25 s.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 3 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 3: Measurement and Design</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.9</div>
+    A technician measures 9.0 V across a resistor and 0.75 A flowing through it. Determine its resistance and power dissipation.
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.10</div>
+    A 120 V outlet powers a device that draws 2.5 A. What is its resistance and how much energy is used in 2.0 minutes?
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.11</div>
+    A 5.0 Ω resistor must not exceed 100 W. What is the maximum current allowed, and what voltage would produce this power?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.12</div>
+    Find the resistance required for a device to draw 4.0 A from a 48 V source, then calculate the power rating needed.
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 4 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 4: Circuit Planning and Safety</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.13</div>
+    A 240 V heater is rated at 1200 W. Determine the current drawn and the resistance of the heater.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.14</div>
+    A circuit must limit current to 3.0 A using a 36 V supply. What resistance is required, and how much power will the resistor dissipate?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.15</div>
+    A resistor of 10 Ω is connected to a variable power supply set to 50 V. Calculate the current and energy dissipated in 1.5 minutes.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.16</div>
+    A device operating at 24 V draws 3.0 A continuously. Determine its resistance and total energy consumed in 30 minutes.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 4: Multi-Step Calculations — Answer Key</strong></p>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 1 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 1: Voltage–Current Analysis
+  </div>
+  
+  <div class="answer-row">
+  <div>4.1</div>
+  <div>96 W</div>
+  <div>
+  $$I=\frac{24}{6.0}=4.0\text{ A}$$
+  $$P=(4.0)(24)=96\text{ W}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.2</div>
+  <div>80 W</div>
+  <div>
+  $$R=\frac{20}{4.0}=5.0\ \Omega$$
+  $$P=(4.0)(20)=80\text{ W}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.3</div>
+  <div>540 J</div>
+  <div>
+  $$R=\frac{12}{3.0}=4.0\ \Omega$$
+  $$P=(12)(3.0)=36\text{ W}$$
+  $$E=(36)(15)=540\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.4</div>
+  <div>3200 J</div>
+  <div>
+  $$V=(8.0)(5.0)=40\text{ V}$$
+  $$P=(40)(8.0)=320\text{ W}$$
+  $$E=(320)(10)=3200\text{ J}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 2 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 2: Ohmic Material Testing
+  </div>
+  
+  <div class="answer-row">
+  <div>4.5</div>
+  <div>80 W</div>
+  <div>
+  $$R=\frac{10}{2.0}=5.0\ \Omega$$
+  $$I=\frac{20}{5.0}=4.0\text{ A}$$
+  $$P=(20)(4.0)=80\text{ W}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.6</div>
+  <div>6.0 A</div>
+  <div>
+  $$R=\frac{15}{3.0}=5.0\ \Omega$$
+  $$I=\frac{30}{5.0}=6.0\text{ A}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.7</div>
+  <div>2.0 A</div>
+  <div>
+  $$R=\frac{30^2}{60}=15\ \Omega$$
+  $$I=\frac{30}{15}=2.0\text{ A}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.8</div>
+  <div>800 J</div>
+  <div>
+  $$I=\frac{16}{8.0}=2.0\text{ A}$$
+  $$P=(16)(2.0)=32\text{ W}$$
+  $$E=(32)(25)=800\text{ J}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 3 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 3: Measurement and Design
+  </div>
+  
+  <div class="answer-row">
+  <div>4.9</div>
+  <div>6.8 W</div>
+  <div>
+  $$R=\frac{9.0}{0.75}=12\ \Omega$$
+  $$P=(9.0)(0.75)=6.8\text{ W}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.10</div>
+  <div>36000 J</div>
+  <div>
+  $$R=\frac{120}{2.5}=48\ \Omega$$
+  $$P=(120)(2.5)=300\text{ W}$$
+  $$t=2.0\text{ min}=120\text{ s}$$
+  $$E=(300)(120)=36000\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.11</div>
+  <div>22 V</div>
+  <div>
+  $$I=\sqrt{\frac{100}{5.0}}=4.47\text{ A}$$
+  $$V=(4.47)(5.0)=22\text{ V}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.12</div>
+  <div>192 W</div>
+  <div>
+  $$R=\frac{48}{4.0}=12\ \Omega$$
+  $$P=(48)(4.0)=192\text{ W}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 4 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 4: Circuit Planning and Safety
+  </div>
+  
+  <div class="answer-row">
+  <div>4.13</div>
+  <div>48 Ω</div>
+  <div>
+  $$I=\frac{1200}{240}=5.0\text{ A}$$
+  $$R=\frac{240}{5.0}=48\ \Omega$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.14</div>
+  <div>108 W</div>
+  <div>
+  $$R=\frac{36}{3.0}=12\ \Omega$$
+  $$P=(36)(3.0)=108\text{ W}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.15</div>
+  <div>22500 J</div>
+  <div>
+  $$I=\frac{50}{10}=5.0\text{ A}$$
+  $$P=(50)(5.0)=250\text{ W}$$
+  $$t=1.5\text{ min}=90\text{ s}$$
+  $$E=(250)(90)=22500\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.16</div>
+  <div>129600 J</div>
+  <div>
+  $$R=\frac{24}{3.0}=8.0\ \Omega$$
+  $$P=(24)(3.0)=72\text{ W}$$
+  $$t=30\text{ min}=1800\text{ s}$$
+  $$E=(72)(1800)=129600\text{ J}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.3 Bank 3</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+
+  <header>
+    <h1>Section 8.3: Series and Parallel Circuits</h1>
+    <p><strong>Bank 3: Single-Step Calculations</strong></p>
+    <p>Round answers to 2–3 significant figures.</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Single-Step Calculations</h2>
+    <div class="bank-info">6 Formula Groups | 24 Problems</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 1: SERIES CURRENT -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 1: Series Current</div>
+    <div class="formula-display">
+    $$I_{\text{total}} = I_1 = I_2 = I_3$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.1</div>
+    A series circuit carries 2.5 A. What current flows through each resistor?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.2</div>
+    Calculate the current through each component in a series circuit if the total current is 4.0 A.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.3</div>
+    A string of three bulbs in series draws 1.8 A from a battery. What current passes through one bulb?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.4</div>
+    Determine the current through the second resistor in a series circuit if the total current is 6.0 A.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 2: SERIES VOLTAGE -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 2: Series Voltage</div>
+    <div class="formula-display">
+    $$V_{\text{total}} = V_1 + V_2 + V_3$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.5</div>
+    Two resistors in series have voltage drops of 6.0 V and 9.0 V. What is the total voltage?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.6</div>
+    Calculate the total voltage if three components in series drop 4.0 V, 5.0 V, and 3.0 V.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.7</div>
+    A flashlight battery provides voltage to two series bulbs with drops of 2.0 V each. What total voltage does the battery supply?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.8</div>
+    Determine the missing voltage drop if the total voltage is 20 V and two drops are 8.0 V and 5.0 V.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 3: SERIES RESISTANCE -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 3: Series Resistance</div>
+    <div class="formula-display">
+    $$R_{\text{total}} = R_1 + R_2 + R_3$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.9</div>
+    Three resistors of 5.0 Ω, 7.0 Ω, and 8.0 Ω are connected in series. What is the total resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.10</div>
+    Calculate the total resistance of 12 Ω and 4.0 Ω resistors connected in series.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.11</div>
+    A device contains three identical 6.0 Ω resistors in series. What equivalent resistance results?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.12</div>
+    Determine the value of a third resistor added in series to 3.0 Ω and 2.0 Ω resistors to make a total of 12 Ω.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 4: PARALLEL VOLTAGE -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 4: Parallel Voltage</div>
+    <div class="formula-display">
+    $$V_1 = V_2 = V_3$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.13</div>
+    A parallel circuit is connected to a 24 V battery. What voltage is across each branch?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.14</div>
+    Calculate the branch voltage in a parallel circuit supplied by 12 V.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.15</div>
+    A home wiring system connects devices in parallel to a 120 V source. What voltage does each device receive?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.16</div>
+    Determine the voltage across one branch of a parallel circuit connected to a 9.0 V battery.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 5: PARALLEL CURRENT -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 5: Parallel Current</div>
+    <div class="formula-display">
+    $$I_{\text{total}} = I_1 + I_2 + I_3$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.17</div>
+    Two parallel branches carry currents of 2.0 A and 3.5 A. What is the total current?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.18</div>
+    Calculate the total current if three branches carry 1.0 A, 2.0 A, and 4.0 A.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.19</div>
+    A parallel circuit has branch currents of 5.0 A and 7.0 A. What current leaves the battery?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.20</div>
+    Determine the missing branch current if total current is 10 A and one branch carries 6.0 A.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 6: PARALLEL RESISTANCE -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 6: Parallel Resistance</div>
+    <div class="formula-display">
+    $$\frac{1}{R_{\text{total}}} = \frac{1}{R_1} + \frac{1}{R_2}$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.21</div>
+    Two resistors of 6.0 Ω and 3.0 Ω are connected in parallel. What is the equivalent resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.22</div>
+    Calculate the equivalent resistance of two 8.0 Ω resistors connected in parallel.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.23</div>
+    A circuit contains 12 Ω and 4.0 Ω resistors in parallel. What total resistance results?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.24</div>
+    Determine the resistance required in parallel with 10 Ω to produce an equivalent resistance of 5.0 Ω.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 3: Single-Step Calculations — Answer Key</strong></p>
+  
+  <!-- ============================================================ -->
+  <!-- Series Current -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 1: Series Current
+  </div>
+  
+  <div class="answer-row"><div>3.1</div><div>2.5 A</div><div>Current is same everywhere in series</div></div>
+  <div class="answer-row"><div>3.2</div><div>4.0 A</div><div>All components share total current</div></div>
+  <div class="answer-row"><div>3.3</div><div>1.8 A</div><div>Same current through each bulb</div></div>
+  <div class="answer-row"><div>3.4</div><div>6.0 A</div><div>Series current equals total current</div></div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Series Voltage -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 2: Series Voltage
+  </div>
+  
+  <div class="answer-row"><div>3.5</div><div>15 V</div><div>6.0 + 9.0 = 15 V</div></div>
+  <div class="answer-row"><div>3.6</div><div>12 V</div><div>4.0 + 5.0 + 3.0 = 12 V</div></div>
+  <div class="answer-row"><div>3.7</div><div>4.0 V</div><div>2.0 + 2.0 = 4.0 V</div></div>
+  <div class="answer-row"><div>3.8</div><div>7.0 V</div><div>20 − (8.0 + 5.0) = 7.0 V</div></div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Series Resistance -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 3: Series Resistance
+  </div>
+  
+  <div class="answer-row"><div>3.9</div><div>20 Ω</div><div>5.0 + 7.0 + 8.0 = 20 Ω</div></div>
+  <div class="answer-row"><div>3.10</div><div>16 Ω</div><div>12 + 4.0 = 16 Ω</div></div>
+  <div class="answer-row"><div>3.11</div><div>18 Ω</div><div>6.0 × 3 = 18 Ω</div></div>
+  <div class="answer-row"><div>3.12</div><div>7.0 Ω</div><div>12 − (3.0 + 2.0) = 7.0 Ω</div></div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Parallel Voltage -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 4: Parallel Voltage
+  </div>
+  
+  <div class="answer-row"><div>3.13</div><div>24 V</div><div>Voltage same across all branches</div></div>
+  <div class="answer-row"><div>3.14</div><div>12 V</div><div>Parallel voltage equals supply</div></div>
+  <div class="answer-row"><div>3.15</div><div>120 V</div><div>Each device receives full source voltage</div></div>
+  <div class="answer-row"><div>3.16</div><div>9.0 V</div><div>Branch voltage equals battery voltage</div></div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Parallel Current -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 5: Parallel Current
+  </div>
+  
+  <div class="answer-row"><div>3.17</div><div>5.5 A</div><div>2.0 + 3.5 = 5.5 A</div></div>
+  <div class="answer-row"><div>3.18</div><div>7.0 A</div><div>1.0 + 2.0 + 4.0 = 7.0 A</div></div>
+  <div class="answer-row"><div>3.19</div><div>12 A</div><div>5.0 + 7.0 = 12 A</div></div>
+  <div class="answer-row"><div>3.20</div><div>4.0 A</div><div>10 − 6.0 = 4.0 A</div></div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Parallel Resistance -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 6: Parallel Resistance
+  </div>
+  
+  <div class="answer-row"><div>3.21</div><div>2.0 Ω</div><div>1/R = 1/6.0 + 1/3.0 → R = 2.0 Ω</div></div>
+  <div class="answer-row"><div>3.22</div><div>4.0 Ω</div><div>Two equal resistors in parallel: R/2</div></div>
+  <div class="answer-row"><div>3.23</div><div>3.0 Ω</div><div>1/R = 1/12 + 1/4.0 → R = 3.0 Ω</div></div>
+  <div class="answer-row"><div>3.24</div><div>10 Ω</div><div>Equal resistors in parallel give half resistance</div></div>
+  
+  </div>
+  
+  </div>
+    
+    <footer>
+    Section 8.3 – Series and Parallel Circuits | Bank 3
+    </footer>
+    
+    </div>
+
+
+
+</body>
+</html>

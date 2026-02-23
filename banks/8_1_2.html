@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.1 Bank 2</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.1: Energy Transfer in Electric Circuits</h1>
+    <p><strong>Bank 2: Conceptual Questions</strong></p>
+    <p>Application and Reasoning | No Calculations</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Conceptual Understanding</h2>
+    <div class="bank-info">Multiple Choice (A–E)</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- QUESTIONS -->
+    <!-- ============================================================ -->
+    
+    <div class="question-block">
+      <div class="question-number">2.1</div>
+      <div class="question-text">
+        A battery is connected to a closed circuit. What is the primary role of the battery?
+      </div>
+      <div class="answer-option"><strong>A)</strong> To increase resistance</div>
+      <div class="answer-option"><strong>B)</strong> To provide voltage</div>
+      <div class="answer-option"><strong>C)</strong> To store current</div>
+      <div class="answer-option"><strong>D)</strong> To eliminate energy</div>
+      <div class="answer-option"><strong>E)</strong> To reduce charge</div>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-number">2.2</div>
+      <div class="question-text">
+        Electric current exists in a circuit only when:
+      </div>
+      <div class="answer-option"><strong>A)</strong> The circuit is open</div>
+      <div class="answer-option"><strong>B)</strong> There is a closed conducting path</div>
+      <div class="answer-option"><strong>C)</strong> Resistance is infinite</div>
+      <div class="answer-option"><strong>D)</strong> Voltage is zero</div>
+      <div class="answer-option"><strong>E)</strong> Charge is destroyed</div>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-number">2.3</div>
+      <div class="question-text">
+        Explain why increasing voltage generally increases current in a circuit with constant resistance.
+      </div>
+      <div class="answer-option"><strong>A)</strong> Higher voltage pushes more charge through per second</div>
+      <div class="answer-option"><strong>B)</strong> Voltage removes resistance</div>
+      <div class="answer-option"><strong>C)</strong> Energy disappears</div>
+      <div class="answer-option"><strong>D)</strong> Current becomes stored</div>
+      <div class="answer-option"><strong>E)</strong> Charge is created</div>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-number">2.4</div>
+      <div class="question-text">
+        A device operating for a longer time while power remains constant will:
+      </div>
+      <div class="answer-option"><strong>A)</strong> Transfer less energy</div>
+      <div class="answer-option"><strong>B)</strong> Transfer more energy</div>
+      <div class="answer-option"><strong>C)</strong> Eliminate voltage</div>
+      <div class="answer-option"><strong>D)</strong> Reduce current to zero</div>
+      <div class="answer-option"><strong>E)</strong> Reverse resistance</div>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-number">2.5</div>
+      <div class="question-text">
+        A homeowner installs solar panels to reduce electricity bills. Which principle explains how the panels generate electricity?
+      </div>
+      <div class="answer-option"><strong>A)</strong> Conversion of chemical energy</div>
+      <div class="answer-option"><strong>B)</strong> Conversion of light energy</div>
+      <div class="answer-option"><strong>C)</strong> Increase in resistance</div>
+      <div class="answer-option"><strong>D)</strong> Elimination of voltage</div>
+      <div class="answer-option"><strong>E)</strong> Storage of current</div>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-number">2.6</div>
+      <div class="question-text">
+        Electrical energy in a circuit is ultimately converted into:
+      </div>
+      <div class="answer-option"><strong>A)</strong> Other forms of energy</div>
+      <div class="answer-option"><strong>B)</strong> New charge</div>
+      <div class="answer-option"><strong>C)</strong> Infinite power</div>
+      <div class="answer-option"><strong>D)</strong> Zero resistance</div>
+      <div class="answer-option"><strong>E)</strong> Lost mass</div>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-number">2.7</div>
+      <div class="question-text">
+        Describe what happens to current if a circuit is opened.
+      </div>
+      <div class="answer-option"><strong>A)</strong> It increases</div>
+      <div class="answer-option"><strong>B)</strong> It stops</div>
+      <div class="answer-option"><strong>C)</strong> It doubles</div>
+      <div class="answer-option"><strong>D)</strong> It becomes voltage</div>
+      <div class="answer-option"><strong>E)</strong> It stores energy</div>
+    </div>
+    
+    <div class="question-block">
+      <div class="question-number">2.8</div>
+      <div class="question-text">
+        A higher power rating on an appliance indicates:
+      </div>
+      <div class="answer-option"><strong>A)</strong> It transfers energy faster</div>
+      <div class="answer-option"><strong>B)</strong> It stores more charge</div>
+      <div class="answer-option"><strong>C)</strong> It eliminates resistance</div>
+      <div class="answer-option"><strong>D)</strong> It produces energy</div>
+      <div class="answer-option"><strong>E)</strong> It has zero voltage</div>
+    </div>
+    
+   <!-- ============================================================ -->
+<!-- CONTINUED QUESTIONS -->
+<!-- ============================================================ -->
+
+<div class="question-block">
+  <div class="question-number">2.9</div>
+  <div class="question-text">
+    A circuit with high resistance connected to a fixed voltage source will have what kind of current?
+  </div>
+  <div class="answer-option"><strong>A)</strong> Large current</div>
+  <div class="answer-option"><strong>B)</strong> Zero current</div>
+  <div class="answer-option"><strong>C)</strong> Small current</div>
+  <div class="answer-option"><strong>D)</strong> Infinite current</div>
+  <div class="answer-option"><strong>E)</strong> Reversed current</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.10</div>
+  <div class="question-text">
+    Predict what happens to energy transfer if both power and time increase.
+  </div>
+  <div class="answer-option"><strong>A)</strong> Energy decreases</div>
+  <div class="answer-option"><strong>B)</strong> Energy remains constant</div>
+  <div class="answer-option"><strong>C)</strong> Energy increases</div>
+  <div class="answer-option"><strong>D)</strong> Voltage disappears</div>
+  <div class="answer-option"><strong>E)</strong> Resistance becomes zero</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.11</div>
+  <div class="question-text">
+    A portable battery pack is used to charge a phone. What energy transformation occurs inside the battery?
+  </div>
+  <div class="answer-option"><strong>A)</strong> Electrical to chemical</div>
+  <div class="answer-option"><strong>B)</strong> Chemical to electrical</div>
+  <div class="answer-option"><strong>C)</strong> Light to thermal</div>
+  <div class="answer-option"><strong>D)</strong> Mechanical to nuclear</div>
+  <div class="answer-option"><strong>E)</strong> Resistance to voltage</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.12</div>
+  <div class="question-text">
+    Determine what happens to current if resistance decreases while voltage remains constant.
+  </div>
+  <div class="answer-option"><strong>A)</strong> Current decreases</div>
+  <div class="answer-option"><strong>B)</strong> Current remains constant</div>
+  <div class="answer-option"><strong>C)</strong> Current increases</div>
+  <div class="answer-option"><strong>D)</strong> Current becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> Current reverses</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.13</div>
+  <div class="question-text">
+    A light bulb converts electrical energy into light and heat. What does this demonstrate?
+  </div>
+  <div class="answer-option"><strong>A)</strong> Energy is created</div>
+  <div class="answer-option"><strong>B)</strong> Energy is destroyed</div>
+  <div class="answer-option"><strong>C)</strong> Energy is transformed</div>
+  <div class="answer-option"><strong>D)</strong> Resistance disappears</div>
+  <div class="answer-option"><strong>E)</strong> Voltage doubles</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.14</div>
+  <div class="question-text">
+    Identify why thicker wires are often used in high-current circuits.
+  </div>
+  <div class="answer-option"><strong>A)</strong> They increase voltage</div>
+  <div class="answer-option"><strong>B)</strong> They reduce resistance</div>
+  <div class="answer-option"><strong>C)</strong> They store energy</div>
+  <div class="answer-option"><strong>D)</strong> They eliminate current</div>
+  <div class="answer-option"><strong>E)</strong> They increase efficiency to 100%</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.15</div>
+  <div class="question-text">
+    A heater draws a large current from a household outlet. What must be true about its power rating?
+  </div>
+  <div class="answer-option"><strong>A)</strong> It is low</div>
+  <div class="answer-option"><strong>B)</strong> It is zero</div>
+  <div class="answer-option"><strong>C)</strong> It is high</div>
+  <div class="answer-option"><strong>D)</strong> It eliminates resistance</div>
+  <div class="answer-option"><strong>E)</strong> It stops energy transfer</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.16</div>
+  <div class="question-text">
+    Explain why no device can convert all electrical energy into useful work.
+  </div>
+  <div class="answer-option"><strong>A)</strong> Energy is destroyed</div>
+  <div class="answer-option"><strong>B)</strong> Some energy is always lost as heat</div>
+  <div class="answer-option"><strong>C)</strong> Voltage becomes zero</div>
+  <div class="answer-option"><strong>D)</strong> Resistance disappears</div>
+  <div class="answer-option"><strong>E)</strong> Charge is created</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.17</div>
+  <div class="question-text">
+    A solar-powered calculator works best in bright sunlight. Why?
+  </div>
+  <div class="answer-option"><strong>A)</strong> More light increases energy conversion</div>
+  <div class="answer-option"><strong>B)</strong> Resistance becomes zero</div>
+  <div class="answer-option"><strong>C)</strong> Voltage disappears</div>
+  <div class="answer-option"><strong>D)</strong> Current reverses</div>
+  <div class="answer-option"><strong>E)</strong> Charge is eliminated</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.18</div>
+  <div class="question-text">
+    Predict what happens to energy usage if a device with the same power rating runs twice as long.
+  </div>
+  <div class="answer-option"><strong>A)</strong> Energy is halved</div>
+  <div class="answer-option"><strong>B)</strong> Energy remains constant</div>
+  <div class="answer-option"><strong>C)</strong> Energy doubles</div>
+  <div class="answer-option"><strong>D)</strong> Energy becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> Voltage reverses</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.19</div>
+  <div class="question-text">
+    A circuit is designed with minimal energy loss. What quality is being optimized?
+  </div>
+  <div class="answer-option"><strong>A)</strong> Resistance</div>
+  <div class="answer-option"><strong>B)</strong> Efficiency</div>
+  <div class="answer-option"><strong>C)</strong> Voltage</div>
+  <div class="answer-option"><strong>D)</strong> Current direction</div>
+  <div class="answer-option"><strong>E)</strong> Charge quantity</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.20</div>
+  <div class="question-text">
+    Determine what happens to electrical power if current increases while voltage remains constant.
+  </div>
+  <div class="answer-option"><strong>A)</strong> Power decreases</div>
+  <div class="answer-option"><strong>B)</strong> Power remains constant</div>
+  <div class="answer-option"><strong>C)</strong> Power increases</div>
+  <div class="answer-option"><strong>D)</strong> Power becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> Resistance disappears</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.21</div>
+  <div class="question-text">
+    A phone charger becomes warm during use. What does this indicate?
+  </div>
+  <div class="answer-option"><strong>A)</strong> Energy is destroyed</div>
+  <div class="answer-option"><strong>B)</strong> Some electrical energy converts to heat</div>
+  <div class="answer-option"><strong>C)</strong> Voltage disappears</div>
+  <div class="answer-option"><strong>D)</strong> Current becomes zero</div>
+  <div class="answer-option"><strong>E)</strong> Resistance is infinite</div>
+</div>
+
+<div class="question-block">
+  <div class="question-number">2.22</div>
+  <div class="question-text">
+    Increasing both voltage and current in a device will generally:
+  </div>
+  <div class="answer-option"><strong>A)</strong> Decrease power</div>
+  <div class="answer-option"><strong>B)</strong> Leave power unchanged</div>
+  <div class="answer-option"><strong>C)</strong> Increase power</div>
+  <div class="answer-option"><strong>D)</strong> Eliminate energy transfer</div>
+  <div class="answer-option"><strong>E)</strong> Reverse resistance</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+
+  <div class="answer-row"><div>2.1</div><div>B</div><div>Battery provides voltage to drive current</div></div>
+  <div class="answer-row"><div>2.2</div><div>B</div><div>Current requires a closed conducting path</div></div>
+  <div class="answer-row"><div>2.3</div><div>A</div><div>Higher voltage pushes more charge per second</div></div>
+  <div class="answer-row"><div>2.4</div><div>B</div><div>Energy = Power × Time</div></div>
+  <div class="answer-row"><div>2.5</div><div>B</div><div>Solar panels convert light energy to electrical energy</div></div>
+
+  <div class="answer-row"><div>2.6</div><div>A</div><div>Electrical energy converts into other forms</div></div>
+  <div class="answer-row"><div>2.7</div><div>B</div><div>Opening the circuit stops current flow</div></div>
+  <div class="answer-row"><div>2.8</div><div>A</div><div>Higher power means faster energy transfer</div></div>
+  <div class="answer-row"><div>2.9</div><div>C</div><div>High resistance → small current</div></div>
+  <div class="answer-row"><div>2.10</div><div>C</div><div>Increasing power and time increases energy</div></div>
+
+  <div class="answer-row"><div>2.11</div><div>B</div><div>Chemical energy converts to electrical energy</div></div>
+  <div class="answer-row"><div>2.12</div><div>C</div><div>Lower resistance → higher current</div></div>
+  <div class="answer-row"><div>2.13</div><div>C</div><div>Energy is transformed, not created or destroyed</div></div>
+  <div class="answer-row"><div>2.14</div><div>B</div><div>Thicker wires reduce resistance</div></div>
+  <div class="answer-row"><div>2.15</div><div>C</div><div>Large current corresponds to high power rating</div></div>
+
+  <div class="answer-row"><div>2.16</div><div>B</div><div>Some energy is always lost as heat</div></div>
+  <div class="answer-row"><div>2.17</div><div>A</div><div>More light increases energy conversion</div></div>
+  <div class="answer-row"><div>2.18</div><div>C</div><div>Energy doubles if time doubles (constant power)</div></div>
+  <div class="answer-row"><div>2.19</div><div>B</div><div>Minimizing losses improves efficiency</div></div>
+  <div class="answer-row"><div>2.20</div><div>C</div><div>Power increases with greater current (constant voltage)</div></div>
+
+  <div class="answer-row"><div>2.21</div><div>B</div><div>Heat indicates energy conversion to thermal energy</div></div>
+  <div class="answer-row"><div>2.22</div><div>C</div><div>Increasing voltage and current increases power</div></div>
+
+</div>
+
+<footer>
+Section 8.1 – Energy Transfer in Electric Circuits | Bank 2
+</footer>
+
+
+
+
+  </body>
+  </html>

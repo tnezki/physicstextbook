@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 7.3: Current, Power Sources, and Measurement - Bank 4 (Multi-Step Calculations)</title>
+
+<script>
+MathJax = {
+  tex: { inlineMath: [['$','$']], displayMath: [['$$','$$']] }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; background:#fff; color:#333; line-height:1.6; padding:20px; margin:0; }
+.container { max-width:1000px; margin:0 auto; padding:20px; }
+header { border:1px solid #333; padding:20px; margin-bottom:30px; text-align:center; }
+header h1 { font-size:2rem; margin:10px 0; }
+
+.bank-section { margin-bottom:40px; }
+.bank-header { border:1px solid #333; padding:15px; margin-bottom:20px; background:#f5f5f5; }
+
+.scenario-group { margin-bottom:35px; }
+.scenario-title {
+  border:1px solid #333;
+  padding:12px;
+  margin-bottom:15px;
+  background:#f5f5f5;
+  font-weight:bold;
+  font-size:1.1rem;
+}
+
+.question { margin-bottom:15px; padding:12px; border:1px solid #e0e0e0; }
+.question-number { font-weight:bold; margin-bottom:6px; }
+
+.answer-blank {
+  margin-top:12px;
+  padding:10px;
+  background:#fafafa;
+  border:1px dashed #999;
+}
+
+.answer-key {
+  border:1px solid #333;
+  padding:20px;
+  margin-top:40px;
+  background:#f5f5f5;
+}
+
+.answer-key-section { margin-bottom:25px; }
+
+.answer-key-section-title {
+  font-weight:bold;
+  font-size:1rem;
+  margin-bottom:10px;
+  border-bottom:1px solid #333;
+  padding-bottom:6px;
+}
+
+.answer-row {
+  display:grid;
+  grid-template-columns:80px 60px 1fr;
+  gap:15px;
+  padding:8px;
+  background:#ffffff;
+  border-bottom:1px solid #ddd;
+}
+
+.answer-row:last-child { border-bottom:none; }
+
+footer {
+  text-align:center;
+  padding:15px;
+  border-top:1px solid #ccc;
+  margin-top:40px;
+  font-size:0.9rem;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+<h1>Section 7.3: Current, Power Sources, and Measurement</h1>
+<p><strong>Bank 4: Multi-Step Calculations</strong></p>
+<p>Provide one final numeric answer. No intermediate hints given.</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+<h2>Multi-Step Problems</h2>
+<p>4 Scenarios | 2+ calculation steps required per question</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCENARIO 1 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+<div class="scenario-title">Scenario 1: Current and Charge Flow</div>
+
+<!-- Q1 Standard -->
+<div class="question">
+<div class="question-number">4.1</div>
+A total charge of 240 C passes through a device in 8.0 s. What is the current through the device?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q2 Inverted -->
+<div class="question">
+<div class="question-number">4.2</div>
+Determine how much charge flows through a circuit in 5.0 s if the current is 6.0 A.
+<div class="answer-blank">Answer: ________ C</div>
+</div>
+
+<!-- Q3 Context-Rich -->
+<div class="question">
+<div class="question-number">4.3</div>
+A laboratory power supply delivers 90 C of charge to a circuit over 3.0 s while operating. What current is supplied?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q4 Alternate -->
+<div class="question">
+<div class="question-number">4.4</div>
+Find the time required for 150 C of charge to pass through a circuit carrying a steady current of 10 A.
+<div class="answer-blank">Answer: ________ s</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- SCENARIO 2 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+    <div class="scenario-title">Scenario 2: Electrical Energy and Voltage</div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">4.5</div>
+    A 5.0 C charge moves through a potential difference of 18 V. How much electrical energy is transferred?
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">4.6</div>
+    Calculate the potential difference required to transfer 250 J of energy using a charge of 10 C.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">4.7</div>
+    A portable battery pack delivers 360 J of energy to a device operating at 12 V. What total charge moves through the device during this process?
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">4.8</div>
+    Determine the amount of energy delivered when 8.0 C of charge passes through a 25 V power source.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- SCENARIO 3 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+    <div class="scenario-title">Scenario 3: Power Sources and Combined Relationships</div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">4.9</div>
+    A battery transfers 480 J of energy while moving 24 C of charge through a circuit. What is the potential difference of the battery?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">4.10</div>
+    Determine the current in a circuit if 200 C of charge flow in 40 s while powered by a battery.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">4.11</div>
+    An electric scooter battery provides 720 J of energy to the motor while 60 C of charge pass through the circuit. What is the battery’s potential difference?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">4.12</div>
+    Find the total charge delivered if a 30 V power source transfers 900 J of electrical energy.
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- SCENARIO 4 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+    <div class="scenario-title">Scenario 4: Multi-Step Circuit Analysis</div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">4.13</div>
+    A device operates at 15 V and draws 4.0 A of current. How much electrical energy is transferred in 10 s?
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">4.14</div>
+    Determine the potential difference across a device if 600 J of energy are transferred while 20 C of charge pass through it.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">4.15</div>
+    A laboratory power supply runs an experiment by delivering a steady current of 3.0 A for 20 s. If the supply provides 360 J of electrical energy during that time, what is the potential difference?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">4.16</div>
+    Find the total charge that passes through a circuit operating at 24 V if 480 J of energy are delivered.
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 4: Multi-Step Calculations — Answer Key</strong></p>
+  
+    <!-- ============================== -->
+    <!-- Scenario 1 -->
+    <!-- ============================== -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 1: Current and Charge Flow
+      </div>
+  
+      <div class="answer-row">
+        <div>4.1</div>
+        <div>30 A</div>
+        <div>
+          $$I = \frac{Q}{t} = \frac{240}{8.0} = 30\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.2</div>
+        <div>30 C</div>
+        <div>
+          $$Q = It = (6.0)(5.0) = 30\text{ C}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.3</div>
+        <div>30 A</div>
+        <div>
+          $$I = \frac{Q}{t} = \frac{90}{3.0} = 30\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.4</div>
+        <div>15 s</div>
+        <div>
+          $$t = \frac{Q}{I} = \frac{150}{10} = 15\text{ s}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================== -->
+    <!-- Scenario 2 -->
+    <!-- ============================== -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 2: Electrical Energy and Voltage
+      </div>
+  
+      <div class="answer-row">
+        <div>4.5</div>
+        <div>90 J</div>
+        <div>
+          $$E = QV = (5.0)(18) = 90\text{ J}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.6</div>
+        <div>25 V</div>
+        <div>
+          $$V = \frac{E}{Q} = \frac{250}{10} = 25\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.7</div>
+        <div>30 C</div>
+        <div>
+          $$Q = \frac{E}{V} = \frac{360}{12} = 30\text{ C}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.8</div>
+        <div>200 J</div>
+        <div>
+          $$E = QV = (8.0)(25) = 200\text{ J}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================== -->
+    <!-- Scenario 3 -->
+    <!-- ============================== -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 3: Power Sources and Combined Relationships
+      </div>
+  
+      <div class="answer-row">
+        <div>4.9</div>
+        <div>20 V</div>
+        <div>
+          $$V = \frac{E}{Q} = \frac{480}{24} = 20\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.10</div>
+        <div>5.0 A</div>
+        <div>
+          $$I = \frac{Q}{t} = \frac{200}{40} = 5.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.11</div>
+        <div>12 V</div>
+        <div>
+          $$V = \frac{E}{Q} = \frac{720}{60} = 12\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.12</div>
+        <div>30 C</div>
+        <div>
+          $$Q = \frac{E}{V} = \frac{900}{30} = 30\text{ C}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================== -->
+    <!-- Scenario 4 -->
+    <!-- ============================== -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 4: Multi-Step Circuit Analysis
+      </div>
+  
+      <div class="answer-row">
+        <div>4.13</div>
+        <div>600 J</div>
+        <div>
+          First find charge:  
+          $$Q = It = (4.0)(10) = 40\text{ C}$$  
+          Then energy:  
+          $$E = QV = (40)(15) = 600\text{ J}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.14</div>
+        <div>30 V</div>
+        <div>
+          $$V = \frac{E}{Q} = \frac{600}{20} = 30\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.15</div>
+        <div>6.0 V</div>
+        <div>
+          First find charge:  
+          $$Q = It = (3.0)(20) = 60\text{ C}$$  
+          Then voltage:  
+          $$V = \frac{E}{Q} = \frac{360}{60} = 6.0\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.16</div>
+        <div>20 C</div>
+        <div>
+          $$Q = \frac{E}{V} = \frac{480}{24} = 20\text{ C}$$
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+<footer>
+Section 7.3 – Current, Power Sources, and Measurement | Bank 4
+</footer>
+
+</div>
+</body>
+</html>

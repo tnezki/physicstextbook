@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.3 Bank 4</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.3: Series and Parallel Circuits</h1>
+    <p><strong>Bank 4: Multi-Step Calculations</strong></p>
+    <p>Provide one final numeric answer. No intermediate hints given.</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Multi-Step Problems</h2>
+    <p>4 Scenarios | 2+ calculation steps required</p>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 1 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 1: Series Circuit Analysis</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.1</div>
+    Three resistors of 4.0 Ω, 6.0 Ω, and 10 Ω are connected in series to a 24 V battery. Determine the total current in the circuit.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.2</div>
+    A series circuit contains two resistors of 8.0 Ω and 12 Ω connected to a 40 V source. How much power is dissipated by the circuit?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.3</div>
+    A 9.0 V battery is connected to three identical 3.0 Ω resistors in series. What is the voltage drop across one resistor?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.4</div>
+    A 30 V source supplies a series circuit of 5.0 Ω, 10 Ω, and 15 Ω resistors. Determine the energy dissipated in 20 s.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 2 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 2: Parallel Circuit Analysis</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.5</div>
+    Two resistors of 6.0 Ω and 3.0 Ω are connected in parallel to a 12 V source. What total current leaves the battery?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.6</div>
+    A 24 V battery is connected to two parallel branches of 8.0 Ω and 12 Ω. Determine the total resistance of the circuit.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.7</div>
+    Three parallel branches carry currents of 2.0 A, 3.0 A, and 5.0 A. If connected to a 15 V source, what total power is delivered?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.8</div>
+    A 9.0 V source supplies two identical 9.0 Ω resistors in parallel. How much energy is delivered in 30 s?
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 3 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 3: Combined Relationships</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.9</div>
+    A parallel circuit has an equivalent resistance of 4.0 Ω and is connected to a 20 V source. What is the total current?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.10</div>
+    A series circuit draws 3.0 A from a 36 V battery. What is the total resistance and total power?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.11</div>
+    Two 10 Ω resistors are connected in parallel, and that combination is connected in series with a 5.0 Ω resistor. What is the total resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.12</div>
+    A 48 V source powers a circuit with total resistance of 16 Ω. How much energy is delivered in 25 s?
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 4 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 4: Circuit Design and Planning</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.13</div>
+    A heater rated at 1200 W is connected to a 240 V supply. It operates in parallel with another identical heater. What is the total current drawn?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.14</div>
+    Three 6.0 Ω resistors are connected in parallel to a 18 V battery. What is the equivalent resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.15</div>
+    A 12 V battery supplies a series circuit with total resistance of 4.0 Ω. If a second identical circuit is connected in parallel, what is the new total resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.16</div>
+    A 120 V source powers two branches in parallel that draw 4.0 A and 6.0 A. Determine the total energy delivered in 10 minutes.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 4: Multi-Step Calculations — Answer Key</strong></p>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 1 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 1: Series Circuit Analysis
+  </div>
+  
+  <div class="answer-row">
+  <div>4.1</div>
+  <div>1.2 A</div>
+  <div>
+  $$R_{total}=4.0+6.0+10=20\ \Omega$$
+  $$I=\frac{24}{20}=1.2\text{ A}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.2</div>
+  <div>80 W</div>
+  <div>
+  $$R_{total}=8.0+12=20\ \Omega$$
+  $$I=\frac{40}{20}=2.0\text{ A}$$
+  $$P=(40)(2.0)=80\text{ W}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.3</div>
+  <div>3.0 V</div>
+  <div>
+  $$R_{total}=3.0\times3=9.0\ \Omega$$
+  $$I=\frac{9.0}{9.0}=1.0\text{ A}$$
+  $$V_{one}=(1.0)(3.0)=3.0\text{ V}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.4</div>
+  <div>600 J</div>
+  <div>
+  $$R_{total}=5.0+10+15=30\ \Omega$$
+  $$I=\frac{30}{30}=1.0\text{ A}$$
+  $$P=(30)(1.0)=30\text{ W}$$
+  $$E=(30)(20)=600\text{ J}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 2 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 2: Parallel Circuit Analysis
+  </div>
+  
+  <div class="answer-row">
+  <div>4.5</div>
+  <div>6.0 A</div>
+  <div>
+  $$\frac{1}{R}=\frac{1}{6.0}+\frac{1}{3.0}=\frac{1}{2.0}$$
+  $$R=2.0\ \Omega$$
+  $$I=\frac{12}{2.0}=6.0\text{ A}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.6</div>
+  <div>4.8 Ω</div>
+  <div>
+  $$\frac{1}{R}=\frac{1}{8.0}+\frac{1}{12}$$
+  $$R=4.8\ \Omega$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.7</div>
+  <div>150 W</div>
+  <div>
+  $$I_{total}=2.0+3.0+5.0=10\text{ A}$$
+  $$P=(15)(10)=150\text{ W}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.8</div>
+  <div>540 J</div>
+  <div>
+  Two 9 Ω in parallel → $$R=4.5\ \Omega$$
+  $$I=\frac{9.0}{4.5}=2.0\text{ A}$$
+  $$P=(9.0)(2.0)=18\text{ W}$$
+  $$E=(18)(30)=540\text{ J}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 3 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 3: Combined Relationships
+  </div>
+  
+  <div class="answer-row">
+  <div>4.9</div>
+  <div>5.0 A</div>
+  <div>
+  $$I=\frac{20}{4.0}=5.0\text{ A}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.10</div>
+  <div>108 W</div>
+  <div>
+  $$R=\frac{36}{3.0}=12\ \Omega$$
+  $$P=(36)(3.0)=108\text{ W}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.11</div>
+  <div>10 Ω</div>
+  <div>
+  Two 10 Ω in parallel → $$R=5.0\ \Omega$$
+  $$R_{total}=5.0+5.0=10\ \Omega$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.12</div>
+  <div>3600 J</div>
+  <div>
+  $$I=\frac{48}{16}=3.0\text{ A}$$
+  $$P=(48)(3.0)=144\text{ W}$$
+  $$E=(144)(25)=3600\text{ J}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 4 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 4: Circuit Design and Planning
+  </div>
+  
+  <div class="answer-row">
+  <div>4.13</div>
+  <div>10 A</div>
+  <div>
+  Each heater: $$I=\frac{1200}{240}=5.0\text{ A}$$
+  Two in parallel → $$I_{total}=10\text{ A}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.14</div>
+  <div>2.0 Ω</div>
+  <div>
+  $$\frac{1}{R}=\frac{1}{6.0}+\frac{1}{6.0}+\frac{1}{6.0}$$
+  $$R=2.0\ \Omega$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.15</div>
+  <div>2.0 Ω</div>
+  <div>
+  One circuit: $$R=4.0\ \Omega$$
+  Two identical in parallel → $$R=2.0\ \Omega$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.16</div>
+  <div>720000 J</div>
+  <div>
+  $$I_{total}=4.0+6.0=10\text{ A}$$
+  $$P=(120)(10)=1200\text{ W}$$
+  $$t=10\text{ min}=600\text{ s}$$
+  $$E=(1200)(600)=720000\text{ J}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  </div>
+
+
+</body>
+</html>

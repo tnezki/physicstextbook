@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.3 Bank 1</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 5.3: Longitudinal Waves</h1>
+    <p><strong>Bank 1: Vocabulary Assessment</strong></p>
+    <p>28 Multiple Choice Questions | 7 Vocabulary Terms × 4 Question Types</p>
+  </header>
+  
+  <div class="bank-section">
+  
+  <div class="bank-header">
+    <h2>Bank 1: Vocabulary Assessment</h2>
+    <div class="bank-info">4 question types per vocabulary term | Multiple choice (A–E)</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Longitudinal Wave -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Longitudinal Wave (1.1 – 1.4)</div>
+  <div class="question-text"><strong>Definition:</strong> A wave in which particles oscillate parallel to the direction of wave propagation.</div>
+  
+  <div class="question">
+  <div class="question-number">1.1</div>
+  What defines a longitudinal wave?
+  <div class="answer-option">A) Particles move perpendicular to propagation</div>
+  <div class="answer-option">B) Particles move parallel to propagation</div>
+  <div class="answer-option">C) No particles move</div>
+  <div class="answer-option">D) Only electromagnetic fields oscillate</div>
+  <div class="answer-option">E) The wave requires no medium</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">1.2</div>
+  A wave where particle motion is in the same direction as wave travel is called:
+  <div class="answer-option">A) Transverse</div>
+  <div class="answer-option">B) Surface</div>
+  <div class="answer-option">C) Longitudinal</div>
+  <div class="answer-option">D) Electromagnetic</div>
+  <div class="answer-option">E) Standing</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">1.3</div>
+  A slinky pushed forward and backward creates compressions that move along its length. This is an example of:
+  <div class="answer-option">A) Transverse motion</div>
+  <div class="answer-option">B) Longitudinal wave</div>
+  <div class="answer-option">C) Electromagnetic radiation</div>
+  <div class="answer-option">D) Matter transport</div>
+  <div class="answer-option">E) Circular motion</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">1.4</div>
+  Which type of wave always involves compressions and rarefactions?
+  <div class="answer-option">A) Transverse</div>
+  <div class="answer-option">B) Mechanical transverse</div>
+  <div class="answer-option">C) Longitudinal</div>
+  <div class="answer-option">D) Electromagnetic</div>
+  <div class="answer-option">E) Surface</div>
+  </div>
+  
+  </div>
+
+  <!-- ============================================================ -->
+<!-- Compression -->
+<!-- ============================================================ -->
+
+<div class="question-group">
+  <div class="question-group-title">Compression (2.1 – 2.4)</div>
+  <div class="question-text"><strong>Definition:</strong> A region in a longitudinal wave where particles are pushed closer together than normal, creating higher density and higher pressure.</div>
+  
+  <div class="question">
+  <div class="question-number">2.1</div>
+  What is a compression in a longitudinal wave?
+  <div class="answer-option">A) A region of low pressure</div>
+  <div class="answer-option">B) A region where particles are farther apart</div>
+  <div class="answer-option">C) A region where particles are closer together</div>
+  <div class="answer-option">D) The distance between crests</div>
+  <div class="answer-option">E) The highest point of a wave</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">2.2</div>
+  In a sound wave, compressions correspond to:
+  <div class="answer-option">A) Low-density regions</div>
+  <div class="answer-option">B) High-density, high-pressure regions</div>
+  <div class="answer-option">C) Areas with no particle motion</div>
+  <div class="answer-option">D) Electromagnetic fields</div>
+  <div class="answer-option">E) Transverse displacement</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">2.3</div>
+  When a slinky coil bunches together as a pulse travels, that region is called a:
+  <div class="answer-option">A) Rarefaction</div>
+  <div class="answer-option">B) Crest</div>
+  <div class="answer-option">C) Compression</div>
+  <div class="answer-option">D) Trough</div>
+  <div class="answer-option">E) Reflection</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">2.4</div>
+  Which condition increases during a compression?
+  <div class="answer-option">A) Wavelength</div>
+  <div class="answer-option">B) Frequency</div>
+  <div class="answer-option">C) Particle spacing</div>
+  <div class="answer-option">D) Pressure</div>
+  <div class="answer-option">E) Amplitude</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Rarefaction -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Rarefaction (3.1 – 3.4)</div>
+  <div class="question-text"><strong>Definition:</strong> A region in a longitudinal wave where particles are pulled farther apart than normal, creating lower density and lower pressure.</div>
+  
+  <div class="question">
+  <div class="question-number">3.1</div>
+  What is a rarefaction?
+  <div class="answer-option">A) A region of high pressure</div>
+  <div class="answer-option">B) A region where particles are farther apart</div>
+  <div class="answer-option">C) A crest of a wave</div>
+  <div class="answer-option">D) The distance between compressions</div>
+  <div class="answer-option">E) A transverse vibration</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.2</div>
+  Rarefactions in a sound wave are associated with:
+  <div class="answer-option">A) Increased density</div>
+  <div class="answer-option">B) Higher pressure</div>
+  <div class="answer-option">C) Lower density and pressure</div>
+  <div class="answer-option">D) Permanent displacement</div>
+  <div class="answer-option">E) No particle motion</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.3</div>
+  If the coils of a slinky spread apart during wave motion, that region is called:
+  <div class="answer-option">A) Compression</div>
+  <div class="answer-option">B) Rarefaction</div>
+  <div class="answer-option">C) Wavelength</div>
+  <div class="answer-option">D) Frequency</div>
+  <div class="answer-option">E) Reflection</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.4</div>
+  During rarefaction, which quantity decreases?
+  <div class="answer-option">A) Particle spacing</div>
+  <div class="answer-option">B) Density</div>
+  <div class="answer-option">C) Frequency</div>
+  <div class="answer-option">D) Wavelength</div>
+  <div class="answer-option">E) Wave speed</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Sound Wave -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Sound Wave (4.1 – 4.4)</div>
+  <div class="question-text"><strong>Definition:</strong> A longitudinal wave of pressure variations that travels through a medium by creating compressions and rarefactions.</div>
+  
+  <div class="question">
+  <div class="question-number">4.1</div>
+  What type of wave is a sound wave?
+  <div class="answer-option">A) Transverse</div>
+  <div class="answer-option">B) Electromagnetic</div>
+  <div class="answer-option">C) Longitudinal pressure wave</div>
+  <div class="answer-option">D) Surface wave</div>
+  <div class="answer-option">E) Standing wave</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.2</div>
+  Sound travels by producing:
+  <div class="answer-option">A) Electric and magnetic fields</div>
+  <div class="answer-option">B) Permanent particle movement</div>
+  <div class="answer-option">C) Compressions and rarefactions</div>
+  <div class="answer-option">D) Crests and troughs</div>
+  <div class="answer-option">E) No pressure changes</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.3</div>
+  Why can sound not travel through outer space?
+  <div class="answer-option">A) No gravity</div>
+  <div class="answer-option">B) No electromagnetic fields</div>
+  <div class="answer-option">C) No medium</div>
+  <div class="answer-option">D) No wavelength</div>
+  <div class="answer-option">E) No energy</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.4</div>
+  Which characteristic is essential for sound propagation?
+  <div class="answer-option">A) Vacuum</div>
+  <div class="answer-option">B) Physical medium</div>
+  <div class="answer-option">C) Light source</div>
+  <div class="answer-option">D) Electric field</div>
+  <div class="answer-option">E) Crest formation</div>
+  </div>
+  
+  </div>
+
+  <!-- ============================================================ -->
+<!-- Mechanical Wave -->
+<!-- ============================================================ -->
+
+<div class="question-group">
+  <div class="question-group-title">Mechanical Wave (5.1 – 5.4)</div>
+  <div class="question-text"><strong>Definition:</strong> A wave that requires a physical medium (matter) to travel through; cannot propagate through a vacuum.</div>
+  
+  <div class="question">
+  <div class="question-number">5.1</div>
+  What is a mechanical wave?
+  <div class="answer-option">A) A wave that travels through empty space</div>
+  <div class="answer-option">B) A wave that requires a medium to travel</div>
+  <div class="answer-option">C) A wave made of electric fields</div>
+  <div class="answer-option">D) A wave that transfers matter permanently</div>
+  <div class="answer-option">E) A wave that has no wavelength</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">5.2</div>
+  A wave that cannot travel through a vacuum is called:
+  <div class="answer-option">A) Electromagnetic</div>
+  <div class="answer-option">B) Transverse</div>
+  <div class="answer-option">C) Mechanical</div>
+  <div class="answer-option">D) Standing</div>
+  <div class="answer-option">E) Surface</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">5.3</div>
+  Which of the following is a mechanical wave?
+  <div class="answer-option">A) Radio waves</div>
+  <div class="answer-option">B) X-rays</div>
+  <div class="answer-option">C) Sound waves</div>
+  <div class="answer-option">D) Visible light</div>
+  <div class="answer-option">E) Gamma rays</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">5.4</div>
+  Why are sound waves classified as mechanical waves?
+  <div class="answer-option">A) They travel at light speed</div>
+  <div class="answer-option">B) They are transverse</div>
+  <div class="answer-option">C) They require a material medium</div>
+  <div class="answer-option">D) They create electric fields</div>
+  <div class="answer-option">E) They travel in vacuum</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Ultrasound -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Ultrasound (6.1 – 6.4)</div>
+  <div class="question-text"><strong>Definition:</strong> Sound waves with frequencies above the range of human hearing (above 20,000 Hz).</div>
+  
+  <div class="question">
+  <div class="question-number">6.1</div>
+  What is ultrasound?
+  <div class="answer-option">A) Sound below 20 Hz</div>
+  <div class="answer-option">B) Sound above 20,000 Hz</div>
+  <div class="answer-option">C) Any loud sound</div>
+  <div class="answer-option">D) A transverse sound wave</div>
+  <div class="answer-option">E) A wave that travels in vacuum</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">6.2</div>
+  Ultrasound refers to sound waves that:
+  <div class="answer-option">A) Humans hear clearly</div>
+  <div class="answer-option">B) Are below normal hearing range</div>
+  <div class="answer-option">C) Are above normal hearing range</div>
+  <div class="answer-option">D) Do not require a medium</div>
+  <div class="answer-option">E) Have no frequency</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">6.3</div>
+  Medical imaging often uses ultrasound because:
+  <div class="answer-option">A) It travels through vacuum</div>
+  <div class="answer-option">B) It has very low frequency</div>
+  <div class="answer-option">C) It uses high-frequency sound waves</div>
+  <div class="answer-option">D) It permanently transfers matter</div>
+  <div class="answer-option">E) It is electromagnetic</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">6.4</div>
+  Which frequency represents ultrasound?
+  <div class="answer-option">A) 15 Hz</div>
+  <div class="answer-option">B) 1,000 Hz</div>
+  <div class="answer-option">C) 10,000 Hz</div>
+  <div class="answer-option">D) 25,000 Hz</div>
+  <div class="answer-option">E) 500 Hz</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Infrasound -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Infrasound (7.1 – 7.4)</div>
+  <div class="question-text"><strong>Definition:</strong> Sound waves with frequencies below the range of human hearing (below 20 Hz).</div>
+  
+  <div class="question">
+  <div class="question-number">7.1</div>
+  What is infrasound?
+  <div class="answer-option">A) Sound above 20,000 Hz</div>
+  <div class="answer-option">B) Sound below 20 Hz</div>
+  <div class="answer-option">C) A visible wave</div>
+  <div class="answer-option">D) An electromagnetic wave</div>
+  <div class="answer-option">E) A crest</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">7.2</div>
+  Infrasound waves:
+  <div class="answer-option">A) Are audible to humans</div>
+  <div class="answer-option">B) Have extremely high frequency</div>
+  <div class="answer-option">C) Have frequencies lower than human hearing range</div>
+  <div class="answer-option">D) Travel only in solids</div>
+  <div class="answer-option">E) Are transverse waves</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">7.3</div>
+  Which of the following may produce infrasound?
+  <div class="answer-option">A) A dog whistle</div>
+  <div class="answer-option">B) A violin</div>
+  <div class="answer-option">C) An earthquake</div>
+  <div class="answer-option">D) A tuning fork at 500 Hz</div>
+  <div class="answer-option">E) Visible light</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">7.4</div>
+  Which frequency falls in the infrasound range?
+  <div class="answer-option">A) 10 Hz</div>
+  <div class="answer-option">B) 100 Hz</div>
+  <div class="answer-option">C) 1,000 Hz</div>
+  <div class="answer-option">D) 20,000 Hz</div>
+  <div class="answer-option">E) 30,000 Hz</div>
+  </div>
+  
+  </div>
+  <div class="answer-key">
+    <h2>Answer Key – Bank 1: Vocabulary Assessment</h2>
+  
+    <div class="answer-key-section">
+  
+      <!-- Longitudinal Wave -->
+      <div class="answer-row"><div>1.1</div><div>B</div><div>Particles move parallel to propagation</div></div>
+      <div class="answer-row"><div>1.2</div><div>C</div><div>Parallel particle motion defines longitudinal wave</div></div>
+      <div class="answer-row"><div>1.3</div><div>B</div><div>Slinky compressions show longitudinal motion</div></div>
+      <div class="answer-row"><div>1.4</div><div>C</div><div>Compressions and rarefactions occur in longitudinal waves</div></div>
+  
+      <!-- Compression -->
+      <div class="answer-row"><div>2.1</div><div>C</div><div>Particles pushed closer together</div></div>
+      <div class="answer-row"><div>2.2</div><div>B</div><div>High density and pressure region</div></div>
+      <div class="answer-row"><div>2.3</div><div>C</div><div>Coils bunching together</div></div>
+      <div class="answer-row"><div>2.4</div><div>D</div><div>Pressure increases during compression</div></div>
+  
+      <!-- Rarefaction -->
+      <div class="answer-row"><div>3.1</div><div>B</div><div>Particles farther apart</div></div>
+      <div class="answer-row"><div>3.2</div><div>C</div><div>Lower density and pressure</div></div>
+      <div class="answer-row"><div>3.3</div><div>B</div><div>Coils spread apart</div></div>
+      <div class="answer-row"><div>3.4</div><div>B</div><div>Density decreases in rarefaction</div></div>
+  
+      <!-- Sound Wave -->
+      <div class="answer-row"><div>4.1</div><div>C</div><div>Sound is a longitudinal pressure wave</div></div>
+      <div class="answer-row"><div>4.2</div><div>C</div><div>Sound creates compressions and rarefactions</div></div>
+      <div class="answer-row"><div>4.3</div><div>C</div><div>No medium in space</div></div>
+      <div class="answer-row"><div>4.4</div><div>B</div><div>Sound requires physical medium</div></div>
+  
+      <!-- Mechanical Wave -->
+      <div class="answer-row"><div>5.1</div><div>B</div><div>Requires a medium</div></div>
+      <div class="answer-row"><div>5.2</div><div>C</div><div>Cannot travel in vacuum</div></div>
+      <div class="answer-row"><div>5.3</div><div>C</div><div>Sound is mechanical</div></div>
+      <div class="answer-row"><div>5.4</div><div>C</div><div>Requires material medium</div></div>
+  
+      <!-- Ultrasound -->
+      <div class="answer-row"><div>6.1</div><div>B</div><div>Above 20,000 Hz</div></div>
+      <div class="answer-row"><div>6.2</div><div>C</div><div>Above human hearing range</div></div>
+      <div class="answer-row"><div>6.3</div><div>C</div><div>Medical imaging uses high-frequency sound</div></div>
+      <div class="answer-row"><div>6.4</div><div>D</div><div>25,000 Hz is ultrasound</div></div>
+  
+      <!-- Infrasound -->
+      <div class="answer-row"><div>7.1</div><div>B</div><div>Below 20 Hz</div></div>
+      <div class="answer-row"><div>7.2</div><div>C</div><div>Lower than human hearing range</div></div>
+      <div class="answer-row"><div>7.3</div><div>C</div><div>Earthquakes produce infrasound</div></div>
+      <div class="answer-row"><div>7.4</div><div>A</div><div>10 Hz is infrasound</div></div>
+  
+    </div>
+  </div>
+
+</body>
+</html>

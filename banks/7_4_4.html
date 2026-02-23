@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 7.4: Ohm’s Law and Circuit Analysis - Bank 4 (Multi-Step Calculations)</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+/* ================================
+   SCENARIO GROUPS
+================================ */
+
+.scenario-group {
+  margin-bottom: 35px;
+}
+
+.scenario-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+<h1>Section 7.4: Ohm’s Law and Circuit Analysis</h1>
+<p><strong>Bank 4: Multi-Step Calculations</strong></p>
+<p>Provide one final numeric answer. No intermediate hints given.</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+<h2>Multi-Step Problems</h2>
+<p>4 Scenarios | 2+ calculation steps required</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCENARIO 1 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+<div class="scenario-title">Scenario 1: Ohm’s Law in Multi-Component Circuits</div>
+
+<!-- Q1 Standard -->
+<div class="question">
+<div class="question-number">4.1</div>
+A 24 V battery is connected to a circuit containing two resistors in series with values of 4 Ω and 8 Ω. What is the current in the circuit?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q2 Inverted -->
+<div class="question">
+<div class="question-number">4.2</div>
+Determine the voltage across a 6 Ω resistor in a circuit carrying 3.0 A of current.
+<div class="answer-blank">Answer: ________ V</div>
+</div>
+
+<!-- Q3 Context-Rich -->
+<div class="question">
+<div class="question-number">4.3</div>
+A heating device contains two resistors of 5 Ω and 10 Ω connected in series to a 30 V source. What is the current drawn from the source?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q4 Alternate -->
+<div class="question">
+<div class="question-number">4.4</div>
+Find the total resistance of a circuit connected to a 18 V battery if the current measured is 2.0 A.
+<div class="answer-blank">Answer: ________ Ω</div>
+</div>
+
+</div>
+
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 7.4: Ohm’s Law and Circuit Analysis - Bank 4 (Multi-Step Calculations)</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+/* ================================
+   SCENARIO GROUPS
+================================ */
+
+.scenario-group {
+  margin-bottom: 35px;
+}
+
+.scenario-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+<h1>Section 7.4: Ohm’s Law and Circuit Analysis</h1>
+<p><strong>Bank 4: Multi-Step Calculations</strong></p>
+<p>Provide one final numeric answer. No intermediate hints given.</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+<h2>Multi-Step Problems</h2>
+<p>4 Scenarios | 2+ calculation steps required</p>
+</div>
+
+<!-- ============================================================ -->
+<!-- SCENARIO 1 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+<div class="scenario-title">Scenario 1: Ohm’s Law in Multi-Component Circuits</div>
+
+<!-- Q1 Standard -->
+<div class="question">
+<div class="question-number">4.1</div>
+A 24 V battery is connected to a circuit containing two resistors in series with values of 4 Ω and 8 Ω. What is the current in the circuit?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q2 Inverted -->
+<div class="question">
+<div class="question-number">4.2</div>
+Determine the voltage across a 6 Ω resistor in a circuit carrying 3.0 A of current.
+<div class="answer-blank">Answer: ________ V</div>
+</div>
+
+<!-- Q3 Context-Rich -->
+<div class="question">
+<div class="question-number">4.3</div>
+A heating device contains two resistors of 5 Ω and 10 Ω connected in series to a 30 V source. What is the current drawn from the source?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q4 Alternate -->
+<div class="question">
+<div class="question-number">4.4</div>
+Find the total resistance of a circuit connected to a 18 V battery if the current measured is 2.0 A.
+<div class="answer-blank">Answer: ________ Ω</div>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+Section 7.4 – Ohm’s Law and Circuit Analysis | Bank 4
+</footer>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- SCENARIO 3 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+    <div class="scenario-title">Scenario 3: Parallel Circuit Analysis</div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">4.9</div>
+    Two resistors of 6 Ω and 12 Ω are connected in parallel to a 24 V battery. What is the total current supplied by the battery?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">4.10</div>
+    Determine the equivalent resistance of the circuit described in Question 4.9.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">4.11</div>
+    A home circuit connects two appliances rated at 8 Ω and 16 Ω in parallel across a 32 V supply. What total current is drawn from the source?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">4.12</div>
+    Find the equivalent resistance of two identical 10 Ω resistors connected in parallel.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- SCENARIO 4 -->
+<!-- ============================================================ -->
+
+<div class="scenario-group">
+    <div class="scenario-title">Scenario 4: Mixed Series and Parallel Circuits</div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">4.13</div>
+    A 48 V battery is connected to a 4 Ω resistor in series with two resistors of 6 Ω and 3 Ω connected in parallel. What is the total current supplied by the battery?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">4.14</div>
+    Determine the total resistance of the circuit described in Question 4.13.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">4.15</div>
+    A portable generator supplies 60 V to a circuit where a 5 Ω resistor is connected in series with two parallel resistors of 10 Ω and 20 Ω. What total current is drawn from the generator?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">4.16</div>
+    Find the equivalent resistance of a circuit consisting of a 2 Ω resistor in series with two parallel resistors of 4 Ω and 12 Ω.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 4: Multi-Step Calculations — Answer Key</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- Scenario 1 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 1: Ohm’s Law in Multi-Component Circuits
+      </div>
+  
+      <div class="answer-row">
+        <div>4.1</div>
+        <div>2.0 A</div>
+        <div>
+          $$R_T = 4 + 8 = 12\text{ Ω}$$
+          $$I = \frac{V}{R_T} = \frac{24}{12} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.2</div>
+        <div>18 V</div>
+        <div>
+          $$V = IR = (3.0)(6) = 18\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.3</div>
+        <div>2.0 A</div>
+        <div>
+          $$R_T = 5 + 10 = 15\text{ Ω}$$
+          $$I = \frac{30}{15} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.4</div>
+        <div>9.0 Ω</div>
+        <div>
+          $$R = \frac{V}{I} = \frac{18}{2.0} = 9.0\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Scenario 2 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 2: Series Circuit Analysis
+      </div>
+  
+      <div class="answer-row">
+        <div>4.5</div>
+        <div>2.0 A</div>
+        <div>
+          $$R_T = 3 + 6 + 9 = 18\text{ Ω}$$
+          $$I = \frac{36}{18} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.6</div>
+        <div>12 V</div>
+        <div>
+          $$V = IR = (2.0)(6) = 12\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.7</div>
+        <div>2.0 A</div>
+        <div>
+          $$R_T = 4 + 4 + 4 + 4 = 16\text{ Ω}$$
+          $$I = \frac{32}{16} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.8</div>
+        <div>15 Ω</div>
+        <div>
+          $$R = \frac{V}{I} = \frac{45}{3.0} = 15\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Scenario 3 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 3: Parallel Circuit Analysis
+      </div>
+  
+      <div class="answer-row">
+        <div>4.9</div>
+        <div>6.0 A</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{6} + \frac{1}{12} = \frac{3}{12}$$
+          $$R_T = 4.0\text{ Ω}$$
+          $$I = \frac{24}{4.0} = 6.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.10</div>
+        <div>4.0 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{6} + \frac{1}{12} = \frac{3}{12}$$
+          $$R_T = 4.0\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.11</div>
+        <div>6.0 A</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{8} + \frac{1}{16} = \frac{3}{16}$$
+          $$R_T = 5.33\text{ Ω}$$
+          $$I = \frac{32}{5.33} \approx 6.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.12</div>
+        <div>5.0 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{10} + \frac{1}{10} = \frac{1}{5}$$
+          $$R_T = 5.0\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Scenario 4 -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Scenario 4: Mixed Series and Parallel Circuits
+      </div>
+  
+      <div class="answer-row">
+        <div>4.13</div>
+        <div>4.0 A</div>
+        <div>
+          $$\frac{1}{R_P} = \frac{1}{6} + \frac{1}{3} = \frac{1}{2}$$
+          $$R_P = 2.0\text{ Ω}$$
+          $$R_T = 4 + 2.0 = 6.0\text{ Ω}$$
+          $$I = \frac{48}{6.0} = 8.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.14</div>
+        <div>6.0 Ω</div>
+        <div>
+          $$R_P = 2.0\text{ Ω}$$
+          $$R_T = 4 + 2.0 = 6.0\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.15</div>
+        <div>6.0 A</div>
+        <div>
+          $$\frac{1}{R_P} = \frac{1}{10} + \frac{1}{20} = \frac{3}{20}$$
+          $$R_P = 6.67\text{ Ω}$$
+          $$R_T = 5 + 6.67 = 11.67\text{ Ω}$$
+          $$I = \frac{60}{11.67} \approx 5.1\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>4.16</div>
+        <div>4.0 Ω</div>
+        <div>
+          $$\frac{1}{R_P} = \frac{1}{4} + \frac{1}{12} = \frac{1}{3}$$
+          $$R_P = 3.0\text{ Ω}$$
+          $$R_T = 2 + 3.0 = 5.0\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+<footer>
+Section 7.4 – Ohm’s Law and Circuit Analysis | Bank 4
+</footer>
+
+</div>
+</body>
+</html>

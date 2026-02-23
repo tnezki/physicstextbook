@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.1 Bank 3</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.1: Energy Transfer in Electric Circuits</h1>
+    <p><strong>Bank 3: Single-Step Calculations</strong></p>
+    <p>Round answers to 2–3 significant figures.</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Single-Step Calculations</h2>
+    <div class="bank-info">Formula Group 1 of 6</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 1: I = Q / t -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 1: Electric Current</div>
+    
+    <div class="formula-display">
+    $$I = \frac{Q}{t}$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.1</div>
+    A charge of 12 C flows through a wire in 4.0 s. What is the current?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.2</div>
+    Calculate the charge that flows in 5.0 s if the current is 3.0 A.
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.3</div>
+    A battery delivers 8.0 C of charge in 2.0 s to a small motor. What current flows?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.4</div>
+    Determine how long it takes 15 C of charge to pass if the current is 5.0 A.
+    <div class="answer-blank">Answer: ________ s</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 2: V = E / Q -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 2: Voltage</div>
+    
+    <div class="formula-display">
+    $$V = \frac{E}{Q}$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.5</div>
+    An energy transfer of 90 J occurs when 15 C of charge move. What is the voltage?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.6</div>
+    Calculate the energy transferred when 6.0 C of charge move across a 12 V battery.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.7</div>
+    A phone battery provides 18 J of energy to 3.0 C of charge. What voltage does it supply?
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.8</div>
+    Determine the charge moved if 50 J of energy are transferred across a 10 V source.
+    <div class="answer-blank">Answer: ________ C</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 3: P = IV -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 3: Electrical Power</div>
+    
+    <div class="formula-display">
+    $$P = IV$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.9</div>
+    A device operates at 120 V and draws 4.0 A. What power does it consume?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.10</div>
+    Calculate the current drawn by a 480 W appliance connected to a 120 V supply.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.11</div>
+    A 60 W light bulb is connected to a 12 V battery. What current flows?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.12</div>
+    Determine the voltage required for a device to consume 150 W if it draws 3.0 A.
+    <div class="answer-blank">Answer: ________ V</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 4: P = I^2 R -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 4: Power (using resistance)</div>
+    
+    <div class="formula-display">
+    $$P = I^2 R$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.13</div>
+    A 2.0 A current flows through a 10 Ω resistor. What power is dissipated?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.14</div>
+    Calculate the power dissipated in an 8.0 Ω resistor if the current is 3.0 A.
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.15</div>
+    A heating element of resistance 6.0 Ω carries 4.0 A. What power is converted to heat?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.16</div>
+    Determine the current flowing through a 5.0 Ω resistor if the power dissipated is 45 W.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 5: P = V^2 / R -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 5: Power (using voltage)</div>
+    
+    <div class="formula-display">
+    $$P = \frac{V^2}{R}$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.17</div>
+    A 24 V device has a resistance of 12 Ω. What power does it consume?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.18</div>
+    Calculate the power dissipated by a 20 Ω resistor connected to a 40 V source.
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.19</div>
+    An electric stove element rated at 240 V has a resistance of 30 Ω. What power is delivered?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.20</div>
+    Determine the resistance of a device that dissipates 200 W when connected to a 100 V supply.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- FORMULA GROUP 6: E = Pt -->
+    <!-- ============================================================ -->
+    
+    <div class="formula-group">
+    <div class="formula-title">Formula 6: Electrical Energy</div>
+    
+    <div class="formula-display">
+    $$E = Pt$$
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.21</div>
+    A 500 W device operates for 3.0 h. How much energy is used in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.22</div>
+    Calculate the energy in joules consumed by a 100 W bulb operating for 40 s.
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.23</div>
+    A heater rated at 1.2 kW runs for 2.0 hours. How much electrical energy does it consume in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">3.24</div>
+    Determine how long a 250 W device must operate to use 0.75 kWh of energy.
+    <div class="answer-blank">Answer: ________ h</div>
+    </div>
+    
+    </div>
+    
+    <footer>
+    Section 8.1 – Energy Transfer in Electric Circuits | Bank 3
+    </footer>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 3: Single-Step Calculations — Answer Key</strong></p>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 1: I = Q / t -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 1: Electric Current ($I = \frac{Q}{t}$)
+  </div>
+  
+  <div class="answer-row">
+  <div>3.1</div>
+  <div>3.0 A</div>
+  <div>$$I=\frac{12}{4.0}=3.0\text{ A}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.2</div>
+  <div>15 C</div>
+  <div>$$Q=It=(3.0)(5.0)=15\text{ C}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.3</div>
+  <div>4.0 A</div>
+  <div>$$I=\frac{8.0}{2.0}=4.0\text{ A}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.4</div>
+  <div>3.0 s</div>
+  <div>$$t=\frac{15}{5.0}=3.0\text{ s}$$</div>
+  </div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 2: V = E / Q -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 2: Voltage ($V = \frac{E}{Q}$)
+  </div>
+  
+  <div class="answer-row">
+  <div>3.5</div>
+  <div>6.0 V</div>
+  <div>$$V=\frac{90}{15}=6.0\text{ V}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.6</div>
+  <div>72 J</div>
+  <div>$$E=VQ=(12)(6.0)=72\text{ J}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.7</div>
+  <div>6.0 V</div>
+  <div>$$V=\frac{18}{3.0}=6.0\text{ V}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.8</div>
+  <div>5.0 C</div>
+  <div>$$Q=\frac{50}{10}=5.0\text{ C}$$</div>
+  </div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 3: P = IV -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 3: Electrical Power ($P = IV$)
+  </div>
+  
+  <div class="answer-row">
+  <div>3.9</div>
+  <div>480 W</div>
+  <div>$$P=(120)(4.0)=480\text{ W}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.10</div>
+  <div>4.0 A</div>
+  <div>$$I=\frac{480}{120}=4.0\text{ A}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.11</div>
+  <div>5.0 A</div>
+  <div>$$I=\frac{60}{12}=5.0\text{ A}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.12</div>
+  <div>50 V</div>
+  <div>$$V=\frac{150}{3.0}=50\text{ V}$$</div>
+  </div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 4: P = I²R -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 4: Power (using resistance) ($P = I^2R$)
+  </div>
+  
+  <div class="answer-row">
+  <div>3.13</div>
+  <div>40 W</div>
+  <div>$$P=(2.0)^2(10)=40\text{ W}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.14</div>
+  <div>72 W</div>
+  <div>$$P=(3.0)^2(8.0)=72\text{ W}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.15</div>
+  <div>96 W</div>
+  <div>$$P=(4.0)^2(6.0)=96\text{ W}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.16</div>
+  <div>3.0 A</div>
+  <div>$$I=\sqrt{\frac{45}{5.0}}=\sqrt{9}=3.0\text{ A}$$</div>
+  </div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 5: P = V² / R -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 5: Power (using voltage) ($P = \frac{V^2}{R}$)
+  </div>
+  
+  <div class="answer-row">
+  <div>3.17</div>
+  <div>48 W</div>
+  <div>$$P=\frac{24^2}{12}=\frac{576}{12}=48\text{ W}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.18</div>
+  <div>80 W</div>
+  <div>$$P=\frac{40^2}{20}=\frac{1600}{20}=80\text{ W}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.19</div>
+  <div>1920 W</div>
+  <div>$$P=\frac{240^2}{30}=\frac{57600}{30}=1920\text{ W}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.20</div>
+  <div>50 Ω</div>
+  <div>$$R=\frac{100^2}{200}=\frac{10000}{200}=50\text{ Ω}$$</div>
+  </div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Formula 6: E = Pt -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Formula 6: Electrical Energy ($E = Pt$)
+  </div>
+  
+  <div class="answer-row">
+  <div>3.21</div>
+  <div>1.5 kWh</div>
+  <div>$$E=(0.500\text{ kW})(3.0\text{ h})=1.5\text{ kWh}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.22</div>
+  <div>4000 J</div>
+  <div>$$E=(100)(40)=4000\text{ J}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.23</div>
+  <div>2.4 kWh</div>
+  <div>$$E=(1.2\text{ kW})(2.0\text{ h})=2.4\text{ kWh}$$</div>
+  </div>
+  
+  <div class="answer-row">
+  <div>3.24</div>
+  <div>3.0 h</div>
+  <div>$$t=\frac{0.75\text{ kWh}}{0.250\text{ kW}}=3.0\text{ h}$$</div>
+  </div>
+  
+  </div>
+  
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.2 Bank 2</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.2: Measuring and Analyzing Circuit Behavior</h1>
+    <p><strong>Bank 2: Conceptual Questions</strong></p>
+    <p>Application and Reasoning | No Calculations</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Conceptual Understanding</h2>
+    <div class="bank-info">Multiple Choice (A–E)</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- QUESTIONS -->
+    <!-- ============================================================ -->
+    
+    <div class="question-block">
+    <div class="question-number">2.1</div>
+    <div class="question-text">
+    A student connects a voltmeter in series with a resistor. What will most likely happen?
+    </div>
+    <div class="answer-option"><strong>A)</strong> The voltage will be measured correctly</div>
+    <div class="answer-option"><strong>B)</strong> The current will increase</div>
+    <div class="answer-option"><strong>C)</strong> The circuit current will decrease significantly</div>
+    <div class="answer-option"><strong>D)</strong> The resistance becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> The battery voltage doubles</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.2</div>
+    <div class="question-text">
+    To measure current through a component, a multimeter must be placed:
+    </div>
+    <div class="answer-option"><strong>A)</strong> In parallel with the component</div>
+    <div class="answer-option"><strong>B)</strong> In series with the component</div>
+    <div class="answer-option"><strong>C)</strong> Across the battery terminals only</div>
+    <div class="answer-option"><strong>D)</strong> Without breaking the circuit</div>
+    <div class="answer-option"><strong>E)</strong> Directly to ground</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.3</div>
+    <div class="question-text">
+    Explain why resistance must be measured with the power turned off.
+    </div>
+    <div class="answer-option"><strong>A)</strong> External voltage interferes with the ohmmeter’s internal source</div>
+    <div class="answer-option"><strong>B)</strong> Current increases automatically</div>
+    <div class="answer-option"><strong>C)</strong> Voltage becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> Resistance doubles</div>
+    <div class="answer-option"><strong>E)</strong> Energy is destroyed</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.4</div>
+    <div class="question-text">
+    A straight-line graph of voltage versus current indicates that the material:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Is non-ohmic</div>
+    <div class="answer-option"><strong>B)</strong> Has changing resistance</div>
+    <div class="answer-option"><strong>C)</strong> Obeys Ohm’s Law</div>
+    <div class="answer-option"><strong>D)</strong> Has zero current</div>
+    <div class="answer-option"><strong>E)</strong> Stores energy</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.5</div>
+    <div class="question-text">
+    A technician measures nearly zero resistance across two points. What does this suggest?
+    </div>
+    <div class="answer-option"><strong>A)</strong> An open circuit</div>
+    <div class="answer-option"><strong>B)</strong> A short circuit</div>
+    <div class="answer-option"><strong>C)</strong> Infinite voltage</div>
+    <div class="answer-option"><strong>D)</strong> No current flow</div>
+    <div class="answer-option"><strong>E)</strong> Maximum efficiency</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.6</div>
+    <div class="question-text">
+    Describe what happens to current in an ohmic resistor if voltage increases proportionally.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Current remains constant</div>
+    <div class="answer-option"><strong>B)</strong> Current decreases</div>
+    <div class="answer-option"><strong>C)</strong> Current increases proportionally</div>
+    <div class="answer-option"><strong>D)</strong> Current becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> Current reverses</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.7</div>
+    <div class="question-text">
+    A student notices that a light bulb does not produce a straight-line V–I graph. What conclusion can be drawn?
+    </div>
+    <div class="answer-option"><strong>A)</strong> The bulb is perfectly ohmic</div>
+    <div class="answer-option"><strong>B)</strong> The bulb has constant resistance</div>
+    <div class="answer-option"><strong>C)</strong> The bulb is non-ohmic</div>
+    <div class="answer-option"><strong>D)</strong> Voltage is zero</div>
+    <div class="answer-option"><strong>E)</strong> Current is infinite</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.8</div>
+    <div class="question-text">
+    Predict what happens if an ammeter is connected in parallel across a battery.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It measures voltage correctly</div>
+    <div class="answer-option"><strong>B)</strong> It causes a short circuit</div>
+    <div class="answer-option"><strong>C)</strong> It increases resistance</div>
+    <div class="answer-option"><strong>D)</strong> It reduces efficiency</div>
+    <div class="answer-option"><strong>E)</strong> Nothing changes</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.9</div>
+    <div class="question-text">
+    A resistor maintains constant resistance as voltage changes. What type of material is it made from?
+    </div>
+    <div class="answer-option"><strong>A)</strong> Ohmic</div>
+    <div class="answer-option"><strong>B)</strong> Non-ohmic</div>
+    <div class="answer-option"><strong>C)</strong> Magnetic</div>
+    <div class="answer-option"><strong>D)</strong> Chemical</div>
+    <div class="answer-option"><strong>E)</strong> Nuclear</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.10</div>
+    <div class="question-text">
+    Determine why thicker wires generally have lower resistance.
+    </div>
+    <div class="answer-option"><strong>A)</strong> They store more energy</div>
+    <div class="answer-option"><strong>B)</strong> They provide more pathways for charge flow</div>
+    <div class="answer-option"><strong>C)</strong> They increase voltage</div>
+    <div class="answer-option"><strong>D)</strong> They reduce current</div>
+    <div class="answer-option"><strong>E)</strong> They eliminate resistance entirely</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.11</div>
+    <div class="question-text">
+    A multimeter set to measure voltage should be connected:
+    </div>
+    <div class="answer-option"><strong>A)</strong> In series with the component</div>
+    <div class="answer-option"><strong>B)</strong> In parallel with the component</div>
+    <div class="answer-option"><strong>C)</strong> In place of the battery</div>
+    <div class="answer-option"><strong>D)</strong> Across a resistor only</div>
+    <div class="answer-option"><strong>E)</strong> To ground only</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.12</div>
+    <div class="question-text">
+    If resistance increases while voltage remains constant, current will:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Increase</div>
+    <div class="answer-option"><strong>B)</strong> Remain unchanged</div>
+    <div class="answer-option"><strong>C)</strong> Decrease</div>
+    <div class="answer-option"><strong>D)</strong> Reverse direction</div>
+    <div class="answer-option"><strong>E)</strong> Become infinite</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.13</div>
+    <div class="question-text">
+    A lab group measures resistance and finds it changes with increasing temperature. What type of material are they testing?
+    </div>
+    <div class="answer-option"><strong>A)</strong> Perfect conductor</div>
+    <div class="answer-option"><strong>B)</strong> Ohmic material</div>
+    <div class="answer-option"><strong>C)</strong> Non-ohmic material</div>
+    <div class="answer-option"><strong>D)</strong> Battery terminal</div>
+    <div class="answer-option"><strong>E)</strong> Ideal wire</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.14</div>
+    <div class="question-text">
+    Explain why an ohmmeter has its own internal power source.
+    </div>
+    <div class="answer-option"><strong>A)</strong> To supply voltage for measurement</div>
+    <div class="answer-option"><strong>B)</strong> To increase circuit current</div>
+    <div class="answer-option"><strong>C)</strong> To eliminate resistance</div>
+    <div class="answer-option"><strong>D)</strong> To double voltage</div>
+    <div class="answer-option"><strong>E)</strong> To measure power</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.15</div>
+    <div class="question-text">
+    A device shows a curved V–I graph. What does this imply?
+    </div>
+    <div class="answer-option"><strong>A)</strong> Constant resistance</div>
+    <div class="answer-option"><strong>B)</strong> Ohmic behavior</div>
+    <div class="answer-option"><strong>C)</strong> Non-ohmic behavior</div>
+    <div class="answer-option"><strong>D)</strong> Zero voltage</div>
+    <div class="answer-option"><strong>E)</strong> Infinite current</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.16</div>
+    <div class="question-text">
+    Identify the safest procedure before measuring resistance in a live circuit.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Increase voltage</div>
+    <div class="answer-option"><strong>B)</strong> Disconnect the power source</div>
+    <div class="answer-option"><strong>C)</strong> Short the circuit</div>
+    <div class="answer-option"><strong>D)</strong> Increase current</div>
+    <div class="answer-option"><strong>E)</strong> Double resistance</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.17</div>
+    <div class="question-text">
+    A resistor obeys Ohm’s Law over a range of applied voltages. What does this indicate about its resistance?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It changes randomly</div>
+    <div class="answer-option"><strong>B)</strong> It remains constant</div>
+    <div class="answer-option"><strong>C)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> It doubles automatically</div>
+    <div class="answer-option"><strong>E)</strong> It disappears</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.18</div>
+    <div class="question-text">
+    Predict what happens to current if a resistor becomes hotter and its resistance increases.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Current increases</div>
+    <div class="answer-option"><strong>B)</strong> Current decreases</div>
+    <div class="answer-option"><strong>C)</strong> Current remains constant</div>
+    <div class="answer-option"><strong>D)</strong> Current reverses</div>
+    <div class="answer-option"><strong>E)</strong> Current doubles</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.19</div>
+    <div class="question-text">
+    A technician measures voltage across a component and reads zero volts. What might this indicate?
+    </div>
+    <div class="answer-option"><strong>A)</strong> The component has no resistance</div>
+    <div class="answer-option"><strong>B)</strong> The component is not connected across a potential difference</div>
+    <div class="answer-option"><strong>C)</strong> The battery voltage doubled</div>
+    <div class="answer-option"><strong>D)</strong> The current is infinite</div>
+    <div class="answer-option"><strong>E)</strong> The resistor is ohmic</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.20</div>
+    <div class="question-text">
+    Determine why connecting a voltmeter in series is incorrect.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It measures current instead</div>
+    <div class="answer-option"><strong>B)</strong> It has very low resistance</div>
+    <div class="answer-option"><strong>C)</strong> It has very high resistance</div>
+    <div class="answer-option"><strong>D)</strong> It eliminates voltage</div>
+    <div class="answer-option"><strong>E)</strong> It doubles resistance</div>
+    </div>
+    
+    <footer>
+    Section 8.2 – Measuring and Analyzing Circuit Behavior | Bank 2
+    </footer>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+  <div class="answer-row"><div>2.1</div><div>C</div><div>Voltmeter in series adds large resistance and reduces current</div></div>
+  <div class="answer-row"><div>2.2</div><div>B</div><div>Current must be measured in series</div></div>
+  <div class="answer-row"><div>2.3</div><div>A</div><div>Ohmmeter uses internal voltage; external power interferes</div></div>
+  <div class="answer-row"><div>2.4</div><div>C</div><div>Straight-line V–I graph indicates Ohm’s Law</div></div>
+  <div class="answer-row"><div>2.5</div><div>B</div><div>Near-zero resistance suggests a short circuit</div></div>
+  
+  <div class="answer-row"><div>2.6</div><div>C</div><div>Ohmic materials show proportional V–I relationship</div></div>
+  <div class="answer-row"><div>2.7</div><div>C</div><div>Curved graph indicates non-ohmic behavior</div></div>
+  <div class="answer-row"><div>2.8</div><div>B</div><div>Ammeter in parallel creates a short circuit</div></div>
+  <div class="answer-row"><div>2.9</div><div>A</div><div>Constant resistance indicates ohmic material</div></div>
+  <div class="answer-row"><div>2.10</div><div>B</div><div>Thicker wires allow more charge pathways</div></div>
+  
+  <div class="answer-row"><div>2.11</div><div>B</div><div>Voltmeters are connected in parallel</div></div>
+  <div class="answer-row"><div>2.12</div><div>C</div><div>Higher resistance reduces current (constant V)</div></div>
+  <div class="answer-row"><div>2.13</div><div>C</div><div>Changing resistance with temperature indicates non-ohmic behavior</div></div>
+  <div class="answer-row"><div>2.14</div><div>A</div><div>Ohmmeter supplies small internal voltage to measure resistance</div></div>
+  <div class="answer-row"><div>2.15</div><div>C</div><div>Curved V–I graph indicates non-ohmic behavior</div></div>
+  
+  <div class="answer-row"><div>2.16</div><div>B</div><div>Power must be disconnected before resistance measurement</div></div>
+  <div class="answer-row"><div>2.17</div><div>B</div><div>Ohmic materials maintain constant resistance</div></div>
+  <div class="answer-row"><div>2.18</div><div>B</div><div>Higher resistance reduces current (constant V)</div></div>
+  <div class="answer-row"><div>2.19</div><div>B</div><div>No potential difference across component</div></div>
+  <div class="answer-row"><div>2.20</div><div>C</div><div>Voltmeter has very high resistance; blocks current in series</div></div>
+  
+  </div>
+
+
+</body>
+</html>

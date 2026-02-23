@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.1 Bank 4</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.1: Energy Transfer in Electric Circuits</h1>
+    <p><strong>Bank 4: Multi-Step Calculations</strong></p>
+    <p>Provide one final numeric answer. No intermediate hints given.</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Multi-Step Problems</h2>
+    <p>4 Scenarios | 2+ calculation steps required</p>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 1 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 1: Power and Energy Use</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.1</div>
+    A 120 V appliance draws 6.0 A and runs for 3.0 hours. How much electrical energy does it use in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.2</div>
+    Determine the operating time required for a 1800 W heater to consume 5.4 kWh of energy.
+    <div class="answer-blank">Answer: ________ h</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.3</div>
+    A 240 V water heater draws 10 A and operates for 45 minutes. What total energy is used in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.4</div>
+    Find the current drawn by a 3.6 kW device connected to a 240 V supply, then determine the energy it consumes in 2.0 hours.
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 2 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 2: Voltage and Charge Transfer</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.5</div>
+    A battery transfers 240 J of energy while moving 20 C of charge in 4.0 s. What current flows?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.6</div>
+    Determine the voltage of a device that transfers 360 J of energy when 30 C of charge pass through it. If this occurs in 5.0 s, what is the current?
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.7</div>
+    A circuit operates at 12 V and draws 3.0 A for 10 s. How much energy is transferred in joules?
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.8</div>
+    Find the time required for a 9.0 V battery delivering 2.0 A to transfer 540 J of energy.
+    <div class="answer-blank">Answer: ________ s</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 3 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 3: Power and Resistance Design</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.9</div>
+    A 15 Ω resistor is connected to a 30 V source. What power is dissipated, and how much energy is converted in 20 s?
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.10</div>
+    Calculate the resistance required for a device to dissipate 800 W when connected to a 200 V supply, then determine the current drawn.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.11</div>
+    A 5.0 Ω heating coil draws 6.0 A. What voltage is required, and how much power is produced?
+    <div class="answer-blank">Answer: ________ W</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.12</div>
+    Find the voltage required to produce 1200 W of power in a 20 Ω resistor, then determine the current.
+    <div class="answer-blank">Answer: ________ A</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- SCENARIO 4 -->
+    <!-- ============================================================ -->
+    
+    <div class="bank-header">
+    <h2>Scenario 4: Efficiency and Energy Planning</h2>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.13</div>
+    A system delivers 2.5 kWh of useful energy at 80% efficiency. How much input energy was required?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.14</div>
+    A motor receives 3000 J of electrical energy and operates at 75% efficiency. How much useful energy does it produce?
+    <div class="answer-blank">Answer: ________ J</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.15</div>
+    A solar array supplies 500 W continuously for 6.0 hours. If the system operates at 85% efficiency, how much stored energy was originally required in kilowatt-hours?
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    <div class="question">
+    <div class="question-number">4.16</div>
+    Find the total input energy required to produce 1.8 kWh of useful output if the system operates at 90% efficiency.
+    <div class="answer-blank">Answer: ________ kWh</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 4: Multi-Step Calculations — Answer Key</strong></p>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 1 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 1: Power and Energy Use
+  </div>
+  
+  <div class="answer-row">
+  <div>4.1</div>
+  <div>2.16 kWh</div>
+  <div>
+  $$P = IV = (120)(6.0) = 720\text{ W} = 0.720\text{ kW}$$
+  $$E = (0.720)(3.0) = 2.16\text{ kWh}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.2</div>
+  <div>3.0 h</div>
+  <div>
+  $$t = \frac{5.4\text{ kWh}}{1.8\text{ kW}} = 3.0\text{ h}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.3</div>
+  <div>1.80 kWh</div>
+  <div>
+  $$P = (240)(10) = 2400\text{ W} = 2.4\text{ kW}$$
+  $$t = 45\text{ min} = 0.75\text{ h}$$
+  $$E = (2.4)(0.75) = 1.80\text{ kWh}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.4</div>
+  <div>7.2 kWh</div>
+  <div>
+  $$I = \frac{3600}{240} = 15\text{ A}$$
+  $$E = (3.6\text{ kW})(2.0\text{ h}) = 7.2\text{ kWh}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 2 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 2: Voltage and Charge Transfer
+  </div>
+  
+  <div class="answer-row">
+  <div>4.5</div>
+  <div>5.0 A</div>
+  <div>
+  $$I = \frac{Q}{t} = \frac{20}{4.0} = 5.0\text{ A}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.6</div>
+  <div>6.0 A</div>
+  <div>
+  $$V = \frac{360}{30} = 12\text{ V}$$
+  $$I = \frac{30}{5.0} = 6.0\text{ A}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.7</div>
+  <div>360 J</div>
+  <div>
+  $$P = (12)(3.0) = 36\text{ W}$$
+  $$E = (36)(10) = 360\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.8</div>
+  <div>30 s</div>
+  <div>
+  $$P = (9.0)(2.0) = 18\text{ W}$$
+  $$t = \frac{540}{18} = 30\text{ s}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 3 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 3: Power and Resistance Design
+  </div>
+  
+  <div class="answer-row">
+  <div>4.9</div>
+  <div>1200 J</div>
+  <div>
+  $$P = \frac{30^2}{15} = 60\text{ W}$$
+  $$E = (60)(20) = 1200\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.10</div>
+  <div>4.0 A</div>
+  <div>
+  $$R = \frac{200^2}{800} = 50\text{ Ω}$$
+  $$I = \frac{800}{200} = 4.0\text{ A}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.11</div>
+  <div>180 W</div>
+  <div>
+  $$V = (6.0)(5.0) = 30\text{ V}$$
+  $$P = (6.0)^2(5.0) = 180\text{ W}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.12</div>
+  <div>7.7 A</div>
+  <div>
+  $$V = \sqrt{(1200)(20)} \approx 155\text{ V}$$
+  $$I = \frac{1200}{155} \approx 7.7\text{ A}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Scenario 4 -->
+  <!-- ============================================================ -->
+  <div class="answer-key-section">
+  <div class="answer-key-section-title">
+  Scenario 4: Efficiency and Energy Planning
+  </div>
+  
+  <div class="answer-row">
+  <div>4.13</div>
+  <div>3.13 kWh</div>
+  <div>
+  $$E_{in} = \frac{2.5}{0.80} = 3.13\text{ kWh}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.14</div>
+  <div>2250 J</div>
+  <div>
+  $$E_{out} = (0.75)(3000) = 2250\text{ J}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.15</div>
+  <div>3.53 kWh</div>
+  <div>
+  $$E_{out} = (0.500)(6.0) = 3.0\text{ kWh}$$
+  $$E_{in} = \frac{3.0}{0.85} = 3.53\text{ kWh}$$
+  </div>
+  </div>
+  
+  <div class="answer-row">
+  <div>4.16</div>
+  <div>2.00 kWh</div>
+  <div>
+  $$E_{in} = \frac{1.8}{0.90} = 2.00\text{ kWh}$$
+  </div>
+  </div>
+  
+  </div>
+  
+  </div>
+
+
+</body>
+</html>

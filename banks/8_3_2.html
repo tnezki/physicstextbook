@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>8.3 Bank 2</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 8.3: Series and Parallel Circuits</h1>
+    <p><strong>Bank 2: Conceptual Questions</strong></p>
+    <p>Application and Reasoning | No Calculations</p>
+    </header>
+    
+    <div class="bank-section">
+    
+    <div class="bank-header">
+    <h2>Conceptual Understanding</h2>
+    <div class="bank-info">Multiple Choice (A–E)</div>
+    </div>
+    
+    <!-- ============================================================ -->
+    <!-- QUESTIONS -->
+    <!-- ============================================================ -->
+    
+    <div class="question-block">
+    <div class="question-number">2.1</div>
+    <div class="question-text">
+    A circuit contains three identical resistors connected in series. What happens to the total resistance?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It remains equal to one resistor</div>
+    <div class="answer-option"><strong>B)</strong> It decreases</div>
+    <div class="answer-option"><strong>C)</strong> It increases</div>
+    <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> It depends only on voltage</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.2</div>
+    <div class="question-text">
+    In a series circuit, the voltage across each resistor:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Is the same</div>
+    <div class="answer-option"><strong>B)</strong> Adds up to the total voltage</div>
+    <div class="answer-option"><strong>C)</strong> Is zero</div>
+    <div class="answer-option"><strong>D)</strong> Doubles automatically</div>
+    <div class="answer-option"><strong>E)</strong> Reverses direction</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.3</div>
+    <div class="question-text">
+    Explain why adding more resistors in parallel reduces total resistance.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It increases voltage</div>
+    <div class="answer-option"><strong>B)</strong> It provides additional paths for current</div>
+    <div class="answer-option"><strong>C)</strong> It eliminates current</div>
+    <div class="answer-option"><strong>D)</strong> It removes resistance entirely</div>
+    <div class="answer-option"><strong>E)</strong> It doubles resistance</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.4</div>
+    <div class="question-text">
+    A break occurs in one branch of a parallel circuit. What happens to the other branches?
+    </div>
+    <div class="answer-option"><strong>A)</strong> They stop working</div>
+    <div class="answer-option"><strong>B)</strong> They continue to operate</div>
+    <div class="answer-option"><strong>C)</strong> Their voltage becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> Their resistance doubles</div>
+    <div class="answer-option"><strong>E)</strong> Their current reverses</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.5</div>
+    <div class="question-text">
+    A battery supplies 12 V to a parallel circuit. What is the voltage across each branch?
+    </div>
+    <div class="answer-option"><strong>A)</strong> 12 V</div>
+    <div class="answer-option"><strong>B)</strong> 6 V</div>
+    <div class="answer-option"><strong>C)</strong> 24 V</div>
+    <div class="answer-option"><strong>D)</strong> 0 V</div>
+    <div class="answer-option"><strong>E)</strong> It depends on resistance</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.6</div>
+    <div class="question-text">
+    Describe how current behaves in a parallel circuit.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It is the same in every branch</div>
+    <div class="answer-option"><strong>B)</strong> It divides among branches</div>
+    <div class="answer-option"><strong>C)</strong> It disappears</div>
+    <div class="answer-option"><strong>D)</strong> It doubles in each branch</div>
+    <div class="answer-option"><strong>E)</strong> It flows only through one branch</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.7</div>
+    <div class="question-text">
+    A student connects two identical light bulbs in series. Compared to a single bulb, the brightness will:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Increase</div>
+    <div class="answer-option"><strong>B)</strong> Remain the same</div>
+    <div class="answer-option"><strong>C)</strong> Decrease</div>
+    <div class="answer-option"><strong>D)</strong> Become zero</div>
+    <div class="answer-option"><strong>E)</strong> Double automatically</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.8</div>
+    <div class="question-text">
+    Predict what happens to total current when more branches are added in parallel.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It decreases</div>
+    <div class="answer-option"><strong>B)</strong> It remains constant</div>
+    <div class="answer-option"><strong>C)</strong> It increases</div>
+    <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> It reverses</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.9</div>
+    <div class="question-text">
+    A series circuit contains three resistors. Which quantity is the same through all three?
+    </div>
+    <div class="answer-option"><strong>A)</strong> Voltage</div>
+    <div class="answer-option"><strong>B)</strong> Current</div>
+    <div class="answer-option"><strong>C)</strong> Resistance</div>
+    <div class="answer-option"><strong>D)</strong> Power</div>
+    <div class="answer-option"><strong>E)</strong> Energy</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.10</div>
+    <div class="question-text">
+    Determine why household wiring is typically connected in parallel rather than series.
+    </div>
+    <div class="answer-option"><strong>A)</strong> To ensure each device receives full voltage</div>
+    <div class="answer-option"><strong>B)</strong> To eliminate resistance</div>
+    <div class="answer-option"><strong>C)</strong> To reduce voltage</div>
+    <div class="answer-option"><strong>D)</strong> To increase resistance</div>
+    <div class="answer-option"><strong>E)</strong> To prevent current flow</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.11</div>
+    <div class="question-text">
+    If one bulb in a series string burns out, the others:
+    </div>
+    <div class="answer-option"><strong>A)</strong> Stay lit</div>
+    <div class="answer-option"><strong>B)</strong> Become brighter</div>
+    <div class="answer-option"><strong>C)</strong> Go out</div>
+    <div class="answer-option"><strong>D)</strong> Double voltage</div>
+    <div class="answer-option"><strong>E)</strong> Increase resistance</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.12</div>
+    <div class="question-text">
+    Identify what happens to equivalent resistance when resistors are added in series.
+    </div>
+    <div class="answer-option"><strong>A)</strong> It decreases</div>
+    <div class="answer-option"><strong>B)</strong> It remains unchanged</div>
+    <div class="answer-option"><strong>C)</strong> It increases</div>
+    <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>E)</strong> It becomes infinite</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.13</div>
+    <div class="question-text">
+    A parallel circuit has two branches of equal resistance. How is total current distributed?
+    </div>
+    <div class="answer-option"><strong>A)</strong> All current flows in one branch</div>
+    <div class="answer-option"><strong>B)</strong> It splits equally between branches</div>
+    <div class="answer-option"><strong>C)</strong> It becomes zero</div>
+    <div class="answer-option"><strong>D)</strong> It doubles in each branch</div>
+    <div class="answer-option"><strong>E)</strong> It reverses</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.14</div>
+    <div class="question-text">
+    Explain why voltage adds in series circuits.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Each component uses part of the total potential difference</div>
+    <div class="answer-option"><strong>B)</strong> Current doubles</div>
+    <div class="answer-option"><strong>C)</strong> Resistance disappears</div>
+    <div class="answer-option"><strong>D)</strong> Voltage becomes constant</div>
+    <div class="answer-option"><strong>E)</strong> Energy is destroyed</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.15</div>
+    <div class="question-text">
+    A device is connected in parallel with another identical device. What happens to total resistance?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It increases</div>
+    <div class="answer-option"><strong>B)</strong> It remains the same</div>
+    <div class="answer-option"><strong>C)</strong> It decreases</div>
+    <div class="answer-option"><strong>D)</strong> It doubles</div>
+    <div class="answer-option"><strong>E)</strong> It becomes infinite</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.16</div>
+    <div class="question-text">
+    Predict what happens to current in each branch if supply voltage remains constant and resistance increases.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Current increases</div>
+    <div class="answer-option"><strong>B)</strong> Current decreases</div>
+    <div class="answer-option"><strong>C)</strong> Current remains constant</div>
+    <div class="answer-option"><strong>D)</strong> Current reverses</div>
+    <div class="answer-option"><strong>E)</strong> Current doubles</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.17</div>
+    <div class="question-text">
+    A series circuit has total resistance of 15 Ω from three equal resistors. What is the resistance of each?
+    </div>
+    <div class="answer-option"><strong>A)</strong> 3 Ω</div>
+    <div class="answer-option"><strong>B)</strong> 5 Ω</div>
+    <div class="answer-option"><strong>C)</strong> 10 Ω</div>
+    <div class="answer-option"><strong>D)</strong> 15 Ω</div>
+    <div class="answer-option"><strong>E)</strong> 45 Ω</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.18</div>
+    <div class="question-text">
+    In a parallel circuit, what happens to total resistance as more branches are added?
+    </div>
+    <div class="answer-option"><strong>A)</strong> It increases</div>
+    <div class="answer-option"><strong>B)</strong> It remains constant</div>
+    <div class="answer-option"><strong>C)</strong> It decreases</div>
+    <div class="answer-option"><strong>D)</strong> It becomes infinite</div>
+    <div class="answer-option"><strong>E)</strong> It becomes zero</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.19</div>
+    <div class="question-text">
+    A parallel circuit ensures which of the following remains the same across all branches?
+    </div>
+    <div class="answer-option"><strong>A)</strong> Current</div>
+    <div class="answer-option"><strong>B)</strong> Voltage</div>
+    <div class="answer-option"><strong>C)</strong> Resistance</div>
+    <div class="answer-option"><strong>D)</strong> Power</div>
+    <div class="answer-option"><strong>E)</strong> Energy</div>
+    </div>
+    
+    <div class="question-block">
+    <div class="question-number">2.20</div>
+    <div class="question-text">
+    Determine which circuit type would be most affected if one component fails.
+    </div>
+    <div class="answer-option"><strong>A)</strong> Parallel circuit</div>
+    <div class="answer-option"><strong>B)</strong> Series circuit</div>
+    <div class="answer-option"><strong>C)</strong> Open circuit</div>
+    <div class="answer-option"><strong>D)</strong> Short circuit</div>
+    <div class="answer-option"><strong>E)</strong> Balanced circuit</div>
+    </div>
+    
+    <footer>
+    Section 8.3 – Series and Parallel Circuits | Bank 2
+    </footer>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+
+<div class="answer-key" id="answers">
+
+  <h2>Complete Answer Key</h2>
+  <p><strong>Bank 2: Conceptual Questions — Answer Key</strong></p>
+  
+  <div class="answer-row"><div>2.1</div><div>C</div><div>Resistances add in series</div></div>
+  <div class="answer-row"><div>2.2</div><div>B</div><div>Individual voltages sum to total supply</div></div>
+  <div class="answer-row"><div>2.3</div><div>B</div><div>More parallel paths reduce equivalent resistance</div></div>
+  <div class="answer-row"><div>2.4</div><div>B</div><div>Other branches continue operating</div></div>
+  <div class="answer-row"><div>2.5</div><div>A</div><div>Voltage is same across parallel branches</div></div>
+  
+  <div class="answer-row"><div>2.6</div><div>B</div><div>Total current splits among branches</div></div>
+  <div class="answer-row"><div>2.7</div><div>C</div><div>Series bulbs share voltage; brightness decreases</div></div>
+  <div class="answer-row"><div>2.8</div><div>C</div><div>Adding branches lowers resistance; total current increases</div></div>
+  <div class="answer-row"><div>2.9</div><div>B</div><div>Current is same everywhere in series</div></div>
+  <div class="answer-row"><div>2.10</div><div>A</div><div>Parallel wiring ensures full voltage to each device</div></div>
+  
+  <div class="answer-row"><div>2.11</div><div>C</div><div>Breaking series path stops current</div></div>
+  <div class="answer-row"><div>2.12</div><div>C</div><div>Total resistance increases in series</div></div>
+  <div class="answer-row"><div>2.13</div><div>B</div><div>Equal resistances split current equally</div></div>
+  <div class="answer-row"><div>2.14</div><div>A</div><div>Voltage drops across each component sum to supply</div></div>
+  <div class="answer-row"><div>2.15</div><div>C</div><div>Parallel branches decrease total resistance</div></div>
+  
+  <div class="answer-row"><div>2.16</div><div>B</div><div>Higher resistance reduces branch current</div></div>
+  <div class="answer-row"><div>2.17</div><div>B</div><div>15 Ω ÷ 3 equal resistors = 5 Ω each</div></div>
+  <div class="answer-row"><div>2.18</div><div>C</div><div>Equivalent resistance decreases in parallel</div></div>
+  <div class="answer-row"><div>2.19</div><div>B</div><div>Voltage is constant across branches</div></div>
+  <div class="answer-row"><div>2.20</div><div>B</div><div>Series circuit fails completely if one component breaks</div></div>
+  
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 7.4: Ohm’s Law and Circuit Analysis - Bank 3 (Single-Step Calculations)</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   FORMULA GROUPS
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+/* ================================
+   ANSWER KEY
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+<h1>Section 7.4: Ohm’s Law and Circuit Analysis</h1>
+<p><strong>Bank 3: Single-Step Calculations</strong></p>
+<p>Round answers to 2–3 significant figures.</p>
+</header>
+
+<div class="bank-section">
+
+<div class="bank-header">
+<h2>Single-Step Calculations</h2>
+<div class="bank-info">Formula Group 1 of 3</div>
+</div>
+
+<!-- ============================================================ -->
+<!-- FORMULA GROUP 1: V = IR -->
+<!-- ============================================================ -->
+
+<div class="formula-group">
+<div class="formula-title">Formula 1: Ohm’s Law</div>
+
+<div class="formula-display">
+$$V = IR$$
+</div>
+
+<!-- Q1 Standard -->
+<div class="question">
+<div class="question-number">3.1</div>
+A 6 Ω resistor carries a current of 2.0 A. What is the voltage across the resistor?
+<div class="answer-blank">Answer: ________ V</div>
+</div>
+
+<!-- Q2 Inverted -->
+<div class="question">
+<div class="question-number">3.2</div>
+Calculate the current through a 12 Ω resistor if the applied voltage is 24 V.
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q3 Context-Rich -->
+<div class="question">
+<div class="question-number">3.3</div>
+A small heating element has a resistance of 10 Ω and is connected to a 120 V source. What current flows through the element?
+<div class="answer-blank">Answer: ________ A</div>
+</div>
+
+<!-- Q4 Alternate -->
+<div class="question">
+<div class="question-number">3.4</div>
+Determine the resistance of a device that draws 3.0 A when connected to a 9.0 V battery.
+<div class="answer-blank">Answer: ________ Ω</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- ============================================================ -->
+<!-- FORMULA GROUP 2: SERIES RESISTANCE -->
+<!-- ============================================================ -->
+
+<div class="formula-group">
+    <div class="formula-title">Formula 2: Series Resistance</div>
+    
+    <div class="formula-display">
+    $$R_T = R_1 + R_2 + R_3 + ...$$
+    </div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">3.5</div>
+    Two resistors of 4 Ω and 6 Ω are connected in series. What is the total resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">3.6</div>
+    Calculate the total resistance when three resistors of 5 Ω, 10 Ω, and 15 Ω are connected in series.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">3.7</div>
+    A decorative lighting strip contains three resistors in series with resistances of 8 Ω, 12 Ω, and 20 Ω. What is the equivalent resistance of the strip?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">3.8</div>
+    Determine the total resistance of four resistors in series if each has a resistance of 3.0 Ω.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- FORMULA GROUP 3: PARALLEL RESISTANCE (TWO RESISTORS) -->
+<!-- ============================================================ -->
+
+<div class="formula-group">
+    <div class="formula-title">Formula 3: Parallel Resistance (Two Resistors)</div>
+    
+    <div class="formula-display">
+    $$\frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2}$$
+    </div>
+    
+    <!-- Q1 Standard -->
+    <div class="question">
+    <div class="question-number">3.9</div>
+    Two resistors of 6 Ω and 3 Ω are connected in parallel. What is the total resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q2 Inverted -->
+    <div class="question">
+    <div class="question-number">3.10</div>
+    Calculate the equivalent resistance when 8 Ω and 12 Ω resistors are connected in parallel.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q3 Context-Rich -->
+    <div class="question">
+    <div class="question-number">3.11</div>
+    A circuit contains two parallel heating elements rated at 4 Ω and 6 Ω. What is their combined resistance?
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    <!-- Q4 Alternate -->
+    <div class="question">
+    <div class="question-number">3.12</div>
+    Determine the total resistance of two identical 10 Ω resistors connected in parallel.
+    <div class="answer-blank">Answer: ________ Ω</div>
+    </div>
+    
+    </div>
+
+    <!-- ============================================================ -->
+<!-- ANSWER KEY -->
+<!-- ============================================================ -->
+<div class="answer-key" id="answers">
+    <h2>Complete Answer Key</h2>
+    <p><strong>Bank 3: Single-Step Calculations — Answer Key</strong></p>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 1: Ohm’s Law -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 1: Ohm’s Law ($V = IR$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.1</div>
+        <div>12 V</div>
+        <div>
+          $$V = IR = (2.0)(6) = 12\text{ V}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.2</div>
+        <div>2.0 A</div>
+        <div>
+          $$I = \frac{V}{R} = \frac{24}{12} = 2.0\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.3</div>
+        <div>12 A</div>
+        <div>
+          $$I = \frac{V}{R} = \frac{120}{10} = 12\text{ A}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.4</div>
+        <div>3.0 Ω</div>
+        <div>
+          $$R = \frac{V}{I} = \frac{9.0}{3.0} = 3.0\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 2: Series Resistance -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 2: Series Resistance ($R_T = R_1 + R_2 + ...$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.5</div>
+        <div>10 Ω</div>
+        <div>
+          $$R_T = 4 + 6 = 10\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.6</div>
+        <div>30 Ω</div>
+        <div>
+          $$R_T = 5 + 10 + 15 = 30\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.7</div>
+        <div>40 Ω</div>
+        <div>
+          $$R_T = 8 + 12 + 20 = 40\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.8</div>
+        <div>12 Ω</div>
+        <div>
+          $$R_T = 3.0 + 3.0 + 3.0 + 3.0 = 12\text{ Ω}$$
+        </div>
+      </div>
+    </div>
+  
+    <!-- ============================================================ -->
+    <!-- Formula 3: Parallel Resistance -->
+    <!-- ============================================================ -->
+    <div class="answer-key-section">
+      <div class="answer-key-section-title">
+        Formula 3: Parallel Resistance ($\frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2}$)
+      </div>
+  
+      <div class="answer-row">
+        <div>3.9</div>
+        <div>2.0 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{6} + \frac{1}{3} = \frac{3}{6}$$
+          $$R_T = 2.0\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.10</div>
+        <div>4.8 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{8} + \frac{1}{12} = \frac{5}{24}$$
+          $$R_T = 4.8\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.11</div>
+        <div>2.4 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{4} + \frac{1}{6} = \frac{5}{12}$$
+          $$R_T = 2.4\text{ Ω}$$
+        </div>
+      </div>
+  
+      <div class="answer-row">
+        <div>3.12</div>
+        <div>5.0 Ω</div>
+        <div>
+          $$\frac{1}{R_T} = \frac{1}{10} + \frac{1}{10} = \frac{1}{5}$$
+          $$R_T = 5.0\text{ Ω}$$
+        </div>
+      </div>
+  
+    </div>
+  
+  </div>
+
+<footer>
+Section 7.4 – Ohm’s Law and Circuit Analysis | Bank 3
+</footer>
+
+</div>
+</body>
+</html>

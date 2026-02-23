@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5.4 Bank 1</title>
+
+<script type="text/javascript">
+MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* ================================
+   TOC
+================================ */
+
+.toc-container {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+.toc-container h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-item {
+  margin-bottom: 8px;
+}
+
+.toc-item a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.toc-item a:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   BANK STRUCTURE
+================================ */
+
+.bank-section {
+  margin-bottom: 40px;
+}
+
+.bank-header {
+  border: 1px solid #333;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+}
+
+.bank-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+}
+
+.bank-info {
+  font-size: 0.95rem;
+}
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question-group {
+  margin-bottom: 25px;
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.question-group-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.question-block,
+.question {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+}
+
+.question-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.answer-option {
+  margin-left: 15px;
+  margin-bottom: 6px;
+}
+
+/* ================================
+   FORMULA GROUPS (BANK 3 & 4)
+================================ */
+
+.formula-group {
+  margin-bottom: 35px;
+}
+
+.formula-title {
+  border: 1px solid #333;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.formula-display {
+  background-color: #fafafa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.answer-blank {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #fafafa;
+  border: 1px dashed #999;
+}
+
+.answer-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   ANSWER KEY (ALL BANKS)
+================================ */
+
+.answer-key {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #f5f5f5;
+}
+
+.answer-key h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.answer-key-section {
+  margin-bottom: 25px;
+}
+
+.answer-key-section-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+.answer-row {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: 15px;
+  padding: 8px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ddd;
+}
+
+.answer-row:last-child {
+  border-bottom: none;
+}
+
+.answer-row > div:first-child {
+  font-weight: bold;
+}
+
+.answer-row > div:nth-child(2) {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  margin-top: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <header>
+    <h1>Section 5.4: Wave Properties and Behavior</h1>
+    <p><strong>Bank 1: Vocabulary Assessment</strong></p>
+    <p>40 Multiple Choice Questions | 10 Vocabulary Terms × 4 Question Types</p>
+  </header>
+  
+  <div class="bank-section">
+  
+  <div class="bank-header">
+    <h2>Bank 1: Vocabulary Assessment</h2>
+    <div class="bank-info">4 question types per vocabulary term | Multiple choice (A–E)</div>
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Diffraction -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Diffraction (1.1 – 1.4)</div>
+  <div class="question-text"><strong>Definition:</strong> The spreading of a wave around obstacles and through openings; more pronounced when wavelength is large compared to the obstacle size.</div>
+  
+  <div class="question">
+  <div class="question-number">1.1</div>
+  What is diffraction?
+  <div class="answer-option">A) Reflection of waves</div>
+  <div class="answer-option">B) Bending of waves around obstacles</div>
+  <div class="answer-option">C) Permanent energy loss</div>
+  <div class="answer-option">D) Wave speed change</div>
+  <div class="answer-option">E) Particle transfer</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">1.2</div>
+  Wave spreading after passing through an opening is called:
+  <div class="answer-option">A) Refraction</div>
+  <div class="answer-option">B) Interference</div>
+  <div class="answer-option">C) Diffraction</div>
+  <div class="answer-option">D) Reflection</div>
+  <div class="answer-option">E) Superposition</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">1.3</div>
+  Low-frequency sound waves bend easily around corners. This demonstrates:
+  <div class="answer-option">A) Refraction</div>
+  <div class="answer-option">B) Diffraction</div>
+  <div class="answer-option">C) Absorption</div>
+  <div class="answer-option">D) Polarization</div>
+  <div class="answer-option">E) Dispersion</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">1.4</div>
+  Diffraction is most noticeable when:
+  <div class="answer-option">A) Wavelength is small compared to obstacle</div>
+  <div class="answer-option">B) Wavelength is large compared to obstacle</div>
+  <div class="answer-option">C) Amplitude is zero</div>
+  <div class="answer-option">D) Speed is constant</div>
+  <div class="answer-option">E) Frequency is extremely high</div>
+  </div>
+  
+  </div>
+
+  <!-- ============================================================ -->
+<!-- Diffraction Pattern -->
+<!-- ============================================================ -->
+
+<div class="question-group">
+  <div class="question-group-title">Diffraction Pattern (2.1 – 2.4)</div>
+  <div class="question-text"><strong>Definition:</strong> The pattern of wave intensity created when a wave spreads around an obstacle or through an opening.</div>
+  
+  <div class="question">
+  <div class="question-number">2.1</div>
+  What is a diffraction pattern?
+  <div class="answer-option">A) A reflection of waves</div>
+  <div class="answer-option">B) A pattern formed by wave intensity after spreading</div>
+  <div class="answer-option">C) A standing wave</div>
+  <div class="answer-option">D) A crest and trough combination</div>
+  <div class="answer-option">E) A permanent displacement</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">2.2</div>
+  Bright and dark bands observed after waves pass through a slit represent:
+  <div class="answer-option">A) Refraction zones</div>
+  <div class="answer-option">B) Diffraction pattern</div>
+  <div class="answer-option">C) Wave absorption</div>
+  <div class="answer-option">D) Node locations only</div>
+  <div class="answer-option">E) Amplitude loss</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">2.3</div>
+  A laser passing through a narrow slit produces alternating bright and dark regions on a screen. This is an example of:
+  <div class="answer-option">A) Dispersion</div>
+  <div class="answer-option">B) Diffraction pattern</div>
+  <div class="answer-option">C) Reflection</div>
+  <div class="answer-option">D) Polarization</div>
+  <div class="answer-option">E) Refraction</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">2.4</div>
+  The spacing of bright regions in a diffraction pattern depends primarily on:
+  <div class="answer-option">A) Amplitude only</div>
+  <div class="answer-option">B) Wavelength</div>
+  <div class="answer-option">C) Density only</div>
+  <div class="answer-option">D) Temperature only</div>
+  <div class="answer-option">E) Color of the screen</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Interference -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Interference (3.1 – 3.4)</div>
+  <div class="question-text"><strong>Definition:</strong> The combination of two or more waves that interact and produce a new wave pattern.</div>
+  
+  <div class="question">
+  <div class="question-number">3.1</div>
+  What is interference?
+  <div class="answer-option">A) Reflection of waves</div>
+  <div class="answer-option">B) Interaction of waves producing a new pattern</div>
+  <div class="answer-option">C) Wave absorption</div>
+  <div class="answer-option">D) Permanent matter transfer</div>
+  <div class="answer-option">E) Change in wave speed</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.2</div>
+  When two waves overlap in space, the resulting pattern is called:
+  <div class="answer-option">A) Diffraction</div>
+  <div class="answer-option">B) Refraction</div>
+  <div class="answer-option">C) Interference</div>
+  <div class="answer-option">D) Polarization</div>
+  <div class="answer-option">E) Dispersion</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.3</div>
+  Two water waves meet and create regions of larger and smaller amplitude. This demonstrates:
+  <div class="answer-option">A) Reflection</div>
+  <div class="answer-option">B) Interference</div>
+  <div class="answer-option">C) Absorption</div>
+  <div class="answer-option">D) Permanent motion</div>
+  <div class="answer-option">E) Wave loss</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">3.4</div>
+  Interference can result in:
+  <div class="answer-option">A) Only reinforcement</div>
+  <div class="answer-option">B) Only cancellation</div>
+  <div class="answer-option">C) Both reinforcement and cancellation</div>
+  <div class="answer-option">D) No amplitude change</div>
+  <div class="answer-option">E) Permanent displacement</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Superposition -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Superposition (4.1 – 4.4)</div>
+  <div class="question-text"><strong>Definition:</strong> The principle that when two waves overlap, the resultant displacement at any point is the sum of the displacements from each wave.</div>
+  
+  <div class="question">
+  <div class="question-number">4.1</div>
+  What does the principle of superposition state?
+  <div class="answer-option">A) Waves cancel permanently</div>
+  <div class="answer-option">B) Waves reflect off each other</div>
+  <div class="answer-option">C) Displacements add algebraically</div>
+  <div class="answer-option">D) Frequencies multiply</div>
+  <div class="answer-option">E) Wavelength doubles</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.2</div>
+  When two waves overlap, their total displacement is determined by:
+  <div class="answer-option">A) Their speeds</div>
+  <div class="answer-option">B) Their wavelengths</div>
+  <div class="answer-option">C) The sum of individual displacements</div>
+  <div class="answer-option">D) The larger amplitude only</div>
+  <div class="answer-option">E) Their frequencies only</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.3</div>
+  Two waves of equal amplitude but opposite direction meet. According to superposition, the result is:
+  <div class="answer-option">A) Double amplitude</div>
+  <div class="answer-option">B) Zero displacement</div>
+  <div class="answer-option">C) Triple amplitude</div>
+  <div class="answer-option">D) Increased speed</div>
+  <div class="answer-option">E) Increased frequency</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">4.4</div>
+  Superposition applies when waves:
+  <div class="answer-option">A) Travel in different media</div>
+  <div class="answer-option">B) Overlap in space</div>
+  <div class="answer-option">C) Have identical frequency only</div>
+  <div class="answer-option">D) Reflect</div>
+  <div class="answer-option">E) Stop moving</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Constructive Interference -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Constructive Interference (5.1 – 5.4)</div>
+  <div class="question-text"><strong>Definition:</strong> Occurs when waves arrive in phase (crest to crest); amplitudes add to produce a larger combined amplitude.</div>
+  
+  <div class="question">
+  <div class="question-number">5.1</div>
+  What occurs during constructive interference?
+  <div class="answer-option">A) Waves cancel completely</div>
+  <div class="answer-option">B) Amplitudes subtract</div>
+  <div class="answer-option">C) Amplitudes add</div>
+  <div class="answer-option">D) Frequency doubles</div>
+  <div class="answer-option">E) Speed decreases</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">5.2</div>
+  Constructive interference happens when waves are:
+  <div class="answer-option">A) Out of phase</div>
+  <div class="answer-option">B) In phase</div>
+  <div class="answer-option">C) Perpendicular</div>
+  <div class="answer-option">D) Reflected</div>
+  <div class="answer-option">E) Standing still</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">5.3</div>
+  Two identical crests meet at the same point. The result is:
+  <div class="answer-option">A) Zero amplitude</div>
+  <div class="answer-option">B) Reduced amplitude</div>
+  <div class="answer-option">C) Increased amplitude</div>
+  <div class="answer-option">D) Wavelength change</div>
+  <div class="answer-option">E) Frequency change</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">5.4</div>
+  Which situation produces constructive interference?
+  <div class="answer-option">A) Crest meets trough</div>
+  <div class="answer-option">B) Crest meets crest</div>
+  <div class="answer-option">C) Rarefaction meets compression</div>
+  <div class="answer-option">D) Wave meets obstacle</div>
+  <div class="answer-option">E) Node meets antinode</div>
+  </div>
+  
+  </div>
+
+  <!-- ============================================================ -->
+<!-- Destructive Interference -->
+<!-- ============================================================ -->
+
+<div class="question-group">
+  <div class="question-group-title">Destructive Interference (6.1 – 6.4)</div>
+  <div class="question-text"><strong>Definition:</strong> Occurs when waves arrive out of phase (crest aligned with trough); amplitudes subtract and may result in zero amplitude.</div>
+  
+  <div class="question">
+  <div class="question-number">6.1</div>
+  What occurs during destructive interference?
+  <div class="answer-option">A) Amplitudes add</div>
+  <div class="answer-option">B) Amplitudes subtract</div>
+  <div class="answer-option">C) Frequency doubles</div>
+  <div class="answer-option">D) Speed increases</div>
+  <div class="answer-option">E) Medium changes</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">6.2</div>
+  Destructive interference occurs when waves are:
+  <div class="answer-option">A) In phase</div>
+  <div class="answer-option">B) Out of phase</div>
+  <div class="answer-option">C) Identical in speed only</div>
+  <div class="answer-option">D) Reflected</div>
+  <div class="answer-option">E) Standing still</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">6.3</div>
+  If a crest meets a trough of equal amplitude, the result is:
+  <div class="answer-option">A) Double amplitude</div>
+  <div class="answer-option">B) No change</div>
+  <div class="answer-option">C) Zero displacement</div>
+  <div class="answer-option">D) Increased wavelength</div>
+  <div class="answer-option">E) Increased frequency</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">6.4</div>
+  Which alignment produces destructive interference?
+  <div class="answer-option">A) Crest with crest</div>
+  <div class="answer-option">B) Trough with trough</div>
+  <div class="answer-option">C) Crest with trough</div>
+  <div class="answer-option">D) Node with node</div>
+  <div class="answer-option">E) Antinode with antinode</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Phase -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Phase (7.1 – 7.4)</div>
+  <div class="question-text"><strong>Definition:</strong> The position of a wave relative to a reference point; determines whether waves interfere constructively or destructively.</div>
+  
+  <div class="question">
+  <div class="question-number">7.1</div>
+  What does phase describe?
+  <div class="answer-option">A) Wave speed</div>
+  <div class="answer-option">B) Wave frequency</div>
+  <div class="answer-option">C) Relative position in the wave cycle</div>
+  <div class="answer-option">D) Medium density</div>
+  <div class="answer-option">E) Wavelength only</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">7.2</div>
+  Two waves are said to be in phase when:
+  <div class="answer-option">A) Crest meets trough</div>
+  <div class="answer-option">B) Crest meets crest</div>
+  <div class="answer-option">C) Frequencies differ</div>
+  <div class="answer-option">D) Speeds differ</div>
+  <div class="answer-option">E) Wavelengths cancel</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">7.3</div>
+  Phase difference determines whether waves:
+  <div class="answer-option">A) Change speed</div>
+  <div class="answer-option">B) Increase wavelength</div>
+  <div class="answer-option">C) Interfere constructively or destructively</div>
+  <div class="answer-option">D) Reflect</div>
+  <div class="answer-option">E) Refract</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">7.4</div>
+  A 180° phase difference between two waves results in:
+  <div class="answer-option">A) Constructive interference</div>
+  <div class="answer-option">B) No interaction</div>
+  <div class="answer-option">C) Destructive interference</div>
+  <div class="answer-option">D) Increased speed</div>
+  <div class="answer-option">E) Larger wavelength</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Standing Wave -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Standing Wave (8.1 – 8.4)</div>
+  <div class="question-text"><strong>Definition:</strong> A wave pattern that appears to stand still, formed when incident and reflected waves interfere.</div>
+  
+  <div class="question">
+  <div class="question-number">8.1</div>
+  What is a standing wave?
+  <div class="answer-option">A) A wave that stops moving</div>
+  <div class="answer-option">B) A wave that reflects once</div>
+  <div class="answer-option">C) A stationary pattern formed by interference</div>
+  <div class="answer-option">D) A wave without energy</div>
+  <div class="answer-option">E) A wave in vacuum</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">8.2</div>
+  Standing waves are formed when:
+  <div class="answer-option">A) Two waves travel in the same direction</div>
+  <div class="answer-option">B) Incident and reflected waves overlap</div>
+  <div class="answer-option">C) Medium disappears</div>
+  <div class="answer-option">D) Frequency changes</div>
+  <div class="answer-option">E) Amplitude is zero</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">8.3</div>
+  In a standing wave, certain points remain motionless. These are:
+  <div class="answer-option">A) Antinodes</div>
+  <div class="answer-option">B) Crests</div>
+  <div class="answer-option">C) Nodes</div>
+  <div class="answer-option">D) Rarefactions</div>
+  <div class="answer-option">E) Compressions</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">8.4</div>
+  Standing waves do not:
+  <div class="answer-option">A) Transfer energy along the medium</div>
+  <div class="answer-option">B) Exhibit interference</div>
+  <div class="answer-option">C) Have nodes</div>
+  <div class="answer-option">D) Have antinodes</div>
+  <div class="answer-option">E) Form from reflection</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Node -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Node (9.1 – 9.4)</div>
+  <div class="question-text"><strong>Definition:</strong> A point of zero amplitude in a standing wave where destructive interference always occurs.</div>
+  
+  <div class="question">
+  <div class="question-number">9.1</div>
+  What is a node?
+  <div class="answer-option">A) Maximum displacement point</div>
+  <div class="answer-option">B) Zero displacement point</div>
+  <div class="answer-option">C) Highest crest</div>
+  <div class="answer-option">D) Wave speed location</div>
+  <div class="answer-option">E) Compression</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">9.2</div>
+  Particles at a node:
+  <div class="answer-option">A) Move with maximum amplitude</div>
+  <div class="answer-option">B) Do not move</div>
+  <div class="answer-option">C) Change direction</div>
+  <div class="answer-option">D) Increase frequency</div>
+  <div class="answer-option">E) Increase speed</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">9.3</div>
+  Nodes occur due to:
+  <div class="answer-option">A) Constructive interference</div>
+  <div class="answer-option">B) Destructive interference</div>
+  <div class="answer-option">C) Refraction</div>
+  <div class="answer-option">D) Diffraction</div>
+  <div class="answer-option">E) Dispersion</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">9.4</div>
+  In a standing wave, nodes are spaced:
+  <div class="answer-option">A) One wavelength apart</div>
+  <div class="answer-option">B) Half wavelength apart</div>
+  <div class="answer-option">C) Quarter wavelength apart</div>
+  <div class="answer-option">D) Randomly</div>
+  <div class="answer-option">E) At crest only</div>
+  </div>
+  
+  </div>
+  
+  <!-- ============================================================ -->
+  <!-- Antinode -->
+  <!-- ============================================================ -->
+  
+  <div class="question-group">
+  <div class="question-group-title">Antinode (10.1 – 10.4)</div>
+  <div class="question-text"><strong>Definition:</strong> A point of maximum amplitude in a standing wave where constructive interference occurs.</div>
+  
+  <div class="question">
+  <div class="question-number">10.1</div>
+  What is an antinode?
+  <div class="answer-option">A) Zero amplitude point</div>
+  <div class="answer-option">B) Maximum amplitude point</div>
+  <div class="answer-option">C) Wave speed location</div>
+  <div class="answer-option">D) Rarefaction</div>
+  <div class="answer-option">E) Node</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">10.2</div>
+  Particles at an antinode:
+  <div class="answer-option">A) Do not move</div>
+  <div class="answer-option">B) Oscillate with maximum displacement</div>
+  <div class="answer-option">C) Remain compressed</div>
+  <div class="answer-option">D) Remain rarefied</div>
+  <div class="answer-option">E) Move parallel only</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">10.3</div>
+  Antinodes form due to:
+  <div class="answer-option">A) Destructive interference</div>
+  <div class="answer-option">B) Constructive interference</div>
+  <div class="answer-option">C) Refraction</div>
+  <div class="answer-option">D) Diffraction</div>
+  <div class="answer-option">E) Absorption</div>
+  </div>
+  
+  <div class="question">
+  <div class="question-number">10.4</div>
+  In a standing wave, the distance between a node and the nearest antinode is:
+  <div class="answer-option">A) One wavelength</div>
+  <div class="answer-option">B) Half wavelength</div>
+  <div class="answer-option">C) Quarter wavelength</div>
+  <div class="answer-option">D) Two wavelengths</div>
+  <div class="answer-option">E) Zero</div>
+  </div>
+  
+  </div>
+
+  <div class="answer-key">
+    <h2>Answer Key – Bank 1: Vocabulary Assessment</h2>
+  
+    <div class="answer-key-section">
+  
+      <!-- Diffraction -->
+      <div class="answer-row"><div>1.1</div><div>B</div><div>Diffraction is wave bending around obstacles</div></div>
+      <div class="answer-row"><div>1.2</div><div>C</div><div>Spreading through opening</div></div>
+      <div class="answer-row"><div>1.3</div><div>B</div><div>Low-frequency waves bend more</div></div>
+      <div class="answer-row"><div>1.4</div><div>B</div><div>Greater wavelength increases diffraction</div></div>
+  
+      <!-- Diffraction Pattern -->
+      <div class="answer-row"><div>2.1</div><div>B</div><div>Intensity pattern from spreading waves</div></div>
+      <div class="answer-row"><div>2.2</div><div>B</div><div>Bright/dark bands indicate diffraction pattern</div></div>
+      <div class="answer-row"><div>2.3</div><div>B</div><div>Laser slit example</div></div>
+      <div class="answer-row"><div>2.4</div><div>B</div><div>Wavelength affects spacing</div></div>
+  
+      <!-- Interference -->
+      <div class="answer-row"><div>3.1</div><div>B</div><div>Wave interaction</div></div>
+      <div class="answer-row"><div>3.2</div><div>C</div><div>Overlap creates interference</div></div>
+      <div class="answer-row"><div>3.3</div><div>B</div><div>Combined wave pattern</div></div>
+      <div class="answer-row"><div>3.4</div><div>C</div><div>Reinforcement or cancellation</div></div>
+  
+      <!-- Superposition -->
+      <div class="answer-row"><div>4.1</div><div>C</div><div>Displacements add algebraically</div></div>
+      <div class="answer-row"><div>4.2</div><div>C</div><div>Sum of displacements</div></div>
+      <div class="answer-row"><div>4.3</div><div>B</div><div>Equal opposite waves cancel</div></div>
+      <div class="answer-row"><div>4.4</div><div>B</div><div>Applies when waves overlap</div></div>
+  
+      <!-- Constructive Interference -->
+      <div class="answer-row"><div>5.1</div><div>C</div><div>Amplitudes add</div></div>
+      <div class="answer-row"><div>5.2</div><div>B</div><div>In-phase waves</div></div>
+      <div class="answer-row"><div>5.3</div><div>C</div><div>Crest + crest increases amplitude</div></div>
+      <div class="answer-row"><div>5.4</div><div>B</div><div>Crest meets crest</div></div>
+  
+      <!-- Destructive Interference -->
+      <div class="answer-row"><div>6.1</div><div>B</div><div>Amplitudes subtract</div></div>
+      <div class="answer-row"><div>6.2</div><div>B</div><div>Out-of-phase waves</div></div>
+      <div class="answer-row"><div>6.3</div><div>C</div><div>Crest + trough cancels</div></div>
+      <div class="answer-row"><div>6.4</div><div>C</div><div>Crest aligned with trough</div></div>
+  
+      <!-- Phase -->
+      <div class="answer-row"><div>7.1</div><div>C</div><div>Position within wave cycle</div></div>
+      <div class="answer-row"><div>7.2</div><div>B</div><div>Crest meets crest</div></div>
+      <div class="answer-row"><div>7.3</div><div>C</div><div>Determines type of interference</div></div>
+      <div class="answer-row"><div>7.4</div><div>C</div><div>180° difference causes destructive interference</div></div>
+  
+      <!-- Standing Wave -->
+      <div class="answer-row"><div>8.1</div><div>C</div><div>Stationary interference pattern</div></div>
+      <div class="answer-row"><div>8.2</div><div>B</div><div>Incident and reflected waves overlap</div></div>
+      <div class="answer-row"><div>8.3</div><div>C</div><div>Nodes do not move</div></div>
+      <div class="answer-row"><div>8.4</div><div>A</div><div>No net energy transfer along medium</div></div>
+  
+      <!-- Node -->
+      <div class="answer-row"><div>9.1</div><div>B</div><div>Zero amplitude point</div></div>
+      <div class="answer-row"><div>9.2</div><div>B</div><div>Particles at nodes remain still</div></div>
+      <div class="answer-row"><div>9.3</div><div>B</div><div>Destructive interference</div></div>
+      <div class="answer-row"><div>9.4</div><div>B</div><div>Nodes are λ/2 apart</div></div>
+  
+      <!-- Antinode -->
+      <div class="answer-row"><div>10.1</div><div>B</div><div>Maximum amplitude point</div></div>
+      <div class="answer-row"><div>10.2</div><div>B</div><div>Maximum displacement</div></div>
+      <div class="answer-row"><div>10.3</div><div>B</div><div>Constructive interference</div></div>
+      <div class="answer-row"><div>10.4</div><div>C</div><div>Node to antinode = λ/4</div></div>
+  
+    </div>
+  </div>
+
+
+</body>
+</html>
