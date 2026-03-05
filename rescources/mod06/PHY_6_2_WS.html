@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Section 6.2 Whiteboards</title>
+
+<!-- MathJax Configuration FIRST -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+
+<!-- Load MathJax from jsdelivr -->
+<script type="text/javascript" async
+src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:white;
+  margin:0;
+}
+
+.slide{
+  width:960px;
+  height:540px;
+  margin:40px auto;
+  padding:40px;
+  box-sizing:border-box;
+  page-break-after:always;
+  position:relative;
+}
+
+h1,h2{
+  margin:0;
+}
+
+.header{
+  background:#1e3a8a;
+  color:white;
+  padding:15px;
+  font-size:24px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.solution-header{
+  background:#16a34a;
+  color:white;
+  padding:15px;
+  font-size:24px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.box{
+  border:2px solid #ccc;
+  padding:20px;
+  margin-top:25px;
+  font-size:18px;
+}
+
+.gray{ background:#f1f5f9; }
+.formula{ background:#eff6ff; border-left:8px solid #1e3a8a; font-family:Georgia,serif; }
+.given{ background:#fef3c7; }
+.find{ background:#dcfce7; }
+.solution-box{ background:#f0fdf4; border:2px solid #bbf7d0; }
+.final-answer{
+  background:#166534;
+  color:white;
+  font-weight:bold;
+  padding:15px;
+  margin-top:20px;
+  font-size:18px;
+}
+.key-insight{
+  background:#eff6ff;
+  border-left:8px solid #1e3a8a;
+  padding:15px;
+  margin-top:20px;
+}
+
+.columns{
+  display:flex;
+  gap:20px;
+}
+
+.col{
+  flex:1;
+  padding:15px;
+  font-size:16px;
+}
+.step{
+  font-weight:bold;
+  color:#16a34a;
+  font-size:14px;
+}
+
+@media print{
+  body{margin:0;}
+  .slide{margin:0 auto;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- SLIDE 1 -->
+<div class="slide">
+  <div style="text-align:center;margin-top:120px;">
+    <h1 style="font-size:40px;">Section 6.2</h1>
+    <h1 style="font-size:40px;margin-top:20px;">Refraction and Snell’s Law</h1>
+    <h2 style="margin-top:40px;">Whiteboards</h2>
+  </div>
+</div>
+
+<!-- SLIDE 2 -->
+<div class="slide">
+<div class="header">Board Work Expectations</div>
+
+<div class="box gray">
+<p>✅ <strong>Work Together</strong><br>
+Partner work — both engaged. No one alone or off-task.</p>
+
+<p>✅ <strong>Take Turns Writing</strong><br>
+Alternate who writes. Partner watches and verifies.</p>
+
+<p>✅ <strong>Write Clearly & Large</strong><br>
+Readable from across the room. Label your work.</p>
+
+<p>✅ <strong>Stay Focused</strong><br>
+Stay with partner. No phones or wandering.</p>
+
+<p>✅ <strong>Use Your Resources</strong><br>
+Ask partner, teacher, or check notes. Don't copy.</p>
+
+<p>✅ <strong>Mistakes Are Okay</strong></p>
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 1 CONCEPTUAL -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">Question 1</div>
+<div class="box gray">
+Define <strong>refraction</strong>.
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">Solution 1</div>
+<div class="box solution-box">
+Refraction is the bending of light as it passes from one material into another due to a change in wave speed.
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 2 SINGLE FORMULA -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">PROBLEM 2: Refractive Index of Glass</div>
+<div class="box gray">
+Light travels at $3.0 \times 10^8$ m/s in vacuum and $2.0 \times 10^8$ m/s in glass.  
+What is the refractive index of glass?
+</div>
+</div>
+
+<div class="slide">
+<div class="header">PROBLEM 2: Refractive Index of Glass</div>
+<div class="box gray">
+Light travels at $3.0 \times 10^8$ m/s in vacuum and $2.0 \times 10^8$ m/s in glass.  
+What is the refractive index of glass?
+</div>
+
+<div class="box formula">
+Key Formula: $$n=\frac{c}{v}$$
+</div>
+
+<div class="columns">
+<div class="col given">
+<strong>GIVEN</strong><br>
+$c=3.0\times10^8$ m/s<br>
+$v=2.0\times10^8$ m/s
+</div>
+<div class="col find">
+<strong>FIND</strong><br>
+$n=?$
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">SOLUTION 2: Refractive Index of Glass</div>
+<div class="box solution-box">
+<div class="step">Step 1:</div>
+$$n=\frac{3.0\times10^8}{2.0\times10^8}$$
+
+<div class="step">Step 2:</div>
+$$n=1.5$$
+</div>
+
+<div class="final-answer">
+Final Answer: $n=1.5$
+</div>
+
+<div class="key-insight">
+A refractive index greater than 1 means light slows down in the material.
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 3 CONCEPTUAL -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">Question 3</div>
+<div class="box gray">
+If light slows down when entering a material, does it bend toward or away from the normal?
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">Solution 3</div>
+<div class="box solution-box">
+Light bends <strong>toward the normal</strong> when it slows down (enters a higher refractive index material).
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 4 MULTI STEP -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">PROBLEM 4: Refraction in Water</div>
+<div class="box gray">
+Light enters water ($n=1.33$) from air ($n=1.00$) at $30^\circ$.  
+Find the angle of refraction.
+</div>
+</div>
+
+<div class="slide">
+<div class="header">PROBLEM 4: Refraction in Water</div>
+<div class="box gray">
+Light enters water ($n=1.33$) from air ($n=1.00$) at $30^\circ$.  
+Find the angle of refraction.
+</div>
+
+<div class="box formula">
+Key Formula: $$n_1\sin\theta_1=n_2\sin\theta_2$$
+</div>
+
+<div class="columns">
+<div class="col given">
+<strong>GIVEN</strong><br>
+$n_1=1.00$<br>
+$n_2=1.33$<br>
+$\theta_1=30^\circ$
+</div>
+<div class="col find">
+<strong>FIND</strong><br>
+$\theta_2=?$
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">SOLUTION 4: Refraction in Water</div>
+<div class="box solution-box">
+<div class="step">Step 1:</div>
+$$1.00\sin30^\circ=1.33\sin\theta_2$$
+
+<div class="step">Step 2:</div>
+$$0.5=1.33\sin\theta_2$$
+
+<div class="step">Step 3:</div>
+$$\sin\theta_2=0.376$$
+
+<div class="step">Step 4:</div>
+$$\theta_2\approx22^\circ$$
+</div>
+
+<div class="final-answer">
+Final Answer: $\theta_2 \approx 22^\circ$
+</div>
+
+<div class="key-insight">
+Entering a higher refractive index makes the angle smaller.
+</div>
+</div>
+
+
+<!-- ========================= -->
+<!-- QUESTION 5 CONCEPTUAL -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">Question 5</div>
+<div class="box gray">
+What does it mean if a material has a higher <strong>optical density</strong> than another material?
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">Solution 5</div>
+<div class="box solution-box">
+A higher optical density means light travels more slowly in that material (higher refractive index).
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 6 SINGLE FORMULA -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">PROBLEM 6: Speed of Light in Diamond</div>
+<div class="box gray">
+Diamond has a refractive index of 2.42.  
+What is the speed of light in diamond?
+</div>
+</div>
+
+<div class="slide">
+<div class="header">PROBLEM 6: Speed of Light in Diamond</div>
+<div class="box gray">
+Diamond has a refractive index of 2.42.  
+What is the speed of light in diamond?
+</div>
+
+<div class="box formula">
+Key Formula: $$n=\frac{c}{v}$$
+</div>
+
+<div class="columns">
+<div class="col given">
+<strong>GIVEN</strong><br>
+$n=2.42$<br>
+$c=3.0\times10^8$ m/s
+</div>
+<div class="col find">
+<strong>FIND</strong><br>
+$v=?$
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">SOLUTION 6: Speed of Light in Diamond</div>
+<div class="box solution-box">
+<div class="step">Step 1:</div>
+$$v=\frac{c}{n}$$
+
+<div class="step">Step 2:</div>
+$$v=\frac{3.0\times10^8}{2.42}$$
+
+<div class="step">Step 3:</div>
+$$v\approx1.24\times10^8 \text{ m/s}$$
+</div>
+
+<div class="final-answer">
+Final Answer: $1.24 \times 10^8$ m/s
+</div>
+
+<div class="key-insight">
+Large refractive index → much slower light speed.
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 7 CONCEPTUAL -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">Question 7</div>
+<div class="box gray">
+Complete the statement:  
+When light passes from water into air, it speeds up and bends ______ the normal.
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">Solution 7</div>
+<div class="box solution-box">
+Light bends <strong>away from the normal</strong> when it speeds up.
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 8 MULTI STEP -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">PROBLEM 8: Glass to Air Refraction</div>
+<div class="box gray">
+Light travels from glass ($n=1.50$) into air ($n=1.00$) at $25^\circ$.  
+Find the angle of refraction.
+</div>
+</div>
+
+<div class="slide">
+<div class="header">PROBLEM 8: Glass to Air Refraction</div>
+<div class="box gray">
+Light travels from glass ($n=1.50$) into air ($n=1.00$) at $25^\circ$.  
+Find the angle of refraction.
+</div>
+
+<div class="box formula">
+Key Formula: $$n_1\sin\theta_1=n_2\sin\theta_2$$
+</div>
+
+<div class="columns">
+<div class="col given">
+$n_1=1.50$<br>
+$n_2=1.00$<br>
+$\theta_1=25^\circ$
+</div>
+<div class="col find">
+$\theta_2=?$
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">SOLUTION 8: Glass to Air Refraction</div>
+<div class="box solution-box">
+<div class="step">Step 1:</div>
+$$1.50\sin25^\circ=1.00\sin\theta_2$$
+
+<div class="step">Step 2:</div>
+$$1.50(0.423)=\sin\theta_2$$
+
+<div class="step">Step 3:</div>
+$$\sin\theta_2=0.635$$
+
+<div class="step">Step 4:</div>
+$$\theta_2\approx39^\circ$$
+</div>
+
+<div class="final-answer">
+Final Answer: $\theta_2 \approx 39^\circ$
+</div>
+
+<div class="key-insight">
+Moving into lower refractive index → angle increases.
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 9 CONCEPTUAL -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">Question 9</div>
+<div class="box gray">
+State Snell’s Law in equation form.
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">Solution 9</div>
+<div class="box solution-box">
+Snell’s Law:  
+$$n_1\sin\theta_1=n_2\sin\theta_2$$
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 10 SINGLE FORMULA -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">PROBLEM 10: Refractive Index of Water</div>
+<div class="box gray">
+Light travels at $2.25 \times 10^8$ m/s in a liquid.  
+What is the refractive index?
+</div>
+</div>
+
+<div class="slide">
+<div class="header">PROBLEM 10: Refractive Index of Water</div>
+<div class="box gray">
+Light travels at $2.25 \times 10^8$ m/s in a liquid.  
+What is the refractive index?
+</div>
+
+<div class="box formula">
+Key Formula: $$n=\frac{c}{v}$$
+</div>
+
+<div class="columns">
+<div class="col given">
+$c=3.0\times10^8$ m/s<br>
+$v=2.25\times10^8$ m/s
+</div>
+<div class="col find">
+$n=?$
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">SOLUTION 10: Refractive Index</div>
+<div class="box solution-box">
+<div class="step">Step 1:</div>
+$$n=\frac{3.0\times10^8}{2.25\times10^8}$$
+
+<div class="step">Step 2:</div>
+$$n=1.33$$
+</div>
+
+<div class="final-answer">
+Final Answer: $n=1.33$
+</div>
+
+<div class="key-insight">
+Water’s refractive index ≈ 1.33.
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 11 CONCEPTUAL -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">Question 11</div>
+<div class="box gray">
+What is an <strong>interface</strong> in refraction?
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">Solution 11</div>
+<div class="box solution-box">
+An interface is the boundary between two different materials where refraction occurs.
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- QUESTION 12 MULTI STEP -->
+<!-- ========================= -->
+
+<div class="slide">
+<div class="header">PROBLEM 12: Air to Plastic</div>
+<div class="box gray">
+Light enters plastic ($n=1.40$) from air at $45^\circ$.  
+Find the angle of refraction.
+</div>
+</div>
+
+<div class="slide">
+<div class="header">PROBLEM 12: Air to Plastic</div>
+<div class="box gray">
+Light enters plastic ($n=1.40$) from air at $45^\circ$.  
+Find the angle of refraction.
+</div>
+
+<div class="box formula">
+$$n_1\sin\theta_1=n_2\sin\theta_2$$
+</div>
+
+<div class="columns">
+<div class="col given">
+$n_1=1.00$<br>
+$n_2=1.40$<br>
+$\theta_1=45^\circ$
+</div>
+<div class="col find">
+$\theta_2=?$
+</div>
+</div>
+</div>
+
+<div class="slide">
+<div class="solution-header">SOLUTION 12: Air to Plastic</div>
+<div class="box solution-box">
+<div class="step">Step 1:</div>
+$$1.00\sin45^\circ=1.40\sin\theta_2$$
+
+<div class="step">Step 2:</div>
+$$0.707=1.40\sin\theta_2$$
+
+<div class="step">Step 3:</div>
+$$\sin\theta_2=0.505$$
+
+<div class="step">Step 4:</div>
+$$\theta_2\approx30^\circ$$
+</div>
+
+<div class="final-answer">
+Final Answer: $\theta_2 \approx 30^\circ$
+</div>
+
+<div class="key-insight">
+Entering denser material → smaller angle.
+</div>
+</div>
+
+
+</body>
+</html>
