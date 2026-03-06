@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optics Review Game – Reflection & Refraction</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap');
+
+  :root {
+    --bg: #060b1a;
+    --panel: #0d1730;
+    --panel2: #101f3a;
+    --accent: #00e5ff;
+    --accent2: #ff6b35;
+    --gold: #ffd700;
+    --green: #00ff88;
+    --red: #ff4466;
+    --text: #d0e8ff;
+    --dim: #4a6a8a;
+    --glow: 0 0 15px rgba(0,229,255,0.5);
+    --glow2: 0 0 20px rgba(255,107,53,0.6);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Exo 2', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Starfield background */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(0,229,255,0.04) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(255,107,53,0.04) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  #stars-canvas {
+    position: fixed; inset: 0;
+    pointer-events: none; z-index: 0;
+  }
+
+  .screen {
+    position: fixed; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10; padding: 20px;
+  }
+
+  .hidden { display: none !important; }
+
+  /* ===== TITLE SCREEN ===== */
+  #title-screen {
+    flex-direction: column; text-align: center;
+    background: radial-gradient(ellipse at center, rgba(0,229,255,0.06) 0%, transparent 70%);
+  }
+
+  .title-badge {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(28px, 5vw, 60px);
+    font-weight: 900;
+    color: var(--accent);
+    text-shadow: 0 0 30px rgba(0,229,255,0.8), 0 0 60px rgba(0,229,255,0.4);
+    letter-spacing: 4px;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .title-sub {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(12px, 2vw, 18px);
+    color: var(--accent2);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+
+  .title-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .title-info-card {
+    background: var(--panel);
+    border: 1px solid rgba(0,229,255,0.2);
+    border-radius: 12px;
+    padding: 16px 10px;
+    text-align: center;
+  }
+
+  .title-info-card .num {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .title-info-card .lbl {
+    font-size: 11px;
+    color: var(--dim);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .btn-primary {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 16px 48px;
+    background: linear-gradient(135deg, var(--accent), #0099bb);
+    color: var(--bg);
+    border: none; border-radius: 8px;
+    cursor: pointer;
+    box-shadow: var(--glow);
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+
+  .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0,229,255,0.8);
+  }
+
+  /* ===== QUIZ SCREEN ===== */
+  #quiz-screen {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .hud {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+
+  .hud-card {
+    background: var(--panel);
+    border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 10px;
+    padding: 10px 14px;
+    text-align: center;
+  }
+
+  .hud-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--dim);
+    margin-bottom: 4px;
+  }
+
+  .hud-val {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .hud-val.streak { color: var(--accent2); }
+  .hud-val.score { color: var(--gold); }
+
+  .progress-wrap {
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+
+  .progress-label {
+    display: flex; justify-content: space-between;
+    font-size: 11px; color: var(--dim);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+
+  .progress-bar-outer {
+    background: var(--panel);
+    border-radius: 100px;
+    height: 10px;
+    border: 1px solid rgba(0,229,255,0.1);
+    overflow: hidden;
+  }
+
+  .progress-bar-inner {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--green));
+    border-radius: 100px;
+    transition: width 0.4s ease;
+    box-shadow: 0 0 10px rgba(0,229,255,0.5);
+  }
+
+  .streak-bar-outer {
+    background: var(--panel);
+    border-radius: 100px;
+    height: 6px;
+    border: 1px solid rgba(255,107,53,0.1);
+    overflow: hidden;
+    margin-top: 6px;
+  }
+
+  .streak-bar-inner {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent2), var(--gold));
+    border-radius: 100px;
+    transition: width 0.4s ease;
+  }
+
+  .question-card {
+    background: var(--panel);
+    border: 1px solid rgba(0,229,255,0.2);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .q-tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgba(0,229,255,0.08);
+    border: 1px solid rgba(0,229,255,0.2);
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-bottom: 12px;
+  }
+
+  .question-text {
+    font-size: clamp(15px, 2.2vw, 18px);
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  @media (max-width: 600px) {
+    .options-grid { grid-template-columns: 1fr; }
+    .hud { grid-template-columns: 1fr 1fr 1fr; }
+    .title-info-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .option-btn {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 12px 16px;
+    background: var(--panel2);
+    border: 1px solid rgba(0,229,255,0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    transition: all 0.15s;
+    line-height: 1.5;
+  }
+
+  .option-btn:hover:not(:disabled) {
+    background: rgba(0,229,255,0.08);
+    border-color: var(--accent);
+    box-shadow: var(--glow);
+  }
+
+  .option-btn .opt-letter {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--accent);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .option-btn.correct {
+    background: rgba(0,255,136,0.12);
+    border-color: var(--green);
+    color: var(--green);
+  }
+
+  .option-btn.correct .opt-letter { color: var(--green); }
+
+  .option-btn.wrong {
+    background: rgba(255,68,102,0.12);
+    border-color: var(--red);
+    color: var(--red);
+  }
+
+  .option-btn.wrong .opt-letter { color: var(--red); }
+
+  .option-btn:disabled { cursor: default; }
+
+  .feedback-strip {
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+  }
+
+  .feedback-strip.show { display: block; }
+  .feedback-strip.correct { background: rgba(0,255,136,0.12); color: var(--green); border: 1px solid var(--green); }
+  .feedback-strip.wrong { background: rgba(255,68,102,0.12); color: var(--red); border: 1px solid var(--red); }
+
+  .next-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 12px 32px;
+    background: var(--accent);
+    color: var(--bg);
+    border: none; border-radius: 8px;
+    cursor: pointer;
+    display: none;
+    margin: 0 auto;
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+
+  .next-btn:hover { transform: scale(1.05); }
+  .next-btn.show { display: block; }
+
+  /* ===== BONUS PAUSE SCREEN ===== */
+  #bonus-pause-screen {
+    flex-direction: column;
+    text-align: center;
+    background: radial-gradient(ellipse at center, rgba(255,107,53,0.08) 0%, transparent 70%);
+  }
+
+  .bonus-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(22px, 4vw, 48px);
+    font-weight: 900;
+    color: var(--accent2);
+    text-shadow: 0 0 30px rgba(255,107,53,0.8);
+    margin-bottom: 8px;
+  }
+
+  .bonus-streak-msg {
+    font-size: 16px;
+    color: var(--gold);
+    margin-bottom: 30px;
+  }
+
+  .bonus-instruction-box {
+    background: var(--panel);
+    border: 1px solid rgba(255,107,53,0.3);
+    border-radius: 16px;
+    padding: 28px 36px;
+    max-width: 560px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .bonus-instruction-box h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: var(--accent2);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .bonus-instruction-box ul {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+
+  .bonus-instruction-box li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 14px; line-height: 1.5;
+  }
+
+  .bonus-instruction-box li .icon {
+    font-size: 18px; flex-shrink: 0; margin-top: 1px;
+  }
+
+  .btn-bonus-start {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 18px 52px;
+    background: linear-gradient(135deg, var(--accent2), #cc4400);
+    color: white;
+    border: none; border-radius: 10px;
+    cursor: pointer;
+    box-shadow: var(--glow2);
+    transition: all 0.2s;
+    text-transform: uppercase;
+  }
+
+  .btn-bonus-start:hover { transform: scale(1.05); box-shadow: 0 0 40px rgba(255,107,53,0.9); }
+
+  /* ===== BONUS GAME SCREEN ===== */
+  #bonus-game-screen {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bonus-hud {
+    display: flex; gap: 30px; align-items: center;
+    margin-bottom: 12px;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .bonus-hud-item { text-align: center; }
+  .bonus-hud-item .bl { font-size: 10px; color: var(--dim); letter-spacing: 2px; text-transform: uppercase; }
+  .bonus-hud-item .bv { font-size: 20px; font-weight: 700; color: var(--accent2); }
+  #bonus-timer-val { color: var(--gold); }
+  #bonus-lives-val { color: var(--red); }
+
+  #bonus-canvas {
+    border: 2px solid rgba(255,107,53,0.4);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,107,53,0.3);
+    cursor: crosshair;
+    display: block;
+  }
+
+  /* ===== BONUS RESULT ===== */
+  #bonus-result-screen {
+    flex-direction: column; text-align: center;
+  }
+
+  .bonus-result-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(24px, 4vw, 44px);
+    font-weight: 900;
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(255,215,0,0.8);
+    margin-bottom: 10px;
+  }
+
+  .bonus-result-points {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(18px, 3vw, 32px);
+    color: var(--accent2);
+    margin-bottom: 30px;
+  }
+
+  .btn-continue {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: 2px; padding: 14px 40px;
+    background: linear-gradient(135deg, var(--accent), #0099bb);
+    color: var(--bg); border: none; border-radius: 8px;
+    cursor: pointer; box-shadow: var(--glow);
+    transition: all 0.2s; text-transform: uppercase;
+  }
+
+  .btn-continue:hover { transform: scale(1.05); }
+
+  /* ===== END SCREEN ===== */
+  #end-screen {
+    flex-direction: column; text-align: center;
+  }
+
+  .end-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(26px, 5vw, 56px);
+    font-weight: 900;
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(255,215,0,0.8);
+    margin-bottom: 8px;
+  }
+
+  .end-subtitle {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(12px, 2vw, 18px);
+    color: var(--accent);
+    letter-spacing: 4px;
+    margin-bottom: 36px;
+  }
+
+  .end-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 16px; margin-bottom: 36px; max-width: 560px; width: 100%;
+  }
+
+  .end-stat {
+    background: var(--panel);
+    border: 1px solid rgba(0,229,255,0.2);
+    border-radius: 12px; padding: 20px 12px; text-align: center;
+  }
+
+  .end-stat .es-num {
+    font-family: 'Orbitron', sans-serif; font-size: 32px; font-weight: 700;
+    color: var(--accent); margin-bottom: 4px;
+  }
+
+  .end-stat .es-lbl { font-size: 11px; color: var(--dim); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* Particle flash overlay */
+  #flash-overlay {
+    position: fixed; inset: 0; pointer-events: none; z-index: 50;
+    opacity: 0; transition: opacity 0.1s;
+  }
+
+  #flash-overlay.flash-green { background: rgba(0,255,136,0.08); opacity: 1; }
+  #flash-overlay.flash-red { background: rgba(255,68,102,0.08); opacity: 1; }
+</style>
+</head>
+<body>
+
+<canvas id="stars-canvas"></canvas>
+<div id="flash-overlay"></div>
+
+<!-- TITLE SCREEN -->
+<div class="screen" id="title-screen">
+  <div class="title-badge">⚡ OPTICS CHALLENGE</div>
+  <div class="title-sub">Reflection &amp; Refraction · Ch. 6</div>
+  <div class="title-info-grid">
+    <div class="title-info-card"><div class="num">20</div><div class="lbl">Goal</div></div>
+    <div class="title-info-card"><div class="num">4</div><div class="lbl">Bonus Every</div></div>
+    <div class="title-info-card"><div class="num">30s</div><div class="lbl">Bonus Time</div></div>
+  </div>
+  <button class="btn-primary" onclick="startGame()">🚀 LAUNCH GAME</button>
+</div>
+
+<!-- QUIZ SCREEN -->
+<div class="screen hidden" id="quiz-screen">
+  <div style="width:100%; max-width:860px; display:flex; flex-direction:column; height:100%; padding: 8px 0;">
+    <div class="hud">
+      <div class="hud-card"><div class="hud-label">Correct</div><div class="hud-val" id="hud-correct">0/20</div></div>
+      <div class="hud-card"><div class="hud-label">Score</div><div class="hud-val score" id="hud-score">0</div></div>
+      <div class="hud-card"><div class="hud-label">Streak 🔥</div><div class="hud-val streak" id="hud-streak">0</div></div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span>PROGRESS</span><span id="prog-label">0 / 20</span></div>
+      <div class="progress-bar-outer"><div class="progress-bar-inner" id="progress-bar" style="width:0%"></div></div>
+      <div class="progress-label" style="margin-top:8px; margin-bottom:3px;"><span>BONUS STREAK</span><span id="streak-label">0 / 4</span></div>
+      <div class="streak-bar-outer"><div class="streak-bar-inner" id="streak-bar" style="width:0%"></div></div>
+    </div>
+    <div class="question-card" id="question-card">
+      <div class="q-tag" id="q-tag">SECTION 6.1 · VOCAB</div>
+      <div class="question-text" id="question-text">Loading...</div>
+      <div class="options-grid" id="options-grid"></div>
+    </div>
+    <div class="feedback-strip" id="feedback-strip"></div>
+    <button class="next-btn" id="next-btn" onclick="nextQuestion()">NEXT QUESTION →</button>
+  </div>
+</div>
+
+<!-- BONUS PAUSE SCREEN -->
+<div class="screen hidden" id="bonus-pause-screen">
+  <div class="bonus-title">🔨 BONUS ROUND UNLOCKED!</div>
+  <div class="bonus-streak-msg">⚡ 4 Correct in a Row! You've earned a bonus round!</div>
+  <div class="bonus-instruction-box">
+    <h3>🕹️ Whack-a-Mole Instructions</h3>
+    <ul>
+      <li><span class="icon">🖱️</span><span><strong>Control:</strong> Click the glowing targets as they pop up from their holes!</span></li>
+      <li><span class="icon">🌟</span><span><strong>Targets:</strong> <span style="color:#ffd700">⭐ Gold = 50 pts</span> (tiny, fast!) · <span style="color:#ff6b35">🟠 Orange = 30 pts</span> · <span style="color:#00e5ff">🔵 Blue = 20 pts</span> (big, slow)</span></li>
+      <li><span class="icon">💥</span><span><strong>Miss penalty:</strong> Clicking an empty hole costs you a life — aim carefully!</span></li>
+      <li><span class="icon">❤️</span><span><strong>Lives:</strong> 3 lives total. Lose all 3 and the round ends early.</span></li>
+      <li><span class="icon">⏱️</span><span><strong>Time:</strong> 30 seconds — each bonus round gets faster. React quickly!</span></li>
+    </ul>
+  </div>
+  <button class="btn-bonus-start" onclick="startBonusGame()">🔨 I'M READY! START BONUS ROUND</button>
+</div>
+
+<!-- BONUS GAME SCREEN -->
+<div class="screen hidden" id="bonus-game-screen">
+  <div class="bonus-hud">
+    <div class="bonus-hud-item"><div class="bl">Time</div><div class="bv" id="bonus-timer-val">30</div></div>
+    <div class="bonus-hud-item"><div class="bl">Bonus Pts</div><div class="bv" id="bonus-pts-val">0</div></div>
+    <div class="bonus-hud-item"><div class="bl">Lives</div><div class="bv" id="bonus-lives-val">❤️❤️❤️</div></div>
+    <div class="bonus-hud-item"><div class="bl">Hits</div><div class="bv" id="bonus-hits-val">0</div></div>
+  </div>
+  <canvas id="bonus-canvas" width="500" height="500"></canvas>
+</div>
+
+<!-- BONUS RESULT SCREEN -->
+<div class="screen hidden" id="bonus-result-screen">
+  <div class="bonus-result-title">🔨 ROUND COMPLETE!</div>
+  <div class="bonus-result-points" id="bonus-result-msg">You scored 0 bonus points!</div>
+  <button class="btn-continue" onclick="resumeQuiz()">BACK TO QUIZ →</button>
+</div>
+
+<!-- END SCREEN -->
+<div class="screen hidden" id="end-screen">
+  <div class="end-title">🏆 MISSION COMPLETE!</div>
+  <div class="end-subtitle">OPTICS MASTERED</div>
+  <div class="end-stats">
+    <div class="end-stat"><div class="es-num" id="end-correct">20</div><div class="es-lbl">Correct</div></div>
+    <div class="end-stat"><div class="es-num" id="end-score">0</div><div class="es-lbl">Total Score</div></div>
+    <div class="end-stat"><div class="es-num" id="end-bonus">0</div><div class="es-lbl">Bonus Pts</div></div>
+  </div>
+  <button class="btn-primary" onclick="restartGame()">🔄 PLAY AGAIN</button>
+</div>
+
+<script>
+// ===== STARFIELD =====
+(function() {
+  const c = document.getElementById('stars-canvas');
+  const ctx = c.getContext('2d');
+  let stars = [];
+  function resize() { c.width = window.innerWidth; c.height = window.innerHeight; }
+  function init() {
+    resize();
+    stars = [];
+    for (let i = 0; i < 180; i++) {
+      stars.push({ x: Math.random()*c.width, y: Math.random()*c.height, r: Math.random()*1.5+0.2, o: Math.random()*0.6+0.1, s: Math.random()*0.003+0.001, phase: Math.random()*Math.PI*2 });
+    }
+  }
+  let t = 0;
+  function draw() {
+    ctx.clearRect(0,0,c.width,c.height);
+    t += 0.01;
+    stars.forEach(s => {
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+      ctx.fillStyle = `rgba(180,220,255,${s.o * (0.6 + 0.4*Math.sin(t + s.phase))})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize', init);
+  init(); draw();
+})();
+
+// ===== QUESTION BANK =====
+const questions = [
+  // 6.1 VOCAB
+  { q: "What is light?", opts: ["A mechanical wave that requires a medium to travel","A form of electromagnetic energy that travels through space and allows us to see objects","A stream of particles that must bounce off surfaces to be detected","A vibration in matter that moves at the speed of sound"], ans: 1, tag: "6.1 · Vocabulary" },
+  { q: "A form of electromagnetic energy that travels through space and enables vision is called:", opts: ["Sound","Heat","Light","Radiation pressure"], ans: 2, tag: "6.1 · Vocabulary" },
+  { q: "What is a ray in the context of optics?", opts: ["A curved path that light follows around large objects","A straight line with an arrow that represents the direction light is traveling","A circular wave front spreading outward from a light source","The visible beam of light seen when dust is in the air"], ans: 1, tag: "6.1 · Vocabulary" },
+  { q: "A straight line with an arrow used to show the direction light is traveling is called a:", opts: ["Wavefront","Normal","Ray","Beam axis"], ans: 2, tag: "6.1 · Vocabulary" },
+  { q: "What is the speed of light (c)?", opts: ["The speed at which sound travels in air, approximately 343 m/s","The speed at which light travels through empty space, approximately 3×10⁸ m/s","The speed at which all electromagnetic waves travel in glass","A variable speed that depends on the color of light"], ans: 1, tag: "6.1 · Vocabulary" },
+  { q: "The speed at which light travels through a vacuum (~3×10⁸ m/s) is called the:", opts: ["Wave velocity","Refraction speed","Speed of light","Electromagnetic constant"], ans: 2, tag: "6.1 · Vocabulary" },
+  { q: "A simplified representation of light as straight lines traveling in specific directions is called the:", opts: ["Wave model","Particle model","Ray model","Quantum model"], ans: 2, tag: "6.1 · Vocabulary" },
+  { q: "What is reflection?", opts: ["The bending of light as it passes from one material into another","The bouncing of light off a surface and back into the original medium","The spreading of light through a transparent medium","The complete absorption of light at a surface"], ans: 1, tag: "6.1 · Vocabulary" },
+  { q: "The bouncing of light off a surface back into the original medium is called:", opts: ["Refraction","Diffraction","Reflection","Absorption"], ans: 2, tag: "6.1 · Vocabulary" },
+  { q: "What is the reflecting surface?", opts: ["The surface that bends light as it passes through","The surface that light bounces off during reflection","The imaginary line perpendicular to a surface","The medium through which light travels"], ans: 1, tag: "6.1 · Vocabulary" },
+  { q: "What is the normal in reflection?", opts: ["The reflected ray's direction","An imaginary line perpendicular to the reflecting surface at the point of incidence","The average angle between incident and reflected rays","The surface where reflection occurs"], ans: 1, tag: "6.1 · Vocabulary" },
+  { q: "The angle between the incoming (incident) ray and the normal is called the:", opts: ["Angle of reflection","Angle of incidence","Angle of refraction","Critical angle"], ans: 1, tag: "6.1 · Vocabulary" },
+  { q: "The angle between the reflected ray and the normal is called the:", opts: ["Angle of incidence","Angle of deflection","Angle of reflection","Angle of refraction"], ans: 2, tag: "6.1 · Vocabulary" },
+  { q: "Which statement best defines the Law of Reflection?", opts: ["The angle of incidence plus the angle of reflection equals 90°","The angle of incidence equals the angle of reflection, both measured from the normal","Light always reflects at 45° to any surface","The reflected ray travels parallel to the incident ray"], ans: 1, tag: "6.1 · Vocabulary" },
+  { q: "Reflection from a smooth surface producing a clear image is called:", opts: ["Diffuse reflection","Total internal reflection","Specular reflection","Scattered reflection"], ans: 2, tag: "6.1 · Vocabulary" },
+  { q: "Reflection from a rough surface that scatters light in many directions is called:", opts: ["Specular reflection","Refraction","Diffuse reflection","Critical reflection"], ans: 2, tag: "6.1 · Vocabulary" },
+
+  // 6.1 CONCEPTUAL
+  { q: "A light ray strikes a flat mirror. Which measurement correctly describes the angle of incidence?", opts: ["The angle between the incoming ray and the mirror surface","The angle between the incoming ray and the normal to the mirror surface","The angle between the incoming ray and the reflected ray","The angle between the normal and the mirror surface"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "According to the Law of Reflection, if a light ray strikes a mirror at 30° from the normal, at what angle does it reflect?", opts: ["60° from the normal","30° from the mirror surface","30° from the normal","60° from the mirror surface"], ans: 2, tag: "6.1 · Conceptual" },
+  { q: "A ray of light travels toward a mirror at an angle of 55° measured from the mirror surface. What is the angle of incidence measured from the normal?", opts: ["55°","125°","45°","35°"], ans: 3, tag: "6.1 · Conceptual" },
+  { q: "A beam of light strikes a flat mirror at normal incidence (0° from the normal). Where does the reflected beam travel?", opts: ["At 90° from the incoming beam","Straight back along the path it came from","At 45° from the surface","Parallel to the mirror surface"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "How does the angle of incidence compare to the angle of reflection for specular reflection?", opts: ["The angle of reflection is always larger","They are equal","The angle of incidence is always larger","They add up to 90°"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "What is the key difference between specular and diffuse reflection?", opts: ["Specular obeys the Law of Reflection but diffuse does not","Specular occurs on smooth surfaces giving a clear image; diffuse occurs on rough surfaces scattering light","Specular changes light color; diffuse does not","Diffuse reflection only occurs on mirror surfaces"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "A student reads a book lit by a lamp reflected off a shiny metal desk. The glare is caused by:", opts: ["Diffuse reflection from the metal","Specular reflection from the smooth metal surface","Total internal reflection within the desk","Refraction at the desk surface"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "Why can you read a white piece of paper from almost any direction even though it isn't a mirror?", opts: ["Paper produces specular reflection that spreads uniformly","Paper absorbs and re-emits light in all directions","Paper's rough surface produces diffuse reflection, scattering light toward your eyes from many angles","Paper transmits light regardless of angle"], ans: 2, tag: "6.1 · Conceptual" },
+  { q: "Determine what happens to the angle of reflection when a mirror is rotated 10° while the incoming light stays fixed.", opts: ["The reflected ray rotates 10°","The reflected ray rotates 20°","The reflected ray does not change direction","The reflected ray rotates 5°"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "Why can you see your reflection in a calm pond but not a choppy pond?", opts: ["Calm water is deeper and absorbs less light","A calm smooth surface produces specular reflection; choppy water creates irregular surface causing diffuse reflection","Choppy water refracts light instead of reflecting it","Moving water absorbs visible light"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "A light ray strikes a mirror at 65° measured from the surface. What is the angle of reflection measured from the normal?", opts: ["65°","25°","35°","50°"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "The Law of Reflection holds at every microscopic point on a rough surface. Why does a rough surface still produce diffuse reflection?", opts: ["Rough surfaces absorb some light before reflecting","Each facet has a different orientation so each local normal points in a different direction, scattering reflected rays","Rough surfaces slow down light causing random bending","The Law of Reflection breaks down at microscopic scales"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "Two plane mirrors face each other at 45°. A light ray enters the gap. How many total reflections occur before the ray exits?", opts: ["1 reflection","2 reflections","3 reflections","4 reflections"], ans: 1, tag: "6.1 · Conceptual" },
+  { q: "The angle between an incident ray and its reflected ray is 80°. What is the angle of incidence from the normal?", opts: ["80°","40°","20°","160°"], ans: 1, tag: "6.1 · Conceptual" },
+
+  // 6.2 VOCAB
+  { q: "What is refraction?", opts: ["The bouncing of light off a smooth shiny surface","The bending of light as it passes from one material into another due to a change in wave speed","The complete reflection of light back into a denser medium","The scattering of light when it strikes a rough surface"], ans: 1, tag: "6.2 · Vocabulary" },
+  { q: "The bending of light caused by a change in wave speed when light crosses the boundary between two materials is called:", opts: ["Diffraction","Reflection","Refraction","Dispersion"], ans: 2, tag: "6.2 · Vocabulary" },
+  { q: "A straw placed in water appears bent at the surface. This visual effect is caused by:", opts: ["Specular reflection from the water surface","Total internal reflection within the straw","Refraction of light as it moves between water and air","Diffuse reflection from the rough straw surface"], ans: 2, tag: "6.2 · Vocabulary" },
+  { q: "What is optical density?", opts: ["The physical mass per unit volume of a transparent material","A property related to refractive index; high optical density means light travels slowly through it","The angle at which light completely reflects inside a material","The clarity or transparency of a material to visible light"], ans: 1, tag: "6.2 · Vocabulary" },
+  { q: "Light travels more slowly through glass than through air. Which statement correctly compares them?", opts: ["Air has higher optical density than glass","Glass has higher optical density than air","Both materials have the same optical density","Optical density applies only to liquids"], ans: 1, tag: "6.2 · Vocabulary" },
+  { q: "What is the refractive index of a material?", opts: ["The angle at which light bends when entering the material","The ratio of the speed of light in vacuum to the speed of light in the material (n = c/v)","The percentage of light absorbed by the material","The physical thickness of the material"], ans: 1, tag: "6.2 · Vocabulary" },
+  { q: "The dimensionless number calculated as n = c/v describing how much a medium slows light is called the:", opts: ["Speed ratio","Optical coefficient","Refractive index","Snell constant"], ans: 2, tag: "6.2 · Vocabulary" },
+  { q: "What is Snell's Law?", opts: ["The law stating angle of incidence equals angle of reflection","The mathematical relationship n₁sinθ₁ = n₂sinθ₂ relating refractive indices and angles at an interface","The law that light always bends toward the normal when entering a denser medium","The principle that light travels in a straight line within a single medium"], ans: 1, tag: "6.2 · Vocabulary" },
+  { q: "The equation n₁sinθ₁ = n₂sinθ₂ is known as:", opts: ["The Law of Reflection","The Refractive Index Formula","Snell's Law","Huygen's Principle"], ans: 2, tag: "6.2 · Vocabulary" },
+  { q: "What is an interface in optics?", opts: ["The angle formed between an incoming ray and the normal","The boundary between two different materials through which light passes","The point where a ray changes direction inside a single material","The surface of a lens or prism"], ans: 1, tag: "6.2 · Vocabulary" },
+
+  // 6.2 CONCEPTUAL
+  { q: "A ray of light travels from air into glass. When does the ray bend toward the normal?", opts: ["When going from a less dense medium to a more optically dense medium","When going from a more dense medium to less dense medium","When the ray hits the surface at exactly 90°","When both media have the same physical density"], ans: 0, tag: "6.2 · Conceptual" },
+  { q: "A ray passes from glass into air. In which direction does it bend?", opts: ["Toward the normal because it slows down","Away from the normal because it speeds up","It does not bend — Snell's Law does not apply glass-to-air","Parallel to the surface"], ans: 1, tag: "6.2 · Conceptual" },
+  { q: "A material slows light to half the speed it has in vacuum. What is its refractive index?", opts: ["0.5","1.0","2.0","4.0"], ans: 2, tag: "6.2 · Conceptual" },
+  { q: "Light traveling from air into water at 0° incidence (straight in). What happens?", opts: ["It bends toward the normal","It bends away from the normal","It passes straight through without bending","It reflects completely"], ans: 2, tag: "6.2 · Conceptual" },
+  { q: "Which property of light DOES NOT change when it crosses from air into glass?", opts: ["Speed","Wavelength","Frequency","Direction"], ans: 2, tag: "6.2 · Conceptual" },
+  { q: "A diamond has a much higher refractive index than glass. When light enters diamond at the same angle as glass, what is true about the refracted angle inside diamond?", opts: ["Larger because diamond bends light more","Smaller because diamond's higher refractive index bends light more toward the normal","The same because both are solids","Larger because diamond is harder"], ans: 1, tag: "6.2 · Conceptual" },
+  { q: "A student states: 'Light always bends toward the normal when crossing any interface.' Is this correct?", opts: ["Yes, light always bends toward the normal","No; light bends toward normal only when entering higher refractive index medium, and away from normal when entering lower refractive index medium","No; light always bends away from the normal","Yes, but only for visible light"], ans: 1, tag: "6.2 · Conceptual" },
+  { q: "A fish underwater looks up at a fisherman on shore. The fisherman appears in a different position than he actually is. Which concept explains this?", opts: ["Total internal reflection shifts the image","Refraction at the air-water interface changes the apparent direction of the light rays reaching the fish's eyes","Diffuse reflection on the water surface scatters the image","The fish's eye acts as a lens"], ans: 1, tag: "6.2 · Conceptual" },
+  { q: "When would refraction NOT occur as light crosses from one medium into another?", opts: ["When light hits the interface at exactly 90° (along surface)","When two media have the same refractive index regardless of angle of incidence","When the light has a high frequency","When both media are solids"], ans: 1, tag: "6.2 · Conceptual" },
+  { q: "Fiber optic cables transmit light pulses. Which statement best explains the role of refraction/reflection in keeping light inside the cable?", opts: ["Light refracts at each bend, redirecting it forward","The cable core has a higher refractive index than the outer cladding, keeping light bouncing along the core","Refraction causes light to speed up inside the fiber","The glass refracts light from surrounding air, focusing it to the center"], ans: 1, tag: "6.2 · Conceptual" },
+
+  // 6.1 CALCULATIONS (MC format)
+  { q: "A laser beam strikes a mirror at an angle of incidence of 42° from the normal. What is the angle of reflection?", opts: ["48°","42°","90°","21°"], ans: 1, tag: "6.1 · Calculation" },
+  { q: "A light ray hits a mirror making 30° with the mirror surface (not the normal). What is the angle of reflection from the normal?", opts: ["30°","60°","90°","45°"], ans: 1, tag: "6.1 · Calculation" },
+  { q: "A beam of light reflects off a flat mirror. The angle between the incident ray and the reflected ray is 70°. What is the angle of incidence?", opts: ["70°","35°","140°","55°"], ans: 1, tag: "6.1 · Calculation" },
+  { q: "A mirror is rotated 15° from its original position. By how many degrees does the reflected beam rotate?", opts: ["15°","30°","45°","7.5°"], ans: 1, tag: "6.1 · Calculation" },
+  { q: "A light ray strikes a flat mirror at 28° from the mirror surface. What angle does the reflected ray make with the mirror surface?", opts: ["62°","28°","90°","52°"], ans: 1, tag: "6.1 · Calculation" },
+
+  // 6.2 CALCULATIONS (MC format)
+  { q: "Light travels at 2.0×10⁸ m/s in a material. What is the material's refractive index? (c = 3.0×10⁸ m/s)", opts: ["1.00","1.50","0.67","2.00"], ans: 1, tag: "6.2 · Calculation" },
+  { q: "Light in air (n=1.00) hits water (n=1.33) at 30° from the normal. Using Snell's Law, which describes what happens to the angle inside water?", opts: ["Greater than 30°","Equal to 30°","Less than 30°","Equal to 90°"], ans: 2, tag: "6.2 · Calculation" },
+  { q: "Light hits the air-glass interface (n_glass = 1.50) at 45° from the normal in air. Using n₁sinθ₁ = n₂sinθ₂, sinθ_glass = sin(45°)/1.50 ≈ 0.471. The angle in glass is approximately:", opts: ["45°","28°","35°","60°"], ans: 1, tag: "6.2 · Calculation" },
+  { q: "A gemstone has n = 2.21. Light enters from air (n=1.00) at 40°. The angle of refraction satisfies sinθ₂ = sin40°/2.21 ≈ 0.291. What is the approximate angle of refraction?", opts: ["40°","16.9°","25°","30°"], ans: 1, tag: "6.2 · Calculation" },
+  { q: "Diamond slows light to approximately 1.24×10⁸ m/s. What is the refractive index of diamond? (c = 3.0×10⁸ m/s)", opts: ["1.24","2.42","0.41","1.80"], ans: 1, tag: "6.2 · Calculation" },
+];
+
+// ===== GAME STATE =====
+let gameQuestions = [];
+let currentQ = 0;
+let correctAnswers = 0;
+let score = 0;
+let streak = 0;
+let bonusPoints = 0;
+let answered = false;
+let bonusActive = false;
+let bonusRoundCount = 0; // tracks how many bonus rounds played (for speed scaling)
+
+const GOAL = 20;
+const BONUS_TRIGGER = 4;
+
+// ===== WHACK-A-MOLE STATE =====
+let wamCanvas, wamCtx;
+let wamInterval = null;
+let wamTimeLeft = 30;
+let wamLives = 3;
+let wamHits = 0;
+let wamRoundPts = 0;
+let wamSpawnTimer = null;
+let wamAnimFrame = null;
+let wamParticles = [];
+
+// Grid: 4x4 = 16 holes
+const GRID_COLS = 4;
+const GRID_ROWS = 4;
+const NUM_HOLES = GRID_COLS * GRID_ROWS;
+
+// Each hole: { x, y, r, state: 'empty'|'rising'|'up'|'falling', mole: null }
+// Mole types
+const MOLE_TYPES = [
+  { id: 'gold',   pts: 50, color: '#ffd700', glow: 'rgba(255,215,0,0.8)',  baseVisibleMs: 700,  rMult: 0.38, emoji: '⭐', label: '50' },
+  { id: 'orange', pts: 30, color: '#ff6b35', glow: 'rgba(255,107,53,0.7)', baseVisibleMs: 1000, rMult: 0.50, emoji: '🟠', label: '30' },
+  { id: 'blue',   pts: 20, color: '#00e5ff', glow: 'rgba(0,229,255,0.6)',  baseVisibleMs: 1400, rMult: 0.62, emoji: '🔵', label: '20' },
+];
+
+let holes = [];
+let wamMissFlash = 0; // frames of red flash on miss-click
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+}
+
+function startGame() {
+  gameQuestions = shuffle(questions);
+  currentQ = 0; correctAnswers = 0; score = 0; streak = 0; bonusPoints = 0;
+  answered = false; bonusRoundCount = 0;
+  showScreen('quiz-screen');
+  showQuestion();
+}
+
+function restartGame() {
+  startGame();
+}
+
+function showQuestion() {
+  if (correctAnswers >= GOAL) { showEndScreen(); return; }
+  if (currentQ >= gameQuestions.length) {
+    gameQuestions = shuffle(questions);
+    currentQ = 0;
+  }
+  answered = false;
+  const q = gameQuestions[currentQ];
+  document.getElementById('q-tag').textContent = q.tag;
+  document.getElementById('question-text').textContent = q.q;
+
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  const shuffledOpts = shuffle(q.opts.map((o,i) => ({text:o, correct: i===q.ans})));
+
+  shuffledOpts.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.innerHTML = `<span class="opt-letter">${letters[idx]}</span><span>${opt.text}</span>`;
+    btn.dataset.correct = opt.correct;
+    btn.onclick = () => selectAnswer(btn, opt.correct, shuffledOpts);
+    grid.appendChild(btn);
+  });
+
+  const fb = document.getElementById('feedback-strip');
+  fb.className = 'feedback-strip';
+  fb.textContent = '';
+  document.getElementById('next-btn').classList.remove('show');
+  updateHUD();
+}
+
+function selectAnswer(btn, isCorrect, opts) {
+  if (answered) return;
+  answered = true;
+
+  // Highlight all
+  document.querySelectorAll('.option-btn').forEach(b => {
+    b.disabled = true;
+    if (b.dataset.correct === 'true') b.classList.add('correct');
+  });
+
+  const fb = document.getElementById('feedback-strip');
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    fb.className = 'feedback-strip correct show';
+    fb.textContent = '✅ Correct! +10 points';
+    correctAnswers++;
+    score += 10;
+    streak++;
+    flashScreen('green');
+  } else {
+    btn.classList.add('wrong');
+    fb.className = 'feedback-strip wrong show';
+    fb.textContent = '❌ Incorrect. The correct answer is highlighted.';
+    streak = 0;
+    flashScreen('red');
+  }
+
+  updateHUD();
+
+  if (isCorrect && streak > 0 && streak % BONUS_TRIGGER === 0) {
+    // Bonus round!
+    setTimeout(() => showBonusPause(), 900);
+  } else {
+    document.getElementById('next-btn').classList.add('show');
+  }
+}
+
+function flashScreen(type) {
+  const el = document.getElementById('flash-overlay');
+  el.className = `flash-${type}`;
+  setTimeout(() => el.className = '', 300);
+}
+
+function nextQuestion() {
+  currentQ++;
+  if (correctAnswers >= GOAL) { showEndScreen(); return; }
+  showQuestion();
+}
+
+function updateHUD() {
+  document.getElementById('hud-correct').textContent = `${correctAnswers}/20`;
+  document.getElementById('hud-score').textContent = score;
+  document.getElementById('hud-streak').textContent = streak;
+  document.getElementById('progress-bar').style.width = `${(correctAnswers/GOAL)*100}%`;
+  document.getElementById('prog-label').textContent = `${correctAnswers} / ${GOAL}`;
+  const sv = Math.min(streak % BONUS_TRIGGER, BONUS_TRIGGER);
+  document.getElementById('streak-bar').style.width = `${(sv/BONUS_TRIGGER)*100}%`;
+  document.getElementById('streak-label').textContent = `${sv} / ${BONUS_TRIGGER}`;
+}
+
+// ===== BONUS ROUND =====
+function showBonusPause() {
+  showScreen('bonus-pause-screen');
+}
+
+function startBonusGame() {
+  showScreen('bonus-game-screen');
+  wamTimeLeft = 30;
+  wamLives = 3;
+  wamHits = 0;
+  wamRoundPts = 0;
+  wamParticles = [];
+  wamMissFlash = 0;
+  bonusActive = true;
+  bonusRoundCount++;
+
+  wamCanvas = document.getElementById('bonus-canvas');
+  wamCtx = wamCanvas.getContext('2d');
+
+  const size = Math.min(window.innerWidth - 40, window.innerHeight - 180, 520);
+  wamCanvas.width = size;
+  wamCanvas.height = size;
+
+  buildHoles(size);
+  updateBonusHUD();
+
+  // Countdown timer
+  wamInterval = setInterval(() => {
+    wamTimeLeft--;
+    updateBonusHUD();
+    if (wamTimeLeft <= 0 || wamLives <= 0) endBonusGame();
+  }, 1000);
+
+  // Spawn loop — speed scales with bonusRoundCount
+  scheduleNextSpawn();
+
+  wamCanvas.addEventListener('click', onWamClick);
+  wamAnimFrame = requestAnimationFrame(wamLoop);
+}
+
+function buildHoles(size) {
+  holes = [];
+  const pad = size * 0.08;
+  const usable = size - pad * 2;
+  const cellW = usable / GRID_COLS;
+  const cellH = usable / GRID_ROWS;
+  const holeR = Math.min(cellW, cellH) * 0.32;
+
+  for (let row = 0; row < GRID_ROWS; row++) {
+    for (let col = 0; col < GRID_COLS; col++) {
+      holes.push({
+        x: pad + col * cellW + cellW / 2,
+        y: pad + row * cellH + cellH / 2,
+        r: holeR,
+        state: 'empty',   // 'empty' | 'rising' | 'up' | 'falling' | 'hit'
+        mole: null,
+        animT: 0,         // animation progress 0..1
+        pts: 0,
+        hitFlash: 0,      // frames of hit sparkle
+      });
+    }
+  }
+}
+
+function spawnMole() {
+  if (!bonusActive) return;
+
+  // Pick an empty hole
+  const emptyHoles = holes.filter(h => h.state === 'empty');
+  if (emptyHoles.length === 0) { scheduleNextSpawn(); return; }
+
+  const hole = emptyHoles[Math.floor(Math.random() * emptyHoles.length)];
+
+  // Weighted random mole type: gold rare, blue common
+  const roll = Math.random();
+  let type;
+  if (roll < 0.15)      type = MOLE_TYPES[0]; // gold 15%
+  else if (roll < 0.45) type = MOLE_TYPES[1]; // orange 30%
+  else                  type = MOLE_TYPES[2]; // blue 55%
+
+  // Speed multiplier based on round count (caps at 3x)
+  const speedMult = Math.min(1 + (bonusRoundCount - 1) * 0.35, 3.0);
+  const visibleMs = type.baseVisibleMs / speedMult;
+
+  hole.state = 'rising';
+  hole.mole = type;
+  hole.animT = 0;
+  hole.pts = type.pts;
+  hole.hitFlash = 0;
+  hole.visibleMs = visibleMs;
+  hole.riseMs = Math.max(180, 280 / speedMult);
+  hole.fallMs = Math.max(150, 220 / speedMult);
+
+  // After visible time, auto-fall if not hit
+  hole._autoFallTimeout = setTimeout(() => {
+    if (hole.state === 'up') {
+      hole.state = 'falling';
+      hole.animT = 0;
+      setTimeout(() => { if (hole.state === 'falling') hole.state = 'empty'; hole.mole = null; }, hole.fallMs);
+    }
+  }, hole.riseMs + visibleMs);
+
+  scheduleNextSpawn();
+}
+
+function scheduleNextSpawn() {
+  if (!bonusActive) return;
+  const speedMult = Math.min(1 + (bonusRoundCount - 1) * 0.35, 3.0);
+  // Base: 900ms between spawns, minimum 300ms
+  const delay = Math.max(300, 900 / speedMult) + Math.random() * 300;
+  wamSpawnTimer = setTimeout(spawnMole, delay);
+}
+
+function onWamClick(e) {
+  if (!bonusActive) return;
+  const rect = wamCanvas.getBoundingClientRect();
+  const scaleX = wamCanvas.width / rect.width;
+  const scaleY = wamCanvas.height / rect.height;
+  const cx = (e.clientX - rect.left) * scaleX;
+  const cy = (e.clientY - rect.top) * scaleY;
+
+  let hit = false;
+  for (const hole of holes) {
+    if (hole.state !== 'up' && hole.state !== 'rising') continue;
+    const moleR = hole.r * hole.mole.rMult;
+    const visY = getMoleVisY(hole);
+    const dist = Math.sqrt((cx - hole.x) ** 2 + (cy - visY) ** 2);
+    if (dist <= moleR * 1.15) {
+      // HIT!
+      hit = true;
+      clearTimeout(hole._autoFallTimeout);
+      hole.state = 'hit';
+      hole.hitFlash = 30;
+      wamHits++;
+      wamRoundPts += hole.pts;
+      spawnParticles(hole.x, visY, hole.mole.color, hole.pts);
+      updateBonusHUD();
+      // Reset hole after flash
+      setTimeout(() => { hole.state = 'empty'; hole.mole = null; }, 350);
+      break;
+    }
+  }
+
+  if (!hit) {
+    // Miss-click on empty area: lose a life
+    // Check if they clicked a hole at all
+    let clickedHole = false;
+    for (const hole of holes) {
+      const dist = Math.sqrt((cx - hole.x) ** 2 + (cy - hole.y) ** 2);
+      if (dist <= hole.r * 1.1) { clickedHole = true; break; }
+    }
+    if (clickedHole) {
+      wamLives = Math.max(0, wamLives - 1);
+      wamMissFlash = 20;
+      updateBonusHUD();
+      if (wamLives <= 0) endBonusGame();
+    }
+  }
+}
+
+function getMoleVisY(hole) {
+  // Returns the vertical center of the mole based on animation state
+  const emergeAmount = hole.r * 1.6; // how far mole rises above hole center
+  if (hole.state === 'rising') {
+    return hole.y - emergeAmount * easeOut(hole.animT);
+  } else if (hole.state === 'up') {
+    return hole.y - emergeAmount;
+  } else if (hole.state === 'falling') {
+    return hole.y - emergeAmount * (1 - easeIn(hole.animT));
+  } else if (hole.state === 'hit') {
+    return hole.y - hole.r * 1.6 * 0.7;
+  }
+  return hole.y;
+}
+
+function easeOut(t) { return 1 - (1 - t) * (1 - t); }
+function easeIn(t) { return t * t; }
+
+function spawnParticles(x, y, color, pts) {
+  for (let i = 0; i < 10; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 1.5 + Math.random() * 3;
+    wamParticles.push({
+      x, y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed - 2,
+      life: 45, maxLife: 45,
+      color,
+      r: 2 + Math.random() * 3,
+    });
+  }
+  // Score popup particle
+  wamParticles.push({ x, y: y - 10, vx: 0, vy: -1.2, life: 55, maxLife: 55, color: '#ffd700', text: `+${pts}`, isText: true });
+}
+
+function wamLoop(ts) {
+  if (!bonusActive) return;
+  const ctx = wamCtx;
+  const size = wamCanvas.width;
+
+  // Clear
+  ctx.fillStyle = '#060b1a';
+  ctx.fillRect(0, 0, size, size);
+
+  // Miss flash overlay
+  if (wamMissFlash > 0) {
+    ctx.fillStyle = `rgba(255,68,102,${wamMissFlash / 20 * 0.25})`;
+    ctx.fillRect(0, 0, size, size);
+    wamMissFlash--;
+  }
+
+  // Draw holes and moles
+  holes.forEach(hole => {
+    updateHoleAnim(hole);
+    drawHole(ctx, hole);
+  });
+
+  // Draw particles
+  wamParticles.forEach(p => {
+    p.x += p.vx; p.y += p.vy; p.vy += 0.12; p.life--;
+    const alpha = p.life / p.maxLife;
+    if (p.isText) {
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.font = `bold ${size * 0.045}px Orbitron, monospace`;
+      ctx.fillStyle = p.color;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.shadowColor = p.color;
+      ctx.shadowBlur = 8;
+      ctx.fillText(p.text, p.x, p.y);
+      ctx.restore();
+    } else {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r * alpha, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = alpha;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    }
+  });
+  wamParticles = wamParticles.filter(p => p.life > 0);
+
+  wamAnimFrame = requestAnimationFrame(wamLoop);
+}
+
+function updateHoleAnim(hole) {
+  if (hole.state === 'rising') {
+    hole.animT += 1 / (hole.riseMs / 16.67);
+    if (hole.animT >= 1) { hole.animT = 1; hole.state = 'up'; }
+  } else if (hole.state === 'falling') {
+    hole.animT += 1 / (hole.fallMs / 16.67);
+    if (hole.animT >= 1) { hole.animT = 1; }
+  }
+}
+
+function drawHole(ctx, hole) {
+  const { x, y, r } = hole;
+  const size = wamCanvas.width;
+
+  // Hole shadow / pit
+  ctx.save();
+  const grad = ctx.createRadialGradient(x, y, r * 0.1, x, y, r);
+  grad.addColorStop(0, 'rgba(0,0,0,0.95)');
+  grad.addColorStop(0.7, 'rgba(5,10,25,0.9)');
+  grad.addColorStop(1, 'rgba(10,20,45,0.5)');
+  ctx.beginPath();
+  ctx.ellipse(x, y, r, r * 0.45, 0, 0, Math.PI * 2);
+  ctx.fillStyle = grad;
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(0,229,255,0.12)';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.restore();
+
+  // Draw mole if active
+  if (!hole.mole || hole.state === 'empty') return;
+
+  const mole = hole.mole;
+  const moleR = r * mole.rMult;
+  const visY = getMoleVisY(hole);
+
+  // Clip to not draw below hole rim
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(0, 0, wamCanvas.width, y + r * 0.35);
+  ctx.clip();
+
+  if (hole.state === 'hit') {
+    // Hit explosion flash
+    ctx.globalAlpha = hole.hitFlash / 30;
+    ctx.beginPath();
+    ctx.arc(x, visY, moleR * 2, 0, Math.PI * 2);
+    ctx.fillStyle = mole.color;
+    ctx.fill();
+    hole.hitFlash = Math.max(0, hole.hitFlash - 2);
+    ctx.globalAlpha = 1;
+    ctx.restore();
+    return;
+  }
+
+  // Glow aura
+  const glow = ctx.createRadialGradient(x, visY, moleR * 0.3, x, visY, moleR * 1.6);
+  glow.addColorStop(0, mole.glow);
+  glow.addColorStop(1, 'transparent');
+  ctx.beginPath();
+  ctx.arc(x, visY, moleR * 1.6, 0, Math.PI * 2);
+  ctx.fillStyle = glow;
+  ctx.fill();
+
+  // Main mole circle
+  ctx.beginPath();
+  ctx.arc(x, visY, moleR, 0, Math.PI * 2);
+  ctx.fillStyle = mole.color;
+  ctx.shadowColor = mole.color;
+  ctx.shadowBlur = 18;
+  ctx.fill();
+  ctx.shadowBlur = 0;
+
+  // Inner highlight
+  ctx.beginPath();
+  ctx.arc(x - moleR * 0.25, visY - moleR * 0.25, moleR * 0.35, 0, Math.PI * 2);
+  ctx.fillStyle = 'rgba(255,255,255,0.35)';
+  ctx.fill();
+
+  // Point label
+  ctx.font = `bold ${moleR * 0.85}px Orbitron, monospace`;
+  ctx.fillStyle = hole.state === 'up' ? '#060b1a' : 'rgba(6,11,26,0.7)';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(mole.label, x, visY);
+
+  // Pulse ring for gold targets
+  if (mole.id === 'gold' && hole.state === 'up') {
+    const pulse = (Date.now() % 600) / 600;
+    ctx.beginPath();
+    ctx.arc(x, visY, moleR * (1.2 + pulse * 0.6), 0, Math.PI * 2);
+    ctx.strokeStyle = `rgba(255,215,0,${0.6 - pulse * 0.6})`;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  ctx.restore();
+}
+
+function updateBonusHUD() {
+  document.getElementById('bonus-timer-val').textContent = wamTimeLeft;
+  document.getElementById('bonus-pts-val').textContent = wamRoundPts;
+  document.getElementById('bonus-lives-val').textContent = '❤️'.repeat(wamLives) || '💔';
+  document.getElementById('bonus-hits-val').textContent = wamHits;
+  if (wamTimeLeft <= 5) document.getElementById('bonus-timer-val').style.color = '#ff4466';
+  else document.getElementById('bonus-timer-val').style.color = '#ffd700';
+}
+
+function endBonusGame() {
+  bonusActive = false;
+  clearInterval(wamInterval);
+  clearTimeout(wamSpawnTimer);
+  cancelAnimationFrame(wamAnimFrame);
+  wamCanvas.removeEventListener('click', onWamClick);
+  holes.forEach(h => { if (h._autoFallTimeout) clearTimeout(h._autoFallTimeout); });
+
+  bonusPoints += wamRoundPts;
+  score += wamRoundPts;
+
+  document.getElementById('bonus-result-msg').textContent =
+    `🔨 ${wamHits} hits · +${wamRoundPts} bonus points earned!`;
+
+  showScreen('bonus-result-screen');
+}
+
+function resumeQuiz() {
+  streak = 0;
+  showScreen('quiz-screen');
+  currentQ++;
+  updateHUD();
+  showQuestion();
+}
+
+function showEndScreen() {
+  showScreen('end-screen');
+  document.getElementById('end-correct').textContent = correctAnswers;
+  document.getElementById('end-score').textContent = score;
+  document.getElementById('end-bonus').textContent = bonusPoints;
+}
+</script>
+</body>
+</html>
