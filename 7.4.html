@@ -69,7 +69,7 @@ h3{
   font-size:0.95em;
   color:#444;
   margin-bottom:8px;
-  font-style:italic;
+  font-style:normal;
 }
 
 .objectives{background:#f0f4f8;padding:20px;border-radius:6px;}
@@ -180,23 +180,26 @@ Ohm’s Law is one of the most useful tools in introductory electricity. It help
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Learning Targets</h2>
-
-<div class="objectives">
-<p><strong>Conceptual Targets</strong></p>
-<p>I can explain the relationship between voltage, current, and resistance in a circuit.</p>
-<p>I can describe resistance as opposition to charge flow.</p>
-<p>I can interpret simple circuit diagrams and explain what happens when values change.</p>
-
-<p style="margin-top:12px;"><strong>Mathematical Targets</strong></p>
-<p>I can use Ohm’s Law, $V = IR$, to solve for voltage, current, or resistance.</p>
-<p>I can analyze simple circuit situations using algebra and unit reasoning.</p>
-<p>I can compare circuit scenarios and predict how changes in one quantity affect the others.</p>
-</div>
-</div>
-
-</section>
+  <!-- UNBREAKABLE: header + first block -->
+  <div class="problem">
+  <h2>Learning Targets</h2>
+  
+  <div class="objectives">
+  <p>Students will use Ohm's Law and simple series or parallel relationships to analyze electric circuits.</p>
+  
+  <ul style="margin-left:20px;">
+  <li>I can use Ohm’s Law, $V = IR$, to solve for voltage, current, or resistance.</li>
+  <li>I can determine equivalent resistance in a simple series circuit and in a simple parallel circuit.</li>
+  <li>I can analyze how changing resistance affects current in a circuit.</li>
+  <li>I can connect equations, circuit diagrams, and observations to explain circuit behavior.</li>
+  </ul>
+  
+  </div>
+  
+  </div>
+  <!-- UNBREAKABLE -->
+  
+  </section>
 
 <!-- ======================= -->
 <!-- INTRODUCTION -->
@@ -301,277 +304,366 @@ Today, Ohm’s Law is taught in nearly every introductory electricity course bec
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Key Concepts</h2>
+  <div class="problem">
+  <h2>Key Concepts</h2>
+  
+  <h3>Ohm’s Law</h3>
+  
+  <p>
+  Ohm’s Law connects the three main quantities used in simple circuit analysis: voltage, current, and resistance. It states that the voltage across a component equals the current through that component multiplied by its resistance.
+  </p>
+  
+  <div class="definition">
+  $$V = IR$$
+  <p>
+  $V$ = voltage $\left(\text{V}\right)$<br>
+  $I$ = current $\left(\text{A}\right)$<br>
+  $R$ = resistance $\left(\Omega\right)$
+  </p>
+  </div>
+  
+  <p>
+  This relationship helps explain why current changes when voltage changes and why current decreases when resistance increases.
+  </p>
+  </div>
+  
+  <div class="problem">
+  <h3>Resistance</h3>
+  
+  <p>
+  Resistance is the opposition to the flow of electric charge. A component with greater resistance makes it harder for current to move through the circuit.
+  </p>
+  
+  <div class="definition">
+  <p><strong>Resistance unit:</strong></p>
+  $$1\,\Omega = 1\,\text{V/A}$$
+  </div>
+  
+  <p>
+  Materials and devices with low resistance allow charge to flow more easily. Materials with high resistance oppose charge flow more strongly.
+  </p>
+  </div>
+  
+  <div class="problem">
+  <h3>Voltage, Current, and Resistance Together</h3>
+  
+  <p>
+  Voltage provides the push that drives charge through a circuit. Current tells how much charge flows each second. Resistance opposes that flow. These three quantities are linked, so changing one often changes another.
+  </p>
+  
+  <div class="key-point">
+  <strong>Key Idea:</strong>
+  <ul style="margin-left:20px;">
+  <li>If voltage increases while resistance stays the same, current increases.</li>
+  <li>If resistance increases while voltage stays the same, current decreases.</li>
+  <li>If resistance decreases while voltage stays the same, current increases.</li>
+  </ul>
+  </div>
+  </div>
+  
+  <div class="problem">
+    <h3>Series Circuits</h3>
+    
+    <p>
+    A series circuit has only one path for charge to follow. Because there is only one path, the same current passes through every component in the circuit.
+    </p>
+    
+    <div class="workspace workspace-200">
+      <img src="images/series.webp" alt="Series circuit diagram with three resistors and one path for current">
+    </div>
+    
+    <div class="definition">
+    $$R_T = R_1 + R_2 + R_3 + \dots$$
+    <p>
+    $R_T$ = total resistance in series
+    </p>
+    </div>
+    
+    <p>
+    Adding more resistors in series increases total resistance. If the battery voltage stays the same, increasing total resistance reduces current.
+    </p>
+    
+    <div class="key-point">
+    <strong>Series Circuit Ideas:</strong>
+    <ul style="margin-left:20px;">
+    <li>Current is the same through all components.</li>
+    <li>Total resistance is the sum of the resistors.</li>
+    <li>If one part of the circuit opens, the whole circuit stops.</li>
+    </ul>
+    </div>
+    </div>
+  
+    <div class="problem">
+      <h3>Parallel Circuits</h3>
+      
+      <p>
+      A parallel circuit provides more than one path for current. Each branch is connected across the same two points in the circuit.
+      </p>
+      
+      <div class="workspace workspace-200">
+        <img src="images/parallel.webp" alt="Parallel circuit diagram with three resistor branches and multiple current paths">
+      </div>
+      
+      <div class="definition">
+      $$\frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \dots$$
+      <p>
+      $R_T$ = total resistance in parallel
+      </p>
+      </div>
+      
+      <p>
+      Adding branches in parallel decreases total resistance. Because the total resistance becomes smaller, the total current supplied by the source increases.
+      </p>
+      
+      <div class="key-point">
+      <strong>Parallel Circuit Ideas:</strong>
+      <ul style="margin-left:20px;">
+      <li>Voltage is the same across each branch.</li>
+      <li>Total resistance is less than the smallest branch resistance.</li>
+      <li>If one branch opens, the other branches can still operate.</li>
+      </ul>
+      </div>
+      </div>
+  
+  <div class="problem">
+  <h3>Equivalent Resistance</h3>
+  
+  <p>
+  Equivalent resistance is the single resistance that could replace part or all of a circuit and behave the same way electrically. In simple circuit analysis, finding equivalent resistance is often the first step before using Ohm’s Law.
+  </p>
+  
+  <p>
+  For a series circuit, equivalent resistance is found by adding resistors directly. For a parallel circuit, equivalent resistance is found using the reciprocal relationship for parallel branches.
+  </p>
+  </div>
+  
+  <div class="problem">
+  <h3>Conductors and Insulators</h3>
+  
+  <p>
+  A conductor is a material that allows electric charge to flow easily. Metals such as copper are common conductors because they have low resistance.
+  </p>
+  
+  <p>
+  An insulator is a material that strongly resists charge flow. Rubber and plastic are common insulators and are often used to coat wires for safety.
+  </p>
+  
+  <div class="key-point">
+  <strong>Key Idea:</strong> Conductors tend to have low resistance, while insulators tend to have high resistance.
+  </div>
+  </div>
+  
+  <div class="problem">
+  <h3>Circuit Diagrams and Circuit Behavior</h3>
+  
+  <p>
+  Circuit diagrams help organize information about voltage sources, resistors, and current paths. They allow students to connect equations to a physical setup and make predictions about how a circuit will behave.
+  </p>
+  
+  <div class="workspace workspace-300">
+    <img src="images/series_parallel.webp">
+  </div>
+  
+  <p>
+  When analyzing a diagram, ask:
+  </p>
+  
+  <div class="definition">
+  <ul style="margin-left:20px;">
+  <li>Is the circuit series or parallel?</li>
+  <li>What is the total resistance?</li>
+  <li>What quantity is known, and what quantity must be found?</li>
+  <li>How will changing a resistor affect current in the circuit?</li>
+  </ul>
+  </div>
+  </div>
+  
+  <div class="problem">
+  <h3>Comparing Circuit Scenarios</h3>
+  
+  <p>
+  Not every circuit question requires a full calculation. Many can be answered by reasoning from Ohm’s Law and from series or parallel relationships.
+  </p>
+  
+  <div class="key-point">
+  <strong>Examples of Useful Reasoning:</strong>
+  <ul style="margin-left:20px;">
+  <li>If a fixed resistor is connected to a larger voltage source, the current increases.</li>
+  <li>If another identical resistor is added in series, total resistance increases.</li>
+  <li>If another branch is added in parallel, total resistance decreases.</li>
+  <li>If total resistance increases while voltage stays constant, total current decreases.</li>
+  </ul>
+  </div>
+  </div>
+  
+  </section>
 
-<h3>Ohm’s Law</h3>
-
-<p>
-Ohm’s Law states that the voltage across a component equals the current through the component multiplied by its resistance.
-</p>
-
-<div class="definition">
-$$V = IR$$
-<p>
-This equation can also be rearranged as
-$$I = \frac{V}{R} \qquad \text{and} \qquad R = \frac{V}{I}$$
-</p>
-</div>
-
-<p>
-Ohm’s Law is often used to analyze resistors and simple circuits where temperature and other conditions remain approximately constant.
-</p>
-</div>
-
-<div class="problem">
-<h3>Voltage, Current, and Resistance</h3>
-
-<p>
-Voltage is the push that gives energy to charges. Current is the flow of charge. Resistance is the opposition to that flow. These three quantities are linked.
-</p>
-
-<div class="key-point">
-<strong>Relationship summary:</strong>
-<ul style="margin-left:20px;">
-<li>If voltage increases while resistance stays the same, current increases.</li>
-<li>If resistance increases while voltage stays the same, current decreases.</li>
-<li>If current increases while resistance stays the same, voltage must also increase.</li>
-</ul>
-</div>
-</div>
-
-<div class="problem">
-<h3>Resistance</h3>
-
-<p>
-Resistance measures how much a material or device opposes current. Some materials allow charge to flow easily and have low resistance. Others oppose charge more strongly and have high resistance.
-</p>
-
-<div class="definition">
-<strong>Resistance Unit:</strong>
-<p>
-Resistance is measured in ohms, written as
-$$\Omega$$
-where
-$$1\,\Omega = 1\,\text{V/A}$$
-</p>
-</div>
-
-<p>
-Resistors are common components used to control current in circuits.
-</p>
-</div>
-
-<div class="problem">
-<h3>Simple Circuit Analysis</h3>
-
-<p>
-In simple one-loop circuits, Ohm’s Law can be used directly to find an unknown quantity if the other two are known. This makes it possible to analyze current through a resistor, voltage across a resistor, or the resistance of a component.
-</p>
-
-<div class="workspace workspace-200">
-  <img src="images/grid.png">
-</div>
-
-<p>
-A circuit diagram helps students organize the known values and identify what quantity needs to be calculated.
-</p>
-</div>
-
-<div class="problem">
-<h3>Comparing Circuit Scenarios</h3>
-
-<p>
-Often, students do not need to calculate exact values. Instead, they compare how a circuit changes when one variable changes.
-</p>
-
-<div class="definition">
-<p><strong>Examples of proportional reasoning:</strong></p>
-<ul style="margin-left:20px;">
-<li>If voltage doubles and resistance stays the same, current doubles.</li>
-<li>If resistance doubles and voltage stays the same, current is cut in half.</li>
-<li>If current doubles and resistance stays the same, voltage doubles.</li>
-</ul>
-</div>
-</div>
-
-<div class="problem">
-<h3>Series Thinking in Simple Circuits</h3>
-
-<p>
-In introductory circuit analysis, students often begin with one resistor and one source. This helps isolate the relationship between $V$, $I$, and $R$ before moving to more complex series and parallel circuits.
-</p>
-
-<p>
-Even in larger circuits, many questions can be understood by first analyzing one part at a time and asking how the voltage, current, and resistance are connected.
-</p>
-</div>
-
-<div class="problem">
-<h3>Units as a Check</h3>
-
-<p>
-Units help confirm whether a solution makes sense. For example, if current is found by dividing volts by ohms,
-$$I = \frac{V}{R}$$
-then the result should be in amperes.
-</p>
-
-<p>
-This is one reason unit analysis is a valuable circuit-analysis tool, especially in multi-step problems.
-</p>
-</div>
-
-</section>
-
-<!-- ======================= -->
+  <!-- ======================= -->
 <!-- FORMULA BOX -->
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Formula Box</h2>
+  <div class="problem">
+  <h2>Formula Box</h2>
+  
+  <div class="definition">
+  <p><strong>Ohm’s Law</strong></p>
+  $$V = IR$$
+  <p>
+  $V$ = voltage $\left(\text{V}\right)$<br>
+  $I$ = current $\left(\text{A}\right)$<br>
+  $R$ = resistance $\left(\Omega\right)$
+  </p>
+  </div>
+  </div>
+  
+  <div class="definition">
+  <p><strong>Current Form</strong></p>
+  $$I = \frac{V}{R}$$
+  <p>
+  $I$ = current $\left(\text{A}\right)$<br>
+  $V$ = voltage $\left(\text{V}\right)$<br>
+  $R$ = resistance $\left(\Omega\right)$
+  </p>
+  </div>
+  
+  <div class="definition">
+  <p><strong>Resistance Form</strong></p>
+  $$R = \frac{V}{I}$$
+  <p>
+  $R$ = resistance $\left(\Omega\right)$<br>
+  $V$ = voltage $\left(\text{V}\right)$<br>
+  $I$ = current $\left(\text{A}\right)$
+  </p>
+  </div>
+  
+  <div class="definition">
+  <p><strong>Series Resistance</strong></p>
+  $$R_T = R_1 + R_2 + R_3 + \dots$$
+  <p>
+  $R_T$ = total resistance $\left(\Omega\right)$
+  </p>
+  </div>
+  
+  <div class="definition">
+  <p><strong>Parallel Resistance</strong></p>
+  $$\frac{1}{R_T} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \dots$$
+  <p>
+  $R_T$ = total resistance $\left(\Omega\right)$
+  </p>
+  </div>
+  
+  <div class="definition">
+  <p><strong>Ohm Definition</strong></p>
+  $$1\,\Omega = 1\,\text{V/A}$$
+  </div>
+  
+  </section>
 
-<div class="definition">
-<p><strong>Ohm’s Law</strong></p>
-$$V = IR$$
-<p>
-$V$ = voltage $\left(\text{V}\right)$<br>
-$I$ = current $\left(\text{A}\right)$<br>
-$R$ = resistance $\left(\Omega\right)$
-</p>
-</div>
-</div>
-
-<div class="definition">
-<p><strong>Current Form</strong></p>
-$$I = \frac{V}{R}$$
-<p>
-$I$ = current $\left(\text{A}\right)$<br>
-$V$ = voltage $\left(\text{V}\right)$<br>
-$R$ = resistance $\left(\Omega\right)$
-</p>
-</div>
-
-<div class="definition">
-<p><strong>Resistance Form</strong></p>
-$$R = \frac{V}{I}$$
-<p>
-$R$ = resistance $\left(\Omega\right)$<br>
-$V$ = voltage $\left(\text{V}\right)$<br>
-$I$ = current $\left(\text{A}\right)$
-</p>
-</div>
-
-<div class="definition">
-<p><strong>Ohm Definition</strong></p>
-$$1\,\Omega = 1\,\text{V/A}$$
-</div>
-
-</section>
-
-<!-- ======================= -->
+  <!-- ======================= -->
 <!-- TABLES -->
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Tables</h2>
+  <div class="problem">
+  <h2>Tables</h2>
+  
+  <h3>Variable and Unit Reference</h3>
+  
+  <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+  <tr>
+    <th style="border:1px solid #333; padding:10px; background:#f0f4f8;">Symbol</th>
+    <th style="border:1px solid #333; padding:10px; background:#f0f4f8;">Meaning</th>
+    <th style="border:1px solid #333; padding:10px; background:#f0f4f8;">SI Unit</th>
+  </tr>
+  <tr>
+    <td style="border:1px solid #333; padding:10px;">$V$</td>
+    <td style="border:1px solid #333; padding:10px;">Voltage</td>
+    <td style="border:1px solid #333; padding:10px;">volt (V)</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #333; padding:10px;">$I$</td>
+    <td style="border:1px solid #333; padding:10px;">Current</td>
+    <td style="border:1px solid #333; padding:10px;">ampere (A)</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #333; padding:10px;">$R$</td>
+    <td style="border:1px solid #333; padding:10px;">Resistance</td>
+    <td style="border:1px solid #333; padding:10px;">ohm (Ω)</td>
+  </tr>
+  </table>
+  </div>
+  
+  <div class="problem">
+  <h3>Circuit Comparison</h3>
+  
+  <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+  <tr>
+    <th style="border:1px solid #333; padding:10px; background:#f0f4f8;">Feature</th>
+    <th style="border:1px solid #333; padding:10px; background:#f0f4f8;">Series Circuit</th>
+    <th style="border:1px solid #333; padding:10px; background:#f0f4f8;">Parallel Circuit</th>
+  </tr>
+  <tr>
+    <td style="border:1px solid #333; padding:10px;">Current</td>
+    <td style="border:1px solid #333; padding:10px;">Same everywhere</td>
+    <td style="border:1px solid #333; padding:10px;">Splits into branches</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #333; padding:10px;">Voltage</td>
+    <td style="border:1px solid #333; padding:10px;">Divided across components</td>
+    <td style="border:1px solid #333; padding:10px;">Same across each branch</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #333; padding:10px;">Resistance</td>
+    <td style="border:1px solid #333; padding:10px;">Adds directly</td>
+    <td style="border:1px solid #333; padding:10px;">Decreases overall</td>
+  </tr>
+  <tr>
+    <td style="border:1px solid #333; padding:10px;">Failure</td>
+    <td style="border:1px solid #333; padding:10px;">Whole circuit stops</td>
+    <td style="border:1px solid #333; padding:10px;">Other branches still work</td>
+  </tr>
+  </table>
+  </div>
+  
+  </section>
 
-<h3>Variable and Unit Reference</h3>
-
-<table style="width:100%; border-collapse:collapse; margin-top:10px;">
-<tr>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Symbol</th>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Meaning</th>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">SI Unit</th>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">$V$</td>
-  <td style="border:1px solid #333; padding:10px;">Voltage</td>
-  <td style="border:1px solid #333; padding:10px;">$\text{V}$</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">$I$</td>
-  <td style="border:1px solid #333; padding:10px;">Current</td>
-  <td style="border:1px solid #333; padding:10px;">$\text{A}$</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">$R$</td>
-  <td style="border:1px solid #333; padding:10px;">Resistance</td>
-  <td style="border:1px solid #333; padding:10px;">$\Omega$</td>
-</tr>
-</table>
-</div>
-
-<div class="problem">
-<h3>How Changes Affect a Simple Circuit</h3>
-
-<table style="width:100%; border-collapse:collapse; margin-top:10px;">
-<tr>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Change</th>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Effect</th>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">Voltage doubles, resistance stays the same</td>
-  <td style="border:1px solid #333; padding:10px;">Current doubles</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">Resistance doubles, voltage stays the same</td>
-  <td style="border:1px solid #333; padding:10px;">Current is cut in half</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">Current doubles, resistance stays the same</td>
-  <td style="border:1px solid #333; padding:10px;">Voltage doubles</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">Voltage stays the same, resistance decreases</td>
-  <td style="border:1px solid #333; padding:10px;">Current increases</td>
-</tr>
-</table>
-</div>
-
-</section>
-
-<!-- ======================= -->
+  <!-- ======================= -->
 <!-- WORKED DERIVATION -->
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Worked Derivation</h2>
-
-<p>
-Ohm’s Law is commonly written as
-$$V = IR$$
-but circuit problems may ask for current or resistance instead. To solve for current, divide both sides by $R$:
-</p>
-
-$$\frac{V}{R} = I$$
-
-<p>
-So:
-$$I = \frac{V}{R}$$
-</p>
-
-<p>
-To solve for resistance, divide both sides of
-$$V = IR$$
-by $I$:
-</p>
-
-$$\frac{V}{I} = R$$
-
-<p>
-So:
-$$R = \frac{V}{I}$$
-</p>
-
-<div class="key-point">
-<strong>Why this matters:</strong> Students should recognize all three forms as the same relationship, not three unrelated formulas.
-</div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Worked Derivation</h2>
+  
+  <p>
+  Ohm’s Law is usually written as:
+  $$V = IR$$
+  </p>
+  
+  <p>
+  To solve for current, divide both sides by resistance:
+  </p>
+  
+  $$I = \frac{V}{R}$$
+  
+  <p>
+  To solve for resistance, divide both sides by current:
+  </p>
+  
+  $$R = \frac{V}{I}$$
+  
+  <div class="key-point">
+  <strong>Key Idea:</strong> These are not different formulas — they are the same relationship written to solve for different quantities.
+  </div>
+  
+  <p>
+  This algebra allows us to analyze circuits by choosing the correct form based on what is known and what must be found.
+  </p>
+  
+  </div>
+  
+  </section>
 
 <!-- ======================= -->
 <!-- VOCABULARY -->
@@ -668,62 +760,59 @@ $$R = \frac{V}{I}$$
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Examples</h2>
-
-<h3>Example 1 — Conceptual</h3>
-<div class="prompt">A battery is connected to two different resistors one at a time. Explain why the circuit with the larger resistance has the smaller current if the battery voltage stays the same.</div>
-
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<h3>Example 2 — Single-Formula</h3>
-<div class="prompt">A resistor has a voltage of $12\,\text{V}$ across it and carries a current of $3.0\,\text{A}$. Find the resistance.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 3 — Multi-Step</h3>
-<div class="prompt">A $9.0\,\text{V}$ battery is connected to a resistor of $4.5\,\Omega$. Find the current in the circuit.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 4 — Unit Conversion Embedded</h3>
-<div class="prompt">A circuit has a voltage of $6.0\,\text{V}$ and a current of $250\,\text{mA}$. Convert the current to amperes and find the resistance.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 5 — Graph / Relationship Interpretation</h3>
-<div class="prompt">If the resistance in a circuit doubles while the voltage stays the same, what happens to the current? Explain using Ohm’s Law.</div>
-
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<h3>Example 6 — Circuit Analysis</h3>
-<div class="prompt">A circuit diagram shows a $24\,\text{V}$ source connected to a resistor. The current is measured as $2.0\,\text{A}$. Find the resistance and label the circuit.</div>
-
-<div class="workspace workspace-300">
-  <img src="images/grid.png">
-</div>
-</div>
-
-<div class="problem">
-<h3>Example 7 — Draw It</h3>
-<div class="prompt">Draw a simple circuit with a battery and resistor. Label the battery voltage, the resistor, and the current direction. Then write the Ohm’s Law equation that would relate the three quantities.</div>
-
-<div class="workspace workspace-300">
-  <img src="images/grid.png">
-</div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Examples</h2>
+  
+  <!-- ======================= -->
+  <!-- OHM'S LAW -->
+  <!-- ======================= -->
+  <h3>Example 1 — Ohm’s Law</h3>
+  <div class="prompt">A resistor has a voltage of $18\,\text{V}$ across it and carries a current of $3.0\,\text{A}$. What is the resistance?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- SERIES -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Example 2 — Series Resistance</h3>
+  <div class="prompt">Two resistors of $6\,\Omega$ and $9\,\Omega$ are connected in series to a $30\,\text{V}$ battery. What is the current in the circuit?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- PARALLEL -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Example 3 — Parallel Resistance</h3>
+  <div class="prompt">Two resistors of $8\,\Omega$ and $4\,\Omega$ are connected in parallel. What is the equivalent resistance?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- MULTI-STEP 1 -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Example 4 — Multi-Step Circuit</h3>
+  <div class="prompt">Two resistors of $5\,\Omega$ and $10\,\Omega$ are connected in series to a $30\,\text{V}$ battery. What is the current drawn from the battery?</div>
+  
+  <div class="workspace workspace-400"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- MULTI-STEP 2 -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Example 5 — Multi-Step Circuit</h3>
+  <div class="prompt">Two resistors of $6\,\Omega$ and $3\,\Omega$ are connected in parallel to a $12\,\text{V}$ source. What is the total current supplied by the source?</div>
+  
+  <div class="workspace workspace-400"></div>
+  </div>
+  
+  </section>
 
 <!-- ======================= -->
 <!-- COMMON MISTAKES -->
@@ -803,145 +892,161 @@ This section pairs well with a simple resistor-lab investigation or a circuit si
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Practice Set</h2>
-<h3>Level 1 — Easy</h3>
+  <div class="problem">
+  <h2>Practice Set</h2>
+  
+  <!-- ======================= -->
+  <!-- VOCABULARY -->
+  <!-- ======================= -->
+  <h3>Vocabulary Section</h3>
+  
+  <p>1. Define resistance.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>2. What is an ohm?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>3. Define Ohm’s Law in words.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>4. What is a series circuit?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>5. What is a parallel circuit?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>6. Define equivalent resistance.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>7. What is a conductor?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>8. What is an insulator?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- CONCEPTUAL -->
+  <!-- ======================= -->
+  <h3>Conceptual Section</h3>
+  
+  <p>9. Explain why increasing resistance decreases current when voltage remains constant.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>10. Explain why current is the same everywhere in a series circuit.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>11. Explain why voltage is the same across each branch in a parallel circuit.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>12. Describe what happens to total resistance when more resistors are added in series.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>13. Describe what happens to total resistance when more branches are added in parallel.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- SINGLE FORMULA -->
+  <!-- ======================= -->
+  <h3>Single Formula Section</h3>
+  
+  <p>14. A resistor has a voltage of $20\,\text{V}$ and carries a current of $4.0\,\text{A}$. What is the resistance?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>15. A $10\,\Omega$ resistor is connected to a $30\,\text{V}$ source. What current flows?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>16. A circuit carries $3.0\,\text{A}$ with a resistance of $6\,\Omega$. What is the voltage?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- MULTI-STEP -->
+  <!-- ======================= -->
+  <h3>Multi-Step Section</h3>
+  
+  <p>17. Two resistors of $4\,\Omega$ and $8\,\Omega$ are connected in series to a $24\,\text{V}$ battery. What is the current?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>18. Two resistors of $6\,\Omega$ and $3\,\Omega$ are connected in parallel to a $12\,\text{V}$ source. What is the total current?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- ANALYZE & EXPLAIN -->
+  <!-- ======================= -->
+  <h3>Analyze &amp; Explain</h3>
+  
+  <p>19. A student adds another resistor in series and observes that the current decreases. Explain why this happens using Ohm’s Law.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>20. A circuit has more branches added in parallel. Explain why the total current from the battery increases.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- DESIGN & JUSTIFY -->
+  <!-- ======================= -->
+  <h3>Design &amp; Justify</h3>
+  
+  <p>21. Design a simple circuit using a battery and two resistors that would produce a smaller current than a single-resistor circuit. Explain your reasoning.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>22. A technician wants to reduce total resistance in a circuit without changing the battery. Describe how the circuit should be modified and justify your answer.</p>
+  <div class="workspace workspace-200"></div>
+  
+  </div>
+  </section>
 
-<p>1. Write Ohm’s Law.</p>
-<div class="workspace workspace-200"></div>
-</div>
+  <!-- ======================= -->
+<!-- CHECK YOUR UNDERSTANDING -->
+<!-- ======================= -->
+<section>
 
-<div class="problem">
-<p>2. What quantity is measured in ohms?</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>3. If voltage stays the same and resistance increases, does current increase or decrease?</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>4. What is the SI unit of current?</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>5. What is the SI unit of voltage?</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<h3>Level 2 — Medium</h3>
-
-<p>6. A resistor has $10\,\text{V}$ across it and carries $2.0\,\text{A}$. Find the resistance.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>7. A $12\,\text{V}$ source is connected to a $4.0\,\Omega$ resistor. Find the current.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>8. A current of $3.0\,\text{A}$ flows through a $5.0\,\Omega$ resistor. Find the voltage.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>9. A resistor has $18\,\text{V}$ across it and a current of $6.0\,\text{A}$. Find the resistance.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>10. A circuit carries $250\,\text{mA}$ from a $5.0\,\text{V}$ source. Convert the current and find the resistance.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Level 3 — Hard</h3>
-
-<p>11. A $24\,\text{V}$ battery is connected to a resistor of $8.0\,\Omega$. Find the current.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>12. A resistor carries $1.5\,\text{A}$ when the voltage is $9.0\,\text{V}$. Find the resistance.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>13. Explain why current decreases when resistance increases but voltage stays the same.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>14. A student says, “If resistance doubles, voltage must also double.” Explain why this is not always true.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>15. A resistor has a resistance of $12\,\Omega$ and a current of $0.50\,\text{A}$. Find the voltage.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Level 4 — Challenging</h3>
-
-<p>16. A circuit has $6.0\,\text{V}$ and $2.0\,\Omega$. A new circuit has the same voltage but $4.0\,\Omega$. Compare the currents.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>17. A circuit has $10\,\text{V}$ and $5.0\,\Omega$. A new circuit doubles the voltage and keeps resistance the same. Compare the currents.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>18. A resistor carries $0.20\,\text{A}$ with $8.0\,\text{V}$ across it. If the voltage is cut in half and resistance stays the same, what happens to the current?</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>19. Without recalculating from scratch, explain what happens to resistance if voltage stays the same and current doubles.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>20. Draw It: Sketch a battery-resistor circuit labeled with a known voltage and current. Then calculate and label the resistance.</p>
-<div class="workspace workspace-300">
-  <img src="images/grid.png">
-</div>
-</div>
-
-<div class="problem">
-<h3>Level 5 — Justification / Conceptual</h3>
-
-<p>21. Explain why Ohm’s Law is useful even though real circuits can become more complex than one resistor and one source.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>22. Explain why resistance is described as opposition to current rather than as a force stopping charges completely.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>23. A student says, “High voltage always means high current.” Explain the mistake.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>24. Explain how units can be used to check whether an Ohm’s Law answer is reasonable.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>25. Explain how a circuit diagram supports problem solving in ways that the equation alone does not.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Check Your Understanding</h2>
+  
+  <!-- BANK 1 -->
+  <p><strong>1.</strong> What best describes resistance?</p>
+  <div class="answer-option"><strong>A)</strong> The flow of electric charge</div>
+  <div class="answer-option"><strong>B)</strong> Opposition to current</div>
+  <div class="answer-option"><strong>C)</strong> Energy per charge</div>
+  <div class="answer-option"><strong>D)</strong> Voltage change</div>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>2.</strong> Which unit measures resistance?</p>
+  <div class="answer-option"><strong>A)</strong> Volt</div>
+  <div class="answer-option"><strong>B)</strong> Ampere</div>
+  <div class="answer-option"><strong>C)</strong> Ohm</div>
+  <div class="answer-option"><strong>D)</strong> Joule</div>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- BANK 2 -->
+  <p><strong>3.</strong> If resistance increases while voltage remains constant, what happens to current?</p>
+  <div class="answer-option"><strong>A)</strong> It increases</div>
+  <div class="answer-option"><strong>B)</strong> It decreases</div>
+  <div class="answer-option"><strong>C)</strong> It stays the same</div>
+  <div class="answer-option"><strong>D)</strong> It becomes zero immediately</div>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>4.</strong> In a parallel circuit, what happens when another branch is added?</p>
+  <div class="answer-option"><strong>A)</strong> Total resistance increases</div>
+  <div class="answer-option"><strong>B)</strong> Total resistance decreases</div>
+  <div class="answer-option"><strong>C)</strong> Current becomes zero</div>
+  <div class="answer-option"><strong>D)</strong> Voltage disappears</div>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- BANK 3 -->
+  <p><strong>5.</strong> A $12\,\Omega$ resistor is connected to a $24\,\text{V}$ battery. What current flows?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- BANK 4 -->
+  <p><strong>6.</strong> Two resistors of $3\,\Omega$ and $6\,\Omega$ are connected in series to a $18\,\text{V}$ battery. What is the current in the circuit?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ANALYZE -->
+  <p><strong>7.</strong> A student says, “Adding more resistors always increases current because there are more paths.” Explain why this is incorrect.</p>
+  <div class="workspace workspace-200"></div>
+  
+  </div>
+  
+  </section>
 
 <!-- ======================= -->
 <!-- SUPPLEMENTAL NOTES -->
@@ -987,138 +1092,171 @@ This section pairs well with a simple resistor-lab investigation or a circuit si
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Practice Answer Key</h2>
+  <div class="problem">
+  <h2>Practice Answer Key</h2>
+  
+  <h3>Vocabulary Section</h3>
+  <p>1. Opposition to current flow</p>
+  <p>2. Unit of resistance equal to volts per ampere</p>
+  <p>3. Voltage equals current times resistance</p>
+  <p>4. Circuit with one path for current</p>
+  <p>5. Circuit with multiple paths for current</p>
+  <p>6. Single resistance replacing a circuit</p>
+  <p>7. Material allowing charge flow easily</p>
+  <p>8. Material resisting charge flow</p>
+  
+  <h3>Conceptual Section</h3>
+  <p>9. From $I = \frac{V}{R}$, increasing resistance reduces current</p>
+  <p>10. Only one path exists, so all charges pass through each component</p>
+  <p>11. Each branch connects across the same two points, so voltage is equal</p>
+  <p>12. Total resistance increases because resistors add</p>
+  <p>13. Total resistance decreases because more paths are available</p>
+  
+  <h3>Single Formula Section</h3>
+  <p>14. $5.0\,\Omega$</p>
+  <p>15. $3.0\,\text{A}$</p>
+  <p>16. $18\,\text{V}$</p>
+  
+  <h3>Multi-Step Section</h3>
+  <p>17. $2.0\,\text{A}$</p>
+  <p>18. $6.0\,\text{A}$</p>
+  
+  <h3>Analyze &amp; Explain</h3>
+  <p>19. Adding resistance increases $R$, so current decreases by Ohm’s Law</p>
+  <p>20. More parallel branches decrease total resistance, increasing current</p>
+  
+  <h3>Design &amp; Justify</h3>
+  <p>21. Add resistors in series to increase resistance and reduce current</p>
+  <p>22. Add branches in parallel to decrease total resistance</p>
+  
+  </div>
+  </section>
 
-<h3>Level 1 — Easy</h3>
-<p>1. $V = IR$</p>
-<p>2. Resistance</p>
-<p>3. Decrease</p>
-<p>4. Ampere $(\text{A})$</p>
-<p>5. Volt $(\text{V})$</p>
+  <!-- ======================= -->
+<!-- CHECK YOUR UNDERSTANDING ANSWER KEY -->
+<!-- ======================= -->
+<section>
 
-<h3>Level 2 — Medium</h3>
-<p>6. $5.0\,\Omega$</p>
-<p>7. $3.0\,\text{A}$</p>
-<p>8. $15\,\text{V}$</p>
-<p>9. $3.0\,\Omega$</p>
-<p>10. $0.250\,\text{A}$ and $20\,\Omega$</p>
-
-<h3>Level 3 — Hard</h3>
-<p>11. $3.0\,\text{A}$</p>
-<p>12. $6.0\,\Omega$</p>
-<p>13. From $I = \frac{V}{R}$, larger resistance means smaller current when voltage is fixed</p>
-<p>14. Voltage only doubles if current and resistance change in a way that requires it</p>
-<p>15. $6.0\,\text{V}$</p>
-
-<h3>Level 4 — Challenging</h3>
-<p>16. The new current is half the original current</p>
-<p>17. The new current is twice the original current</p>
-<p>18. The current is cut in half to $0.10\,\text{A}$</p>
-<p>19. Resistance is cut in half because $R = \frac{V}{I}$</p>
-<p>20. Answers vary; resistance should match $R = \frac{V}{I}$ for the chosen labels</p>
-
-<h3>Level 5 — Justification / Conceptual</h3>
-<p>21–25. Answers vary</p>
-
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Check Your Understanding — Answer Key</h2>
+  
+  <h3>Multiple Choice</h3>
+  
+  <p><strong>1.</strong> <strong>B</strong> — Resistance is the opposition to current flow, not the flow itself or energy.</p>
+  
+  <p><strong>2.</strong> <strong>C</strong> — Resistance is measured in ohms (Ω), defined as volts per ampere.</p>
+  
+  <p><strong>3.</strong> <strong>B</strong> — From Ohm’s Law, $I = \frac{V}{R}$, increasing resistance decreases current when voltage stays constant.</p>
+  
+  <p><strong>4.</strong> <strong>B</strong> — Adding a branch in parallel creates more paths, lowering total resistance.</p>
+  
+  <h3>Calculation</h3>
+  
+  <p><strong>5.</strong></p>
+  
+  $$I = \frac{V}{R} = \frac{24}{12} = 2.0\,\text{A}$$
+  
+  <p><strong>Answer:</strong> $\boxed{2.0\,\text{A}}$</p>
+  
+  <p><strong>6.</strong></p>
+  
+  <p>Step 1: Total resistance</p>
+  $$R_T = 3 + 6 = 9\,\Omega$$
+  
+  <p>Step 2: Current</p>
+  $$I = \frac{18}{9} = 2.0\,\text{A}$$
+  
+  <p><strong>Answer:</strong> $\boxed{2.0\,\text{A}}$</p>
+  
+  <h3>Analyze &amp; Explain</h3>
+  
+  <p><strong>7.</strong> The statement is incorrect because it mixes up series and parallel ideas.</p>
+  
+  <p>
+  Adding resistors in <strong>series</strong> increases total resistance, which reduces current.
+  </p>
+  
+  <p>
+  Adding resistors in <strong>parallel</strong> creates more paths and decreases total resistance, which increases current.
+  </p>
+  
+  <p>
+  So adding resistors does not always increase current — it depends on how they are connected.
+  </p>
+  
+  </div>
+  
+  </section>
 
 <!-- ======================= -->
 <!-- DETAILED EXAMPLE SOLUTIONS -->
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Detailed Example Solutions</h2>
-
-<h3>Example 1 — Conceptual</h3>
-
-<p>
-From
-$$I = \frac{V}{R}$$
-if the battery voltage stays the same and resistance becomes larger, the current becomes smaller. The larger resistance opposes charge flow more strongly.
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 2 — Single-Formula</h3>
-
-<p><strong>Given:</strong> $V = 12\,\text{V}$, $I = 3.0\,\text{A}$</p>
-
-<p><strong>Equation:</strong></p>
-$$R = \frac{V}{I}$$
-
-<p><strong>Solve:</strong></p>
-$$R = \frac{12}{3.0} = 4.0\,\Omega$$
-</div>
-
-<div class="problem">
-<h3>Example 3 — Multi-Step</h3>
-
-<p><strong>Given:</strong> $V = 9.0\,\text{V}$, $R = 4.5\,\Omega$</p>
-
-<p><strong>Equation:</strong></p>
-$$I = \frac{V}{R}$$
-
-<p><strong>Solve:</strong></p>
-$$I = \frac{9.0}{4.5} = 2.0\,\text{A}$$
-</div>
-
-<div class="problem">
-<h3>Example 4 — Unit Conversion Embedded</h3>
-
-<p>
-Convert current:
-$$250\,\text{mA} = 0.250\,\text{A}$$
-</p>
-
-<p>
-Now use
-$$R = \frac{V}{I} = \frac{6.0}{0.250} = 24\,\Omega$$
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 5 — Graph / Relationship Interpretation</h3>
-
-<p>
-From
-$$I = \frac{V}{R}$$
-if resistance doubles while voltage stays constant, the current becomes half as large.
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 6 — Circuit Analysis</h3>
-
-<p><strong>Given:</strong> $V = 24\,\text{V}$, $I = 2.0\,\text{A}$</p>
-
-<p>
-Find resistance:
-$$R = \frac{V}{I} = \frac{24}{2.0} = 12\,\Omega$$
-</p>
-
-<div class="workspace workspace-200">
-  <img src="images/grid.png">
-</div>
-</div>
-
-<div class="problem">
-<h3>Example 7 — Draw It</h3>
-
-<p>
-A correct sketch shows a battery, a resistor, and a labeled current direction. The equation relating the quantities is
-$$V = IR$$
-</p>
-
-<div class="workspace workspace-200">
-  <img src="images/grid.png">
-</div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Detailed Example Solutions</h2>
+  
+  <!-- EX 1 -->
+  <h3>Example 1 — Ohm’s Law</h3>
+  
+  $$R = \frac{V}{I} = \frac{18}{3.0} = 6.0\,\Omega$$
+  
+  <p><strong>Answer:</strong> $\boxed{6.0\,\Omega}$</p>
+  </div>
+  
+  <div class="problem">
+  <!-- EX 2 -->
+  <h3>Example 2 — Series Resistance</h3>
+  
+  <p>Step 1: Find total resistance</p>
+  $$R_T = 6 + 9 = 15\,\Omega$$
+  
+  <p>Step 2: Find current</p>
+  $$I = \frac{V}{R_T} = \frac{30}{15} = 2.0\,\text{A}$$
+  
+  <p><strong>Answer:</strong> $\boxed{2.0\,\text{A}}$</p>
+  </div>
+  
+  <div class="problem">
+  <!-- EX 3 -->
+  <h3>Example 3 — Parallel Resistance</h3>
+  
+  $$\frac{1}{R_T} = \frac{1}{8} + \frac{1}{4} = \frac{3}{8}$$
+  
+  $$R_T = \frac{8}{3} = 2.67\,\Omega$$
+  
+  <p><strong>Answer:</strong> $\boxed{2.67\,\Omega}$</p>
+  </div>
+  
+  <div class="problem">
+  <!-- EX 4 -->
+  <h3>Example 4 — Multi-Step Circuit</h3>
+  
+  <p>Step 1: Total resistance</p>
+  $$R_T = 5 + 10 = 15\,\Omega$$
+  
+  <p>Step 2: Current</p>
+  $$I = \frac{30}{15} = 2.0\,\text{A}$$
+  
+  <p><strong>Answer:</strong> $\boxed{2.0\,\text{A}}$</p>
+  </div>
+  
+  <div class="problem">
+  <!-- EX 5 -->
+  <h3>Example 5 — Multi-Step Circuit</h3>
+  
+  <p>Step 1: Equivalent resistance</p>
+  $$\frac{1}{R_T} = \frac{1}{6} + \frac{1}{3} = \frac{1}{2}$$
+  
+  $$R_T = 2.0\,\Omega$$
+  
+  <p>Step 2: Total current</p>
+  $$I = \frac{V}{R_T} = \frac{12}{2.0} = 6.0\,\text{A}$$
+  
+  <p><strong>Answer:</strong> $\boxed{6.0\,\text{A}}$</p>
+  </div>
+  
+  </section>
 
 </div>
 </body>

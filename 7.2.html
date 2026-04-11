@@ -69,7 +69,7 @@ h3{
   font-size:0.95em;
   color:#444;
   margin-bottom:8px;
-  font-style:italic;
+  font-style:normal;
 }
 
 .objectives{background:#f0f4f8;padding:20px;border-radius:6px;}
@@ -180,23 +180,26 @@ Electric fields and voltage help explain how charges move in everything from thu
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Learning Targets</h2>
-
-<div class="objectives">
-<p><strong>Conceptual Targets</strong></p>
-<p>I can explain what an electric field is and describe how field lines represent electric interactions.</p>
-<p>I can explain how electric potential energy and voltage are related to charged particles in a field.</p>
-<p>I can describe the difference between electric force, electric field, and voltage.</p>
-
-<p style="margin-top:12px;"><strong>Mathematical Targets</strong></p>
-<p>I can calculate electric field strength using $E = \frac{F_e}{q}$ and $F_e = qE$.</p>
-<p>I can calculate voltage using $V = \frac{U_e}{q}$ and work using $W = qV$.</p>
-<p>I can use $E = \frac{V}{d}$ for a uniform electric field.</p>
-</div>
-</div>
-
-</section>
+  <!-- UNBREAKABLE: header + first block -->
+  <div class="problem">
+  <h2>Learning Targets</h2>
+  
+  <div class="objectives">
+  <p>Students will analyze electric fields and relate voltage to force, energy, charge, and distance.</p>
+  
+  <ul style="margin-left:20px;">
+  <li>I can interpret electric field lines and describe the direction of the field around positive and negative charges.</li>
+  <li>I can calculate electric field strength using $E = \frac{F}{q}$ or $E = \frac{V}{d}$ in a uniform field.</li>
+  <li>I can use $F = qE$ to determine the force on a charged particle in an electric field.</li>
+  <li>I can explain voltage as energy per charge and connect voltage to work done on a charge.</li>
+  </ul>
+  
+  </div>
+  
+  </div>
+  <!-- UNBREAKABLE: header + first block -->
+  
+  </section>
 
 <!-- ======================= -->
 <!-- INTRODUCTION -->
@@ -294,6 +297,14 @@ The idea of electric potential also became essential because it connected electr
 
 </div>
 
+<div class="workspace workspace-300">
+  <img src="images/field_lines.png">
+</div>
+
+<div class="key-point">
+  <strong>Key Idea:</strong> Electric field lines show the direction of force on a positive test charge and become denser where the field is stronger.
+  </div>
+
 </section>
 
 <!-- ======================= -->
@@ -301,129 +312,187 @@ The idea of electric potential also became essential because it connected electr
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Key Concepts</h2>
-
-<h3>Electric Field</h3>
-
-<p>
-An electric field is the region around a charged object where another charge experiences an electric force. Instead of thinking only about one force at one moment, the field model describes what would happen anywhere around the charge.
-</p>
-
-<div class="definition">
-<strong>Electric Field Strength:</strong>
-$$E = \frac{F_e}{q}$$
-<p>
-Electric field is measured in newtons per coulomb, $\text{N/C}$, or volts per meter, $\text{V/m}$.
-</p>
-</div>
-
-<p>
-A stronger electric field means a larger force would act on the same test charge.
-</p>
-</div>
-
-<div class="problem">
-<h3>Electric Field Lines</h3>
-
-<p>
-Field lines help visualize electric fields. They point in the direction a positive test charge would move. Field lines always point away from positive charges and toward negative charges.
-</p>
-
-<div class="workspace workspace-200">
-  <img src="images/grid.png">
-</div>
-
-<div class="key-point">
-<strong>Reading field lines:</strong> Closer field lines indicate a stronger field. Farther-apart lines indicate a weaker field.
-</div>
-</div>
-
-<div class="problem">
-<h3>Force from an Electric Field</h3>
-
-<p>
-If the electric field at a location is known, the force on a charge in that field can be found using:
-</p>
-
-<div class="definition">
-$$F_e = qE$$
-</div>
-
-<p>
-A positive charge feels force in the direction of the field. A negative charge feels force opposite the direction of the field.
-</p>
-</div>
-
-<div class="problem">
-<h3>Uniform Electric Field</h3>
-
-<p>
-A uniform electric field has the same strength and direction everywhere. Between two large parallel charged plates, the field is often modeled as uniform.
-</p>
-
-<p>
-In a uniform field, the relationship between field strength, voltage difference, and distance is:
-</p>
-
-<div class="definition">
-$$E = \frac{V}{d}$$
-</div>
-
-<p>
-This is especially useful in problems involving parallel plates or evenly changing potential.
-</p>
-</div>
-
-<div class="problem">
-<h3>Electric Potential Energy and Voltage</h3>
-
-<p>
-Electric potential energy is energy stored because of a charge’s position in an electric field. Voltage, or electric potential difference, tells us how much electric potential energy changes per unit charge.
-</p>
-
-<div class="definition">
-$$V = \frac{U_e}{q}$$
-<p>
-Voltage is measured in volts, where
-$$1\,\text{V} = 1\,\text{J/C}$$
-</p>
-</div>
-
-<p>
-A larger voltage means more energy change per coulomb of charge.
-</p>
-</div>
-
-<div class="problem">
-<h3>Work and Voltage</h3>
-
-<p>
-When a charge moves through a voltage difference, work is done. The relationship is:
-</p>
-
-<div class="definition">
-$$W = qV$$
-</div>
-
-<p>
-This equation is useful when finding how much energy is transferred when charge moves through a device or across a potential difference.
-</p>
-</div>
-
-<div class="problem">
-<h3>Dipoles and Field Patterns</h3>
-
-<p>
-A dipole consists of two equal and opposite charges separated by a distance. The electric field around a dipole has a more complex pattern than the field around a single charge.
-</p>
-
-<p>
-Field lines begin on the positive charge and end on the negative charge. This idea helps students understand why field diagrams are useful models rather than literal pictures of wires or paths.
-</p>
-</div>
-
-</section>
+  <!-- UNBREAKABLE: header + first concept -->
+  <div class="problem">
+  <h2>Key Concepts</h2>
+  
+  <h3>Electric Field</h3>
+  
+  <p>
+  An electric field is the region around a charged object where other charges experience an electric force. Instead of describing force between just two charges, the field model describes how a charge influences the space around it.
+  </p>
+  
+  <div class="definition">
+  $$E = \frac{F_e}{q}$$
+  <p>
+  $E$ = electric field $\left(\text{N/C}\right)$<br>
+  $F_e$ = electric force $\left(\text{N}\right)$<br>
+  $q$ = charge $\left(\text{C}\right)$
+  </p>
+  </div>
+  
+  <p>
+  A stronger electric field means a larger force would act on the same charge.
+  </p>
+  </div>
+  <!-- UNBREAKABLE -->
+  
+  <!-- UNBREAKABLE -->
+  <div class="problem">
+  <h3>Electric Field Lines</h3>
+  
+  <p>
+  Electric field lines provide a visual model of electric fields. They show both the direction and relative strength of the field.
+  </p>
+  
+  <div class="workspace workspace-200">
+    <img src="images/field_lines.png">
+  </div>
+  
+  <div class="key-point">
+  <ul style="margin-left:20px;">
+  <li>Field lines point away from positive charges and toward negative charges.</li>
+  <li>The direction of the field is the direction a positive test charge would move.</li>
+  <li>Closer lines indicate a stronger electric field.</li>
+  <li>Field lines never cross.</li>
+  </ul>
+  </div>
+  </div>
+  <!-- UNBREAKABLE -->
+  
+  <!-- UNBREAKABLE -->
+  <div class="problem">
+  <h3>Force in an Electric Field</h3>
+  
+  <p>
+  Once the electric field is known, the force on any charge placed in that field can be found.
+  </p>
+  
+  <div class="definition">
+  $$F_e = qE$$
+  </div>
+  
+  <p>
+  A positive charge experiences force in the direction of the field, while a negative charge experiences force in the opposite direction.
+  </p>
+  </div>
+  <!-- UNBREAKABLE -->
+  
+  <!-- UNBREAKABLE -->
+  <div class="problem">
+  <h3>Uniform Electric Field</h3>
+  
+  <p>
+  A uniform electric field has the same strength and direction everywhere. This often occurs between two large, parallel charged plates.
+  </p>
+  
+  <div class="definition">
+  $$E = \frac{V}{d}$$
+  <p>
+  $E$ = electric field $\left(\text{N/C or V/m}\right)$<br>
+  $V$ = voltage $\left(\text{V}\right)$<br>
+  $d$ = distance $\left(\text{m}\right)$
+  </p>
+  </div>
+  
+  <p>
+  In a uniform field, field lines are parallel and evenly spaced.
+  </p>
+  </div>
+  <!-- UNBREAKABLE -->
+  
+  <!-- UNBREAKABLE -->
+  <div class="problem">
+    <h3>Electric Potential Energy</h3>
+    
+    <p>
+    Electric potential energy is the energy a charge has because of its position in an electric field. Just like an object held above the ground has gravitational potential energy, a charge placed in an electric field has electric potential energy.
+    </p>
+    
+    <p>
+    The amount of electric potential energy depends on both the size of the charge and where it is located in the field. Regions closer to strong charges or regions with higher electric potential correspond to higher or lower energy states depending on the situation.
+    </p>
+    
+    <p>
+    Moving a charge <strong>against</strong> the electric field requires work and increases its electric potential energy. Moving a charge <strong>with</strong> the electric field allows the field to do work, decreasing its potential energy.
+    </p>
+    
+    <div class="key-point">
+    <strong>Key Idea:</strong> Electric potential energy depends on both the charge and its position in the field. Changes in position within the field result in energy transfer.
+    </div>
+    
+    <p>
+    This idea is important because it connects directly to voltage. Voltage tells how much electric potential energy changes per unit charge, which allows us to predict how charges will move and how energy is transferred in circuits.
+    </p>
+    
+    </div>
+  <!-- UNBREAKABLE -->
+  
+  <!-- UNBREAKABLE -->
+  <div class="problem">
+  <h3>Voltage - Electric Potential</h3>
+  
+  <p>
+  Voltage describes how much electric potential energy changes per unit charge.
+  </p>
+  
+  <div class="definition">
+  $$V = \frac{U_e}{q}$$
+  <p>
+  $V$ = voltage $\left(\text{V}\right)$<br>
+  $U_e$ = electric potential energy $\left(\text{J}\right)$<br>
+  $q$ = charge $\left(\text{C}\right)$
+  </p>
+  </div>
+  
+  <p>
+  A higher voltage means more energy is transferred for each coulomb of charge.
+  </p>
+  </div>
+  <!-- UNBREAKABLE -->
+  
+  <!-- UNBREAKABLE -->
+  <div class="problem">
+  <h3>Work and Voltage</h3>
+  
+  <p>
+  When a charge moves through a potential difference, work is done on the charge.
+  </p>
+  
+  <div class="definition">
+  $$W = qV$$
+  <p>
+  $W$ = work $\left(\text{J}\right)$<br>
+  $q$ = charge $\left(\text{C}\right)$<br>
+  $V$ = voltage $\left(\text{V}\right)$
+  </p>
+  </div>
+  
+  <p>
+  This equation connects energy transfer directly to voltage and charge.
+  </p>
+  </div>
+  <!-- UNBREAKABLE -->
+  
+  <!-- UNBREAKABLE -->
+  <div class="problem">
+  <h3>Dipoles and Field Patterns</h3>
+  
+  <p>
+  A dipole consists of two equal and opposite charges separated by a distance. The electric field pattern around a dipole is more complex than the field around a single charge.
+  </p>
+  
+  <p>
+  Field lines begin on the positive charge and end on the negative charge, forming curved patterns that represent how electric influence spreads through space.
+  </p>
+  
+  <div class="key-point">
+  <strong>Key Idea:</strong> Field diagrams are models that help visualize invisible electric interactions.
+  </div>
+  </div>
+  <!-- UNBREAKABLE -->
+  
+  </section>
 
 <!-- ======================= -->
 <!-- FORMULA BOX -->
@@ -702,62 +771,64 @@ This algebra shows that electric field and force are closely connected. Field de
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Examples</h2>
-
-<h3>Example 1 — Conceptual</h3>
-<div class="prompt">A positive test charge is placed near a positive source charge. Describe the direction of the electric field and the direction of the force on the test charge.</div>
-
-<div class="workspace workspace-200">
-  <img src="images/grid.png">
-</div>
-</div>
-
-<div class="problem">
-<h3>Example 2 — Single-Formula</h3>
-<div class="prompt">A charge of $2.0\,\text{C}$ experiences a force of $10\,\text{N}$. Find the electric field strength at that location.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 3 — Multi-Step</h3>
-<div class="prompt">An electric field has strength $150\,\text{N/C}$. Find the force on a charge of $-0.020\,\text{C}$ and state the direction relative to the field.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 4 — Unit Conversion Embedded</h3>
-<div class="prompt">A uniform electric field is created by a voltage difference of $12\,\text{V}$ across plates separated by $4.0\,\text{cm}$. Convert the distance and find the field strength.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 5 — Graph / Relationship Interpretation</h3>
-<div class="prompt">If the same voltage difference is applied across a smaller distance, what happens to the electric field strength? Explain using $E = \frac{V}{d}$.</div>
-
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<h3>Example 6 — Single-Formula</h3>
-<div class="prompt">How much work is done when a charge of $3.0\,\text{C}$ moves through a potential difference of $9.0\,\text{V}$?</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 7 — Draw It</h3>
-<div class="prompt">Draw electric field lines around a positive charge and around a negative charge. Label the direction of the field lines in each case.</div>
-
-<div class="workspace workspace-300">
-  <img src="images/grid.png">
-</div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Examples</h2>
+  
+  <h3>Example 1 — Electric Field</h3>
+  <div class="prompt">A force of $0.60\,\text{N}$ acts on a charge of $3.0 \times 10^{-6}\,\text{C}$. What is the electric field strength?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <div class="problem">
+  <h3>Example 2 — Force from Field</h3>
+  <div class="prompt">What force acts on a charge of $2.0 \times 10^{-6}\,\text{C}$ in an electric field of $4.0 \times 10^4\,\text{N/C}$?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <div class="problem">
+  <h3>Example 3 — Voltage</h3>
+  <div class="prompt">A charge of $4.0\,\text{C}$ has $20\,\text{J}$ of electric potential energy. What is the voltage?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <div class="problem">
+  <h3>Example 4 — Work</h3>
+  <div class="prompt">How much work is done when a charge of $3.0\,\text{C}$ moves through a potential difference of $8.0\,\text{V}$?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <div class="problem">
+  <h3>Example 5 — Uniform Electric Field</h3>
+  <div class="prompt">A potential difference of $15\,\text{V}$ exists across plates separated by $0.050\,\text{m}$. What is the electric field strength?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <div class="problem">
+  <h3>Example 6 — Multi-Step Scenario</h3>
+  <div class="prompt">A $2.0 \times 10^{-6}\,\text{C}$ charge is placed between plates separated by $0.20\,\text{m}$ with a potential difference of $100\,\text{V}$.  
+  (a) Find the electric field.  
+  (b) Find the force on the charge.</div>
+  
+  <div class="workspace workspace-400"></div>
+  </div>
+  
+  <div class="problem">
+  <h3>Example 7 — Multi-Step Scenario</h3>
+  <div class="prompt">A charge gains $36\,\text{J}$ of electric potential energy when moved through a potential difference of $12\,\text{V}$.  
+  (a) Find the charge.  
+  (b) If the same charge moves through $6.0\,\text{V}$, how much work is done?</div>
+  
+  <div class="workspace workspace-400"></div>
+  </div>
+  
+  </section>
+  
+ 
 
 <!-- ======================= -->
 <!-- COMMON MISTAKES -->
@@ -837,147 +908,206 @@ This section pairs well with an electrostatics or electric-fields simulation. St
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Practice Set</h2>
-<h3>Level 1 — Easy</h3>
+  <!-- ======================= -->
+  <!-- VOCABULARY SECTION -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h2>Practice Set</h2>
+  <h3>Vocabulary Section</h3>
+  
+  <p>1. Define <strong>electric field</strong> in your own words.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>2. What do <strong>electric field lines</strong> show?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>3. What is a <strong>dipole</strong>?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>4. What is a <strong>uniform electric field</strong>?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>5. Define <strong>electric potential energy</strong>.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>6. Define <strong>voltage</strong>.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>7. What is a <strong>volt</strong>?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>8. What is <strong>potential difference</strong>?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- CONCEPTUAL SECTION -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Conceptual Section</h3>
+  
+  <p>9. A positive test charge is placed in an electric field and begins to accelerate. What does this reveal about the direction of the electric field?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>10. Why does a negative charge move opposite the direction of the electric field?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>11. If the electric field strength doubles while the charge stays the same, what happens to the force on the charge? Explain.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>12. Explain why electric potential energy increases when a charge moves against the electric field.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>13. What does it mean when two points in space have the same electric potential?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- SINGLE FORMULA SECTION -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Single Formula Section</h3>
+  
+  <p>14. A force of $0.48\,\text{N}$ acts on a charge of $2.0 \times 10^{-6}\,\text{C}$. What is the electric field strength?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>15. A charge of $2.5\,\text{C}$ has $15\,\text{J}$ of electric potential energy. What is the voltage?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>16. A potential difference of $120\,\text{V}$ exists across two plates separated by $0.30\,\text{m}$. What is the electric field strength?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- MULTI-STEP SECTION -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Multi-Step Section</h3>
+  
+  <p>17. A charge of $3.0 \times 10^{-6}\,\text{C}$ is placed in a uniform electric field of $5.0 \times 10^4\,\text{N/C}$.  
+  (a) Find the electric force on the charge.  
+  (b) If the field strength is doubled, what is the new force?</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>18. Two parallel plates are separated by $0.20\,\text{m}$ and connected to a $300\,\text{V}$ source. A charge of $4.0 \times 10^{-6}\,\text{C}$ is placed between the plates.  
+  (a) Find the electric field strength.  
+  (b) Find the force on the charge.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- ANALYZE & EXPLAIN -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Analyze &amp; Explain</h3>
+  
+  <p>19. Two regions have electric fields of different strengths. In Region A, the field lines are closer together than in Region B. Explain what this tells you about the field strength and the force on the same positive test charge placed in each region.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>20. A student says, “Voltage and electric field are the same thing because both are related to charge.” Explain what is correct and incorrect in this statement.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- DESIGN & JUSTIFY -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Design &amp; Justify</h3>
+  
+  <p>21. Design a short explanation for a younger student showing how a diagram of field lines around a positive charge and a negative charge can be used to predict force direction. Include what the arrows mean and how line spacing helps interpret the field.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  <div class="problem">
+  <p>22. A science museum wants to build a demonstration using two large charged plates and a small charged ball to show electric force in a uniform field. Describe how the plates should be arranged, what should be labeled in the diagram, and how students could predict the direction of the force on both a positive and a negative charge.</p>
+  <div class="workspace workspace-200"></div>
+  </div>
+  
+  </section>
 
-<p>1. State whether electric field lines point toward or away from a positive charge.</p>
-<div class="workspace workspace-200"></div>
-</div>
+  <!-- ======================= -->
+<!-- CHECK YOUR UNDERSTANDING -->
+<!-- ======================= -->
+<section>
 
-<div class="problem">
-<p>2. State whether electric field lines point toward or away from a negative charge.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>3. What does electric field measure: force per charge or energy per charge?</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>4. What does voltage measure: force per charge or energy per charge?</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>5. Write the equations $E = \frac{F_e}{q}$ and $F_e = qE$ and identify the units of $E$.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<h3>Level 2 — Medium</h3>
-
-<p>6. A charge of $4.0\,\text{C}$ experiences a force of $20\,\text{N}$. Find the electric field strength.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>7. Find the force on a charge of $2.0\,\text{C}$ in an electric field of $15\,\text{N/C}$.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>8. A charge of $3.0\,\text{C}$ moves through a potential difference of $8.0\,\text{V}$. Find the work done.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>9. A uniform electric field is created by $24\,\text{V}$ across a distance of $2.0\,\text{m}$. Find the field strength.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>10. Convert $25\,\text{cm}$ to meters, then find the field strength for $10\,\text{V}$ across that distance.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Level 3 — Hard</h3>
-
-<p>11. A field of $200\,\text{N/C}$ acts on a charge of $-0.030\,\text{C}$. Find the force magnitude and state the direction relative to the field.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>12. A charge gains $45\,\text{J}$ of electric potential energy when moved through a potential difference of $9.0\,\text{V}$. Find the charge.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>13. A uniform field between two plates is $300\,\text{V/m}$. The plates are separated by $0.20\,\text{m}$. Find the voltage difference.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>14. Explain why a negative charge moves opposite the electric field direction even though the field itself is defined using a positive test charge.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>15. Describe the electric field pattern around a dipole.</p>
-<div class="workspace workspace-200">
-  <img src="images/grid.png">
-</div>
-</div>
-
-<div class="problem">
-<h3>Level 4 — Challenging</h3>
-
-<p>16. A field exerts a force of $12\,\text{N}$ on a $2.0\,\text{C}$ charge. What force would the same field exert on a $-5.0\,\text{C}$ charge? Include magnitude and direction.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>17. A voltage difference of $18\,\text{V}$ is applied across plates separated by $0.30\,\text{m}$. If the distance is cut in half while voltage stays the same, compare the new field to the original field.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>18. A charge of $4.0\,\text{C}$ moves through two different voltage differences: $6.0\,\text{V}$ and $12\,\text{V}$. Compare the work done in each case.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>19. Without calculating from scratch, explain how the field changes if voltage doubles and distance also doubles in a uniform electric field.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>20. Draw It: Sketch parallel plates producing a uniform electric field. Show the field direction and label the voltage difference and plate spacing.</p>
-<div class="workspace workspace-300">
-  <img src="images/grid.png">
-</div>
-</div>
-
-<div class="problem">
-<h3>Level 5 — Justification / Conceptual</h3>
-
-<p>21. Explain why electric field is a useful idea even when no test charge is currently present at a location.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>22. Explain how voltage and electric potential energy are related but not identical.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>23. A student says, “If voltage gets larger, the electric field must always get larger.” Explain why that is not always true.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>24. Explain why the same electric field can produce different forces on different charges.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>25. Explain how field lines and equations together help physicists understand invisible electric interactions.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Check Your Understanding</h2>
+  
+  <!-- BANK 1 STYLE -->
+  <p><strong>1.</strong> What best describes an electric field?</p>
+  <div class="answer-option"><strong>A)</strong> A region where charges experience electric force</div>
+  <div class="answer-option"><strong>B)</strong> The flow of electrons in a wire</div>
+  <div class="answer-option"><strong>C)</strong> Stored electrical energy</div>
+  <div class="answer-option"><strong>D)</strong> A magnetic interaction</div>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>2.</strong> Electric field lines around a positive charge point:</p>
+  <div class="answer-option"><strong>A)</strong> Toward the charge</div>
+  <div class="answer-option"><strong>B)</strong> Away from the charge</div>
+  <div class="answer-option"><strong>C)</strong> In random directions</div>
+  <div class="answer-option"><strong>D)</strong> In circular paths</div>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- BANK 2 STYLE -->
+  <p><strong>3.</strong> A negative charge placed in an electric field moves opposite the field direction. Why?</p>
+  <div class="answer-option"><strong>A)</strong> Voltage reverses direction</div>
+  <div class="answer-option"><strong>B)</strong> Force on a negative charge is opposite the field</div>
+  <div class="answer-option"><strong>C)</strong> The field disappears</div>
+  <div class="answer-option"><strong>D)</strong> Resistance increases</div>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>4.</strong> If the electric field strength increases while the charge stays the same, what happens to the force?</p>
+  <div class="answer-option"><strong>A)</strong> It decreases</div>
+  <div class="answer-option"><strong>B)</strong> It increases</div>
+  <div class="answer-option"><strong>C)</strong> It stays the same</div>
+  <div class="answer-option"><strong>D)</strong> It becomes zero</div>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- BANK 3 STYLE -->
+  <p><strong>5.</strong> A force of $0.40\,\text{N}$ acts on a charge of $2.0 \times 10^{-6}\,\text{C}$. What is the electric field strength?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- BANK 4 STYLE -->
+  <p><strong>6.</strong> A potential difference of $60\,\text{V}$ exists across plates separated by $0.30\,\text{m}$. If the distance is reduced to $0.15\,\text{m}$, what is the new electric field strength?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ANALYZE & EXPLAIN -->
+  <p><strong>7.</strong> A student says, “Voltage and electric field are the same thing because both involve charge.” Explain why this statement is incorrect.</p>
+  <div class="workspace workspace-200"></div>
+  
+  </div>
+  
+  </section>
 
 <!-- ======================= -->
 <!-- SUPPLEMENTAL NOTES -->
@@ -1023,148 +1153,184 @@ This section pairs well with an electrostatics or electric-fields simulation. St
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Practice Answer Key</h2>
+  <div class="problem">
+  <h2>Practice Answer Key</h2>
+  
+  <h3>Vocabulary Section</h3>
+  <p>1. A region around a charge where other charges experience electric force</p>
+  <p>2. They show the direction and relative strength of the electric field</p>
+  <p>3. A pair of equal and opposite charges separated by a distance</p>
+  <p>4. An electric field with constant strength and direction throughout the region</p>
+  <p>5. Energy a charge has because of its position in an electric field</p>
+  <p>6. Energy per unit charge; electric potential difference</p>
+  <p>7. The SI unit of voltage; $1\,\text{V} = 1\,\text{J/C}$</p>
+  <p>8. The difference in electric potential between two points</p>
+  
+  <h3>Conceptual Section</h3>
+  <p>9. The electric field points in the direction of the force on a positive test charge</p>
+  <p>10. Because $F = qE$ and a negative charge produces a force opposite the field direction</p>
+  <p>11. The force doubles because $F = qE$ and the charge stays constant</p>
+  <p>12. Because work must be done against the electric field, increasing the charge’s potential energy</p>
+  <p>13. The potential difference is zero, so there is no energy change per unit charge between those points</p>
+  
+  <h3>Single Formula Section</h3>
+  <p>14. $2.4 \times 10^5\,\text{N/C}$</p>
+  <p>15. $6.0\,\text{V}$</p>
+  <p>16. $400\,\text{N/C}$</p>
+  
+  <h3>Multi-Step Section</h3>
+  <p>17. (a) $0.15\,\text{N}$ (b) $0.30\,\text{N}$</p>
+  <p>18. (a) $1500\,\text{N/C}$ (b) $6.0 \times 10^{-3}\,\text{N}$</p>
+  
+  <h3>Analyze &amp; Explain</h3>
+  <p>19. Region A has the stronger field because the lines are closer together. The same positive test charge would experience a larger force in Region A than in Region B.</p>
+  <p>20. Voltage and electric field are related, but they are not the same. Electric field is force per charge, while voltage is energy per charge.</p>
+  
+  <h3>Design &amp; Justify</h3>
+  <p>21. Answers vary; should explain that field lines point away from positive and toward negative, arrows show force direction on a positive test charge, and closer spacing means stronger field.</p>
+  <p>22. Answers vary; should describe parallel plates, labeled field direction, and explain that a positive charge feels force with the field while a negative charge feels force opposite the field.</p>
+  
+  </div>
+  
+  </section>
 
-<h3>Level 1 — Easy</h3>
-<p>1. Away from the positive charge</p>
-<p>2. Toward the negative charge</p>
-<p>3. Force per charge</p>
-<p>4. Energy per charge</p>
-<p>5. $E = \frac{F_e}{q}$ and $F_e = qE$; units of $E$ are $\text{N/C}$ or $\text{V/m}$</p>
-
-<h3>Level 2 — Medium</h3>
-<p>6. $5.0\,\text{N/C}$</p>
-<p>7. $30\,\text{N}$</p>
-<p>8. $24\,\text{J}$</p>
-<p>9. $12\,\text{V/m}$</p>
-<p>10. $0.25\,\text{m}$ and $40\,\text{V/m}$</p>
-
-<h3>Level 3 — Hard</h3>
-<p>11. $6.0\,\text{N}$, opposite the field direction</p>
-<p>12. $5.0\,\text{C}$</p>
-<p>13. $60\,\text{V}$</p>
-<p>14. Because force on a negative charge is opposite field direction by $F_e = qE$</p>
-<p>15. Answers vary; field lines begin on positive and end on negative</p>
-
-<h3>Level 4 — Challenging</h3>
-<p>16. Original field is $6.0\,\text{N/C}$, so new force is $30\,\text{N}$ opposite the field direction</p>
-<p>17. The new field is twice as large</p>
-<p>18. $24\,\text{J}$ and $48\,\text{J}$; the second case has twice the work</p>
-<p>19. It stays the same because both numerator and denominator double</p>
-<p>20. Answers vary; sketch should show uniform parallel field lines from positive to negative plate</p>
-
-<h3>Level 5 — Justification / Conceptual</h3>
-<p>21–25. Answers vary</p>
-
-</div>
-
-</section>
-
-<!-- ======================= -->
-<!-- DETAILED EXAMPLE SOLUTIONS -->
+  <!-- ======================= -->
+<!-- CHECK YOUR UNDERSTANDING ANSWER KEY -->
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Detailed Example Solutions</h2>
+  <div class="problem">
+  <h2>Check Your Understanding — Answer Key</h2>
+  
+  <h3>Multiple Choice</h3>
+  
+  <p><strong>1.</strong> <strong>A</strong> — An electric field is the region around a charge where other charges experience force.</p>
+  
+  <p><strong>2.</strong> <strong>B</strong> — Electric field lines point away from positive charges and toward negative charges.</p>
+  
+  <p><strong>3.</strong> <strong>B</strong> — Force on a negative charge is opposite the electric field direction.</p>
+  
+  <p><strong>4.</strong> <strong>B</strong> — From $F = qE$, increasing field strength increases force.</p>
+  
+  <h3>Calculation</h3>
+  
+  <p><strong>5.</strong></p>
+  
+  $$E = \frac{F}{q} = \frac{0.40}{2.0 \times 10^{-6}} = 2.0 \times 10^5\,\text{N/C}$$
+  
+  <p><strong>Answer:</strong> $\boxed{2.0 \times 10^5\,\text{N/C}}$</p>
+  
+  <p><strong>6.</strong></p>
+  
+  Original field:
+  $$E = \frac{V}{d} = \frac{60}{0.30} = 200\,\text{N/C}$$
+  
+  New distance is half → field doubles:
+  
+  $$E = \frac{60}{0.15} = 400\,\text{N/C}$$
+  
+  <p><strong>Answer:</strong> $\boxed{400\,\text{N/C}}$</p>
+  
+  <h3>Analyze &amp; Explain</h3>
+  
+  <p><strong>7.</strong> The statement is incorrect because electric field and voltage describe different relationships.</p>
+  
+  <p>
+  Electric field is force per charge:
+  $$E = \frac{F}{q}$$
+  </p>
+  
+  <p>
+  Voltage is energy per charge:
+  $$V = \frac{U}{q}$$
+  </p>
+  
+  <p>
+  Both involve charge, but one describes force and the other describes energy.
+  </p>
+  
+  </div>
+  
+  </section>
 
-<h3>Example 1 — Conceptual</h3>
-
-<p>
-Electric field direction is defined using a positive test charge. Near a positive source charge, the field points away from the source charge.
-</p>
-
-<p>
-Because the test charge is also positive, the electric force on it is in the same direction as the field: away from the positive charge.
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 2 — Single-Formula</h3>
-
-<p><strong>Given:</strong> $q = 2.0\,\text{C}$, $F_e = 10\,\text{N}$</p>
-
-<p><strong>Equation:</strong></p>
-$$E = \frac{F_e}{q}$$
-
-<p><strong>Solve:</strong></p>
-$$E = \frac{10}{2.0} = 5.0\,\text{N/C}$$
-</div>
-
-<div class="problem">
-<h3>Example 3 — Multi-Step</h3>
-
-<p><strong>Given:</strong> $E = 150\,\text{N/C}$, $q = -0.020\,\text{C}$</p>
-
-<p><strong>Equation:</strong></p>
-$$F_e = qE$$
-
-<p><strong>Solve magnitude:</strong></p>
-$$|F_e| = |(-0.020)(150)| = 3.0\,\text{N}$$
-
-<p>
-Because the charge is negative, the force is opposite the field direction.
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 4 — Unit Conversion Embedded</h3>
-
-<p>
-Convert distance:
-$$4.0\,\text{cm} = 0.040\,\text{m}$$
-</p>
-
-<p>
-Now use:
-$$E = \frac{V}{d} = \frac{12}{0.040} = 300\,\text{V/m}$$
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 5 — Graph / Relationship Interpretation</h3>
-
-<p>
-From
-$$E = \frac{V}{d}$$
-if voltage stays the same and distance gets smaller, the field gets larger.
-</p>
-
-<p>
-This means charges would experience more force per coulomb in the smaller gap.
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 6 — Single-Formula</h3>
-
-<p><strong>Given:</strong> $q = 3.0\,\text{C}$, $V = 9.0\,\text{V}$</p>
-
-<p><strong>Equation:</strong></p>
-$$W = qV$$
-
-<p><strong>Solve:</strong></p>
-$$W = (3.0)(9.0) = 27\,\text{J}$$
-</div>
-
-<div class="problem">
-<h3>Example 7 — Draw It</h3>
-
-<p>
-Field lines point away from a positive charge and toward a negative charge.
-</p>
-
-<div class="workspace workspace-200">
-  <img src="images/grid.png">
-</div>
-
-<p>
-A correct sketch shows outward arrows from the positive charge and inward arrows toward the negative charge.
-</p>
-</div>
-
-</section>
+ <!-- ======================= -->
+  <!-- DETAILED EXAMPLE SOLUTIONS -->
+  <!-- ======================= -->
+  <section>
+  
+    <div class="problem">
+    <h2>Detailed Example Solutions</h2>
+    
+    <h3>Example 1 — Electric Field</h3>
+    
+    <p><strong>Question:</strong> A force of $0.60\,\text{N}$ acts on a charge of $3.0 \times 10^{-6}\,\text{C}$. What is the electric field strength?</p>
+    
+    $$E = \frac{F}{q} = \frac{0.60}{3.0 \times 10^{-6}} = 2.0 \times 10^5\,\text{N/C}$$
+    
+    <p><strong>Answer:</strong> $\boxed{2.0 \times 10^5\,\text{N/C}}$</p>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 2 — Force from Field</h3>
+    
+    <p><strong>Question:</strong> What force acts on a charge of $2.0 \times 10^{-6}\,\text{C}$ in an electric field of $4.0 \times 10^4\,\text{N/C}$?</p>
+    
+    $$F = qE = (2.0 \times 10^{-6})(4.0 \times 10^4) = 0.080\,\text{N}$$
+    
+    <p><strong>Answer:</strong> $\boxed{0.080\,\text{N}}$</p>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 3 — Voltage</h3>
+    
+    <p><strong>Question:</strong> A charge of $4.0\,\text{C}$ has $20\,\text{J}$ of electric potential energy. What is the voltage?</p>
+    
+    $$V = \frac{U}{q} = \frac{20}{4.0} = 5.0\,\text{V}$$
+    
+    <p><strong>Answer:</strong> $\boxed{5.0\,\text{V}}$</p>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 4 — Work</h3>
+    
+    <p><strong>Question:</strong> How much work is done when a charge of $3.0\,\text{C}$ moves through a potential difference of $8.0\,\text{V}$?</p>
+    
+    $$W = qV = (3.0)(8.0) = 24\,\text{J}$$
+    
+    <p><strong>Answer:</strong> $\boxed{24\,\text{J}}$</p>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 5 — Uniform Electric Field</h3>
+    
+    <p><strong>Question:</strong> A potential difference of $15\,\text{V}$ exists across plates separated by $0.050\,\text{m}$. What is the electric field strength?</p>
+    
+    $$E = \frac{V}{d} = \frac{15}{0.050} = 300\,\text{N/C}$$
+    
+    <p><strong>Answer:</strong> $\boxed{300\,\text{N/C}}$</p>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 6 — Multi-Step Scenario</h3>
+    
+    <p><strong>(a)</strong> $E = \frac{V}{d} = \frac{100}{0.20} = 500\,\text{N/C}$</p>
+    
+    <p><strong>(b)</strong> $F = qE = (2.0 \times 10^{-6})(500) = 1.0 \times 10^{-3}\,\text{N}$</p>
+    
+    <p><strong>Answer:</strong> $\boxed{500\,\text{N/C},\; 1.0 \times 10^{-3}\,\text{N}}$</p>
+    </div>
+    
+    <div class="problem">
+    <h3>Example 7 — Multi-Step Scenario</h3>
+    
+    <p><strong>(a)</strong> $q = \frac{W}{V} = \frac{36}{12} = 3.0\,\text{C}$</p>
+    
+    <p><strong>(b)</strong> $W = qV = (3.0)(6.0) = 18\,\text{J}$</p>
+    
+    <p><strong>Answer:</strong> $\boxed{3.0\,\text{C},\; 18\,\text{J}}$</p>
+    </div>
+    
+    </section>
 
 </div>
 </body>

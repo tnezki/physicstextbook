@@ -69,7 +69,7 @@ h3{
   font-size:0.95em;
   color:#444;
   margin-bottom:8px;
-  font-style:italic;
+  font-style:normal;
 }
 
 .objectives{background:#f0f4f8;padding:20px;border-radius:6px;}
@@ -180,24 +180,26 @@ Electrical energy powers nearly every part of modern life. Understanding energy,
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Learning Targets</h2>
-
-<div class="objectives">
-<p><strong>Conceptual Targets</strong></p>
-<p>I can explain the difference between energy and power in an electrical system.</p>
-<p>I can explain what efficiency means in a circuit or device.</p>
-<p>I can describe how circuit design choices affect performance, safety, and energy use.</p>
-
-<p style="margin-top:12px;"><strong>Mathematical Targets</strong></p>
-<p>I can calculate electrical power using $P = IV$.</p>
-<p>I can calculate electrical energy using $E = Pt$.</p>
-<p>I can calculate efficiency and compare circuit designs using data and formulas.</p>
-</div>
-</div>
-
-</section>
-
+  <!-- UNBREAKABLE: header + first block -->
+  <div class="problem">
+  <h2>Learning Targets</h2>
+  
+  <div class="objectives">
+  <p>Students will calculate power and energy, evaluate efficiency, and justify design choices for simple electrical systems.</p>
+  
+  <ul style="margin-left:20px;">
+  <li>I can calculate electrical power using $P = IV$ and connect power to how quickly energy is transferred.</li>
+  <li>I can calculate electrical energy using $E = Pt$ and interpret energy use in everyday contexts.</li>
+  <li>I can determine efficiency and explain why some energy is not converted into useful output.</li>
+  <li>I can compare or design simple circuits based on constraints such as brightness, battery life, cost, or safety.</li>
+  </ul>
+  
+  </div>
+  
+  </div>
+  <!-- UNBREAKABLE -->
+  
+  </section>
 <!-- ======================= -->
 <!-- INTRODUCTION -->
 <!-- ======================= -->
@@ -301,269 +303,272 @@ Modern engineering continues to rely on the same basic questions: How much power
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Key Concepts</h2>
+  <div class="problem">
+  <h2>Key Concepts</h2>
+  
+  <h3>Electrical Power</h3>
+  
+  <p>
+  Electrical power describes how quickly electrical energy is transferred or used in a circuit. Devices with higher power ratings transfer energy more rapidly.
+  </p>
+  
+  <p>
+  For example, a 1000 W heater transfers energy much faster than a 100 W bulb. This is why high-power devices heat up quickly or perform work faster.
+  </p>
+  
+  <div class="definition">
+  $$P = IV$$
+  <p>
+  $P$ = power $\left(\text{W}\right)$<br>
+  $I$ = current $\left(\text{A}\right)$<br>
+  $V$ = voltage $\left(\text{V}\right)$
+  </p>
+  </div>
+  
+  <div class="key-point">
+  <strong>Key Idea:</strong> Power tells how fast energy is used or transferred.
+  </div>
+  </div>
+  
+  <div class="problem">
+  <h3>Electrical Energy</h3>
+  
+  <p>
+  Electrical energy is the total amount of energy transferred in a circuit. It depends on both how fast energy is used (power) and how long the device operates.
+  </p>
+  
+  <div class="definition">
+  $$E = Pt$$
+  <p>
+  $E$ = energy $\left(\text{J or kWh}\right)$<br>
+  $P$ = power $\left(\text{W}\right)$<br>
+  $t$ = time $\left(\text{s or h}\right)$
+  </p>
+  </div>
+  
+  <p>
+  Devices that run longer or operate at higher power use more energy.
+  </p>
+  </div>
+  
+  <div class="problem">
+  <h3>Power Units</h3>
+  
+  <p>
+  Power is measured in watts (W), where:
+  </p>
+  
+  <div class="definition">
+  $$1\,\text{W} = 1\,\text{J/s}$$
+  </div>
+  
+  <p>
+  Large devices are often rated in kilowatts:
+  </p>
+  
+  <div class="definition">
+  $$1\,\text{kW} = 1000\,\text{W}$$
+  </div>
+  </div>
+  
+  <div class="problem">
+  <h3>Electrical Energy Units</h3>
+  
+  <p>
+  Energy can be measured in joules, but for household electricity it is usually measured in kilowatt-hours.
+  </p>
+  
+  <div class="definition">
+  $$1\,\text{kWh} = 3.6 \times 10^6\,\text{J}$$
+  </div>
+  
+  <p>
+  A kilowatt-hour represents using 1000 watts for one hour.
+  </p>
+  </div>
+  
+  <div class="problem">
+  <h3>Efficiency</h3>
+  
+  <p>
+  Efficiency describes how much of the input energy is converted into useful output energy.
+  </p>
+  
+  <div class="definition">
+  $$\text{Efficiency} = \frac{\text{Useful Output Energy}}{\text{Total Input Energy}} \times 100\%$$
+  </div>
+  
+  <p>
+  No real device is perfectly efficient because some energy is always lost, usually as heat.
+  </p>
+  
+  <div class="key-point">
+  <strong>Key Idea:</strong> Higher efficiency means less wasted energy.
+  </div>
+  </div>
+  
+  <div class="problem">
+  <h3>Energy Conversion in Circuits</h3>
+  
+  <p>
+  In electrical systems, energy is not lost but converted into different forms such as:
+  </p>
+  
+  <div class="definition">
+  <ul style="margin-left:20px;">
+  <li>Light energy (bulbs)</li>
+  <li>Thermal energy (heaters)</li>
+  <li>Mechanical energy (motors)</li>
+  </ul>
+  </div>
+  
+  <p>
+  Understanding these conversions helps explain efficiency and design choices.
+  </p>
+  </div>
+  
+  <div class="problem">
+    <h3>Circuit Design Considerations</h3>
+    
+    <p>
+    Engineers design circuits by balancing different goals. Each goal affects how voltage, current, and resistance are used in the circuit.
+    </p>
+    
+    <div class="key-point">
+    <strong>How Design Choices Affect Circuits:</strong>
+    <ul style="margin-left:20px;">
+    <li><strong>Brightness:</strong> Brighter devices require more power. This usually means more current or delivering full voltage to each component -often using parallel circuits.</li>
+    
+    <li><strong>Battery Life:</strong> Using less current reduces how quickly energy is used. This can be done by increasing resistance or using series circuits, which lowers current and extends battery life.</li>
+    
+    <li><strong>Cost:</strong> Using fewer components or simpler designs reduces cost, but may limit performance.</li>
+    
+    <li><strong>Safety:</strong> High current can cause overheating. Increasing resistance or limiting current helps prevent damage and keeps circuits safe.</li>
+    </ul>
+    </div>
+    
+    <p>
+    These goals often conflict. For example, increasing brightness usually requires more current, which reduces battery life and can create more heat.
+    </p>
+    
+    <div class="prompt">
+    Design a simple circuit that uses less current to extend battery life. Draw and label your circuit, and explain how your design reduces current using $I = \frac{V}{R}$.
+    </div>
+    
+    <div class="workspace workspace-300">
+      <img src="images/grid.png">
+    </div>
+    
+    <p>
+    A good design achieves the desired goal while minimizing wasted energy and avoiding unsafe levels of current.
+    </p>
+    
+    </div>
+  
+  </section>
 
-<h3>Electrical Power</h3>
-
-<p>
-Electrical power describes how quickly electrical energy is transferred or used. A device with greater power transfers energy at a faster rate.
-</p>
-
-<div class="definition">
-$$P = IV$$
-<p>
-Power is measured in watts:
-$$1\,\text{W} = 1\,\text{J/s}$$
-</p>
-</div>
-
-<p>
-This means a $60\,\text{W}$ bulb transfers $60\,\text{J}$ of energy each second.
-</p>
-</div>
-
-<div class="problem">
-<h3>Electrical Energy</h3>
-
-<p>
-Electrical energy depends on both power and time. A device that runs for a longer time uses more total energy, even if its power is not very large.
-</p>
-
-<div class="definition">
-$$E = Pt$$
-<p>
-$E$ = energy $\left(\text{J}\right)$<br>
-$P$ = power $\left(\text{W}\right)$<br>
-$t$ = time $\left(\text{s}\right)$
-</p>
-</div>
-
-<p>
-Power tells “how fast.” Energy tells “how much total.”
-</p>
-</div>
-
-<div class="problem">
-<h3>Power, Voltage, and Current</h3>
-
-<p>
-Because $P = IV$, a circuit can have more power if it has a larger voltage, a larger current, or both. This makes power a useful bridge between earlier circuit ideas and real energy use.
-</p>
-
-<div class="key-point">
-<strong>Relationship summary:</strong>
-<ul style="margin-left:20px;">
-<li>If current increases while voltage stays the same, power increases.</li>
-<li>If voltage increases while current stays the same, power increases.</li>
-<li>If both increase, power increases even more.</li>
-</ul>
-</div>
-</div>
-
-<div class="problem">
-<h3>Efficiency</h3>
-
-<p>
-Efficiency compares useful output energy or power to total input energy or power. A perfectly efficient system would convert all input into useful output, but real systems always lose some energy.
-</p>
-
-<div class="definition">
-$$\text{Efficiency} = \frac{\text{useful output}}{\text{total input}} \times 100\%$$
-</div>
-
-<p>
-In many electrical devices, the “lost” energy appears as heat, sound, or other non-useful forms depending on the design goal.
-</p>
-</div>
-
-<div class="problem">
-<h3>Energy Waste and Heating</h3>
-
-<p>
-Not all transferred electrical energy becomes the desired output. In many circuits, some energy becomes thermal energy because moving charges interact with the material in the circuit.
-</p>
-
-<p>
-Sometimes that heating is useful, as in a toaster. Other times it is wasteful, as in a charger that becomes warm when plugged in.
-</p>
-</div>
-
-<div class="problem">
-<h3>Circuit Design Trade-Offs</h3>
-
-<p>
-A good circuit design does more than produce the correct output. It must also consider energy use, component limits, efficiency, and safety.
-</p>
-
-<div class="definition">
-<p><strong>Design questions engineers ask:</strong></p>
-<ul style="margin-left:20px;">
-<li>Does the circuit provide enough power?</li>
-<li>Does it waste too much energy as heat?</li>
-<li>Are the voltage and current values safe for the components?</li>
-<li>Could a different design improve efficiency?</li>
-</ul>
-</div>
-</div>
-
-<div class="problem">
-<h3>Comparing Devices</h3>
-
-<p>
-Students often compare devices by asking which one uses more power, which one uses more energy over time, or which one is more efficient. These are different questions, and the correct answer depends on the quantity being analyzed.
-</p>
-
-<div class="workspace workspace-200">
-  <img src="images/grid.png">
-</div>
-
-<p>
-A higher-power device is not always worse. It may simply do more useful work per second. The context matters.
-</p>
-</div>
-
-</section>
-
-<!-- ======================= -->
+  <!-- ======================= -->
 <!-- FORMULA BOX -->
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Formula Box</h2>
+  <div class="problem">
+  <h2>Formula Box</h2>
+  
+  <div class="definition">
+  <p><strong>Electrical Power</strong></p>
+  $$P = IV$$
+  </div>
+  
+  <div class="definition">
+  <p><strong>Power (current form)</strong></p>
+  $$P = I^2 R$$
+  </div>
+  
+  <div class="definition">
+  <p><strong>Power (voltage form)</strong></p>
+  $$P = \frac{V^2}{R}$$
+  </div>
+  
+  <div class="definition">
+  <p><strong>Electrical Energy</strong></p>
+  $$E = Pt$$
+  </div>
+  
+  <div class="definition">
+  <p><strong>Efficiency</strong></p>
+  $$\text{Efficiency} = \frac{\text{Output}}{\text{Input}} \times 100\%$$
+  </div>
+  
+  </section>
 
-<div class="definition">
-<p><strong>Electrical Power</strong></p>
-$$P = IV$$
-<p>
-$P$ = power $\left(\text{W}\right)$<br>
-$I$ = current $\left(\text{A}\right)$<br>
-$V$ = voltage $\left(\text{V}\right)$
-</p>
-</div>
-</div>
-
-<div class="definition">
-<p><strong>Electrical Energy</strong></p>
-$$E = Pt$$
-<p>
-$E$ = energy $\left(\text{J}\right)$<br>
-$P$ = power $\left(\text{W}\right)$<br>
-$t$ = time $\left(\text{s}\right)$
-</p>
-</div>
-
-<div class="definition">
-<p><strong>Efficiency</strong></p>
-$$\text{Efficiency} = \frac{\text{useful output}}{\text{total input}} \times 100\%$$
-</div>
-
-<div class="definition">
-<p><strong>Watt Definition</strong></p>
-$$1\,\text{W} = 1\,\text{J/s}$$
-</div>
-
-</section>
-
-<!-- ======================= -->
+  <!-- ======================= -->
 <!-- TABLES -->
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Tables</h2>
+  <div class="problem">
+  <h2>Tables</h2>
+  
+  <h3>Units and Conversions</h3>
+  
+  <table style="width:100%; border-collapse:collapse;">
+  <tr>
+  <th style="border:1px solid #333;padding:10px;">Quantity</th>
+  <th style="border:1px solid #333;padding:10px;">Unit</th>
+  </tr>
+  <tr>
+  <td style="border:1px solid #333;padding:10px;">Power</td>
+  <td style="border:1px solid #333;padding:10px;">Watt (W)</td>
+  </tr>
+  <tr>
+  <td style="border:1px solid #333;padding:10px;">Energy</td>
+  <td style="border:1px solid #333;padding:10px;">Joule (J), kWh</td>
+  </tr>
+  <tr>
+  <td style="border:1px solid #333;padding:10px;">1 kW</td>
+  <td style="border:1px solid #333;padding:10px;">1000 W</td>
+  </tr>
+  <tr>
+  <td style="border:1px solid #333;padding:10px;">1 kWh</td>
+  <td style="border:1px solid #333;padding:10px;">3.6 × 10⁶ J</td>
+  </tr>
+  </table>
+  </div>
+  
+  </section>
 
-<h3>Variable and Unit Reference</h3>
-
-<table style="width:100%; border-collapse:collapse; margin-top:10px;">
-<tr>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Symbol</th>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Meaning</th>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">SI Unit</th>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">$P$</td>
-  <td style="border:1px solid #333; padding:10px;">Power</td>
-  <td style="border:1px solid #333; padding:10px;">$\text{W}$</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">$E$</td>
-  <td style="border:1px solid #333; padding:10px;">Energy</td>
-  <td style="border:1px solid #333; padding:10px;">$\text{J}$</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">$I$</td>
-  <td style="border:1px solid #333; padding:10px;">Current</td>
-  <td style="border:1px solid #333; padding:10px;">$\text{A}$</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">$V$</td>
-  <td style="border:1px solid #333; padding:10px;">Voltage</td>
-  <td style="border:1px solid #333; padding:10px;">$\text{V}$</td>
-</tr>
-</table>
-</div>
-
-<div class="problem">
-<h3>Compare the Ideas</h3>
-
-<table style="width:100%; border-collapse:collapse; margin-top:10px;">
-<tr>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Idea</th>
-  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Question It Answers</th>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">Power</td>
-  <td style="border:1px solid #333; padding:10px;">How fast is energy being transferred?</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">Energy</td>
-  <td style="border:1px solid #333; padding:10px;">How much total energy is transferred?</td>
-</tr>
-<tr>
-  <td style="border:1px solid #333; padding:10px;">Efficiency</td>
-  <td style="border:1px solid #333; padding:10px;">What fraction of the input becomes useful output?</td>
-</tr>
-</table>
-</div>
-
-</section>
-
-<!-- ======================= -->
+  <!-- ======================= -->
 <!-- WORKED DERIVATION -->
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Worked Derivation</h2>
-
-<p>
-Power is the rate of energy transfer:
-</p>
-
-<div class="strategy-box">
-$$P = \frac{E}{t}$$
-</div>
-
-<p>
-Rearrange to solve for total energy:
-</p>
-
-$$E = Pt$$
-
-<p>
-Students can also connect this with earlier circuit relationships. Since power in a circuit is found from
-$$P = IV$$
-we can describe how current and voltage together determine the rate of electrical energy transfer.
-</p>
-
-<div class="key-point">
-<strong>Why this matters:</strong> Power and energy are linked but not identical. Students should not treat watts and joules as interchangeable quantities.
-</div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Worked Derivation</h2>
+  
+  <p>
+  Power is defined as the rate of energy transfer:
+  </p>
+  
+  $$P = \frac{E}{t}$$
+  
+  <p>
+  Rearranging to solve for energy:
+  </p>
+  
+  $$E = Pt$$
+  
+  <p>
+  This shows that energy depends on both how fast energy is used (power) and how long the device operates (time).
+  </p>
+  
+  <div class="key-point">
+  <strong>Why this matters:</strong> This relationship explains why running a device longer increases total energy use, even if its power stays the same.
+  </div>
+  
+  </div>
+  
+  </section>
 
 <!-- ======================= -->
 <!-- VOCABULARY -->
@@ -660,60 +665,69 @@ we can describe how current and voltage together determine the rate of electrica
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Examples</h2>
-
-<h3>Example 1 — Conceptual</h3>
-<div class="prompt">Explain why a charger that becomes warm is not converting all of its electrical input into useful output.</div>
-
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<h3>Example 2 — Single-Formula</h3>
-<div class="prompt">A device operates at $12\,\text{V}$ and draws $2.0\,\text{A}$. Find its power.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 3 — Multi-Step</h3>
-<div class="prompt">A lamp uses $24\,\text{W}$ for $15\,\text{s}$. Find the total electrical energy transferred.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 4 — Unit Conversion Embedded</h3>
-<div class="prompt">A device transfers $1800\,\text{J}$ of energy in $5.0\,\text{min}$. Convert the time to seconds and find the average power.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 5 — Graph / Relationship Interpretation</h3>
-<div class="prompt">If voltage doubles while current stays the same, what happens to power? Explain using $P = IV$.</div>
-
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<h3>Example 6 — Efficiency</h3>
-<div class="prompt">A device takes in $200\,\text{J}$ of energy and produces $150\,\text{J}$ of useful output. Find the efficiency.</div>
-
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Example 7 — Draw It</h3>
-<div class="prompt">Sketch a simple circuit design for a battery-powered device. Label the power source, one useful output component, and a place where energy might be lost as heat.</div>
-
-<div class="workspace workspace-300">
-  <img src="images/grid.png">
-</div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Examples</h2>
+  
+  <!-- ======================= -->
+  <!-- POWER -->
+  <!-- ======================= -->
+  <h3>Example 1 — Electrical Power</h3>
+  <div class="prompt">A device operates at $120\,\text{V}$ and draws $4.0\,\text{A}$. What power does it consume?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- POWER (RESISTANCE FORM) -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Example 2 — Power Using Resistance</h3>
+  <div class="prompt">A current of $3.0\,\text{A}$ flows through a $6\,\Omega$ resistor. What power is dissipated?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- POWER (VOLTAGE FORM) -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Example 3 — Power Using Voltage</h3>
+  <div class="prompt">A $120\,\text{V}$ device has a resistance of $30\,\Omega$. What power does it use?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- ENERGY -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Example 4 — Electrical Energy</h3>
+  <div class="prompt">A $500\,\text{W}$ device operates for $2.0\,\text{hours}$. How much energy is used in kilowatt-hours?</div>
+  
+  <div class="workspace workspace-300"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- MULTI-STEP 1 -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Example 5 — Multi-Step Energy Use</h3>
+  <div class="prompt">A device operates at $120\,\text{V}$ and draws $5.0\,\text{A}$ for $3.0\,\text{hours}$. How much electrical energy does it use in kilowatt-hours?</div>
+  
+  <div class="workspace workspace-400"></div>
+  </div>
+  
+  <!-- ======================= -->
+  <!-- MULTI-STEP 2 -->
+  <!-- ======================= -->
+  <div class="problem">
+  <h3>Example 6 — Efficiency</h3>
+  <div class="prompt">A device receives $1000\,\text{J}$ of electrical energy and produces $700\,\text{J}$ of useful output. What is its efficiency?</div>
+  
+  <div class="workspace workspace-400"></div>
+  </div>
+  
+  </section>
 
 <!-- ======================= -->
 <!-- COMMON MISTAKES -->
@@ -793,145 +807,150 @@ This section pairs well with a circuit lab in which students compare bulbs, resi
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Practice Set</h2>
-<h3>Level 1 — Easy</h3>
+  <div class="problem">
+  <h2>Practice Set</h2>
+  
+  <!-- ======================= -->
+  <!-- VOCABULARY -->
+  <!-- ======================= -->
+  <h3>Vocabulary Section</h3>
+  
+  <p>1. Define electrical power.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>2. What is a watt?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>3. What is a kilowatt-hour?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>4. Define electrical energy.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>5. What is efficiency?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>6. What does it mean for a device to be efficient?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- CONCEPTUAL -->
+  <!-- ======================= -->
+  <h3>Conceptual Section</h3>
+  
+  <p>7. Explain why increasing power increases the rate of energy use.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>8. Explain why energy use increases when a device runs longer.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>9. Explain why no device is 100% efficient.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>10. Describe what happens to energy that is not converted into useful output.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>11. Explain why higher power devices often produce more heat.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- SINGLE FORMULA -->
+  <!-- ======================= -->
+  <h3>Single Formula Section</h3>
+  
+  <p>12. A device operates at $120\,\text{V}$ and draws $6.0\,\text{A}$. What power does it use?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>13. A $4.0\,\text{A}$ current flows through a $10\,\Omega$ resistor. What power is dissipated?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>14. A $240\,\text{V}$ device has a resistance of $60\,\Omega$. What power does it use?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- MULTI-STEP -->
+  <!-- ======================= -->
+  <h3>Multi-Step Section</h3>
+  
+  <p>15. A device operates at $120\,\text{V}$ and draws $5.0\,\text{A}$ for $4.0\,\text{hours}$. How much electrical energy does it use in kilowatt-hours?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>16. A $2.0\,\text{kW}$ heater operates for $1.5\,\text{hours}$. How much energy does it use in kilowatt-hours?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- ANALYZE & EXPLAIN -->
+  <!-- ======================= -->
+  <h3>Analyze &amp; Explain</h3>
+  
+  <p>17. A student claims that reducing power will always reduce total energy use. Explain why this is not always true.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>18. Two devices use the same total energy, but one operates at higher power for a shorter time. Explain the difference in how they use energy.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <!-- ======================= -->
+  <!-- DESIGN & JUSTIFY -->
+  <!-- ======================= -->
+  <h3>Design &amp; Justify</h3>
+  
+  <p>19. Design a circuit or device setup that reduces energy use over time. Explain how your design achieves this goal.</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p>20. A device is overheating. Describe how you could modify the design to improve safety and justify your answer using power and current relationships.</p>
+  <div class="workspace workspace-200"></div>
+  
+  </div>
+  </section>
 
-<p>1. Define electrical power in words.</p>
-<div class="workspace workspace-200"></div>
-</div>
+  <!-- ======================= -->
+<!-- CHECK YOUR UNDERSTANDING -->
+<!-- ======================= -->
+<section>
 
-<div class="problem">
-<p>2. What SI unit is used for power?</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>3. What does efficiency compare?</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>4. Write the equation for electrical power.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>5. Write the equation for electrical energy using power and time.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<h3>Level 2 — Medium</h3>
-
-<p>6. A device operates at $9.0\,\text{V}$ and $2.0\,\text{A}$. Find the power.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>7. A lamp has a power of $15\,\text{W}$ and runs for $20\,\text{s}$. Find the energy used.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>8. A device transfers $120\,\text{J}$ of energy in $10\,\text{s}$. Find the power.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>9. A circuit has $6.0\,\text{V}$ across a component and a current of $3.0\,\text{A}$. Find the power.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>10. Convert $2.0\,\text{min}$ to seconds, then find the energy used by a $10\,\text{W}$ device running for that time.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Level 3 — Hard</h3>
-
-<p>11. A device takes in $500\,\text{J}$ and produces $400\,\text{J}$ of useful output. Find the efficiency.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>12. A circuit uses $24\,\text{W}$ for $30\,\text{s}$. Find the total energy transferred.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>13. Explain why a device with a large power rating does not automatically use more total energy than every lower-power device.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>14. A student says, “If a device is 80% efficient, then 80% of the energy is lost.” Explain the error.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>15. A component has $12\,\text{V}$ across it and uses $36\,\text{W}$. Find the current.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<h3>Level 4 — Challenging</h3>
-
-<p>16. Compare two devices: Device A uses $20\,\text{W}$ for $10\,\text{s}$, and Device B uses $10\,\text{W}$ for $20\,\text{s}$. Compare the total energy used.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>17. A device’s voltage doubles while its current stays the same. Compare the new power to the original power.</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>18. A circuit transfers the same total energy in half the time. What happens to the average power?</p>
-<div class="workspace workspace-300"></div>
-</div>
-
-<div class="problem">
-<p>19. Without calculating from scratch, explain what happens to efficiency if useful output stays the same but total input increases.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>20. Draw It: Sketch a simple circuit design for a battery-powered device and label the source, useful output, and one place where energy may be lost.</p>
-<div class="workspace workspace-300">
-  <img src="images/grid.png">
-</div>
-</div>
-
-<div class="problem">
-<h3>Level 5 — Justification / Conceptual</h3>
-
-<p>21. Explain why engineers care about both power and efficiency when designing a device.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>22. Explain why wasted energy in a circuit often appears as heat.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>23. A student says, “A more efficient device must always use less power.” Explain why that is not necessarily true.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>24. Explain how a power rating helps a user understand a device, but does not fully describe total energy use by itself.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-<div class="problem">
-<p>25. Explain how circuit design requires balancing useful output, energy use, and safety rather than focusing on just one quantity.</p>
-<div class="workspace workspace-200"></div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Check Your Understanding</h2>
+  
+  <p><strong>1.</strong> Electrical power is best described as:</p>
+  <div class="answer-option"><strong>A)</strong> Energy per unit charge</div>
+  <div class="answer-option"><strong>B)</strong> Energy transferred per unit time</div>
+  <div class="answer-option"><strong>C)</strong> Charge per second</div>
+  <div class="answer-option"><strong>D)</strong> Resistance to current</div>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>2.</strong> A kilowatt-hour is a unit of:</p>
+  <div class="answer-option"><strong>A)</strong> Power</div>
+  <div class="answer-option"><strong>B)</strong> Energy</div>
+  <div class="answer-option"><strong>C)</strong> Voltage</div>
+  <div class="answer-option"><strong>D)</strong> Current</div>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>3.</strong> If a device wastes less energy as heat, what happens to its efficiency?</p>
+  <div class="answer-option"><strong>A)</strong> It decreases</div>
+  <div class="answer-option"><strong>B)</strong> It increases</div>
+  <div class="answer-option"><strong>C)</strong> It becomes zero</div>
+  <div class="answer-option"><strong>D)</strong> It stays the same</div>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>4.</strong> A 1000 W appliance operating for 1 hour uses:</p>
+  <div class="answer-option"><strong>A)</strong> 1000 J</div>
+  <div class="answer-option"><strong>B)</strong> 1 kWh</div>
+  <div class="answer-option"><strong>C)</strong> 1000 kWh</div>
+  <div class="answer-option"><strong>D)</strong> 1 W</div>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>5.</strong> A device operates at $120\,\text{V}$ and draws $3.0\,\text{A}$. What power does it consume?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>6.</strong> A device operates at $120\,\text{V}$ and draws $5.0\,\text{A}$ for $2.0\,\text{hours}$. How much electrical energy does it use in kilowatt-hours?</p>
+  <div class="workspace workspace-200"></div>
+  
+  <p><strong>7.</strong> A student says, “A higher-power device always uses more total energy.” Explain why this is not always true.</p>
+  <div class="workspace workspace-200"></div>
+  
+  </div>
+  
+  </section>
 
 <!-- ======================= -->
 <!-- SUPPLEMENTAL NOTES -->
@@ -977,129 +996,179 @@ This section pairs well with a circuit lab in which students compare bulbs, resi
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Practice Answer Key</h2>
+  <div class="problem">
+  <h2>Practice Answer Key</h2>
+  
+  <h3>Vocabulary Section</h3>
+  <p>1. Rate of energy transfer</p>
+  <p>2. Unit of power equal to joules per second</p>
+  <p>3. Unit of energy used in electricity billing</p>
+  <p>4. Total energy transferred in a circuit</p>
+  <p>5. Ratio of useful output to input energy</p>
+  <p>6. Device converts more input energy into useful output</p>
+  
+  <h3>Conceptual Section</h3>
+  <p>7. Higher power means more energy transferred each second</p>
+  <p>8. From $E = Pt$, longer time increases total energy</p>
+  <p>9. Some energy is always converted to heat or other forms</p>
+  <p>10. It becomes thermal or other non-useful energy</p>
+  <p>11. More energy per second increases heating effects</p>
+  
+  <h3>Single Formula Section</h3>
+  <p>12. $720\,\text{W}$</p>
+  <p>13. $160\,\text{W}$</p>
+  <p>14. $960\,\text{W}$</p>
+  
+  <h3>Multi-Step Section</h3>
+  <p>15. $2.4\,\text{kWh}$</p>
+  <p>16. $3.0\,\text{kWh}$</p>
+  
+  <h3>Analyze &amp; Explain</h3>
+  <p>17. Energy depends on both power and time; lower power over longer time can use more energy</p>
+  <p>18. One transfers energy faster, the other slower, but total energy can be equal</p>
+  
+  <h3>Design &amp; Justify</h3>
+  <p>19. Reduce power or operating time to lower total energy use</p>
+  <p>20. Reduce current or power to decrease heating and improve safety</p>
+  
+  </div>
+  </section>
 
-<h3>Level 1 — Easy</h3>
-<p>1. The rate at which energy is transferred or used</p>
-<p>2. Watt $(\text{W})$</p>
-<p>3. Useful output compared to total input</p>
-<p>4. $P = IV$</p>
-<p>5. $E = Pt$</p>
+  <!-- ======================= -->
+<!-- CHECK YOUR UNDERSTANDING ANSWER KEY -->
+<!-- ======================= -->
+<section>
 
-<h3>Level 2 — Medium</h3>
-<p>6. $18\,\text{W}$</p>
-<p>7. $300\,\text{J}$</p>
-<p>8. $12\,\text{W}$</p>
-<p>9. $18\,\text{W}$</p>
-<p>10. $120\,\text{s}$ and $1200\,\text{J}$</p>
-
-<h3>Level 3 — Hard</h3>
-<p>11. $80\%$</p>
-<p>12. $720\,\text{J}$</p>
-<p>13. Total energy also depends on time</p>
-<p>14. It means 80% is useful and 20% is lost</p>
-<p>15. $3.0\,\text{A}$</p>
-
-<h3>Level 4 — Challenging</h3>
-<p>16. Both use $200\,\text{J}$</p>
-<p>17. The power doubles</p>
-<p>18. The average power doubles</p>
-<p>19. Efficiency decreases because the useful-to-total ratio becomes smaller</p>
-<p>20. Answers vary; sketch should label source, useful output, and energy-loss point</p>
-
-<h3>Level 5 — Justification / Conceptual</h3>
-<p>21–25. Answers vary</p>
-
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Check Your Understanding — Answer Key</h2>
+  
+  <h3>Multiple Choice</h3>
+  
+  <p><strong>1.</strong> <strong>B</strong> — Electrical power is the rate at which energy is transferred. It tells how much energy is used each second.</p>
+  
+  <p><strong>2.</strong> <strong>B</strong> — A kilowatt-hour is a unit of energy, not power. It is commonly used for household electricity bills.</p>
+  
+  <p><strong>3.</strong> <strong>B</strong> — If less energy is wasted as heat, a greater fraction of the input energy becomes useful output, so efficiency increases.</p>
+  
+  <p><strong>4.</strong> <strong>B</strong> — A 1000 W device is a 1 kW device, and operating for 1 hour gives:
+  $$1\,\text{kW} \times 1\,\text{h} = 1\,\text{kWh}$$
+  </p>
+  
+  <h3>Calculations</h3>
+  
+  <p><strong>5.</strong> A device operates at $120\,\text{V}$ and draws $3.0\,\text{A}$.</p>
+  
+  $$P = IV$$
+  $$P = (3.0)(120) = 360\,\text{W}$$
+  
+  <p><strong>Answer:</strong> $\boxed{360\,\text{W}}$</p>
+  
+  <p><strong>6.</strong> A device operates at $120\,\text{V}$ and draws $5.0\,\text{A}$ for $2.0\,\text{h}$.</p>
+  
+  <p>First find the power:</p>
+  
+  $$P = IV = (5.0)(120) = 600\,\text{W}$$
+  
+  <p>Convert to kilowatts:</p>
+  
+  $$600\,\text{W} = 0.6\,\text{kW}$$
+  
+  <p>Now find the energy:</p>
+  
+  $$E = Pt = (0.6)(2.0) = 1.2\,\text{kWh}$$
+  
+  <p><strong>Answer:</strong> $\boxed{1.2\,\text{kWh}}$</p>
+  
+  <h3>Analyze &amp; Explain</h3>
+  
+  <p><strong>7.</strong> The statement is not always true because total energy depends on both power and time.</p>
+  
+  <p>
+  A higher-power device uses energy faster, but if it runs for less time, it may use less total energy than a lower-power device running for much longer.
+  </p>
+  
+  <p>
+  This relationship is shown by:
+  $$E = Pt$$
+  </p>
+  
+  <p>
+  So total energy use depends on both the rate of energy transfer and the time of operation.
+  </p>
+  
+  </div>
+  
+  </section>
 
 <!-- ======================= -->
 <!-- DETAILED EXAMPLE SOLUTIONS -->
 <!-- ======================= -->
 <section>
 
-<div class="problem">
-<h2>Detailed Example Solutions</h2>
-
-<h3>Example 1 — Conceptual</h3>
-
-<p>
-If a charger becomes warm, some of the electrical input energy is being transferred into thermal energy instead of entirely into useful charging output. That means the charger is less than 100% efficient.
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 2 — Single-Formula</h3>
-
-<p><strong>Given:</strong> $V = 12\,\text{V}$, $I = 2.0\,\text{A}$</p>
-
-<p><strong>Equation:</strong></p>
-$$P = IV$$
-
-<p><strong>Solve:</strong></p>
-$$P = (12)(2.0) = 24\,\text{W}$$
-</div>
-
-<div class="problem">
-<h3>Example 3 — Multi-Step</h3>
-
-<p><strong>Given:</strong> $P = 24\,\text{W}$, $t = 15\,\text{s}$</p>
-
-<p><strong>Equation:</strong></p>
-$$E = Pt$$
-
-<p><strong>Solve:</strong></p>
-$$E = (24)(15) = 360\,\text{J}$$
-</div>
-
-<div class="problem">
-<h3>Example 4 — Unit Conversion Embedded</h3>
-
-<p>
-Convert time:
-$$5.0\,\text{min} = 300\,\text{s}$$
-</p>
-
-<p>
-Now use
-$$P = \frac{E}{t} = \frac{1800}{300} = 6.0\,\text{W}$$
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 5 — Graph / Relationship Interpretation</h3>
-
-<p>
-From
-$$P = IV$$
-if voltage doubles while current stays the same, power also doubles.
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 6 — Efficiency</h3>
-
-<p>
-Use the efficiency equation:
-$$\text{Efficiency} = \frac{150}{200} \times 100\% = 75\%$$
-</p>
-</div>
-
-<div class="problem">
-<h3>Example 7 — Draw It</h3>
-
-<p>
-A correct sketch shows a battery or source, one useful output component such as a lamp or motor, and a labeled place where some energy may be lost as heat.
-</p>
-
-<div class="workspace workspace-200">
-  <img src="images/grid.png">
-</div>
-</div>
-
-</section>
+  <div class="problem">
+  <h2>Detailed Example Solutions</h2>
+  
+  <!-- EX 1 -->
+  <h3>Example 1 — Electrical Power</h3>
+  
+  $$P = IV = (4.0)(120) = 480\,\text{W}$$
+  
+  <p><strong>Answer:</strong> $\boxed{480\,\text{W}}$</p>
+  </div>
+  
+  <div class="problem">
+  <!-- EX 2 -->
+  <h3>Example 2 — Power Using Resistance</h3>
+  
+  $$P = I^2 R = (3.0)^2(6) = 54\,\text{W}$$
+  
+  <p><strong>Answer:</strong> $\boxed{54\,\text{W}}$</p>
+  </div>
+  
+  <div class="problem">
+  <!-- EX 3 -->
+  <h3>Example 3 — Power Using Voltage</h3>
+  
+  $$P = \frac{V^2}{R} = \frac{120^2}{30} = 480\,\text{W}$$
+  
+  <p><strong>Answer:</strong> $\boxed{480\,\text{W}}$</p>
+  </div>
+  
+  <div class="problem">
+  <!-- EX 4 -->
+  <h3>Example 4 — Electrical Energy</h3>
+  
+  Convert power:
+  $$500\,\text{W} = 0.5\,\text{kW}$$
+  
+  $$E = Pt = (0.5)(2.0) = 1.0\,\text{kWh}$$
+  
+  <p><strong>Answer:</strong> $\boxed{1.0\,\text{kWh}}$</p>
+  </div>
+  
+  <div class="problem">
+  <!-- EX 5 -->
+  <h3>Example 5 — Multi-Step Energy Use</h3>
+  
+  <p>Step 1: Find power</p>
+  $$P = IV = (5.0)(120) = 600\,\text{W} = 0.6\,\text{kW}$$
+  
+  <p>Step 2: Find energy</p>
+  $$E = Pt = (0.6)(3.0) = 1.8\,\text{kWh}$$
+  
+  <p><strong>Answer:</strong> $\boxed{1.8\,\text{kWh}}$</p>
+  </div>
+  
+  <div class="problem">
+  <!-- EX 6 -->
+  <h3>Example 6 — Efficiency</h3>
+  
+  $$\text{Efficiency} = \frac{700}{1000} \times 100 = 70\%$$
+  
+  <p><strong>Answer:</strong> $\boxed{70\%}$</p>
+  </div>
+  
+  </section>
 
 </div>
 </body>
