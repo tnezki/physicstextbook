@@ -1,776 +1,1171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Section 7.2: Electric Fields and Voltage</title>
-    
-    <!-- MathJax Configuration -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$']],
-                displayMath: [['$$', '$$']]
-            }
-        };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-    
-    <style>
-        body {
-            font-family: 'Times New Roman', serif;
-            font-size: 16px;
-            line-height: 1.3;
-            max-width: 8.5in;
-            margin: 0 auto;
-            padding: 0.5in;
-            background-color: #ffffff;
-            color: #000000;
-        }
-        
-        h1 {
-            font-size: 24px;
-            background-color: #000033;
-            color: white;
-            padding: 6px;
-            margin: 0.06in 0;
-        }
-        
-        h2 {
-            font-size: 18px;
-            background-color: #000033;
-            color: white;
-            padding: 6px;
-            margin: 0.06in 0;
-        }
-        
-        h3 {
-            font-size: 16px;
-            color: #000033;
-            font-weight: bold;
-            margin: 0.06in 0;
-        }
-        
-        p {
-            margin: 0.05in 0;
-        }
-        
-        .vocab-term {
-            font-weight: bold;
-        }
-        
-        .page-break {
-            page-break-after: always;
-        }
-        
-        /* Title Page Styling */
-        .title-page {
-            page-break-after: always;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-            min-height: 10in;
-            background-color: white;
-            color: #000033;
-            padding: 0.5in;
-            margin-bottom: 0.5in;
-            border: 2px solid #000033;
-        }
-        
-        .title-page-image {
-            width: 100%;
-            max-width: 5in;
-            height: auto;
-            margin-bottom: 0.3in;
-            margin-top: 0.2in;
-        }
-        
-        .section-number {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 0.2in;
-            letter-spacing: 2px;
-            color: #000033;
-        }
-        
-        .title-page h1 {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 0.2in;
-            line-height: 1.4;
-            color: #000033;
-            letter-spacing: 2px;
-            background-color: transparent;
-            padding: 0;
-            margin: 0.15in 0 0.2in 0;
-        }
-        
-        .title-page p {
-            font-size: 16px;
-            max-width: 5.5in;
-            line-height: 1.6;
-            margin-top: 0.1in;
-            color: #000033;
-        }
-        
-        .learning-objectives {
-            background-color: #e8f4f8;
-            border-left: 4px solid #0066cc;
-            padding: 0.08in;
-            margin: 0.06in 0;
-        }
-        
-        .info-box {
-            background-color: #fffacd;
-            padding: 0.08in;
-            margin: 0.06in 0;
-            border-left: 4px solid #cc6600;
-        }
-        
-        .vocab-box {
-            background-color: #f5f5f5;
-            padding: 0.08in;
-            margin: 0.06in 0;
-        }
-        
-        .example-box {
-            background-color: #f9f9f9;
-            border-left: 4px solid #cc6600;
-            padding: 0.08in;
-            margin: 0.06in 0;
-            font-size: 14px;
-        }
-        
-        .real-world-box {
-            background-color: #e6f3ff;
-            border-left: 4px solid #0066cc;
-            padding: 0.08in;
-            margin: 0.06in 0;
-        }
-        
-        .formula-box {
-            background-color: #f0f0f0;
-            border: 2px solid #000033;
-            padding: 0.08in;
-            margin: 0.06in 0;
-            text-align: center;
-        }
-        
-        ul, ol {
-            margin-left: 0.2in;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 0.06in 0;
-            font-size: 14px;
-        }
-        
-        table, th, td {
-            border: 1px solid #000033;
-        }
-        
-        th {
-            background-color: #000033;
-            color: white;
-            padding: 6px;
-        }
-        
-        td {
-            padding: 6px;
-        }
-        
-        .answer-space {
-            min-height: 1.2in;
-            background-color: #fafafa;
-            border-bottom: 1px solid #ddd;
-            padding: 0.05in;
-            margin: 0.1in 0;
-        }
-        
-        .short-answer-space {
-            min-height: 0.8in;
-            background-color: #fafafa;
-            border-bottom: 1px solid #ddd;
-            padding: 0.05in;
-            margin: 0.08in 0;
-        }
-        
-        .highlight {
-            background-color: #ffff99;
-            font-weight: bold;
-        }
-        
-        img, svg {
-            max-width: 100%;
-            height: auto;
-            margin: 0.06in 0;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Section 7.2: Electric Fields and Voltage</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\(', '\)']],
+    displayMath: [['$$', '$$'], ['\[', '\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+/* EXACT 10E CSS — NO CHANGES */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{max-width:900px;margin:auto;}
+
+.page-break{page-break-before:always;}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+h1{color:#00003d;font-size:2.5em;margin-bottom:20px;}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.3em;
+  margin-top:30px;
+  margin-bottom:10px;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.intro-text{font-size:1.05em;color:#555;margin-bottom:10px;font-style:italic;}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.prompt{
+  font-size:0.95em;
+  color:#444;
+  margin-bottom:8px;
+  font-style:italic;
+}
+
+.objectives{background:#f0f4f8;padding:20px;border-radius:6px;}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace img{
+  height:100%;
+  width:auto;
+  max-width:400px;
+  display:block;
+}
+
+.problem{
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom:10px;
+}
+
+section{
+  margin-bottom:30px;
+}
+
+</style>
 </head>
+
 <body>
+<div class="container">
 
-<!-- ============== TITLE PAGE ============== -->
-<div class="title-page">
-    <div class="section-number">SECTION 7.2</div>
-    <h1>Electric Fields and Voltage</h1>
-    
-    <svg class="title-page-image" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
-        <!-- Background -->
-        <rect width="600" height="300" fill="#ffffff"/>
-        
-        <!-- Central positive charge -->
-        <circle cx="300" cy="150" r="30" fill="#FF6666" stroke="#CC0000" stroke-width="3"/>
-        <text x="300" y="160" font-size="28" text-anchor="middle" fill="white" font-weight="bold">+</text>
-        
-        <!-- Electric field lines radiating outward -->
-        <defs>
-            <marker id="field-arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
-                <polygon points="0 0, 8 3, 0 6" fill="#0066cc"/>
-            </marker>
-        </defs>
-        
-        <!-- Radial field lines -->
-        <!-- Right -->
-        <line x1="330" y1="150" x2="450" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#field-arrow)"/>
-        <!-- Up-right -->
-        <line x1="321" y1="129" x2="425" y2="35" stroke="#0066cc" stroke-width="2" marker-end="url(#field-arrow)"/>
-        <!-- Up -->
-        <line x1="300" y1="120" x2="300" y2="20" stroke="#0066cc" stroke-width="2" marker-end="url(#field-arrow)"/>
-        <!-- Up-left -->
-        <line x1="279" y1="129" x2="175" y2="35" stroke="#0066cc" stroke-width="2" marker-end="url(#field-arrow)"/>
-        <!-- Left -->
-        <line x1="270" y1="150" x2="150" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#field-arrow)"/>
-        <!-- Down-left -->
-        <line x1="279" y1="171" x2="175" y2="265" stroke="#0066cc" stroke-width="2" marker-end="url(#field-arrow)"/>
-        <!-- Down -->
-        <line x1="300" y1="180" x2="300" y2="280" stroke="#0066cc" stroke-width="2" marker-end="url(#field-arrow)"/>
-        <!-- Down-right -->
-        <line x1="321" y1="171" x2="425" y2="265" stroke="#0066cc" stroke-width="2" marker-end="url(#field-arrow)"/>
-        
-        <!-- Label -->
-        <text x="300" y="20" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Electric Field Lines</text>
-    </svg>
-    
-    <p>Electric fields surround every charged object, creating an invisible force environment in space. Just as Earth's gravitational field pulls objects downward, electric fields exert forces on charges. Understanding electric fields and voltage helps explain how batteries work, why lightning strikes, and how electric power is transmitted across distances.</p>
+<!-- ======================= -->
+<!-- TITLE + INTRO -->
+<!-- ======================= -->
+<h1>7.2 Electric Fields and Voltage</h1>
+
+<div class="intro-text">
+You do not have to touch a charged object to feel its effect. Electric forces can act across space, and that invisible influence is described by an electric field.
 </div>
 
-<!-- ============== LEARNING OBJECTIVES ============== -->
-<div class="learning-objectives">
-    <h2>Learning Objectives</h2>
-    <p><strong>By the end of this section, I can:</strong></p>
-    <ul>
-        <li>Visualize and describe electric fields around charged objects and compare field line patterns for different charge configurations (single charge, dipole, and parallel plates).</li>
-        <li>Define electric potential and voltage, explaining the relationship between them and how they describe the work done on moving charges.</li>
-        <li>Predict how changes in charge distribution affect the electric potential and field strength at various locations.</li>
-    </ul>
+<div class="intro-text">
+This section builds from force to field and then to voltage, helping students connect diagrams, equations, and energy ideas into a single picture of electric interaction.
 </div>
 
-<!-- ============== INTRODUCTION ============== -->
-<h1>Introduction</h1>
-
-<p>When you touch a doorknob after walking across a carpet, you feel an electric shock. But how did the electric force "know" to act on you when you got close to the doorknob? The answer lies in the concept of the <span class="vocab-term">electric field</span>—an invisible region of influence that surrounds every charged object.</p>
-
-<p>Think about gravity for a moment. The Earth creates a gravitational field all around itself. Any object with mass placed in this field experiences a gravitational force pulling it toward Earth. Similarly, charged objects create electric fields all around themselves. Any charged particle placed in this field experiences an electric force.</p>
-
-<p>The concept of fields revolutionized physics. Rather than thinking about forces acting mysteriously across empty space (action at a distance), we can think of charged objects as creating fields that exist everywhere in space. When another charged object enters that field, it responds to the field at its location. This field concept, developed by Michael Faraday in the 1800s, became one of the most important ideas in all of physics.</p>
-
-<p>In this section, we'll explore electric fields—how to visualize them, how to calculate their strength, and how they relate to voltage and electric potential energy. These concepts are essential for understanding circuits, batteries, and all electrical devices.</p>
-
-<!-- ============== MAIN CONTENT ============== -->
-<h1>What Is an Electric Field?</h1>
-
-<p>An <span class="vocab-term">electric field</span> is a region of space around a charged object where electric forces can be detected. Every charged object creates an electric field that extends outward from it in all directions. The field exists even if there are no other charges around to "feel" it.</p>
-
-<div class="vocab-box">
-    <h3>Key Definition: Electric Field</h3>
-    <p><strong>Electric Field:</strong> A vector quantity that describes the electric force per unit charge at any point in space. It represents the influence that a charged object has on the space around it.</p>
+<div class="inspirational">
+“The important thing is to never stop questioning.” — Albert Einstein
 </div>
 
-<p>The strength of an electric field at any point is defined as the electric force that would be exerted on a small positive test charge placed at that point, divided by the magnitude of the test charge:</p>
-
-<div class="formula-box">
-    $$\vec{E} = \frac{\vec{F_e}}{q}$$
-    <p>where:</p>
-    <ul style="text-align: left; margin-left: 1in;">
-        <li>$\vec{E}$ = electric field vector (N/C)</li>
-        <li>$\vec{F_e}$ = electric force on test charge (N)</li>
-        <li>$q$ = magnitude of positive test charge (C)</li>
-    </ul>
+<div class="definition">
+<strong>Why does this matter?</strong>
+<p>
+Electric fields and voltage help explain how charges move in everything from thunderstorms to batteries and circuits. These ideas are central to modern electronics, medical equipment, communication systems, and power distribution.
+</p>
 </div>
 
-<p>The units of electric field are newtons per coulomb (N/C). This means that if you place a 1-coulomb charge in an electric field of 5 N/C, that charge will experience a force of 5 newtons.</p>
+<!-- ======================= -->
+<!-- LEARNING TARGETS -->
+<!-- ======================= -->
+<section>
 
-<p>We can rearrange this equation to find the force on any charge $q$ placed in an electric field $E$:</p>
+<div class="problem">
+<h2>Learning Targets</h2>
 
-<div class="formula-box">
-    $$F_e = qE$$
+<div class="objectives">
+<p><strong>Conceptual Targets</strong></p>
+<p>I can explain what an electric field is and describe how field lines represent electric interactions.</p>
+<p>I can explain how electric potential energy and voltage are related to charged particles in a field.</p>
+<p>I can describe the difference between electric force, electric field, and voltage.</p>
+
+<p style="margin-top:12px;"><strong>Mathematical Targets</strong></p>
+<p>I can calculate electric field strength using $E = \frac{F_e}{q}$ and $F_e = qE$.</p>
+<p>I can calculate voltage using $V = \frac{U_e}{q}$ and work using $W = qV$.</p>
+<p>I can use $E = \frac{V}{d}$ for a uniform electric field.</p>
+</div>
 </div>
 
-<p>This simple relationship tells us that the force on a charge in an electric field is proportional to both the charge and the field strength. Doubling either the charge or the field strength doubles the force.</p>
+</section>
 
-<div class="info-box">
-    <h3>Important Note: Direction of Electric Field</h3>
-    <p>The direction of the electric field at any point is defined as the direction that a <em>positive</em> test charge would be pushed if placed at that point. This means:</p>
-    <ul>
-        <li>Electric field lines point <strong>away from</strong> positive charges</li>
-        <li>Electric field lines point <strong>toward</strong> negative charges</li>
-    </ul>
+<!-- ======================= -->
+<!-- INTRODUCTION -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Introduction</h2>
+
+<p>
+When a charged comb attracts small bits of paper, the paper responds before it ever touches the comb. Something about the space around the comb is causing the effect. Physicists describe that region of influence as an electric field.
+</p>
+
+<p>
+An electric field tells us how a positive test charge would be affected at a point in space. Instead of focusing only on one pair of charges at a time, the field model lets us describe what is happening all around a charged object.
+</p>
+
+<p>
+Voltage adds another layer to this picture. If electric field describes how charges are pushed or pulled, voltage describes how energy changes as a charge moves from one location to another. In this section, we connect force, field, and energy into one framework.
+</p>
+
+<div class="key-point">
+<strong>Key Idea:</strong> Electric field describes force per charge, and voltage describes energy per charge. Both ideas help explain how charges interact and move.
 </div>
 
-<h2>Visualizing Electric Fields with Field Lines</h2>
+</div>
 
-<p>To help visualize electric fields, we use <span class="vocab-term">electric field lines</span>. These are imaginary lines that show the direction of the electric field at different points in space. Field lines follow these rules:</p>
+</section>
 
-<ul>
-    <li><strong>Rule 1:</strong> Field lines point in the direction that a positive test charge would move</li>
-    <li><strong>Rule 2:</strong> Field lines start on positive charges and end on negative charges (or extend to infinity)</li>
-    <li><strong>Rule 3:</strong> The density (closeness) of field lines indicates field strength—closer lines mean stronger field</li>
-    <li><strong>Rule 4:</strong> Field lines never cross each other</li>
+<!-- ======================= -->
+<!-- CONNECTIONS -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Connections</h2>
+
+<div class="key-point">
+<strong>Prior Physics Knowledge:</strong>
+<ul style="margin-left:20px;">
+<li>Forces can act at a distance through fields.</li>
+<li>Work and energy describe changes in a system.</li>
+<li>Coulomb’s Law connects charge and distance to electric force.</li>
 </ul>
-
-<h3>Electric Field of a Single Point Charge</h3>
-
-<p>The electric field around a single isolated point charge spreads out radially (like spokes on a wheel):</p>
-
-<svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" style="max-width: 6in;">
-    <!-- Positive charge on left -->
-    <text x="150" y="30" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Positive Charge</text>
-    <circle cx="150" cy="150" r="25" fill="#FF6666" stroke="#CC0000" stroke-width="2"/>
-    <text x="150" y="158" font-size="24" text-anchor="middle" fill="white" font-weight="bold">+</text>
-    
-    <!-- Field lines pointing outward -->
-    <defs>
-        <marker id="arrow-out" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
-            <polygon points="0 0, 8 3, 0 6" fill="#0066cc"/>
-        </marker>
-    </defs>
-    
-    <line x1="175" y1="150" x2="250" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="168" y1="132" x2="225" y2="75" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="150" y1="125" x2="150" y2="50" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="132" y1="132" x2="75" y2="75" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="125" y1="150" x2="50" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="132" y1="168" x2="75" y2="225" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="150" y1="175" x2="150" y2="250" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="168" y1="168" x2="225" y2="225" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    
-    <!-- Negative charge on right -->
-    <text x="450" y="30" font-size="16" text-anchor="middle" fill="#000033" font-weight="bold">Negative Charge</text>
-    <circle cx="450" cy="150" r="25" fill="#6666FF" stroke="#0000CC" stroke-width="2"/>
-    <text x="450" y="158" font-size="24" text-anchor="middle" fill="white" font-weight="bold">−</text>
-    
-    <!-- Field lines pointing inward -->
-    <defs>
-        <marker id="arrow-in" markerWidth="8" markerHeight="8" refX="1" refY="3" orient="auto">
-            <polygon points="8 0, 0 3, 8 6" fill="#CC3300"/>
-        </marker>
-    </defs>
-    
-    <line x1="525" y1="150" x2="475" y2="150" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow-in)"/>
-    <line x1="507" y1="75" x2="468" y2="132" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow-in)"/>
-    <line x1="450" y1="50" x2="450" y2="125" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow-in)"/>
-    <line x1="393" y1="75" x2="432" y2="132" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow-in)"/>
-    <line x1="375" y1="150" x2="425" y2="150" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow-in)"/>
-    <line x1="393" y1="225" x2="432" y2="168" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow-in)"/>
-    <line x1="450" y1="250" x2="450" y2="175" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow-in)"/>
-    <line x1="507" y1="225" x2="468" y2="168" stroke="#CC3300" stroke-width="2" marker-end="url(#arrow-in)"/>
-</svg>
-
-<p>For a positive charge, field lines radiate outward in all directions. For a negative charge, field lines point inward from all directions. The field is strongest close to the charge (lines are dense) and weakest far away (lines spread out).</p>
-
-<h3>Electric Field of a Dipole</h3>
-
-<p>A <span class="vocab-term">dipole</span> consists of two charges of equal magnitude but opposite sign. The field pattern shows field lines emerging from the positive charge and terminating on the negative charge:</p>
-
-<svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="max-width: 5in;">
-    <!-- Positive charge -->
-    <circle cx="150" cy="150" r="25" fill="#FF6666" stroke="#CC0000" stroke-width="2"/>
-    <text x="150" y="158" font-size="24" text-anchor="middle" fill="white" font-weight="bold">+</text>
-    
-    <!-- Negative charge -->
-    <circle cx="350" cy="150" r="25" fill="#6666FF" stroke="#0000CC" stroke-width="2"/>
-    <text x="350" y="158" font-size="24" text-anchor="middle" fill="white" font-weight="bold">−</text>
-    
-    <!-- Curved field lines from + to - -->
-    <path d="M 175 150 Q 250 150, 325 150" stroke="#0066cc" stroke-width="2" fill="none" marker-end="url(#arrow-out)"/>
-    <path d="M 168 130 Q 250 110, 332 130" stroke="#0066cc" stroke-width="2" fill="none" marker-end="url(#arrow-out)"/>
-    <path d="M 168 170 Q 250 190, 332 170" stroke="#0066cc" stroke-width="2" fill="none" marker-end="url(#arrow-out)"/>
-    <path d="M 160 110 Q 250 50, 340 110" stroke="#0066cc" stroke-width="2" fill="none" marker-end="url(#arrow-out)"/>
-    <path d="M 160 190 Q 250 250, 340 190" stroke="#0066cc" stroke-width="2" fill="none" marker-end="url(#arrow-out)"/>
-    
-    <!-- Outer field lines that curve around -->
-    <path d="M 140 125 Q 100 80, 140 70 Q 250 20, 360 70 Q 400 80, 360 125" stroke="#0066cc" stroke-width="2" fill="none" marker-mid="url(#arrow-out)"/>
-    <path d="M 140 175 Q 100 220, 140 230 Q 250 280, 360 230 Q 400 220, 360 175" stroke="#0066cc" stroke-width="2" fill="none" marker-mid="url(#arrow-out)"/>
-    
-    <text x="250" y="290" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Electric Dipole Field Pattern</text>
-</svg>
-
-<p>Notice how the field lines curve as they travel from the positive charge to the negative charge. Between the charges, the field points directly from positive to negative. Outside the charges, the field curves around.</p>
-
-<h3>Electric Field Between Parallel Plates</h3>
-
-<p>One of the most important field configurations is the <span class="vocab-term">uniform electric field</span> between two parallel charged plates. If one plate is positively charged and the other is negatively charged, the field between them is nearly uniform (constant in strength and direction):</p>
-
-<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" style="max-width: 5in;">
-    <!-- Positive plate on left -->
-    <rect x="50" y="50" width="30" height="150" fill="#FF9999" stroke="#CC0000" stroke-width="2"/>
-    <text x="35" y="130" font-size="20" fill="#CC0000" font-weight="bold">+</text>
-    <text x="35" y="160" font-size="20" fill="#CC0000" font-weight="bold">+</text>
-    <text x="35" y="100" font-size="20" fill="#CC0000" font-weight="bold">+</text>
-    
-    <!-- Negative plate on right -->
-    <rect x="420" y="50" width="30" height="150" fill="#9999FF" stroke="#0000CC" stroke-width="2"/>
-    <text x="460" y="130" font-size="20" fill="#0000CC" font-weight="bold">−</text>
-    <text x="460" y="160" font-size="20" fill="#0000CC" font-weight="bold">−</text>
-    <text x="460" y="100" font-size="20" fill="#0000CC" font-weight="bold">−</text>
-    
-    <!-- Uniform field lines -->
-    <line x1="100" y1="75" x2="400" y2="75" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="100" y1="100" x2="400" y2="100" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="100" y1="125" x2="400" y2="125" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="100" y1="150" x2="400" y2="150" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    <line x1="100" y1="175" x2="400" y2="175" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow-out)"/>
-    
-    <text x="250" y="230" font-size="14" text-anchor="middle" fill="#000033" font-weight="bold">Uniform Electric Field</text>
-</svg>
-
-<p>Between parallel plates, the field lines are straight, parallel, and evenly spaced. This indicates that the electric field has the same strength and direction at all points between the plates. This uniform field configuration is used in many applications, including capacitors and particle accelerators.</p>
-
-<div class="real-world-box">
-    <h3>Real-World Application: Ink-Jet Printers</h3>
-    <p>Many ink-jet printers use electric fields to control tiny droplets of ink. The droplets are given a charge as they leave the print head. They then pass through a uniform electric field created by parallel plates. Depending on their charge, the droplets are deflected by different amounts, allowing precise control over where they land on the paper. This technology can produce millions of droplets per second with incredible accuracy!</p>
+</div>
 </div>
 
-<h1>Electric Potential and Voltage</h1>
-
-<p>When you lift a book from the floor to a shelf, you do work against gravity. The book gains gravitational potential energy—it now has the potential to fall back down. Similarly, when you move a charged object in an electric field, you may do work against the electric force, and the charge gains <span class="vocab-term">electric potential energy</span>.</p>
-
-<h2>Electric Potential Energy</h2>
-
-<p><span class="vocab-term">Electric potential energy</span> (symbol $U_e$ or $PE_e$) is the potential energy a charged object has due to its position in an electric field. Just as gravitational potential energy depends on an object's height in a gravitational field, electric potential energy depends on a charge's position in an electric field.</p>
-
-<p>The change in electric potential energy when moving a charge from one point to another is equal to the work done by an external force in moving the charge:</p>
-
-<div class="formula-box">
-    $$\Delta U_e = W = F \cdot d$$
-</div>
-
-<p>If you move a positive charge toward another positive charge (against the repulsive force), you increase its electric potential energy. If you release it, it will accelerate away, converting potential energy back to kinetic energy.</p>
-
-<h2>Electric Potential (Voltage)</h2>
-
-<p><span class="vocab-term">Electric potential</span> (often called <span class="vocab-term">voltage</span>) is the electric potential energy per unit charge. It tells us how much potential energy each coulomb of charge would have at a particular location:</p>
-
-<div class="formula-box">
-    $$V = \frac{U_e}{q}$$
-    <p>where:</p>
-    <ul style="text-align: left; margin-left: 1in;">
-        <li>$V$ = electric potential or voltage (volts, V)</li>
-        <li>$U_e$ = electric potential energy (joules, J)</li>
-        <li>$q$ = charge (coulombs, C)</li>
-    </ul>
-</div>
-
-<p>The unit of electric potential is the <span class="vocab-term">volt</span> (V), named after Italian physicist Alessandro Volta. One volt is equal to one joule per coulomb:</p>
-
-$$1 \text{ V} = 1 \text{ J/C}$$
-
-<p>When we talk about a "9-volt battery" or "120-volt household electricity," we're referring to electric potential difference, or voltage. This is the amount of electric potential energy (in joules) that each coulomb of charge gains when it moves through the battery or power source.</p>
-
-<div class="vocab-box">
-    <h3>Key Definition: Voltage (Potential Difference)</h3>
-    <p><strong>Voltage:</strong> The difference in electric potential between two points. It represents the work done per unit charge in moving a charge between those points.</p>
-    $$V = \frac{W}{q}$$
-</div>
-
-<p>We usually talk about <span class="vocab-term">voltage difference</span> (or <span class="vocab-term">potential difference</span>) between two points rather than absolute voltage at a single point. This is because only differences in potential have physical meaning—just as with height, we care about how much higher one point is than another, not about "absolute height."</p>
-
-<h2>Relationship Between Electric Field and Voltage</h2>
-
-<p>Electric field and voltage are closely related. For a uniform electric field between parallel plates, the relationship is:</p>
-
-<div class="formula-box">
-    $$E = \frac{V}{d}$$
-    <p>where:</p>
-    <ul style="text-align: left; margin-left: 1in;">
-        <li>$E$ = electric field strength (V/m or N/C)</li>
-        <li>$V$ = voltage difference between the plates (V)</li>
-        <li>$d$ = distance between the plates (m)</li>
-    </ul>
-</div>
-
-<p>This equation tells us that the electric field is the voltage "gradient"—it measures how rapidly the voltage changes with distance. A larger voltage difference over a smaller distance creates a stronger electric field.</p>
-
-<p>Notice that the units of electric field can be expressed in two equivalent ways:</p>
-<ul>
-    <li>Newtons per coulomb (N/C) — emphasizing force per charge</li>
-    <li>Volts per meter (V/m) — emphasizing voltage change per distance</li>
+<div class="key-point">
+<strong>Math Prerequisites:</strong>
+<ul style="margin-left:20px;">
+<li>Substituting into formulas and solving for an unknown</li>
+<li>Scientific notation</li>
+<li>Unit analysis</li>
+<li>Ratios such as “per unit charge”</li>
+<li>Simple proportional reasoning</li>
 </ul>
-
-<p>These are exactly equivalent: 1 N/C = 1 V/m.</p>
-
-<div class="real-world-box">
-    <h3>Historical Note: Alessandro Volta and the First Battery</h3>
-    <p>Italian physicist Alessandro Volta invented the first true battery in 1800, called the "voltaic pile." He stacked alternating discs of zinc and copper separated by cardboard soaked in salt water. This created a steady electric current, which was revolutionary because previous devices could only produce brief sparks of static electricity. Volta's invention proved that electricity could flow continuously through a circuit, paving the way for all modern electrical technology. The unit of electric potential—the volt—honors his groundbreaking work.</p>
 </div>
 
-<div class="info-box">
-    <h3>Common Misconception: Voltage vs. Current</h3>
-    <p>Many students confuse voltage with current, but they are different quantities:</p>
-    <ul>
-        <li><strong>Voltage</strong> is a measure of electric potential energy per charge. It's like water pressure in a pipe.</li>
-        <li><strong>Current</strong> (which we'll study in the next section) is a measure of charge flow rate. It's like the flow rate of water through the pipe.</li>
-    </ul>
-    <p>You can have high voltage with no current (like a charged capacitor that's disconnected), and you can have current with relatively low voltage (like current flowing through a wire with little resistance).</p>
-</div>
-
-<div class="page-break"></div>
-
-<!-- ============== EXAMPLE PROBLEMS ============== -->
-<h1>Example Problems</h1>
-
-<div class="example-box">
-    <h3>Example 1: Calculating Electric Field Strength</h3>
-    <p><strong>Given:</strong></p>
-    <ul>
-        <li>A charge of $q = +3.0 \times 10^{-6}$ C is placed in an electric field</li>
-        <li>The charge experiences a force of $F_e = 0.024$ N</li>
-    </ul>
-    <p><strong>Find:</strong> The strength of the electric field.</p>
-    
-    <p><strong>Solution:</strong></p>
-    <p>Step 1: Write the equation for electric field.</p>
-    $$E = \frac{F_e}{q}$$
-    
-    <p>Step 2: Substitute the known values.</p>
-    $$E = \frac{0.024 \text{ N}}{3.0 \times 10^{-6} \text{ C}}$$
-    
-    <p>Step 3: Calculate the result.</p>
-    $$E = 8.0 \times 10^3 \text{ N/C} = 8{,}000 \text{ N/C}$$
-    
-    <p><strong>Answer:</strong> <span class="highlight">The electric field strength is 8,000 N/C or 8.0 × 10³ N/C.</span></p>
-</div>
-
-<div class="example-box">
-    <h3>Example 2: Finding Voltage Between Parallel Plates</h3>
-    <p><strong>Given:</strong></p>
-    <ul>
-        <li>Two parallel plates are separated by a distance of $d = 0.040$ m</li>
-        <li>The electric field between the plates is $E = 5.0 \times 10^4$ V/m</li>
-    </ul>
-    <p><strong>Find:</strong> The voltage difference (potential difference) between the plates.</p>
-    
-    <p><strong>Solution:</strong></p>
-    <p>Step 1: Write the equation relating electric field to voltage.</p>
-    $$E = \frac{V}{d}$$
-    
-    <p>Step 2: Rearrange to solve for $V$.</p>
-    $$V = E \cdot d$$
-    
-    <p>Step 3: Substitute the known values.</p>
-    $$V = (5.0 \times 10^4 \text{ V/m})(0.040 \text{ m})$$
-    
-    <p>Step 4: Calculate the result.</p>
-    $$V = 2.0 \times 10^3 \text{ V} = 2{,}000 \text{ V}$$
-    
-    <p><strong>Answer:</strong> <span class="highlight">The voltage difference between the plates is 2,000 V or 2.0 kV.</span></p>
-</div>
-
-<div class="example-box">
-    <h3>Example 3: Multi-Step Problem—Force, Field, and Voltage</h3>
-    <p><strong>Given:</strong></p>
-    <ul>
-        <li>An electron (charge $q = -1.60 \times 10^{-19}$ C) is placed between two parallel plates that are separated by $d = 0.050$ m.</li>
-        <li>The voltage difference between the plates is $V = 250$ V.</li>
-    </ul>
-    <p><strong>Find:</strong></p>
-    <p>(a) The electric field strength between the plates.</p>
-    <p>(b) The magnitude of the force on the electron.</p>
-    <p>(c) The work done on the electron if it moves from the negative plate to the positive plate.</p>
-    
-    <p><strong>Solution:</strong></p>
-    <p><strong>(a) Electric field strength</strong></p>
-    
-    <p>Step 1: Use the relationship between electric field and voltage.</p>
-    $$E = \frac{V}{d}$$
-    
-    <p>Step 2: Substitute the known values.</p>
-    $$E = \frac{250 \text{ V}}{0.050 \text{ m}} = 5{,}000 \text{ V/m}$$
-    
-    <p><strong>(b) Force on the electron</strong></p>
-    
-    <p>Step 3: Use the equation for force in an electric field.</p>
-    $$F_e = qE$$
-    
-    <p>Step 4: Substitute values (use magnitude of charge).</p>
-    $$F_e = (1.60 \times 10^{-19} \text{ C})(5{,}000 \text{ V/m})$$
-    $$F_e = 8.0 \times 10^{-16} \text{ N}$$
-    
-    <p><strong>(c) Work done on the electron</strong></p>
-    
-    <p>Step 5: The work done in moving a charge through a voltage difference is:</p>
-    $$W = qV$$
-    
-    <p>Step 6: Substitute values (use magnitude of charge for work magnitude).</p>
-    $$W = (1.60 \times 10^{-19} \text{ C})(250 \text{ V})$$
-    $$W = 4.0 \times 10^{-17} \text{ J}$$
-    
-    <p><strong>Answers:</strong></p>
-    <p>(a) <span class="highlight">The electric field strength is 5,000 V/m or 5.0 × 10³ V/m.</span></p>
-    <p>(b) <span class="highlight">The force on the electron is 8.0 × 10⁻¹⁶ N.</span> (The force points toward the positive plate because the electron is negatively charged.)</p>
-    <p>(c) <span class="highlight">The work done on the electron is 4.0 × 10⁻¹⁷ J.</span> (This energy would be converted to kinetic energy, accelerating the electron.)</p>
-</div>
-
-<div class="page-break"></div>
-
-<!-- ============== SUMMARY ============== -->
-<h1>Summary</h1>
-
-<ul>
-    <li>An electric field is a region of space where electric forces can be detected. It represents the influence that charged objects have on the space around them.</li>
-    <li>Electric field strength is defined as the force per unit charge: $E = F_e / q$, with units of newtons per coulomb (N/C) or volts per meter (V/m).</li>
-    <li>Electric field lines are used to visualize electric fields. Lines point away from positive charges and toward negative charges. The density of lines indicates field strength.</li>
-    <li>For a single point charge, field lines radiate outward (positive charge) or inward (negative charge) in all directions.</li>
-    <li>An electric dipole consists of equal and opposite charges. Field lines emerge from the positive charge and terminate on the negative charge, creating curved patterns.</li>
-    <li>Between parallel charged plates, the electric field is uniform—constant in both strength and direction.</li>
-    <li>Electric potential energy is the potential energy a charge has due to its position in an electric field, similar to gravitational potential energy.</li>
-    <li>Voltage (electric potential) is the electric potential energy per unit charge: $V = U_e / q$, measured in volts (V), where 1 V = 1 J/C.</li>
-    <li>Voltage difference (potential difference) represents the work done per unit charge in moving a charge between two points in an electric field.</li>
-    <li>For a uniform electric field, the relationship between field strength, voltage, and distance is $E = V / d$, showing that electric field measures how rapidly voltage changes with distance.</li>
+<div class="key-point">
+<strong>Real-World / Engineering Applications:</strong>
+<ul style="margin-left:20px;">
+<li>Capacitors that store electric potential energy</li>
+<li>Particle accelerators that use electric fields to speed up charged particles</li>
+<li>Touchscreens and sensors that detect electrical changes</li>
+<li>Medical devices that monitor electrical signals</li>
+<li>Power systems that rely on voltage differences to move charge</li>
 </ul>
+</div>
 
-<!-- ============== KEY EQUATIONS ============== -->
-<h1>Key Equations</h1>
+</section>
 
-<table>
-    <tr>
-        <th>Formula Name</th>
-        <th>Equation</th>
-        <th>Variables and Units</th>
-    </tr>
-    <tr>
-        <td>Electric Field Strength</td>
-        <td>$E = \frac{F_e}{q}$</td>
-        <td>$E$ = electric field (N/C or V/m)<br>
-            $F_e$ = electric force (N)<br>
-            $q$ = charge (C)</td>
-    </tr>
-    <tr>
-        <td>Force from Electric Field</td>
-        <td>$F_e = qE$</td>
-        <td>$F_e$ = electric force (N)<br>
-            $q$ = charge (C)<br>
-            $E$ = electric field (N/C)</td>
-    </tr>
-    <tr>
-        <td>Electric Potential (Voltage)</td>
-        <td>$V = \frac{U_e}{q}$</td>
-        <td>$V$ = voltage (V)<br>
-            $U_e$ = electric potential energy (J)<br>
-            $q$ = charge (C)</td>
-    </tr>
-    <tr>
-        <td>Work and Voltage</td>
-        <td>$W = qV$</td>
-        <td>$W$ = work done (J)<br>
-            $q$ = charge (C)<br>
-            $V$ = voltage difference (V)</td>
-    </tr>
-    <tr>
-        <td>Field-Voltage Relationship<br>(Uniform Field)</td>
-        <td>$E = \frac{V}{d}$</td>
-        <td>$E$ = electric field (V/m)<br>
-            $V$ = voltage difference (V)<br>
-            $d$ = distance (m)</td>
-    </tr>
+<!-- ======================= -->
+<!-- HISTORY -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>History</h2>
+
+<p>
+In the early study of electricity, scientists described electric interactions mainly in terms of forces between charged objects. That was useful, but it did not fully explain how space around a charge could influence other charges.
+</p>
+
+<p>
+Michael Faraday introduced the idea of a field in the 1800s. He imagined the space around a charged object as physically important, not empty. His field-line pictures gave scientists a visual way to understand how electric influence spreads through space.
+</p>
+
+<p>
+Later, James Clerk Maxwell developed mathematical equations that described electric and magnetic fields more completely. Faraday’s visual model and Maxwell’s mathematics together created the foundation of modern electromagnetism.
+</p>
+
+<p>
+The idea of electric potential also became essential because it connected electric interactions to energy. Today, voltage is one of the most practical ways scientists and engineers describe how electricity works in devices and circuits.
+</p>
+
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- KEY CONCEPTS -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Key Concepts</h2>
+
+<h3>Electric Field</h3>
+
+<p>
+An electric field is the region around a charged object where another charge experiences an electric force. Instead of thinking only about one force at one moment, the field model describes what would happen anywhere around the charge.
+</p>
+
+<div class="definition">
+<strong>Electric Field Strength:</strong>
+$$E = \frac{F_e}{q}$$
+<p>
+Electric field is measured in newtons per coulomb, $\text{N/C}$, or volts per meter, $\text{V/m}$.
+</p>
+</div>
+
+<p>
+A stronger electric field means a larger force would act on the same test charge.
+</p>
+</div>
+
+<div class="problem">
+<h3>Electric Field Lines</h3>
+
+<p>
+Field lines help visualize electric fields. They point in the direction a positive test charge would move. Field lines always point away from positive charges and toward negative charges.
+</p>
+
+<div class="workspace workspace-200">
+  <img src="images/grid.png">
+</div>
+
+<div class="key-point">
+<strong>Reading field lines:</strong> Closer field lines indicate a stronger field. Farther-apart lines indicate a weaker field.
+</div>
+</div>
+
+<div class="problem">
+<h3>Force from an Electric Field</h3>
+
+<p>
+If the electric field at a location is known, the force on a charge in that field can be found using:
+</p>
+
+<div class="definition">
+$$F_e = qE$$
+</div>
+
+<p>
+A positive charge feels force in the direction of the field. A negative charge feels force opposite the direction of the field.
+</p>
+</div>
+
+<div class="problem">
+<h3>Uniform Electric Field</h3>
+
+<p>
+A uniform electric field has the same strength and direction everywhere. Between two large parallel charged plates, the field is often modeled as uniform.
+</p>
+
+<p>
+In a uniform field, the relationship between field strength, voltage difference, and distance is:
+</p>
+
+<div class="definition">
+$$E = \frac{V}{d}$$
+</div>
+
+<p>
+This is especially useful in problems involving parallel plates or evenly changing potential.
+</p>
+</div>
+
+<div class="problem">
+<h3>Electric Potential Energy and Voltage</h3>
+
+<p>
+Electric potential energy is energy stored because of a charge’s position in an electric field. Voltage, or electric potential difference, tells us how much electric potential energy changes per unit charge.
+</p>
+
+<div class="definition">
+$$V = \frac{U_e}{q}$$
+<p>
+Voltage is measured in volts, where
+$$1\,\text{V} = 1\,\text{J/C}$$
+</p>
+</div>
+
+<p>
+A larger voltage means more energy change per coulomb of charge.
+</p>
+</div>
+
+<div class="problem">
+<h3>Work and Voltage</h3>
+
+<p>
+When a charge moves through a voltage difference, work is done. The relationship is:
+</p>
+
+<div class="definition">
+$$W = qV$$
+</div>
+
+<p>
+This equation is useful when finding how much energy is transferred when charge moves through a device or across a potential difference.
+</p>
+</div>
+
+<div class="problem">
+<h3>Dipoles and Field Patterns</h3>
+
+<p>
+A dipole consists of two equal and opposite charges separated by a distance. The electric field around a dipole has a more complex pattern than the field around a single charge.
+</p>
+
+<p>
+Field lines begin on the positive charge and end on the negative charge. This idea helps students understand why field diagrams are useful models rather than literal pictures of wires or paths.
+</p>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- FORMULA BOX -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Formula Box</h2>
+
+<div class="definition">
+<p><strong>Electric Field Strength</strong></p>
+$$E = \frac{F_e}{q}$$
+<p>
+$E$ = electric field $\left(\text{N/C or V/m}\right)$<br>
+$F_e$ = electric force $\left(\text{N}\right)$<br>
+$q$ = charge $\left(\text{C}\right)$
+</p>
+</div>
+</div>
+
+<div class="definition">
+<p><strong>Force from an Electric Field</strong></p>
+$$F_e = qE$$
+<p>
+$F_e$ = electric force $\left(\text{N}\right)$<br>
+$q$ = charge $\left(\text{C}\right)$<br>
+$E$ = electric field $\left(\text{N/C}\right)$
+</p>
+</div>
+
+<div class="definition">
+<p><strong>Voltage</strong></p>
+$$V = \frac{U_e}{q}$$
+<p>
+$V$ = voltage $\left(\text{V}\right)$<br>
+$U_e$ = electric potential energy $\left(\text{J}\right)$<br>
+$q$ = charge $\left(\text{C}\right)$
+</p>
+</div>
+
+<div class="definition">
+<p><strong>Work and Voltage</strong></p>
+$$W = qV$$
+<p>
+$W$ = work $\left(\text{J}\right)$<br>
+$q$ = charge $\left(\text{C}\right)$<br>
+$V$ = voltage $\left(\text{V}\right)$
+</p>
+</div>
+
+<div class="definition">
+<p><strong>Uniform Field Relationship</strong></p>
+$$E = \frac{V}{d}$$
+<p>
+$E$ = electric field $\left(\text{V/m}\right)$<br>
+$V$ = voltage difference $\left(\text{V}\right)$<br>
+$d$ = distance $\left(\text{m}\right)$
+</p>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- TABLES -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Tables</h2>
+
+<h3>Variable and Unit Reference</h3>
+
+<table style="width:100%; border-collapse:collapse; margin-top:10px;">
+<tr>
+  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Symbol</th>
+  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Meaning</th>
+  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">SI Unit</th>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">$E$</td>
+  <td style="border:1px solid #333; padding:10px;">Electric field strength</td>
+  <td style="border:1px solid #333; padding:10px;">$\text{N/C}$ or $\text{V/m}$</td>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">$F_e$</td>
+  <td style="border:1px solid #333; padding:10px;">Electric force</td>
+  <td style="border:1px solid #333; padding:10px;">$\text{N}$</td>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">$q$</td>
+  <td style="border:1px solid #333; padding:10px;">Charge</td>
+  <td style="border:1px solid #333; padding:10px;">$\text{C}$</td>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">$V$</td>
+  <td style="border:1px solid #333; padding:10px;">Voltage</td>
+  <td style="border:1px solid #333; padding:10px;">$\text{V}$</td>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">$U_e$</td>
+  <td style="border:1px solid #333; padding:10px;">Electric potential energy</td>
+  <td style="border:1px solid #333; padding:10px;">$\text{J}$</td>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">$d$</td>
+  <td style="border:1px solid #333; padding:10px;">Distance through a uniform field</td>
+  <td style="border:1px solid #333; padding:10px;">$\text{m}$</td>
+</tr>
 </table>
+</div>
+
+<div class="problem">
+<h3>Concept Comparison</h3>
+
+<table style="width:100%; border-collapse:collapse; margin-top:10px;">
+<tr>
+  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Concept</th>
+  <th style="border:1px solid #333; padding:10px; background:#f0f4f8; text-align:left;">Meaning</th>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">Electric Force</td>
+  <td style="border:1px solid #333; padding:10px;">Push or pull on a charge</td>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">Electric Field</td>
+  <td style="border:1px solid #333; padding:10px;">Force per unit charge</td>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">Voltage</td>
+  <td style="border:1px solid #333; padding:10px;">Energy per unit charge</td>
+</tr>
+<tr>
+  <td style="border:1px solid #333; padding:10px;">Work</td>
+  <td style="border:1px solid #333; padding:10px;">Energy transferred when charge moves</td>
+</tr>
+</table>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- WORKED DERIVATION -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Worked Derivation</h2>
+
+<p>
+The definition of electric field starts from the idea that field strength tells how much force would act on each unit of charge. That means:
+</p>
+
+<div class="strategy-box">
+$$E = \frac{F_e}{q}$$
+</div>
+
+<p>
+If we want to solve for force instead, multiply both sides by $q$:
+</p>
+
+$$qE = F_e$$
+
+<p>
+So we get:
+$$F_e = qE$$
+</p>
+
+<p>
+This algebra shows that electric field and force are closely connected. Field describes the environment. Force describes what happens when a particular charge is placed in that environment.
+</p>
+
+<div class="key-point">
+<strong>Why this matters:</strong> Students should see $E = \frac{F_e}{q}$ and $F_e = qE$ as the same relationship written for different purposes.
+</div>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Vocabulary</h2>
+
+<div class="definition">
+<strong>Electric field:</strong>
+<p>The region around a charged object where electric force is exerted on other charges.</p>
+</div>
+</div>
+
+<div class="definition">
+<strong>Electric field lines:</strong>
+<p>Lines that show the direction and relative strength of an electric field.</p>
+</div>
+
+<div class="definition">
+<strong>Dipole:</strong>
+<p>A pair of equal and opposite charges separated by a distance.</p>
+</div>
+
+<div class="definition">
+<strong>Uniform electric field:</strong>
+<p>An electric field with the same strength and direction at every point.</p>
+</div>
+
+<div class="definition">
+<strong>Electric potential energy:</strong>
+<p>Energy stored due to the position of a charge in an electric field.</p>
+</div>
+
+<div class="definition">
+<strong>Voltage:</strong>
+<p>The electric potential difference per unit charge; energy per coulomb.</p>
+</div>
+
+<div class="definition">
+<strong>Volt (V):</strong>
+<p>The SI unit of voltage; $1\,\text{V} = 1\,\text{J/C}$.</p>
+</div>
+
+<div class="definition">
+<strong>Potential difference:</strong>
+<p>The difference in electric potential between two points.</p>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- STRATEGIES -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Strategies</h2>
+
+<div class="strategy-box">
+
+<p><strong>Given → Find → Equation → Solve → Check Units</strong></p>
+
+<ol style="margin-left:20px;">
+<li><strong>Given:</strong> List the known values and units.</li>
+<li><strong>Find:</strong> Decide whether the problem is asking for field, force, voltage, work, or distance.</li>
+<li><strong>Equation:</strong> Choose the equation that matches the relationship in the problem.</li>
+<li><strong>Solve:</strong> Substitute carefully and isolate the variable if needed.</li>
+<li><strong>Check Units:</strong> Confirm the answer has the correct physics unit.</li>
+</ol>
+
+<p style="margin-top:15px;"><strong>Diagram Tips</strong></p>
+<ul style="margin-left:20px;">
+<li>Use arrows to show field direction.</li>
+<li>Remember field lines point away from positive and toward negative.</li>
+<li>For a negative charge, force is opposite the field direction.</li>
+<li>Sketching the situation first often prevents sign mistakes.</li>
+</ul>
+
+<p style="margin-top:15px;"><strong>Unit Analysis Tips</strong></p>
+<ul style="margin-left:20px;">
+<li>$\text{N/C}$ and $\text{V/m}$ are equivalent units for electric field.</li>
+<li>$1\,\text{V} = 1\,\text{J/C}$ helps connect energy and voltage.</li>
+<li>Use meters, not centimeters, in $E = \frac{V}{d}$.</li>
+</ul>
+
+</div>
+</div>
+
+<div class="key-point">
+<strong>Key Idea:</strong> In field and voltage problems, units often reveal which equation should be used.
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- EXAMPLES -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Examples</h2>
+
+<h3>Example 1 — Conceptual</h3>
+<div class="prompt">A positive test charge is placed near a positive source charge. Describe the direction of the electric field and the direction of the force on the test charge.</div>
+
+<div class="workspace workspace-200">
+  <img src="images/grid.png">
+</div>
+</div>
+
+<div class="problem">
+<h3>Example 2 — Single-Formula</h3>
+<div class="prompt">A charge of $2.0\,\text{C}$ experiences a force of $10\,\text{N}$. Find the electric field strength at that location.</div>
+
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<h3>Example 3 — Multi-Step</h3>
+<div class="prompt">An electric field has strength $150\,\text{N/C}$. Find the force on a charge of $-0.020\,\text{C}$ and state the direction relative to the field.</div>
+
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<h3>Example 4 — Unit Conversion Embedded</h3>
+<div class="prompt">A uniform electric field is created by a voltage difference of $12\,\text{V}$ across plates separated by $4.0\,\text{cm}$. Convert the distance and find the field strength.</div>
+
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<h3>Example 5 — Graph / Relationship Interpretation</h3>
+<div class="prompt">If the same voltage difference is applied across a smaller distance, what happens to the electric field strength? Explain using $E = \frac{V}{d}$.</div>
+
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<h3>Example 6 — Single-Formula</h3>
+<div class="prompt">How much work is done when a charge of $3.0\,\text{C}$ moves through a potential difference of $9.0\,\text{V}$?</div>
+
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<h3>Example 7 — Draw It</h3>
+<div class="prompt">Draw electric field lines around a positive charge and around a negative charge. Label the direction of the field lines in each case.</div>
+
+<div class="workspace workspace-300">
+  <img src="images/grid.png">
+</div>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- COMMON MISTAKES -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Common Mistakes</h2>
+
+<div class="definition">
+
+<ul style="margin-left:20px;">
+
+<li><strong>Confusing force and field:</strong> Force depends on the specific charge present; field describes the location itself.</li>
+
+<li><strong>Ignoring charge sign:</strong> A negative charge feels force opposite the field direction.</li>
+
+<li><strong>Mixing up voltage and electric field:</strong> Voltage is energy per charge; electric field is force per charge.</li>
+
+<li><strong>Unit mismatch:</strong> Distances must be in meters for $E = \frac{V}{d}$.</li>
+
+<li><strong>Using the wrong equation:</strong> Students often use $W = qV$ when the problem is asking for field, not work.</li>
+
+<li><strong>Treating field lines as motion paths:</strong> Field lines represent direction of force on a positive test charge, not necessarily the actual path a particle follows.</li>
+
+</ul>
+
+</div>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- LAB / SIM CONNECTION -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Lab / Simulation Connection</h2>
+
+<p>
+This section pairs well with an electrostatics or electric-fields simulation. Students can place positive and negative charges, observe field-line patterns, and test how a small charge responds. A PhET simulation or an oPhysics-style visualization can help students connect invisible electric fields to visible models and can also support exploration of how voltage and field strength change with position.
+</p>
+
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- SUMMARY -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Summary</h2>
+
+<div class="summary-box">
+
+<ul style="margin-left:20px;">
+
+<li>Electric field describes force per unit charge.</li>
+<li>Field lines point away from positive charges and toward negative charges.</li>
+<li>Electric force can be found from field using $F_e = qE$.</li>
+<li>Voltage describes energy per unit charge.</li>
+<li>Work and voltage are related by $W = qV$.</li>
+<li>In a uniform field, $E = \frac{V}{d}$ connects field strength, voltage, and distance.</li>
+
+</ul>
+
+</div>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- PRACTICE SET -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Practice Set</h2>
+<h3>Level 1 — Easy</h3>
+
+<p>1. State whether electric field lines point toward or away from a positive charge.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>2. State whether electric field lines point toward or away from a negative charge.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>3. What does electric field measure: force per charge or energy per charge?</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>4. What does voltage measure: force per charge or energy per charge?</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>5. Write the equations $E = \frac{F_e}{q}$ and $F_e = qE$ and identify the units of $E$.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<h3>Level 2 — Medium</h3>
+
+<p>6. A charge of $4.0\,\text{C}$ experiences a force of $20\,\text{N}$. Find the electric field strength.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>7. Find the force on a charge of $2.0\,\text{C}$ in an electric field of $15\,\text{N/C}$.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>8. A charge of $3.0\,\text{C}$ moves through a potential difference of $8.0\,\text{V}$. Find the work done.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>9. A uniform electric field is created by $24\,\text{V}$ across a distance of $2.0\,\text{m}$. Find the field strength.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>10. Convert $25\,\text{cm}$ to meters, then find the field strength for $10\,\text{V}$ across that distance.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<h3>Level 3 — Hard</h3>
+
+<p>11. A field of $200\,\text{N/C}$ acts on a charge of $-0.030\,\text{C}$. Find the force magnitude and state the direction relative to the field.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>12. A charge gains $45\,\text{J}$ of electric potential energy when moved through a potential difference of $9.0\,\text{V}$. Find the charge.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>13. A uniform field between two plates is $300\,\text{V/m}$. The plates are separated by $0.20\,\text{m}$. Find the voltage difference.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>14. Explain why a negative charge moves opposite the electric field direction even though the field itself is defined using a positive test charge.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>15. Describe the electric field pattern around a dipole.</p>
+<div class="workspace workspace-200">
+  <img src="images/grid.png">
+</div>
+</div>
+
+<div class="problem">
+<h3>Level 4 — Challenging</h3>
+
+<p>16. A field exerts a force of $12\,\text{N}$ on a $2.0\,\text{C}$ charge. What force would the same field exert on a $-5.0\,\text{C}$ charge? Include magnitude and direction.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>17. A voltage difference of $18\,\text{V}$ is applied across plates separated by $0.30\,\text{m}$. If the distance is cut in half while voltage stays the same, compare the new field to the original field.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>18. A charge of $4.0\,\text{C}$ moves through two different voltage differences: $6.0\,\text{V}$ and $12\,\text{V}$. Compare the work done in each case.</p>
+<div class="workspace workspace-300"></div>
+</div>
+
+<div class="problem">
+<p>19. Without calculating from scratch, explain how the field changes if voltage doubles and distance also doubles in a uniform electric field.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>20. Draw It: Sketch parallel plates producing a uniform electric field. Show the field direction and label the voltage difference and plate spacing.</p>
+<div class="workspace workspace-300">
+  <img src="images/grid.png">
+</div>
+</div>
+
+<div class="problem">
+<h3>Level 5 — Justification / Conceptual</h3>
+
+<p>21. Explain why electric field is a useful idea even when no test charge is currently present at a location.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>22. Explain how voltage and electric potential energy are related but not identical.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>23. A student says, “If voltage gets larger, the electric field must always get larger.” Explain why that is not always true.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>24. Explain why the same electric field can produce different forces on different charges.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+<div class="problem">
+<p>25. Explain how field lines and equations together help physicists understand invisible electric interactions.</p>
+<div class="workspace workspace-200"></div>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- SUPPLEMENTAL NOTES -->
+<!-- ======================= -->
+<div class="page-break"></div>
+
+<section>
+
+<h2>Supplemental Notes</h2>
+
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
 
 <div class="page-break"></div>
 
-<!-- ============== PRACTICE PROBLEMS ============== -->
-<h1>Practice Problems</h1>
-
-<p><strong>1.</strong> Describe what an electric field is and explain how electric field lines are used to represent the field visually. What do the direction and density of field lines tell us?</p>
-<div class="short-answer-space"></div>
-
-<p><strong>2.</strong> Compare the electric field patterns around (a) a single positive point charge, (b) a dipole (positive and negative charge pair), and (c) two parallel plates with opposite charges.</p>
-<div class="short-answer-space"></div>
-
-<p><strong>3.</strong> Define voltage (electric potential) and explain how it relates to electric potential energy. Why do we typically talk about voltage difference rather than absolute voltage at a single point?</p>
-<div class="short-answer-space"></div>
-
-<p><strong>4.</strong> A student says, "Voltage and current are the same thing because they both involve electricity." Explain why this statement is incorrect and describe the difference between voltage and current.</p>
-<div class="short-answer-space"></div>
-
-<p><strong>5.</strong> A charge of $q = +5.0 \times 10^{-8}$ C is placed in an electric field and experiences a force of $2.5 \times 10^{-3}$ N. Calculate the strength of the electric field at that location.</p>
-<div class="answer-space"></div>
-
-<p><strong>6.</strong> Two parallel plates are separated by a distance of 0.030 m. The electric field between them is $6.0 \times 10^3$ V/m. Calculate the voltage difference between the plates.</p>
-<div class="answer-space"></div>
-
-<p><strong>7.</strong> An electron (charge $= -1.60 \times 10^{-19}$ C) is accelerated through a potential difference of 500 V.</p>
-<p style="margin-left: 0.2in;">(a) Calculate the work done on the electron.</p>
-<p style="margin-left: 0.2in;">(b) If the electron started from rest, this work becomes kinetic energy. Calculate the final speed of the electron. (Electron mass $= 9.11 \times 10^{-31}$ kg)</p>
-<div class="answer-space"></div>
-
-<p><strong>8.</strong> A uniform electric field of strength $E = 8.0 \times 10^4$ V/m exists between two parallel plates that are $d = 0.025$ m apart. A proton (charge $= +1.60 \times 10^{-19}$ C, mass $= 1.67 \times 10^{-27}$ kg) is placed at rest near the positive plate and released.</p>
-<p style="margin-left: 0.2in;">(a) Calculate the voltage difference between the plates.</p>
-<p style="margin-left: 0.2in;">(b) Calculate the electric force on the proton.</p>
-<p style="margin-left: 0.2in;">(c) Calculate the acceleration of the proton.</p>
-<div class="answer-space"></div>
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
 
 <div class="page-break"></div>
 
-<!-- ============== ANSWER KEY ============== -->
-<h1>Answer Key</h1>
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
 
-<p><strong>1.</strong> An electric field is a region of space around a charged object where electric forces can be detected. Electric field lines are imaginary lines used to visualize the field. The direction of field lines shows the direction a positive test charge would be pushed—lines point away from positive charges and toward negative charges. The density (closeness) of field lines indicates the strength of the field—lines that are closer together represent stronger fields, while lines that are spread far apart represent weaker fields. Field lines never cross because the field has only one direction at any given point.</p>
+<div class="page-break"></div>
 
-<p><strong>2.</strong> (a) Around a single positive point charge, electric field lines radiate outward in all directions like spokes on a wheel. The field is strongest near the charge (lines are dense) and weaker farther away (lines spread out). (b) For a dipole, field lines emerge from the positive charge and curve through space to terminate on the negative charge. The pattern shows the field pointing from positive to negative, with curved lines showing how the two charges influence each other. (c) Between parallel plates with opposite charges, the field is uniform—the field lines are straight, parallel, and evenly spaced, indicating constant field strength and direction throughout the region between the plates.</p>
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
 
-<p><strong>3.</strong> Voltage (also called electric potential) is the electric potential energy per unit charge at a location in an electric field. It represents how much potential energy each coulomb of charge would have at that point. The relationship is $V = U_e / q$. We typically talk about voltage difference (potential difference) rather than absolute voltage because only differences in potential energy have physical meaning. Just as with height in a gravitational field, what matters is how much higher one point is than another, not some absolute height. Moving a charge through a voltage difference requires work and changes the charge's potential energy.</p>
+<div class="page-break"></div>
 
-<p><strong>4.</strong> The statement is incorrect because voltage and current are fundamentally different quantities. Voltage is electric potential difference—it measures the electric potential energy per unit charge and represents the "push" that drives charges to move. Current is the flow rate of charge—it measures how many coulombs of charge pass through a point per second. An analogy: voltage is like water pressure in a pipe (the push), while current is like the flow rate of water through the pipe (how much water flows per second). You can have high voltage with no current (disconnected charged battery) or current with low voltage (wire with little resistance).</p>
+<div class="problem">
+<div class="workspace workspace-600"></div>
+</div>
 
-<p><strong>5.</strong></p>
-<p>Given: $q = +5.0 \times 10^{-8}$ C, $F_e = 2.5 \times 10^{-3}$ N</p>
-<p>Use: $E = F_e / q$</p>
-$$E = \frac{2.5 \times 10^{-3} \text{ N}}{5.0 \times 10^{-8} \text{ C}} = 5.0 \times 10^4 \text{ N/C}$$
-<p><span class="highlight">Answer: The electric field strength is 5.0 × 10⁴ N/C or 50,000 N/C.</span></p>
+</section>
 
-<p><strong>6.</strong></p>
-<p>Given: $d = 0.030$ m, $E = 6.0 \times 10^3$ V/m</p>
-<p>Use: $V = Ed$</p>
-$$V = (6.0 \times 10^3 \text{ V/m})(0.030 \text{ m}) = 1.8 \times 10^2 \text{ V} = 180 \text{ V}$$
-<p><span class="highlight">Answer: The voltage difference is 180 V.</span></p>
+<!-- ======================= -->
+<!-- PRACTICE ANSWER KEY -->
+<!-- ======================= -->
+<section>
 
-<p><strong>7.</strong></p>
-<p>(a) Work done: $W = qV = (1.60 \times 10^{-19} \text{ C})(500 \text{ V}) = 8.0 \times 10^{-17}$ J</p>
+<div class="problem">
+<h2>Practice Answer Key</h2>
 
-<p>(b) The work becomes kinetic energy: $KE = \frac{1}{2}mv^2 = 8.0 \times 10^{-17}$ J</p>
-<p>Solve for $v$:</p>
-$$v = \sqrt{\frac{2 \times KE}{m}} = \sqrt{\frac{2 \times 8.0 \times 10^{-17}}{9.11 \times 10^{-31}}}$$
-$$v = \sqrt{1.76 \times 10^{14}} = 1.3 \times 10^7 \text{ m/s}$$
+<h3>Level 1 — Easy</h3>
+<p>1. Away from the positive charge</p>
+<p>2. Toward the negative charge</p>
+<p>3. Force per charge</p>
+<p>4. Energy per charge</p>
+<p>5. $E = \frac{F_e}{q}$ and $F_e = qE$; units of $E$ are $\text{N/C}$ or $\text{V/m}$</p>
 
-<p><span class="highlight">Answers: (a) 8.0 × 10⁻¹⁷ J; (b) 1.3 × 10⁷ m/s or 13 million m/s (about 4% the speed of light!).</span></p>
+<h3>Level 2 — Medium</h3>
+<p>6. $5.0\,\text{N/C}$</p>
+<p>7. $30\,\text{N}$</p>
+<p>8. $24\,\text{J}$</p>
+<p>9. $12\,\text{V/m}$</p>
+<p>10. $0.25\,\text{m}$ and $40\,\text{V/m}$</p>
 
-<p><strong>8.</strong></p>
-<p>Given: $E = 8.0 \times 10^4$ V/m, $d = 0.025$ m, $q = +1.60 \times 10^{-19}$ C, $m = 1.67 \times 10^{-27}$ kg</p>
+<h3>Level 3 — Hard</h3>
+<p>11. $6.0\,\text{N}$, opposite the field direction</p>
+<p>12. $5.0\,\text{C}$</p>
+<p>13. $60\,\text{V}$</p>
+<p>14. Because force on a negative charge is opposite field direction by $F_e = qE$</p>
+<p>15. Answers vary; field lines begin on positive and end on negative</p>
 
-<p>(a) Voltage difference:</p>
-$$V = Ed = (8.0 \times 10^4 \text{ V/m})(0.025 \text{ m}) = 2.0 \times 10^3 \text{ V} = 2{,}000 \text{ V}$$
+<h3>Level 4 — Challenging</h3>
+<p>16. Original field is $6.0\,\text{N/C}$, so new force is $30\,\text{N}$ opposite the field direction</p>
+<p>17. The new field is twice as large</p>
+<p>18. $24\,\text{J}$ and $48\,\text{J}$; the second case has twice the work</p>
+<p>19. It stays the same because both numerator and denominator double</p>
+<p>20. Answers vary; sketch should show uniform parallel field lines from positive to negative plate</p>
 
-<p>(b) Electric force:</p>
-$$F_e = qE = (1.60 \times 10^{-19} \text{ C})(8.0 \times 10^4 \text{ V/m}) = 1.28 \times 10^{-14} \text{ N}$$
+<h3>Level 5 — Justification / Conceptual</h3>
+<p>21–25. Answers vary</p>
 
-<p>(c) Acceleration (using Newton's Second Law):</p>
-$$a = \frac{F_e}{m} = \frac{1.28 \times 10^{-14} \text{ N}}{1.67 \times 10^{-27} \text{ kg}} = 7.7 \times 10^{12} \text{ m/s}^2$$
+</div>
 
-<p><span class="highlight">Answers: (a) 2,000 V; (b) 1.28 × 10⁻¹⁴ N pointing toward the negative plate; (c) 7.7 × 10¹² m/s² (an enormous acceleration—about a trillion times Earth's gravity!).</span></p>
+</section>
 
+<!-- ======================= -->
+<!-- DETAILED EXAMPLE SOLUTIONS -->
+<!-- ======================= -->
+<section>
+
+<div class="problem">
+<h2>Detailed Example Solutions</h2>
+
+<h3>Example 1 — Conceptual</h3>
+
+<p>
+Electric field direction is defined using a positive test charge. Near a positive source charge, the field points away from the source charge.
+</p>
+
+<p>
+Because the test charge is also positive, the electric force on it is in the same direction as the field: away from the positive charge.
+</p>
+</div>
+
+<div class="problem">
+<h3>Example 2 — Single-Formula</h3>
+
+<p><strong>Given:</strong> $q = 2.0\,\text{C}$, $F_e = 10\,\text{N}$</p>
+
+<p><strong>Equation:</strong></p>
+$$E = \frac{F_e}{q}$$
+
+<p><strong>Solve:</strong></p>
+$$E = \frac{10}{2.0} = 5.0\,\text{N/C}$$
+</div>
+
+<div class="problem">
+<h3>Example 3 — Multi-Step</h3>
+
+<p><strong>Given:</strong> $E = 150\,\text{N/C}$, $q = -0.020\,\text{C}$</p>
+
+<p><strong>Equation:</strong></p>
+$$F_e = qE$$
+
+<p><strong>Solve magnitude:</strong></p>
+$$|F_e| = |(-0.020)(150)| = 3.0\,\text{N}$$
+
+<p>
+Because the charge is negative, the force is opposite the field direction.
+</p>
+</div>
+
+<div class="problem">
+<h3>Example 4 — Unit Conversion Embedded</h3>
+
+<p>
+Convert distance:
+$$4.0\,\text{cm} = 0.040\,\text{m}$$
+</p>
+
+<p>
+Now use:
+$$E = \frac{V}{d} = \frac{12}{0.040} = 300\,\text{V/m}$$
+</p>
+</div>
+
+<div class="problem">
+<h3>Example 5 — Graph / Relationship Interpretation</h3>
+
+<p>
+From
+$$E = \frac{V}{d}$$
+if voltage stays the same and distance gets smaller, the field gets larger.
+</p>
+
+<p>
+This means charges would experience more force per coulomb in the smaller gap.
+</p>
+</div>
+
+<div class="problem">
+<h3>Example 6 — Single-Formula</h3>
+
+<p><strong>Given:</strong> $q = 3.0\,\text{C}$, $V = 9.0\,\text{V}$</p>
+
+<p><strong>Equation:</strong></p>
+$$W = qV$$
+
+<p><strong>Solve:</strong></p>
+$$W = (3.0)(9.0) = 27\,\text{J}$$
+</div>
+
+<div class="problem">
+<h3>Example 7 — Draw It</h3>
+
+<p>
+Field lines point away from a positive charge and toward a negative charge.
+</p>
+
+<div class="workspace workspace-200">
+  <img src="images/grid.png">
+</div>
+
+<p>
+A correct sketch shows outward arrows from the positive charge and inward arrows toward the negative charge.
+</p>
+</div>
+
+</section>
+
+</div>
 </body>
 </html>
