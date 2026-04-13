@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physics Showdown - Section 7.1 Electric Charge and Electric Force</title>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+@page {
+  size: 8.5in 11in;
+  margin: 0.5in;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+}
+
+.page {
+  width: 8in;
+  min-height: 10in;
+  padding: 0.25in;
+  box-sizing: border-box;
+  page-break-after: always;
+  margin: 0 auto;
+}
+
+.header {
+  background: #0b3d91;
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.content {
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.math {
+  margin-top: 8px;
+  font-size: 24px;
+}
+
+.center-title {
+  text-align: center;
+  margin-top: 2.2in;
+}
+
+.columns {
+  display: flex;
+  gap: 22px;
+}
+
+.col {
+  flex: 1;
+}
+
+.small {
+  font-size: 18px;
+}
+
+ul {
+  margin: 6px 0 0 20px;
+}
+
+li {
+  margin-bottom: 4px;
+}
+
+.spacer {
+  height: 200px;
+}
+
+b {
+  font-weight: 700;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TITLE -->
+<div class="page center-title">
+  <h1>Physics Showdown</h1>
+  <h2>Section 7.1: Electric Charge and Electric Force</h2>
+  <div class="spacer"></div>
+</div>
+
+<!-- DIRECTIONS -->
+<div class="page">
+  <div class="header">Showdown Directions</div>
+  <div class="content">
+    <div class="columns">
+      <div class="col">
+        <b>Setup:</b> Groups of 4 • each student needs a whiteboard • assign a <b>Captain</b> each round.
+        <br><br>
+        <b>1. Read & Think (30s):</b> The Captain reads the problem aloud. Everyone gets silent think time.
+        <br><br>
+        <b>2. Work Alone:</b> All 4 teammates solve silently on their own. No talking or peeking. When done, flip your board face-down and give thumbs up.
+        <br><br>
+        <b>3. SHOWDOWN!</b> When everyone is ready, the Captain calls “SHOWDOWN!” and all answers are revealed at the same time.
+      </div>
+      <div class="col">
+        <b>4. Check & Celebrate:</b> If all are correct, celebrate. If answers differ, discuss, find the mistake, teach each other, then celebrate.
+        <br><br>
+        <b>5. Rotate Captain:</b> The person to the left becomes the new Captain.
+        <br><br>
+        <b>Good teamwork:</b>
+        <ul class="small">
+          <li>“Let me show you how I did that...”</li>
+          <li>“Oh, I see where I made my mistake!”</li>
+          <li>“What method did you use?”</li>
+        </ul>
+        <b>Avoid:</b>
+        <ul class="small">
+          <li>Showing work before “SHOWDOWN!”</li>
+          <li>Rushing teammates</li>
+          <li>Copying someone else’s answer</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 1 -->
+<div class="page">
+  <div class="header">Problem 1</div>
+  <div class="content">
+    <b>Define:</b>
+    <div class="math">What is static electricity?</div>
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 1 -->
+<div class="page">
+  <div class="header">Problem 1 Answer</div>
+  <div class="content">
+    <b>Define:</b>
+    <div class="math">What is static electricity?</div>
+    <br>
+    Static electricity is electric charge at rest.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 2 -->
+<div class="page">
+  <div class="header">Problem 2</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    Two positively charged objects are brought near each other. What happens?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 2 -->
+<div class="page">
+  <div class="header">Problem 2 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    Two positively charged objects are brought near each other. What happens?
+    <br><br>
+    They repel each other.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 3 -->
+<div class="page">
+  <div class="header">Problem 3</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    If the distance between two charges doubles, what happens to the force?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 3 -->
+<div class="page">
+  <div class="header">Problem 3 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    If the distance between two charges doubles, what happens to the force?
+    <br><br>
+    The force becomes one-fourth as large.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 4 -->
+<div class="page">
+  <div class="header">Problem 4</div>
+  <div class="content">
+    <b>Application:</b>
+    An object gains electrons. What is its charge?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 4 -->
+<div class="page">
+  <div class="header">Problem 4 Answer</div>
+  <div class="content">
+    <b>Application:</b>
+    An object gains electrons. What is its charge?
+    <br><br>
+    Negatively charged.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 5 -->
+<div class="page">
+  <div class="header">Problem 5</div>
+  <div class="content">
+    <b>Calculation:</b><br>
+    Two charges of \( 3.0 \times 10^{-6} \) C and \( 2.0 \times 10^{-6} \) C are separated by 0.50 m.
+    <br>
+    Find the electric force.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 5 -->
+<div class="page">
+  <div class="header">Problem 5 Answer</div>
+  <div class="content">
+    <b>Calculation:</b><br>
+    Two charges of \( 3.0 \times 10^{-6} \) C and \( 2.0 \times 10^{-6} \) C are separated by 0.50 m.
+    <br>
+    Find the electric force.
+    <br><br>
+    \( F = 0.216 \, \text{N} \)
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 6 -->
+<div class="page">
+  <div class="header">Problem 6</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    Why does a charged balloon stick to a neutral wall?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 6 -->
+<div class="page">
+  <div class="header">Problem 6 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    Why does a charged balloon stick to a neutral wall?
+    <br><br>
+    Polarization rearranges charges in the wall, causing attraction.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 7 -->
+<div class="page">
+  <div class="header">Problem 7</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What happens to electric force if both charges double?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 7 -->
+<div class="page">
+  <div class="header">Problem 7 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What happens to electric force if both charges double?
+    <br><br>
+    The force quadruples.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 8 -->
+<div class="page">
+  <div class="header">Problem 8</div>
+  <div class="content">
+    <b>Multi-step:</b><br>
+    Two charges are separated by 0.40 m with force 0.674 N.
+    <br>
+    What happens to the force if the distance doubles?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 8 -->
+<div class="page">
+  <div class="header">Problem 8 Answer</div>
+  <div class="content">
+    <b>Multi-step:</b><br>
+    Two charges are separated by 0.40 m with force 0.674 N.
+    <br>
+    What happens to the force if the distance doubles?
+    <br><br>
+    New force = 0.169 N.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 9 -->
+<div class="page">
+  <div class="header">Problem 9</div>
+  <div class="content">
+    <b>Reasoning:</b>
+    Two objects repel each other. What must be true?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 9 -->
+<div class="page">
+  <div class="header">Problem 9 Answer</div>
+  <div class="content">
+    <b>Reasoning:</b>
+    Two objects repel each other. What must be true?
+    <br><br>
+    They have like charges.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 10 -->
+<div class="page">
+  <div class="header">Problem 10</div>
+  <div class="content">
+    <b>Application:</b>
+    What is 1 coulomb equal to?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 10 -->
+<div class="page">
+  <div class="header">Problem 10 Answer</div>
+  <div class="content">
+    <b>Application:</b>
+    What is 1 coulomb equal to?
+    <br><br>
+    \( 1 \, \text{C} = 1 \, \text{A} \cdot \text{s} \)
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 11 -->
+<div class="page">
+  <div class="header">Problem 11</div>
+  <div class="content">
+    <b>Explain:</b>
+    Why do two charges exert equal and opposite forces?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 11 -->
+<div class="page">
+  <div class="header">Problem 11 Answer</div>
+  <div class="content">
+    <b>Explain:</b>
+    Why do two charges exert equal and opposite forces?
+    <br><br>
+    Newton’s Third Law: forces come in equal and opposite pairs.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 12 -->
+<div class="page">
+  <div class="header">Problem 12</div>
+  <div class="content">
+    <b>Define:</b>
+    What is electric charge?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 12 -->
+<div class="page">
+  <div class="header">Problem 12 Answer</div>
+  <div class="content">
+    <b>Define:</b>
+    What is electric charge?
+    <br><br>
+    A fundamental property of matter that causes electric forces.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 13 -->
+<div class="page">
+  <div class="header">Problem 13</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What particle carries positive charge?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 13 -->
+<div class="page">
+  <div class="header">Problem 13 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What particle carries positive charge?
+    <br><br>
+    Protons.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 14 -->
+<div class="page">
+  <div class="header">Problem 14</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What particle carries negative charge?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 14 -->
+<div class="page">
+  <div class="header">Problem 14 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What particle carries negative charge?
+    <br><br>
+    Electrons.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 15 -->
+<div class="page">
+  <div class="header">Problem 15</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    If an object loses electrons, what is its charge?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 15 -->
+<div class="page">
+  <div class="header">Problem 15 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    If an object loses electrons, what is its charge?
+    <br><br>
+    Positively charged.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 16 -->
+<div class="page">
+  <div class="header">Problem 16</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What does Coulomb’s Law describe?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 16 -->
+<div class="page">
+  <div class="header">Problem 16 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What does Coulomb’s Law describe?
+    <br><br>
+    The electric force between two point charges.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 17 -->
+<div class="page">
+  <div class="header">Problem 17</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What two variables affect electric force?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 17 -->
+<div class="page">
+  <div class="header">Problem 17 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What two variables affect electric force?
+    <br><br>
+    Charge magnitude and distance.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 18 -->
+<div class="page">
+  <div class="header">Problem 18</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What happens to force if distance is cut in half?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 18 -->
+<div class="page">
+  <div class="header">Problem 18 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What happens to force if distance is cut in half?
+    <br><br>
+    It becomes 4 times larger.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 19 -->
+<div class="page">
+  <div class="header">Problem 19</div>
+  <div class="content">
+    <b>Application:</b>
+    What is the charge of a proton?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 19 -->
+<div class="page">
+  <div class="header">Problem 19 Answer</div>
+  <div class="content">
+    <b>Application:</b>
+    What is the charge of a proton?
+    <br><br>
+    \( +1.60 \times 10^{-19} \, \text{C} \)
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 20 -->
+<div class="page">
+  <div class="header">Problem 20</div>
+  <div class="content">
+    <b>Application:</b>
+    What is the elementary charge?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 20 -->
+<div class="page">
+  <div class="header">Problem 20 Answer</div>
+  <div class="content">
+    <b>Application:</b>
+    What is the elementary charge?
+    <br><br>
+    \( 1.60 \times 10^{-19} \, \text{C} \)
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 21 -->
+<div class="page">
+  <div class="header">Problem 21</div>
+  <div class="content">
+    <b>Reasoning:</b>
+    Why are charges often modeled as point charges?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 21 -->
+<div class="page">
+  <div class="header">Problem 21 Answer</div>
+  <div class="content">
+    <b>Reasoning:</b>
+    Why are charges often modeled as point charges?
+    <br><br>
+    Because their size is negligible compared to the distance involved.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- PROBLEM 22 -->
+<div class="page">
+  <div class="header">Problem 22</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What is the Law of Electric Charges?
+  </div>
+  <div class="spacer"></div>
+</div>
+
+<!-- ANSWER 22 -->
+<div class="page">
+  <div class="header">Problem 22 Answer</div>
+  <div class="content">
+    <b>Conceptual:</b>
+    What is the Law of Electric Charges?
+    <br><br>
+    Like charges repel; opposite charges attract.
+  </div>
+  <div class="spacer"></div>
+</div>
+
+</body>
+</html>
