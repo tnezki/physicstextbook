@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Conquest Quest: Discovering William the Conqueror</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --parchment: #f4e8d0;
+            --aged-paper: #e8dcc4;
+            --ink-black: #1a1410;
+            --royal-burgundy: #8b1538;
+            --medieval-gold: #d4af37;
+            --forest-green: #2d5016;
+            --stone-grey: #5a5a5a;
+            --accent-red: #c41e3a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, var(--aged-paper) 0%, var(--parchment) 100%);
+            color: var(--ink-black);
+            line-height: 1.7;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+            pointer-events: none;
+            opacity: 0.5;
+            z-index: 1;
+        }
+
+        .page-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        header {
+            background: linear-gradient(180deg, var(--royal-burgundy) 0%, #6b0f2a 100%);
+            color: var(--medieval-gold);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-bottom: 6px solid var(--medieval-gold);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '⚔';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%) rotate(-15deg);
+        }
+
+        header::after {
+            content: '👑';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%) rotate(15deg);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--parchment);
+            position: relative;
+            z-index: 2;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.6);
+            border: 3px solid var(--medieval-gold);
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .intro h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--royal-burgundy);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--medieval-gold);
+            padding-bottom: 0.5rem;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .quest-section {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .quest-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 8px solid var(--royal-burgundy);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            animation: slideIn 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .quest-card:nth-child(1) { animation-delay: 0.1s; }
+        .quest-card:nth-child(2) { animation-delay: 0.2s; }
+        .quest-card:nth-child(3) { animation-delay: 0.3s; }
+        .quest-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .quest-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            border-left-width: 12px;
+        }
+
+        .quest-number {
+            display: inline-block;
+            background: var(--royal-burgundy);
+            color: var(--medieval-gold);
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            margin-right: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .quest-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--royal-burgundy);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .question-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .question-list li {
+            padding: 0.8rem;
+            margin-bottom: 0.8rem;
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--medieval-gold);
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+        }
+
+        .question-list li:hover {
+            background: rgba(212, 175, 55, 0.2);
+            padding-left: 1.2rem;
+        }
+
+        .question-list li::before {
+            content: '📜 ';
+            margin-right: 0.5rem;
+        }
+
+        .resource-link {
+            display: inline-block;
+            background: var(--forest-green);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .resource-link:hover {
+            background: var(--royal-burgundy);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .resource-link::after {
+            content: ' →';
+            margin-left: 0.5rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 21, 56, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+            border: 2px solid var(--medieval-gold);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box strong {
+            color: var(--royal-burgundy);
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+        }
+
+        .tapestry-section {
+            background: linear-gradient(135deg, var(--forest-green) 0%, #1e3a0f 100%);
+            color: var(--parchment);
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .tapestry-section h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--medieval-gold);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tapestry-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        footer {
+            background: var(--ink-black);
+            color: var(--aged-paper);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-style: italic;
+        }
+
+        .instructions {
+            background: rgba(196, 30, 58, 0.1);
+            border: 2px dashed var(--accent-red);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .instructions h4 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent-red);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .blank {
+            display: inline-block;
+            min-width: 120px;
+            border-bottom: 2px solid var(--ink-black);
+            margin: 0 0.3rem;
+            color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .subtitle { font-size: 1.1rem; }
+            .quest-card { padding: 1.5rem; }
+            .quest-number { width: 40px; height: 40px; line-height: 40px; font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>The Conquest Quest</h1>
+            <p class="subtitle">Unraveling the Story of William the Conqueror</p>
+        </header>
+
+        <div class="intro">
+            <h2>Your Mission, Noble Scholar</h2>
+            <p>The year is 1066, and England stands at a crossroads of history. A Norman duke is about to change the course of English history forever. Your quest is to investigate the life, claim, and conquest of one of medieval Europe's most powerful rulers: <strong>William the Conqueror</strong>.</p>
+            <p>Using historical sources and the magnificent Bayeux Tapestry, you will piece together the story of how a duke became a king and how feudalism took root in English soil.</p>
+            
+            <div class="instructions">
+                <h4>⚔ Quest Instructions</h4>
+                <p>Complete each quest section by exploring the provided resources. Record your answers on your guided notes worksheet. Use the slideshow presentation and the Bayeux Tapestry online resource to discover the answers.</p>
+            </div>
+        </div>
+
+        <div class="quest-section">
+            <div class="quest-card">
+                <h3>
+                    <span class="quest-number">I</span>
+                    The Man Behind the Legend
+                </h3>
+                <p>Before William conquered England, he had other names and titles. Investigate his identity and origins:</p>
+                <ul class="question-list">
+                    <li>What other names did William have or go by?</li>
+                    <li>William Duke of <span class="blank">_______________</span></li>
+                    <li>William the <span class="blank">______________</span></li>
+                    <li>William the <span class="blank">______________</span></li>
+                    <li>Where was William from, originally?</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Research Tip:</strong> Look at the slideshow presentation for clues about William's various titles and his homeland across the English Channel.
+                </div>
+            </div>
+
+            <div class="quest-card">
+                <h3>
+                    <span class="quest-number">II</span>
+                    The Claim to the Throne
+                </h3>
+                <p>In medieval times, becoming king wasn't always straightforward. Explore William's controversial claim to the English throne:</p>
+                <ul class="question-list">
+                    <li>What was William's claim to the English throne?</li>
+                    <li>How did the people of England feel about his claim?</li>
+                    <li>Who did William seek/ask for permission to be king, or who supported his claim?</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Historical Context:</strong> Consider the role of royal succession, promises made by previous kings, and the power of the Church in legitimizing rulers. The slideshow contains important information about Edward the Confessor and Harold Godwinson.
+                </div>
+            </div>
+
+            <div class="quest-card">
+                <h3>
+                    <span class="quest-number">III</span>
+                    The Path to Power
+                </h3>
+                <p>William didn't become king through peaceful means. Discover how he seized the English throne:</p>
+                <ul class="question-list">
+                    <li>How did William become King of England?</li>
+                    <li>What famous battle secured his victory?</li>
+                    <li>What happened to his rival, Harold Godwinson?</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Primary Source Alert:</strong> The Bayeux Tapestry tells the dramatic story of the Norman Conquest. Pay special attention to the scenes depicting the invasion and the decisive battle.
+                </div>
+                <a href="https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/discover-the-bayeux-tapestry/explore-online/" target="_blank" class="resource-link">
+                    Explore the Bayeux Tapestry
+                </a>
+            </div>
+
+            <div class="tapestry-section">
+                <h3>🏰 The Bayeux Tapestry Experience</h3>
+                <p>The Bayeux Tapestry is a 70-meter-long embroidered cloth that depicts the events leading up to the Norman conquest of England. Created in the 11th century, it is one of the most important primary sources for understanding William's invasion.</p>
+                <p><strong>Your Task:</strong> Navigate through the online tapestry and identify the key scenes that show William's preparation, the crossing of the Channel, and the Battle of Hastings. Look for visual details that bring this historic event to life!</p>
+                <a href="https://www.bayeuxmuseum.com/en/the-bayeux-tapestry/discover-the-bayeux-tapestry/explore-online/" target="_blank" class="resource-link">
+                    Begin Your Tapestry Investigation
+                </a>
+            </div>
+
+            <div class="quest-card">
+                <h3>
+                    <span class="quest-number">IV</span>
+                    Reflection & Feudalism Connection
+                </h3>
+                <p>Now that you understand William's conquest, connect it to the bigger picture of medieval governance:</p>
+                <ul class="question-list">
+                    <li>How did William's conquest change England?</li>
+                    <li>What system of government did William establish in England?</li>
+                    <li>Why was William's claim considered controversial by the English people?</li>
+                    <li>How did the feudal system help William maintain control over his new kingdom?</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Think Deeper:</strong> Reference page 2 of your guided notes on Feudalism. Consider how William used the feudal system to reward his Norman followers while controlling English lands. Think about the exchange relationships between lords and vassals that William established.
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>"The man who does not learn from history is doomed to repeat it."</p>
+            <p>Complete this webquest to unlock the secrets of medieval power and conquest!</p>
+        </footer>
+    </div>
+</body>
+</html>
