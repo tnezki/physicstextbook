@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 7.2 Station Activity — Electric Fields and Voltage</title>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+/* ===================== GLOBAL RESET & BASE ===================== */
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 11.5pt;
+  line-height: 1.65;
+  color: #1a1a1a;
+  background: #fff;
+}
+
+/* ===================== PRINT / PAGE SETUP ===================== */
+@media print {
+  .station-page { page-break-before: always; }
+  .station-page:first-of-type { page-break-before: auto; }
+  body { font-size: 11pt; }
+}
+
+/* ===================== STATION PAGE WRAPPER ===================== */
+.station-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 32px 24px 32px;
+}
+
+/* ===================== STATION HEADER ===================== */
+.station-header {
+  border-top: 6px solid #00003d;
+  border-bottom: 3px solid #00003d;
+  padding: 12px 0 10px 0;
+  margin-bottom: 18px;
+}
+
+.station-label {
+  font-size: 28pt;
+  font-weight: 900;
+  color: #00003d;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.station-subtitle {
+  font-size: 14pt;
+  font-weight: 700;
+  color: #003580;
+  margin-top: 2px;
+}
+
+.station-topic {
+  font-size: 10pt;
+  color: #555;
+  margin-top: 3px;
+  font-style: italic;
+}
+
+/* ===================== NAME / DATE LINE ===================== */
+.name-line {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 14px;
+  font-size: 10.5pt;
+}
+
+.name-line span {
+  flex: 1;
+  border-bottom: 1.5px solid #333;
+  padding-bottom: 2px;
+}
+
+/* ===================== FORMULA BOX ===================== */
+.formula-box {
+  background: #eef3ff;
+  border: 2px solid #4a6fdc;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  font-size: 10.5pt;
+}
+
+.formula-box .fb-title {
+  font-weight: 700;
+  color: #00003d;
+  margin-bottom: 4px;
+  font-size: 10pt;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.formula-box .fb-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+/* ===================== DIRECTIONS ===================== */
+.directions {
+  font-size: 10pt;
+  color: #444;
+  font-style: italic;
+  margin-bottom: 10px;
+  border-left: 3px solid #bbb;
+  padding-left: 8px;
+}
+
+/* ===================== QUESTIONS ===================== */
+.question {
+  margin-bottom: 12px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.question p {
+  margin-bottom: 2px;
+  font-size: 11pt;
+}
+
+.qnum {
+  font-weight: 700;
+  color: #00003d;
+}
+
+
+/* ===================== SECTION DIVIDER ===================== */
+.section-divider {
+  margin: 16px 0 10px 0;
+  font-weight: 700;
+  font-size: 10.5pt;
+  color: #003580;
+  border-bottom: 1.5px solid #003580;
+  padding-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ===================== DOK3 NOTE ===================== */
+.dok-note {
+  background: #fff8e1;
+  border-left: 4px solid #f9a825;
+  padding: 7px 10px;
+  margin-bottom: 10px;
+  font-size: 9.5pt;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ===================== EXIT TICKET ===================== */
+.exit-header {
+  border-top: 4px solid #00003d;
+  border-bottom: 2px solid #00003d;
+  padding: 6px 0 5px 0;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.exit-header .exit-label {
+  font-size: 16pt;
+  font-weight: 900;
+  color: #00003d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.exit-header .exit-sub {
+  font-size: 10pt;
+  color: #444;
+  font-style: italic;
+}
+
+.mc-question {
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.mc-options {
+  margin-top: 4px;
+  margin-left: 16px;
+  font-size: 10.5pt;
+}
+
+.mc-option {
+  margin-bottom: 2px;
+}
+
+/* ===================== ANSWER KEY STYLES ===================== */
+.key-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 32px 24px 32px;
+}
+
+.key-header {
+  border-top: 6px solid #1a6b1a;
+  border-bottom: 2px solid #1a6b1a;
+  padding: 10px 0 8px 0;
+  margin-bottom: 16px;
+}
+
+.key-label {
+  font-size: 20pt;
+  font-weight: 900;
+  color: #1a6b1a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.key-sub {
+  font-size: 11pt;
+  font-weight: 600;
+  color: #2a8a2a;
+}
+
+.key-item {
+  margin-bottom: 10px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.key-item .kq {
+  font-weight: 700;
+  color: #00003d;
+}
+
+.key-item .ka {
+  margin-left: 18px;
+  color: #1a1a1a;
+}
+
+.key-note {
+  font-size: 9.5pt;
+  color: #555;
+  margin-left: 18px;
+  font-style: italic;
+}
+
+.key-section-title {
+  font-size: 13pt;
+  font-weight: 700;
+  color: #1a6b1a;
+  border-bottom: 1.5px solid #bde8bd;
+  padding-bottom: 3px;
+  margin: 14px 0 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.for-teacher {
+  background: #f0fff0;
+  border: 1px solid #5cb85c;
+  border-radius: 4px;
+  padding: 7px 10px;
+  font-size: 9.5pt;
+  margin-bottom: 12px;
+  color: #444;
+}
+
+/* ===================== PAGE BREAK UTILITY ===================== */
+.page-break { page-break-before: always; }
+
+</style>
+</head>
+<body>
+
+<!-- ================================================================ -->
+<!--  STATION 1 — VOCABULARY                                          -->
+<!-- ================================================================ -->
+<div class="station-page">
+
+  <div class="station-header">
+    <div class="station-label">Station 1</div>
+    <div class="station-subtitle">Vocabulary</div>
+    <div class="station-topic">Section 7.2 — Electric Fields and Voltage</div>
+  </div>
+
+  <div class="name-line">
+    <span>Name: ____________________________</span>
+    <span>Period: ___________</span>
+  </div>
+
+  <div class="directions">Define each term in your own words, or complete the sentence. Record your answers on your record sheet.</div>
+
+  <div class="question">
+    <p><span class="qnum">1.</span> An <strong>electric field</strong> is a region around a charge where…</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">2.</span> <strong>Electric field lines</strong> show two things about a field. Name both:</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">3.</span> When field lines are closer together, the electric field is _______________. When they are farther apart, the field is _______________.</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">4.</span> A <strong>dipole</strong> consists of:</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">5.</span> A <strong>uniform electric field</strong> is one in which the field strength and direction are…</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">6.</span> <strong>Voltage</strong> (electric potential) is defined as _______________ per unit _______________.</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">7.</span> The <strong>volt</strong> (V) is the SI unit of voltage. Write what one volt equals in terms of joules and coulombs:</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">8.</span> <strong>Electric potential energy</strong> is energy a charge has because of…</p>
+  </div>
+
+</div><!-- end station-page -->
+
+
+<!-- ================================================================ -->
+<!--  STATION 2 — CONCEPTUAL                                          -->
+<!-- ================================================================ -->
+<div class="station-page page-break">
+
+  <div class="station-header">
+    <div class="station-label">Station 2</div>
+    <div class="station-subtitle">Conceptual Questions</div>
+    <div class="station-topic">Section 7.2 — Electric Fields and Voltage</div>
+  </div>
+
+  <div class="name-line">
+    <span>Name: ____________________________</span>
+    <span>Period: ___________</span>
+  </div>
+
+  <div class="directions">Answer each question using complete sentences. No calculations needed — explain the physics.</div>
+
+  <div class="question">
+    <p><span class="qnum">1.</span> Electric field lines always point away from positive charges and toward negative charges. What does the direction of a field line tell you about what would happen to a positive test charge placed there?</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">2.</span> A proton and an electron are each placed in the same electric field. Will the force on each have the same magnitude? The same direction? Explain using $F = qE$.</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">3.</span> If the electric field between two parallel plates doubles, but the charge on a particle inside stays the same, what happens to the force on that particle? Explain your reasoning.</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">4.</span> Why does it require work to move a positive charge from a low-voltage region to a high-voltage region? Use the idea of energy in your answer.</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">5.</span> Two points in a circuit are at the same voltage. A charge moves from one to the other. How much work is done on the charge by the electric field? Explain.</p>
+  </div>
+
+</div><!-- end station-page -->
+
+
+<!-- ================================================================ -->
+<!--  STATION 3 — SINGLE FORMULA                                      -->
+<!-- ================================================================ -->
+<div class="station-page page-break">
+
+  <div class="station-header">
+    <div class="station-label">Station 3</div>
+    <div class="station-subtitle">Single Formula Problems</div>
+    <div class="station-topic">Section 7.2 — Electric Fields and Voltage</div>
+  </div>
+
+  <div class="name-line">
+    <span>Name: ____________________________</span>
+    <span>Period: ___________</span>
+  </div>
+
+  <div class="formula-box">
+    <div class="fb-title">Formulas for This Station</div>
+    <div class="fb-list">
+      <span>$E = \dfrac{F}{q}$</span>
+      <span>$F = qE$</span>
+      <span>$V = \dfrac{U}{q}$</span>
+      <span>$W = qV$</span>
+      <span>$E = \dfrac{V}{d}$</span>
+    </div>
+  </div>
+
+  <div class="directions">Show your work on your record sheet: write the formula, substitute values, and circle your final answer with units.</div>
+
+  <div class="question">
+    <p><span class="qnum">1.</span> A force of $0.36\,\text{N}$ acts on a charge of $4.0 \times 10^{-6}\,\text{C}$ in an electric field. What is the electric field strength?</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">2.</span> An electric field of $5000\,\text{N/C}$ acts on a charge of $3.0 \times 10^{-6}\,\text{C}$. What force does the charge experience?</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">3.</span> A charge of $2.0\,\text{C}$ has $14\,\text{J}$ of electric potential energy. What is the voltage at that location?</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">4.</span> A charge of $0.50\,\text{C}$ moves through a potential difference of $12\,\text{V}$. How much work is done?</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">5.</span> Two parallel plates are separated by $0.040\,\text{m}$ with a potential difference of $80\,\text{V}$ across them. What is the electric field strength between the plates?</p>
+  </div>
+
+</div><!-- end station-page -->
+
+
+<!-- ================================================================ -->
+<!--  STATION 4 — MULTI-STEP                                          -->
+<!-- ================================================================ -->
+<div class="station-page page-break">
+
+  <div class="station-header">
+    <div class="station-label">Station 4</div>
+    <div class="station-subtitle">Multi-Step Problems</div>
+    <div class="station-topic">Section 7.2 — Electric Fields and Voltage</div>
+  </div>
+
+  <div class="name-line">
+    <span>Name: ____________________________</span>
+    <span>Period: ___________</span>
+  </div>
+
+  <div class="formula-box">
+    <div class="fb-title">Formulas for This Station</div>
+    <div class="fb-list">
+      <span>$E = \dfrac{F}{q}$</span>
+      <span>$F = qE$</span>
+      <span>$V = \dfrac{U}{q}$</span>
+      <span>$W = qV$</span>
+      <span>$E = \dfrac{V}{d}$</span>
+    </div>
+  </div>
+
+  <div class="directions">Each problem requires more than one step. Label each step clearly. Show all work on your record sheet.</div>
+
+  <div class="question">
+    <p><span class="qnum">1.</span> Parallel plates are separated by $0.050\,\text{m}$ with a potential difference of $150\,\text{V}$.</p>
+    <p style="margin-left:16px;">(a) Find the electric field strength between the plates.</p>
+    <p style="margin-left:16px;">(b) A particle with charge $q = 2.0 \times 10^{-6}\,\text{C}$ is placed between the plates. Find the force on it.</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">2.</span> A particle experiences a force of $0.24\,\text{N}$ in a region where the electric field strength is $6.0 \times 10^4\,\text{N/C}$.</p>
+    <p style="margin-left:16px;">(a) Find the charge on the particle.</p>
+    <p style="margin-left:16px;">(b) How much work is done moving this particle through a potential difference of $9.0\,\text{V}$?</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">3.</span> A charge of $5.0 \times 10^{-6}\,\text{C}$ is in a region with an electric field of $8000\,\text{N/C}$. The plates creating this field are $0.020\,\text{m}$ apart.</p>
+    <p style="margin-left:16px;">(a) Find the force on the charge.</p>
+    <p style="margin-left:16px;">(b) Find the potential difference (voltage) across the plates.</p>
+  </div>
+
+</div><!-- end station-page -->
+
+
+<!-- ================================================================ -->
+<!--  STATION 5 — DOK 3 ANALYSIS & REASONING                         -->
+<!-- ================================================================ -->
+<div class="station-page page-break">
+
+  <div class="station-header">
+    <div class="station-label">Station 5</div>
+    <div class="station-subtitle">Analysis &amp; Reasoning (DoK Level 3)</div>
+    <div class="station-topic">Section 7.2 — Electric Fields and Voltage</div>
+  </div>
+
+  <div class="name-line">
+    <span>Name: ____________________________</span>
+    <span>Period: ___________</span>
+  </div>
+
+  <div class="dok-note">
+    <strong>What is DoK 3?</strong> These questions ask you to go beyond recall and calculation. You must reason, compare, evaluate claims, and justify your thinking with evidence from physics.
+  </div>
+
+  <div class="formula-box">
+    <div class="fb-title">Reference Formulas</div>
+    <div class="fb-list">
+      <span>$E = \dfrac{F}{q}$</span>
+      <span>$F = qE$</span>
+      <span>$V = \dfrac{U}{q}$</span>
+      <span>$W = qV$</span>
+      <span>$E = \dfrac{V}{d}$</span>
+    </div>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">1.</span> A student claims: "Doubling the charge in a region will double the electric field strength at that location." Do you agree or disagree? Use your understanding of what an electric field represents to explain.</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">2.</span> Two regions of space, A and B, are created by different charge configurations. In region A, field lines are 2 mm apart. In region B, field lines are 5 mm apart. A particle with the same charge is placed in each region. Compare and explain the force the particle experiences in each, and describe what would happen to its motion over time in each region.</p>
+  </div>
+
+  <div class="question">
+    <p><span class="qnum">3.</span> A technician wants to double the electric field between two parallel plates without changing the voltage source. What change could they make to the plates, and why would it work? Predict what would happen to the force on a charged particle in the new setup.</p>
+  </div>
+
+</div><!-- end station-page -->
+
+
+<!-- ================================================================ -->
+<!--  STATION 6 — MIX OF ALL TYPES                                   -->
+<!-- ================================================================ -->
+<div class="station-page page-break">
+
+  <div class="station-header">
+    <div class="station-label">Station 6</div>
+    <div class="station-subtitle">Mixed Review</div>
+    <div class="station-topic">Section 7.2 — Electric Fields and Voltage</div>
+  </div>
+
+  <div class="name-line">
+    <span>Name: ____________________________</span>
+    <span>Period: ___________</span>
+  </div>
+
+  <div class="formula-box">
+    <div class="fb-title">Formulas</div>
+    <div class="fb-list">
+      <span>$E = \dfrac{F}{q}$</span>
+      <span>$F = qE$</span>
+      <span>$V = \dfrac{U}{q}$</span>
+      <span>$W = qV$</span>
+      <span>$E = \dfrac{V}{d}$</span>
+    </div>
+  </div>
+
+  <div class="section-divider">Part A — Vocabulary</div>
+
+  <div class="question">
+    <p><span class="qnum">1.</span> In a uniform electric field, the field lines are _____________ and _____________ from each other.</p>
+  </div>
+
+  <div class="section-divider">Part B — Conceptual</div>
+
+  <div class="question">
+    <p><span class="qnum">2.</span> A negative charge is released from rest in a uniform electric field. Describe the direction it will move and explain why using the relationship between charge, field, and force.</p>
+  </div>
+
+  <div class="section-divider">Part C — Single Formula</div>
+
+  <div class="question">
+    <p><span class="qnum">3.</span> A $6.0\,\text{C}$ charge has $48\,\text{J}$ of electric potential energy. What is the voltage at its location?</p>
+  </div>
+
+  <div class="section-divider">Part D — Multi-Step</div>
+
+  <div class="question">
+    <p><span class="qnum">4.</span> Parallel plates separated by $0.025\,\text{m}$ have a potential difference of $100\,\text{V}$.</p>
+    <p style="margin-left:16px;">(a) Find the electric field strength.</p>
+    <p style="margin-left:16px;">(b) Find the force on a charge of $1.5 \times 10^{-6}\,\text{C}$ placed between the plates.</p>
+  </div>
+
+  <div class="section-divider">Part E — Analysis</div>
+
+  <div class="question">
+    <p><span class="qnum">5.</span> A student says: "Voltage and electric field are the same thing — both involve charge." Write a 2–3 sentence response that corrects this student's thinking. Use specific physics definitions and formulas to support your answer.</p>
+  </div>
+
+</div><!-- end station-page -->
+
+
+<!-- ================================================================ -->
+<!--  EXIT TICKET — 6-QUESTION MULTIPLE CHOICE                        -->
+<!-- ================================================================ -->
+<div class="station-page page-break">
+
+  <div class="exit-header">
+    <div class="exit-label">Exit Ticket</div>
+    <div class="exit-sub">Section 7.2 — Electric Fields and Voltage &nbsp;|&nbsp; Multiple Choice</div>
+  </div>
+
+  <div class="name-line">
+    <span>Name: ____________________________</span>
+    <span>Period: ___________</span>
+  </div>
+
+  <div class="directions" style="margin-bottom:14px;">Circle the letter of the best answer for each question.</div>
+
+  <div class="mc-question">
+    <p><span class="qnum">1.</span> What does an electric field describe?</p>
+    <div class="mc-options">
+      <div class="mc-option">A) &nbsp; The flow of electrons through a wire</div>
+      <div class="mc-option">B) &nbsp; The region around a charge where other charges experience force</div>
+      <div class="mc-option">C) &nbsp; The energy stored in a capacitor</div>
+      <div class="mc-option">D) &nbsp; The resistance of a material to current</div>
+    </div>
+  </div>
+
+  <div class="mc-question">
+    <p><span class="qnum">2.</span> In which direction do electric field lines point near an isolated positive charge?</p>
+    <div class="mc-options">
+      <div class="mc-option">A) &nbsp; Toward the positive charge</div>
+      <div class="mc-option">B) &nbsp; In circular paths around the charge</div>
+      <div class="mc-option">C) &nbsp; Away from the positive charge</div>
+      <div class="mc-option">D) &nbsp; Upward, regardless of charge position</div>
+    </div>
+  </div>
+
+  <div class="mc-question">
+    <p><span class="qnum">3.</span> A charge of $2.0 \times 10^{-6}\,\text{C}$ is in an electric field of $5.0 \times 10^4\,\text{N/C}$. What force acts on it?</p>
+    <div class="mc-options">
+      <div class="mc-option">A) &nbsp; $4.0 \times 10^{-2}\,\text{N}$</div>
+      <div class="mc-option">B) &nbsp; $2.5 \times 10^{10}\,\text{N}$</div>
+      <div class="mc-option">C) &nbsp; $1.0 \times 10^{-1}\,\text{N}$</div>
+      <div class="mc-option">D) &nbsp; $1.0 \times 10^{-10}\,\text{N}$</div>
+    </div>
+  </div>
+
+  <div class="mc-question">
+    <p><span class="qnum">4.</span> Parallel plates are separated by $0.10\,\text{m}$ and have a potential difference of $50\,\text{V}$. What is the electric field strength between the plates?</p>
+    <div class="mc-options">
+      <div class="mc-option">A) &nbsp; $5.0\,\text{N/C}$</div>
+      <div class="mc-option">B) &nbsp; $500\,\text{N/C}$</div>
+      <div class="mc-option">C) &nbsp; $0.002\,\text{N/C}$</div>
+      <div class="mc-option">D) &nbsp; $50\,\text{N/C}$</div>
+    </div>
+  </div>
+
+  <div class="mc-question">
+    <p><span class="qnum">5.</span> Voltage is best described as:</p>
+    <div class="mc-options">
+      <div class="mc-option">A) &nbsp; Force per unit distance</div>
+      <div class="mc-option">B) &nbsp; Electric field strength times charge</div>
+      <div class="mc-option">C) &nbsp; Energy per unit charge</div>
+      <div class="mc-option">D) &nbsp; Charge per unit time</div>
+    </div>
+  </div>
+
+  <div class="mc-question">
+    <p><span class="qnum">6.</span> A charge of $3.0\,\text{C}$ moves through a potential difference of $10\,\text{V}$. How much work is done on the charge?</p>
+    <div class="mc-options">
+      <div class="mc-option">A) &nbsp; $0.30\,\text{J}$</div>
+      <div class="mc-option">B) &nbsp; $13\,\text{J}$</div>
+      <div class="mc-option">C) &nbsp; $30\,\text{J}$</div>
+      <div class="mc-option">D) &nbsp; $7.0\,\text{J}$</div>
+    </div>
+  </div>
+
+</div><!-- end station-page -->
+
+
+<!-- ================================================================ -->
+<!--  ANSWER KEYS — TEACHER COPY                                       -->
+<!-- ================================================================ -->
+
+<!-- ======================== KEY: STATION 1 ======================== -->
+<div class="key-page page-break">
+
+  <div class="key-header">
+    <div class="key-label">&#9997; Answer Key — Station 1</div>
+    <div class="key-sub">Vocabulary &nbsp;|&nbsp; Section 7.2</div>
+  </div>
+
+  <div class="for-teacher">Teacher copy — do not distribute to students.</div>
+
+  <div class="key-item">
+    <span class="kq">1.</span>
+    <div class="ka">…other charged objects experience an electric force. <span class="key-note">(Accept any wording that captures "force acts on charges in this region.")</span></div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">2.</span>
+    <div class="ka">Direction of the field (which way a positive test charge would be pushed/pulled); relative strength (closer lines = stronger field).</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">3.</span>
+    <div class="ka">Closer together → <strong>stronger</strong>; farther apart → <strong>weaker</strong>.</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">4.</span>
+    <div class="ka">Two equal and opposite charges separated by a distance (e.g., one positive and one negative charge forming a pair).</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">5.</span>
+    <div class="ka">Constant (the same magnitude and direction) throughout the region.</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">6.</span>
+    <div class="ka">Energy per unit charge. &nbsp; (energy / charge)</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">7.</span>
+    <div class="ka">$1\,\text{V} = 1\,\text{J/C}$ &nbsp; (one joule per coulomb)</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">8.</span>
+    <div class="ka">…its position in an electric field (stored energy due to location in the field, analogous to gravitational PE).</div>
+  </div>
+
+</div>
+
+
+<!-- ======================== KEY: STATION 2 ======================== -->
+<div class="key-page page-break">
+
+  <div class="key-header">
+    <div class="key-label">&#9997; Answer Key — Station 2</div>
+    <div class="key-sub">Conceptual Questions &nbsp;|&nbsp; Section 7.2</div>
+  </div>
+
+  <div class="for-teacher">Teacher copy — do not distribute to students. Accept equivalent reasoning.</div>
+
+  <div class="key-item">
+    <span class="kq">1.</span>
+    <div class="ka">The field line shows the direction of force a positive test charge would feel at that point. A positive test charge would be pushed in the direction the field line points (away from positive sources, toward negative sources).</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">2.</span>
+    <div class="ka">Same magnitude — both have the same magnitude of charge (same $|q|$), and $F = qE$, so the force magnitude is equal. Different direction — the proton is pushed with the field; the electron is pushed opposite the field direction. (The sign of $q$ flips the direction of force.)</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">3.</span>
+    <div class="ka">The force doubles. From $F = qE$, if $E$ doubles and $q$ stays the same, then $F$ is twice as large. The relationship is directly proportional.</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">4.</span>
+    <div class="ka">Work must be done against the electric force, which acts on the positive charge in the direction of decreasing voltage. Moving the charge "uphill" in voltage increases its electric potential energy, just as lifting an object increases gravitational PE. Energy must be supplied from outside.</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">5.</span>
+    <div class="ka">Zero work is done. From $W = qV$, the potential difference (voltage) between the two points is zero ($\Delta V = 0$), so no energy change occurs and the electric field does no work on the charge.</div>
+  </div>
+
+</div>
+
+
+<!-- ======================== KEY: STATION 3 ======================== -->
+<div class="key-page page-break">
+
+  <div class="key-header">
+    <div class="key-label">&#9997; Answer Key — Station 3</div>
+    <div class="key-sub">Single Formula Problems &nbsp;|&nbsp; Section 7.2</div>
+  </div>
+
+  <div class="for-teacher">Teacher copy — do not distribute to students.</div>
+
+  <div class="key-item">
+    <span class="kq">1.</span>
+    <div class="ka">
+      $E = \dfrac{F}{q} = \dfrac{0.36}{4.0 \times 10^{-6}} = 9.0 \times 10^4\,\text{N/C}$
+    </div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">2.</span>
+    <div class="ka">
+      $F = qE = (3.0 \times 10^{-6})(5000) = 1.5 \times 10^{-2}\,\text{N} = 0.015\,\text{N}$
+    </div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">3.</span>
+    <div class="ka">
+      $V = \dfrac{U}{q} = \dfrac{14}{2.0} = 7.0\,\text{V}$
+    </div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">4.</span>
+    <div class="ka">
+      $W = qV = (0.50)(12) = 6.0\,\text{J}$
+    </div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">5.</span>
+    <div class="ka">
+      $E = \dfrac{V}{d} = \dfrac{80}{0.040} = 2000\,\text{N/C}$
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ======================== KEY: STATION 4 ======================== -->
+<div class="key-page page-break">
+
+  <div class="key-header">
+    <div class="key-label">&#9997; Answer Key — Station 4</div>
+    <div class="key-sub">Multi-Step Problems &nbsp;|&nbsp; Section 7.2</div>
+  </div>
+
+  <div class="for-teacher">Teacher copy — do not distribute to students.</div>
+
+  <div class="key-item">
+    <span class="kq">1a.</span>
+    <div class="ka">
+      $E = \dfrac{V}{d} = \dfrac{150}{0.050} = 3000\,\text{N/C}$
+    </div>
+  </div>
+  <div class="key-item">
+    <span class="kq">1b.</span>
+    <div class="ka">
+      $F = qE = (2.0 \times 10^{-6})(3000) = 6.0 \times 10^{-3}\,\text{N}$
+    </div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">2a.</span>
+    <div class="ka">
+      $q = \dfrac{F}{E} = \dfrac{0.24}{6.0 \times 10^4} = 4.0 \times 10^{-6}\,\text{C}$
+    </div>
+  </div>
+  <div class="key-item">
+    <span class="kq">2b.</span>
+    <div class="ka">
+      $W = qV = (4.0 \times 10^{-6})(9.0) = 3.6 \times 10^{-5}\,\text{J}$
+    </div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">3a.</span>
+    <div class="ka">
+      $F = qE = (5.0 \times 10^{-6})(8000) = 4.0 \times 10^{-2}\,\text{N}$
+    </div>
+  </div>
+  <div class="key-item">
+    <span class="kq">3b.</span>
+    <div class="ka">
+      $V = Ed = (8000)(0.020) = 160\,\text{V}$
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ======================== KEY: STATION 5 ======================== -->
+<div class="key-page page-break">
+
+  <div class="key-header">
+    <div class="key-label">&#9997; Answer Key — Station 5</div>
+    <div class="key-sub">Analysis &amp; Reasoning (DoK 3) &nbsp;|&nbsp; Section 7.2</div>
+  </div>
+
+  <div class="for-teacher">Teacher copy — accept equivalent reasoning. Award full credit for complete justification.</div>
+
+  <div class="key-item">
+    <span class="kq">1.</span>
+    <div class="ka"><strong>Disagree.</strong> The electric field describes force <em>per unit charge</em> ($E = F/q$). Doubling the charge on a test particle doubles the force felt by that particle, but the field itself (defined as force divided by charge) remains the same at that location in space. The field is a property of the source charges and the surrounding space — not of the test charge placed there. A larger test charge does not create a stronger field; it simply experiences a larger force.</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">2.</span>
+    <div class="ka">Region A has a stronger field (lines closer together → denser spacing = greater field strength). The same charge placed in Region A would experience a larger force ($F = qE$), so it would accelerate faster. In Region B, the force is smaller, producing smaller acceleration. Over time, the particle in A would gain speed more rapidly. Both particles move in the direction of the field (if positive) or opposite (if negative), but particle A speeds up much faster.</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">3.</span>
+    <div class="ka">Decrease the separation distance between the plates. From $E = V/d$, if voltage stays the same and $d$ decreases, $E$ increases — halving the distance doubles the field. The force on a charged particle between the plates would also double ($F = qE$), since the charge is unchanged. The particle would accelerate at twice the original rate in the stronger field.</div>
+  </div>
+
+</div>
+
+
+<!-- ======================== KEY: STATION 6 ======================== -->
+<div class="key-page page-break">
+
+  <div class="key-header">
+    <div class="key-label">&#9997; Answer Key — Station 6</div>
+    <div class="key-sub">Mixed Review &nbsp;|&nbsp; Section 7.2</div>
+  </div>
+
+  <div class="for-teacher">Teacher copy — do not distribute to students.</div>
+
+  <div class="key-section-title">Part A — Vocabulary</div>
+
+  <div class="key-item">
+    <span class="kq">1.</span>
+    <div class="ka">Parallel (straight) and equally spaced from each other. <span class="key-note">(Accept: uniform, evenly spaced, same distance apart.)</span></div>
+  </div>
+
+  <div class="key-section-title">Part B — Conceptual</div>
+
+  <div class="key-item">
+    <span class="kq">2.</span>
+    <div class="ka">The negative charge will move <strong>opposite</strong> the direction of the electric field. The electric field is defined by the force on a positive test charge, so field lines show where positive charges would go. Because $F = qE$ and a negative charge has a negative $q$, the force is in the direction opposite the field. The particle accelerates opposite to the field lines.</div>
+  </div>
+
+  <div class="key-section-title">Part C — Single Formula</div>
+
+  <div class="key-item">
+    <span class="kq">3.</span>
+    <div class="ka">$V = \dfrac{U}{q} = \dfrac{48}{6.0} = 8.0\,\text{V}$</div>
+  </div>
+
+  <div class="key-section-title">Part D — Multi-Step</div>
+
+  <div class="key-item">
+    <span class="kq">4a.</span>
+    <div class="ka">$E = \dfrac{V}{d} = \dfrac{100}{0.025} = 4000\,\text{N/C}$</div>
+  </div>
+  <div class="key-item">
+    <span class="kq">4b.</span>
+    <div class="ka">$F = qE = (1.5 \times 10^{-6})(4000) = 6.0 \times 10^{-3}\,\text{N}$</div>
+  </div>
+
+  <div class="key-section-title">Part E — Analysis</div>
+
+  <div class="key-item">
+    <span class="kq">5.</span>
+    <div class="ka">Electric field and voltage are not the same. Electric field ($E = F/q$) is force per unit charge and describes how strongly and in what direction a charge is pushed at a point in space. Voltage ($V = U/q$) is energy per unit charge and describes the electric potential energy change as a charge moves between two points. They are related by $E = V/d$ in a uniform field, but they have different units (N/C vs. V = J/C) and represent different physical quantities.</div>
+  </div>
+
+</div>
+
+
+<!-- ======================== KEY: EXIT TICKET ======================== -->
+<div class="key-page page-break">
+
+  <div class="key-header">
+    <div class="key-label">&#9997; Answer Key — Exit Ticket</div>
+    <div class="key-sub">Multiple Choice &nbsp;|&nbsp; Section 7.2</div>
+  </div>
+
+  <div class="for-teacher">Teacher copy — do not distribute to students.</div>
+
+  <div class="key-item">
+    <span class="kq">1. B</span>
+    <div class="ka">An electric field is the region around a charge where other charges experience force. <span class="key-note">(Recall/definition — DoK 1)</span></div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">2. C</span>
+    <div class="ka">Field lines point <em>away</em> from positive charges (and toward negative charges). <span class="key-note">(Conceptual — DoK 1)</span></div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">3. A</span>
+    <div class="ka">$F = qE = (2.0 \times 10^{-6})(5.0 \times 10^4) = 0.10\,\text{N} = 1.0 \times 10^{-1}\,\text{N}$</div>
+    <div class="ka" style="margin-top:4px;">Wait — check: answer A is $4.0 \times 10^{-2}$ and answer C is $1.0 \times 10^{-1}$. Correct computation: $(2.0 \times 10^{-6})(5.0 \times 10^4) = 10 \times 10^{-2} = 0.10\,\text{N} = 1.0 \times 10^{-1}\,\text{N}$. <strong>Answer: C</strong></div>
+    <div class="key-note">Formula: $F = qE$ — single-step calculation.</div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">4. B</span>
+    <div class="ka">$E = \dfrac{V}{d} = \dfrac{50}{0.10} = 500\,\text{N/C}$ <span class="key-note">(Formula application — DoK 1/2)</span></div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">5. C</span>
+    <div class="ka">Voltage = energy per unit charge ($V = U/q$). <span class="key-note">(Definition/conceptual — DoK 1)</span></div>
+  </div>
+
+  <div class="key-item">
+    <span class="kq">6. C</span>
+    <div class="ka">$W = qV = (3.0)(10) = 30\,\text{J}$ <span class="key-note">(Formula application — DoK 1)</span></div>
+  </div>
+
+  <div class="for-teacher" style="margin-top:20px;">
+    <strong>Quick-grade key:</strong> &nbsp; 1-B &nbsp; 2-C &nbsp; 3-C &nbsp; 4-B &nbsp; 5-C &nbsp; 6-C
+  </div>
+
+</div>
+
+</body>
+</html>
