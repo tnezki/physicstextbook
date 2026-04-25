@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Section 7.4 Partners Whiteboard Activity</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:#ffffff;
+  color:#1f2937;
+  line-height:1.45;
+  padding:10px;
+}
+
+.container{
+  max-width:1500px;
+  margin:0 auto;
+}
+
+.page{
+  min-height:980px;
+  padding:0;
+  page-break-after:always;
+}
+
+.page:last-child{
+  page-break-after:auto;
+}
+
+h1{
+  font-size:2.6rem;
+  color:#ffffff;
+  background:#27408f;
+  padding:10px 14px;
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+h2{
+  font-size:2.2rem;
+  color:#0b0b53;
+  margin-bottom:18px;
+}
+
+h3{
+  font-size:1.7rem;
+  color:#1d4f91;
+  margin-bottom:10px;
+}
+
+p, li{
+  font-size:1.18rem;
+}
+
+ul{
+  margin-left:36px;
+  margin-bottom:10px;
+}
+
+.big-list li{
+  font-size:1.15rem;
+  margin-bottom:8px;
+}
+
+.setup-line{
+  font-size:1.28rem;
+  margin:4px 0 10px 34px;
+}
+
+.setup-line strong{
+  color:#27408f;
+}
+
+.twocol{
+  width:78%;
+  margin:34px auto 0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border:2px solid #c5c9d1;
+}
+
+.box{
+  padding:18px 22px 16px 22px;
+}
+
+.success{
+  background:#dfe9e1;
+  border-right:2px solid #c5c9d1;
+}
+
+.avoid{
+  background:#f0e3e3;
+}
+
+.box-title{
+  font-size:1.25rem;
+  font-weight:800;
+  margin-bottom:6px;
+}
+
+.success .box-title{
+  color:#166534;
+}
+
+.avoid .box-title{
+  color:#8b1e1e;
+}
+
+.question-title{
+  font-size:2.5rem;
+  color:#0b0b53;
+  margin-bottom:18px;
+  font-weight:800;
+}
+
+.prompt{
+  font-size:1.45rem;
+  margin-bottom:22px;
+}
+
+.question-block{
+  border:2px solid #cfd4dc;
+  padding:24px 26px;
+  min-height:320px;
+  background:#fafafa;
+}
+
+.workspace{
+  border:3px solid #cfd4dc;
+  height:470px;
+  margin-top:26px;
+  background:
+    linear-gradient(#ffffff,#ffffff) padding-box,
+    repeating-linear-gradient(
+      0deg,
+      #ffffff,
+      #ffffff 36px,
+      #eef2f7 36px,
+      #eef2f7 37px
+    ) border-box;
+}
+
+.solution{
+  border:2px solid #d4d9df;
+  background:#fbfbfc;
+  padding:24px 28px;
+}
+
+.solution p{
+  margin-bottom:12px;
+}
+
+.answer{
+  background:#e8f5e9;
+  border-left:6px solid #4caf50;
+  padding:14px 16px;
+  margin:16px 0;
+  font-size:1.2rem;
+}
+
+.note{
+  background:#fff8dc;
+  border-left:6px solid #f0c419;
+  padding:14px 16px;
+  margin-top:16px;
+}
+
+.math{
+  margin:10px 0;
+}
+
+.small{
+  font-size:1rem;
+  color:#4b5563;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+  <section class="page">
+    <h1>Whiteboard Partners</h1>
+
+    <div class="setup-line"><strong>Setup:</strong> Work with your partner. One whiteboard and one marker between you.</div>
+
+    <ul class="big-list">
+      <li>Both partners stay engaged — no one is off-task at any point.</li>
+      <li>Take turns writing. Alternate who holds the marker each problem.</li>
+      <li>The partner who isn't writing checks each step and verifies the work.</li>
+      <li>Write large and clearly — your work should be readable from across the room.</li>
+      <li>Stay with your partner. No phones.</li>
+      <li>Use your resources: ask your partner first, then the teacher. Do not copy.</li>
+      <li>Mistakes are part of learning — fix them together and discuss what went wrong.</li>
+    </ul>
+
+    <div class="twocol">
+      <div class="box success">
+        <div class="box-title">✓ Looks Like Success</div>
+        <ul>
+          <li>Both partners actively writing or checking</li>
+          <li>Clear, large work visible from a distance</li>
+          <li>Talking through errors together before erasing</li>
+        </ul>
+      </div>
+      <div class="box avoid">
+        <div class="box-title">✗ What to Avoid</div>
+        <ul>
+          <li>One person doing all the writing while the other watches</li>
+          <li>Work too small or messy to read from your seat</li>
+          <li>Copying from another group without understanding</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 1</div>
+    <div class="question-block">
+      <h3>1. Resistance</h3>
+      <div class="prompt">Explain what resistance is and describe how increasing resistance affects current in a circuit when voltage stays constant.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 1</div>
+    <div class="solution">
+      <h3>1. Resistance</h3>
+      <p>Resistance is opposition to the flow of electric charge.</p>
+      <p>When voltage stays constant, increasing resistance decreases current.</p>
+      <p>This follows Ohm’s Law: $V = IR$, so $I = \frac{V}{R}$.</p>
+
+      <div class="answer">A stronger resistor does not “use up” current. It makes charge flow harder, so less current moves.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 2</div>
+    <div class="question-block">
+      <h3>2. Ohm as a Unit</h3>
+      <div class="prompt">A student says, “Ohms measure electricity.” Rewrite that statement so it is precise and scientifically correct.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 2</div>
+    <div class="solution">
+      <h3>2. Ohm as a Unit</h3>
+      <p>An ohm measures resistance, not electricity in general.</p>
+      <p>More precisely, resistance is measured in ohms $(\Omega)$.</p>
+      <p>One ohm is equivalent to one volt per ampere.</p>
+
+      <div class="answer">A precise statement would be: “The ohm is the SI unit of resistance.”</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 3</div>
+    <div class="question-block">
+      <h3>3. Ohm’s Law Relationship</h3>
+      <div class="prompt">If voltage increases while resistance remains constant, what happens to current? Explain using Ohm’s Law.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 3</div>
+    <div class="solution">
+      <h3>3. Ohm’s Law Relationship</h3>
+      <p>Ohm’s Law is $V = IR$.</p>
+      <p>If $R$ stays constant, then current is directly proportional to voltage.</p>
+      <p>So when voltage increases, current increases.</p>
+
+      <div class="answer">Voltage and current rise together when resistance does not change.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 4</div>
+    <div class="question-block">
+      <h3>4. Series Resistance</h3>
+      <div class="prompt">Two identical resistors are connected in series. Explain what happens to total resistance and how that affects current from the battery.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 4</div>
+    <div class="solution">
+      <h3>4. Series Resistance</h3>
+      <p>In series, total resistance adds.</p>
+      <p>With two identical resistors, total resistance doubles.</p>
+      <p>If battery voltage stays the same, the larger total resistance causes current to decrease.</p>
+
+      <div class="answer">Series circuits give current only one path, so every added resistor increases total opposition.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 5</div>
+    <div class="question-block">
+      <h3>5. Parallel Resistance</h3>
+      <div class="prompt">A new branch is added to a parallel circuit. Explain what happens to total resistance and total current.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 5</div>
+    <div class="solution">
+      <h3>5. Parallel Resistance</h3>
+      <p>Adding a branch in parallel decreases total resistance.</p>
+      <p>A lower total resistance allows more total current to leave the source.</p>
+      <p>The voltage across each branch remains the same.</p>
+
+      <div class="answer">More branches give charge more available paths, so the source current increases.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 6</div>
+    <div class="question-block">
+      <h3>6. Series Failure</h3>
+      <div class="prompt">Why does one broken bulb often shut off an entire series string of lights?</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 6</div>
+    <div class="solution">
+      <h3>6. Series Failure</h3>
+      <p>A series circuit has only one path for current.</p>
+      <p>If one bulb opens the path, current stops everywhere in the loop.</p>
+      <p>With no current, all bulbs go out.</p>
+
+      <div class="answer">In a single-path circuit, one break stops the whole circuit.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 7</div>
+    <div class="question-block">
+      <h3>7. Parallel Reliability</h3>
+      <div class="prompt">Why do other appliances in a house keep working when one device is unplugged?</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 7</div>
+    <div class="solution">
+      <h3>7. Parallel Reliability</h3>
+      <p>Household circuits are wired in parallel.</p>
+      <p>Each branch has its own path for current.</p>
+      <p>Removing one branch does not stop current in the others.</p>
+
+      <div class="answer">Parallel circuits are used because each device can operate independently.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 8</div>
+    <div class="question-block">
+      <h3>8. Conductors</h3>
+      <div class="prompt">Explain why copper is used in wires instead of plastic.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 8</div>
+    <div class="solution">
+      <h3>8. Conductors</h3>
+      <p>Copper is a conductor with low resistance, so charge flows easily.</p>
+      <p>Plastic is an insulator with high resistance, so it blocks charge flow.</p>
+      <p>Wires need conducting cores and insulating outer coatings.</p>
+
+      <div class="answer">Good circuit materials often use both: a conductor inside and an insulator outside.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 9</div>
+    <div class="question-block">
+      <h3>9. Insulators</h3>
+      <div class="prompt">Give one job an insulator does in a circuit and explain why that job matters for safety.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 9</div>
+    <div class="solution">
+      <h3>9. Insulators</h3>
+      <p>An insulator prevents unwanted charge flow.</p>
+      <p>Examples include rubber wire coatings or plastic tool handles.</p>
+      <p>This matters because it reduces shocks and prevents short circuits.</p>
+
+      <div class="answer">Insulators do not create electricity. They help control where current can and cannot go.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 10</div>
+    <div class="question-block">
+      <h3>10. Brightness in Series</h3>
+      <div class="prompt">Two identical bulbs are placed in series instead of using just one bulb. Predict what happens to brightness and explain why.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 10</div>
+    <div class="solution">
+      <h3>10. Brightness in Series</h3>
+      <p>The bulbs become dimmer.</p>
+      <p>Putting bulbs in series increases total resistance.</p>
+      <p>Higher resistance lowers current, so each bulb receives less power.</p>
+
+      <div class="answer">Series circuits often trade brightness for lower current.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 11</div>
+    <div class="question-block">
+      <h3>11. Brightness in Parallel</h3>
+      <div class="prompt">Two identical bulbs are placed in parallel. Explain why each bulb can stay bright even though there are two of them.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 11</div>
+    <div class="solution">
+      <h3>11. Brightness in Parallel</h3>
+      <p>In parallel, each bulb gets the full source voltage.</p>
+      <p>Each branch works like its own circuit across the battery.</p>
+      <p>That allows each bulb to operate close to its normal brightness.</p>
+
+      <div class="answer">The source must provide more total current, but each branch still gets full voltage.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 12</div>
+    <div class="question-block">
+      <h3>12. Voltage Across Branches</h3>
+      <div class="prompt">In a parallel circuit, why is the voltage the same across every branch?</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 12</div>
+    <div class="solution">
+      <h3>12. Voltage Across Branches</h3>
+      <p>Each branch connects across the same two points in the circuit.</p>
+      <p>Those two points have the same potential difference for every branch.</p>
+      <p>Therefore each branch has the same voltage across it.</p>
+
+      <div class="answer">Same connection points means same voltage.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 13</div>
+    <div class="question-block">
+      <h3>13. Voltage Division in Series</h3>
+      <div class="prompt">In a series circuit, why do different resistors sometimes have different voltage drops?</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 13</div>
+    <div class="solution">
+      <h3>13. Voltage Division in Series</h3>
+      <p>The same current flows through every series component.</p>
+      <p>Voltage drop depends on both current and resistance: $V = IR$.</p>
+      <p>So a larger resistance has a larger voltage drop.</p>
+
+      <div class="answer">Series circuits divide voltage according to resistance.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 14</div>
+    <div class="question-block">
+      <h3>14. Current in the Main Line</h3>
+      <div class="prompt">In a parallel circuit, why is the current in the main line larger than the current in a single branch?</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 14</div>
+    <div class="solution">
+      <h3>14. Current in the Main Line</h3>
+      <p>The total current is the sum of branch currents.</p>
+      <p>Each branch draws some current from the source.</p>
+      <p>The main line must supply all of those branch currents together.</p>
+
+      <div class="answer">Main-line current increases when more branches are added.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 15</div>
+    <div class="question-block">
+      <h3>15. Circuit Choice</h3>
+      <div class="prompt">A teacher wants one switch to turn off all lights in a single decorative loop. Should the lights be wired in series or parallel? Justify your choice.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 15</div>
+    <div class="solution">
+      <h3>15. Circuit Choice</h3>
+      <p>Series is the better choice for one continuous loop controlled together.</p>
+      <p>A series circuit has one path, so opening the loop stops all current.</p>
+      <p>That matches the goal of one switch shutting everything off at once.</p>
+
+      <div class="answer">This does not mean series is always best. It means it matches this specific design goal.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 16</div>
+    <div class="question-block">
+      <h3>16. Calculation</h3>
+      <div class="prompt">A 6 $\Omega$ resistor carries a current of 2.0 A. Find the voltage across the resistor.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 16</div>
+    <div class="solution">
+      <h3>16. Calculation</h3>
+      <p>Use Ohm’s Law: $V = IR$.</p>
+      <p>Substitute the values: $V = (2.0\,\text{A})(6\,\Omega)$.</p>
+      <p>Compute: $V = 12\,\text{V}$.</p>
+
+      <div class="answer">The voltage across the resistor is $\boxed{12\,\text{V}}$.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 17</div>
+    <div class="question-block">
+      <h3>17. Calculation</h3>
+      <div class="prompt">A 12 $\Omega$ resistor is connected to a 24 V source. Find the current.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 17</div>
+    <div class="solution">
+      <h3>17. Calculation</h3>
+      <p>Use Ohm’s Law in current form: $I = \frac{V}{R}$.</p>
+      <p>Substitute the values: $I = \frac{24\,\text{V}}{12\,\Omega}$.</p>
+      <p>Compute: $I = 2.0\,\text{A}$.</p>
+
+      <div class="answer">The current is $\boxed{2.0\,\text{A}}$.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 18</div>
+    <div class="question-block">
+      <h3>18. Calculation</h3>
+      <div class="prompt">Three resistors of 5 $\Omega$, 10 $\Omega$, and 15 $\Omega$ are connected in series. Find the total resistance.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 18</div>
+    <div class="solution">
+      <h3>18. Calculation</h3>
+      <p>In series, resistances add directly.</p>
+      <p>Compute: $R_T = 5 + 10 + 15$.</p>
+      <p>So $R_T = 30\,\Omega$.</p>
+
+      <div class="answer">The total series resistance is $\boxed{30\,\Omega}$.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 19</div>
+    <div class="question-block">
+      <h3>19. Calculation</h3>
+      <div class="prompt">Two resistors of 6 $\Omega$ and 3 $\Omega$ are connected in parallel. Find the equivalent resistance.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 19</div>
+    <div class="solution">
+      <h3>19. Calculation</h3>
+      <p>Use the parallel formula: $\frac{1}{R_T} = \frac{1}{6} + \frac{1}{3}$.</p>
+      <p>Combine the fractions: $\frac{1}{R_T} = \frac{1}{6} + \frac{2}{6} = \frac{3}{6} = \frac{1}{2}$.</p>
+      <p>Take the reciprocal: $R_T = 2.0\,\Omega$.</p>
+
+      <div class="answer">The equivalent resistance is $\boxed{2.0\,\Omega}$.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Question 20</div>
+    <div class="question-block">
+      <h3>20. Calculation</h3>
+      <div class="prompt">A 24 V battery is connected to two series resistors of 4 $\Omega$ and 8 $\Omega$. Find the current in the circuit.</div>
+      <div class="workspace"></div>
+    </div>
+    <p class="small">Discuss first. Then write one clear final response on the whiteboard.</p>
+  </section>
+
+  <section class="page">
+    <div class="question-title">Detailed Solution 20</div>
+    <div class="solution">
+      <h3>20. Calculation</h3>
+      <p>First find total resistance in series: $R_T = 4 + 8 = 12\,\Omega$.</p>
+      <p>Then use Ohm’s Law: $I = \frac{V}{R_T} = \frac{24}{12}$.</p>
+      <p>Compute: $I = 2.0\,\text{A}$.</p>
+
+      <div class="answer">The circuit current is $\boxed{2.0\,\text{A}}$.</div>
+      <div class="note"><strong>Check for understanding:</strong> Both partners should be able to explain why this answer makes sense without reading directly from the board.</div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
