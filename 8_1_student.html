@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Module 8.1 - Electromagnetic Induction and Energy Conversion</title>
+
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+
+/* EXACT 10E CSS — NO CHANGES */
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  line-height:1.7;
+  color:#333;
+  background:#ffffff;
+  padding:20px;
+}
+
+.container{max-width:900px;margin:auto;}
+
+.page-break{page-break-before:always;}
+
+-webkit-print-color-adjust: exact;
+print-color-adjust: exact;
+
+h1{color:#00003d;font-size:2.5em;margin-bottom:20px;}
+
+h2{
+  color:#00003d;
+  font-size:1.8em;
+  margin-top:30px;
+  margin-bottom:15px;
+  border-left:5px solid #00003d;
+  padding-left:10px;
+}
+
+h3{
+  color:#004d99;
+  font-size:1.3em;
+  margin-top:30px;
+  margin-bottom:10px;
+  break-after: avoid;
+  page-break-after: avoid;
+}
+
+.intro-text{font-size:1.05em;color:#555;margin-bottom:10px;font-style:italic;}
+
+.inspirational{
+  font-size:1.15em;
+  color:#004d99;
+  font-style:italic;
+  text-align:center;
+  margin:10px 0 30px 0;
+}
+
+.prompt{
+  font-size:0.95em;
+  color:#444;
+  margin-bottom:8px;
+  font-style:normal;
+}
+
+.objectives{background:#f0f4f8;padding:20px;border-radius:6px;}
+
+.definition{
+  background:#fffacd;
+  border-left:5px solid #ffd700;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.key-point{
+  background:#e8f5e9;
+  border-left:5px solid #4caf50;
+  padding:20px;
+  margin-top:20px;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.strategy-box{
+  background:#eef3ff;
+  border-left:5px solid #4a6fdc;
+  padding:20px;
+  margin:20px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.summary-box{
+  background:#f0f4f8;
+  border-left:5px solid #00003d;
+  padding:20px;
+  margin:30px 0;
+  border-radius:6px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace{
+  width:100%;
+  margin-top:10px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.workspace-100{height:100px;}
+.workspace-200{height:200px;}
+.workspace-300{height:300px;}
+.workspace-400{height:400px;}
+.workspace-500{height:500px;}
+.workspace-600{height:600px;}
+
+.workspace img{
+  width:100%;
+  height:auto;
+  max-width:100%;
+  display:block;
+}
+
+/* FIGURE LAYOUT */
+.figure-single{
+  width:100%;
+  margin:18px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.figure-single img{
+  max-width:520px;
+  width:100%;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+
+.figure-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:start;
+  margin:18px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.figure-box{
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.figure-box img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.problem{
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom:10px;
+}
+
+section{
+  margin-bottom:30px;
+}
+
+.answer-option{
+  margin-left:20px;
+  margin-bottom:4px;
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- ======================= -->
+<!-- TITLE + INTRO -->
+<!-- ======================= -->
+<h1>Module 8.1 — Electromagnetic Induction and Energy Conversion</h1>
+
+<div class="intro-text">
+This section introduces electromagnetic induction, Faraday’s law, generators, alternating current, and the use of induction in large-scale power production.
+</div>
+
+<div class="intro-text">
+The main idea is that changing magnetic fields produce electrical effects, and that this principle allows mechanical energy to be transformed into electric energy.
+</div>
+
+<div class="inspirational">
+“Changing magnetic fields produce electric effects.”
+</div>
+
+<!-- ======================= -->
+<!-- LEARNING TARGETS -->
+<!-- ======================= -->
+<section>
+
+  <div class="problem">
+    <h2>Learning Targets</h2>
+
+    <div class="objectives">
+      <p>Students will explain how changing magnetic fields produce electric effects and how this principle is used to generate and transfer energy.</p>
+
+      <ul style="margin-left:20px;">
+        <li>I can describe how electromagnetic induction produces voltage.</li>
+        <li>I can explain what must change for induction to occur.</li>
+        <li>I can explain how generators convert energy.</li>
+        <li>I can describe how electrical power is produced.</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- ======================= -->
+<!-- READING GUIDE -->
+<!-- ======================= -->
+<section>
+
+  <div class="problem">
+    <h2>Reading Guide</h2>
+
+    <div class="strategy-box">
+      <p>Before you begin reading, use a talk-to-the-text strategy:</p>
+      <ul style="margin-left:20px;">
+        <li>Skim the title, headings, subheadings, and images before reading the full section.</li>
+        <li>As you read, annotate the text with simple symbols to track your thinking.</li>
+        <li>Use ! for something important, ? for something confusing or worth discussing, * for a key idea, and → for a connection to something you already know.</li>
+        <li>When you reach an in-text prompt or discussion question, stop. Do not rush past it. Mark the sentence or sentences in the reading that help you answer it.</li>
+        <li>Look for places where the reading explains what must change in order for induction to occur, how voltage depends on rate of change, and where the energy comes from in a generator.</li>
+      </ul>
+    </div>
+
+    <div class="key-point">
+      <p>Student Task: Skim the headings, subheadings, and images first. Then write at least one thing you expect to learn in this section and at least one question you think the reading might answer.</p>
+    </div>
+
+    <div class="problem">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:10px;">
+        <div style="border:1px solid #333; padding:10px; break-inside: avoid; page-break-inside: avoid;">
+          <p>I expect to learn...</p>
+          <div class="workspace workspace-200"></div>
+        </div>
+        <div style="border:1px solid #333; padding:10px; break-inside: avoid; page-break-inside: avoid;">
+          <p>Questions I think this reading might answer...</p>
+          <div class="workspace workspace-200"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ======================= -->
+<!-- SECTION TEXT -->
+<!-- ======================= -->
+<section>
+
+  <div class="problem">
+    <h2>Electromagnetic Induction</h2>
+
+    <p>
+      Faraday and Henry both discovered that electric current can be produced in a wire simply by moving a magnet in or out of loops. No battery or other voltage source is needed—only the motion of a magnet in a wire loop. This phenomenon of inducing voltage by changing the magnetic field in loops of wire is called <em>electromagnetic induction</em>. Voltage is caused, or induced, by the relative motion between a wire and a magnetic field—that is, whether the magnetic field of a magnet moves near a stationary conductor or the conductor moves in a stationary magnetic field.
+    </p>
+
+    <div class="figure-box">
+      
+      <img src="tb_images/25_1_magnet_into_coil.png" style="width:300px; height:auto;" alt="Placeholder for Figure 25.1 showing a magnet being plunged into a coil and inducing voltage">
+    </div>
+
+    <div class="figure-box">
+      <img src="tb_images/25_2_relative_motion_induction.png" alt="Placeholder for Figure 25.2 showing induction when either the magnetic field moves past the wire or the wire moves through the magnetic field">
+    </div>
+<div class="key-point">
+      <p>Stop and check:</p>
+      <p>What important discovery did physicists Michael Faraday and Joseph Henry make, and what must change in order for electromagnetic induction to occur in a wire coil?</p>
+    </div>
+<div class="workspace workspace-200"></div>
+<p>
+      The greater the number of loops of wire that move in a magnetic field, the greater the induced voltage. Pushing a magnet into a coil with twice as many loops induces twice as much voltage; pushing it into a coil with 10 times as many loops induces 10 times as much voltage. It may seem that we get something, energy, for nothing simply by increasing the number of loops in a coil of wire. But, assuming that the coil is connected to a resistor or other energy-dissipating device, we do not. We find that it is more difficult to push the magnet into a coil made up of a greater number of loops.
+    </p>
+
+    <div class="figure-box">
+      <img src="tb_images/25_3_more_loops_more_voltage.png" style="100%; height:auto;" alt="Placeholder for Figure 25.3 comparing coils with different numbers of loops and the resulting induced voltage">
+    </div>
+    <div class="figure-box">
+      <img src="tb_images/25_4_more_loops_more_resistance_to_push.png" style="width:300px; height:auto;"alt="Placeholder for Figure 25.4 showing that it is more difficult to push the magnet into a coil with more loops">
+    </div>
+    <br> <br>
+    <p>
+      This is because the induced voltage makes a current, which makes an electromagnet, which repels the magnet in our hand. More loops mean more voltage, which means we do more work to induce it. The amount of voltage induced depends on how fast the magnetic field lines are entering or leaving the coil. Very slow motion produces hardly any voltage at all. Quick motion induces a greater voltage.
+    </p>
+<div class="strategy-box">
+      <p>Discussion Question</p>
+      <p>Is electromagnetic induction an energy source? Use the reading to defend your answer.</p>
+    </div>
+<div class="workspace workspace-200"></div>
+<div class="definition">
+      <p>Important idea:</p>
+      <p>Changing a magnetic field in a closed loop induces voltage. If the loop is in an electric conductor, then current is induced.</p>
+    </div>
+
+    <p>
+      Electromagnetic induction is all around us. On the road, it triggers traffic lights when a car drives over—and changes the magnetic field in—coils of wire beneath the road surface. Hybrid cars utilize it to convert braking energy into electric energy in their batteries. We sense electromagnetic induction in the security systems of airports as we walk through upright coils and, if we are carrying any significant quantities of iron, change the magnetic field of the coils and trigger an alarm. We use it with an ATM card when its magnetic strip is swiped through a scanner. As we shall see later, it even underlies electromagnetic waves.
+    </p>
+  </div>
+
+  <div class="problem">
+    <h2>Faraday’s Law</h2>
+
+    <p>
+      Electromagnetic induction is summarized by Faraday’s law, which states that the induced voltage in a coil is proportional to the product of its number of loops, the cross-sectional area of each loop, and the rate at which the magnetic field changes within those loops.
+    </p>
+
+    <div class="definition">
+      <p>Faraday’s law</p>
+      <p>The induced voltage in a coil is proportional to the product of its number of loops, the cross-sectional area of each loop, and the rate at which the magnetic field changes within those loops.</p>
+    </div>
+
+    <p>
+      The amount of current produced by electromagnetic induction depends not only on the induced voltage but also on the resistance of the coil and the circuit to which it is connected. For example, we can plunge a magnet in and out of a closed loop of rubber and in and out of a closed loop of copper. The voltage induced in each is the same, provided that the loops are the same size and the magnet moves with the same speed. But the current in each is quite different. Electrons in the rubber sense the same electric field as those in the copper, but their bonding to the fixed atoms prevents the movement of charge that so freely occurs in copper.
+    </p>
+<div class="key-point">
+      <p>Think carefully:</p>
+      <p>If voltage is induced in both rubber and copper, why is the current different? What does this tell you about the relationship between voltage and current?</p>
+    </div>
+<div class="workspace workspace-200"></div>
+<p>
+      We have mentioned two ways in which voltage can be induced in a loop of wire: by moving the loop near a magnet and by moving a magnet near the loop. There is a third way, by changing a current in a nearby loop. All three cases possess the same essential ingredient—a changing magnetic field in the loop.
+    </p>
+<div class="strategy-box">
+      <p>Discussion Question</p>
+      <p>State Faraday’s law in words. Then explain the three ways in which voltage can be induced in a loop of wire and identify the one common idea they all share.</p>
+    </div>
+<div class="workspace workspace-200"></div>
+<div class="figure-single">
+      <img src="tb_images/25_5_guitar_pickup.png" style="width:200px; height:auto;" alt="Placeholder for Figure 25.5 showing a guitar pickup as an application of electromagnetic induction">
+    </div>
+
+    <p>
+      Guitar pickups provide a useful real-world example. Tiny coils with magnets inside them magnetize the steel strings. When the strings vibrate, the magnetic field in the coils changes, voltage is induced, and the resulting signal is boosted by an amplifier and turned into sound by a speaker. The details are different from pushing a bar magnet into a coil, but the key idea is the same: a changing magnetic field is what matters.
+    </p>
+  </div>
+
+  <div class="problem">
+    <h2>Generators and Alternating Current</h2>
+
+    <p>
+      When one end of a magnet is repeatedly plunged into and back out of a coil of wire, the direction of the induced voltage alternates. As the magnetic field strength inside the coil is increased, as the magnet enters the coil, the induced voltage in the coil is directed one way. When the magnetic field strength diminishes, as the magnet leaves the coil, the voltage is induced in the opposite direction. The frequency of the alternating voltage that is induced equals the frequency of the changing magnetic field within the loop.
+    </p>
+
+    <p>
+      It is more practical to induce voltage by moving a coil than by moving a magnet. This can be done by rotating the coil, or loop, in a stationary magnetic field. This arrangement is called a <em>generator</em>. The construction of a generator is, in principle, identical to that of a motor. They look the same, but the roles of input and output are reversed. In a motor, electric energy is the input and mechanical energy is the output; in a generator, mechanical energy is the input and electric energy is the output. Both devices simply transform energy from one form into another.
+    </p>
+
+    <div class="figure-single">
+      <img src="tb_images/25_6_simple_generator.png" alt="Placeholder for Figure 25.6 showing a simple generator with mechanical input and electrical output">
+    </div>
+<div class="strategy-box">
+      <p>Discussion Question</p>
+      <p>How does the frequency of induced voltage relate to how frequently a magnet is plunged in and out of a coil of wire? What are the basic differences and similarities between a generator and an electric motor?</p>
+    </div>
+<div class="workspace workspace-200"></div>
+<p>
+      It is interesting to compare the physics of a motor and a generator and to see that both operate according to the same underlying principle: that moving electrons experience a force that is mutually perpendicular to both their velocity and the magnetic field they traverse. We call the deflection of the wire, motion as a result of current, the <em>motor effect</em>, and we call what happens as a result of the law of induction, current as a result of motion, the <em>generator effect</em>. Study them. Can you see that the two effects are related?
+    </p>
+
+    <div class="figure-single">
+      <img src="tb_images/25_7_motor_effect_generator_effect.png" alt="Placeholder for Figure 25.7 comparing the motor effect and the generator effect">
+    </div>
+<div class="key-point">
+      <p>Think deeper:</p>
+      <p>How are the motor effect and generator effect related? In one case current causes motion; in the other motion causes current. What stays the same underneath both effects?</p>
+    </div>
+<div class="workspace workspace-200"></div>
+<p>
+      We can see the electromagnetic induction cycle when a loop of wire rotates in the magnetic field. There is a change in the number of magnetic field lines within the loop. When the plane of the loop is perpendicular to the field lines, the maximum number of lines is enclosed. As the loop rotates, fewer lines are enclosed. When the plane of the loop is parallel to the field lines, none are enclosed. Continued rotation increases and decreases the number of enclosed lines in a cyclical fashion, with the greatest rate of change occurring when the number of enclosed lines goes through zero. Hence, the induced voltage is greatest as the loop rotates through its parallel-to-the-lines orientation.
+    </p>
+
+    <div class="figure-single">
+      <img src="tb_images/25_8_ac_waveform_and_rotating_loop.png" alt="Placeholder for Figure 25.8 showing the rotating loop and alternating voltage waveform">
+    </div>
+
+    <p>
+      Because the voltage induced by the generator alternates, the current produced is <em>ac</em>, alternating current. The alternating current in our homes is produced by generators standardized so that the current goes through 60 cycles of change each second—60 hertz.
+    </p>
+<div class="key-point">
+      <p>Stop and check:</p>
+      <p>Is the current that is produced by a common generator ac or dc? What is the common frequency of ac in homes in the United States?</p>
+    </div>
+<div class="workspace workspace-200"></div>
+</div>
+
+  <div class="problem">
+    <h2>Power Production</h2>
+
+    <p>
+      Fifty years after Michael Faraday and Joseph Henry discovered electromagnetic induction, Nikola Tesla and George Westinghouse put those findings to practical use and showed the world that electricity could be generated reliably and in sufficient quantities to light entire cities.
+    </p>
+
+    <h3>Turbogenerator Power</h3>
+
+    <p>
+      Tesla built generators much like those in operation today, but quite a bit more complicated than the simple model we have discussed. Tesla’s generators had armatures—iron cores wrapped with bundles of copper wire—that were made to spin within strong magnetic fields by means of a turbine, which, in turn, was spun by the energy of steam or falling water. The rotating loops of wire in the armature cut through the magnetic field of the surrounding electromagnets, thereby inducing alternating voltage and current.
+    </p>
+
+    <div class="figure-single">
+      <img src="tb_images/25_9_turbogenerator.png" alt="Placeholder for Figure 25.9 showing steam driving a turbine connected to a generator">
+    </div>
+
+    <p>
+      We can look at this process from an atomic point of view. When the wires in the spinning armature cut through the magnetic field, oppositely directed electromagnetic forces act on the negative and positive charges. Electrons respond to this force by momentarily swarming relatively freely in one direction throughout the crystalline copper lattice; the copper atoms, which are actually positive ions, are forced in the opposite direction. Because the ions are anchored in the lattice, however, they hardly move at all. Only the electrons move, sloshing back and forth in alternating fashion with each rotation of the armature. The energy of this electronic sloshing is tapped at the electrode terminals of the generator.
+    </p>
+<div class="key-point">
+      <p>Stop and check:</p>
+      <p>Who discovered electromagnetic induction, who put it to practical use, what is an armature, and what commonly supplies the energy input to a turbine?</p>
+    </div>
+<div class="workspace workspace-200"></div>
+<h3>MHD Power</h3>
+
+    <p>
+      An interesting device similar to the turbogenerator is the MHD, magnetohydrodynamic, generator, which eliminates the turbine and spinning armature altogether. Instead of making charges move in a magnetic field by a rotating armature, a plasma of electrons and positive ions expands through a nozzle and moves at supersonic speed through a magnetic field. Like the armature in a conventional generator, the motion of charges through a magnetic field gives rise to a voltage and flow of current in accordance with Faraday’s law of induction. Whereas in a conventional generator brushes carry the current to the external load circuit, in the MHD generator the same function is performed by conducting plates, or electrodes.
+    </p>
+
+    <div class="figure-single">
+      <img src="tb_images/25_10_mhd_generator.png" alt="Placeholder for Figure 25.10 showing a simplified MHD generator with high-speed plasma moving through a magnetic field">
+    </div>
+
+    <p>
+      Unlike the turbogenerator, the MHD generator can operate at any temperature to which the plasma can be heated, either by combustion or by nuclear processes. The high temperature results in a high thermodynamic efficiency, which means more power for the same amount of fuel and less waste heat. Efficiency is further boosted when the waste heat is used to convert water into steam to run a conventional steam-turbine generator.
+    </p>
+
+    <p>
+      It is important to know that generators do not produce energy—they simply convert energy from some other form to electric energy. Energy from a source, whether fossil or nuclear fuel or wind or water, is converted to mechanical energy to drive the turbine. The attached generator converts most of this mechanical energy to electric energy. Some people think that electricity is a primary source of energy. It is not. It is a carrier of energy that requires a source.
+    </p>
+<div class="strategy-box">
+      <p>Discussion Question</p>
+      <p>Is it correct to say that a generator produces energy? Defend your answer. Then explain the principal differences between an MHD generator and a conventional generator.</p>
+    </div>
+<div class="workspace workspace-200"></div>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- SUMMARY -->
+<!-- ======================= -->
+<section>
+
+  <div class="problem">
+    <h2>Summary</h2>
+
+    <div class="summary-box">
+      <ul style="margin-left:20px;">
+        <li>Electromagnetic induction is the creation of voltage when a magnetic field changes with time.</li>
+        <li>A changing magnetic field in a closed loop induces voltage, and in a conductor this can produce current.</li>
+        <li>Faraday’s law relates induced voltage to the number of loops, the area of the loops, and the rate at which the magnetic field changes.</li>
+        <li>A generator converts mechanical energy into electrical energy.</li>
+        <li>The current produced by a common generator is alternating current, and household ac in the United States is 60 hertz.</li>
+        <li>Large-scale power production uses turbines and generators to convert mechanical energy into electric energy.</li>
+        <li>Generators do not create energy; they convert energy from another form.</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- ======================= -->
+<!-- VOCABULARY -->
+<!-- ======================= -->
+<section>
+
+  <div class="problem">
+    <h2>Vocabulary</h2>
+
+    <div class="definition">
+      Electromagnetic induction:
+      <p>The creation of voltage when a magnetic field changes with time.</p>
+    </div>
+  </div>
+
+  <div class="definition">
+    Faraday’s law:
+    <p>The induced voltage in a coil is proportional to the number of loops, the area of the loops, and the rate at which the magnetic field changes.</p>
+  </div>
+
+  <div class="definition">
+    Generator:
+    <p>An electromagnetic induction device that produces electric current by rotating a coil within a stationary magnetic field.</p>
+  </div>
+
+  <div class="definition">
+    Alternating current (ac):
+    <p>Current that repeatedly changes direction.</p>
+  </div>
+
+  <div class="definition">
+    Armature:
+    <p>An iron core wrapped with bundles of copper wire that spins within a magnetic field in a generator.</p>
+  </div>
+
+  <div class="definition">
+    Turbine:
+    <p>A device driven by steam, falling water, or another energy source that provides mechanical input to a generator.</p>
+  </div>
+
+  <div class="definition">
+    MHD generator:
+    <p>A magnetohydrodynamic generator in which high-speed plasma moves through a magnetic field to produce voltage and current.</p>
+  </div>
+
+</section>
+
+<!-- ======================= -->
+<!-- FORMULA BOX -->
+<!-- ======================= -->
+<section>
+
+  <div class="problem">
+    <h2>Formula Box</h2>
+
+    <div class="definition">
+      <p>Faraday’s Law Relationship</p>
+      <p>Voltage induced is proportional to:</p>
+      \[
+      \text{number of loops} \times \text{area of each loop} \times \frac{\Delta \text{magnetic field}}{\Delta \text{time}}
+      \]
+    </div>
+  </div>
+
+  <div class="definition">
+    <p>Frequency of household alternating current in the United States</p>
+    <p>60 hertz</p>
+  </div>
+
+</section>
+
+
+<!-- ======================= -->
+<!-- PRACTICE SET -->
+<!-- ======================= -->
+<section>
+
+  <div class="problem">
+    <h2>Practice Set</h2>
+<h3>DOK 1 — Recall and Basic Understanding</h3>
+
+    <p>1. What important discovery did Faraday and Henry make?</p>
+<div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <p>2. What must change in order for electromagnetic induction to occur?</p>
+<div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <p>3. State Faraday’s law.</p>
+<div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <p>4. What are the three ways voltage can be induced in a loop?</p>
+<div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <h3>DOK 2 — Conceptual Understanding</h3>
+
+    <p>5. Why does increasing the number of loops increase the induced voltage?</p>
+<div class="workspace workspace-200"></div>
+  </div>
+
+  <div class="problem">
+    <p>6. Why is it harder to push a magnet into a coil with more loops?</p>
+<div class="workspace workspace-200"></div>
+  </div>
+
+  <div class="problem">
+    <p>7. Explain why rubber and copper can have the same induced voltage but different currents.</p>
+<div class="workspace workspace-200"></div>
+  </div>
+
+  <div class="problem">
+    <p>8. Why does faster motion produce more induced voltage?</p>
+<div class="workspace workspace-200"></div>
+  </div>
+
+  <div class="problem">
+    <h3>DOK 3 — Strategic Thinking</h3>
+
+    <p>9. Explain how a generator converts mechanical energy into electrical energy.</p>
+<div class="workspace workspace-200"></div>
+  </div>
+
+  <div class="problem">
+    <p>10. Compare a generator and a motor in terms of energy flow.</p>
+<div class="workspace workspace-200"></div>
+  </div>
+
+  <div class="problem">
+    <p>11. Explain why the current produced by a generator is alternating.</p>
+<div class="workspace workspace-200"></div>
+  </div>
+
+  <div class="problem">
+    <p>12. Why does a changing magnetic field produce voltage but a constant field does not?</p>
+<div class="workspace workspace-200"></div>
+  </div>
+
+  <div class="problem">
+    <h3>DOK 4 — Extended Thinking</h3>
+
+    <p>13. Design an experiment to demonstrate electromagnetic induction.</p>
+<div class="workspace workspace-300"></div>
+  </div>
+
+  <div class="problem">
+    <p>14. Explain why a generator cannot be considered an energy source.</p>
+<div class="workspace workspace-300"></div>
+  </div>
+
+  <div class="problem">
+    <p>15. Evaluate how electromagnetic induction is used in a real-world system of your choice.</p>
+<div class="workspace workspace-300"></div>
+  </div>
+
+</section>
+
+<!-- ======================= -->
+<!-- CHECK YOUR UNDERSTANDING -->
+<!-- ======================= -->
+<section>
+
+  <div class="problem">
+    <h2>Check Your Understanding</h2>
+<h3>DOK 1</h3>
+
+    <p>1. What causes electromagnetic induction?</p>
+<div class="answer-option">A) A constant magnetic field</div>
+    <div class="answer-option">B) A changing magnetic field</div>
+    <div class="answer-option">C) A battery</div>
+    <div class="answer-option">D) Heat</div>
+    <div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <p>2. What is the unit of frequency used for AC?</p>
+<div class="answer-option">A) Volt</div>
+    <div class="answer-option">B) Ampere</div>
+    <div class="answer-option">C) Hertz</div>
+    <div class="answer-option">D) Ohm</div>
+    <div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <h3>DOK 2</h3>
+
+    <p>3. Increasing the number of loops in a coil will:</p>
+<div class="answer-option">A) Decrease voltage</div>
+    <div class="answer-option">B) Increase voltage</div>
+    <div class="answer-option">C) Stop induction</div>
+    <div class="answer-option">D) Have no effect</div>
+    <div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <p>4. Which situation produces induction?</p>
+<div class="answer-option">A) A magnet sitting still in a coil</div>
+    <div class="answer-option">B) A magnet moving through a coil</div>
+    <div class="answer-option">C) A coil disconnected from a circuit</div>
+    <div class="answer-option">D) A constant current</div>
+    <div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <h3>DOK 3</h3>
+
+    <p>5. Which best explains why a generator produces AC?</p>
+<div class="answer-option">A) The loop rotates, changing direction of voltage</div>
+    <div class="answer-option">B) The magnet is stationary</div>
+    <div class="answer-option">C) The current is constant</div>
+    <div class="answer-option">D) The resistance changes</div>
+    <div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <p>6. Why does a generator require energy input?</p>
+<div class="answer-option">A) It creates energy</div>
+    <div class="answer-option">B) It converts mechanical energy to electrical energy</div>
+    <div class="answer-option">C) It stores energy</div>
+    <div class="answer-option">D) It uses no energy</div>
+    <div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <h3>DOK 4</h3>
+
+    <p>7. Which statement best evaluates the idea that a generator produces energy?</p>
+<div class="answer-option">A) It is correct</div>
+    <div class="answer-option">B) It violates conservation of energy</div>
+    <div class="answer-option">C) It depends on voltage</div>
+    <div class="answer-option">D) It depends on current</div>
+    <div class="workspace workspace-100"></div>
+  </div>
+
+  <div class="problem">
+    <p>8. Brief Task: Explain how energy is transferred in a generator system from source to electrical output.</p>
+<div class="workspace workspace-200"></div>
+  </div>
+
+</section>
+
+</div>
+</body>
+</html>
